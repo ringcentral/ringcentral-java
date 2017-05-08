@@ -1,5 +1,7 @@
 # ringcentral-java
 
+[![Travis Build](https://travis-ci.org/tylerlong/ringcentral-java.svg?branch=master)](https://travis-ci.org/tylerlong/ringcentral-java)
+
 
 ## Usage
 

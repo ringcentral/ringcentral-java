@@ -77,3 +77,4 @@ edit src/test/resources/.env
 - fix IDEA warnings
 - generate models
 - investigate async
+- publish this libraries to mavenCenter and jCenter

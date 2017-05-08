@@ -28,3 +28,14 @@ buildscript {
 }
 
 apply plugin: 'org.junit.platform.gradle.plugin'
+
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+check.dependsOn jacocoTestReport

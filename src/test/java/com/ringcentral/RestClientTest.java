@@ -18,9 +18,9 @@ class RestClientTest extends BaseTest {
     @Test
     void testPost() throws IOException, RestException {
         String result = restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
-                new CallerInfo(config.get("username")),
-                new CallerInfo[]{new CallerInfo(config.get("receiver"))},
-                "hello world"));
+            new CallerInfo(config.get("username")),
+            new CallerInfo[]{new CallerInfo(config.get("receiver"))},
+            "hello world"));
         assertEquals(true, result.contains("hello world"));
     }
 

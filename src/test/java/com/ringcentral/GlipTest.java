@@ -17,7 +17,7 @@ import static org.mockito.Mockito.verify;
 class GlipTest extends BaseTest {
     private String sendMessage() throws IOException, RestException {
         return restClient.post("/restapi/v1.0/glip/posts",
-                new com.ringcentral.paths.glip.post.PostParameters(config.get("glip_group"), "hello world"));
+            new com.ringcentral.paths.glip.post.PostParameters(config.get("glip_group"), "hello world"));
     }
 
     @Test
@@ -36,8 +36,8 @@ class GlipTest extends BaseTest {
     void testReceiveMessage() throws IOException, RestException, InterruptedException {
         final Consumer<String> consumer = mock(Consumer.class);
         Subscription subscription = restClient.subscription(
-                new String[]{"/restapi/v1.0/account/~/extension/~/glip/posts"},
-                consumer
+            new String[]{"/restapi/v1.0/account/~/extension/~/glip/posts"},
+            consumer
         );
         subscription.subscribe();
         Thread.sleep(8000);

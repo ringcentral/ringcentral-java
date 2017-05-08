@@ -98,7 +98,7 @@ public class Subscription {
 
     public void subscribe() throws IOException, RestException {
         setSubscription(restClient.post("/restapi/v1.0/subscription",
-                new PostParameters(new DeliveryMode(), events), SubscriptionInfo.class));
+            new PostParameters(new DeliveryMode(), events), SubscriptionInfo.class));
         PNConfiguration pnConfiguration = new PNConfiguration();
         pnConfiguration.setSubscribeKey(getSubscription().deliveryMode.subscriberKey);
         pubnub = new PubNub(pnConfiguration);
@@ -112,7 +112,7 @@ public class Subscription {
         }
         try {
             setSubscription(restClient.put("/restapi/v1.0/subscription/" + getSubscription().id,
-                    new PostParameters(new DeliveryMode(), events), SubscriptionInfo.class));
+                new PostParameters(new DeliveryMode(), events), SubscriptionInfo.class));
         } catch (IOException | RestException e) {
             e.printStackTrace();
         }

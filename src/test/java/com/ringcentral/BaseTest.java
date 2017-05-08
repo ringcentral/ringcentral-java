@@ -12,15 +12,25 @@ class BaseTest {
     RestClient restClient;
 
     BaseTest() {
-        // read config file
-        String content = "";
         try {
-            content = new String(Files.readAllBytes(Paths.get("./src/test/resources/.env")));
+            loadDotEnv();
         } catch (IOException e) {
+            try {
+                loadSysEnv();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        restClient = new RestClient(config.get("appKey"), config.get("appSecret"), config.get("server"));
+        try {
+            restClient.authorize(config.get("username"), config.get("extension"), config.get("password"));
+        } catch (IOException | RestException e) {
             e.printStackTrace();
         }
+    }
 
-        // parse config file
+    private void loadDotEnv() throws IOException {
+        String content = new String(Files.readAllBytes(Paths.get("./src/test/resources/.env")));
         for (String line : content.split("\n")) {
             String[] tokens = line.split("=");
             if (tokens.length > 1) {
@@ -29,12 +39,14 @@ class BaseTest {
                 config.put(tokens[0], "");
             }
         }
+    }
 
-        restClient = new RestClient(config.get("appKey"), config.get("appSecret"), config.get("server"));
-        try {
-            restClient.authorize(config.get("username"), config.get("extension"), config.get("password"));
-        } catch (IOException | RestException e) {
-            e.printStackTrace();
+    private void loadSysEnv() throws IOException {
+        String content = new String(Files.readAllBytes(Paths.get("./src/test/resources/.env.sample")));
+        for (String line : content.split("\n")) {
+            String[] tokens = line.split("=");
+            String value = System.getenv(tokens[0]);
+            config.put(tokens[0], value == null ? "" : value);
         }
     }
 

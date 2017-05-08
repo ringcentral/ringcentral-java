@@ -2,8 +2,8 @@ package com.ringcentral;
 
 import com.alibaba.fastjson.JSON;
 import com.ringcentral.definitions.TokenInfo;
+import io.mikael.urlbuilder.UrlBuilder;
 import okhttp3.*;
-import io.mikael.urlbuilder.*;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -54,21 +54,21 @@ public class RestClient {
 
     public void authorize(String username, String extension, String password) throws IOException, RestException {
         FormBody formBody = new FormBody.Builder()
-                .add("grant_type", "password")
-                .add("username", username)
-                .add("extension", extension)
-                .add("password", password)
-                .build();
+            .add("grant_type", "password")
+            .add("username", username)
+            .add("extension", extension)
+            .add("password", password)
+            .build();
         setToken(null);
         setToken(post("/restapi/oauth/token", formBody, TokenInfo.class));
     }
 
     public void authorize(String auth_code, String redirectUri) throws IOException, RestException {
         FormBody formBody = new FormBody.Builder()
-                .add("grant_type", "authorization_code")
-                .add("code", auth_code)
-                .add("redirect_uri", redirectUri)
-                .build();
+            .add("grant_type", "authorization_code")
+            .add("code", auth_code)
+            .add("redirect_uri", redirectUri)
+            .build();
         setToken(null);
         setToken(post("/restapi/oauth/token", formBody, TokenInfo.class));
     }
@@ -78,9 +78,9 @@ public class RestClient {
             return;
         }
         FormBody formBody = new FormBody.Builder()
-                .add("grant_type", "refresh_token")
-                .add("refresh_token", getToken().refresh_token)
-                .build();
+            .add("grant_type", "refresh_token")
+            .add("refresh_token", getToken().refresh_token)
+            .build();
         setToken(null);
         try {
             setToken(post("/restapi/oauth/token", formBody, TokenInfo.class));
@@ -94,8 +94,8 @@ public class RestClient {
             return;
         }
         FormBody formBody = new FormBody.Builder()
-                .add("token", getToken().access_token)
-                .build();
+            .add("token", getToken().access_token)
+            .build();
         setToken(null);
         post("/restapi/oauth/revoke", formBody);
     }
@@ -140,33 +140,33 @@ public class RestClient {
 
     public String get(String endpoint) throws IOException, RestException {
         Request request = new Request.Builder().url(server + endpoint)
-                .addHeader("Authorization", authorizationHeader()).build();
+            .addHeader("Authorization", authorizationHeader()).build();
         return request(request);
     }
 
     public String post(String endpoint, FormBody formBody) throws IOException, RestException {
         Request request = new Request.Builder().url(server + endpoint)
-                .addHeader("Authorization", authorizationHeader()).post(formBody).build();
+            .addHeader("Authorization", authorizationHeader()).post(formBody).build();
         return request(request);
     }
 
     public String post(String endpoint, Object base) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(base));
         Request request = new Request.Builder().url(server + endpoint)
-                .addHeader("Authorization", authorizationHeader()).post(body).build();
+            .addHeader("Authorization", authorizationHeader()).post(body).build();
         return request(request);
     }
 
     public String put(String endpoint, Object base) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(base));
         Request request = new Request.Builder().url(server + endpoint)
-                .addHeader("Authorization", authorizationHeader()).put(body).build();
+            .addHeader("Authorization", authorizationHeader()).put(body).build();
         return request(request);
     }
 
     public void delete(String endpoint) throws IOException, RestException {
         Request request = new Request.Builder().url(server + endpoint)
-                .addHeader("Authorization", authorizationHeader()).delete().build();
+            .addHeader("Authorization", authorizationHeader()).delete().build();
         request(request);
     }
 

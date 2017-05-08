@@ -17,9 +17,9 @@ public class SubscriptionTest extends BaseTest {
     @Test
     void testSubscribe() throws IOException, RestException {
         Subscription subscription = restClient.subscription(
-                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-                (jsonString) -> {
-                }
+            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+            (jsonString) -> {
+            }
         );
         subscription.subscribe();
         SubscriptionInfo sub = subscription.getSubscription();
@@ -28,17 +28,17 @@ public class SubscriptionTest extends BaseTest {
 
     private void sendSms() throws IOException, RestException {
         String result = restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
-                new CallerInfo(config.get("username")),
-                new CallerInfo[]{new CallerInfo(config.get("receiver"))},
-                "hello world"));
+            new CallerInfo(config.get("username")),
+            new CallerInfo[]{new CallerInfo(config.get("receiver"))},
+            "hello world"));
     }
 
     @Test
     void testNotification() throws IOException, RestException, InterruptedException {
         final Consumer<String> consumer = mock(Consumer.class);
         Subscription subscription = restClient.subscription(
-                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-                consumer);
+            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+            consumer);
         subscription.subscribe();
         Thread.sleep(3000);
         sendSms();
@@ -52,8 +52,8 @@ public class SubscriptionTest extends BaseTest {
     void testRefresh() throws IOException, RestException, InterruptedException {
         final Consumer<String> consumer = mock(Consumer.class);
         Subscription subscription = restClient.subscription(
-                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-                consumer);
+            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+            consumer);
         subscription.subscribe();
         Thread.sleep(3000);
         subscription.refresh();
@@ -69,8 +69,8 @@ public class SubscriptionTest extends BaseTest {
     void testRevoke() throws IOException, RestException, InterruptedException {
         final Consumer<String> consumer = mock(Consumer.class);
         Subscription subscription = restClient.subscription(
-                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-                consumer);
+            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+            consumer);
         subscription.subscribe();
         Thread.sleep(3000);
         subscription.revoke();

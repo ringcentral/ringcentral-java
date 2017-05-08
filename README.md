@@ -75,3 +75,4 @@ edit src/test/resources/.env
 - add coveralls
 - fix IDEA warnings
 - generate models
+- investigate async

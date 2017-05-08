@@ -71,7 +71,6 @@ edit src/test/resources/.env
 - handle binary uploading and downloading
 - fax
 - avoid public
-- add Travis
 - add coveralls
 - fix IDEA warnings
 - generate models

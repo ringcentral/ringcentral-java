@@ -61,7 +61,7 @@ edit src/test/resources/.env
 ### Test
 
 ```
-gradle test
+./gradlew test
 ```
 
 
@@ -75,4 +75,3 @@ gradle test
 - add coveralls
 - fix IDEA warnings
 - generate models
-- gradle test should report realtime progress

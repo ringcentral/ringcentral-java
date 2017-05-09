@@ -52,6 +52,7 @@ public class RestClientTest extends BaseTest {
             restClient.get("/restapi/v1.0/account/~/invalid-url");
             fail("Expected RestException was not thrown");
         } catch (RestException e) {
+            assertTrue(e.getMessage().contains("HTTP status code: 404"));
             assertTrue(e.getMessage().contains("Invalid URI"));
             assertEquals(404, e.getHttpStatusCode());
         } catch (IOException e) {

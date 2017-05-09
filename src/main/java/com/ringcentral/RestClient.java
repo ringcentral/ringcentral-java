@@ -6,14 +6,13 @@ import io.mikael.urlbuilder.UrlBuilder;
 import okhttp3.*;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.text.MessageFormat;
 import java.util.Base64;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.function.Consumer;
 
-public class RestClient {
+public class RestClient extends HTTPClient {
     public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final OkHttpClient httpClient = new OkHttpClient();
@@ -147,8 +146,8 @@ public class RestClient {
         return request(new Request.Builder().url(server + endpoint).post(formBody)).string();
     }
 
-    public String post(String endpoint, Object base) throws IOException, RestException {
-        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(base));
+    public String post(String endpoint, Object object) throws IOException, RestException {
+        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
         return request(new Request.Builder().url(server + endpoint).post(body)).string();
     }
 
@@ -159,31 +158,12 @@ public class RestClient {
         return request(new Request.Builder().url(server + endpoint).post(requestBody));
     }
 
-    public String put(String endpoint, Object base) throws IOException, RestException {
-        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(base));
+    public String put(String endpoint, Object object) throws IOException, RestException {
+        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
         return request(new Request.Builder().url(server + endpoint).put(body)).string();
     }
 
     public void delete(String endpoint) throws IOException, RestException {
         request(new Request.Builder().url(server + endpoint).delete());
-    }
-
-    public <T> T get(String endpoint, Type t) throws IOException, RestException {
-        return JSON.parseObject(get(endpoint).string(), t);
-    }
-
-    public <T> T post(String endpoint, FormBody formBody, Type t) throws IOException, RestException {
-        String jsonString = post(endpoint, formBody);
-        return JSON.parseObject(jsonString, t);
-    }
-
-    public <T> T post(String endpoint, Object base, Type t) throws IOException, RestException {
-        String jsonString = post(endpoint, base);
-        return JSON.parseObject(jsonString, t);
-    }
-
-    public <T> T put(String endpoint, Object base, Type t) throws IOException, RestException {
-        String jsonString = put(endpoint, base);
-        return JSON.parseObject(jsonString, t);
     }
 }

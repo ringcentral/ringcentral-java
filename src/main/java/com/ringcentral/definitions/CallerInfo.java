@@ -13,7 +13,8 @@ public class CallerInfo {
     // Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then
     public String name;
 
-    public CallerInfo(){}
+    public CallerInfo() {
+    }
 
     public CallerInfo(String phoneNumber, String extensionNumber, String location, String name) {
         this.phoneNumber = phoneNumber;

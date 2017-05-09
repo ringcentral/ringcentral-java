@@ -70,7 +70,6 @@ edit src/test/resources/.env
 
 ### Todo
 
-- handle binary uploading and downloading
 - fax
 - avoid public
 - fix IDEA warnings

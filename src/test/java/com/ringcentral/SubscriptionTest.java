@@ -26,7 +26,7 @@ public class SubscriptionTest extends BaseTest {
         assertEquals("Active", sub.status);
     }
 
-    public void sendSms() throws IOException, RestException {
+    private void sendSms() throws IOException, RestException {
         String result = restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
             new CallerInfo(config.get("username")),
             new CallerInfo[]{new CallerInfo(config.get("receiver"))},

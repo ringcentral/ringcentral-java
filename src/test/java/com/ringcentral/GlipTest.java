@@ -15,7 +15,7 @@ import static org.mockito.Mockito.verify;
 
 
 public class GlipTest extends BaseTest {
-    public String sendMessage() throws IOException, RestException {
+    private String sendMessage() throws IOException, RestException {
         return restClient.post("/restapi/v1.0/glip/posts",
             new com.ringcentral.paths.glip.post.PostParameters(config.get("glip_group"), "hello world"));
     }

@@ -32,13 +32,13 @@ public class BaseTest {
     @After
     public void tearDown() {
         try {
-            Thread.sleep(8000);
+            Thread.sleep(6000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public void loadDotEnv() throws IOException {
+    private void loadDotEnv() throws IOException {
         String content = new String(Files.readAllBytes(Paths.get("./src/test/resources/.env")));
         for (String line : content.split("\n")) {
             String[] tokens = line.split("=");
@@ -50,7 +50,7 @@ public class BaseTest {
         }
     }
 
-    public void loadSysEnv() throws IOException {
+    private void loadSysEnv() throws IOException {
         String content = new String(Files.readAllBytes(Paths.get("./src/test/resources/.env.sample")));
         for (String line : content.split("\n")) {
             String[] tokens = line.split("=");

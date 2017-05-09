@@ -1,7 +1,7 @@
 # ringcentral-java
 
 [![Build Status](https://travis-ci.org/tylerlong/ringcentral-java.svg?branch=master)](https://travis-ci.org/tylerlong/ringcentral-java)
-[![Code Coverage](https://img.shields.io/codecov/c/github/tylerlong/ringcentral-java/master.svg)](https://codecov.io/github/tylerlong/ringcentral-java?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/tylerlong/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/tylerlong/ringcentral-java?branch=master)
 
 
 ## Usage

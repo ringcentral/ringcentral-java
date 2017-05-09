@@ -53,7 +53,7 @@ class BaseTest {
     @AfterEach
     void tearDown() {
         try {
-            Thread.sleep(16000);
+            Thread.sleep(8000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -70,11 +70,9 @@ edit src/test/resources/.env
 
 ### Todo
 
-- builder pattern: http://stackoverflow.com/a/997883/862862
 - handle binary uploading and downloading
 - fax
 - avoid public
-- add coveralls
 - fix IDEA warnings
 - generate models
 - investigate async

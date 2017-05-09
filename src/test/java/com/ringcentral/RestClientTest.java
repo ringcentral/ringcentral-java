@@ -18,10 +18,12 @@ public class RestClientTest extends BaseTest {
 
     @Test
     public void testPost() throws IOException, RestException {
+        CallerInfo from = new CallerInfo();
+        from.phoneNumber = config.get("username");
+        CallerInfo to = new CallerInfo();
+        to.phoneNumber = config.get("receiver");
         String result = restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
-            new CallerInfo(config.get("username")),
-            new CallerInfo[]{new CallerInfo(config.get("receiver"))},
-            "hello world"));
+            from, new CallerInfo[]{to}, "hello world"));
         assertEquals(true, result.contains("hello world"));
     }
 

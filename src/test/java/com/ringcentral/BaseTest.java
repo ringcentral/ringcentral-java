@@ -1,17 +1,17 @@
 package com.ringcentral;
 
-import org.junit.jupiter.api.AfterEach;
+import org.junit.After;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-class BaseTest {
+public class BaseTest {
     HashMap<String, String> config = new HashMap<String, String>();
     RestClient restClient;
 
-    BaseTest() {
+    public BaseTest() {
         try {
             loadDotEnv();
         } catch (IOException e) {
@@ -29,7 +29,16 @@ class BaseTest {
         }
     }
 
-    private void loadDotEnv() throws IOException {
+    @After
+    public void tearDown() {
+        try {
+            Thread.sleep(8000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadDotEnv() throws IOException {
         String content = new String(Files.readAllBytes(Paths.get("./src/test/resources/.env")));
         for (String line : content.split("\n")) {
             String[] tokens = line.split("=");
@@ -41,21 +50,12 @@ class BaseTest {
         }
     }
 
-    private void loadSysEnv() throws IOException {
+    public void loadSysEnv() throws IOException {
         String content = new String(Files.readAllBytes(Paths.get("./src/test/resources/.env.sample")));
         for (String line : content.split("\n")) {
             String[] tokens = line.split("=");
             String value = System.getenv(tokens[0]);
             config.put(tokens[0], value == null ? "" : value);
-        }
-    }
-
-    @AfterEach
-    void tearDown() {
-        try {
-            Thread.sleep(8000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

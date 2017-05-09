@@ -28,7 +28,7 @@ public class GlipTest extends BaseTest {
 
     @Test
     public void testGroups() throws IOException, RestException {
-        String result = restClient.get("/restapi/v1.0/glip/groups");
+        String result = restClient.get("/restapi/v1.0/glip/groups").string();
         assertEquals(true, result.contains("records"));
     }
 

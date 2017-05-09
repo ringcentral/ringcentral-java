@@ -129,7 +129,8 @@ public class RestClient {
         return MessageFormat.format("Basic {0}", basicKey());
     }
 
-    public ResponseBody request(Request request) throws IOException, RestException {
+    public ResponseBody request(Request.Builder builder) throws IOException, RestException {
+        Request request = builder.addHeader("Authorization", authorizationHeader()).build();
         Response response = httpClient.newCall(request).execute();
         int statusCode = response.code();
         if (statusCode < 200 || statusCode > 299) {
@@ -138,56 +139,37 @@ public class RestClient {
         return response.body();
     }
 
-    public String get(String endpoint) throws IOException, RestException {
-        Request request = new Request.Builder().url(server + endpoint)
-            .addHeader("Authorization", authorizationHeader()).build();
-        return request(request).string();
-    }
-
-    public byte[] getBytes(String endpoint) throws IOException, RestException {
-        Request request = new Request.Builder().url(server + endpoint)
-            .addHeader("Authorization", authorizationHeader()).build();
-        return request(request).bytes();
+    public ResponseBody get(String endpoint) throws IOException, RestException {
+        return request(new Request.Builder().url(server + endpoint));
     }
 
     public String post(String endpoint, FormBody formBody) throws IOException, RestException {
-        Request request = new Request.Builder().url(server + endpoint)
-            .addHeader("Authorization", authorizationHeader()).post(formBody).build();
-        return request(request).string();
+        return request(new Request.Builder().url(server + endpoint).post(formBody)).string();
     }
 
     public String post(String endpoint, Object base) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(base));
-        Request request = new Request.Builder().url(server + endpoint)
-            .addHeader("Authorization", authorizationHeader()).post(body).build();
-        return request(request).string();
+        return request(new Request.Builder().url(server + endpoint).post(body)).string();
     }
 
     public ResponseBody postBinary(String endpoint, String fileName, String mediaType, byte[] fileContent) throws IOException, RestException {
         RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
             .addFormDataPart("image", fileName, RequestBody.create(MediaType.parse(mediaType), fileContent))
             .build();
-        Request request = new Request.Builder().url(server + endpoint)
-            .addHeader("Authorization", authorizationHeader()).post(requestBody).build();
-        return request(request);
+        return request(new Request.Builder().url(server + endpoint).post(requestBody));
     }
 
     public String put(String endpoint, Object base) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(base));
-        Request request = new Request.Builder().url(server + endpoint)
-            .addHeader("Authorization", authorizationHeader()).put(body).build();
-        return request(request).string();
+        return request(new Request.Builder().url(server + endpoint).put(body)).string();
     }
 
     public void delete(String endpoint) throws IOException, RestException {
-        Request request = new Request.Builder().url(server + endpoint)
-            .addHeader("Authorization", authorizationHeader()).delete().build();
-        request(request);
+        request(new Request.Builder().url(server + endpoint).delete());
     }
 
     public <T> T get(String endpoint, Type t) throws IOException, RestException {
-        String jsonString = get(endpoint);
-        return JSON.parseObject(jsonString, t);
+        return JSON.parseObject(get(endpoint).string(), t);
     }
 
     public <T> T post(String endpoint, FormBody formBody, Type t) throws IOException, RestException {

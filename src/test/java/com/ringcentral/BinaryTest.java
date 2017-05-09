@@ -1,6 +1,5 @@
 package com.ringcentral;
 
-
 import okhttp3.ResponseBody;
 import org.junit.Test;
 
@@ -15,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class BinaryTest extends BaseTest {
     @Test
     public void testDownloadProfileImage() throws IOException, RestException {
-        byte[] bytes = restClient.getBytes("/restapi/v1.0/account/~/extension/~/profile-image");
+        byte[] bytes = restClient.get("/restapi/v1.0/account/~/extension/~/profile-image").bytes();
         assertTrue(bytes.length > 0);
         FileOutputStream fos = new FileOutputStream("/tmp/temp.png");
         try {
@@ -33,7 +32,7 @@ public class BinaryTest extends BaseTest {
             "test.png", "image/png", bytes1);
 
         // download
-        byte[] bytes2 = restClient.getBytes("/restapi/v1.0/account/~/extension/~/profile-image");
+        byte[] bytes2 = restClient.get("/restapi/v1.0/account/~/extension/~/profile-image").bytes();
 
         assertArrayEquals(bytes1, bytes2);
     }

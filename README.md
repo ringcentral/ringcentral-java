@@ -33,6 +33,19 @@ restClient.post("/restapi/v1.0/glip/posts", new com.ringcentral.paths.glip.post.
 
 ### Subscription & notification
 
+#### Subscribe to Glip messages
+
+```java
+Subscription subscription = restClient.subscription(
+    new String[]{"/restapi/v1.0/glip/posts"},
+    (message) -> {
+        System.out.println(message);
+    });
+subscription.subscribe();
+```
+
+#### Subscribe to message store
+
 ```java
 Subscription subscription = restClient.subscription(
                 new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},

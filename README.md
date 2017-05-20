@@ -89,3 +89,4 @@ edit src/test/resources/.env
 - generate models
 - investigate async
 - publish this libraries to mavenCenter and jCenter
+- improve code coverage

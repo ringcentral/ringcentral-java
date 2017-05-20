@@ -1,6 +1,5 @@
 package com.ringcentral;
 
-import com.alibaba.fastjson.JSON;
 import com.ringcentral.definitions.TokenInfo;
 import io.mikael.urlbuilder.UrlBuilder;
 import okhttp3.*;
@@ -16,11 +15,9 @@ public class RestClient extends HTTPClient {
     public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final OkHttpClient httpClient = new OkHttpClient();
-    private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
     public boolean autoRefresh = true;
     private String appKey;
     private String appSecret;
-    private String server;
     private TokenInfo _token;
     private Timer timer;
 
@@ -136,34 +133,5 @@ public class RestClient extends HTTPClient {
             throw new RestException(statusCode, response.body().string());
         }
         return response.body();
-    }
-
-    public ResponseBody get(String endpoint) throws IOException, RestException {
-        return request(new Request.Builder().url(server + endpoint));
-    }
-
-    public String post(String endpoint, FormBody formBody) throws IOException, RestException {
-        return request(new Request.Builder().url(server + endpoint).post(formBody)).string();
-    }
-
-    public String post(String endpoint, Object object) throws IOException, RestException {
-        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
-        return request(new Request.Builder().url(server + endpoint).post(body)).string();
-    }
-
-    public ResponseBody postBinary(String endpoint, String fileName, String mediaType, byte[] fileContent) throws IOException, RestException {
-        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
-            .addFormDataPart("image", fileName, RequestBody.create(MediaType.parse(mediaType), fileContent))
-            .build();
-        return request(new Request.Builder().url(server + endpoint).post(requestBody));
-    }
-
-    public String put(String endpoint, Object object) throws IOException, RestException {
-        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
-        return request(new Request.Builder().url(server + endpoint).put(body)).string();
-    }
-
-    public void delete(String endpoint) throws IOException, RestException {
-        request(new Request.Builder().url(server + endpoint).delete());
     }
 }

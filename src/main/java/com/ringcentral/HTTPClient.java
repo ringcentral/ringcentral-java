@@ -1,21 +1,46 @@
 package com.ringcentral;
 
 import com.alibaba.fastjson.JSON;
-import okhttp3.FormBody;
-import okhttp3.ResponseBody;
+import okhttp3.*;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 
 public abstract class HTTPClient {
 
-    public abstract ResponseBody get(String endpoint) throws IOException, RestException;
+    private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
+    protected String server;
 
-    public abstract String post(String endpoint, FormBody formBody) throws IOException, RestException;
+    public abstract ResponseBody request(Request.Builder builder) throws IOException, RestException;
 
-    public abstract String post(String endpoint, Object object) throws IOException, RestException;
+    public ResponseBody get(String endpoint) throws IOException, RestException {
+        return request(new Request.Builder().url(server + endpoint));
+    }
 
-    public abstract String put(String endpoint, Object object) throws IOException, RestException;
+    public String post(String endpoint, Object object) throws IOException, RestException {
+        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
+        return request(new Request.Builder().url(server + endpoint).post(body)).string();
+    }
+
+    public String post(String endpoint, FormBody formBody) throws IOException, RestException {
+        return request(new Request.Builder().url(server + endpoint).post(formBody)).string();
+    }
+
+    public String put(String endpoint, Object object) throws IOException, RestException {
+        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
+        return request(new Request.Builder().url(server + endpoint).put(body)).string();
+    }
+
+    public void delete(String endpoint) throws IOException, RestException {
+        request(new Request.Builder().url(server + endpoint).delete());
+    }
+
+    public ResponseBody postBinary(String endpoint, String fileName, String mediaType, byte[] fileContent) throws IOException, RestException {
+        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
+            .addFormDataPart("image", fileName, RequestBody.create(MediaType.parse(mediaType), fileContent))
+            .build();
+        return request(new Request.Builder().url(server + endpoint).post(requestBody));
+    }
 
     public <T> T get(String endpoint, Type type) throws IOException, RestException {
         return JSON.parseObject(get(endpoint).string(), type);

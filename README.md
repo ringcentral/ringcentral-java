@@ -56,6 +56,11 @@ subscription.subscribe();
 ```
 
 
+### Send fax
+
+[Send fax](src/test/java/com/ringcentral/FaxTest.java)
+
+
 ---
 
 ---
@@ -83,7 +88,6 @@ edit src/test/resources/.env
 
 ### Todo
 
-- fax
 - avoid public
 - fix IDEA warnings
 - generate models

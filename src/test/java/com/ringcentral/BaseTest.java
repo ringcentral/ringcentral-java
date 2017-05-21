@@ -11,7 +11,7 @@ public class BaseTest {
     HashMap<String, String> config = new HashMap<String, String>();
     RestClient restClient;
 
-    public BaseTest() {
+    BaseTest() {
         try {
             loadDotEnv();
         } catch (IOException e) {

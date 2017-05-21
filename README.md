@@ -90,3 +90,4 @@ edit src/test/resources/.env
 - investigate async
 - publish this libraries to mavenCenter and jCenter
 - improve code coverage
+- Support query parameters

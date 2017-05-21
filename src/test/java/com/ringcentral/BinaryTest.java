@@ -29,7 +29,7 @@ public class BinaryTest extends BaseTest {
         // upload
         byte[] bytes1 = Files.readAllBytes(Paths.get("./src/test/resources/test.png"));
         ResponseBody response = restClient.postBinary("/restapi/v1.0/account/~/extension/~/profile-image",
-            "test.png", "image/png", bytes1);
+            "image","test.png", "image/png", bytes1);
 
         // download
         byte[] bytes2 = restClient.get("/restapi/v1.0/account/~/extension/~/profile-image").bytes();

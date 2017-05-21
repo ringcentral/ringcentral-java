@@ -23,7 +23,7 @@ public class RestClientTest extends BaseTest {
         CallerInfo to = new CallerInfo();
         to.phoneNumber = config.get("receiver");
         String result = restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
-            from, new CallerInfo[]{to}, "hello world"));
+            from, new CallerInfo[]{to}, "hello world")).string();
         assertEquals(true, result.contains("hello world"));
     }
 

@@ -17,27 +17,27 @@ public abstract class HTTPClient {
         return request(new Request.Builder().url(server + endpoint));
     }
 
-    public String post(String endpoint, Object object) throws IOException, RestException {
+    public ResponseBody post(String endpoint, Object object) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
-        return request(new Request.Builder().url(server + endpoint).post(body)).string();
+        return request(new Request.Builder().url(server + endpoint).post(body));
     }
 
-    public String post(String endpoint, FormBody formBody) throws IOException, RestException {
-        return request(new Request.Builder().url(server + endpoint).post(formBody)).string();
+    public ResponseBody post(String endpoint, FormBody formBody) throws IOException, RestException {
+        return request(new Request.Builder().url(server + endpoint).post(formBody));
     }
 
-    public String put(String endpoint, Object object) throws IOException, RestException {
+    public ResponseBody put(String endpoint, Object object) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
-        return request(new Request.Builder().url(server + endpoint).put(body)).string();
+        return request(new Request.Builder().url(server + endpoint).put(body));
     }
 
-    public void delete(String endpoint) throws IOException, RestException {
-        request(new Request.Builder().url(server + endpoint).delete());
+    public ResponseBody delete(String endpoint) throws IOException, RestException {
+        return request(new Request.Builder().url(server + endpoint).delete());
     }
 
-    public ResponseBody postBinary(String endpoint, String fileName, String mediaType, byte[] fileContent) throws IOException, RestException {
+    public ResponseBody postBinary(String endpoint, String name, String fileName, String mediaType, byte[] fileContent) throws IOException, RestException {
         RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
-            .addFormDataPart("image", fileName, RequestBody.create(MediaType.parse(mediaType), fileContent))
+            .addFormDataPart(name, fileName, RequestBody.create(MediaType.parse(mediaType), fileContent))
             .build();
         return request(new Request.Builder().url(server + endpoint).post(requestBody));
     }
@@ -47,17 +47,14 @@ public abstract class HTTPClient {
     }
 
     public <T> T post(String endpoint, FormBody formBody, Type type) throws IOException, RestException {
-        String jsonString = post(endpoint, formBody);
-        return JSON.parseObject(jsonString, type);
+        return JSON.parseObject(post(endpoint, formBody).string(), type);
     }
 
     public <T> T post(String endpoint, Object object, Type type) throws IOException, RestException {
-        String jsonString = post(endpoint, object);
-        return JSON.parseObject(jsonString, type);
+        return JSON.parseObject(post(endpoint, object).string(), type);
     }
 
     public <T> T put(String endpoint, Object object, Type type) throws IOException, RestException {
-        String jsonString = put(endpoint, object);
-        return JSON.parseObject(jsonString, type);
+        return JSON.parseObject(put(endpoint, object).string(), type);
     }
 }

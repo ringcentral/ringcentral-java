@@ -7,6 +7,8 @@ import okhttp3.ResponseBody;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class FaxTest extends BaseTest {
     @Test
@@ -14,7 +16,8 @@ public class FaxTest extends BaseTest {
         RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.MIXED)
             .addPart(RequestBody.create(MediaType.parse("application/json"),
                 "{ \"to\": [{ \"phoneNumber\": " + config.get("receiver") + " }]}"))
-            .addFormDataPart("attachment", "test.txt", RequestBody.create(MediaType.parse("text/plain"), "Hello world".getBytes()))
+            .addFormDataPart("attachment", "test.txt", RequestBody.create(MediaType.parse("text/plain"), "Hello world"))
+            .addFormDataPart("attachment", "test.png", RequestBody.create(MediaType.parse("image/png"), Files.readAllBytes(Paths.get("./src/test/resources/test.png"))))
             .build();
         ResponseBody responseBody = restClient.post("/restapi/v1.0/account/~/extension/~/fax", requestBody);
     }

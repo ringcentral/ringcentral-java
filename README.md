@@ -88,6 +88,7 @@ edit src/test/resources/.env
 - fix IDEA warnings
 - generate models
 - investigate async
+    - http://www.jianshu.com/p/1873287eed87
 - publish this libraries to mavenCenter and jCenter
 - improve code coverage
 - Support query parameters

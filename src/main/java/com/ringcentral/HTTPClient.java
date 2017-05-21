@@ -22,8 +22,8 @@ public abstract class HTTPClient {
         return request(new Request.Builder().url(server + endpoint).post(body));
     }
 
-    public ResponseBody post(String endpoint, FormBody formBody) throws IOException, RestException {
-        return request(new Request.Builder().url(server + endpoint).post(formBody));
+    public ResponseBody post(String endpoint, RequestBody RequestBody) throws IOException, RestException {
+        return request(new Request.Builder().url(server + endpoint).post(RequestBody));
     }
 
     public ResponseBody put(String endpoint, Object object) throws IOException, RestException {

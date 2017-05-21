@@ -19,13 +19,13 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.function.Consumer;
 
-public class Subscription {
+class Subscription {
     private String[] events;
     private RestClient restClient;
     private SubscribeCallback callback;
@@ -33,7 +33,7 @@ public class Subscription {
     private Timer timer;
     private PubNub pubnub;
 
-    public Subscription(RestClient restClient, String[] events, Consumer<String> messageCallback, Consumer<PNStatus> statusCallback, Consumer<PNPresenceEventResult> presenceCallback) {
+    Subscription(RestClient restClient, String[] events, Consumer<String> messageCallback, Consumer<PNStatus> statusCallback, Consumer<PNPresenceEventResult> presenceCallback) {
         this.restClient = restClient;
         this.events = events;
         callback = new SubscribeCallback() {
@@ -71,7 +71,7 @@ public class Subscription {
         };
     }
 
-    public Subscription(RestClient restClient, String[] events, Consumer<String> messageCallback) {
+    Subscription(RestClient restClient, String[] events, Consumer<String> messageCallback) {
         this(restClient, events, messageCallback, null, null);
     }
 
@@ -103,7 +103,7 @@ public class Subscription {
         pnConfiguration.setSubscribeKey(getSubscription().deliveryMode.subscriberKey);
         pubnub = new PubNub(pnConfiguration);
         pubnub.addListener(callback);
-        pubnub.subscribe().channels(Arrays.asList(new String[]{getSubscription().deliveryMode.address})).execute();
+        pubnub.subscribe().channels(Collections.singletonList(getSubscription().deliveryMode.address)).execute();
     }
 
     public void refresh() {
@@ -122,7 +122,7 @@ public class Subscription {
         if (getSubscription() == null) {
             return;
         }
-        pubnub.unsubscribe().channels(Arrays.asList(new String[]{getSubscription().deliveryMode.address})).execute();
+        pubnub.unsubscribe().channels(Collections.singletonList(getSubscription().deliveryMode.address)).execute();
         pubnub.removeListener(callback);
         pubnub = null;
         restClient.delete("/restapi/v1.0/subscription/" + getSubscription().id);

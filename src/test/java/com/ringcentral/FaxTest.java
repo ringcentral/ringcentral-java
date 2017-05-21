@@ -3,7 +3,6 @@ package com.ringcentral;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -19,6 +18,6 @@ public class FaxTest extends BaseTest {
             .addFormDataPart("attachment", "test.txt", RequestBody.create(MediaType.parse("text/plain"), "Hello world"))
             .addFormDataPart("attachment", "test.png", RequestBody.create(MediaType.parse("image/png"), Files.readAllBytes(Paths.get("./src/test/resources/test.png"))))
             .build();
-        ResponseBody responseBody = restClient.post("/restapi/v1.0/account/~/extension/~/fax", requestBody);
+        restClient.post("/restapi/v1.0/account/~/extension/~/fax", requestBody);
     }
 }

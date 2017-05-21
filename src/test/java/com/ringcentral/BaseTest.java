@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 
 public class BaseTest {
-    HashMap<String, String> config = new HashMap<String, String>();
+    HashMap<String, String> config = new HashMap<>();
     RestClient restClient;
 
     BaseTest() {

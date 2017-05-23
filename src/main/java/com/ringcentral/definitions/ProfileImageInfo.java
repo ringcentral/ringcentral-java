@@ -11,4 +11,29 @@ public class ProfileImageInfo {
     public String contentType;
     // List of URIs to profile images in different dimensions
     public ImageUri[] scales;
+
+    public ProfileImageInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public ProfileImageInfo etag(String etag) {
+        this.etag = etag;
+        return this;
+    }
+
+    public ProfileImageInfo lastModified(String lastModified) {
+        this.lastModified = lastModified;
+        return this;
+    }
+
+    public ProfileImageInfo contentType(String contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    public ProfileImageInfo scales(ImageUri[] scales) {
+        this.scales = scales;
+        return this;
+    }
 }

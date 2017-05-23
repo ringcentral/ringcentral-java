@@ -9,4 +9,24 @@ public class LookUpPhoneNumber_PhoneNumberInfo {
     public String vanityPattern;
     // The value is returned if the extendedSearch parameter is true. '10' is the closest match
     public Long rank;
+
+    public LookUpPhoneNumber_PhoneNumberInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public LookUpPhoneNumber_PhoneNumberInfo formattedNumber(String formattedNumber) {
+        this.formattedNumber = formattedNumber;
+        return this;
+    }
+
+    public LookUpPhoneNumber_PhoneNumberInfo vanityPattern(String vanityPattern) {
+        this.vanityPattern = vanityPattern;
+        return this;
+    }
+
+    public LookUpPhoneNumber_PhoneNumberInfo rank(Long rank) {
+        this.rank = rank;
+        return this;
+    }
 }

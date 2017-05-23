@@ -25,4 +25,64 @@ public class CallLogInfo {
     public Long duration;
     // Call recording data. Returned if the call is recorded
     public RecordingInfo recording;
+
+    public CallLogInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public CallLogInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public CallLogInfo sessionId(String sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    }
+
+    public CallLogInfo from(CallerInfo from) {
+        this.from = from;
+        return this;
+    }
+
+    public CallLogInfo to(CallerInfo to) {
+        this.to = to;
+        return this;
+    }
+
+    public CallLogInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public CallLogInfo direction(String direction) {
+        this.direction = direction;
+        return this;
+    }
+
+    public CallLogInfo action(String action) {
+        this.action = action;
+        return this;
+    }
+
+    public CallLogInfo result(String result) {
+        this.result = result;
+        return this;
+    }
+
+    public CallLogInfo startTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    public CallLogInfo duration(Long duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    public CallLogInfo recording(RecordingInfo recording) {
+        this.recording = recording;
+        return this;
+    }
 }

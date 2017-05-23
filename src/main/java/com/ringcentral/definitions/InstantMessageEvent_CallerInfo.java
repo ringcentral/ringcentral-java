@@ -9,4 +9,24 @@ public class InstantMessageEvent_CallerInfo {
     public String location;
     // Symbolic name associated with a caller/callee. If the phone does not belong to the known extension, only the location is returned, the name is not determined then
     public String name;
+
+    public InstantMessageEvent_CallerInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public InstantMessageEvent_CallerInfo extensionNumber(String extensionNumber) {
+        this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public InstantMessageEvent_CallerInfo location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public InstantMessageEvent_CallerInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 }

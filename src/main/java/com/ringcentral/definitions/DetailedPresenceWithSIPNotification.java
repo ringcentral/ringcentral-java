@@ -11,4 +11,29 @@ public class DetailedPresenceWithSIPNotification {
     public String timestamp;
     // Notification payload body
     public DetailedPresencewithSIPEvent body;
+
+    public DetailedPresenceWithSIPNotification uuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+    public DetailedPresenceWithSIPNotification event(String event) {
+        this.event = event;
+        return this;
+    }
+
+    public DetailedPresenceWithSIPNotification subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public DetailedPresenceWithSIPNotification timestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    public DetailedPresenceWithSIPNotification body(DetailedPresencewithSIPEvent body) {
+        this.body = body;
+        return this;
+    }
 }

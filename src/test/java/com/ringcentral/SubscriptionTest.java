@@ -2,6 +2,7 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.CallerInfo;
 import com.ringcentral.definitions.SubscriptionInfo;
+import com.ringcentral.paths.Sms;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
@@ -27,12 +28,11 @@ public class SubscriptionTest extends BaseTest {
     }
 
     private void sendSms() throws IOException, RestException {
-        CallerInfo from = new CallerInfo();
-        from.phoneNumber = config.get("username");
-        CallerInfo to = new CallerInfo();
-        to.phoneNumber = config.get("receiver");
-        restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
-            from, new CallerInfo[]{to}, "hello world"));
+        Sms.PostParameters postParameters = new Sms.PostParameters();
+        postParameters.from = new CallerInfo().phoneNumber(config.get("username"));
+        postParameters.to = new CallerInfo[]{new CallerInfo().phoneNumber(config.get("receiver"))};
+        postParameters.text = "hello world";
+        restClient.post("/restapi/v1.0/account/~/extension/~/sms", postParameters);
     }
 
     @Test

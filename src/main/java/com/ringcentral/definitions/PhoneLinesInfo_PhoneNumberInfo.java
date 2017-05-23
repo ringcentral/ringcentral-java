@@ -17,4 +17,44 @@ public class PhoneLinesInfo_PhoneNumberInfo {
     public String type;
     // Usage type of the phone number
     public String usageType;
+
+    public PhoneLinesInfo_PhoneNumberInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public PhoneLinesInfo_PhoneNumberInfo country(CountryInfo country) {
+        this.country = country;
+        return this;
+    }
+
+    public PhoneLinesInfo_PhoneNumberInfo location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public PhoneLinesInfo_PhoneNumberInfo paymentType(String paymentType) {
+        this.paymentType = paymentType;
+        return this;
+    }
+
+    public PhoneLinesInfo_PhoneNumberInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public PhoneLinesInfo_PhoneNumberInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public PhoneLinesInfo_PhoneNumberInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public PhoneLinesInfo_PhoneNumberInfo usageType(String usageType) {
+        this.usageType = usageType;
+        return this;
+    }
 }

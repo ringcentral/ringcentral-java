@@ -5,4 +5,14 @@ public class LegInfo_ExtensionInfo {
     public String id;
     // Canonical URI of an extension
     public String uri;
+
+    public LegInfo_ExtensionInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public LegInfo_ExtensionInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 }

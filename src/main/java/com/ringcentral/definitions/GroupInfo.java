@@ -11,4 +11,29 @@ public class GroupInfo {
     public String groupName;
     // Notes for a group
     public String notes;
+
+    public GroupInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public GroupInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public GroupInfo contactsCount(Long contactsCount) {
+        this.contactsCount = contactsCount;
+        return this;
+    }
+
+    public GroupInfo groupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    public GroupInfo notes(String notes) {
+        this.notes = notes;
+        return this;
+    }
 }

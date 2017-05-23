@@ -15,4 +15,39 @@ public class DetailedPresenceEvent_ActiveCallInfo {
     public String sessionId;
     // Type of call termination. Supported for calls in 'NoCall' status. If the returned termination type is 'Intermediate' it means the call is not actually ended, the connection is established on one of the devices
     public String terminationType;
+
+    public DetailedPresenceEvent_ActiveCallInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public DetailedPresenceEvent_ActiveCallInfo direction(String direction) {
+        this.direction = direction;
+        return this;
+    }
+
+    public DetailedPresenceEvent_ActiveCallInfo from(String from) {
+        this.from = from;
+        return this;
+    }
+
+    public DetailedPresenceEvent_ActiveCallInfo to(String to) {
+        this.to = to;
+        return this;
+    }
+
+    public DetailedPresenceEvent_ActiveCallInfo telephonyStatus(String telephonyStatus) {
+        this.telephonyStatus = telephonyStatus;
+        return this;
+    }
+
+    public DetailedPresenceEvent_ActiveCallInfo sessionId(String sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    }
+
+    public DetailedPresenceEvent_ActiveCallInfo terminationType(String terminationType) {
+        this.terminationType = terminationType;
+        return this;
+    }
 }

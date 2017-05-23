@@ -17,4 +17,44 @@ public class SubscriptionInfo {
     public String creationTime;
     // Delivery mode data
     public DeliveryMode deliveryMode;
+
+    public SubscriptionInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public SubscriptionInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public SubscriptionInfo eventFilters(String[] eventFilters) {
+        this.eventFilters = eventFilters;
+        return this;
+    }
+
+    public SubscriptionInfo expirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+        return this;
+    }
+
+    public SubscriptionInfo expiresIn(Long expiresIn) {
+        this.expiresIn = expiresIn;
+        return this;
+    }
+
+    public SubscriptionInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public SubscriptionInfo creationTime(String creationTime) {
+        this.creationTime = creationTime;
+        return this;
+    }
+
+    public SubscriptionInfo deliveryMode(DeliveryMode deliveryMode) {
+        this.deliveryMode = deliveryMode;
+        return this;
+    }
 }

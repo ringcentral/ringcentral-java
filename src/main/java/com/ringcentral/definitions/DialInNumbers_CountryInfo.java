@@ -11,4 +11,29 @@ public class DialInNumbers_CountryInfo {
     public String isoCode;
     // Official name of a country
     public String name;
+
+    public DialInNumbers_CountryInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public DialInNumbers_CountryInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public DialInNumbers_CountryInfo callingCode(String callingCode) {
+        this.callingCode = callingCode;
+        return this;
+    }
+
+    public DialInNumbers_CountryInfo isoCode(String isoCode) {
+        this.isoCode = isoCode;
+        return this;
+    }
+
+    public DialInNumbers_CountryInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 }

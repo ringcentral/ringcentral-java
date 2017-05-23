@@ -7,4 +7,19 @@ public class AccountLimits {
     public Long meetingSize;
     // The maximum number of extensions which can be included in the list of users monitored for Presence
     public Long maxMonitoredExtensionsPerUser;
+
+    public AccountLimits freeSoftPhoneLinesPerExtension(Long freeSoftPhoneLinesPerExtension) {
+        this.freeSoftPhoneLinesPerExtension = freeSoftPhoneLinesPerExtension;
+        return this;
+    }
+
+    public AccountLimits meetingSize(Long meetingSize) {
+        this.meetingSize = meetingSize;
+        return this;
+    }
+
+    public AccountLimits maxMonitoredExtensionsPerUser(Long maxMonitoredExtensionsPerUser) {
+        this.maxMonitoredExtensionsPerUser = maxMonitoredExtensionsPerUser;
+        return this;
+    }
 }

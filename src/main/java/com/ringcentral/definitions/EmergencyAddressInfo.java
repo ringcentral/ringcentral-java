@@ -15,4 +15,39 @@ public class EmergencyAddressInfo {
     public String zip;
     // Country name
     public String country;
+
+    public EmergencyAddressInfo customerName(String customerName) {
+        this.customerName = customerName;
+        return this;
+    }
+
+    public EmergencyAddressInfo street(String street) {
+        this.street = street;
+        return this;
+    }
+
+    public EmergencyAddressInfo street2(String street2) {
+        this.street2 = street2;
+        return this;
+    }
+
+    public EmergencyAddressInfo city(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public EmergencyAddressInfo state(String state) {
+        this.state = state;
+        return this;
+    }
+
+    public EmergencyAddressInfo zip(String zip) {
+        this.zip = zip;
+        return this;
+    }
+
+    public EmergencyAddressInfo country(String country) {
+        this.country = country;
+        return this;
+    }
 }

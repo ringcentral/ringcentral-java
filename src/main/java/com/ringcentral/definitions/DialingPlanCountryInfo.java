@@ -11,4 +11,29 @@ public class DialingPlanCountryInfo {
     public String isoCode;
     // Official name of a country
     public String name;
+
+    public DialingPlanCountryInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public DialingPlanCountryInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public DialingPlanCountryInfo callingCode(String callingCode) {
+        this.callingCode = callingCode;
+        return this;
+    }
+
+    public DialingPlanCountryInfo isoCode(String isoCode) {
+        this.isoCode = isoCode;
+        return this;
+    }
+
+    public DialingPlanCountryInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 }

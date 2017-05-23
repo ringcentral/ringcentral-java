@@ -86,6 +86,13 @@ edit src/test/resources/.env
 ```
 
 
+### Auto generate models
+
+All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/java/com/ringcentral/paths/` are auto-generated.
+
+
+
+
 ### Todo
 
 - generate models

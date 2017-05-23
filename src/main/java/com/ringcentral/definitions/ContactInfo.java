@@ -13,4 +13,34 @@ public class ContactInfo {
     public String businessPhone;
     // Business address of extension user company
     public ContactAddressInfo businessAddress;
+
+    public ContactInfo firstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public ContactInfo lastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public ContactInfo company(String company) {
+        this.company = company;
+        return this;
+    }
+
+    public ContactInfo email(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public ContactInfo businessPhone(String businessPhone) {
+        this.businessPhone = businessPhone;
+        return this;
+    }
+
+    public ContactInfo businessAddress(ContactAddressInfo businessAddress) {
+        this.businessAddress = businessAddress;
+        return this;
+    }
 }

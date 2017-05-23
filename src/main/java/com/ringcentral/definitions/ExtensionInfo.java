@@ -33,4 +33,84 @@ public class ExtensionInfo {
     public StatusInfo statusInfo;
     // Extension type
     public String type;
+
+    public ExtensionInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public ExtensionInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public ExtensionInfo contact(ContactInfo contact) {
+        this.contact = contact;
+        return this;
+    }
+
+    public ExtensionInfo departments(DepartmentInfo[] departments) {
+        this.departments = departments;
+        return this;
+    }
+
+    public ExtensionInfo extensionNumber(String extensionNumber) {
+        this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public ExtensionInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public ExtensionInfo partnerId(String partnerId) {
+        this.partnerId = partnerId;
+        return this;
+    }
+
+    public ExtensionInfo permissions(ExtensionPermissions permissions) {
+        this.permissions = permissions;
+        return this;
+    }
+
+    public ExtensionInfo profileImage(ProfileImageInfo profileImage) {
+        this.profileImage = profileImage;
+        return this;
+    }
+
+    public ExtensionInfo references(ReferenceInfo[] references) {
+        this.references = references;
+        return this;
+    }
+
+    public ExtensionInfo regionalSettings(RegionalSettings regionalSettings) {
+        this.regionalSettings = regionalSettings;
+        return this;
+    }
+
+    public ExtensionInfo serviceFeatures(ExtensionServiceFeatureInfo[] serviceFeatures) {
+        this.serviceFeatures = serviceFeatures;
+        return this;
+    }
+
+    public ExtensionInfo setupWizardState(String setupWizardState) {
+        this.setupWizardState = setupWizardState;
+        return this;
+    }
+
+    public ExtensionInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public ExtensionInfo statusInfo(StatusInfo statusInfo) {
+        this.statusInfo = statusInfo;
+        return this;
+    }
+
+    public ExtensionInfo type(String type) {
+        this.type = type;
+        return this;
+    }
 }

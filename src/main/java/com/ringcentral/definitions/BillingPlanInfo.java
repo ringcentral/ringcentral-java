@@ -11,4 +11,29 @@ public class BillingPlanInfo {
     public String duration;
     // Billing plan type
     public String type;
+
+    public BillingPlanInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public BillingPlanInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public BillingPlanInfo durationUnit(String durationUnit) {
+        this.durationUnit = durationUnit;
+        return this;
+    }
+
+    public BillingPlanInfo duration(String duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    public BillingPlanInfo type(String type) {
+        this.type = type;
+        return this;
+    }
 }

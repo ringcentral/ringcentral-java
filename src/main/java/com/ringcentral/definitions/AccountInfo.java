@@ -19,4 +19,49 @@ public class AccountInfo {
     public String status;
     // Status information (reason, comment, lifetime). Returned for 'Disabled' status only
     public StatusInfo statusInfo;
+
+    public AccountInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public AccountInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public AccountInfo mainNumber(String mainNumber) {
+        this.mainNumber = mainNumber;
+        return this;
+    }
+
+    public AccountInfo operator(ExtensionInfo operator) {
+        this.operator = operator;
+        return this;
+    }
+
+    public AccountInfo partnerId(String partnerId) {
+        this.partnerId = partnerId;
+        return this;
+    }
+
+    public AccountInfo serviceInfo(Account_ServiceInfo serviceInfo) {
+        this.serviceInfo = serviceInfo;
+        return this;
+    }
+
+    public AccountInfo setupWizardState(String setupWizardState) {
+        this.setupWizardState = setupWizardState;
+        return this;
+    }
+
+    public AccountInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public AccountInfo statusInfo(StatusInfo statusInfo) {
+        this.statusInfo = statusInfo;
+        return this;
+    }
 }

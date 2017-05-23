@@ -11,4 +11,29 @@ public class ContactAddressInfo {
     public String street;
     // Zip code of extension user company
     public String zip;
+
+    public ContactAddressInfo country(String country) {
+        this.country = country;
+        return this;
+    }
+
+    public ContactAddressInfo state(String state) {
+        this.state = state;
+        return this;
+    }
+
+    public ContactAddressInfo city(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public ContactAddressInfo street(String street) {
+        this.street = street;
+        return this;
+    }
+
+    public ContactAddressInfo zip(String zip) {
+        this.zip = zip;
+        return this;
+    }
 }

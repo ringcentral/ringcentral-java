@@ -7,4 +7,19 @@ public class MessageEvent {
     public String lastUpdated;
     // Message changes
     public MessageChange[] changes;
+
+    public MessageEvent extensionId(Long extensionId) {
+        this.extensionId = extensionId;
+        return this;
+    }
+
+    public MessageEvent lastUpdated(String lastUpdated) {
+        this.lastUpdated = lastUpdated;
+        return this;
+    }
+
+    public MessageEvent changes(MessageChange[] changes) {
+        this.changes = changes;
+        return this;
+    }
 }

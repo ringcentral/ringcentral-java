@@ -15,4 +15,39 @@ public class DeliveryMode {
     public String encryptionAlgorithm;
     // Key for notification message decryption (for PubNub transport type only)
     public String encryptionKey;
+
+    public DeliveryMode transportType(String transportType) {
+        this.transportType = transportType;
+        return this;
+    }
+
+    public DeliveryMode encryption(Boolean encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    public DeliveryMode address(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public DeliveryMode subscriberKey(String subscriberKey) {
+        this.subscriberKey = subscriberKey;
+        return this;
+    }
+
+    public DeliveryMode secretKey(String secretKey) {
+        this.secretKey = secretKey;
+        return this;
+    }
+
+    public DeliveryMode encryptionAlgorithm(String encryptionAlgorithm) {
+        this.encryptionAlgorithm = encryptionAlgorithm;
+        return this;
+    }
+
+    public DeliveryMode encryptionKey(String encryptionKey) {
+        this.encryptionKey = encryptionKey;
+        return this;
+    }
 }

@@ -9,4 +9,24 @@ public class DialInNumbers {
     public String location;
     // Country resource corresponding to the dial-in number
     public DialInNumbers_CountryInfo country;
+
+    public DialInNumbers phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public DialInNumbers formattedNumber(String formattedNumber) {
+        this.formattedNumber = formattedNumber;
+        return this;
+    }
+
+    public DialInNumbers location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public DialInNumbers country(DialInNumbers_CountryInfo country) {
+        this.country = country;
+        return this;
+    }
 }

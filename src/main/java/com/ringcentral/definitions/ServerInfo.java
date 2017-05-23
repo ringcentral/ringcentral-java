@@ -9,4 +9,24 @@ public class ServerInfo {
     public String serverVersion;
     // Server revision
     public String serverRevision;
+
+    public ServerInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public ServerInfo apiVersions(VersionInfo[] apiVersions) {
+        this.apiVersions = apiVersions;
+        return this;
+    }
+
+    public ServerInfo serverVersion(String serverVersion) {
+        this.serverVersion = serverVersion;
+        return this;
+    }
+
+    public ServerInfo serverRevision(String serverRevision) {
+        this.serverRevision = serverRevision;
+        return this;
+    }
 }

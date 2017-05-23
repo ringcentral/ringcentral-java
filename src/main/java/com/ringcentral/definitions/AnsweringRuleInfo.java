@@ -27,4 +27,69 @@ public class AnsweringRuleInfo {
     public VoicemailInfo voicemail;
     // Predefined greetings applied for an answering rule
     public GreetingInfo[] greetings;
+
+    public AnsweringRuleInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public AnsweringRuleInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public AnsweringRuleInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public AnsweringRuleInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public AnsweringRuleInfo enabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    public AnsweringRuleInfo schedule(ScheduleInfo schedule) {
+        this.schedule = schedule;
+        return this;
+    }
+
+    public AnsweringRuleInfo calledNumbers(AnsweringRuleInfo_CalleeInfo[] calledNumbers) {
+        this.calledNumbers = calledNumbers;
+        return this;
+    }
+
+    public AnsweringRuleInfo callers(AnsweringRuleInfo_CallerInfo[] callers) {
+        this.callers = callers;
+        return this;
+    }
+
+    public AnsweringRuleInfo callHandlingAction(String callHandlingAction) {
+        this.callHandlingAction = callHandlingAction;
+        return this;
+    }
+
+    public AnsweringRuleInfo forwarding(ForwardingInfo forwarding) {
+        this.forwarding = forwarding;
+        return this;
+    }
+
+    public AnsweringRuleInfo unconditionalForwarding(UnconditionalForwardingInfo unconditionalForwarding) {
+        this.unconditionalForwarding = unconditionalForwarding;
+        return this;
+    }
+
+    public AnsweringRuleInfo voicemail(VoicemailInfo voicemail) {
+        this.voicemail = voicemail;
+        return this;
+    }
+
+    public AnsweringRuleInfo greetings(GreetingInfo[] greetings) {
+        this.greetings = greetings;
+        return this;
+    }
 }

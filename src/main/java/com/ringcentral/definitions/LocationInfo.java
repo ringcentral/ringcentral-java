@@ -13,4 +13,34 @@ public class LocationInfo {
     public String nxx;
     // ID and URI of the state this location belongs to, see State Info
     public String state;
+
+    public LocationInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public LocationInfo areaCode(String areaCode) {
+        this.areaCode = areaCode;
+        return this;
+    }
+
+    public LocationInfo city(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public LocationInfo npa(String npa) {
+        this.npa = npa;
+        return this;
+    }
+
+    public LocationInfo nxx(String nxx) {
+        this.nxx = nxx;
+        return this;
+    }
+
+    public LocationInfo state(String state) {
+        this.state = state;
+        return this;
+    }
 }

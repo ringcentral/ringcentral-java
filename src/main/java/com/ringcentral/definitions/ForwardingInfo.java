@@ -11,4 +11,29 @@ public class ForwardingInfo {
     public String ringingMode;
     // Information on a call forwarding rule
     public RuleInfo[] rules;
+
+    public ForwardingInfo notifyMySoftPhones(Boolean notifyMySoftPhones) {
+        this.notifyMySoftPhones = notifyMySoftPhones;
+        return this;
+    }
+
+    public ForwardingInfo notifyAdminSoftPhones(Boolean notifyAdminSoftPhones) {
+        this.notifyAdminSoftPhones = notifyAdminSoftPhones;
+        return this;
+    }
+
+    public ForwardingInfo softPhonesRingCount(Long softPhonesRingCount) {
+        this.softPhonesRingCount = softPhonesRingCount;
+        return this;
+    }
+
+    public ForwardingInfo ringingMode(String ringingMode) {
+        this.ringingMode = ringingMode;
+        return this;
+    }
+
+    public ForwardingInfo rules(RuleInfo[] rules) {
+        this.rules = rules;
+        return this;
+    }
 }

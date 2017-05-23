@@ -27,4 +27,69 @@ public class DeviceInfo {
     public ShippingInfo shipping;
     // Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. Either "model" structure, or "boxBillingId" must be specified for HardPhone
     public Long boxBillingId;
+
+    public DeviceInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public DeviceInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public DeviceInfo sku(String sku) {
+        this.sku = sku;
+        return this;
+    }
+
+    public DeviceInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public DeviceInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public DeviceInfo serial(String serial) {
+        this.serial = serial;
+        return this;
+    }
+
+    public DeviceInfo computerName(String computerName) {
+        this.computerName = computerName;
+        return this;
+    }
+
+    public DeviceInfo model(ModelInfo model) {
+        this.model = model;
+        return this;
+    }
+
+    public DeviceInfo extension(DeviceInfo_ExtensionInfo extension) {
+        this.extension = extension;
+        return this;
+    }
+
+    public DeviceInfo emergencyServiceAddress(EmergencyAddressInfo emergencyServiceAddress) {
+        this.emergencyServiceAddress = emergencyServiceAddress;
+        return this;
+    }
+
+    public DeviceInfo phoneLines(PhoneLinesInfo phoneLines) {
+        this.phoneLines = phoneLines;
+        return this;
+    }
+
+    public DeviceInfo shipping(ShippingInfo shipping) {
+        this.shipping = shipping;
+        return this;
+    }
+
+    public DeviceInfo boxBillingId(Long boxBillingId) {
+        this.boxBillingId = boxBillingId;
+        return this;
+    }
 }

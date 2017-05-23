@@ -13,4 +13,34 @@ public class MessageInfo_CallerInfo {
     public String name;
     // Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS
     public String phoneNumber;
+
+    public MessageInfo_CallerInfo extensionNumber(String extensionNumber) {
+        this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public MessageInfo_CallerInfo location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public MessageInfo_CallerInfo messageStatus(String messageStatus) {
+        this.messageStatus = messageStatus;
+        return this;
+    }
+
+    public MessageInfo_CallerInfo faxErrorCode(String faxErrorCode) {
+        this.faxErrorCode = faxErrorCode;
+        return this;
+    }
+
+    public MessageInfo_CallerInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public MessageInfo_CallerInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
 }

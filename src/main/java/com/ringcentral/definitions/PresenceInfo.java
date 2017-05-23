@@ -21,4 +21,54 @@ public class PresenceInfo {
     public String telephonyStatus;
     // User-defined presence status (as previously published by the user)
     public String userStatus;
+
+    public PresenceInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public PresenceInfo allowSeeMyPresence(Boolean allowSeeMyPresence) {
+        this.allowSeeMyPresence = allowSeeMyPresence;
+        return this;
+    }
+
+    public PresenceInfo dndStatus(String dndStatus) {
+        this.dndStatus = dndStatus;
+        return this;
+    }
+
+    public PresenceInfo extension(PresenceInfo_ExtensionInfo extension) {
+        this.extension = extension;
+        return this;
+    }
+
+    public PresenceInfo message(String message) {
+        this.message = message;
+        return this;
+    }
+
+    public PresenceInfo pickUpCallsOnHold(Boolean pickUpCallsOnHold) {
+        this.pickUpCallsOnHold = pickUpCallsOnHold;
+        return this;
+    }
+
+    public PresenceInfo presenceStatus(String presenceStatus) {
+        this.presenceStatus = presenceStatus;
+        return this;
+    }
+
+    public PresenceInfo ringOnMonitoredCall(Boolean ringOnMonitoredCall) {
+        this.ringOnMonitoredCall = ringOnMonitoredCall;
+        return this;
+    }
+
+    public PresenceInfo telephonyStatus(String telephonyStatus) {
+        this.telephonyStatus = telephonyStatus;
+        return this;
+    }
+
+    public PresenceInfo userStatus(String userStatus) {
+        this.userStatus = userStatus;
+        return this;
+    }
 }

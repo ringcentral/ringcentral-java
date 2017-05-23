@@ -11,4 +11,29 @@ public class MessageNotification {
     public String timestamp;
     // Notification payload body
     public MessageEvent body;
+
+    public MessageNotification uuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+    public MessageNotification event(String event) {
+        this.event = event;
+        return this;
+    }
+
+    public MessageNotification subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public MessageNotification timestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    public MessageNotification body(MessageEvent body) {
+        this.body = body;
+        return this;
+    }
 }

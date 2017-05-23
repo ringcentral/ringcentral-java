@@ -11,4 +11,29 @@ public class PresenceLineNotification {
     public String timestamp;
     // Notification payload body
     public PresenceLineEvent body;
+
+    public PresenceLineNotification uuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+    public PresenceLineNotification event(String event) {
+        this.event = event;
+        return this;
+    }
+
+    public PresenceLineNotification subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public PresenceLineNotification timestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    public PresenceLineNotification body(PresenceLineEvent body) {
+        this.body = body;
+        return this;
+    }
 }

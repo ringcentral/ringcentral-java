@@ -13,4 +13,34 @@ public class ConferencingInfo_PhoneNumberInfo_CountryInfo {
     public String isoCode;
     // Official name of a country
     public String name;
+
+    public ConferencingInfo_PhoneNumberInfo_CountryInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo_CountryInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo_CountryInfo callingCode(String callingCode) {
+        this.callingCode = callingCode;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo_CountryInfo emergencyCalling(Boolean emergencyCalling) {
+        this.emergencyCalling = emergencyCalling;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo_CountryInfo isoCode(String isoCode) {
+        this.isoCode = isoCode;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo_CountryInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 }

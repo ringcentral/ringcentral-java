@@ -13,4 +13,34 @@ public class ReservePhoneNumber_Response_ReserveRecord {
     public String status;
     // The error code in case of reservation/un-reservation failure
     public String error;
+
+    public ReservePhoneNumber_Response_ReserveRecord phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public ReservePhoneNumber_Response_ReserveRecord formattedNumber(String formattedNumber) {
+        this.formattedNumber = formattedNumber;
+        return this;
+    }
+
+    public ReservePhoneNumber_Response_ReserveRecord reservedTill(String reservedTill) {
+        this.reservedTill = reservedTill;
+        return this;
+    }
+
+    public ReservePhoneNumber_Response_ReserveRecord reservationId(String reservationId) {
+        this.reservationId = reservationId;
+        return this;
+    }
+
+    public ReservePhoneNumber_Response_ReserveRecord status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public ReservePhoneNumber_Response_ReserveRecord error(String error) {
+        this.error = error;
+        return this;
+    }
 }

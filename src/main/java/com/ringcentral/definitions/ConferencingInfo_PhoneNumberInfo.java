@@ -14,4 +14,29 @@ public class ConferencingInfo_PhoneNumberInfo {
     public String location;
     // Dial-in phone number to connect to a conference
     public String phoneNumber;
+
+    public ConferencingInfo_PhoneNumberInfo country(ConferencingInfo_PhoneNumberInfo_CountryInfo country) {
+        this.country = country;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo _default(Boolean _default) {
+        this._default = _default;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo hasGreeting(Boolean hasGreeting) {
+        this.hasGreeting = hasGreeting;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public ConferencingInfo_PhoneNumberInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
 }

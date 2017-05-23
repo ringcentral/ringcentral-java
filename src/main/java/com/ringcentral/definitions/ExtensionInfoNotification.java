@@ -11,4 +11,29 @@ public class ExtensionInfoNotification {
     public String timestamp;
     // Notification payload body
     public ExtensionInfoEvent body;
+
+    public ExtensionInfoNotification uuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+    public ExtensionInfoNotification event(String event) {
+        this.event = event;
+        return this;
+    }
+
+    public ExtensionInfoNotification subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public ExtensionInfoNotification timestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    public ExtensionInfoNotification body(ExtensionInfoEvent body) {
+        this.body = body;
+        return this;
+    }
 }

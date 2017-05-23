@@ -11,4 +11,29 @@ public class MeetingServiceInfo {
     public ExternalUserInfo externalUserInfo;
     // Dial-in numbers data
     public DialInNumbers dialInNumbers;
+
+    public MeetingServiceInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public MeetingServiceInfo supportUri(String supportUri) {
+        this.supportUri = supportUri;
+        return this;
+    }
+
+    public MeetingServiceInfo intlDialInNumbersUri(String intlDialInNumbersUri) {
+        this.intlDialInNumbersUri = intlDialInNumbersUri;
+        return this;
+    }
+
+    public MeetingServiceInfo externalUserInfo(ExternalUserInfo externalUserInfo) {
+        this.externalUserInfo = externalUserInfo;
+        return this;
+    }
+
+    public MeetingServiceInfo dialInNumbers(DialInNumbers dialInNumbers) {
+        this.dialInNumbers = dialInNumbers;
+        return this;
+    }
 }

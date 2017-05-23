@@ -15,4 +15,39 @@ public class AccountServiceInfo {
     public ServiceFeatureInfo[] serviceFeatures;
     // Limits which are effective for the account
     public AccountLimits limits;
+
+    public AccountServiceInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public AccountServiceInfo servicePlanName(String servicePlanName) {
+        this.servicePlanName = servicePlanName;
+        return this;
+    }
+
+    public AccountServiceInfo brand(BrandInfo brand) {
+        this.brand = brand;
+        return this;
+    }
+
+    public AccountServiceInfo servicePlan(ServicePlanInfo servicePlan) {
+        this.servicePlan = servicePlan;
+        return this;
+    }
+
+    public AccountServiceInfo billingPlan(BillingPlanInfo billingPlan) {
+        this.billingPlan = billingPlan;
+        return this;
+    }
+
+    public AccountServiceInfo serviceFeatures(ServiceFeatureInfo[] serviceFeatures) {
+        this.serviceFeatures = serviceFeatures;
+        return this;
+    }
+
+    public AccountServiceInfo limits(AccountLimits limits) {
+        this.limits = limits;
+        return this;
+    }
 }

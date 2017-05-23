@@ -5,4 +5,14 @@ public class GreetingInfo {
     public String type;
     // Predefined greeting information
     public PresetInfo preset;
+
+    public GreetingInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public GreetingInfo preset(PresetInfo preset) {
+        this.preset = preset;
+        return this;
+    }
 }

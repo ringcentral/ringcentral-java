@@ -5,4 +5,14 @@ public class ShippingMethod {
     public String id;
     // Method name, corresponding to the identifier
     public String name;
+
+    public ShippingMethod id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public ShippingMethod name(String name) {
+        this.name = name;
+        return this;
+    }
 }

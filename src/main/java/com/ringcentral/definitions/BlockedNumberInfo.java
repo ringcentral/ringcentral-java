@@ -9,4 +9,24 @@ public class BlockedNumberInfo {
     public String name;
     // Phone number to be blocked
     public String phoneNumber;
+
+    public BlockedNumberInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public BlockedNumberInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public BlockedNumberInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public BlockedNumberInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
 }

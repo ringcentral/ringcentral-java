@@ -9,4 +9,24 @@ public class NavigationInfo {
     public Page previousPage;
     // Last page of the list
     public Page lastPage;
+
+    public NavigationInfo firstPage(Page firstPage) {
+        this.firstPage = firstPage;
+        return this;
+    }
+
+    public NavigationInfo nextPage(Page nextPage) {
+        this.nextPage = nextPage;
+        return this;
+    }
+
+    public NavigationInfo previousPage(Page previousPage) {
+        this.previousPage = previousPage;
+        return this;
+    }
+
+    public NavigationInfo lastPage(Page lastPage) {
+        this.lastPage = lastPage;
+        return this;
+    }
 }

@@ -15,4 +15,39 @@ public class DetailedPresencewithSIPEvent_ActiveCallInfo {
     public String sessionId;
     // SIP connection settings
     public SIPData sipData;
+
+    public DetailedPresencewithSIPEvent_ActiveCallInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public DetailedPresencewithSIPEvent_ActiveCallInfo direction(String direction) {
+        this.direction = direction;
+        return this;
+    }
+
+    public DetailedPresencewithSIPEvent_ActiveCallInfo from(String from) {
+        this.from = from;
+        return this;
+    }
+
+    public DetailedPresencewithSIPEvent_ActiveCallInfo to(String to) {
+        this.to = to;
+        return this;
+    }
+
+    public DetailedPresencewithSIPEvent_ActiveCallInfo telephonyStatus(String telephonyStatus) {
+        this.telephonyStatus = telephonyStatus;
+        return this;
+    }
+
+    public DetailedPresencewithSIPEvent_ActiveCallInfo sessionId(String sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    }
+
+    public DetailedPresencewithSIPEvent_ActiveCallInfo sipData(SIPData sipData) {
+        this.sipData = sipData;
+        return this;
+    }
 }

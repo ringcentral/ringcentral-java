@@ -11,4 +11,29 @@ public class DetailedPresenceNotification {
     public String timestamp;
     // Notification payload body
     public DetailedPresenceEvent body;
+
+    public DetailedPresenceNotification uuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+    public DetailedPresenceNotification event(String event) {
+        this.event = event;
+        return this;
+    }
+
+    public DetailedPresenceNotification subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public DetailedPresenceNotification timestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    public DetailedPresenceNotification body(DetailedPresenceEvent body) {
+        this.body = body;
+        return this;
+    }
 }

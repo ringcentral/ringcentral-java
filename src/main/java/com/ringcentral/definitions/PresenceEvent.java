@@ -21,4 +21,54 @@ public class PresenceEvent {
     public Boolean ringOnMonitoredCall;
     // If 'True' enables the extension user to pick up a monitored line on hold
     public Boolean pickUpCallsOnHold;
+
+    public PresenceEvent extensionId(String extensionId) {
+        this.extensionId = extensionId;
+        return this;
+    }
+
+    public PresenceEvent telephonyStatus(String telephonyStatus) {
+        this.telephonyStatus = telephonyStatus;
+        return this;
+    }
+
+    public PresenceEvent terminationType(String terminationType) {
+        this.terminationType = terminationType;
+        return this;
+    }
+
+    public PresenceEvent sequence(Long sequence) {
+        this.sequence = sequence;
+        return this;
+    }
+
+    public PresenceEvent presenceStatus(String presenceStatus) {
+        this.presenceStatus = presenceStatus;
+        return this;
+    }
+
+    public PresenceEvent userStatus(String userStatus) {
+        this.userStatus = userStatus;
+        return this;
+    }
+
+    public PresenceEvent dndStatus(String dndStatus) {
+        this.dndStatus = dndStatus;
+        return this;
+    }
+
+    public PresenceEvent allowSeeMyPresence(Boolean allowSeeMyPresence) {
+        this.allowSeeMyPresence = allowSeeMyPresence;
+        return this;
+    }
+
+    public PresenceEvent ringOnMonitoredCall(Boolean ringOnMonitoredCall) {
+        this.ringOnMonitoredCall = ringOnMonitoredCall;
+        return this;
+    }
+
+    public PresenceEvent pickUpCallsOnHold(Boolean pickUpCallsOnHold) {
+        this.pickUpCallsOnHold = pickUpCallsOnHold;
+        return this;
+    }
 }

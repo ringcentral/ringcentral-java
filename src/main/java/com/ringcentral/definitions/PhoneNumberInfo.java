@@ -21,4 +21,54 @@ public class PhoneNumberInfo {
     public String type;
     // Usage type of the phone number
     public String usageType;
+
+    public PhoneNumberInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public PhoneNumberInfo country(CountryInfo country) {
+        this.country = country;
+        return this;
+    }
+
+    public PhoneNumberInfo extension(PhoneNumberInfo_ExtensionInfo extension) {
+        this.extension = extension;
+        return this;
+    }
+
+    public PhoneNumberInfo features(String[] features) {
+        this.features = features;
+        return this;
+    }
+
+    public PhoneNumberInfo location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public PhoneNumberInfo paymentType(String paymentType) {
+        this.paymentType = paymentType;
+        return this;
+    }
+
+    public PhoneNumberInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public PhoneNumberInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public PhoneNumberInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public PhoneNumberInfo usageType(String usageType) {
+        this.usageType = usageType;
+        return this;
+    }
 }

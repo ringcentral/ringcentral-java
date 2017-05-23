@@ -25,4 +25,64 @@ public class MeetingInfo {
     public Boolean startParticipantsVideo;
     // Meeting audio options. Possible values are 'Phone', 'ComputerAudio'
     public String[] audioOptions;
+
+    public MeetingInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public MeetingInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public MeetingInfo topic(String topic) {
+        this.topic = topic;
+        return this;
+    }
+
+    public MeetingInfo meetingType(String meetingType) {
+        this.meetingType = meetingType;
+        return this;
+    }
+
+    public MeetingInfo password(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public MeetingInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public MeetingInfo links(LinksInfo links) {
+        this.links = links;
+        return this;
+    }
+
+    public MeetingInfo schedule(MeetingScheduleInfo schedule) {
+        this.schedule = schedule;
+        return this;
+    }
+
+    public MeetingInfo allowJoinBeforeHost(Boolean allowJoinBeforeHost) {
+        this.allowJoinBeforeHost = allowJoinBeforeHost;
+        return this;
+    }
+
+    public MeetingInfo startHostVideo(Boolean startHostVideo) {
+        this.startHostVideo = startHostVideo;
+        return this;
+    }
+
+    public MeetingInfo startParticipantsVideo(Boolean startParticipantsVideo) {
+        this.startParticipantsVideo = startParticipantsVideo;
+        return this;
+    }
+
+    public MeetingInfo audioOptions(String[] audioOptions) {
+        this.audioOptions = audioOptions;
+        return this;
+    }
 }

@@ -17,4 +17,44 @@ public class FullCountryInfo {
     public Boolean numberSelling;
     // Specifies whether login with the phone numbers of this country is enabled or not
     public Boolean loginAllowed;
+
+    public FullCountryInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public FullCountryInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public FullCountryInfo callingCode(String callingCode) {
+        this.callingCode = callingCode;
+        return this;
+    }
+
+    public FullCountryInfo emergencyCalling(Boolean emergencyCalling) {
+        this.emergencyCalling = emergencyCalling;
+        return this;
+    }
+
+    public FullCountryInfo isoCode(String isoCode) {
+        this.isoCode = isoCode;
+        return this;
+    }
+
+    public FullCountryInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public FullCountryInfo numberSelling(Boolean numberSelling) {
+        this.numberSelling = numberSelling;
+        return this;
+    }
+
+    public FullCountryInfo loginAllowed(Boolean loginAllowed) {
+        this.loginAllowed = loginAllowed;
+        return this;
+    }
 }

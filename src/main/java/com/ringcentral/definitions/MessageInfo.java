@@ -45,4 +45,114 @@ public class MessageInfo {
     public String type;
     // Voicemail only. Status of voicemail to text transcription. If VoicemailToText feature is not activated for account, the 'NotAvailable' value is returned
     public String vmTranscriptionStatus;
+
+    public MessageInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public MessageInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public MessageInfo attachments(MessageAttachmentInfo[] attachments) {
+        this.attachments = attachments;
+        return this;
+    }
+
+    public MessageInfo availability(String availability) {
+        this.availability = availability;
+        return this;
+    }
+
+    public MessageInfo conversationId(Long conversationId) {
+        this.conversationId = conversationId;
+        return this;
+    }
+
+    public MessageInfo creationTime(String creationTime) {
+        this.creationTime = creationTime;
+        return this;
+    }
+
+    public MessageInfo deliveryErrorCode(String deliveryErrorCode) {
+        this.deliveryErrorCode = deliveryErrorCode;
+        return this;
+    }
+
+    public MessageInfo direction(String direction) {
+        this.direction = direction;
+        return this;
+    }
+
+    public MessageInfo faxPageCount(Long faxPageCount) {
+        this.faxPageCount = faxPageCount;
+        return this;
+    }
+
+    public MessageInfo faxResolution(String faxResolution) {
+        this.faxResolution = faxResolution;
+        return this;
+    }
+
+    public MessageInfo from(MessageInfo_CallerInfo from) {
+        this.from = from;
+        return this;
+    }
+
+    public MessageInfo lastModifiedTime(String lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+        return this;
+    }
+
+    public MessageInfo messageStatus(String messageStatus) {
+        this.messageStatus = messageStatus;
+        return this;
+    }
+
+    public MessageInfo pgToDepartment(Boolean pgToDepartment) {
+        this.pgToDepartment = pgToDepartment;
+        return this;
+    }
+
+    public MessageInfo priority(String priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    public MessageInfo readStatus(String readStatus) {
+        this.readStatus = readStatus;
+        return this;
+    }
+
+    public MessageInfo smsDeliveryTime(String smsDeliveryTime) {
+        this.smsDeliveryTime = smsDeliveryTime;
+        return this;
+    }
+
+    public MessageInfo smsSendingAttemptsCount(Long smsSendingAttemptsCount) {
+        this.smsSendingAttemptsCount = smsSendingAttemptsCount;
+        return this;
+    }
+
+    public MessageInfo subject(String subject) {
+        this.subject = subject;
+        return this;
+    }
+
+    public MessageInfo to(MessageInfo_CallerInfo[] to) {
+        this.to = to;
+        return this;
+    }
+
+    public MessageInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public MessageInfo vmTranscriptionStatus(String vmTranscriptionStatus) {
+        this.vmTranscriptionStatus = vmTranscriptionStatus;
+        return this;
+    }
 }

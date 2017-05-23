@@ -11,4 +11,29 @@ public class ShippingInfo {
     public ShippingMethod[] method;
     // Shipping address for the order. If it coincides with the Emergency Service Address, then can be omitted. By default the same value as the emergencyServiceAddress. Multiple addresses can be specified; in case an order contains several devices, they can be delivered to different addresses
     public ShippingAddress[] address;
+
+    public ShippingInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public ShippingInfo carrier(String carrier) {
+        this.carrier = carrier;
+        return this;
+    }
+
+    public ShippingInfo trackingNumber(String trackingNumber) {
+        this.trackingNumber = trackingNumber;
+        return this;
+    }
+
+    public ShippingInfo method(ShippingMethod[] method) {
+        this.method = method;
+        return this;
+    }
+
+    public ShippingInfo address(ShippingAddress[] address) {
+        this.address = address;
+        return this;
+    }
 }

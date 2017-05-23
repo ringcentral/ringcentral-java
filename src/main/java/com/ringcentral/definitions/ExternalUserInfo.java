@@ -9,4 +9,24 @@ public class ExternalUserInfo {
     public String userToken;
     // Meeting account user type
     public Long userType;
+
+    public ExternalUserInfo accountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    public ExternalUserInfo userId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    public ExternalUserInfo userToken(String userToken) {
+        this.userToken = userToken;
+        return this;
+    }
+
+    public ExternalUserInfo userType(Long userType) {
+        this.userType = userType;
+        return this;
+    }
 }

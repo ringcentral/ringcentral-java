@@ -2,6 +2,7 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.CallerInfo;
 import com.ringcentral.definitions.VersionInfo;
+import com.ringcentral.paths.Sms;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,12 +19,11 @@ public class RestClientTest extends BaseTest {
 
     @Test
     public void testPost() throws IOException, RestException {
-        CallerInfo from = new CallerInfo();
-        from.phoneNumber = config.get("username");
-        CallerInfo to = new CallerInfo();
-        to.phoneNumber = config.get("receiver");
-        String result = restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
-            from, new CallerInfo[]{to}, "hello world")).string();
+        Sms.PostParameters postParameters = new Sms.PostParameters();
+        postParameters.from = new CallerInfo().phoneNumber(config.get("username"));
+        postParameters.to = new CallerInfo[]{new CallerInfo().phoneNumber(config.get("receiver"))};
+        postParameters.text = "hello world";
+        String result = restClient.post("/restapi/v1.0/account/~/extension/~/sms", postParameters).string();
         assertEquals(true, result.contains("hello world"));
     }
 

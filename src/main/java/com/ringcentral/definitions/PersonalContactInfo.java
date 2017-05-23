@@ -61,4 +61,154 @@ public class PersonalContactInfo {
     public String webPage;
     // Notes of a personal contact
     public String notes;
+
+    public PersonalContactInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public PersonalContactInfo url(String url) {
+        this.url = url;
+        return this;
+    }
+
+    public PersonalContactInfo availability(String availability) {
+        this.availability = availability;
+        return this;
+    }
+
+    public PersonalContactInfo firstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public PersonalContactInfo lastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public PersonalContactInfo middleName(String middleName) {
+        this.middleName = middleName;
+        return this;
+    }
+
+    public PersonalContactInfo nickName(String nickName) {
+        this.nickName = nickName;
+        return this;
+    }
+
+    public PersonalContactInfo company(String company) {
+        this.company = company;
+        return this;
+    }
+
+    public PersonalContactInfo jobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+        return this;
+    }
+
+    public PersonalContactInfo homePhone(String homePhone) {
+        this.homePhone = homePhone;
+        return this;
+    }
+
+    public PersonalContactInfo homePhone2(String homePhone2) {
+        this.homePhone2 = homePhone2;
+        return this;
+    }
+
+    public PersonalContactInfo businessPhone(String businessPhone) {
+        this.businessPhone = businessPhone;
+        return this;
+    }
+
+    public PersonalContactInfo businessPhone2(String businessPhone2) {
+        this.businessPhone2 = businessPhone2;
+        return this;
+    }
+
+    public PersonalContactInfo mobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    public PersonalContactInfo businessFax(String businessFax) {
+        this.businessFax = businessFax;
+        return this;
+    }
+
+    public PersonalContactInfo companyPhone(String companyPhone) {
+        this.companyPhone = companyPhone;
+        return this;
+    }
+
+    public PersonalContactInfo assistantPhone(String assistantPhone) {
+        this.assistantPhone = assistantPhone;
+        return this;
+    }
+
+    public PersonalContactInfo carPhone(String carPhone) {
+        this.carPhone = carPhone;
+        return this;
+    }
+
+    public PersonalContactInfo otherPhone(String otherPhone) {
+        this.otherPhone = otherPhone;
+        return this;
+    }
+
+    public PersonalContactInfo otherFax(String otherFax) {
+        this.otherFax = otherFax;
+        return this;
+    }
+
+    public PersonalContactInfo callbackPhone(String callbackPhone) {
+        this.callbackPhone = callbackPhone;
+        return this;
+    }
+
+    public PersonalContactInfo email(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public PersonalContactInfo email2(String email2) {
+        this.email2 = email2;
+        return this;
+    }
+
+    public PersonalContactInfo email3(String email3) {
+        this.email3 = email3;
+        return this;
+    }
+
+    public PersonalContactInfo homeAddress(ContactAddressInfo homeAddress) {
+        this.homeAddress = homeAddress;
+        return this;
+    }
+
+    public PersonalContactInfo businessAddress(ContactAddressInfo businessAddress) {
+        this.businessAddress = businessAddress;
+        return this;
+    }
+
+    public PersonalContactInfo otherAddress(ContactAddressInfo otherAddress) {
+        this.otherAddress = otherAddress;
+        return this;
+    }
+
+    public PersonalContactInfo birthday(String birthday) {
+        this.birthday = birthday;
+        return this;
+    }
+
+    public PersonalContactInfo webPage(String webPage) {
+        this.webPage = webPage;
+        return this;
+    }
+
+    public PersonalContactInfo notes(String notes) {
+        this.notes = notes;
+        return this;
+    }
 }

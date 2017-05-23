@@ -5,4 +5,14 @@ public class ExtensionInfoEvent {
     public String extensionId;
     // Type of extension info change
     public String eventType;
+
+    public ExtensionInfoEvent extensionId(String extensionId) {
+        this.extensionId = extensionId;
+        return this;
+    }
+
+    public ExtensionInfoEvent eventType(String eventType) {
+        this.eventType = eventType;
+        return this;
+    }
 }

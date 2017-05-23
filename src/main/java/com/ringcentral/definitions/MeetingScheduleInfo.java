@@ -7,4 +7,19 @@ public class MeetingScheduleInfo {
     public Long durationInMinutes;
     // Timezone of a meeting
     public MeetingScheduleInfo_TimezoneInfo timeZone;
+
+    public MeetingScheduleInfo startTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    public MeetingScheduleInfo durationInMinutes(Long durationInMinutes) {
+        this.durationInMinutes = durationInMinutes;
+        return this;
+    }
+
+    public MeetingScheduleInfo timeZone(MeetingScheduleInfo_TimezoneInfo timeZone) {
+        this.timeZone = timeZone;
+        return this;
+    }
 }

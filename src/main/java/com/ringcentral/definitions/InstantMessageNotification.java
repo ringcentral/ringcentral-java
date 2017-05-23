@@ -11,4 +11,29 @@ public class InstantMessageNotification {
     public String timestamp;
     // Notification payload body
     public InstantMessageEvent body;
+
+    public InstantMessageNotification uuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+    public InstantMessageNotification event(String event) {
+        this.event = event;
+        return this;
+    }
+
+    public InstantMessageNotification subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public InstantMessageNotification timestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    public InstantMessageNotification body(InstantMessageEvent body) {
+        this.body = body;
+        return this;
+    }
 }

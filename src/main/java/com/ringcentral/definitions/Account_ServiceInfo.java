@@ -11,4 +11,29 @@ public class Account_ServiceInfo {
     public ServicePlanInfo servicePlan;
     // Information on account target service plan
     public TargetServicePlanInfo targetServicePlan;
+
+    public Account_ServiceInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public Account_ServiceInfo billingPlan(BillingPlanInfo billingPlan) {
+        this.billingPlan = billingPlan;
+        return this;
+    }
+
+    public Account_ServiceInfo brand(BrandInfo brand) {
+        this.brand = brand;
+        return this;
+    }
+
+    public Account_ServiceInfo servicePlan(ServicePlanInfo servicePlan) {
+        this.servicePlan = servicePlan;
+        return this;
+    }
+
+    public Account_ServiceInfo targetServicePlan(TargetServicePlanInfo targetServicePlan) {
+        this.targetServicePlan = targetServicePlan;
+        return this;
+    }
 }

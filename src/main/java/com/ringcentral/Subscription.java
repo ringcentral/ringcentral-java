@@ -6,9 +6,8 @@ import com.pubnub.api.callbacks.SubscribeCallback;
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
-import com.ringcentral.definitions.DeliveryMode;
 import com.ringcentral.definitions.SubscriptionInfo;
-import com.ringcentral.paths.subscription.PostParameters;
+import com.ringcentral.definitions.Subscription_Request_DeliveryMode;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -127,12 +126,9 @@ class Subscription {
         setSubscription(null);
     }
 
-    private PostParameters getPostParameters() {
-        return new PostParameters(new DeliveryMode() {
-            {
-                transportType = "PubNub";
-                encryption = true;
-            }
-        }, events);
+    private com.ringcentral.paths.Subscription.PostParameters getPostParameters() {
+        return new com.ringcentral.paths.Subscription.PostParameters()
+            .deliveryMode(new Subscription_Request_DeliveryMode().transportType("PubNub").encryption(true))
+            .eventFilters(events);
     }
 }

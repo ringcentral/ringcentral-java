@@ -1,5 +1,7 @@
 package com.ringcentral.paths.subscription;
 
+import com.ringcentral.definitions.DeliveryMode;
+
 public class PostParameters {
     public DeliveryMode deliveryMode;
     public String[] eventFilters;
@@ -12,4 +14,3 @@ public class PostParameters {
         this.eventFilters = eventFilters;
     }
 }
-

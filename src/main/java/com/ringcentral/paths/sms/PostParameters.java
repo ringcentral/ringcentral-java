@@ -21,4 +21,3 @@ public class PostParameters {
         this.text = text;
     }
 }
-

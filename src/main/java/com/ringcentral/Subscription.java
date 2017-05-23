@@ -6,8 +6,8 @@ import com.pubnub.api.callbacks.SubscribeCallback;
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
+import com.ringcentral.definitions.DeliveryMode;
 import com.ringcentral.definitions.SubscriptionInfo;
-import com.ringcentral.paths.subscription.DeliveryMode;
 import com.ringcentral.paths.subscription.PostParameters;
 
 import javax.crypto.BadPaddingException;
@@ -97,8 +97,7 @@ class Subscription {
     }
 
     public void subscribe() throws IOException, RestException {
-        setSubscription(restClient.post("/restapi/v1.0/subscription",
-            new PostParameters(new DeliveryMode(), events), SubscriptionInfo.class));
+        setSubscription(restClient.post("/restapi/v1.0/subscription", getPostParameters(), SubscriptionInfo.class));
         PNConfiguration pnConfiguration = new PNConfiguration();
         pnConfiguration.setSubscribeKey(getSubscription().deliveryMode.subscriberKey);
         pubnub = new PubNub(pnConfiguration);
@@ -111,8 +110,7 @@ class Subscription {
             return;
         }
         try {
-            setSubscription(restClient.put("/restapi/v1.0/subscription/" + getSubscription().id,
-                new PostParameters(new DeliveryMode(), events), SubscriptionInfo.class));
+            setSubscription(restClient.put("/restapi/v1.0/subscription/" + getSubscription().id, getPostParameters(), SubscriptionInfo.class));
         } catch (IOException | RestException e) {
             e.printStackTrace();
         }
@@ -127,5 +125,14 @@ class Subscription {
         pubnub = null;
         restClient.delete("/restapi/v1.0/subscription/" + getSubscription().id);
         setSubscription(null);
+    }
+
+    private PostParameters getPostParameters() {
+        return new PostParameters(new DeliveryMode() {
+            {
+                transportType = "PubNub";
+                encryption = true;
+            }
+        }, events);
     }
 }

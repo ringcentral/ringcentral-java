@@ -15,11 +15,4 @@ public class CallerInfo {
 
     public CallerInfo() {
     }
-
-    public CallerInfo(String phoneNumber, String extensionNumber, String location, String name) {
-        this.phoneNumber = phoneNumber;
-        this.extensionNumber = extensionNumber;
-        this.location = location;
-        this.name = name;
-    }
 }

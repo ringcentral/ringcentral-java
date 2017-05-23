@@ -88,8 +88,6 @@ edit src/test/resources/.env
 
 ### Todo
 
-- avoid public
-- fix IDEA warnings
 - generate models
 - investigate async
     - http://www.jianshu.com/p/1873287eed87

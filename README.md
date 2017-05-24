@@ -95,9 +95,10 @@ All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/
 
 ### Todo
 
-- generate models
-- investigate async
+- Investigate async
     - http://www.jianshu.com/p/1873287eed87
-- publish this libraries to mavenCenter and jCenter
-- improve code coverage
+- Publish this libraries to mavenCenter and jCenter
+- Improve code coverage
 - Support query parameters
+- Rewrite in Kotlin
+- Update swagger spec to support Glip

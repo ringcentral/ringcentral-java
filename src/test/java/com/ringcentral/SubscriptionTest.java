@@ -1,5 +1,7 @@
 package com.ringcentral;
 
+import com.pubnub.api.models.consumer.PNStatus;
+import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 import com.ringcentral.definitions.CallerInfo;
 import com.ringcentral.definitions.SubscriptionInfo;
 import com.ringcentral.paths.Sms;
@@ -56,6 +58,7 @@ public class SubscriptionTest extends BaseTest {
         Subscription subscription = restClient.subscription(
             new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
             consumer);
+        subscription.refresh(); // should not cause any issue when _subscription is null
         subscription.subscribe();
         Thread.sleep(3000);
         subscription.refresh();
@@ -73,6 +76,7 @@ public class SubscriptionTest extends BaseTest {
         Subscription subscription = restClient.subscription(
             new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
             consumer);
+        subscription.revoke(); // should not cause any issue when _subscription is null
         subscription.subscribe();
         Thread.sleep(3000);
         subscription.revoke();
@@ -80,5 +84,22 @@ public class SubscriptionTest extends BaseTest {
         sendSms();
         Thread.sleep(16000);
         verify(consumer, never()).accept(any());
+    }
+
+    @Test
+    public void testStatusCallback() throws IOException, RestException, InterruptedException {
+        final Consumer<String> consumer1 = mock(Consumer.class);
+        final Consumer<PNStatus> consumer2 = mock(Consumer.class);
+        final Consumer<PNPresenceEventResult> consumer3 = mock(Consumer.class);
+        Subscription subscription = new Subscription(restClient,
+            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+            consumer1, consumer2, consumer3);
+        subscription.subscribe();
+        Thread.sleep(3000);
+        sendSms();
+        Thread.sleep(16000);
+        ArgumentCaptor<PNStatus> argument = ArgumentCaptor.forClass(PNStatus.class);
+        verify(consumer2).accept(argument.capture());
+        assertTrue(argument.getValue() != null);
     }
 }

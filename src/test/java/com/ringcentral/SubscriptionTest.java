@@ -48,7 +48,7 @@ public class SubscriptionTest extends BaseTest {
         sendSms();
         Thread.sleep(16000);
         ArgumentCaptor<String> argument = ArgumentCaptor.forClass(String.class);
-        verify(consumer).accept(argument.capture());
+        verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
     }
 
@@ -66,7 +66,7 @@ public class SubscriptionTest extends BaseTest {
         sendSms();
         Thread.sleep(16000);
         ArgumentCaptor<String> argument = ArgumentCaptor.forClass(String.class);
-        verify(consumer).accept(argument.capture());
+        verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
     }
 
@@ -99,7 +99,7 @@ public class SubscriptionTest extends BaseTest {
         sendSms();
         Thread.sleep(16000);
         ArgumentCaptor<PNStatus> argument = ArgumentCaptor.forClass(PNStatus.class);
-        verify(consumer2).accept(argument.capture());
-        assertTrue(argument.getValue() != null);
+        verify(consumer2, atLeastOnce()).accept(argument.capture());
+        assertEquals(argument.getValue().getStatusCode(), 200);
     }
 }

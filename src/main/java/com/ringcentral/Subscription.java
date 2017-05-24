@@ -78,7 +78,7 @@ class Subscription {
         return _subscription;
     }
 
-    private void setSubscription(SubscriptionInfo subscription) {
+    void setSubscription(SubscriptionInfo subscription) {
         _subscription = subscription;
         if (timer != null) {
             timer.cancel();

@@ -102,4 +102,22 @@ public class SubscriptionTest extends BaseTest {
         verify(consumer2, atLeastOnce()).accept(argument.capture());
         assertEquals(argument.getValue().getStatusCode(), 200);
     }
+
+    @Test
+    public void testAutoRefresh() throws IOException, RestException, InterruptedException {
+        final Consumer<String> consumer = mock(Consumer.class);
+        Subscription subscription = restClient.subscription(
+            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+            consumer);
+        subscription.subscribe();
+        SubscriptionInfo subInfo = subscription.getSubscription();
+        subInfo.expiresIn = 123L;
+        subscription.setSubscription(subInfo);
+        Thread.sleep(6000);
+        sendSms();
+        Thread.sleep(16000);
+        ArgumentCaptor<String> argument = ArgumentCaptor.forClass(String.class);
+        verify(consumer, atLeastOnce()).accept(argument.capture());
+        assertTrue(argument.getValue().contains("uuid"));
+    }
 }

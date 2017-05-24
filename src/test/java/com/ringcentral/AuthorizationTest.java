@@ -1,5 +1,6 @@
 package com.ringcentral;
 
+import com.ringcentral.definitions.TokenInfo;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -54,5 +55,15 @@ public class AuthorizationTest extends BaseTest {
             assertEquals(401, re.getHttpStatusCode());
             assertTrue(re.getMessage().contains("TokenInvalid"));
         }
+    }
+
+    @Test
+    public void testAutoRefresh() throws InterruptedException {
+        restClient.refresh();
+        TokenInfo tokenInfo = restClient.getToken();
+        tokenInfo.expires_in = 123L;
+        restClient.setToken(tokenInfo);
+        Thread.sleep(6000);
+        assertEquals("bearer", restClient.getToken().token_type);
     }
 }

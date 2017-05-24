@@ -28,25 +28,6 @@ public class RestClientTest extends BaseTest {
     }
 
     @Test
-    public void testAuthorize() throws IOException, RestException {
-        restClient.authorize(config.get("username"), config.get("extension"), config.get("password"));
-        assertEquals("bearer", restClient.getToken().token_type);
-    }
-
-    @Test
-    public void testRefresh() throws IOException, RestException {
-        restClient.refresh();
-        assertEquals("bearer", restClient.getToken().token_type);
-    }
-
-    @Test
-    public void testRevoke() throws IOException, RestException {
-        restClient.revoke();
-        assertTrue(restClient.getToken() == null);
-        restClient.authorize(config.get("username"), config.get("extension"), config.get("password"));
-    }
-
-    @Test
     public void testRestException() {
         try {
             restClient.get("/restapi/v1.0/account/~/invalid-url");
@@ -58,15 +39,5 @@ public class RestClientTest extends BaseTest {
         } catch (IOException e) {
             fail("Unexpected IOException was thrown");
         }
-    }
-
-    @Test
-    public void testAuthorizeUri() {
-        String uri = restClient.authorizeUri("http://localhost:8080/callback", "myState");
-        assertTrue(uri.contains("/restapi/oauth/authorize"));
-        assertTrue(uri.contains("response_type=code"));
-        assertTrue(uri.contains("state=myState"));
-        assertTrue(uri.contains("redirect_uri="));
-        assertTrue(uri.contains("client_id="));
     }
 }

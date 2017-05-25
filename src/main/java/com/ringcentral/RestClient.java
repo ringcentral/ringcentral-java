@@ -1,7 +1,6 @@
 package com.ringcentral;
 
 import com.ringcentral.definitions.TokenInfo;
-import io.mikael.urlbuilder.UrlBuilder;
 import okhttp3.*;
 
 import java.io.IOException;
@@ -97,13 +96,12 @@ public class RestClient extends HTTPClient {
     }
 
     public String authorizeUri(String redirectUri, String state) {
-        return UrlBuilder.fromString(server)
-            .withPath("/restapi/oauth/authorize")
-            .addParameter("response_type", "code")
-            .addParameter("state", state)
-            .addParameter("redirect_uri", redirectUri)
-            .addParameter("client_id", appKey)
-            .toString();
+        return HttpUrl.parse(server).newBuilder("/restapi/oauth/authorize")
+            .addQueryParameter("response_type", "code")
+            .addQueryParameter("state", state)
+            .addQueryParameter("redirect_uri", redirectUri)
+            .addQueryParameter("client_id", appKey)
+            .build().toString();
     }
 
     public String authorizeUri(String redirectUri) {

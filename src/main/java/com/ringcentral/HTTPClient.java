@@ -14,7 +14,7 @@ public abstract class HTTPClient {
     public abstract ResponseBody request(Request.Builder builder) throws IOException, RestException;
 
     private HttpUrl buildUrl(String endpoint, QueryParameter... queryParameters) {
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(server + endpoint).newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(server).newBuilder(endpoint);
         for (QueryParameter queryParameter : queryParameters) {
             urlBuilder = urlBuilder.addQueryParameter(queryParameter.key, queryParameter.value);
         }

@@ -14,12 +14,7 @@ restClient.authorize(username, extension, password);
 
 ### Send sms
 
-```java
-restClient.post("/restapi/v1.0/account/~/extension/~/sms", new com.ringcentral.paths.sms.PostParameters(
-                new CallerInfo(senderNumber),
-                new CallerInfo[]{new CallerInfo(receiverNumber)},
-                "hello world"));
-```
+[Send sms](src/test/java/com/ringcentral/SmsTest.java)
 
 
 ### Send message to Glip
@@ -98,7 +93,6 @@ All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/
 - Investigate async
     - http://www.jianshu.com/p/1873287eed87
 - Publish this libraries to mavenCenter and jCenter
-- Improve code coverage
 - Support query parameters
 - Rewrite in Kotlin
 - Update swagger spec to support Glip

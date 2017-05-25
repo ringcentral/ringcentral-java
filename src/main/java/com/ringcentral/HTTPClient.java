@@ -13,12 +13,17 @@ public abstract class HTTPClient {
 
     public abstract ResponseBody request(Request.Builder builder) throws IOException, RestException;
 
-    public ResponseBody get(String endpoint, QueryParameter... queryParameters) throws IOException, RestException {
+    private HttpUrl buildUrl(String endpoint, QueryParameter... queryParameters) {
         HttpUrl.Builder urlBuilder = HttpUrl.parse(server + endpoint).newBuilder();
         for (QueryParameter queryParameter : queryParameters) {
             urlBuilder = urlBuilder.addQueryParameter(queryParameter.key, queryParameter.value);
         }
-        return request(new Request.Builder().url(urlBuilder.build()));
+        return urlBuilder.build();
+    }
+
+    public ResponseBody get(String endpoint, QueryParameter... queryParameters) throws IOException, RestException {
+        HttpUrl url = buildUrl(endpoint, queryParameters);
+        return request(new Request.Builder().url(url));
     }
 
     public ResponseBody post(String endpoint, Object object) throws IOException, RestException {

@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.LanguageInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Language {
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // Language data
         public LanguageInfo[] records;
         // Information on navigation

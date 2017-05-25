@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.LocationInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Location {
-    static
-    public class ListParameters {
+    public static class ListParameters implements HttpModel {
         // Sorts results by the specified property. The default value is 'City'
         public String orderBy;
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.
@@ -44,8 +44,7 @@ public class Location {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of locations
         public LocationInfo[] records;
         // Information on navigation

@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.*;
 
 public class AnsweringRule {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Specifies if the rule is active or inactive. The default value is 'True'
         public Boolean enabled;
         // Type of an answering rule, the supported value is 'Custom'
@@ -77,8 +77,7 @@ public class AnsweringRule {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // Canonical URI of an answering rule resource
         public String uri;
         // List of answering rules
@@ -109,8 +108,7 @@ public class AnsweringRule {
         }
     }
 
-    static
-    public class PutParameters {
+    public static class PutParameters implements HttpModel {
         // Specifies if the answering rule is active or not
         public Boolean enabled;
         // Custom name of an answering rule. The maximum number of characters is 64

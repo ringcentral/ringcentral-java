@@ -87,12 +87,14 @@ All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/
 
 Please refer to [rc-codegen](https://github.com/tylerlong/rc-codegen) project.
 
+The generated code is formatted by IntelliJ IDEA.
+
 
 ### Todo
 
 - Investigate async
     - http://www.jianshu.com/p/1873287eed87
 - Publish this libraries to mavenCenter and jCenter
-- Support query parameters
 - Rewrite in Kotlin
 - Url builder
+- Support query parameters for generics HTTP methods

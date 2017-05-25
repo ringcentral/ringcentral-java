@@ -1,11 +1,11 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.GlipNavigationInfo;
 import com.ringcentral.definitions.GlipPostInfo;
 
 public class Posts {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Internal identifier of a group to send post to
         public String groupId;
         // Text of a post, the maximum is 10000 characters
@@ -22,8 +22,7 @@ public class Posts {
         }
     }
 
-    static
-    public class ListParameters {
+    public static class ListParameters implements HttpModel {
         // Identifier of a group to filter posts
         public String groupId;
         // Token of a page to be returned, see Glip Navigation Info
@@ -47,8 +46,7 @@ public class Posts {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of posts
         public GlipPostInfo[] records;
         // Information on navigation

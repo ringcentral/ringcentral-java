@@ -1,13 +1,13 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.MeetingInfo;
 import com.ringcentral.definitions.MeetingScheduleInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Meeting {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Topic of a meeting
         public String topic;
         // Type of a meeting. 'Instant' - meeting that is instantly started as soon as the host creates it; 'Scheduled' - common scheduled meeting; 'Recurring' - a recurring meeting. If the specified meeting type is 'Scheduled' then schedule property is mandatory for request
@@ -66,8 +66,7 @@ public class Meeting {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // Canonical URI of meetings resource
         public String uri;
         // List of extension meetings
@@ -98,8 +97,7 @@ public class Meeting {
         }
     }
 
-    static
-    public class PutParameters {
+    public static class PutParameters implements HttpModel {
         // Topic of a meeting
         public String topic;
         // Type of a meeting. 'Instant' - meeting that is instantly started as soon as the host creates it; 'Scheduled' - common scheduled meeting; 'Recurring' - a recurring meeting. If the specified meeting type is 'Scheduled' then schedule property is mandatory for request

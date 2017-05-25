@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.CustomGreetingInfo_AnsweringRuleInfo;
 
 public class Greeting {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Type of a greeting, specifying the case when the greeting is played. See also Greeting Types
         public String type;
         // Information on an answering rule that the greeting is applied to

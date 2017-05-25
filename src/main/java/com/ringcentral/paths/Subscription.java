@@ -1,11 +1,11 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.SubscriptionInfo;
 import com.ringcentral.definitions.Subscription_Request_DeliveryMode;
 
 public class Subscription {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Mandatory. Collection of URIs to API resources (see Event Types for details). For APNS transport type only message event filter is available
         public String[] eventFilters;
         // Notification delivery settings
@@ -22,8 +22,7 @@ public class Subscription {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // Canonical URI of a subscription resource
         public String uri;
         // List of subscriptions for the current user and application
@@ -40,8 +39,7 @@ public class Subscription {
         }
     }
 
-    static
-    public class PutParameters {
+    public static class PutParameters implements HttpModel {
         // Collection of URIs to API resources (see Event Types). Mandatory field
         public String[] eventFilters;
 

@@ -26,22 +26,26 @@ public abstract class HTTPClient {
         return request(new Request.Builder().url(url));
     }
 
-    public ResponseBody post(String endpoint, Object object) throws IOException, RestException {
+    public ResponseBody post(String endpoint, HttpModel object, QueryParameter... queryParameters) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
-        return request(new Request.Builder().url(server + endpoint).post(body));
+        HttpUrl url = buildUrl(endpoint, queryParameters);
+        return request(new Request.Builder().url(url).post(body));
     }
 
-    public ResponseBody post(String endpoint, RequestBody RequestBody) throws IOException, RestException {
-        return request(new Request.Builder().url(server + endpoint).post(RequestBody));
+    public ResponseBody post(String endpoint, RequestBody RequestBody, QueryParameter... queryParameters) throws IOException, RestException {
+        HttpUrl url = buildUrl(endpoint, queryParameters);
+        return request(new Request.Builder().url(url).post(RequestBody));
     }
 
-    public ResponseBody put(String endpoint, Object object) throws IOException, RestException {
+    public ResponseBody put(String endpoint, HttpModel object, QueryParameter... queryParameters) throws IOException, RestException {
         RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
-        return request(new Request.Builder().url(server + endpoint).put(body));
+        HttpUrl url = buildUrl(endpoint, queryParameters);
+        return request(new Request.Builder().url(url).put(body));
     }
 
-    public ResponseBody delete(String endpoint) throws IOException, RestException {
-        return request(new Request.Builder().url(server + endpoint).delete());
+    public ResponseBody delete(String endpoint, QueryParameter... queryParameters) throws IOException, RestException {
+        HttpUrl url = buildUrl(endpoint, queryParameters);
+        return request(new Request.Builder().url(url).delete());
     }
 
     public ResponseBody postBinary(String endpoint, String name, String fileName, String mediaType, byte[] fileContent) throws IOException, RestException {
@@ -59,11 +63,11 @@ public abstract class HTTPClient {
         return JSON.parseObject(post(endpoint, formBody).string(), type);
     }
 
-    public <T> T post(String endpoint, Object object, Type type) throws IOException, RestException {
+    public <T> T post(String endpoint, HttpModel object, Type type) throws IOException, RestException {
         return JSON.parseObject(post(endpoint, object).string(), type);
     }
 
-    public <T> T put(String endpoint, Object object, Type type) throws IOException, RestException {
+    public <T> T put(String endpoint, HttpModel object, Type type) throws IOException, RestException {
         return JSON.parseObject(put(endpoint, object).string(), type);
     }
 

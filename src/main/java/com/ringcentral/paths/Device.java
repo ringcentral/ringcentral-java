@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.DeviceInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Device {
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of extension records
         public DeviceInfo[] records;
         // Information on navigation

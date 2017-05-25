@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.TimezoneInfo;
 
 public class Timezone {
-    static
-    public class ListParameters {
+    public static class ListParameters implements HttpModel {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public String page;
         // Indicates the page size (number of items). If not specified, the value is '100' by default
@@ -23,8 +23,7 @@ public class Timezone {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of timezones
         public TimezoneInfo[] records;
         // Information on navigation

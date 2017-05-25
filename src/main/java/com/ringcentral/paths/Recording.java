@@ -1,8 +1,9 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
+
 public class Recording {
-    static
-    public class GetResponse {
+    public static class GetResponse implements HttpModel {
         // Internal identifier of the call recording
         public String id;
         // Link to the call recording binary content

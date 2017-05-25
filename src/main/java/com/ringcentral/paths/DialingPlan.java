@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.DialingPlanCountryInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class DialingPlan {
-    static
-    public class ListParameters {
+    public static class ListParameters implements HttpModel {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public Long page;
         // Indicates the page size (number of items). If not specified, the value is '100' by default
@@ -23,8 +23,7 @@ public class DialingPlan {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of countries which can be selected for a dialing plan
         public DialingPlanCountryInfo[] records;
         // Information on paging

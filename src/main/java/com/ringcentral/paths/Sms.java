@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.CallerInfo;
 
 public class Sms {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Sender of an SMS message. The phoneNumber property must be filled to correspond to one of the account phone numbers which is allowed to send SMS
         public CallerInfo from;
         // Receiver of an SMS message. The phoneNumber property must be filled

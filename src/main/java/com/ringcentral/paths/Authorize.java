@@ -1,8 +1,9 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
+
 public class Authorize {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Must be set to code
         public String response_type;
         // Required. Enter your application key (Production or Sandbox) here
@@ -33,8 +34,7 @@ public class Authorize {
         }
     }
 
-    static
-    public class PostResponse {
+    public static class PostResponse implements HttpModel {
         // The authorization code returned for your application
         public String code;
         // The remaining lifetime of the authorization code

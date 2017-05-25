@@ -1,8 +1,9 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
+
 public class BulkAssign {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // List of users to be added to the team
         public String[] addedPersonIds;
         // List of user email addresses to be added to the team (i.e. as guests)

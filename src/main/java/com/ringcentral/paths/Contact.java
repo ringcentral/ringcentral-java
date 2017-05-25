@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.PersonalContactInfo;
 
 public class Contact {
-    static
-    public class ListParameters {
+    public static class ListParameters implements HttpModel {
         // Phone number in E.164 (11-digits) format with or without plus '+'. Multiple values are supported
         public String phoneNumber;
         // If specified, only contacts whose First name or Last name start with the mentioned substring are returned. Case-insensitive
@@ -44,8 +44,7 @@ public class Contact {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of personal contacts from the extension address book
         public PersonalContactInfo[] records;
         // Information on navigation

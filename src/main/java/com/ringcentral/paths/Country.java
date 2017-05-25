@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.FullCountryInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Country {
-    static
-    public class ListParameters {
+    public static class ListParameters implements HttpModel {
         // Specifies whether login with the phone numbers of this country is enabled or not
         public Boolean loginAllowed;
         // Specifies if RingCentral sells phone numbers of this country
@@ -37,8 +37,7 @@ public class Country {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of countries with the country data
         public FullCountryInfo[] records;
         // Information on navigation

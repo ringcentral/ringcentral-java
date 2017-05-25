@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.AttachmentInfo;
 
 public class CustomData {
-    static
-    public class PutParameters {
+    public static class PutParameters implements HttpModel {
         // Custom data access key. Optional. If specified, must match the custom key in the URL
         public String id;
         // Description of custom data. Mandatory for create, if there is no attachment specified. Maximum length is limited to 256 symbols
@@ -21,8 +21,7 @@ public class CustomData {
         }
     }
 
-    static
-    public class PutResponse {
+    public static class PutResponse implements HttpModel {
         // Custom data access key
         public String id;
         // Link to the custom data

@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.HttpModel;
 import com.ringcentral.definitions.ForwardingNumberInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class ForwardingNumber {
-    static
-    public class PostParameters {
+    public static class PostParameters implements HttpModel {
         // Forwarding/Call flip phone number
         public String phoneNumber;
         // Forwarding/Call flip number title
@@ -23,8 +23,7 @@ public class ForwardingNumber {
         }
     }
 
-    static
-    public class ListParameters {
+    public static class ListParameters implements HttpModel {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public Long page;
         // Indicates the page size (number of items). If not specified, the value is '100' by default
@@ -41,8 +40,7 @@ public class ForwardingNumber {
         }
     }
 
-    static
-    public class ListResponse {
+    public static class ListResponse implements HttpModel {
         // List of forwarding phone numbers
         public ForwardingNumberInfo[] records;
         // Information on navigation

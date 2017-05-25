@@ -85,7 +85,7 @@ edit src/test/resources/.env
 
 All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/java/com/ringcentral/paths/` are auto-generated.
 
-
+Please refer to [rc-codegen](https://github.com/tylerlong/rc-codegen) project.
 
 
 ### Todo
@@ -95,4 +95,3 @@ All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/
 - Publish this libraries to mavenCenter and jCenter
 - Support query parameters
 - Rewrite in Kotlin
-- Update swagger spec to support Glip

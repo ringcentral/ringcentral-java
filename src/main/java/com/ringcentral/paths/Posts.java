@@ -5,6 +5,24 @@ import com.ringcentral.definitions.GlipPostInfo;
 
 public class Posts {
     static
+    public class PostParameters {
+        // Internal identifier of a group to send post to
+        public String groupId;
+        // Text of a post, the maximum is 10000 characters
+        public String text;
+
+        public PostParameters groupId(String groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        public PostParameters text(String text) {
+            this.text = text;
+            return this;
+        }
+    }
+
+    static
     public class ListParameters {
         // Identifier of a group to filter posts
         public String groupId;

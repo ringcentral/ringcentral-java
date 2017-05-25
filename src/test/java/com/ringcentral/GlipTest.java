@@ -2,6 +2,7 @@ package com.ringcentral;
 
 import com.alibaba.fastjson.JSON;
 import com.ringcentral.definitions.GlipNotification;
+import com.ringcentral.paths.Posts;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
@@ -16,8 +17,9 @@ import static org.mockito.Mockito.verify;
 
 public class GlipTest extends BaseTest {
     private String sendMessage() throws IOException, RestException {
-        return restClient.post("/restapi/v1.0/glip/posts",
-            new com.ringcentral.paths.glip.post.PostParameters(config.get("glip_group"), "hello world")).string();
+        Posts.PostParameters postParameters = new Posts.PostParameters();
+        postParameters = postParameters.groupId(config.get("glip_group")).text("hello world");
+        return restClient.post("/restapi/v1.0/glip/posts", postParameters).string();
     }
 
     @Test

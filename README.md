@@ -95,3 +95,4 @@ Please refer to [rc-codegen](https://github.com/tylerlong/rc-codegen) project.
 - Publish this libraries to mavenCenter and jCenter
 - Support query parameters
 - Rewrite in Kotlin
+- Url builder

@@ -7,14 +7,17 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 
 public abstract class HTTPClient {
-
     private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
     protected String server;
 
     public abstract ResponseBody request(Request.Builder builder) throws IOException, RestException;
 
-    public ResponseBody get(String endpoint) throws IOException, RestException {
-        return request(new Request.Builder().url(server + endpoint));
+    public ResponseBody get(String endpoint, String[]... queryParameters) throws IOException, RestException {
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(server + endpoint).newBuilder();
+        for (String[] queryParameter : queryParameters) {
+            urlBuilder = urlBuilder.addQueryParameter(queryParameter[0], queryParameter[1]);
+        }
+        return request(new Request.Builder().url(urlBuilder.build()));
     }
 
     public ResponseBody post(String endpoint, Object object) throws IOException, RestException {
@@ -42,8 +45,8 @@ public abstract class HTTPClient {
         return request(new Request.Builder().url(server + endpoint).post(requestBody));
     }
 
-    public <T> T get(String endpoint, Type type) throws IOException, RestException {
-        return JSON.parseObject(get(endpoint).string(), type);
+    public <T> T get(String endpoint, Type type, String[]... queryParameters) throws IOException, RestException {
+        return JSON.parseObject(get(endpoint, queryParameters).string(), type);
     }
 
     public <T> T post(String endpoint, FormBody formBody, Type type) throws IOException, RestException {

@@ -14,17 +14,17 @@ restClient.authorize(username, extension, password);
 
 ### Send sms
 
-[Send sms](src/test/java/com/ringcentral/SmsTest.java)
+[Example](src/test/java/com/ringcentral/SmsTest.java)
 
 
 ### Glip related
 
-[Examples from test cases](src/test/java/com/ringcentral/GlipTest.java)
+[Example](src/test/java/com/ringcentral/GlipTest.java)
 
 
 ### Specify query parameters
 
-[Examples from test cases](src/test/java/com/ringcentral/QueryParameterTest.java)
+[Example](src/test/java/com/ringcentral/QueryParameterTest.java)
 
 
 ### Subscription & notification
@@ -42,17 +42,17 @@ Subscription subscription = restClient.subscription(
 subscription.subscribe();
 ```
 
-[Examples from test cases](src/test/java/com/ringcentral/SubscriptionTest.java)
+[Example](src/test/java/com/ringcentral/SubscriptionTest.java)
 
 
 ### Send fax
 
-[Send fax](src/test/java/com/ringcentral/FaxTest.java)
+[Example](src/test/java/com/ringcentral/FaxTest.java)
 
 
 ### Upload & Download binary files
 
-[Examples from test cases](src/test/java/com/ringcentral/BinaryTest.java)
+[Example](src/test/java/com/ringcentral/BinaryTest.java)
 
 
 ### Async

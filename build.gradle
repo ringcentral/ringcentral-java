@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'com.ringcentral'
-version '0.1.0'
+version '0.2.0'
 
 repositories {
     jcenter()
@@ -46,10 +46,10 @@ bintray {
         licenses = ['MIT']
         vcsUrl = 'https://github.com/tylerlong/ringcentral-java.git'
         version {
-            name = '1.0-Beta'
-            desc = 'RingCentral Java SDK 1.0 beta'
+            name = '0.2.0'
+            desc = 'RingCentral Java SDK 0.2.0'
             released = new Date()
-            vcsTag = '0.1.0'
+            vcsTag = '0.2.0'
         }
     }
 }

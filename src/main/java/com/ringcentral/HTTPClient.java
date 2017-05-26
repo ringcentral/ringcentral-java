@@ -32,9 +32,9 @@ public abstract class HTTPClient {
         return request(new Request.Builder().url(url).post(body));
     }
 
-    public ResponseBody post(String endpoint, RequestBody RequestBody, QueryParameter... queryParameters) throws IOException, RestException {
+    public ResponseBody post(String endpoint, RequestBody requestBody, QueryParameter... queryParameters) throws IOException, RestException {
         HttpUrl url = buildUrl(endpoint, queryParameters);
-        return request(new Request.Builder().url(url).post(RequestBody));
+        return request(new Request.Builder().url(url).post(requestBody));
     }
 
     public ResponseBody put(String endpoint, HttpModel object, QueryParameter... queryParameters) throws IOException, RestException {
@@ -59,16 +59,16 @@ public abstract class HTTPClient {
         return JSON.parseObject(get(endpoint, queryParameters).string(), type);
     }
 
-    public <T> T post(String endpoint, FormBody formBody, Type type) throws IOException, RestException {
-        return JSON.parseObject(post(endpoint, formBody).string(), type);
+    public <T> T post(String endpoint, FormBody formBody, Type type, QueryParameter... queryParameters) throws IOException, RestException {
+        return JSON.parseObject(post(endpoint, formBody, queryParameters).string(), type);
     }
 
-    public <T> T post(String endpoint, HttpModel object, Type type) throws IOException, RestException {
-        return JSON.parseObject(post(endpoint, object).string(), type);
+    public <T> T post(String endpoint, HttpModel object, Type type, QueryParameter... queryParameters) throws IOException, RestException {
+        return JSON.parseObject(post(endpoint, object, queryParameters).string(), type);
     }
 
-    public <T> T put(String endpoint, HttpModel object, Type type) throws IOException, RestException {
-        return JSON.parseObject(put(endpoint, object).string(), type);
+    public <T> T put(String endpoint, HttpModel object, Type type, QueryParameter... queryParameters) throws IOException, RestException {
+        return JSON.parseObject(put(endpoint, object, queryParameters).string(), type);
     }
 
     public static final class QueryParameter {

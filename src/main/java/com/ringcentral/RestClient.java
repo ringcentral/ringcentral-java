@@ -55,7 +55,8 @@ public class RestClient extends HTTPClient {
             .add("password", password)
             .build();
         setToken(null);
-        setToken(post("/restapi/oauth/token", formBody, TokenInfo.class));
+        TokenInfo tokenInfo = post("/restapi/oauth/token", formBody, TokenInfo.class);
+        setToken(tokenInfo);
     }
 
     public void authorize(String auth_code, String redirectUri) throws IOException, RestException {
@@ -65,7 +66,8 @@ public class RestClient extends HTTPClient {
             .add("redirect_uri", redirectUri)
             .build();
         setToken(null);
-        setToken(post("/restapi/oauth/token", formBody, TokenInfo.class));
+        TokenInfo tokenInfo = post("/restapi/oauth/token", formBody, TokenInfo.class);
+        setToken(tokenInfo);
     }
 
     public void refresh() {
@@ -78,7 +80,8 @@ public class RestClient extends HTTPClient {
             .build();
         setToken(null);
         try {
-            setToken(post("/restapi/oauth/token", formBody, TokenInfo.class));
+            TokenInfo tokenInfo = post("/restapi/oauth/token", formBody, TokenInfo.class);
+            setToken(tokenInfo);
         } catch (IOException | RestException e) {
             e.printStackTrace();
         }

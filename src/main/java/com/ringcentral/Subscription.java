@@ -96,7 +96,8 @@ class Subscription {
     }
 
     public void subscribe() throws IOException, RestException {
-        setSubscription(restClient.post("/restapi/v1.0/subscription", getPostParameters(), SubscriptionInfo.class));
+        SubscriptionInfo subscriptionInfo = restClient.post("/restapi/v1.0/subscription", getPostParameters(), SubscriptionInfo.class);
+        setSubscription(subscriptionInfo);
         PNConfiguration pnConfiguration = new PNConfiguration();
         pnConfiguration.setSubscribeKey(getSubscription().deliveryMode.subscriberKey);
         pubnub = new PubNub(pnConfiguration);
@@ -109,7 +110,8 @@ class Subscription {
             return;
         }
         try {
-            setSubscription(restClient.put("/restapi/v1.0/subscription/" + getSubscription().id, getPostParameters(), SubscriptionInfo.class));
+            SubscriptionInfo subscriptionInfo = restClient.put("/restapi/v1.0/subscription/" + getSubscription().id, getPostParameters(), SubscriptionInfo.class);
+            setSubscription(subscriptionInfo);
         } catch (IOException | RestException e) {
             e.printStackTrace();
         }

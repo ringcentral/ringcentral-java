@@ -97,4 +97,3 @@ The generated code is formatted by IntelliJ IDEA.
 - Publish this libraries to mavenCenter and jCenter
 - Rewrite in Kotlin
 - Url builder
-- Support query parameters for generics HTTP methods

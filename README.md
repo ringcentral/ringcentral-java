@@ -17,38 +17,27 @@ restClient.authorize(username, extension, password);
 [Send sms](src/test/java/com/ringcentral/SmsTest.java)
 
 
-### Send message to Glip
+### Glip related
 
-```Java
-restClient.post("/restapi/v1.0/glip/posts", new com.ringcentral.paths.glip.post.PostParameters(
-        groupId,
-        "hello world"));
-```
+[Examples from test cases](src/test/java/com/ringcentral/GlipTest.java)
 
 
 ### Subscription & notification
 
-#### Subscribe to Glip messages
-
 ```java
 Subscription subscription = restClient.subscription(
-    new String[]{"/restapi/v1.0/glip/posts"},
+    new String[]{
+        "/restapi/v1.0/glip/posts",
+        "/restapi/v1.0/account/~/extension/~/message-store",
+        // more event filters here
+    },
     (message) -> {
-        System.out.println(message);
+        // do something with message
     });
 subscription.subscribe();
 ```
 
-#### Subscribe to message store
-
-```java
-Subscription subscription = restClient.subscription(
-                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-                (message) -> {
-                    // do something with message
-                });
-subscription.subscribe();
-```
+[Examples from test cases](src/test/java/com/ringcentral/SubscriptionTest.java)
 
 
 ### Send fax

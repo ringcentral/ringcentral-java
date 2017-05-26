@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'jacoco'
     id 'com.github.kt3k.coveralls' version '2.8.1'
+    id 'com.jfrog.bintray' version '1.7.3'
 }
 
 group 'com.ringcentral'
@@ -31,5 +32,24 @@ jacocoTestReport {
                 'com/ringcentral/paths/**'
             ])
         })
+    }
+}
+
+bintray {
+    user = property('user')
+    key = property('key')
+    configurations = ['archives']
+    pkg {
+        repo = 'generic'
+        name = 'ringcentral'
+        userOrg = user
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/tylerlong/ringcentral-java.git'
+        version {
+            name = '1.0-Beta'
+            desc = 'RingCentral Java SDK 1.0 beta'
+            released = new Date()
+            vcsTag = '0.1.0'
+        }
     }
 }

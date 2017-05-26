@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tylerlong/ringcentral-java.svg?branch=master)](https://travis-ci.org/tylerlong/ringcentral-java)
 [![Coverage Status](https://coveralls.io/repos/github/tylerlong/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/tylerlong/ringcentral-java?branch=master)
+[ ![Download](https://api.bintray.com/packages/tylerlong/generic/ringcentral/images/download.svg?version=1.0-Beta) ](https://bintray.com/tylerlong/generic/ringcentral/1.0-Beta/link)
 
 
 ## Usage
@@ -94,6 +95,11 @@ All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/
 Please refer to [rc-codegen](https://github.com/tylerlong/rc-codegen) project.
 
 The generated code is formatted by IntelliJ IDEA.
+
+
+### Release new a new version
+
+    gradle -Puser=bintray_user -Pkey=bintray_key bintrayUpload
 
 
 ### Todo

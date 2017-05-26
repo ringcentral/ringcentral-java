@@ -22,6 +22,11 @@ restClient.authorize(username, extension, password);
 [Examples from test cases](src/test/java/com/ringcentral/GlipTest.java)
 
 
+### Specify query parameters
+
+[Examples from test cases](src/test/java/com/ringcentral/QueryParameterTest.java)
+
+
 ### Subscription & notification
 
 ```java
@@ -43,6 +48,11 @@ subscription.subscribe();
 ### Send fax
 
 [Send fax](src/test/java/com/ringcentral/FaxTest.java)
+
+
+### Upload & Download binary files
+
+[Examples from test cases](src/test/java/com/ringcentral/BinaryTest.java)
 
 
 ---

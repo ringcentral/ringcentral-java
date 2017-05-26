@@ -55,6 +55,13 @@ subscription.subscribe();
 [Examples from test cases](src/test/java/com/ringcentral/BinaryTest.java)
 
 
+### Async
+
+You can simply start a new thread.
+
+[Example](src/test/java/com/ringcentral/AsyncTest.java)
+
+
 ---
 
 ---
@@ -91,8 +98,6 @@ The generated code is formatted by IntelliJ IDEA.
 
 ### Todo
 
-- Investigate async
-    - http://www.jianshu.com/p/1873287eed87
 - Publish this libraries to mavenCenter and jCenter
 - Rewrite in Kotlin
 - Url builder

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tylerlong/ringcentral-java.svg?branch=master)](https://travis-ci.org/tylerlong/ringcentral-java)
 [![Coverage Status](https://coveralls.io/repos/github/tylerlong/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/tylerlong/ringcentral-java?branch=master)
-[![Download](https://api.bintray.com/packages/tylerlong/generic/ringcentral/images/download.svg) ](https://bintray.com/tylerlong/generic/ringcentral/_latestVersion)
+[![Download](https://api.bintray.com/packages/tylerlong/maven/ringcentral/images/download.svg)](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion)
 
 
 ## Usage
@@ -99,9 +99,9 @@ The generated code is formatted by IntelliJ IDEA.
 
 ### Release new a new version
 
-Update version numbers in pom.xml and build.gradle
+Update version numbers in `build.gradle`.
 
-    gradle -Puser=bintray_user -Pkey=bintray_key bintrayUpload
+    ./gradlew -PbintrayUser=bintrayUser -PbintrayApiKey=bintrayApiKey bintrayUpload
 
 
 ### Todo

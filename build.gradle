@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'com.ringcentral'
-version '0.2.0'
+version '0.2.1'
 
 repositories {
     jcenter()
@@ -36,20 +36,20 @@ jacocoTestReport {
 }
 
 bintray {
-    user = property('user')
-    key = property('key')
+    user = project.hasProperty('user') ? property('user') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('user') ? property('user') : System.getenv('BINTRAY_API_KEY')
     configurations = ['archives']
     pkg {
-        repo = 'generic'
+        repo = 'maven'
         name = 'ringcentral'
         userOrg = user
         licenses = ['MIT']
         vcsUrl = 'https://github.com/tylerlong/ringcentral-java.git'
         version {
-            name = '0.2.0'
-            desc = 'RingCentral Java SDK 0.2.0'
+            name = '0.2.1'
+            desc = 'RingCentral Java SDK 0.2.1'
             released = new Date()
-            vcsTag = '0.2.0'
+            vcsTag = '0.2.1'
         }
     }
 }

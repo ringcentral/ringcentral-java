@@ -99,6 +99,8 @@ The generated code is formatted by IntelliJ IDEA.
 
 ### Release new a new version
 
+Update version numbers in pom.xml and build.gradle
+
     gradle -Puser=bintray_user -Pkey=bintray_key bintrayUpload
 
 

@@ -5,6 +5,20 @@
 [![Download](https://api.bintray.com/packages/tylerlong/maven/ringcentral/images/download.svg)](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion)
 
 
+## Installation
+
+Please click the download badge above to download the latest jar and save it as `./libs/ringcentral.jar`.
+
+If you are using gradle:
+
+```groovy
+dependencies {
+    ...
+    compile files('libs/ringcentral.jar')
+}
+```
+
+
 ## Usage
 
 ```java

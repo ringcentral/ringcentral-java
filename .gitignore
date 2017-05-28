@@ -5,3 +5,6 @@ out/
 
 .env
 .secret
+.settings/
+.project
+.classpath

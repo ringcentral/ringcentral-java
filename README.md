@@ -7,6 +7,32 @@
 
 ## Installation
 
+### Use the library hosted on jcenter
+
+#### Gradle
+
+```groovy
+dependencies {
+    ...
+    compile 'com.ringcentral:ringcentral:0.2.4'
+}
+```
+
+
+#### Maven
+
+```xml
+<dependency>
+  <groupId>com.ringcentral</groupId>
+  <artifactId>ringcentral</artifactId>
+  <version>0.2.4</version>
+  <type>pom</type>
+</dependency>
+```
+
+
+### Download the jar to local
+
 Please click the download badge above to download the latest jar and save it as `./libs/ringcentral.jar`.
 
 If you are using gradle:

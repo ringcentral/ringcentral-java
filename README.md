@@ -7,41 +7,35 @@
 
 ## Installation
 
-### Use the library hosted on jcenter
-
-#### Gradle
+### Gradle
 
 ```groovy
+repositories {
+  jcenter()
+}
+
 dependencies {
-    ...
-    compile 'com.ringcentral:ringcentral:0.2.4'
+  compile 'com.ringcentral:ringcentral:0.2.4'
 }
 ```
 
 
-#### Maven
+### Maven
 
 ```xml
+<repositories>
+  <repository>
+    <id>jcenter</id>
+    <url>https://jcenter.bintray.com/</url>
+  </repository>
+</repositories>
+
 <dependency>
   <groupId>com.ringcentral</groupId>
   <artifactId>ringcentral</artifactId>
   <version>0.2.4</version>
   <type>pom</type>
 </dependency>
-```
-
-
-### Download the jar to local
-
-Please click the download badge above to download the latest jar and save it as `./libs/ringcentral.jar`.
-
-If you are using gradle:
-
-```groovy
-dependencies {
-    ...
-    compile files('libs/ringcentral.jar')
-}
 ```
 
 
@@ -146,6 +140,5 @@ Update version numbers in `build.gradle`.
 
 ### Todo
 
-- Publish this libraries to mavenCenter and jCenter
 - Rewrite in Kotlin
 - Url builder

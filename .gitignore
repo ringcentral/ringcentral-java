@@ -8,3 +8,5 @@ out/
 .settings/
 .project
 .classpath
+*.class
+bin/

@@ -97,6 +97,11 @@ You can simply start a new thread.
 [Example](src/test/java/com/ringcentral/AsyncTest.java)
 
 
+## More examples
+
+Please check the [test cases](src/test/java/com/ringcentral).
+
+
 ---
 
 ---
@@ -131,7 +136,7 @@ Please refer to [rc-codegen](https://github.com/tylerlong/rc-codegen) project.
 The generated code is formatted by IntelliJ IDEA.
 
 
-### Release new a new version
+### Release a new version
 
 Update version numbers in `build.gradle`.
 

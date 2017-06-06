@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.CallerInfo;
 
 public class CompanyPager {
-    public static class PostParameters implements HttpModel {
+    public static class PostParameters implements RequestParameters {
         // Sender of a pager message. The extensionNumber property must be filled
         public CallerInfo from;
         // Internal identifier of a message this message replies to

@@ -1,9 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 
 public class Revoke {
-    public static class PostParameters implements HttpModel {
+    public static class PostParameters implements RequestParameters {
         // Active access or refresh token to be revoked
         public String token;
 

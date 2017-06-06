@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.DeviceInfo;
 
 public class Order {
-    public static class PostParameters implements HttpModel {
+    public static class PostParameters implements RequestParameters {
         // List of devices to order
         public DeviceInfo[] devices;
 
@@ -14,7 +14,7 @@ public class Order {
         }
     }
 
-    public static class PostResponse implements HttpModel {
+    public static class PostResponse implements RequestParameters {
         // List of the ordered devices
         public DeviceInfo[] devices;
 
@@ -24,7 +24,7 @@ public class Order {
         }
     }
 
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Identifier of a device
         public String id;
         // Canonical URI of an order resource

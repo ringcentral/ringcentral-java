@@ -1,11 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.ParsePhoneNumber_CountryInfo;
 import com.ringcentral.definitions.ParsePhoneNumber_PhoneNumberInfo;
 
 public class Parse {
-    public static class PostParameters implements HttpModel {
+    public static class PostParameters implements RequestParameters {
         // Internal identifier of a home country. The default value is ISO code (ISO 3166) of the user's home country or brand country, if the user is undefined
         public String homeCountry;
         // The default value is "False". If "True", the numbers that are closer to the home country are given higher priority
@@ -22,7 +22,7 @@ public class Parse {
         }
     }
 
-    public static class PostResponse implements HttpModel {
+    public static class PostResponse implements RequestParameters {
         // Canonical URI of a resource
         public String uri;
         // Information on a user home country

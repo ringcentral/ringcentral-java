@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.StateInfo;
 
 public class State {
-    public static class ListParameters implements HttpModel {
+    public static class ListParameters implements RequestParameters {
         // Internal identifier of a country
         public Long countryId;
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.
@@ -37,7 +37,7 @@ public class State {
         }
     }
 
-    public static class ListResponse implements HttpModel {
+    public static class ListResponse implements RequestParameters {
         // List of states
         public StateInfo[] records;
         // Information on navigation

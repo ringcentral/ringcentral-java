@@ -1,9 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 
 public class Recording {
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Internal identifier of the call recording
         public String id;
         // Link to the call recording binary content

@@ -1,11 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.ReservePhoneNumber_Request_ReserveRecord;
 import com.ringcentral.definitions.ReservePhoneNumber_Response_ReserveRecord;
 
 public class Reserve {
-    public static class PostParameters implements HttpModel {
+    public static class PostParameters implements RequestParameters {
         // Phone numbers to be reserved/un-reserved
         public ReservePhoneNumber_Request_ReserveRecord[] records;
 
@@ -15,7 +15,7 @@ public class Reserve {
         }
     }
 
-    public static class PostResponse implements HttpModel {
+    public static class PostResponse implements RequestParameters {
         // Phone numbers to be reserved/un-reserved
         public ReservePhoneNumber_Response_ReserveRecord[] records;
 

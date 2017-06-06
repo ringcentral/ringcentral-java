@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.PermissionDetailsInfo;
 
 public class Check {
-    public static class GetParameters implements HttpModel {
+    public static class GetParameters implements RequestParameters {
         // Permission to check
         public String permissionId;
         // Optional. Internal identifier of an extension for which user permissions are to be checked. The default value is the currently logged-in extension
@@ -21,7 +21,7 @@ public class Check {
         }
     }
 
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Canonical URI of a permission resource
         public String uri;
         // Specifies if check result is successful or not

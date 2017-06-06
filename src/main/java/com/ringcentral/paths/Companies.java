@@ -1,9 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 
 public class Companies {
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Internal identifier of an RC account/Glip company, or tilde (~) to indicate a company the current user belongs to
         public String id;
         // Name of a company

@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.MessageInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class MessageStore {
-    public static class ListParameters implements HttpModel {
+    public static class ListParameters implements RequestParameters {
         // Specifies the availability status for the resulting messages. Default value is 'Alive'. Multiple values are accepted
         public String availability;
         // Specifies the conversation identifier for the resulting messages
@@ -86,7 +86,7 @@ public class MessageStore {
         }
     }
 
-    public static class ListResponse implements HttpModel {
+    public static class ListResponse implements RequestParameters {
         // List of records with message information
         public MessageInfo[] records;
         // Information on navigation
@@ -110,7 +110,7 @@ public class MessageStore {
         }
     }
 
-    public static class DeleteParameters implements HttpModel {
+    public static class DeleteParameters implements RequestParameters {
         // If the value is 'True', then the message is purged immediately with all the attachments. The default value is 'False'
         public Boolean purge;
         // Internal identifier of a message thread
@@ -127,7 +127,7 @@ public class MessageStore {
         }
     }
 
-    public static class PutParameters implements HttpModel {
+    public static class PutParameters implements RequestParameters {
         // Read status of a message to be changed. Multiple values are accepted
         public String readStatus;
 

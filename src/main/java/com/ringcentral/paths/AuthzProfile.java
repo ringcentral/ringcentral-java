@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.UserPermission;
 
 public class AuthzProfile {
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Canonical URI of an authorization profile resource
         public String uri;
         // List of user permissions granted

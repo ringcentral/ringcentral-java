@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.GroupInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Group {
-    public static class ListResponse implements HttpModel {
+    public static class ListResponse implements RequestParameters {
         // List of groups
         public GroupInfo[] records;
         // Information on navigation

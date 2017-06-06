@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.BusinessHour_ScheduleInfo;
 
 public class BusinessHours {
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Canonical URI of a business-hours resource
         public String uri;
         // Schedule when an answering rule is applied

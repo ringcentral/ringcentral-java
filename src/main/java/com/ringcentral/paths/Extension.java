@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.ExtensionInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Extension {
-    public static class ListParameters implements HttpModel {
+    public static class ListParameters implements RequestParameters {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public Long page;
         // Indicates the page size (number of items). If not specified, the value is '100' by default.
@@ -37,7 +37,7 @@ public class Extension {
         }
     }
 
-    public static class ListResponse implements HttpModel {
+    public static class ListResponse implements RequestParameters {
         // List of extensions with extension information
         public ExtensionInfo[] records;
         // Information on navigation

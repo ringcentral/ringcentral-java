@@ -1,12 +1,12 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.BlockedNumberInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class BlockedNumber {
-    public static class ListResponse implements HttpModel {
+    public static class ListResponse implements RequestParameters {
         // List of blocked phone numbers
         public BlockedNumberInfo[] records;
         // Information on navigation

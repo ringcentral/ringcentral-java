@@ -1,9 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 
 public class Persons {
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Internal identifier of a user
         public String id;
         // First name of a user

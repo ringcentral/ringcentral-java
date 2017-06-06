@@ -1,10 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.BusinessAddressInfo;
 
 public class BusinessAddress {
-    public static class GetResponse implements HttpModel {
+    public static class GetResponse implements RequestParameters {
         // Canonical URI of the business address resource
         public String uri;
         // Company business name
@@ -35,7 +35,7 @@ public class BusinessAddress {
         }
     }
 
-    public static class PutParameters implements HttpModel {
+    public static class PutParameters implements RequestParameters {
         // Company business name
         public String company;
         // Company business email address
@@ -59,7 +59,7 @@ public class BusinessAddress {
         }
     }
 
-    public static class PutResponse implements HttpModel {
+    public static class PutResponse implements RequestParameters {
         // Canonical URI of the business address resource
         public String uri;
         // Company business name

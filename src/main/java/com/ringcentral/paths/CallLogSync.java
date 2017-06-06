@@ -1,11 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.HttpModel;
+import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.CallLogRecord;
 import com.ringcentral.definitions.SyncInfo;
 
 public class CallLogSync {
-    public static class ListParameters implements HttpModel {
+    public static class ListParameters implements RequestParameters {
         // Type of synchronization. 'FSync' is a default value
         public String syncType;
         // Value of syncToken property of last sync request response
@@ -43,7 +43,7 @@ public class CallLogSync {
         }
     }
 
-    public static class ListResponse implements HttpModel {
+    public static class ListResponse implements RequestParameters {
         // List of call log records with synchronization information. For ISync the total number of returned records is limited to 250; this includes both new records and the old ones, specified by the recordCount parameter
         public CallLogRecord[] records;
         // Sync type, token and time

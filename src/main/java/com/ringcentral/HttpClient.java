@@ -6,7 +6,7 @@ import okhttp3.*;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
-public abstract class HTTPClient {
+public abstract class HttpClient {
 
     private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
     protected String server;

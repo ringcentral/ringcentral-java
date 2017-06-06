@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.function.Consumer;
 
-public class RestClient extends HTTPClient {
+public class RestClient extends HttpClient {
     public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final OkHttpClient httpClient = new OkHttpClient();

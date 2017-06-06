@@ -1,12 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.RingOut_Request_CountryInfo;
 import com.ringcentral.definitions.RingOut_Request_From;
 import com.ringcentral.definitions.RingOut_Request_To;
 
 public class Ringout {
-    public static class PostParameters implements RequestParameters {
+    public static class PostParameters {
         // Phone number of the caller. This number corresponds to the 1st leg of the RingOut call. This number can be one of user's configured forwarding numbers or arbitrary number
         public RingOut_Request_From from;
         // Phone number of the called party. This number corresponds to the 2nd leg of the RingOut call

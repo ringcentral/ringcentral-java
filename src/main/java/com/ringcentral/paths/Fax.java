@@ -1,10 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.CallerInfo;
 
 public class Fax {
-    public static class PostParameters implements RequestParameters {
+    public static class PostParameters {
         // Recipient information. Phone number property is mandatory. Optional for resend fax request
         public CallerInfo[] to;
         // Fax resolution

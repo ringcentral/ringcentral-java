@@ -1,12 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.CallLogRecord;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class ActiveCalls {
-    public static class ListParameters implements RequestParameters {
+    public static class ListParameters {
         // The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted
         public String direction;
         // Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted
@@ -37,7 +36,7 @@ public class ActiveCalls {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // List of call log records
         public CallLogRecord[] records;
         // Information on navigation

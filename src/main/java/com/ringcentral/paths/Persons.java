@@ -1,9 +1,7 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
-
 public class Persons {
-    public static class GetResponse implements RequestParameters {
+    public static class GetResponse {
         // Internal identifier of a user
         public String id;
         // First name of a user

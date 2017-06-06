@@ -1,12 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.DeviceInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Device {
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // List of extension records
         public DeviceInfo[] records;
         // Information on navigation

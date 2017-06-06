@@ -1,9 +1,7 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
-
 public class BulkAssign {
-    public static class PostParameters implements RequestParameters {
+    public static class PostParameters {
         // List of users to be added to the team
         public String[] addedPersonIds;
         // List of user email addresses to be added to the team (i.e. as guests)

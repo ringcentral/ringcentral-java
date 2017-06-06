@@ -1,10 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.DeviceInfo;
 
 public class Order {
-    public static class PostParameters implements RequestParameters {
+    public static class PostParameters {
         // List of devices to order
         public DeviceInfo[] devices;
 
@@ -14,7 +13,7 @@ public class Order {
         }
     }
 
-    public static class PostResponse implements RequestParameters {
+    public static class PostResponse {
         // List of the ordered devices
         public DeviceInfo[] devices;
 
@@ -24,7 +23,7 @@ public class Order {
         }
     }
 
-    public static class GetResponse implements RequestParameters {
+    public static class GetResponse {
         // Identifier of a device
         public String id;
         // Canonical URI of an order resource

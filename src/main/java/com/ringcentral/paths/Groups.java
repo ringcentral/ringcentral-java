@@ -1,11 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.GlipGroupInfo;
 import com.ringcentral.definitions.GlipNavigationInfo;
 
 public class Groups {
-    public static class PostParameters implements RequestParameters {
+    public static class PostParameters {
         // Type of a group to be created. 'PrivateChat' is a group of 2 members. 'Team' is a chat of 1 and more participants, the membership can be modified in future
         public String type;
         // For 'Team' group type only. Team access level
@@ -43,7 +42,7 @@ public class Groups {
         }
     }
 
-    public static class ListParameters implements RequestParameters {
+    public static class ListParameters {
         // Type of a group. 'PrivateChat' is a group of 2 members. 'Group' is a chat of 2 and more participants, the membership cannot be changed after group creation. 'Team' is a chat of 1 and more participants, the membership can be modified in future
         public String type;
         // Token of a page to be returned, see Glip Navigation Info
@@ -67,7 +66,7 @@ public class Groups {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // List of groups/teams/private chats
         public GlipGroupInfo[] records;
         // Information on navigation

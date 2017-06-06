@@ -1,12 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.CallLogRecord;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class CallLog {
-    public static class ListParameters implements RequestParameters {
+    public static class ListParameters {
         // Extension number of a user. If specified, returns call log for a particular extension only. Cannot be specified together with the phoneNumber filter
         public String extensionNumber;
         // Phone number of a caller/call recipient. If specified, returns all calls (both incoming and outcoming) with the mentioned phone number. Cannot be specified together with the extensionNumber filter
@@ -79,7 +78,7 @@ public class CallLog {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // Canonical URI
         public String uri;
         // List of call log records
@@ -110,7 +109,7 @@ public class CallLog {
         }
     }
 
-    public static class DeleteParameters implements RequestParameters {
+    public static class DeleteParameters {
         // The end datetime for records deletion in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time
         public String dateTo;
 

@@ -1,11 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.PersonalContactInfo;
 import com.ringcentral.definitions.SyncInfo;
 
 public class AddressBookSync {
-    public static class ListParameters implements RequestParameters {
+    public static class ListParameters {
         // Type of synchronization. The default value is 'FSync'
         public String syncType;
         // Value of syncToken property of the last sync request response
@@ -36,7 +35,7 @@ public class AddressBookSync {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // List of contacts with synchronization information
         public PersonalContactInfo[] records;
         // Sync type, token and time

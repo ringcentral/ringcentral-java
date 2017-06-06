@@ -1,12 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.Department_Response_ExtensionInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Members {
-    public static class ListParameters implements RequestParameters {
+    public static class ListParameters {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public Long page;
         // Indicates the page size (number of items). If not specified, the value is '100' by default
@@ -23,7 +22,7 @@ public class Members {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // List of extensions belonging to a given department
         public Department_Response_ExtensionInfo[] records;
         // Information on navigation

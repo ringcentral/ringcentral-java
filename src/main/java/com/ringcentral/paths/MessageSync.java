@@ -1,11 +1,10 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.MessageInfo;
 import com.ringcentral.definitions.SyncInfo;
 
 public class MessageSync {
-    public static class ListParameters implements RequestParameters {
+    public static class ListParameters {
         // Conversation identifier for the resulting messages. Meaningful for SMS and Pager messages only.
         public Long conversationId;
         // The start datetime for resulting messages in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours
@@ -71,7 +70,7 @@ public class MessageSync {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // List of message records with synchronization information
         public MessageInfo[] records;
         // Sync type, token and time

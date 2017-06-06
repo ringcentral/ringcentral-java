@@ -1,12 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.LocationInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Location {
-    public static class ListParameters implements RequestParameters {
+    public static class ListParameters {
         // Sorts results by the specified property. The default value is 'City'
         public String orderBy;
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.
@@ -44,7 +43,7 @@ public class Location {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // List of locations
         public LocationInfo[] records;
         // Information on navigation

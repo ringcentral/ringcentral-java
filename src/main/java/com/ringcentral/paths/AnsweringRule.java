@@ -1,10 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.*;
 
 public class AnsweringRule {
-    public static class PostParameters implements RequestParameters {
+    public static class PostParameters {
         // Specifies if the rule is active or inactive. The default value is 'True'
         public Boolean enabled;
         // Type of an answering rule, the supported value is 'Custom'
@@ -77,7 +76,7 @@ public class AnsweringRule {
         }
     }
 
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // Canonical URI of an answering rule resource
         public String uri;
         // List of answering rules
@@ -108,7 +107,7 @@ public class AnsweringRule {
         }
     }
 
-    public static class PutParameters implements RequestParameters {
+    public static class PutParameters {
         // Specifies if the answering rule is active or not
         public Boolean enabled;
         // Custom name of an answering rule. The maximum number of characters is 64

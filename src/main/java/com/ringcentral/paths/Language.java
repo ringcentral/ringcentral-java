@@ -1,12 +1,11 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.LanguageInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Language {
-    public static class ListResponse implements RequestParameters {
+    public static class ListResponse {
         // Language data
         public LanguageInfo[] records;
         // Information on navigation

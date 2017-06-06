@@ -1,10 +1,9 @@
 package com.ringcentral.paths;
 
-import com.ringcentral.RequestParameters;
 import com.ringcentral.definitions.LookUpPhoneNumber_PhoneNumberInfo;
 
 public class Lookup {
-    public static class PostParameters implements RequestParameters {
+    public static class PostParameters {
         // Area code of the location
         public Long areaCode;
         // Two-letter country code, complying with the ISO standard
@@ -91,7 +90,7 @@ public class Lookup {
         }
     }
 
-    public static class PostResponse implements RequestParameters {
+    public static class PostResponse {
         // Canonical URI of the phone numbers resource
         public String uri;
         // List of phone numbers filtered by the specified criteria

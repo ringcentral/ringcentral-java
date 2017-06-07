@@ -66,23 +66,31 @@ String endpoint = restClient.restApi().account().extension().sms().endpoint();
 The following code snippets are also equivalent, you can choose whichever based on your preferences:
 
 ```java
-MessageInfo messageInfo = restClient.post("/restapi/v1.0/account/~/extension/~/sms", postParameters, MessageInfo.class);
+MessageInfo messageInfo = restClient.post(
+    "/restapi/v1.0/account/~/extension/~/sms",
+    postParameters, MessageInfo.class);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.post(restClient.restApi("v1.0").account("~").extension("~").sms().endpoint(), postParameters, MessageInfo.class);
+MessageInfo messageInfo = restClient.post(
+    restClient.restApi("v1.0").account("~").extension("~").sms().endpoint(),
+    postParameters, MessageInfo.class);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.post(restClient.restApi().account().extension().sms().endpoint(), postParameters, MessageInfo.class);
+MessageInfo messageInfo = restClient.post(
+    restClient.restApi().account().extension().sms().endpoint(),
+    postParameters, MessageInfo.class);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.restApi("v1.0").account("~").extension("~").sms().post(postParameters, MessageInfo.class);
+MessageInfo messageInfo = restClient.restApi("v1.0").account("~").extension("~").sms()
+    .post(postParameters, MessageInfo.class);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(postParameters, MessageInfo.class);
+MessageInfo messageInfo = restClient.restApi().account().extension().sms()
+    .post(postParameters, MessageInfo.class);
 ```
 
 
@@ -91,14 +99,16 @@ MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(
 #### Raw Response
 
 ```
-ResponseBody responseBody = restClient.restApi().account().extension().sms().post(postParameters);
+ResponseBody responseBody = restClient.restApi().account().extension().sms()
+    .post(postParameters);
 String stringBody = responseBody.string();
 ```
 
 #### Models
 
 ```java
-MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(postParameters, MessageInfo.class);
+MessageInfo messageInfo = restClient.restApi().account().extension().sms()
+    .post(postParameters, MessageInfo.class);
 ```
 
 

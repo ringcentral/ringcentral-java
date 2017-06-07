@@ -1,19 +1,16 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.PhoneNumberInfo;
 
-public class PhoneNumber {
-    private PathSegment pathSegment;
-
-    public PhoneNumber(PathSegment parent, String id) {
+public class PhoneNumber extends Path {
+    public PhoneNumber(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "phone-number", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class ListParameters {

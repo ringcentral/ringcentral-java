@@ -1,19 +1,16 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.ForwardingNumberInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
-public class ForwardingNumber {
-    private PathSegment pathSegment;
-
-    public ForwardingNumber(PathSegment parent, String id) {
+public class ForwardingNumber extends Path {
+    public ForwardingNumber(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "forwarding-number", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

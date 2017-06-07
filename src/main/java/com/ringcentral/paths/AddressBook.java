@@ -1,27 +1,24 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class AddressBook {
-    private PathSegment pathSegment;
-
-    public AddressBook(PathSegment parent, String id) {
+public class AddressBook extends Path {
+    public AddressBook(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "address-book", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Contact contact(String id) {
-        return new Contact(pathSegment, id);
+        return new Contact(restClient, pathSegment, id);
     }
 
     public Contact contact() {
-        return new Contact(pathSegment, null);
+        return new Contact(restClient, pathSegment, null);
     }
 
     public Group group() {
-        return new Group(pathSegment, null);
+        return new Group(restClient, pathSegment, null);
     }
 }

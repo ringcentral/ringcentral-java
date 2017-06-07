@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.*;
 
-public class AnsweringRule {
-    private PathSegment pathSegment;
-
-    public AnsweringRule(PathSegment parent, String id) {
+public class AnsweringRule extends Path {
+    public AnsweringRule(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "answering-rule", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

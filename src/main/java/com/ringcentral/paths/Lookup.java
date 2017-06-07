@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.LookUpPhoneNumber_PhoneNumberInfo;
 
-public class Lookup {
-    private PathSegment pathSegment;
-
-    public Lookup(PathSegment parent, String id) {
+public class Lookup extends Path {
+    public Lookup(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "lookup", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

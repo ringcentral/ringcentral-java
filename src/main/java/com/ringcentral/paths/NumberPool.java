@@ -1,23 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class NumberPool {
-    private PathSegment pathSegment;
-
-    public NumberPool(PathSegment parent, String id) {
+public class NumberPool extends Path {
+    public NumberPool(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "number-pool", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Lookup lookup() {
-        return new Lookup(pathSegment, null);
+        return new Lookup(restClient, pathSegment, null);
     }
 
     public Reserve reserve() {
-        return new Reserve(pathSegment, null);
+        return new Reserve(restClient, pathSegment, null);
     }
 }

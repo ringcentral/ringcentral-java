@@ -1,19 +1,16 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.PersonalContactInfo;
 
-public class Contact {
-    private PathSegment pathSegment;
-
-    public Contact(PathSegment parent, String id) {
+public class Contact extends Path {
+    public Contact(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "contact", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class ListParameters {

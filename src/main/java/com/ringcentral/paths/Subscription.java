@@ -1,18 +1,15 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.SubscriptionInfo;
 import com.ringcentral.definitions.Subscription_Request_DeliveryMode;
 
-public class Subscription {
-    private PathSegment pathSegment;
-
-    public Subscription(PathSegment parent, String id) {
+public class Subscription extends Path {
+    public Subscription(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "subscription", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

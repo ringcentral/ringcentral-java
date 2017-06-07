@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.AttachmentInfo;
 
-public class CustomData {
-    private PathSegment pathSegment;
-
-    public CustomData(PathSegment parent, String id) {
+public class CustomData extends Path {
+    public CustomData(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "custom-data", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PutParameters {

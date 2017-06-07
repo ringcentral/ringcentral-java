@@ -1,18 +1,15 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.ParsePhoneNumber_CountryInfo;
 import com.ringcentral.definitions.ParsePhoneNumber_PhoneNumberInfo;
 
-public class Parse {
-    private PathSegment pathSegment;
-
-    public Parse(PathSegment parent, String id) {
+public class Parse extends Path {
+    public Parse(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "parse", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

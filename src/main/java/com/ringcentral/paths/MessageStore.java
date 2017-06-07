@@ -1,27 +1,24 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.MessageInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
-public class MessageStore {
-    private PathSegment pathSegment;
-
-    public MessageStore(PathSegment parent, String id) {
+public class MessageStore extends Path {
+    public MessageStore(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "message-store", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Content content(String id) {
-        return new Content(pathSegment, id);
+        return new Content(restClient, pathSegment, id);
     }
 
     public Content content() {
-        return new Content(pathSegment, null);
+        return new Content(restClient, pathSegment, null);
     }
 
     public static class ListParameters {

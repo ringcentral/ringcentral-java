@@ -1,19 +1,16 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.BlockedNumberInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
-public class BlockedNumber {
-    private PathSegment pathSegment;
-
-    public BlockedNumber(PathSegment parent, String id) {
+public class BlockedNumber extends Path {
+    public BlockedNumber(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "blocked-number", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class ListResponse {

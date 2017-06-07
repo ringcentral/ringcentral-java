@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.BusinessAddressInfo;
 
-public class BusinessAddress {
-    private PathSegment pathSegment;
-
-    public BusinessAddress(PathSegment parent, String id) {
+public class BusinessAddress extends Path {
+    public BusinessAddress(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "business-address", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class GetResponse {

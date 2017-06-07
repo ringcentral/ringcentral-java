@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CallerInfo;
 
-public class Fax {
-    private PathSegment pathSegment;
-
-    public Fax(PathSegment parent, String id) {
+public class Fax extends Path {
+    public Fax(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "fax", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

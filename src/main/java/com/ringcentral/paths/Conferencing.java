@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.Conferencing_Request_PhoneNumber;
 
-public class Conferencing {
-    private PathSegment pathSegment;
-
-    public Conferencing(PathSegment parent, String id) {
+public class Conferencing extends Path {
+    public Conferencing(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "conferencing", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class GetParameters {

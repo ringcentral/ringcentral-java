@@ -1,18 +1,15 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.PersonalContactInfo;
 import com.ringcentral.definitions.SyncInfo;
 
-public class AddressBookSync {
-    private PathSegment pathSegment;
-
-    public AddressBookSync(PathSegment parent, String id) {
+public class AddressBookSync extends Path {
+    public AddressBookSync(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "address-book-sync", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class ListParameters {

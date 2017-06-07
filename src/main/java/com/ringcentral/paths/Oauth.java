@@ -1,27 +1,24 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class Oauth {
-    private PathSegment pathSegment;
-
-    public Oauth(PathSegment parent, String id) {
+public class Oauth extends Path {
+    public Oauth(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "oauth", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Authorize authorize() {
-        return new Authorize(pathSegment, null);
+        return new Authorize(restClient, pathSegment, null);
     }
 
     public Revoke revoke() {
-        return new Revoke(pathSegment, null);
+        return new Revoke(restClient, pathSegment, null);
     }
 
     public Token token() {
-        return new Token(pathSegment, null);
+        return new Token(restClient, pathSegment, null);
     }
 }

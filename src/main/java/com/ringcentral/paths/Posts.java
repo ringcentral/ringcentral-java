@@ -1,18 +1,15 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.GlipNavigationInfo;
 import com.ringcentral.definitions.GlipPostInfo;
 
-public class Posts {
-    private PathSegment pathSegment;
-
-    public Posts(PathSegment parent, String id) {
+public class Posts extends Path {
+    public Posts(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "posts", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

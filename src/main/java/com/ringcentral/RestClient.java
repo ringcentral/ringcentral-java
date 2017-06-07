@@ -138,7 +138,7 @@ public class RestClient extends HttpClient {
     }
 
     public Restapi restApi(String id) {
-        return new Restapi(null, id);
+        return new Restapi(this, null, id);
     }
 
     public Restapi restApi() {

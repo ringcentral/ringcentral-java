@@ -1,19 +1,16 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.RingOut_Request_CountryInfo;
 import com.ringcentral.definitions.RingOut_Request_From;
 import com.ringcentral.definitions.RingOut_Request_To;
 
-public class Ringout {
-    private PathSegment pathSegment;
-
-    public Ringout(PathSegment parent, String id) {
+public class Ringout extends Path {
+    public Ringout(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "ringout", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

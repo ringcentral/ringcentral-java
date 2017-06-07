@@ -1,24 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class Recording {
-    private PathSegment pathSegment;
-
-    public Recording(PathSegment parent, String id) {
+public class Recording extends Path {
+    public Recording(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "recording", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Content content(String id) {
-        return new Content(pathSegment, id);
+        return new Content(restClient, pathSegment, id);
     }
 
     public Content content() {
-        return new Content(pathSegment, null);
+        return new Content(restClient, pathSegment, null);
     }
 
     public static class GetResponse {

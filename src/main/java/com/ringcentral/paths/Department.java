@@ -1,19 +1,16 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class Department {
-    private PathSegment pathSegment;
-
-    public Department(PathSegment parent, String id) {
+public class Department extends Path {
+    public Department(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "department", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Members members() {
-        return new Members(pathSegment, null);
+        return new Members(restClient, pathSegment, null);
     }
 }

@@ -1,159 +1,156 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.ExtensionInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
-public class Extension {
-    private PathSegment pathSegment;
-
-    public Extension(PathSegment parent, String id) {
+public class Extension extends Path {
+    public Extension(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "extension", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public ActiveCalls activeCalls() {
-        return new ActiveCalls(pathSegment, null);
+        return new ActiveCalls(restClient, pathSegment, null);
     }
 
     public AddressBookSync addressBookSync() {
-        return new AddressBookSync(pathSegment, null);
+        return new AddressBookSync(restClient, pathSegment, null);
     }
 
     public AddressBook addressBook() {
-        return new AddressBook(pathSegment, null);
+        return new AddressBook(restClient, pathSegment, null);
     }
 
     public AnsweringRule answeringRule(String id) {
-        return new AnsweringRule(pathSegment, id);
+        return new AnsweringRule(restClient, pathSegment, id);
     }
 
     public AnsweringRule answeringRule() {
-        return new AnsweringRule(pathSegment, null);
+        return new AnsweringRule(restClient, pathSegment, null);
     }
 
     public AuthzProfile authzProfile() {
-        return new AuthzProfile(pathSegment, null);
+        return new AuthzProfile(restClient, pathSegment, null);
     }
 
     public BlockedNumber blockedNumber(String id) {
-        return new BlockedNumber(pathSegment, id);
+        return new BlockedNumber(restClient, pathSegment, id);
     }
 
     public BlockedNumber blockedNumber() {
-        return new BlockedNumber(pathSegment, null);
+        return new BlockedNumber(restClient, pathSegment, null);
     }
 
     public BusinessHours businessHours() {
-        return new BusinessHours(pathSegment, null);
+        return new BusinessHours(restClient, pathSegment, null);
     }
 
     public CallLog callLog(String id) {
-        return new CallLog(pathSegment, id);
+        return new CallLog(restClient, pathSegment, id);
     }
 
     public CallLog callLog() {
-        return new CallLog(pathSegment, null);
+        return new CallLog(restClient, pathSegment, null);
     }
 
     public CallLogSync callLogSync() {
-        return new CallLogSync(pathSegment, null);
+        return new CallLogSync(restClient, pathSegment, null);
     }
 
     public CompanyPager companyPager() {
-        return new CompanyPager(pathSegment, null);
+        return new CompanyPager(restClient, pathSegment, null);
     }
 
     public Conferencing conferencing() {
-        return new Conferencing(pathSegment, null);
+        return new Conferencing(restClient, pathSegment, null);
     }
 
     public Device device(String id) {
-        return new Device(pathSegment, id);
+        return new Device(restClient, pathSegment, id);
     }
 
     public Device device() {
-        return new Device(pathSegment, null);
+        return new Device(restClient, pathSegment, null);
     }
 
     public Fax fax() {
-        return new Fax(pathSegment, null);
+        return new Fax(restClient, pathSegment, null);
     }
 
     public ForwardingNumber forwardingNumber() {
-        return new ForwardingNumber(pathSegment, null);
+        return new ForwardingNumber(restClient, pathSegment, null);
     }
 
     public Grant grant() {
-        return new Grant(pathSegment, null);
+        return new Grant(restClient, pathSegment, null);
     }
 
     public Greeting greeting(String id) {
-        return new Greeting(pathSegment, id);
+        return new Greeting(restClient, pathSegment, id);
     }
 
     public Greeting greeting() {
-        return new Greeting(pathSegment, null);
+        return new Greeting(restClient, pathSegment, null);
     }
 
     public Meeting meeting(String id) {
-        return new Meeting(pathSegment, id);
+        return new Meeting(restClient, pathSegment, id);
     }
 
     public Meeting meeting() {
-        return new Meeting(pathSegment, null);
+        return new Meeting(restClient, pathSegment, null);
     }
 
     public MeetingServiceInfo meetingServiceInfo() {
-        return new MeetingServiceInfo(pathSegment, null);
+        return new MeetingServiceInfo(restClient, pathSegment, null);
     }
 
     public MessageStore messageStore(String id) {
-        return new MessageStore(pathSegment, id);
+        return new MessageStore(restClient, pathSegment, id);
     }
 
     public MessageStore messageStore() {
-        return new MessageStore(pathSegment, null);
+        return new MessageStore(restClient, pathSegment, null);
     }
 
     public MessageSync messageSync() {
-        return new MessageSync(pathSegment, null);
+        return new MessageSync(restClient, pathSegment, null);
     }
 
     public PhoneNumber phoneNumber(String id) {
-        return new PhoneNumber(pathSegment, id);
+        return new PhoneNumber(restClient, pathSegment, id);
     }
 
     public PhoneNumber phoneNumber() {
-        return new PhoneNumber(pathSegment, null);
+        return new PhoneNumber(restClient, pathSegment, null);
     }
 
     public Presence presence() {
-        return new Presence(pathSegment, null);
+        return new Presence(restClient, pathSegment, null);
     }
 
     public ProfileImage profileImage(String id) {
-        return new ProfileImage(pathSegment, id);
+        return new ProfileImage(restClient, pathSegment, id);
     }
 
     public ProfileImage profileImage() {
-        return new ProfileImage(pathSegment, null);
+        return new ProfileImage(restClient, pathSegment, null);
     }
 
     public Ringout ringout(String id) {
-        return new Ringout(pathSegment, id);
+        return new Ringout(restClient, pathSegment, id);
     }
 
     public Ringout ringout() {
-        return new Ringout(pathSegment, null);
+        return new Ringout(restClient, pathSegment, null);
     }
 
     public Sms sms() {
-        return new Sms(pathSegment, null);
+        return new Sms(restClient, pathSegment, null);
     }
 
     public static class ListParameters {

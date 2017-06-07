@@ -1,16 +1,13 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class Revoke {
-    private PathSegment pathSegment;
-
-    public Revoke(PathSegment parent, String id) {
+public class Revoke extends Path {
+    public Revoke(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "revoke", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

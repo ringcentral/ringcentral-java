@@ -1,16 +1,13 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class Authorize {
-    private PathSegment pathSegment;
-
-    public Authorize(PathSegment parent, String id) {
+public class Authorize extends Path {
+    public Authorize(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "authorize", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

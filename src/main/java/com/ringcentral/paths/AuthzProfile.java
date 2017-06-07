@@ -1,21 +1,18 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.UserPermission;
 
-public class AuthzProfile {
-    private PathSegment pathSegment;
-
-    public AuthzProfile(PathSegment parent, String id) {
+public class AuthzProfile extends Path {
+    public AuthzProfile(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "authz-profile", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Check check() {
-        return new Check(pathSegment, null);
+        return new Check(restClient, pathSegment, null);
     }
 
     public static class GetResponse {

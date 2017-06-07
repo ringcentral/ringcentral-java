@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CallerInfo;
 
-public class CompanyPager {
-    private PathSegment pathSegment;
-
-    public CompanyPager(PathSegment parent, String id) {
+public class CompanyPager extends Path {
+    public CompanyPager(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "company-pager", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

@@ -1,22 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.GlipGroupInfo;
 import com.ringcentral.definitions.GlipNavigationInfo;
 
-public class Groups {
-    private PathSegment pathSegment;
-
-    public Groups(PathSegment parent, String id) {
+public class Groups extends Path {
+    public Groups(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "groups", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public BulkAssign bulkAssign() {
-        return new BulkAssign(pathSegment, null);
+        return new BulkAssign(restClient, pathSegment, null);
     }
 
     public static class PostParameters {

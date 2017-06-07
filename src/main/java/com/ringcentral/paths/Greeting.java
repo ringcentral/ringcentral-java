@@ -1,17 +1,14 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CustomGreetingInfo_AnsweringRuleInfo;
 
-public class Greeting {
-    private PathSegment pathSegment;
-
-    public Greeting(PathSegment parent, String id) {
+public class Greeting extends Path {
+    public Greeting(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "greeting", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class PostParameters {

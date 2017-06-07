@@ -1,35 +1,32 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class Glip {
-    private PathSegment pathSegment;
-
-    public Glip(PathSegment parent, String id) {
+public class Glip extends Path {
+    public Glip(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "glip", id);
     }
 
-    public String endpoint() {
-        return pathSegment.endpoint();
-    }
-
     public Companies companies(String id) {
-        return new Companies(pathSegment, id);
+        return new Companies(restClient, pathSegment, id);
     }
 
     public Groups groups(String id) {
-        return new Groups(pathSegment, id);
+        return new Groups(restClient, pathSegment, id);
     }
 
     public Groups groups() {
-        return new Groups(pathSegment, null);
+        return new Groups(restClient, pathSegment, null);
     }
 
     public Persons persons(String id) {
-        return new Persons(pathSegment, id);
+        return new Persons(restClient, pathSegment, id);
     }
 
     public Posts posts() {
-        return new Posts(pathSegment, null);
+        return new Posts(restClient, pathSegment, null);
     }
 }

@@ -145,5 +145,4 @@ Update version numbers in `build.gradle`.
 
 ### Todo
 
-- Rewrite in Kotlin
-- Url builder
+- Rewrite in Kotlin - optional, low priority

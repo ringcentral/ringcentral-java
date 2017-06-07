@@ -1,16 +1,13 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.Path;
 import com.ringcentral.PathSegment;
+import com.ringcentral.RestClient;
 
-public class Companies {
-    private PathSegment pathSegment;
-
-    public Companies(PathSegment parent, String id) {
+public class Companies extends Path {
+    public Companies(RestClient restClient, PathSegment parent, String id) {
+        this.restClient = restClient;
         pathSegment = new PathSegment(parent, "companies", id);
-    }
-
-    public String endpoint() {
-        return pathSegment.endpoint();
     }
 
     public static class GetResponse {

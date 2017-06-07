@@ -1,9 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.SubscriptionInfo;
 import com.ringcentral.definitions.Subscription_Request_DeliveryMode;
 
 public class Subscription {
+    private PathSegment pathSegment;
+
+    public Subscription(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "subscription", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Mandatory. Collection of URIs to API resources (see Event Types for details). For APNS transport type only message event filter is available
         public String[] eventFilters;

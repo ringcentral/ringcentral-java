@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.DialingPlanCountryInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class DialingPlan {
+    private PathSegment pathSegment;
+
+    public DialingPlan(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "dialing-plan", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public Long page;

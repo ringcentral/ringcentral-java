@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.CallerInfo;
 
 public class Fax {
+    private PathSegment pathSegment;
+
+    public Fax(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "fax", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Recipient information. Phone number property is mandatory. Optional for resend fax request
         public CallerInfo[] to;

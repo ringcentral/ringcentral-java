@@ -1,9 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.MessageInfo;
 import com.ringcentral.definitions.SyncInfo;
 
 public class MessageSync {
+    private PathSegment pathSegment;
+
+    public MessageSync(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "message-sync", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Conversation identifier for the resulting messages. Meaningful for SMS and Pager messages only.
         public Long conversationId;

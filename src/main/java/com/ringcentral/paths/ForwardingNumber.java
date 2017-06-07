@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.ForwardingNumberInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class ForwardingNumber {
+    private PathSegment pathSegment;
+
+    public ForwardingNumber(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "forwarding-number", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Forwarding/Call flip phone number
         public String phoneNumber;

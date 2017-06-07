@@ -1,11 +1,26 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.MeetingInfo;
 import com.ringcentral.definitions.MeetingScheduleInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Meeting {
+    private PathSegment pathSegment;
+
+    public Meeting(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "meeting", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
+    public End end() {
+        return new End(pathSegment, null);
+    }
+
     public static class PostParameters {
         // Topic of a meeting
         public String topic;

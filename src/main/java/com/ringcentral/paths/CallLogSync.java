@@ -1,9 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.CallLogRecord;
 import com.ringcentral.definitions.SyncInfo;
 
 public class CallLogSync {
+    private PathSegment pathSegment;
+
+    public CallLogSync(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "call-log-sync", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Type of synchronization. 'FSync' is a default value
         public String syncType;

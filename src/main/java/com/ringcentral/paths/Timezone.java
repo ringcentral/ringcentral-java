@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.TimezoneInfo;
 
 public class Timezone {
+    private PathSegment pathSegment;
+
+    public Timezone(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "timezone", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public String page;

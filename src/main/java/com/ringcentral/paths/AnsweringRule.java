@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.*;
 
 public class AnsweringRule {
+    private PathSegment pathSegment;
+
+    public AnsweringRule(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "answering-rule", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Specifies if the rule is active or inactive. The default value is 'True'
         public Boolean enabled;

@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.CallerInfo;
 
 public class CompanyPager {
+    private PathSegment pathSegment;
+
+    public CompanyPager(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "company-pager", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Sender of a pager message. The extensionNumber property must be filled
         public CallerInfo from;

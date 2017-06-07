@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.PermissionDetailsInfo;
 
 public class Check {
+    private PathSegment pathSegment;
+
+    public Check(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "check", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class GetParameters {
         // Permission to check
         public String permissionId;

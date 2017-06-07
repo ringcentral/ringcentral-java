@@ -1,6 +1,7 @@
 package com.ringcentral;
 
 import com.ringcentral.definitions.TokenInfo;
+import com.ringcentral.paths.Restapi;
 import okhttp3.*;
 
 import java.io.IOException;
@@ -134,5 +135,13 @@ public class RestClient extends HttpClient {
             throw new RestException(statusCode, response.body().string());
         }
         return response.body();
+    }
+
+    public Restapi restApi(String id) {
+        return new Restapi(null, id);
+    }
+
+    public Restapi restApi() {
+        return restApi("v1.0");
     }
 }

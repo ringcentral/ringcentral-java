@@ -1,6 +1,18 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
+
 public class BulkAssign {
+    private PathSegment pathSegment;
+
+    public BulkAssign(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "bulk-assign", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // List of users to be added to the team
         public String[] addedPersonIds;

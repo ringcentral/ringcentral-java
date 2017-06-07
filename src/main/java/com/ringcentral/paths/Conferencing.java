@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.Conferencing_Request_PhoneNumber;
 
 public class Conferencing {
+    private PathSegment pathSegment;
+
+    public Conferencing(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "conferencing", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class GetParameters {
         // Internal identifier of a country. If not specified, the response is returned for the brand country
         public String countryId;

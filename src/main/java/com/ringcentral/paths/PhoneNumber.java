@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.PhoneNumberInfo;
 
 public class PhoneNumber {
+    private PathSegment pathSegment;
+
+    public PhoneNumber(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "phone-number", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Usage type of the phone number
         public String usageType;

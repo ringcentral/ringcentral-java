@@ -1,9 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.ParsePhoneNumber_CountryInfo;
 import com.ringcentral.definitions.ParsePhoneNumber_PhoneNumberInfo;
 
 public class Parse {
+    private PathSegment pathSegment;
+
+    public Parse(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "parse", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Internal identifier of a home country. The default value is ISO code (ISO 3166) of the user's home country or brand country, if the user is undefined
         public String homeCountry;

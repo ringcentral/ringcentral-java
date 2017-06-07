@@ -1,9 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.ReservePhoneNumber_Request_ReserveRecord;
 import com.ringcentral.definitions.ReservePhoneNumber_Response_ReserveRecord;
 
 public class Reserve {
+    private PathSegment pathSegment;
+
+    public Reserve(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "reserve", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Phone numbers to be reserved/un-reserved
         public ReservePhoneNumber_Request_ReserveRecord[] records;

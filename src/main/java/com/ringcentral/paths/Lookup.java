@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.LookUpPhoneNumber_PhoneNumberInfo;
 
 public class Lookup {
+    private PathSegment pathSegment;
+
+    public Lookup(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "lookup", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Area code of the location
         public Long areaCode;

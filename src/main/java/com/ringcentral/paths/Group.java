@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.GroupInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Group {
+    private PathSegment pathSegment;
+
+    public Group(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "group", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListResponse {
         // List of groups
         public GroupInfo[] records;

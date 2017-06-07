@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.BusinessAddressInfo;
 
 public class BusinessAddress {
+    private PathSegment pathSegment;
+
+    public BusinessAddress(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "business-address", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class GetResponse {
         // Canonical URI of the business address resource
         public String uri;

@@ -1,9 +1,24 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.GlipGroupInfo;
 import com.ringcentral.definitions.GlipNavigationInfo;
 
 public class Groups {
+    private PathSegment pathSegment;
+
+    public Groups(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "groups", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
+    public BulkAssign bulkAssign() {
+        return new BulkAssign(pathSegment, null);
+    }
+
     public static class PostParameters {
         // Type of a group to be created. 'PrivateChat' is a group of 2 members. 'Team' is a chat of 1 and more participants, the membership can be modified in future
         public String type;

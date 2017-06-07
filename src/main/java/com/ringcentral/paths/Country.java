@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.FullCountryInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Country {
+    private PathSegment pathSegment;
+
+    public Country(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "country", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Specifies whether login with the phone numbers of this country is enabled or not
         public Boolean loginAllowed;

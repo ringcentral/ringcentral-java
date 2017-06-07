@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.RingOut_Request_CountryInfo;
 import com.ringcentral.definitions.RingOut_Request_From;
 import com.ringcentral.definitions.RingOut_Request_To;
 
 public class Ringout {
+    private PathSegment pathSegment;
+
+    public Ringout(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "ringout", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Phone number of the caller. This number corresponds to the 1st leg of the RingOut call. This number can be one of user's configured forwarding numbers or arbitrary number
         public RingOut_Request_From from;

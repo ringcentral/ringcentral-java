@@ -1,10 +1,29 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.MessageInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class MessageStore {
+    private PathSegment pathSegment;
+
+    public MessageStore(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "message-store", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
+    public Content content(String id) {
+        return new Content(pathSegment, id);
+    }
+
+    public Content content() {
+        return new Content(pathSegment, null);
+    }
+
     public static class ListParameters {
         // Specifies the availability status for the resulting messages. Default value is 'Alive'. Multiple values are accepted
         public String availability;

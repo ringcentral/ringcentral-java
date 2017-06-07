@@ -1,9 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.GlipNavigationInfo;
 import com.ringcentral.definitions.GlipPostInfo;
 
 public class Posts {
+    private PathSegment pathSegment;
+
+    public Posts(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "posts", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Internal identifier of a group to send post to
         public String groupId;

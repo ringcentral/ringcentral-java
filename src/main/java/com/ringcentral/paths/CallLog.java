@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.CallLogRecord;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class CallLog {
+    private PathSegment pathSegment;
+
+    public CallLog(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "call-log", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Extension number of a user. If specified, returns call log for a particular extension only. Cannot be specified together with the phoneNumber filter
         public String extensionNumber;

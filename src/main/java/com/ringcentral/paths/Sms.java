@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.CallerInfo;
 
 public class Sms {
+    private PathSegment pathSegment;
+
+    public Sms(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "sms", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Sender of an SMS message. The phoneNumber property must be filled to correspond to one of the account phone numbers which is allowed to send SMS
         public CallerInfo from;

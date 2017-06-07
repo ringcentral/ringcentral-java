@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.GrantInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Grant {
+    private PathSegment pathSegment;
+
+    public Grant(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "grant", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
         public Long page;

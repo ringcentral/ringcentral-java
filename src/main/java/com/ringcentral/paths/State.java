@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.StateInfo;
 
 public class State {
+    private PathSegment pathSegment;
+
+    public State(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "state", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Internal identifier of a country
         public Long countryId;

@@ -1,6 +1,18 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
+
 public class Persons {
+    private PathSegment pathSegment;
+
+    public Persons(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "persons", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class GetResponse {
         // Internal identifier of a user
         public String id;

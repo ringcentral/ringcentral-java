@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 import com.ringcentral.definitions.PersonalContactInfo;
 
 public class Contact {
+    private PathSegment pathSegment;
+
+    public Contact(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "contact", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Phone number in E.164 (11-digits) format with or without plus '+'. Multiple values are supported
         public String phoneNumber;

@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.DeviceInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Device {
+    private PathSegment pathSegment;
+
+    public Device(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "device", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListResponse {
         // List of extension records
         public DeviceInfo[] records;

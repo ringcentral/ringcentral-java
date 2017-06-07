@@ -1,6 +1,18 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
+
 public class Authorize {
+    private PathSegment pathSegment;
+
+    public Authorize(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "authorize", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Must be set to code
         public String response_type;

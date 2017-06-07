@@ -1,6 +1,26 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
+
 public class Recording {
+    private PathSegment pathSegment;
+
+    public Recording(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "recording", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
+    public Content content(String id) {
+        return new Content(pathSegment, id);
+    }
+
+    public Content content() {
+        return new Content(pathSegment, null);
+    }
+
     public static class GetResponse {
         // Internal identifier of the call recording
         public String id;

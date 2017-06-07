@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.AttachmentInfo;
 
 public class CustomData {
+    private PathSegment pathSegment;
+
+    public CustomData(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "custom-data", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PutParameters {
         // Custom data access key. Optional. If specified, must match the custom key in the URL
         public String id;

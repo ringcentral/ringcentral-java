@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.DeviceInfo;
 
 public class Order {
+    private PathSegment pathSegment;
+
+    public Order(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "order", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // List of devices to order
         public DeviceInfo[] devices;

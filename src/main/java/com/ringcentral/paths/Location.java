@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.LocationInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Location {
+    private PathSegment pathSegment;
+
+    public Location(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "location", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Sorts results by the specified property. The default value is 'City'
         public String orderBy;

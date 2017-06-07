@@ -1,6 +1,18 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
+
 public class Companies {
+    private PathSegment pathSegment;
+
+    public Companies(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "companies", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class GetResponse {
         // Internal identifier of an RC account/Glip company, or tilde (~) to indicate a company the current user belongs to
         public String id;

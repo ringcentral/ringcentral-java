@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.LanguageInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class Language {
+    private PathSegment pathSegment;
+
+    public Language(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "language", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListResponse {
         // Language data
         public LanguageInfo[] records;

@@ -1,8 +1,19 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.CustomGreetingInfo_AnsweringRuleInfo;
 
 public class Greeting {
+    private PathSegment pathSegment;
+
+    public Greeting(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "greeting", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Type of a greeting, specifying the case when the greeting is played. See also Greeting Types
         public String type;

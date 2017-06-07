@@ -1,10 +1,21 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.BlockedNumberInfo;
 import com.ringcentral.definitions.NavigationInfo;
 import com.ringcentral.definitions.PagingInfo;
 
 public class BlockedNumber {
+    private PathSegment pathSegment;
+
+    public BlockedNumber(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "blocked-number", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListResponse {
         // List of blocked phone numbers
         public BlockedNumberInfo[] records;

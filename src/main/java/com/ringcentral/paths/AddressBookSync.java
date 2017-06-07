@@ -1,9 +1,20 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
 import com.ringcentral.definitions.PersonalContactInfo;
 import com.ringcentral.definitions.SyncInfo;
 
 public class AddressBookSync {
+    private PathSegment pathSegment;
+
+    public AddressBookSync(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "address-book-sync", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class ListParameters {
         // Type of synchronization. The default value is 'FSync'
         public String syncType;

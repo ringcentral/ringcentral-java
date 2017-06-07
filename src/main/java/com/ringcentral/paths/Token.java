@@ -1,6 +1,18 @@
 package com.ringcentral.paths;
 
+import com.ringcentral.PathSegment;
+
 public class Token {
+    private PathSegment pathSegment;
+
+    public Token(PathSegment parent, String id) {
+        pathSegment = new PathSegment(parent, "token", id);
+    }
+
+    public String endpoint() {
+        return pathSegment.endpoint();
+    }
+
     public static class PostParameters {
         // Must hold password value for Resource Owner Credentials flow. If client application is not authorized by the specified grant_type, response does not contain refresh_token and refresh_token_ttl attributes
         public String grant_type;

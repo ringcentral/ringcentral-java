@@ -47,6 +47,59 @@ restClient.authorize(username, extension, password);
 ```
 
 
+### Url Builder
+
+The following code snippets are equivalent, you can choose whichever based on your preferences:
+
+```java
+String endpoint = "/restapi/v1.0/account/~/extension/~/sms";
+```
+
+```java
+String endpoint = restClient.restApi("v1.0").account("~").extension("~").sms().endpoint();
+```
+
+```java
+String endpoint = restClient.restApi().account().extension().sms().endpoint();
+```
+
+The following code snippets are also equivalent, you can choose whichever based on your preferences:
+
+```java
+MessageInfo messageInfo = restClient.post("/restapi/v1.0/account/~/extension/~/sms", postParameters, MessageInfo.class);
+```
+
+```java
+MessageInfo messageInfo = restClient.post(restClient.restApi("v1.0").account("~").extension("~").sms().endpoint(), postParameters, MessageInfo.class);
+```
+
+```java
+MessageInfo messageInfo = restClient.post(restClient.restApi().account().extension().sms().endpoint(), postParameters, MessageInfo.class);
+```
+
+```java
+MessageInfo messageInfo = restClient.restApi("v1.0").account("~").extension("~").sms().post(postParameters, MessageInfo.class);
+```
+
+```java
+MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(postParameters, MessageInfo.class);
+```
+
+
+### Models or raw response
+
+Both are OK:
+
+```
+ResponseBody responseBody = restClient.restApi().account().extension().sms().post(postParameters);
+String stringBody = responseBody.string();
+```
+
+```java
+MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(postParameters, MessageInfo.class);
+```
+
+
 ### Send sms
 
 [Example](src/test/java/com/ringcentral/SmsTest.java)

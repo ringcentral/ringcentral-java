@@ -86,14 +86,16 @@ MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(
 ```
 
 
-### Models or raw response
+### Raw Response & Models
 
-Both are OK:
+#### Raw Response
 
 ```
 ResponseBody responseBody = restClient.restApi().account().extension().sms().post(postParameters);
 String stringBody = responseBody.string();
 ```
+
+#### Models
 
 ```java
 MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(postParameters, MessageInfo.class);

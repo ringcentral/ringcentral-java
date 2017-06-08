@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.ringcentral:ringcentral:0.2.4'
+  compile 'com.ringcentral:ringcentral:0.3.2'
 }
 ```
 
@@ -33,7 +33,7 @@ dependencies {
 <dependency>
   <groupId>com.ringcentral</groupId>
   <artifactId>ringcentral</artifactId>
-  <version>0.2.4</version>
+  <version>0.3.2</version>
   <type>pom</type>
 </dependency>
 ```

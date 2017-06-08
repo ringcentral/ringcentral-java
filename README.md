@@ -93,6 +93,8 @@ MessageInfo messageInfo = restClient.restApi().account().extension().sms()
     .post(postParameters, MessageInfo.class);
 ```
 
+[Url Builder Examples](src/test/java/com/ringcentral/UrlBuilderTest.java)
+
 
 ### Raw Response & Models
 

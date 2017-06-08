@@ -44,15 +44,11 @@ public abstract class Path {
         return restClient.get(endpoint(), type, queryParameters);
     }
 
-    public <T> T post(FormBody formBody, Type type, HttpClient.QueryParameter... queryParameters) throws IOException, RestException {
-        return restClient.post(endpoint(), formBody, type, queryParameters);
-    }
-
     public <T> T post(Object object, Type type, HttpClient.QueryParameter... queryParameters) throws IOException, RestException {
         return restClient.post(endpoint(), object, type, queryParameters);
     }
 
     public <T> T put(Object object, Type type, HttpClient.QueryParameter... queryParameters) throws IOException, RestException {
-        return restClient.post(endpoint(), object, type, queryParameters);
+        return restClient.put(endpoint(), object, type, queryParameters);
     }
 }

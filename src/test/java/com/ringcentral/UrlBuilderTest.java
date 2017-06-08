@@ -75,4 +75,18 @@ public class UrlBuilderTest extends BaseTest {
             .build();
         restClient.restApi().account().extension().fax().post(requestBody);
     }
+
+    @Test
+    public void testUploadProfileImage() throws IOException, RestException {
+        // upload
+        byte[] bytes1 = Files.readAllBytes(Paths.get("./src/test/resources/test.png"));
+
+        restClient.restApi().account().extension().profileImage()
+            .postBinary("image", "test.png", "image/png", bytes1);
+
+        // download
+        byte[] bytes2  =restClient.restApi().account().extension().profileImage().get().bytes();
+
+        assertArrayEquals(bytes1, bytes2);
+    }
 }

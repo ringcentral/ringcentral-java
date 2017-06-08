@@ -2,7 +2,9 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.CallerInfo;
 import com.ringcentral.definitions.MessageInfo;
+import com.ringcentral.definitions.PersonalContactInfo;
 import com.ringcentral.definitions.VersionInfo;
+import com.ringcentral.paths.AddressBook;
 import com.ringcentral.paths.Sms;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -85,8 +87,29 @@ public class UrlBuilderTest extends BaseTest {
             .postBinary("image", "test.png", "image/png", bytes1);
 
         // download
-        byte[] bytes2  =restClient.restApi().account().extension().profileImage().get().bytes();
+        byte[] bytes2 = restClient.restApi().account().extension().profileImage().get().bytes();
 
         assertArrayEquals(bytes1, bytes2);
+    }
+
+    @Test
+    public void testAddressBook() throws IOException, RestException {
+        AddressBook addressBook = restClient.restApi().account().extension().addressBook();
+
+        PersonalContactInfo contactInfo = new PersonalContactInfo().firstName("Tyler").lastName("Long").homePhone("+15889546648");
+
+        PersonalContactInfo personalContactInfo = addressBook.contact().post(
+            contactInfo, PersonalContactInfo.class);
+        assertEquals("+15889546648", personalContactInfo.homePhone);
+
+        contactInfo = contactInfo.homePhone("+15889546647");
+        String str = addressBook.contact(personalContactInfo.id).put(contactInfo).string();
+        assertTrue(str.contains("+15889546647"));
+
+        contactInfo = contactInfo.homePhone("+15889546646");
+        PersonalContactInfo personalContactInfo2 = addressBook.contact(personalContactInfo.id).put(contactInfo, PersonalContactInfo.class);
+        assertEquals("+15889546646", personalContactInfo2.homePhone);
+
+        addressBook.contact(personalContactInfo.id).delete();
     }
 }

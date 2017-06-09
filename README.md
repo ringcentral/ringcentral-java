@@ -15,9 +15,11 @@ repositories {
 }
 
 dependencies {
-  compile 'com.ringcentral:ringcentral:0.3.2'
+  compile 'com.ringcentral:ringcentral:[version]'
 }
 ```
+
+Don't forget to replace `[version]` with expected version.
 
 
 ### Maven
@@ -33,17 +35,34 @@ dependencies {
 <dependency>
   <groupId>com.ringcentral</groupId>
   <artifactId>ringcentral</artifactId>
-  <version>0.3.2</version>
+  <version>[version]</version>
   <type>pom</type>
 </dependency>
 ```
 
+Don't forget to replace `[version]` with expected version.
+
+
+## Manually
+
+Download [jar](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion) here and save it into your java classpath.
+
 
 ## Usage
+
+
+### Intialization & Authorization
 
 ```java
 RestClient restClient = new RestClient(appKey, appSecret, server);
 restClient.authorize(username, extension, password);
+```
+
+For the `server` parameter, there are two static final string variables in `RestClient`:
+
+```java
+public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
+public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
 ```
 
 
@@ -63,47 +82,49 @@ String endpoint = restClient.restApi("v1.0").account("~").extension("~").sms().e
 String endpoint = restClient.restApi().account().extension().sms().endpoint();
 ```
 
-The following code snippets are also equivalent, you can choose whichever based on your preferences:
+The following code snippets are also equivalent:
 
 ```java
-MessageInfo messageInfo = restClient.post(
+restClient.post(
     "/restapi/v1.0/account/~/extension/~/sms",
-    postParameters, MessageInfo.class);
+    postParameters);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.post(
+restClient.post(
     restClient.restApi("v1.0").account("~").extension("~").sms().endpoint(),
-    postParameters, MessageInfo.class);
+    postParameters);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.post(
+restClient.post(
     restClient.restApi().account().extension().sms().endpoint(),
-    postParameters, MessageInfo.class);
+    postParameters);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.restApi("v1.0").account("~").extension("~").sms()
-    .post(postParameters, MessageInfo.class);
+restClient.restApi("v1.0").account("~").extension("~").sms()
+    .post(postParameters);
 ```
 
 ```java
-MessageInfo messageInfo = restClient.restApi().account().extension().sms()
-    .post(postParameters, MessageInfo.class);
+restClient.restApi().account().extension().sms()
+    .post(postParameters);
 ```
 
 [Url Builder Examples](src/test/java/com/ringcentral/UrlBuilderTest.java)
 
 
-### Raw Response & Models
+### Raw Response vs. Models
 
 #### Raw Response
 
-```
+```java
 ResponseBody responseBody = restClient.restApi().account().extension().sms()
     .post(postParameters);
-String stringBody = responseBody.string();
+// String stringBody = responseBody.string();
+// byte[] bytes = resonseBody.bytes();
+// ...
 ```
 
 #### Models
@@ -111,6 +132,8 @@ String stringBody = responseBody.string();
 ```java
 MessageInfo messageInfo = restClient.restApi().account().extension().sms()
     .post(postParameters, MessageInfo.class);
+// System.out.println(messageInfo.creationTime)
+// ...
 ```
 
 
@@ -155,13 +178,6 @@ subscription.subscribe();
 ### Upload & Download binary files
 
 [Example](src/test/java/com/ringcentral/BinaryTest.java)
-
-
-### Async
-
-You can simply start a new thread.
-
-[Example](src/test/java/com/ringcentral/AsyncTest.java)
 
 
 ## More examples

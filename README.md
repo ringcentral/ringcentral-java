@@ -45,7 +45,7 @@ Don't forget to replace `[version]` with expected version.
 
 ## Manually
 
-Download [jar](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion) here and save it into your java classpath.
+[Download jar here](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion) and save it into your java classpath.
 
 
 ## Usage

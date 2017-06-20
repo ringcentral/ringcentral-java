@@ -16,6 +16,7 @@ public class RestClient extends HttpClient {
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final OkHttpClient httpClient = new OkHttpClient();
     public boolean autoRefresh = true;
+    public String userAgent = "";
     private String appKey;
     private String appSecret;
     private TokenInfo _token;
@@ -128,7 +129,11 @@ public class RestClient extends HttpClient {
     }
 
     public ResponseBody request(Request.Builder builder) throws IOException, RestException {
-        Request request = builder.addHeader("Authorization", authorizationHeader()).build();
+        String userAgentHeader = String.join(" ", new String[]{"RC-JAVA-SDK", userAgent});
+        Request request = builder.addHeader("Authorization", authorizationHeader())
+            .addHeader("User-Agent", userAgentHeader)
+            .addHeader("RC-User-Agent", userAgentHeader)
+            .build();
         Response response = httpClient.newCall(request).execute();
         int statusCode = response.code();
         if (statusCode < 200 || statusCode > 299) {

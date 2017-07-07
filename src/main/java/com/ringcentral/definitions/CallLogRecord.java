@@ -11,6 +11,8 @@ public class CallLogRecord {
     public CallerInfo from;
     // Callee information
     public CallerInfo to;
+    // For Extension Call Log only. Voicemail message data
+    public VoicemailMessageInfo message;
     // Call type
     public String type;
     // Call direction
@@ -19,6 +21,8 @@ public class CallLogRecord {
     public String action;
     // Status description of the call operation
     public String result;
+    // For 'Detailed' view only. Call billing information
+    public BillingInfo billing;
     // The call start datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
     public String startTime;
     // Call duration in seconds
@@ -27,8 +31,6 @@ public class CallLogRecord {
     public RecordingInfo recording;
     // For 'Detailed' view only. The datetime when the call log record was modified in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
     public String lastModifiedTime;
-    // For 'Detailed' view only. Call transport
-    public String transport;
     // For 'Detailed' view only. Leg description
     public LegInfo[] legs;
 
@@ -57,6 +59,11 @@ public class CallLogRecord {
         return this;
     }
 
+    public CallLogRecord message(VoicemailMessageInfo message) {
+        this.message = message;
+        return this;
+    }
+
     public CallLogRecord type(String type) {
         this.type = type;
         return this;
@@ -77,6 +84,11 @@ public class CallLogRecord {
         return this;
     }
 
+    public CallLogRecord billing(BillingInfo billing) {
+        this.billing = billing;
+        return this;
+    }
+
     public CallLogRecord startTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -94,11 +106,6 @@ public class CallLogRecord {
 
     public CallLogRecord lastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
-        return this;
-    }
-
-    public CallLogRecord transport(String transport) {
-        this.transport = transport;
         return this;
     }
 

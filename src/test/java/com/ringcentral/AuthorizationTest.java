@@ -52,8 +52,8 @@ public class AuthorizationTest extends BaseTest {
         try {
             restClient.authorize("auth_code", "http://baidu.com");
         } catch (RestException re) {
-            assertEquals(401, re.getHttpStatusCode());
-            assertTrue(re.getMessage().contains("TokenInvalid"));
+            assertEquals(400, re.getHttpStatusCode());
+            assertTrue(re.getMessage().contains("Unparsable"));
         }
     }
 

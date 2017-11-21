@@ -38,7 +38,7 @@ public class GlipTest extends BaseTest {
     public void testReceiveMessage() throws IOException, RestException, InterruptedException {
         final Consumer<String> consumer = mock(Consumer.class);
         Subscription subscription = restClient.subscription(
-            new String[]{"/restapi/v1.0/account/~/extension/~/glip/posts"},
+            new String[]{"/restapi/v1.0/glip/posts"},
             consumer
         );
         subscription.subscribe();

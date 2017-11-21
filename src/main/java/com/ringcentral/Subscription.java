@@ -6,6 +6,8 @@ import com.pubnub.api.callbacks.SubscribeCallback;
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
+import com.ringcentral.definitions.CreateSubscriptionRequest;
+import com.ringcentral.definitions.NotificationDeliveryModeRequest;
 import com.ringcentral.definitions.SubscriptionInfo;
 import com.ringcentral.definitions.Subscription_Request_DeliveryMode;
 
@@ -128,9 +130,9 @@ class Subscription {
         setSubscription(null);
     }
 
-    private com.ringcentral.paths.Subscription.PostParameters getPostParameters() {
-        return new com.ringcentral.paths.Subscription.PostParameters()
-            .deliveryMode(new Subscription_Request_DeliveryMode().transportType("PubNub").encryption(true))
+    private CreateSubscriptionRequest getPostParameters() {
+        return new CreateSubscriptionRequest()
+            .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
             .eventFilters(events);
     }
 }

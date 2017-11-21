@@ -1,76 +1,43 @@
 package com.ringcentral.paths;
-
 import com.ringcentral.Path;
-import com.ringcentral.PathSegment;
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.NavigationInfo;
-import com.ringcentral.definitions.PagingInfo;
-import com.ringcentral.definitions.PersonalContactInfo;
-
+import com.ringcentral.definitions.*;
+import com.ringcentral.PathSegment;
 public class Contact extends Path {
-    public Contact(RestClient restClient, PathSegment parent, String id) {
+    public Contact (RestClient restClient, PathSegment parent, String id) {
         this.restClient = restClient;
         pathSegment = new PathSegment(parent, "contact", id);
     }
-
-    public static class ListParameters {
-        // Phone number in E.164 (11-digits) format with or without plus '+'. Multiple values are supported
-        public String phoneNumber;
+    public static class ListParameters
+    {
         // If specified, only contacts whose First name or Last name start with the mentioned substring are returned. Case-insensitive
         public String startsWith;
-        // Sorts results by the specified property. The default is 'First Name'
-        public String sortBy;
-        // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
-        public Long page;
-        // Indicates the page size (number of items). If not specified, the value is '100' by default
-        public Long perPage;
-
-        public ListParameters phoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
-            return this;
-        }
-
         public ListParameters startsWith(String startsWith) {
             this.startsWith = startsWith;
             return this;
         }
-
-        public ListParameters sortBy(String sortBy) {
+        // Sorts results by the specified property. The default is 'First Name'
+        public String[] sortBy;
+        public ListParameters sortBy(String[] sortBy) {
             this.sortBy = sortBy;
             return this;
         }
-
+        // Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
+        public Long page;
         public ListParameters page(Long page) {
             this.page = page;
             return this;
         }
-
+        // Indicates the page size (number of items). If not specified, the value is '100' by default
+        public Long perPage;
         public ListParameters perPage(Long perPage) {
             this.perPage = perPage;
             return this;
         }
-    }
-
-    public static class ListResponse {
-        // List of personal contacts from the extension address book
-        public PersonalContactInfo[] records;
-        // Information on navigation
-        public NavigationInfo navigation;
-        // Information on paging
-        public PagingInfo paging;
-
-        public ListResponse records(PersonalContactInfo[] records) {
-            this.records = records;
-            return this;
-        }
-
-        public ListResponse navigation(NavigationInfo navigation) {
-            this.navigation = navigation;
-            return this;
-        }
-
-        public ListResponse paging(PagingInfo paging) {
-            this.paging = paging;
+        //
+        public String[] phoneNumber;
+        public ListParameters phoneNumber(String[] phoneNumber) {
+            this.phoneNumber = phoneNumber;
             return this;
         }
     }

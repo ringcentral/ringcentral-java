@@ -1,57 +1,32 @@
 package com.ringcentral.paths;
-
 import com.ringcentral.Path;
-import com.ringcentral.PathSegment;
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.SubscriptionInfo;
-import com.ringcentral.definitions.Subscription_Request_DeliveryMode;
-
+import com.ringcentral.definitions.*;
+import com.ringcentral.PathSegment;
 public class Subscription extends Path {
-    public Subscription(RestClient restClient, PathSegment parent, String id) {
+    public Subscription (RestClient restClient, PathSegment parent, String id) {
         this.restClient = restClient;
         pathSegment = new PathSegment(parent, "subscription", id);
     }
-
-    public static class PostParameters {
-        // Mandatory. Collection of URIs to API resources (see Event Types for details). For APNS transport type only message event filter is available
-        public String[] eventFilters;
-        // Notification delivery settings
-        public Subscription_Request_DeliveryMode deliveryMode;
-
-        public PostParameters eventFilters(String[] eventFilters) {
-            this.eventFilters = eventFilters;
-            return this;
-        }
-
-        public PostParameters deliveryMode(Subscription_Request_DeliveryMode deliveryMode) {
-            this.deliveryMode = deliveryMode;
+    public Renew renew()
+    {
+        return new Renew(restClient, pathSegment, null);
+    }
+    public static class PostParameters
+    {
+        // If 'True' then aggregated presence status is returned in a notification payload in the 'presenceStatus' field
+        public Boolean aggregated;
+        public PostParameters aggregated(Boolean aggregated) {
+            this.aggregated = aggregated;
             return this;
         }
     }
-
-    public static class ListResponse {
-        // Canonical URI of a subscription resource
-        public String uri;
-        // List of subscriptions for the current user and application
-        public SubscriptionInfo[] records;
-
-        public ListResponse uri(String uri) {
-            this.uri = uri;
-            return this;
-        }
-
-        public ListResponse records(SubscriptionInfo[] records) {
-            this.records = records;
-            return this;
-        }
-    }
-
-    public static class PutParameters {
-        // Collection of URIs to API resources (see Event Types). Mandatory field
-        public String[] eventFilters;
-
-        public PutParameters eventFilters(String[] eventFilters) {
-            this.eventFilters = eventFilters;
+    public static class PutParameters
+    {
+        // If 'True' then aggregated presence status is returned in a notification payload
+        public Boolean aggregated;
+        public PutParameters aggregated(Boolean aggregated) {
+            this.aggregated = aggregated;
             return this;
         }
     }

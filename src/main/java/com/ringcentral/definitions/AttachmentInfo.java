@@ -1,16 +1,15 @@
 package com.ringcentral.definitions;
-
-public class AttachmentInfo {
-    // Link to custom data attachment
+import com.alibaba.fastjson.annotation.JSONField;
+public class AttachmentInfo
+{
+    //
     public String uri;
-    // Type of custom data attachment, see also MIME Types
-    public String contentType;
-
     public AttachmentInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
-
+    //
+    public String contentType;
     public AttachmentInfo contentType(String contentType) {
         this.contentType = contentType;
         return this;

@@ -1,9 +1,6 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.CallerInfo;
-import com.ringcentral.definitions.MessageInfo;
-import com.ringcentral.definitions.PersonalContactInfo;
-import com.ringcentral.definitions.VersionInfo;
+import com.ringcentral.definitions.*;
 import com.ringcentral.paths.AddressBook;
 import com.ringcentral.paths.Sms;
 import okhttp3.MediaType;
@@ -47,9 +44,9 @@ public class UrlBuilderTest extends BaseTest {
         String endpoint = restClient.restApi().account().extension().sms().endpoint();
         assertEquals("/restapi/v1.0/account/~/extension/~/sms", endpoint);
 
-        Sms.PostParameters postParameters = new Sms.PostParameters();
-        postParameters.from = new CallerInfo().phoneNumber(config.get("username"));
-        postParameters.to = new CallerInfo[]{new CallerInfo().phoneNumber(config.get("receiver"))};
+        CreateSMSMessage postParameters = new CreateSMSMessage();
+        postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(config.get("username"));
+        postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(config.get("receiver"))};
         postParameters.text = "hello world";
 
         MessageInfo messageInfo = restClient.restApi().account().extension().sms().post(postParameters, MessageInfo.class);

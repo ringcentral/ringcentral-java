@@ -1,31 +1,28 @@
 package com.ringcentral.definitions;
-
-public class NavigationInfo {
-    // First page of the list
-    public Page firstPage;
-    // Next page of the list
-    public Page nextPage;
-    // Previous page of the list
-    public Page previousPage;
-    // Last page of the list
-    public Page lastPage;
-
-    public NavigationInfo firstPage(Page firstPage) {
+import com.alibaba.fastjson.annotation.JSONField;
+public class NavigationInfo
+{
+    // Canonical URI for the first page of the list
+    public String firstPage;
+    public NavigationInfo firstPage(String firstPage) {
         this.firstPage = firstPage;
         return this;
     }
-
-    public NavigationInfo nextPage(Page nextPage) {
+    // Canonical URI for the next page of the list
+    public String nextPage;
+    public NavigationInfo nextPage(String nextPage) {
         this.nextPage = nextPage;
         return this;
     }
-
-    public NavigationInfo previousPage(Page previousPage) {
+    // Canonical URI for the previous page of the list
+    public String previousPage;
+    public NavigationInfo previousPage(String previousPage) {
         this.previousPage = previousPage;
         return this;
     }
-
-    public NavigationInfo lastPage(Page lastPage) {
+    // Canonical URI for the last page of the list
+    public String lastPage;
+    public NavigationInfo lastPage(String lastPage) {
         this.lastPage = lastPage;
         return this;
     }

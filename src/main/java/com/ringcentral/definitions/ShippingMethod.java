@@ -1,16 +1,15 @@
 package com.ringcentral.definitions;
-
-public class ShippingMethod {
-    // Method identifier. The default value is "1" (Ground)
+import com.alibaba.fastjson.annotation.JSONField;
+public class ShippingMethod
+{
+    // Internal identifier of the shipping method
     public String id;
-    // Method name, corresponding to the identifier
-    public String name;
-
     public ShippingMethod id(String id) {
         this.id = id;
         return this;
     }
-
+    // Name/description of the shipping method
+    public String name;
     public ShippingMethod name(String name) {
         this.name = name;
         return this;

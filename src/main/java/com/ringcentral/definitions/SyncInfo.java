@@ -1,25 +1,29 @@
 package com.ringcentral.definitions;
-
-public class SyncInfo {
-    // Type of synchronization
+import com.alibaba.fastjson.annotation.JSONField;
+public class SyncInfo
+{
+    //
     public String syncType;
-    // Synchronization token
-    public String syncToken;
-    // Last synchronization datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
-    public String syncTime;
-
     public SyncInfo syncType(String syncType) {
         this.syncType = syncType;
         return this;
     }
-
+    //
+    public String syncToken;
     public SyncInfo syncToken(String syncToken) {
         this.syncToken = syncToken;
         return this;
     }
-
+    //
+    public String syncTime;
     public SyncInfo syncTime(String syncTime) {
         this.syncTime = syncTime;
+        return this;
+    }
+    //
+    public Boolean olderRecordsExist;
+    public SyncInfo olderRecordsExist(Boolean olderRecordsExist) {
+        this.olderRecordsExist = olderRecordsExist;
         return this;
     }
 }

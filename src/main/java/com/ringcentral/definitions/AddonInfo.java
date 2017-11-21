@@ -1,17 +1,16 @@
 package com.ringcentral.definitions;
-
-public class AddonInfo {
-    // Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier
+import com.alibaba.fastjson.annotation.JSONField;
+public class AddonInfo
+{
+    //
     public String id;
-    // Number of addons. For HardPhones of certain types, which are compatible with such addon identifier
-    public Long count;
-
     public AddonInfo id(String id) {
         this.id = id;
         return this;
     }
-
-    public AddonInfo count(Long count) {
+    //
+    public String count;
+    public AddonInfo count(String count) {
         this.count = count;
         return this;
     }

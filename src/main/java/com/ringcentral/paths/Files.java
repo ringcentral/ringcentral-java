@@ -16,11 +16,5 @@ public class Files extends Path {
             this.groupId = groupId;
             return this;
         }
-        // Name of a file attached
-        public String name;
-        public PostParameters name(String name) {
-            this.name = name;
-            return this;
-        }
     }
 }

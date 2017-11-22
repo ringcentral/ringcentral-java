@@ -27,8 +27,8 @@ public class ProfileImageInfo
         return this;
     }
     // List of URIs to profile images in different dimensions
-    public String[] scales;
-    public ProfileImageInfo scales(String[] scales) {
+    public ProfileImageInfoURI[] scales;
+    public ProfileImageInfo scales(ProfileImageInfoURI[] scales) {
         this.scales = scales;
         return this;
     }

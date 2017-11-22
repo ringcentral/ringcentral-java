@@ -14,4 +14,10 @@ public class CreateSubscriptionRequest
         this.deliveryMode = deliveryMode;
         return this;
     }
+    // Subscription lifetime in seconds. Max value is 7 days (604800 sec)
+    public Long expiresIn;
+    public CreateSubscriptionRequest expiresIn(Long expiresIn) {
+        this.expiresIn = expiresIn;
+        return this;
+    }
 }

@@ -21,8 +21,8 @@ public class GetExtensionInfoResponse
         return this;
     }
     // Information on department extension(s), to which the requested extension belongs. Returned only for user extensions, members of department, requested by single extensionId
-    public DepartmentInfo departments;
-    public GetExtensionInfoResponse departments(DepartmentInfo departments) {
+    public DepartmentInfo[] departments;
+    public GetExtensionInfoResponse departments(DepartmentInfo[] departments) {
         this.departments = departments;
         return this;
     }

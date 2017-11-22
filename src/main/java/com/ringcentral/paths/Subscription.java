@@ -12,15 +12,6 @@ public class Subscription extends Path {
     {
         return new Renew(restClient, pathSegment, null);
     }
-    public static class PostParameters
-    {
-        // If 'True' then aggregated presence status is returned in a notification payload in the 'presenceStatus' field
-        public Boolean aggregated;
-        public PostParameters aggregated(Boolean aggregated) {
-            this.aggregated = aggregated;
-            return this;
-        }
-    }
     public static class PutParameters
     {
         // If 'True' then aggregated presence status is returned in a notification payload

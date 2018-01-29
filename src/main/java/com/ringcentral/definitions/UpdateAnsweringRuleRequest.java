@@ -8,4 +8,10 @@ public class UpdateAnsweringRuleRequest
         this.forwarding = forwarding;
         return this;
     }
+    //
+    public String name;
+    public UpdateAnsweringRuleRequest name(String name) {
+        this.name = name;
+        return this;
+    }
 }

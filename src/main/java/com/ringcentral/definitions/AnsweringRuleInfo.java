@@ -68,10 +68,28 @@ public class AnsweringRuleInfo
         this.unconditionalForwarding = unconditionalForwarding;
         return this;
     }
+    // Queue settings applied for department (call queue) extension type, with the 'AgentQueue' value specified as a call handling action
+    public QueueInfo queue;
+    public AnsweringRuleInfo queue(QueueInfo queue) {
+        this.queue = queue;
+        return this;
+    }
+    // Transfer settings applied for department (call queue) extension type, with 'TransferToExtension' call handling action
+    public TransferredExtensionInfo transfer;
+    public AnsweringRuleInfo transfer(TransferredExtensionInfo transfer) {
+        this.transfer = transfer;
+        return this;
+    }
     // Specifies whether to take a voicemail and who should do it
     public VoicemailInfo voicemail;
     public AnsweringRuleInfo voicemail(VoicemailInfo voicemail) {
         this.voicemail = voicemail;
+        return this;
+    }
+    // Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
+    public GreetingInfo[] greetings;
+    public AnsweringRuleInfo greetings(GreetingInfo[] greetings) {
+        this.greetings = greetings;
         return this;
     }
 }

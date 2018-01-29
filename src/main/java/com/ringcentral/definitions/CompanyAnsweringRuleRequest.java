@@ -2,6 +2,12 @@ package com.ringcentral.definitions;
 import com.alibaba.fastjson.annotation.JSONField;
 public class CompanyAnsweringRuleRequest
 {
+    // Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number
+    public String name;
+    public CompanyAnsweringRuleRequest name(String name) {
+        this.name = name;
+        return this;
+    }
     // Specifies if the rule is active or inactive. The default value is 'True'
     public Boolean enabled;
     public CompanyAnsweringRuleRequest enabled(Boolean enabled) {
@@ -12,12 +18,6 @@ public class CompanyAnsweringRuleRequest
     public String type;
     public CompanyAnsweringRuleRequest type(String type) {
         this.type = type;
-        return this;
-    }
-    // Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number
-    public String name;
-    public CompanyAnsweringRuleRequest name(String name) {
-        this.name = name;
         return this;
     }
     // Answering rule will be applied when calls are received from the specified caller(s)

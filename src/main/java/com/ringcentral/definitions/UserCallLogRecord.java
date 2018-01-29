@@ -20,15 +20,15 @@ public class UserCallLogRecord
         this.sessionId = sessionId;
         return this;
     }
-    // Caller information
-    public String from;
-    public UserCallLogRecord from(String from) {
+    //
+    public CallLogCallerInfo from;
+    public UserCallLogRecord from(CallLogCallerInfo from) {
         this.from = from;
         return this;
     }
-    // Callee information
-    public String to;
-    public UserCallLogRecord to(String to) {
+    //
+    public CallLogCallerInfo to;
+    public UserCallLogRecord to(CallLogCallerInfo to) {
         this.to = to;
         return this;
     }
@@ -56,9 +56,9 @@ public class UserCallLogRecord
         this.duration = duration;
         return this;
     }
-    // Call recording data. Returned if the call is recorded. Each call recording is stored in the system for 90 days. But if the number of recordings exceeds the admissible limit (100,000 recordings per account) then the older recordings are replaced with the new ones. Thus a link to an older recording in a certain call log record becomes unavailable
-    public String recording;
-    public UserCallLogRecord recording(String recording) {
+    //
+    public RecordingInfo recording;
+    public UserCallLogRecord recording(RecordingInfo recording) {
         this.recording = recording;
         return this;
     }

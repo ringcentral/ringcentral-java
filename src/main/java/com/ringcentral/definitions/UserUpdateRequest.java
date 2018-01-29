@@ -57,9 +57,9 @@ public class UserUpdateRequest
         return this;
     }
     // URN link
-    public UrnInfoRequest urn:ietf:params:scim:schemas:extension:enterprise:2.0:User;
-    public UserUpdateRequest urn:ietf:params:scim:schemas:extension:enterprise:2.0:User(UrnInfoRequest urn:ietf:params:scim:schemas:extension:enterprise:2.0:User) {
-        this.urn:ietf:params:scim:schemas:extension:enterprise:2.0:User = urn:ietf:params:scim:schemas:extension:enterprise:2.0:User;
-        return this;
-    }
+    // public UrnInfoRequest urn:ietf:params:scim:schemas:extension:enterprise:2.0:User;
+    // public UserUpdateRequest urn:ietf:params:scim:schemas:extension:enterprise:2.0:User(UrnInfoRequest urn:ietf:params:scim:schemas:extension:enterprise:2.0:User) {
+    //     this.urn:ietf:params:scim:schemas:extension:enterprise:2.0:User = urn:ietf:params:scim:schemas:extension:enterprise:2.0:User;
+    //     return this;
+    // }
 }

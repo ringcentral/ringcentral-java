@@ -24,10 +24,6 @@ public class Glip extends Path {
     {
         return new Persons(restClient, pathSegment, id);
     }
-    public Posts posts()
-    {
-        return new Posts(restClient, pathSegment, null);
-    }
     public Files files(String id)
     {
         return new Files(restClient, pathSegment, id);

@@ -8,6 +8,10 @@ public class Scim extends Path {
         this.restClient = restClient;
         pathSegment = new PathSegment(parent, "scim", id);
     }
+    public ServiceProviderConfig serviceProviderConfig()
+    {
+        return new ServiceProviderConfig(restClient, pathSegment, null);
+    }
     public Users users(String id)
     {
         return new Users(restClient, pathSegment, id);

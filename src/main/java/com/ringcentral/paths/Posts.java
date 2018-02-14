@@ -10,12 +10,6 @@ public class Posts extends Path {
     }
     public static class ListParameters
     {
-        // Identifier of a group to filter posts
-        public String groupId;
-        public ListParameters groupId(String groupId) {
-            this.groupId = groupId;
-            return this;
-        }
         // Token of a page to be returned, see Glip Navigation Info
         public String pageToken;
         public ListParameters pageToken(String pageToken) {

@@ -14,4 +14,16 @@ public class CompanyDirectoryPhoneNumberInfo
         this.type = type;
         return this;
     }
+    // Specifies if a phone number should be hidden or not. Returned only if the value is 'True'
+    public Boolean hidden;
+    public CompanyDirectoryPhoneNumberInfo hidden(Boolean hidden) {
+        this.hidden = hidden;
+        return this;
+    }
+    // Usage type of a phone number
+    public String usageType;
+    public CompanyDirectoryPhoneNumberInfo usageType(String usageType) {
+        this.usageType = usageType;
+        return this;
+    }
 }

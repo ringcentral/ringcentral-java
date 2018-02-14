@@ -26,7 +26,7 @@ public class GetDeviceInfoResponse
         this.type = type;
         return this;
     }
-    // Device name. Mandatory if ordering  SoftPhone  or  OtherPhone . Optional for  HardPhone . If not specified for HardPhone, then device  model  name is used as device  name
+    // Device name. Mandatory if ordering  SoftPhone  or  OtherPhone . Optional for  HardPhone . If not specified for HardPhone, then device model  name is used as device  name
     public String name;
     public GetDeviceInfoResponse name(String name) {
         this.name = name;
@@ -51,8 +51,8 @@ public class GetDeviceInfoResponse
         return this;
     }
     // This attribute can be omitted for unassigned devices
-    public ExtensionInfo extension;
-    public GetDeviceInfoResponse extension(ExtensionInfo extension) {
+    public ExtensionInfoIntId extension;
+    public GetDeviceInfoResponse extension(ExtensionInfoIntId extension) {
         this.extension = extension;
         return this;
     }
@@ -63,12 +63,12 @@ public class GetDeviceInfoResponse
         return this;
     }
     // Phone lines information
-    public PhoneLinesInfo phoneLines;
-    public GetDeviceInfoResponse phoneLines(PhoneLinesInfo phoneLines) {
+    public PhoneLinesInfo[] phoneLines;
+    public GetDeviceInfoResponse phoneLines(PhoneLinesInfo[] phoneLines) {
         this.phoneLines = phoneLines;
         return this;
     }
-    // Shipping information, according to which devices (in case of  HardPhone ) or e911 stickers (in case of  SoftPhone  and  OtherPhone ) will be delivered to the customer
+    // Shipping information, according to which devices (in case of HardPhone ) or e911 stickers (in case of  SoftPhone  and  OtherPhone ) will be delivered to the customer
     public ShippingInfo shipping;
     public GetDeviceInfoResponse shipping(ShippingInfo shipping) {
         this.shipping = shipping;

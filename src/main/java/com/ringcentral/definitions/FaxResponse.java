@@ -3,8 +3,8 @@ import com.alibaba.fastjson.annotation.JSONField;
 public class FaxResponse
 {
     // Internal identifier of a message
-    public String id;
-    public FaxResponse id(String id) {
+    public Long id;
+    public FaxResponse id(Long id) {
         this.id = id;
         return this;
     }
@@ -51,8 +51,8 @@ public class FaxResponse
         return this;
     }
     // The list of message attachments
-    public MessageAttachmentInfo[] attachments;
-    public FaxResponse attachments(MessageAttachmentInfo[] attachments) {
+    public MessageAttachmentInfoIntId[] attachments;
+    public FaxResponse attachments(MessageAttachmentInfoIntId[] attachments) {
         this.attachments = attachments;
         return this;
     }

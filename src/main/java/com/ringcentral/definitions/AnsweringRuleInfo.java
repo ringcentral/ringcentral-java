@@ -8,7 +8,7 @@ public class AnsweringRuleInfo
         this.uri = uri;
         return this;
     }
-    // Internal identifier of an asnwering rule
+    // Internal identifier of an answering rule
     public String id;
     public AnsweringRuleInfo id(String id) {
         this.id = id;

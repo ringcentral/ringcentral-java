@@ -19,8 +19,8 @@ import static org.mockito.Mockito.verify;
 public class GlipTest extends BaseTest {
     private String sendMessage() throws IOException, RestException {
         GlipCreatePost postParameters = new GlipCreatePost();
-        postParameters = postParameters.groupId(config.get("glip_group")).text("hello world");
-        return restClient.post("/restapi/v1.0/glip/posts", postParameters).string();
+        postParameters = postParameters.text("hello world");
+        return restClient.post("/restapi/v1.0/glip/groups/" + config.get("glip_group") + "/posts", postParameters).string();
     }
 
     @Test

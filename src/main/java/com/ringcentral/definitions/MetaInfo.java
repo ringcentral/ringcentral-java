@@ -2,12 +2,6 @@ package com.ringcentral.definitions;
 import com.alibaba.fastjson.annotation.JSONField;
 public class MetaInfo
 {
-    // Specification links
-    public String[] schemas;
-    public MetaInfo schemas(String[] schemas) {
-        this.schemas = schemas;
-        return this;
-    }
     // User type
     public String resourceType;
     public MetaInfo resourceType(String resourceType) {
@@ -26,7 +20,7 @@ public class MetaInfo
         this.lastModified = lastModified;
         return this;
     }
-    // User location
+    // resource location URI
     public String location;
     public MetaInfo location(String location) {
         this.location = location;

@@ -15,8 +15,8 @@ public class ModelInfo
         return this;
     }
     // Addons description
-    public AddonInfo addons;
-    public ModelInfo addons(AddonInfo addons) {
+    public AddonInfo[] addons;
+    public ModelInfo addons(AddonInfo[] addons) {
         this.addons = addons;
         return this;
     }

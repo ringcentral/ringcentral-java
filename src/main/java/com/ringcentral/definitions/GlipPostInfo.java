@@ -26,12 +26,6 @@ public class GlipPostInfo
         this.text = text;
         return this;
     }
-    // List of posted attachments
-    public GlipAttachmentInfo[] attachments;
-    public GlipPostInfo attachments(GlipAttachmentInfo[] attachments) {
-        this.attachments = attachments;
-        return this;
-    }
     // Internal identifier of a user - author of a post
     public String creatorId;
     public GlipPostInfo creatorId(String creatorId) {
@@ -54,6 +48,42 @@ public class GlipPostInfo
     public String lastModifiedTime;
     public GlipPostInfo lastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
+        return this;
+    }
+    // List of posted attachments
+    public GlipMessageAttachmentInfo[] attachments;
+    public GlipPostInfo attachments(GlipMessageAttachmentInfo[] attachments) {
+        this.attachments = attachments;
+        return this;
+    }
+    // List of posted attachments
+    public GlipMentionsInfo[] mentions;
+    public GlipPostInfo mentions(GlipMentionsInfo[] mentions) {
+        this.mentions = mentions;
+        return this;
+    }
+    // activity type
+    public String activity;
+    public GlipPostInfo activity(String activity) {
+        this.activity = activity;
+        return this;
+    }
+    // Title of the message. Can be set for bot messages only
+    public String title;
+    public GlipPostInfo title(String title) {
+        this.title = title;
+        return this;
+    }
+    // URI to an image to use as the icon for this message.
+    public String iconUri;
+    public GlipPostInfo iconUri(String iconUri) {
+        this.iconUri = iconUri;
+        return this;
+    }
+    // Emoji to use as the icon for a message
+    public String iconEmoji;
+    public GlipPostInfo iconEmoji(String iconEmoji) {
+        this.iconEmoji = iconEmoji;
         return this;
     }
 }

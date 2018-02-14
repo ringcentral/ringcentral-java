@@ -48,8 +48,4 @@ public class Restapi extends Path {
     {
         return new NumberPool(restClient, pathSegment, null);
     }
-    public Scim scim()
-    {
-        return new Scim(restClient, pathSegment, null);
-    }
 }

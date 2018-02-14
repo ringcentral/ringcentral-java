@@ -12,6 +12,10 @@ public class Groups extends Path {
     {
         return new BulkAssign(restClient, pathSegment, null);
     }
+    public Posts posts()
+    {
+        return new Posts(restClient, pathSegment, null);
+    }
     public static class ListParameters
     {
         // Type of a group. 'PrivateChat' is a group of 2 members. 'Group' is a chat of 2 and more participants, the membership cannot be changed after group creation. 'Team' is a chat of 1 and more participants, the membership can be modified in future

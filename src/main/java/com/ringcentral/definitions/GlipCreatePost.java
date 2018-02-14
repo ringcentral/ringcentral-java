@@ -2,21 +2,15 @@ package com.ringcentral.definitions;
 import com.alibaba.fastjson.annotation.JSONField;
 public class GlipCreatePost
 {
-    // Internal identifier of a group to send post to
-    public String groupId;
-    public GlipCreatePost groupId(String groupId) {
-        this.groupId = groupId;
-        return this;
-    }
-    // Text of a post, the maximum is 10000 characters
+    // Text of a post, the maximum is 10000 unicode characters
     public String text;
     public GlipCreatePost text(String text) {
         this.text = text;
         return this;
     }
     // List of attachments to be posted
-    public GlipAttachmentInfoRequest[] attachments;
-    public GlipCreatePost attachments(GlipAttachmentInfoRequest[] attachments) {
+    public GlipMessageAttachmentInfoRequest[] attachments;
+    public GlipCreatePost attachments(GlipMessageAttachmentInfoRequest[] attachments) {
         this.attachments = attachments;
         return this;
     }

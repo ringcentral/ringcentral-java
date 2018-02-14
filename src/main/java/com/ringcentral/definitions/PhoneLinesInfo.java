@@ -9,8 +9,8 @@ public class PhoneLinesInfo
         return this;
     }
     // Phone number information
-    public PhoneNumberInfo phoneInfo;
-    public PhoneLinesInfo phoneInfo(PhoneNumberInfo phoneInfo) {
+    public PhoneNumberInfoIntId phoneInfo;
+    public PhoneLinesInfo phoneInfo(PhoneNumberInfoIntId phoneInfo) {
         this.phoneInfo = phoneInfo;
         return this;
     }

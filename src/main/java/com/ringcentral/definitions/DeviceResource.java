@@ -57,14 +57,14 @@ public class DeviceResource
         return this;
     }
     // This attribute can be omitted for unassigned devices
-    public ExtensionResource extension;
-    public DeviceResource extension(ExtensionResource extension) {
+    public ExtensionResourceIntId extension;
+    public DeviceResource extension(ExtensionResourceIntId extension) {
         this.extension = extension;
         return this;
     }
     // Phone lines information
-    public PhoneLineResource phoneLines;
-    public DeviceResource phoneLines(PhoneLineResource phoneLines) {
+    public PhoneLineResource[] phoneLines;
+    public DeviceResource phoneLines(PhoneLineResource[] phoneLines) {
         this.phoneLines = phoneLines;
         return this;
     }
@@ -80,7 +80,7 @@ public class DeviceResource
         this.shipping = shipping;
         return this;
     }
-    // Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. Either  model structure, or boxBillingId must be specified for HardPhone
+    // Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. Either model structure, or boxBillingId must be specified for HardPhone
     public Long boxBillingId;
     public DeviceResource boxBillingId(Long boxBillingId) {
         this.boxBillingId = boxBillingId;

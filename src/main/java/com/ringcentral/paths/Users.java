@@ -10,19 +10,19 @@ public class Users extends Path {
     }
     public static class GetParameters
     {
-        // User name or email
-        public String[] filter;
-        public GetParameters filter(String[] filter) {
+        // only support 'userName' or 'email' filter expressions for now
+        public String filter;
+        public GetParameters filter(String filter) {
             this.filter = filter;
             return this;
         }
-        // Page
+        // page size
         public Long count;
         public GetParameters count(Long count) {
             this.count = count;
             return this;
         }
-        // 1-based index of the query result
+        // start index (1-based)
         public Long startIndex;
         public GetParameters startIndex(Long startIndex) {
             this.startIndex = startIndex;

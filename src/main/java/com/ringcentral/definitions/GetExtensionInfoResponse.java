@@ -3,8 +3,8 @@ import com.alibaba.fastjson.annotation.JSONField;
 public class GetExtensionInfoResponse
 {
     // Internal identifier of an extension
-    public String id;
-    public GetExtensionInfoResponse id(String id) {
+    public Long id;
+    public GetExtensionInfoResponse id(Long id) {
         this.id = id;
         return this;
     }

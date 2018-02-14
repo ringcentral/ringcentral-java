@@ -2,12 +2,6 @@ package com.ringcentral.definitions;
 import com.alibaba.fastjson.annotation.JSONField;
 public class AddressInfo
 {
-    // Specifies if this is the main user address
-    public Boolean primary;
-    public AddressInfo primary(Boolean primary) {
-        this.primary = primary;
-        return this;
-    }
     // User street address
     public String streetAddress;
     public AddressInfo streetAddress(String streetAddress) {

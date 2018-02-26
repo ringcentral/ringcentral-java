@@ -26,7 +26,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.function.Consumer;
 
-class Subscription {
+public class Subscription {
     private String[] events;
     private RestClient restClient;
     private SubscribeCallback callback;

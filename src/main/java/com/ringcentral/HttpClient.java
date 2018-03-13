@@ -43,6 +43,12 @@ public abstract class HttpClient {
         return request(new Request.Builder().url(url).put(body));
     }
 
+    public ResponseBody patch(String endpoint, Object object, QueryParameter... queryParameters) throws IOException, RestException {
+        RequestBody body = RequestBody.create(jsonMediaType, JSON.toJSONString(object));
+        HttpUrl url = buildUrl(endpoint, queryParameters);
+        return request(new Request.Builder().url(url).patch(body));
+    }
+
     public ResponseBody delete(String endpoint, QueryParameter... queryParameters) throws IOException, RestException {
         HttpUrl url = buildUrl(endpoint, queryParameters);
         return request(new Request.Builder().url(url).delete());
@@ -69,6 +75,10 @@ public abstract class HttpClient {
 
     public <T> T put(String endpoint, Object object, Type type, QueryParameter... queryParameters) throws IOException, RestException {
         return JSON.parseObject(put(endpoint, object, queryParameters).string(), type);
+    }
+
+    public <T> T patch(String endpoint, Object object, Type type, QueryParameter... queryParameters) throws IOException, RestException {
+        return JSON.parseObject(patch(endpoint, object, queryParameters).string(), type);
     }
 
     public static final class QueryParameter {

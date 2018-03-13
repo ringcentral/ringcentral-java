@@ -16,14 +16,14 @@ public class RestClient extends HttpClient {
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final OkHttpClient httpClient = new OkHttpClient();
     public boolean autoRefresh = true;
-    private String appKey;
-    private String appSecret;
+    private String clientId;
+    private String clientSecret;
     private TokenInfo _token;
     private Timer timer;
 
-    public RestClient(String appKey, String appSecret, String server) {
-        this.appKey = appKey;
-        this.appSecret = appSecret;
+    public RestClient(String clientId, String clientSecret, String server) {
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
         this.server = server;
     }
 
@@ -104,7 +104,7 @@ public class RestClient extends HttpClient {
             .addQueryParameter("response_type", "code")
             .addQueryParameter("state", state)
             .addQueryParameter("redirect_uri", redirectUri)
-            .addQueryParameter("client_id", appKey)
+            .addQueryParameter("client_id", clientId)
             .build().toString();
     }
 
@@ -117,7 +117,7 @@ public class RestClient extends HttpClient {
     }
 
     private String basicKey() {
-        return new String(Base64.getEncoder().encode(MessageFormat.format("{0}:{1}", appKey, appSecret).getBytes()));
+        return new String(Base64.getEncoder().encode(MessageFormat.format("{0}:{1}", clientId, clientSecret).getBytes()));
     }
 
     private String authorizationHeader() {

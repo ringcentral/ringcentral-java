@@ -21,7 +21,7 @@ public class BaseTest {
                 e1.printStackTrace();
             }
         }
-        restClient = new RestClient(config.get("appKey"), config.get("appSecret"), config.get("server"));
+        restClient = new RestClient(config.get("clientId"), config.get("clientSecret"), config.get("server"));
         try {
             restClient.authorize(config.get("username"), config.get("extension"), config.get("password"));
         } catch (IOException | RestException e) {

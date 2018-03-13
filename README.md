@@ -54,7 +54,7 @@ Don't forget to replace `[version]` with expected version.
 ### Intialization & Authorization
 
 ```java
-RestClient restClient = new RestClient(appKey, appSecret, server);
+RestClient restClient = new RestClient(clientId, clientSecret, server);
 restClient.authorize(username, extension, password);
 ```
 

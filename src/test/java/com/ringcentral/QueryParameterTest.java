@@ -1,7 +1,6 @@
 package com.ringcentral;
 
 import com.ringcentral.definitions.GlipGroupList;
-import com.ringcentral.paths.Groups;
 import org.junit.Test;
 
 import java.io.IOException;

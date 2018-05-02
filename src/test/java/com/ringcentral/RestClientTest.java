@@ -1,10 +1,8 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.CallerInfo;
 import com.ringcentral.definitions.CreateSMSMessage;
 import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
 import com.ringcentral.definitions.VersionInfo;
-import com.ringcentral.paths.Sms;
 import org.junit.Test;
 
 import java.io.IOException;

@@ -2,11 +2,9 @@ package com.ringcentral;
 
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
-import com.ringcentral.definitions.CallerInfo;
 import com.ringcentral.definitions.CreateSMSMessage;
 import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
 import com.ringcentral.definitions.SubscriptionInfo;
-import com.ringcentral.paths.Sms;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 

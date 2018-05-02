@@ -3,7 +3,6 @@ package com.ringcentral;
 import com.alibaba.fastjson.JSON;
 import com.ringcentral.definitions.GlipCreatePost;
 import com.ringcentral.definitions.GlipNotification;
-import com.ringcentral.paths.Posts;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 

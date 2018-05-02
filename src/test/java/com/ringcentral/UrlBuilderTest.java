@@ -2,7 +2,6 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.*;
 import com.ringcentral.paths.AddressBook;
-import com.ringcentral.paths.Sms;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;

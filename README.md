@@ -127,6 +127,10 @@ ResponseBody responseBody = restClient.restApi().account().extension().sms()
 // ...
 ```
 
+- ❗️ ❗️ Please don't forget to invoke `responseBody.close()`. Ref: https://github.com/square/okhttp/issues/2311
+    - If you invoked `responseBody.string()` you don't need to invoke `responseBody.close()` because the former implicitly closes body.
+
+
 #### Models
 
 ```java

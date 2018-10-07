@@ -53,7 +53,6 @@ public class AuthorizationTest extends BaseTest {
             restClient.authorize("auth_code", "http://baidu.com");
         } catch (RestException re) {
             assertEquals(400, re.getHttpStatusCode());
-            assertTrue(re.getMessage().contains("Unparsable"));
         }
     }
 

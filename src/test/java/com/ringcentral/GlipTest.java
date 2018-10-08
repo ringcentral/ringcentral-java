@@ -44,7 +44,7 @@ public class GlipTest extends BaseTest {
         subscription.subscribe();
         Thread.sleep(8000);
         sendMessage();
-        Thread.sleep(16000);
+        Thread.sleep(32000);
         ArgumentCaptor<String> argument = ArgumentCaptor.forClass(String.class);
         verify(consumer).accept(argument.capture());
         String jsonString = argument.getValue();

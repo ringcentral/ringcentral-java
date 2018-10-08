@@ -26,7 +26,9 @@ public class OkHttpClientTest extends BaseTest {
         try{
             restClient.post("/restapi/v1.0/account/~/extension/~/sms", postParameters).string();
             fail("Expected java.net.SocketTimeoutException was not thrown");
-        }catch(java.net.SocketTimeoutException e) {
+        } catch(java.net.SocketTimeoutException e) {
+        } finally {
+            restClient.SetOkHttpClient(new OkHttpClient());
         }
     }
 }

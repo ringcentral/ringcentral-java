@@ -78,9 +78,9 @@ public class SubscriptionTest extends BaseTest {
             consumer);
         subscription.revoke(); // should not cause any issue when _subscription is null
         subscription.subscribe();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         subscription.revoke();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         sendSms();
         Thread.sleep(16000);
         verify(consumer, never()).accept(any());

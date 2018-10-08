@@ -85,7 +85,7 @@ public abstract class HttpClient {
         String key;
         String value;
 
-        QueryParameter(String key, String value) {
+        public QueryParameter(String key, String value) {
             this.key = key;
             this.value = value;
         }

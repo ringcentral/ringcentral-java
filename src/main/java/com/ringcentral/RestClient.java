@@ -14,17 +14,30 @@ import java.util.function.Consumer;
 public class RestClient extends HttpClient {
     public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
-    private static final OkHttpClient httpClient = new OkHttpClient();
+    private OkHttpClient httpClient;
     public boolean autoRefresh = true;
     private String clientId;
     private String clientSecret;
     private TokenInfo _token;
     private Timer timer;
 
-    public RestClient(String clientId, String clientSecret, String server) {
+    public RestClient(String clientId, String clientSecret, String server, OkHttpClient okHttpClient) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.server = server;
+        if(okHttpClient == null) {
+            this.httpClient = new OkHttpClient();
+        } else {
+            this.httpClient = okHttpClient;
+        }
+    }
+
+    public RestClient(String clientId, String clientSecret, String server) {
+        this(clientId, clientSecret, server, null);
+    }
+
+    public void SetOkHttpClient(OkHttpClient okHttpClient) {
+        this.httpClient = okHttpClient;
     }
 
     public TokenInfo getToken() {

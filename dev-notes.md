@@ -12,6 +12,12 @@ edit src/test/resources/.env
 ./gradlew test
 ```
 
+Test a specific test case:
+
+```
+./gradlew test --tests com.ringcentral.OkHttpClientTest
+```
+
 
 ## Auto generate models
 

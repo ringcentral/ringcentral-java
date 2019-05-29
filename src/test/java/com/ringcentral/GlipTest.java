@@ -25,13 +25,13 @@ public class GlipTest extends BaseTest {
     @Test
     public void testPostMessage() throws IOException, RestException {
         String result = sendMessage();
-        assertEquals(true, result.contains("hello world"));
+        assertTrue(result.contains("hello world"));
     }
 
     @Test
     public void testGroups() throws IOException, RestException {
         String result = restClient.get("/restapi/v1.0/glip/groups").string();
-        assertEquals(true, result.contains("records"));
+        assertTrue(result.contains("records"));
     }
 
     @Test

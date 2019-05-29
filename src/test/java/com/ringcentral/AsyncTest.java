@@ -15,9 +15,7 @@ public class AsyncTest extends BaseTest {
         new Thread(() -> {
             try {
                 versionInfos[0] = restClient.get("/restapi/v1.0", VersionInfo.class);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (RestException e) {
+            } catch (IOException | RestException e) {
                 e.printStackTrace();
             }
         }).start();

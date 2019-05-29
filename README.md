@@ -43,7 +43,6 @@ Don't forget to replace `[version]` with expected version.
   <groupId>com.ringcentral</groupId>
   <artifactId>ringcentral</artifactId>
   <version>[version]</version>
-  <type>pom</type>
 </dependency>
 ```
 

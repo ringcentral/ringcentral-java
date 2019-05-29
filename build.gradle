@@ -1,8 +1,8 @@
 plugins {
     id 'java'
     id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.8.1'
-    id 'com.jfrog.bintray' version '1.7.3'
+    id 'com.github.kt3k.coveralls' version '2.8.4'
+    id 'com.jfrog.bintray' version '1.8.4'
     id 'maven'
     id 'maven-publish'
     id 'java-library'
@@ -16,11 +16,11 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.31'
-    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.7.0'
-    compile group: 'com.pubnub', name: 'pubnub-gson', version: '4.6.2'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.14.2'
+    compile group: 'com.pubnub', name: 'pubnub-gson', version: '4.24.0'
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.7.22'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
     testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 }
 

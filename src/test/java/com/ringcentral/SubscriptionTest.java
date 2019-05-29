@@ -50,6 +50,7 @@ public class SubscriptionTest extends BaseTest {
         ArgumentCaptor<String> argument = ArgumentCaptor.forClass(String.class);
         verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
+        subscription.revoke();
     }
 
     @Test
@@ -68,6 +69,7 @@ public class SubscriptionTest extends BaseTest {
         ArgumentCaptor<String> argument = ArgumentCaptor.forClass(String.class);
         verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
+        subscription.revoke();
     }
 
     @Test
@@ -101,6 +103,7 @@ public class SubscriptionTest extends BaseTest {
         ArgumentCaptor<PNStatus> argument = ArgumentCaptor.forClass(PNStatus.class);
         verify(consumer2, atLeastOnce()).accept(argument.capture());
         assertEquals(argument.getValue().getStatusCode(), 200);
+        subscription.revoke();
     }
 
     @Test
@@ -119,5 +122,6 @@ public class SubscriptionTest extends BaseTest {
         ArgumentCaptor<String> argument = ArgumentCaptor.forClass(String.class);
         verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
+        subscription.revoke();
     }
 }

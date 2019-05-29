@@ -12,3 +12,5 @@ out/
 .classpath
 *.class
 bin/
+
+.DS_Store 

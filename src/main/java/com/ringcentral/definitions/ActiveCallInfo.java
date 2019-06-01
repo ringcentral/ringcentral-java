@@ -1,53 +1,105 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class ActiveCallInfo
-{
-    // Internal identifier of a call
+
+
+public class ActiveCallInfo {
+    /**
+     *
+     */
     public String id;
+    /**
+     * Enum: Inbound, Outbound
+     */
+    public String direction;
+    /**
+     * Phone number or extension number of a caller. For GCM transport type '_from' property should be used
+     */
+    public String from;
+    /**
+     * Name of a caller
+     */
+    public String fromName;
+    /**
+     * Phone number or extension number of a callee
+     */
+    public String to;
+    /**
+     * Name of a callee
+     */
+    public String toName;
+    /**
+     * Time when the call is actually started
+     */
+    public String startTime;
+    /**
+     *
+     */
+    public String telephonyStatus;
+    /**
+     *
+     */
+    public DetailedCallInfo sipData;
+    /**
+     *
+     */
+    public String sessionId;
+    /**
+     *
+     */
+    public String terminationType;
+
     public ActiveCallInfo id(String id) {
         this.id = id;
         return this;
     }
-    // Call direction
-    public String direction;
+
     public ActiveCallInfo direction(String direction) {
         this.direction = direction;
         return this;
     }
-    // Phone number or extension number of a caller
-    public String from;
+
     public ActiveCallInfo from(String from) {
         this.from = from;
         return this;
     }
-    // Phone number or extension number of a callee
-    public String to;
+
+    public ActiveCallInfo fromName(String fromName) {
+        this.fromName = fromName;
+        return this;
+    }
+
     public ActiveCallInfo to(String to) {
         this.to = to;
         return this;
     }
-    // Telephony call status
-    public String telephonyStatus;
+
+    public ActiveCallInfo toName(String toName) {
+        this.toName = toName;
+        return this;
+    }
+
+    public ActiveCallInfo startTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
     public ActiveCallInfo telephonyStatus(String telephonyStatus) {
         this.telephonyStatus = telephonyStatus;
         return this;
     }
-    //
-    public DetailedCallInfo sipData;
+
     public ActiveCallInfo sipData(DetailedCallInfo sipData) {
         this.sipData = sipData;
         return this;
     }
-    // Internal identifier of a call session
-    public String sessionId;
+
     public ActiveCallInfo sessionId(String sessionId) {
         this.sessionId = sessionId;
         return this;
     }
-    // Type of call termination. Supported for calls in 'NoCall' status. If the returned termination type is 'intermediate' it means the call is not actually ended, the connection is established on one of the devices
-    public String terminationType;
+
     public ActiveCallInfo terminationType(String terminationType) {
         this.terminationType = terminationType;
         return this;
     }
+
 }

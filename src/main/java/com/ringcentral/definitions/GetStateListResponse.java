@@ -1,23 +1,36 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GetStateListResponse
-{
-    // List of states
+
+
+public class GetStateListResponse {
+    /**
+     * List of states
+     * Required
+     */
     public GetStateInfoResponse[] records;
+    /**
+     * Information on navigation
+     * Required
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     * Required
+     */
+    public ProvisioningPagingInfo paging;
+
     public GetStateListResponse records(GetStateInfoResponse[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public GetStateListResponse navigation(NavigationInfo navigation) {
+
+    public GetStateListResponse navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public GetStateListResponse paging(PagingInfo paging) {
+
+    public GetStateListResponse paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

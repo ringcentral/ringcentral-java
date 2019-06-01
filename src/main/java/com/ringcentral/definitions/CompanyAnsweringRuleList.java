@@ -1,29 +1,42 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class CompanyAnsweringRuleList
-{
-    // Link to an answering rule resource
+
+
+public class CompanyAnsweringRuleList {
+    /**
+     * Link to an answering rule resource
+     */
     public String uri;
+    /**
+     * List of company answering rules
+     */
+    public ListCompanyAnsweringRuleInfo[] records;
+    /**
+     * Information on paging
+     */
+    public CallHandlingPagingInfo paging;
+    /**
+     * Information on navigation
+     */
+    public CallHandlingNavigationInfo navigation;
+
     public CompanyAnsweringRuleList uri(String uri) {
         this.uri = uri;
         return this;
     }
-    // List of company answering rules
-    public ListCompanyAnsweringRuleInfo[] records;
+
     public CompanyAnsweringRuleList records(ListCompanyAnsweringRuleInfo[] records) {
         this.records = records;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public CompanyAnsweringRuleList paging(PagingInfo paging) {
+
+    public CompanyAnsweringRuleList paging(CallHandlingPagingInfo paging) {
         this.paging = paging;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public CompanyAnsweringRuleList navigation(NavigationInfo navigation) {
+
+    public CompanyAnsweringRuleList navigation(CallHandlingNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
+
 }

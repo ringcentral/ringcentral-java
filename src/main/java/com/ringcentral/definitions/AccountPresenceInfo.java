@@ -1,29 +1,42 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class AccountPresenceInfo
-{
-    // Canonical URI of account presence resource
+
+
+public class AccountPresenceInfo {
+    /**
+     * Canonical URI of account presence resource
+     */
     public String uri;
+    /**
+     * List of Prompts
+     */
+    public GetPresenceInfo[] records;
+    /**
+     * Information on navigation
+     */
+    public PresenceNavigationInfo navigation;
+    /**
+     * Information on paging
+     */
+    public PresencePagingInfo paging;
+
     public AccountPresenceInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
-    // List of Prompts
-    public GetPresenceInfo[] records;
+
     public AccountPresenceInfo records(GetPresenceInfo[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public AccountPresenceInfo navigation(NavigationInfo navigation) {
+
+    public AccountPresenceInfo navigation(PresenceNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public AccountPresenceInfo paging(PagingInfo paging) {
+
+    public AccountPresenceInfo paging(PresencePagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

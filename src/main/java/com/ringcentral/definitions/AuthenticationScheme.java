@@ -1,29 +1,51 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class AuthenticationScheme
-{
-    //
+
+
+public class AuthenticationScheme {
+    /**
+     *
+     */
     public String description;
+    /**
+     *
+     */
+    public String documentationUri;
+    /**
+     *
+     */
+    public String name;
+    /**
+     *
+     */
+    public String specUri;
+    /**
+     *
+     */
+    public Boolean primary;
+
     public AuthenticationScheme description(String description) {
         this.description = description;
         return this;
     }
-    //
-    public String documentationUrl;
-    public AuthenticationScheme documentationUrl(String documentationUrl) {
-        this.documentationUrl = documentationUrl;
+
+    public AuthenticationScheme documentationUri(String documentationUri) {
+        this.documentationUri = documentationUri;
         return this;
     }
-    //
-    public String name;
+
     public AuthenticationScheme name(String name) {
         this.name = name;
         return this;
     }
-    //
-    public String specUrl;
-    public AuthenticationScheme specUrl(String specUrl) {
-        this.specUrl = specUrl;
+
+    public AuthenticationScheme specUri(String specUri) {
+        this.specUri = specUri;
         return this;
     }
+
+    public AuthenticationScheme primary(Boolean primary) {
+        this.primary = primary;
+        return this;
+    }
+
 }

@@ -1,35 +1,70 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class CreateFaxMessageRequest
-{
-    // Recipient information. Phone number property is mandatory. Optional for resend fax request
+
+
+public class CreateFaxMessageRequest {
+    /**
+     * File to upload
+     */
+    public Attachment[] attachments;
+    /**
+     * Resolution of Fax
+     * Enum: High, Low
+     */
+    public String faxResolution;
+    /**
+     * To Phone Number
+     */
     public MessageStoreCallerInfoRequest[] to;
+    /**
+     * Timestamp to send fax at. If not specified (current or the past), the fax is sent immediately
+     */
+    public String sendTime;
+    /**
+     * ISO Code. e.g UK
+     */
+    public String isoCode;
+    /**
+     * Cover page identifier. For the list of available cover page identifiers please call the method Fax Cover Pages. If not specified, the default cover page which is configured in 'Outbound Fax Settings' is attached
+     */
+    public Long coverIndex;
+    /**
+     * Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols
+     */
+    public String coverPageText;
+
+    public CreateFaxMessageRequest attachments(Attachment[] attachments) {
+        this.attachments = attachments;
+        return this;
+    }
+
+    public CreateFaxMessageRequest faxResolution(String faxResolution) {
+        this.faxResolution = faxResolution;
+        return this;
+    }
+
     public CreateFaxMessageRequest to(MessageStoreCallerInfoRequest[] to) {
         this.to = to;
         return this;
     }
-    // Fax resolution
-    public String resolution;
-    public CreateFaxMessageRequest faxResolution(String resolution) {
-        this.resolution = resolution;
-        return this;
-    }
-    // The datetime to send fax at, in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. If time is not specified, the fax will be send immediately
-    public String sendTime;
+
     public CreateFaxMessageRequest sendTime(String sendTime) {
         this.sendTime = sendTime;
         return this;
     }
-    // Optional. Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols
-    public String coverPageText;
+
+    public CreateFaxMessageRequest isoCode(String isoCode) {
+        this.isoCode = isoCode;
+        return this;
+    }
+
+    public CreateFaxMessageRequest coverIndex(Long coverIndex) {
+        this.coverIndex = coverIndex;
+        return this;
+    }
+
     public CreateFaxMessageRequest coverPageText(String coverPageText) {
         this.coverPageText = coverPageText;
         return this;
     }
-    // Internal identifier of the original fax message which needs to be resent. Mandatory for resend fax request
-    public String originalMessageId;
-    public CreateFaxMessageRequest originalMessageId(String originalMessageId) {
-        this.originalMessageId = originalMessageId;
-        return this;
-    }
+
 }

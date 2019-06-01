@@ -1,23 +1,36 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class AccountCallLogResponse
-{
-    // List of call log records
+
+
+public class AccountCallLogResponse {
+    /**
+     * List of call log records
+     * Required
+     */
     public CallLogRecord[] records;
+    /**
+     * Information on navigation
+     * Required
+     */
+    public CallLogNavigationInfo navigation;
+    /**
+     * Information on paging
+     * Required
+     */
+    public CallLogPagingInfo paging;
+
     public AccountCallLogResponse records(CallLogRecord[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public AccountCallLogResponse navigation(NavigationInfo navigation) {
+
+    public AccountCallLogResponse navigation(CallLogNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public AccountCallLogResponse paging(PagingInfo paging) {
+
+    public AccountCallLogResponse paging(CallLogPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

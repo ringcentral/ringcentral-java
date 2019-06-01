@@ -1,17 +1,25 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GlipPosts
-{
-    // List of posts
+
+
+public class GlipPosts {
+    /**
+     * List of posts
+     * Required
+     */
     public GlipPostInfo[] records;
+    /**
+     *
+     */
+    public GlipNavigationInfo navigation;
+
     public GlipPosts records(GlipPostInfo[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public GlipNavigationInfo navigation;
+
     public GlipPosts navigation(GlipNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
+
 }

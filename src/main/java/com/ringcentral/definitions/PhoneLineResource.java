@@ -1,23 +1,33 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class PhoneLineResource
-{
-    //
+
+
+public class PhoneLineResource {
+    /**
+     * Enum: Unknown, Standalone, StandaloneFree, BlaPrimary, BlaSecondary, BLF
+     */
     public String lineType;
+    /**
+     *
+     */
+    public PhoneNumberResourceIntId phoneInfo;
+    /**
+     *
+     */
+    public EmergencyAddress emergencyAddress;
+
     public PhoneLineResource lineType(String lineType) {
         this.lineType = lineType;
         return this;
     }
-    //
-    public PhoneNumberResourceIntId phoneInfo;
+
     public PhoneLineResource phoneInfo(PhoneNumberResourceIntId phoneInfo) {
         this.phoneInfo = phoneInfo;
         return this;
     }
-    //
-    public EmergencyAddress emergencyAddress;
+
     public PhoneLineResource emergencyAddress(EmergencyAddress emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }
+
 }

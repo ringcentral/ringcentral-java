@@ -1,23 +1,36 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GetTimezoneListResponse
-{
-    // List of timezones
+
+
+public class GetTimezoneListResponse {
+    /**
+     * List of timezones
+     * Required
+     */
     public GetTimezoneInfoResponse[] records;
+    /**
+     * Information on navigation
+     * Required
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     * Required
+     */
+    public ProvisioningPagingInfo paging;
+
     public GetTimezoneListResponse records(GetTimezoneInfoResponse[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public GetTimezoneListResponse navigation(NavigationInfo navigation) {
+
+    public GetTimezoneListResponse navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public GetTimezoneListResponse paging(PagingInfo paging) {
+
+    public GetTimezoneListResponse paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

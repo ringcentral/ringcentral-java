@@ -1,23 +1,33 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class ContactList
-{
-    // List of personal contacts from the extension address book
+
+
+public class ContactList {
+    /**
+     * List of personal contacts from the extension address book
+     */
     public PersonalContactResource[] records;
+    /**
+     * Information on navigation
+     */
+    public UserContactsNavigationInfo navigation;
+    /**
+     * Information on paging
+     */
+    public UserContactsPagingInfo paging;
+
     public ContactList records(PersonalContactResource[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public ContactList navigation(NavigationInfo navigation) {
+
+    public ContactList navigation(UserContactsNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public ContactList paging(PagingInfo paging) {
+
+    public ContactList paging(UserContactsPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

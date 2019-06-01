@@ -1,23 +1,36 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GetExtensionDevicesResponse
-{
-    // List of extension devices
+
+
+public class GetExtensionDevicesResponse {
+    /**
+     * List of extension devices
+     * Required
+     */
     public GetDeviceInfoResponse[] records;
+    /**
+     * Information on navigation
+     * Required
+     */
+    public DeviceProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     * Required
+     */
+    public DeviceProvisioningPagingInfo paging;
+
     public GetExtensionDevicesResponse records(GetDeviceInfoResponse[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public GetExtensionDevicesResponse navigation(NavigationInfo navigation) {
+
+    public GetExtensionDevicesResponse navigation(DeviceProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public GetExtensionDevicesResponse paging(PagingInfo paging) {
+
+    public GetExtensionDevicesResponse paging(DeviceProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

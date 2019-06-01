@@ -1,23 +1,35 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GlipMessageAttachmentFieldsInfo
-{
-    // Title for an individual field
+
+
+public class GlipMessageAttachmentFieldsInfo {
+    /**
+     * Title of an individual field
+     */
     public String title;
+    /**
+     * Value of an individual field (supports Markdown)
+     */
+    public String value;
+    /**
+     * Style of width span applied to a field
+     * Default: Short
+     * Enum: Short, Long
+     */
+    public String style;
+
     public GlipMessageAttachmentFieldsInfo title(String title) {
         this.title = title;
         return this;
     }
-    // Field Value (Supports Markdown)
-    public String value;
+
     public GlipMessageAttachmentFieldsInfo value(String value) {
         this.value = value;
         return this;
     }
-    // A style used to flag fields that should span the width of the message, Defaults to 'Short' (Not full width)
-    public String style;
+
     public GlipMessageAttachmentFieldsInfo style(String style) {
         this.style = style;
         return this;
     }
+
 }

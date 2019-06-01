@@ -1,23 +1,33 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class DepartmentMemberList
-{
-    // List of department members extensions
+
+
+public class DepartmentMemberList {
+    /**
+     * List of department members extensions
+     */
     public ExtensionInfo[] records;
+    /**
+     * Information on navigation
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     */
+    public ProvisioningPagingInfo paging;
+
     public DepartmentMemberList records(ExtensionInfo[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public DepartmentMemberList navigation(NavigationInfo navigation) {
+
+    public DepartmentMemberList navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public DepartmentMemberList paging(PagingInfo paging) {
+
+    public DepartmentMemberList paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

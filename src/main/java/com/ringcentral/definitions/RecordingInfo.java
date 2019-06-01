@@ -1,29 +1,24 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class RecordingInfo
-{
-    // Internal identifier of the call recording
+
+
+public class RecordingInfo {
+    /**
+     * Internal identifier of a Recording resource
+     */
     public String id;
+    /**
+     * True if the recording is active. False if the recording is paused.
+     */
+    public Boolean active;
+
     public RecordingInfo id(String id) {
         this.id = id;
         return this;
     }
-    // Link to the call recording metadata resource
-    public String uri;
-    public RecordingInfo uri(String uri) {
-        this.uri = uri;
+
+    public RecordingInfo active(Boolean active) {
+        this.active = active;
         return this;
     }
-    // Indicates recording mode used
-    public String type;
-    public RecordingInfo type(String type) {
-        this.type = type;
-        return this;
-    }
-    // Link to the call recording binary content
-    public String contentUri;
-    public RecordingInfo contentUri(String contentUri) {
-        this.contentUri = contentUri;
-        return this;
-    }
+
 }

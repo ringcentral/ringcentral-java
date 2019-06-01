@@ -1,23 +1,33 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class AccountPhoneNumbers
-{
-    // List of account phone numbers
-    public PhoneNumberInfo[] records;
-    public AccountPhoneNumbers records(PhoneNumberInfo[] records) {
+
+
+public class AccountPhoneNumbers {
+    /**
+     * List of account phone numbers
+     */
+    public CompanyPhoneNumberInfo[] records;
+    /**
+     * Information on navigation
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     */
+    public ProvisioningPagingInfo paging;
+
+    public AccountPhoneNumbers records(CompanyPhoneNumberInfo[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public AccountPhoneNumbers navigation(NavigationInfo navigation) {
+
+    public AccountPhoneNumbers navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public AccountPhoneNumbers paging(PagingInfo paging) {
+
+    public AccountPhoneNumbers paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

@@ -1,23 +1,36 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GetCountryListResponse
-{
-    // List of countries with the country data
+
+
+public class GetCountryListResponse {
+    /**
+     * List of countries with the country data
+     * Required
+     */
     public GetCountryInfoDictionaryResponse[] records;
+    /**
+     * Information on navigation
+     * Required
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     * Required
+     */
+    public ProvisioningPagingInfo paging;
+
     public GetCountryListResponse records(GetCountryInfoDictionaryResponse[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public GetCountryListResponse navigation(NavigationInfo navigation) {
+
+    public GetCountryListResponse navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public GetCountryListResponse paging(PagingInfo paging) {
+
+    public GetCountryListResponse paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

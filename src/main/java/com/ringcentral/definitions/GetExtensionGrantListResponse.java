@@ -1,23 +1,36 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GetExtensionGrantListResponse
-{
-    // List of extension grants with the data
+
+
+public class GetExtensionGrantListResponse {
+    /**
+     * List of extension grants with details
+     * Required
+     */
     public GrantInfo[] records;
+    /**
+     * Information on navigation
+     * Required
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     * Required
+     */
+    public ProvisioningPagingInfo paging;
+
     public GetExtensionGrantListResponse records(GrantInfo[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public GetExtensionGrantListResponse navigation(NavigationInfo navigation) {
+
+    public GetExtensionGrantListResponse navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public GetExtensionGrantListResponse paging(PagingInfo paging) {
+
+    public GetExtensionGrantListResponse paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

@@ -1,23 +1,51 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class ExtensionInfoEvent
-{
-    // Internal identifier of an extension
-    public String extensionId;
-    public ExtensionInfoEvent extensionId(String extensionId) {
-        this.extensionId = extensionId;
+
+
+public class ExtensionInfoEvent {
+    /**
+     * Universally unique identifier of a notification
+     */
+    public String uuid;
+    /**
+     * Event filter URI
+     */
+    public String event;
+    /**
+     * Datetime of sending a notification in [ISO 8601](shttps://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z*
+     */
+    public String timestamp;
+    /**
+     * Internal identifier of a subscription
+     */
+    public String subscriptionId;
+    /**
+     * Notification payload body
+     */
+    public ExtensionInfoEventBody body;
+
+    public ExtensionInfoEvent uuid(String uuid) {
+        this.uuid = uuid;
         return this;
     }
-    // Type of extension info change
-    public String eventType;
-    public ExtensionInfoEvent eventType(String eventType) {
-        this.eventType = eventType;
+
+    public ExtensionInfoEvent event(String event) {
+        this.event = event;
         return this;
     }
-    // Returned for 'Update' event type only. The possible values are: /nAccountInfo - change of account parameters/nExtensionInfo - change of contact info, service features, departments, status/nPhoneNumber - change of phone numbers/nRole - change of permissions/nProfileImage - change of profile image
-    public String[] hints;
-    public ExtensionInfoEvent hints(String[] hints) {
-        this.hints = hints;
+
+    public ExtensionInfoEvent timestamp(String timestamp) {
+        this.timestamp = timestamp;
         return this;
     }
+
+    public ExtensionInfoEvent subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public ExtensionInfoEvent body(ExtensionInfoEventBody body) {
+        this.body = body;
+        return this;
+    }
+
 }

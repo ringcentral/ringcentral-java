@@ -1,23 +1,35 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class GetLocationListResponse
-{
-    // List of locations
+
+
+public class GetLocationListResponse {
+    /**
+     * List of locations
+     */
     public LocationInfo[] records;
+    /**
+     * Information on navigation
+     * Required
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Information on paging
+     * Required
+     */
+    public ProvisioningPagingInfo paging;
+
     public GetLocationListResponse records(LocationInfo[] records) {
         this.records = records;
         return this;
     }
-    // Information on navigation
-    public NavigationInfo navigation;
-    public GetLocationListResponse navigation(NavigationInfo navigation) {
+
+    public GetLocationListResponse navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
-    // Information on paging
-    public PagingInfo paging;
-    public GetLocationListResponse paging(PagingInfo paging) {
+
+    public GetLocationListResponse paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }
+
 }

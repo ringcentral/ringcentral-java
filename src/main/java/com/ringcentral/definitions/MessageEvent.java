@@ -1,23 +1,51 @@
 package com.ringcentral.definitions;
-import com.alibaba.fastjson.annotation.JSONField;
-public class MessageEvent
-{
-    // Internal identifier of an extension
-    public String extensionId;
-    public MessageEvent extensionId(String extensionId) {
-        this.extensionId = extensionId;
+
+
+public class MessageEvent {
+    /**
+     * Universally unique identifier of a notification
+     */
+    public String uuid;
+    /**
+     * Event filter URI
+     */
+    public String event;
+    /**
+     * Datetime of sending a notification in [ISO 8601](shttps://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z*
+     */
+    public String timestamp;
+    /**
+     * Internal identifier of a subscription
+     */
+    public String subscriptionId;
+    /**
+     * Notification payload body
+     */
+    public MessageEventBody body;
+
+    public MessageEvent uuid(String uuid) {
+        this.uuid = uuid;
         return this;
     }
-    // Datetime when the message was last modified in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
-    public String lastUpdated;
-    public MessageEvent lastUpdated(String lastUpdated) {
-        this.lastUpdated = lastUpdated;
+
+    public MessageEvent event(String event) {
+        this.event = event;
         return this;
     }
-    // Message Changes
-    public MessageChanges[] changes;
-    public MessageEvent changes(MessageChanges[] changes) {
-        this.changes = changes;
+
+    public MessageEvent timestamp(String timestamp) {
+        this.timestamp = timestamp;
         return this;
     }
+
+    public MessageEvent subscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public MessageEvent body(MessageEventBody body) {
+        this.body = body;
+        return this;
+    }
+
 }

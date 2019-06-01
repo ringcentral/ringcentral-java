@@ -7,9 +7,9 @@ import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 import com.ringcentral.definitions.CreateSubscriptionRequest;
+import com.ringcentral.definitions.ModifySubscriptionRequest;
 import com.ringcentral.definitions.NotificationDeliveryModeRequest;
 import com.ringcentral.definitions.SubscriptionInfo;
-import com.ringcentral.definitions.Subscription_Request_DeliveryMode;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -72,8 +72,8 @@ public class Subscription {
         };
     }
 
-    Subscription(RestClient restClient, String[] events, Consumer<String> messageCallback) {
-        this(restClient, events, messageCallback, null, null);
+    Subscription(RestClient restClient, String[] eventFilters, Consumer<String> callback) {
+        this(restClient, eventFilters, callback, null, null);
     }
 
     public SubscriptionInfo getSubscription() {
@@ -97,8 +97,8 @@ public class Subscription {
         }
     }
 
-    public void subscribe() throws IOException, RestException {
-        SubscriptionInfo subscriptionInfo = restClient.post("/restapi/v1.0/subscription", getPostParameters(), SubscriptionInfo.class);
+    public void subscribe(){
+        SubscriptionInfo subscriptionInfo = restClient.restapi().subscription().post(getPostParameters());
         setSubscription(subscriptionInfo);
         PNConfiguration pnConfiguration = new PNConfiguration();
         pnConfiguration.setSubscribeKey(getSubscription().deliveryMode.subscriberKey);
@@ -111,12 +111,9 @@ public class Subscription {
         if (getSubscription() == null) {
             return;
         }
-        try {
-            SubscriptionInfo subscriptionInfo = restClient.put("/restapi/v1.0/subscription/" + getSubscription().id, getPostParameters(), SubscriptionInfo.class);
-            setSubscription(subscriptionInfo);
-        } catch (IOException | RestException e) {
-            e.printStackTrace();
-        }
+        SubscriptionInfo subscriptionInfo = restClient.restapi().subscription(getSubscription().id).put(getPutParameters());
+        setSubscription(subscriptionInfo);
+
     }
 
     public void revoke() throws IOException, RestException {
@@ -126,13 +123,19 @@ public class Subscription {
         pubnub.unsubscribe().channels(Collections.singletonList(getSubscription().deliveryMode.address)).execute();
         pubnub.removeListener(callback);
         pubnub = null;
-        restClient.delete("/restapi/v1.0/subscription/" + getSubscription().id);
+        restClient.restapi().subscription(getSubscription().id).delete();
         setSubscription(null);
     }
 
     private CreateSubscriptionRequest getPostParameters() {
         return new CreateSubscriptionRequest()
-            .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
-            .eventFilters(events);
+                .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
+                .eventFilters(events);
+    }
+
+    private ModifySubscriptionRequest getPutParameters() {
+        return new ModifySubscriptionRequest()
+                .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
+                .eventFilters(events);
     }
 }

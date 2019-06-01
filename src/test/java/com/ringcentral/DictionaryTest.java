@@ -1,19 +1,17 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.Attachment;
-import com.ringcentral.definitions.CreateUserProfileImageRequest;
+import com.ringcentral.definitions.GetCountryInfoDictionaryResponse;
+import com.ringcentral.definitions.GetCountryListResponse;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class BinaryTest {
+public class DictionaryTest {
     @Test
-    public void uploadProfileImage() throws IOException, RestException {
+    public void testGetCountry() throws IOException, RestException {
         RestClient rc = new RestClient(
                 System.getenv("RINGCENTRAL_CLIENT_ID"),
                 System.getenv("RINGCENTRAL_CLIENT_SECRET"),
@@ -26,18 +24,14 @@ public class BinaryTest {
                 System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        String str = rc.restapi().account().extension().profileimage().post(new CreateUserProfileImageRequest()
-                .image(new Attachment()
-                        .fileName("test.png")
-                        .contentType("image/png")
-                        .bytes(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
-                ));
+        GetCountryInfoDictionaryResponse c = rc.restapi().dictionary().country("46").get();
+        assertEquals("China", c.name);
 
         rc.revoke();
     }
 
     @Test
-    public void downloadProfileImage() throws IOException, RestException {
+    public void testListCountry() throws IOException, RestException {
         RestClient rc = new RestClient(
                 System.getenv("RINGCENTRAL_CLIENT_ID"),
                 System.getenv("RINGCENTRAL_CLIENT_SECRET"),
@@ -50,12 +44,8 @@ public class BinaryTest {
                 System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        byte[] bytes = rc.restapi().account().extension().profileimage("90x90").get();
-        assertNotNull(bytes);
-
-        byte[] bytes2 = rc.restapi().account().extension().profileimage().list();
-        assertNotNull(bytes2);
-        assertTrue(bytes2.length > 0);
+        GetCountryListResponse r = rc.restapi().dictionary().country().list();
+        assertTrue(r.records.length > 0);
 
         rc.revoke();
     }

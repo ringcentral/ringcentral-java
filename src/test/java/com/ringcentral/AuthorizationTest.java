@@ -5,64 +5,26 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
-public class AuthorizationTest extends BaseTest {
+public class AuthorizationTest {
     @Test
     public void testAuthorize() throws IOException, RestException {
-        restClient.authorize(config.get("username"), config.get("extension"), config.get("password"));
-        assertEquals("bearer", restClient.getToken().token_type);
-    }
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
 
-    @Test
-    public void testRefresh() throws IOException, RestException {
-        restClient.refresh();
-        assertEquals("bearer", restClient.getToken().token_type);
-    }
-
-    @Test
-    public void testRevoke() throws IOException, RestException {
-        restClient.revoke();
-        assertTrue(restClient.getToken() == null);
-        restClient.revoke(); // revoke again should cause no exception
-        restClient.refresh(); // refresh after revoke should cause no exception
-        restClient.authorize(config.get("username"), config.get("extension"), config.get("password"));
-    }
-
-    @Test
-    public void testAuthorizeUri() {
-        String uri = restClient.authorizeUri("http://localhost:8080/callback", "myState");
-        assertTrue(uri.contains("/restapi/oauth/authorize"));
-        assertTrue(uri.contains("response_type=code"));
-        assertTrue(uri.contains("state=myState"));
-        assertTrue(uri.contains("redirect_uri="));
-        assertTrue(uri.contains("client_id="));
-
-        uri = restClient.authorizeUri("http://localhost:8080/callback");
-        assertTrue(uri.contains("/restapi/oauth/authorize"));
-        assertTrue(uri.contains("response_type=code"));
-        assertTrue(uri.contains("state="));
-        assertTrue(uri.contains("redirect_uri="));
-        assertTrue(uri.contains("client_id="));
-    }
-
-    @Test
-    public void testAuthByCode() throws IOException {
-        try {
-            restClient.authorize("auth_code", "http://baidu.com");
-        } catch (RestException re) {
-            assertEquals(400, re.getHttpStatusCode());
-        }
-    }
-
-    @Test
-    public void testAutoRefresh() throws InterruptedException {
-        restClient.refresh();
-        TokenInfo tokenInfo = restClient.getToken();
-        tokenInfo.expires_in = 123L;
-        restClient.setToken(tokenInfo);
-        Thread.sleep(6000);
-        assertEquals("bearer", restClient.getToken().token_type);
+        TokenInfo token = rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+        assertNotNull(token.access_token);
+        assertNotNull(rc.token);
+        rc.revoke();
+        assertNull(rc.token);
     }
 }

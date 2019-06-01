@@ -13,36 +13,77 @@ import java.util.function.Consumer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class SubscriptionTest extends BaseTest {
+public class SubscriptionTest {
     @Test
     public void testSubscribe() throws IOException, RestException {
-        Subscription subscription = restClient.subscription(
-            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-            (jsonString) -> {
-            }
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
+
+        rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+        Subscription subscription = new Subscription(rc,
+                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+                (jsonString) -> {
+                }
         );
         subscription.subscribe();
         SubscriptionInfo sub = subscription.getSubscription();
         assertEquals("Active", sub.status);
+
+        rc.revoke();
     }
 
     private void sendSms() throws IOException, RestException {
-        CreateSMSMessage postParameters = new CreateSMSMessage();
-        postParameters.from = new MessageStoreCallerInfoRequest().phoneNumber(config.get("username"));
-        postParameters.to = new MessageStoreCallerInfoRequest[]{new MessageStoreCallerInfoRequest().phoneNumber(config.get("receiver"))};
-        postParameters.text = "hello world";
-        restClient.post("/restapi/v1.0/account/~/extension/~/sms", postParameters);
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
+
+        rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+
+        rc.restapi().account().extension().sms().post(
+                new CreateSMSMessage()
+                        .text("hello world")
+                        .from(new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_USERNAME")))
+                        .to(new MessageStoreCallerInfoRequest[]{
+                                new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_RECEIVER"))
+                        })
+        );
+
+        rc.revoke();
     }
 
     @Test
     public void testNotification() throws IOException, RestException, InterruptedException {
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
+
+        rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+
         final Consumer<String> consumer = mock(Consumer.class);
-        Subscription subscription = restClient.subscription(
-            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-            consumer);
+        Subscription subscription = new Subscription(rc,
+                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+                consumer);
         subscription.subscribe();
         Thread.sleep(3000);
         sendSms();
@@ -51,14 +92,28 @@ public class SubscriptionTest extends BaseTest {
         verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
         subscription.revoke();
+
+        rc.revoke();
     }
 
     @Test
     public void testRefresh() throws IOException, RestException, InterruptedException {
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
+
+        rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+
         final Consumer<String> consumer = mock(Consumer.class);
-        Subscription subscription = restClient.subscription(
-            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-            consumer);
+        Subscription subscription = new Subscription(rc,
+                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+                consumer);
         subscription.refresh(); // should not cause any issue when _subscription is null
         subscription.subscribe();
         Thread.sleep(3000);
@@ -70,14 +125,28 @@ public class SubscriptionTest extends BaseTest {
         verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
         subscription.revoke();
+
+        rc.revoke();
     }
 
     @Test
     public void testRevoke() throws IOException, RestException, InterruptedException {
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
+
+        rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+
         final Consumer<String> consumer = mock(Consumer.class);
-        Subscription subscription = restClient.subscription(
-            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-            consumer);
+        Subscription subscription = new Subscription(rc,
+                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+                consumer);
         subscription.revoke(); // should not cause any issue when _subscription is null
         subscription.subscribe();
         Thread.sleep(1000);
@@ -86,16 +155,30 @@ public class SubscriptionTest extends BaseTest {
         sendSms();
         Thread.sleep(16000);
         verify(consumer, never()).accept(any());
+
+        rc.revoke();
     }
 
     @Test
     public void testStatusCallback() throws IOException, RestException, InterruptedException {
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
+
+        rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+
         final Consumer<String> consumer1 = mock(Consumer.class);
         final Consumer<PNStatus> consumer2 = mock(Consumer.class);
         final Consumer<PNPresenceEventResult> consumer3 = mock(Consumer.class);
-        Subscription subscription = new Subscription(restClient,
-            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-            consumer1, consumer2, consumer3);
+        Subscription subscription = new Subscription(rc,
+                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+                consumer1, consumer2, consumer3);
         subscription.subscribe();
         Thread.sleep(3000);
         sendSms();
@@ -104,14 +187,28 @@ public class SubscriptionTest extends BaseTest {
         verify(consumer2, atLeastOnce()).accept(argument.capture());
         assertEquals(argument.getValue().getStatusCode(), 200);
         subscription.revoke();
+
+        rc.revoke();
     }
 
     @Test
     public void testAutoRefresh() throws IOException, RestException, InterruptedException {
+        RestClient rc = new RestClient(
+                System.getenv("RINGCENTRAL_CLIENT_ID"),
+                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                System.getenv("RINGCENTRAL_SERVER_URL")
+        );
+
+        rc.authorize(
+                System.getenv("RINGCENTRAL_USERNAME"),
+                System.getenv("RINGCENTRAL_EXTENSION"),
+                System.getenv("RINGCENTRAL_PASSWORD")
+        );
+
         final Consumer<String> consumer = mock(Consumer.class);
-        Subscription subscription = restClient.subscription(
-            new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
-            consumer);
+        Subscription subscription = new Subscription(rc,
+                new String[]{"/restapi/v1.0/account/~/extension/~/message-store"},
+                consumer);
         subscription.subscribe();
         SubscriptionInfo subInfo = subscription.getSubscription();
         subInfo.expiresIn = 123L;
@@ -123,5 +220,7 @@ public class SubscriptionTest extends BaseTest {
         verify(consumer, atLeastOnce()).accept(argument.capture());
         assertTrue(argument.getValue().contains("uuid"));
         subscription.revoke();
+
+        rc.revoke();
     }
 }

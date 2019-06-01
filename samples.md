@@ -30,7 +30,7 @@ rc.revoke();
 ```
 
 - Parameter `revokeTokenRequest` is of type [RevokeTokenRequest](./src/main/java/com/ringcentral/definitions/RevokeTokenRequest.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Authentication-revokeToken) in API Explorer.
 
@@ -183,7 +183,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteCompanyAnsweringRule) in API Explorer.
 
@@ -353,7 +353,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-deleteCallMonitoringGroup) in API Explorer.
 
@@ -370,7 +370,7 @@ rc.revoke();
 ```
 
 - Parameter `callMonitoringBulkAssign` is of type [CallMonitoringBulkAssign](./src/main/java/com/ringcentral/definitions/CallMonitoringBulkAssign.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroupList) in API Explorer.
 
@@ -421,7 +421,7 @@ rc.revoke();
 ```
 
 - Parameter `callQueueBulkAssignResource` is of type [CallQueueBulkAssignResource](./src/main/java/com/ringcentral/definitions/CallQueueBulkAssignResource.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-assignMultipleCallQueueMembers) in API Explorer.
 
@@ -489,7 +489,7 @@ rc.revoke();
 ```
 
 - Parameter `bulkAccountCallRecordingsResource` is of type [BulkAccountCallRecordingsResource](./src/main/java/com/ringcentral/definitions/BulkAccountCallRecordingsResource.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCallRecordingExtensionList) in API Explorer.
 
@@ -523,7 +523,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteCallRecordingCustomGreeting) in API Explorer.
 
@@ -557,7 +557,7 @@ rc.revoke();
 ```
 
 - Parameter `departmentBulkAssignResource` is of type [DepartmentBulkAssignResource](./src/main/java/com/ringcentral/definitions/DepartmentBulkAssignResource.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-assignMultipleDepartmentMembers) in API Explorer.
 
@@ -761,7 +761,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-deleteExtension) in API Explorer.
 
@@ -882,7 +882,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-deleteContact) in API Explorer.
 
@@ -967,7 +967,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteAnsweringRule) in API Explorer.
 
@@ -1069,7 +1069,7 @@ rc.revoke();
 ```
 
 - Parameter `deleteUserCallLogParameters` is of type [DeleteUserCallLogParameters](./src/main/java/com/ringcentral/definitions/DeleteUserCallLogParameters.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-deleteUserCallLog) in API Explorer.
 
@@ -1205,7 +1205,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-deleteBlockedAllowedNumber) in API Explorer.
 
@@ -1341,7 +1341,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-listFavoriteContacts) in API Explorer.
 
@@ -1358,7 +1358,7 @@ rc.revoke();
 ```
 
 - Parameter `favoriteCollection` is of type [FavoriteCollection](./src/main/java/com/ringcentral/definitions/FavoriteCollection.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-updateFavoriteContactList) in API Explorer.
 
@@ -1460,7 +1460,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-deleteForwardingNumber) in API Explorer.
 
@@ -1613,7 +1613,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-deleteMeeting) in API Explorer.
 
@@ -1630,7 +1630,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Control-endMeeting) in API Explorer.
 
@@ -1732,7 +1732,7 @@ rc.revoke();
 ```
 
 - Parameter `deleteMessageParameters` is of type [DeleteMessageParameters](./src/main/java/com/ringcentral/definitions/DeleteMessageParameters.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-deleteMessage) in API Explorer.
 
@@ -1885,7 +1885,7 @@ rc.revoke();
 ```
 
 - Parameter `createUserProfileImageRequest` is of type [CreateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/CreateUserProfileImageRequest.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-createUserProfileImage) in API Explorer.
 
@@ -1902,7 +1902,7 @@ rc.revoke();
 ```
 
 - Parameter `updateUserProfileImageRequest` is of type [UpdateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/UpdateUserProfileImageRequest.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateUserProfileImage) in API Explorer.
 
@@ -1970,7 +1970,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#RingOut-deleteRingOutCall) in API Explorer.
 
@@ -2123,7 +2123,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-deleteIVRPrompt) in API Explorer.
 
@@ -2140,7 +2140,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-updateIVRPrompt) in API Explorer.
 
@@ -2157,7 +2157,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRPromptContent) in API Explorer.
 
@@ -2259,7 +2259,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-readMessageStoreReportArchiveContent) in API Explorer.
 
@@ -2276,7 +2276,7 @@ rc.revoke();
 ```
 
 - Parameter `editPagingGroupRequest` is of type [EditPagingGroupRequest](./src/main/java/com/ringcentral/definitions/EditPagingGroupRequest.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Paging-Only-Groups-assignMultiplePagingGroupUsersDevices) in API Explorer.
 
@@ -2463,7 +2463,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-deleteCallSession) in API Explorer.
 
@@ -2514,7 +2514,7 @@ rc.revoke();
 ```
 
 - Parameter `callPartyFlip` is of type [CallPartyFlip](./src/main/java/com/ringcentral/definitions/CallPartyFlip.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-callFlipParty) in API Explorer.
 
@@ -2565,7 +2565,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-startCallRecording) in API Explorer.
 
@@ -2600,7 +2600,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-rejectParty) in API Explorer.
 
@@ -2958,7 +2958,7 @@ rc.revoke();
 ```
 
 - Parameter `glipMessageAttachmentInfoRequest` is of type [GlipMessageAttachmentInfoRequest](./src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfoRequest.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-updateGlipCard) in API Explorer.
 
@@ -2975,7 +2975,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-deleteGlipCard) in API Explorer.
 
@@ -3026,7 +3026,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-favoriteGlipChat) in API Explorer.
 
@@ -3111,7 +3111,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-deleteGlipPost) in API Explorer.
 
@@ -3128,7 +3128,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-markChatRead) in API Explorer.
 
@@ -3145,7 +3145,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-unfavoriteGlipChat) in API Explorer.
 
@@ -3162,7 +3162,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-markChatUnread) in API Explorer.
 
@@ -3281,7 +3281,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readComplianceArchive) in API Explorer.
 
@@ -3366,7 +3366,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-deleteEvent) in API Explorer.
 
@@ -3570,7 +3570,7 @@ rc.revoke();
 ```
 
 - Parameter `string` is of type [string](./src/main/java/com/ringcentral/definitions/string.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-updateGlipPostText) in API Explorer.
 
@@ -3774,7 +3774,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-deleteGlipTeam) in API Explorer.
 
@@ -3791,7 +3791,7 @@ rc.revoke();
 ```
 
 - Parameter `glipPostMembersListBody` is of type [GlipPostMembersListBody](./src/main/java/com/ringcentral/definitions/GlipPostMembersListBody.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-addGlipTeamMembers) in API Explorer.
 
@@ -3808,7 +3808,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-archiveGlipTeam) in API Explorer.
 
@@ -3825,7 +3825,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-joinGlipTeam) in API Explorer.
 
@@ -3842,7 +3842,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-leaveGlipTeam) in API Explorer.
 
@@ -3859,7 +3859,7 @@ rc.revoke();
 ```
 
 - Parameter `glipPostMembersIdsListBody` is of type [GlipPostMembersIdsListBody](./src/main/java/com/ringcentral/definitions/GlipPostMembersIdsListBody.java)
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-removeGlipTeamMembers) in API Explorer.
 
@@ -3876,7 +3876,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-unarchiveGlipTeam) in API Explorer.
 
@@ -3927,7 +3927,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-deleteGlipWebhook) in API Explorer.
 
@@ -3944,7 +3944,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-activateGlipWebhook) in API Explorer.
 
@@ -3961,7 +3961,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-suspendGlipWebhook) in API Explorer.
 
@@ -4013,7 +4013,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIStatus) in API Explorer.
 
@@ -4099,7 +4099,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-deleteSubscription) in API Explorer.
 
@@ -4235,7 +4235,7 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-deleteUser2) in API Explorer.
 
@@ -4269,6 +4269,6 @@ rc.revoke();
 ```
 
 
-- `result` is an empty string
+- `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-checkHealth2) in API Explorer.

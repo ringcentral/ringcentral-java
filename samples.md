@@ -13,7 +13,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetVersionsResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetVersionsResponse.cs)
+- `result` is of type [GetVersionsResponse](./src/main/java/com/ringcentral/definitions/GetVersionsResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIVersions) in API Explorer.
 
@@ -29,7 +29,7 @@ var result = rc.restapi().oauth().revoke().post(revokeTokenRequest);
 rc.revoke();
 ```
 
-- Parameter `revokeTokenRequest` is of type [RevokeTokenRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/RevokeTokenRequest.cs)
+- Parameter `revokeTokenRequest` is of type [RevokeTokenRequest](./src/main/java/com/ringcentral/definitions/RevokeTokenRequest.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Authentication-revokeToken) in API Explorer.
@@ -46,8 +46,8 @@ var result = rc.restapi().oauth().token().post(getTokenRequest);
 rc.revoke();
 ```
 
-- Parameter `getTokenRequest` is of type [GetTokenRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetTokenRequest.cs)
-- `result` is of type [TokenInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/TokenInfo.cs)
+- Parameter `getTokenRequest` is of type [GetTokenRequest](./src/main/java/com/ringcentral/definitions/GetTokenRequest.cs)
+- `result` is of type [TokenInfo](./src/main/java/com/ringcentral/definitions/TokenInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Authentication-getToken) in API Explorer.
 
@@ -64,7 +64,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetVersionResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetVersionResponse.cs)
+- `result` is of type [GetVersionResponse](./src/main/java/com/ringcentral/definitions/GetVersionResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIVersion) in API Explorer.
 
@@ -81,7 +81,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetAccountInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetAccountInfoResponse.cs)
+- `result` is of type [GetAccountInfoResponse](./src/main/java/com/ringcentral/definitions/GetAccountInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountInfo) in API Explorer.
 
@@ -97,8 +97,8 @@ var result = rc.restapi(apiversion).account(accountid).activecalls().get(listCom
 rc.revoke();
 ```
 
-- Parameter `listCompanyActiveCallsParameters` is of type [ListCompanyActiveCallsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListCompanyActiveCallsParameters.cs)
-- `result` is of type [ActiveCallsResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ActiveCallsResponse.cs)
+- Parameter `listCompanyActiveCallsParameters` is of type [ListCompanyActiveCallsParameters](./src/main/java/com/ringcentral/definitions/ListCompanyActiveCallsParameters.cs)
+- `result` is of type [ActiveCallsResponse](./src/main/java/com/ringcentral/definitions/ActiveCallsResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-listCompanyActiveCalls) in API Explorer.
 
@@ -114,8 +114,8 @@ var result = rc.restapi(apiversion).account(accountid).answeringrule().post(comp
 rc.revoke();
 ```
 
-- Parameter `companyAnsweringRuleRequest` is of type [CompanyAnsweringRuleRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleRequest.cs)
-- `result` is of type [CompanyAnsweringRuleInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.cs)
+- Parameter `companyAnsweringRuleRequest` is of type [CompanyAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleRequest.cs)
+- `result` is of type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCompanyAnsweringRule) in API Explorer.
 
@@ -132,7 +132,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CompanyAnsweringRuleList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleList.cs)
+- `result` is of type [CompanyAnsweringRuleList](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCompanyAnsweringRules) in API Explorer.
 
@@ -149,7 +149,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CompanyAnsweringRuleInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.cs)
+- `result` is of type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCompanyAnsweringRule) in API Explorer.
 
@@ -165,8 +165,8 @@ var result = rc.restapi(apiversion).account(accountid).answeringrule(ruleid).put
 rc.revoke();
 ```
 
-- Parameter `companyAnsweringRuleUpdate` is of type [CompanyAnsweringRuleUpdate](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleUpdate.cs)
-- `result` is of type [CompanyAnsweringRuleInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.cs)
+- Parameter `companyAnsweringRuleUpdate` is of type [CompanyAnsweringRuleUpdate](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleUpdate.cs)
+- `result` is of type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCompanyAnsweringRule) in API Explorer.
 
@@ -200,7 +200,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [AccountBusinessAddressResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.cs)
+- `result` is of type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountBusinessAddress) in API Explorer.
 
@@ -216,8 +216,8 @@ var result = rc.restapi(apiversion).account(accountid).businessaddress().put(mod
 rc.revoke();
 ```
 
-- Parameter `modifyAccountBusinessAddressRequest` is of type [ModifyAccountBusinessAddressRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ModifyAccountBusinessAddressRequest.cs)
-- `result` is of type [AccountBusinessAddressResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.cs)
+- Parameter `modifyAccountBusinessAddressRequest` is of type [ModifyAccountBusinessAddressRequest](./src/main/java/com/ringcentral/definitions/ModifyAccountBusinessAddressRequest.cs)
+- `result` is of type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-updateAccountBusinessAddress) in API Explorer.
 
@@ -234,7 +234,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CompanyBusinessHours](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyBusinessHours.cs)
+- `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-readCompanyBusinessHours) in API Explorer.
 
@@ -250,8 +250,8 @@ var result = rc.restapi(apiversion).account(accountid).businesshours().put(compa
 rc.revoke();
 ```
 
-- Parameter `companyBusinessHoursUpdateRequest` is of type [CompanyBusinessHoursUpdateRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyBusinessHoursUpdateRequest.cs)
-- `result` is of type [CompanyBusinessHours](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyBusinessHours.cs)
+- Parameter `companyBusinessHoursUpdateRequest` is of type [CompanyBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/CompanyBusinessHoursUpdateRequest.cs)
+- `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-updateCompanyBusinessHours) in API Explorer.
 
@@ -267,8 +267,8 @@ var result = rc.restapi(apiversion).account(accountid).calllog().list(readCompan
 rc.revoke();
 ```
 
-- Parameter `readCompanyCallLogParameters` is of type [ReadCompanyCallLogParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadCompanyCallLogParameters.cs)
-- `result` is of type [AccountCallLogResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AccountCallLogResponse.cs)
+- Parameter `readCompanyCallLogParameters` is of type [ReadCompanyCallLogParameters](./src/main/java/com/ringcentral/definitions/ReadCompanyCallLogParameters.cs)
+- `result` is of type [AccountCallLogResponse](./src/main/java/com/ringcentral/definitions/AccountCallLogResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCompanyCallLog) in API Explorer.
 
@@ -285,7 +285,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CompanyCallLogRecord](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyCallLogRecord.cs)
+- `result` is of type [CompanyCallLogRecord](./src/main/java/com/ringcentral/definitions/CompanyCallLogRecord.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCompanyCallRecord) in API Explorer.
 
@@ -301,8 +301,8 @@ var result = rc.restapi(apiversion).account(accountid).callmonitoringgroups().po
 rc.revoke();
 ```
 
-- Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.cs)
-- `result` is of type [CallMonitoringGroup](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallMonitoringGroup.cs)
+- Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.cs)
+- `result` is of type [CallMonitoringGroup](./src/main/java/com/ringcentral/definitions/CallMonitoringGroup.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup) in API Explorer.
 
@@ -318,8 +318,8 @@ var result = rc.restapi(apiversion).account(accountid).callmonitoringgroups().ge
 rc.revoke();
 ```
 
-- Parameter `listCallMonitoringGroupsParameters` is of type [ListCallMonitoringGroupsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupsParameters.cs)
-- `result` is of type [CallMonitoringGroups](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallMonitoringGroups.cs)
+- Parameter `listCallMonitoringGroupsParameters` is of type [ListCallMonitoringGroupsParameters](./src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupsParameters.cs)
+- `result` is of type [CallMonitoringGroups](./src/main/java/com/ringcentral/definitions/CallMonitoringGroups.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listCallMonitoringGroups) in API Explorer.
 
@@ -335,8 +335,8 @@ var result = rc.restapi(apiversion).account(accountid).callmonitoringgroups(grou
 rc.revoke();
 ```
 
-- Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.cs)
-- `result` is of type [CallMonitoringGroup](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallMonitoringGroup.cs)
+- Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.cs)
+- `result` is of type [CallMonitoringGroup](./src/main/java/com/ringcentral/definitions/CallMonitoringGroup.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroup) in API Explorer.
 
@@ -369,7 +369,7 @@ var result = rc.restapi(apiversion).account(accountid).callmonitoringgroups(grou
 rc.revoke();
 ```
 
-- Parameter `callMonitoringBulkAssign` is of type [CallMonitoringBulkAssign](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallMonitoringBulkAssign.cs)
+- Parameter `callMonitoringBulkAssign` is of type [CallMonitoringBulkAssign](./src/main/java/com/ringcentral/definitions/CallMonitoringBulkAssign.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroupList) in API Explorer.
@@ -386,8 +386,8 @@ var result = rc.restapi(apiversion).account(accountid).callmonitoringgroups(grou
 rc.revoke();
 ```
 
-- Parameter `listCallMonitoringGroupMembersParameters` is of type [ListCallMonitoringGroupMembersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupMembersParameters.cs)
-- `result` is of type [CallMonitoringGroupMemberList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallMonitoringGroupMemberList.cs)
+- Parameter `listCallMonitoringGroupMembersParameters` is of type [ListCallMonitoringGroupMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupMembersParameters.cs)
+- `result` is of type [CallMonitoringGroupMemberList](./src/main/java/com/ringcentral/definitions/CallMonitoringGroupMemberList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listCallMonitoringGroupMembers) in API Explorer.
 
@@ -403,8 +403,8 @@ var result = rc.restapi(apiversion).account(accountid).callqueues().get(listCall
 rc.revoke();
 ```
 
-- Parameter `listCallQueuesParameters` is of type [ListCallQueuesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListCallQueuesParameters.cs)
-- `result` is of type [CallQueues](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallQueues.cs)
+- Parameter `listCallQueuesParameters` is of type [ListCallQueuesParameters](./src/main/java/com/ringcentral/definitions/ListCallQueuesParameters.cs)
+- `result` is of type [CallQueues](./src/main/java/com/ringcentral/definitions/CallQueues.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueues) in API Explorer.
 
@@ -420,7 +420,7 @@ var result = rc.restapi(apiversion).account(accountid).callqueues(groupid).bulka
 rc.revoke();
 ```
 
-- Parameter `callQueueBulkAssignResource` is of type [CallQueueBulkAssignResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallQueueBulkAssignResource.cs)
+- Parameter `callQueueBulkAssignResource` is of type [CallQueueBulkAssignResource](./src/main/java/com/ringcentral/definitions/CallQueueBulkAssignResource.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-assignMultipleCallQueueMembers) in API Explorer.
@@ -437,8 +437,8 @@ var result = rc.restapi(apiversion).account(accountid).callqueues(groupid).membe
 rc.revoke();
 ```
 
-- Parameter `listCallQueueMembersParameters` is of type [ListCallQueueMembersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListCallQueueMembersParameters.cs)
-- `result` is of type [CallQueueMembers](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallQueueMembers.cs)
+- Parameter `listCallQueueMembersParameters` is of type [ListCallQueueMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallQueueMembersParameters.cs)
+- `result` is of type [CallQueueMembers](./src/main/java/com/ringcentral/definitions/CallQueueMembers.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueueMembers) in API Explorer.
 
@@ -455,7 +455,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CallRecordingSettingsResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.cs)
+- `result` is of type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCallRecordingSettings) in API Explorer.
 
@@ -471,8 +471,8 @@ var result = rc.restapi(apiversion).account(accountid).callrecording().put(callR
 rc.revoke();
 ```
 
-- Parameter `callRecordingSettingsResource` is of type [CallRecordingSettingsResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.cs)
-- `result` is of type [CallRecordingSettingsResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.cs)
+- Parameter `callRecordingSettingsResource` is of type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.cs)
+- `result` is of type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCallRecordingSettings) in API Explorer.
 
@@ -488,7 +488,7 @@ var result = rc.restapi(apiversion).account(accountid).callrecording().bulkassig
 rc.revoke();
 ```
 
-- Parameter `bulkAccountCallRecordingsResource` is of type [BulkAccountCallRecordingsResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/BulkAccountCallRecordingsResource.cs)
+- Parameter `bulkAccountCallRecordingsResource` is of type [BulkAccountCallRecordingsResource](./src/main/java/com/ringcentral/definitions/BulkAccountCallRecordingsResource.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCallRecordingExtensionList) in API Explorer.
@@ -505,8 +505,8 @@ var result = rc.restapi(apiversion).account(accountid).callrecording().customgre
 rc.revoke();
 ```
 
-- Parameter `listCallRecordingCustomGreetingsParameters` is of type [ListCallRecordingCustomGreetingsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListCallRecordingCustomGreetingsParameters.cs)
-- `result` is of type [CallRecordingCustomGreetings](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallRecordingCustomGreetings.cs)
+- Parameter `listCallRecordingCustomGreetingsParameters` is of type [ListCallRecordingCustomGreetingsParameters](./src/main/java/com/ringcentral/definitions/ListCallRecordingCustomGreetingsParameters.cs)
+- `result` is of type [CallRecordingCustomGreetings](./src/main/java/com/ringcentral/definitions/CallRecordingCustomGreetings.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCallRecordingCustomGreetings) in API Explorer.
 
@@ -540,7 +540,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CallRecordingExtensions](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallRecordingExtensions.cs)
+- `result` is of type [CallRecordingExtensions](./src/main/java/com/ringcentral/definitions/CallRecordingExtensions.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCallRecordingExtensions) in API Explorer.
 
@@ -556,7 +556,7 @@ var result = rc.restapi(apiversion).account(accountid).department().bulkassign()
 rc.revoke();
 ```
 
-- Parameter `departmentBulkAssignResource` is of type [DepartmentBulkAssignResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DepartmentBulkAssignResource.cs)
+- Parameter `departmentBulkAssignResource` is of type [DepartmentBulkAssignResource](./src/main/java/com/ringcentral/definitions/DepartmentBulkAssignResource.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-assignMultipleDepartmentMembers) in API Explorer.
@@ -573,8 +573,8 @@ var result = rc.restapi(apiversion).account(accountid).department(departmentid).
 rc.revoke();
 ```
 
-- Parameter `listDepartmentMembersParameters` is of type [ListDepartmentMembersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListDepartmentMembersParameters.cs)
-- `result` is of type [DepartmentMemberList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DepartmentMemberList.cs)
+- Parameter `listDepartmentMembersParameters` is of type [ListDepartmentMembersParameters](./src/main/java/com/ringcentral/definitions/ListDepartmentMembersParameters.cs)
+- `result` is of type [DepartmentMemberList](./src/main/java/com/ringcentral/definitions/DepartmentMemberList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listDepartmentMembers) in API Explorer.
 
@@ -590,8 +590,8 @@ var result = rc.restapi(apiversion).account(accountid).device(deviceid).get(read
 rc.revoke();
 ```
 
-- Parameter `readDeviceParameters` is of type [ReadDeviceParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadDeviceParameters.cs)
-- `result` is of type [GetDeviceInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetDeviceInfoResponse.cs)
+- Parameter `readDeviceParameters` is of type [ReadDeviceParameters](./src/main/java/com/ringcentral/definitions/ReadDeviceParameters.cs)
+- `result` is of type [GetDeviceInfoResponse](./src/main/java/com/ringcentral/definitions/GetDeviceInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Devices-readDevice) in API Explorer.
 
@@ -607,8 +607,8 @@ var result = rc.restapi(apiversion).account(accountid).device(deviceid).put(acco
 rc.revoke();
 ```
 
-- Parameter `accountDeviceUpdate` is of type [AccountDeviceUpdate](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AccountDeviceUpdate.cs)
-- `result` is of type [DeviceResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DeviceResource.cs)
+- Parameter `accountDeviceUpdate` is of type [AccountDeviceUpdate](./src/main/java/com/ringcentral/definitions/AccountDeviceUpdate.cs)
+- `result` is of type [DeviceResource](./src/main/java/com/ringcentral/definitions/DeviceResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Devices-updateDevice) in API Explorer.
 
@@ -624,8 +624,8 @@ var result = rc.restapi(apiversion).account(accountid).directory().entries().lis
 rc.revoke();
 ```
 
-- Parameter `listDirectoryEntriesParameters` is of type [ListDirectoryEntriesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListDirectoryEntriesParameters.cs)
-- `result` is of type [DirectoryResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DirectoryResource.cs)
+- Parameter `listDirectoryEntriesParameters` is of type [ListDirectoryEntriesParameters](./src/main/java/com/ringcentral/definitions/ListDirectoryEntriesParameters.cs)
+- `result` is of type [DirectoryResource](./src/main/java/com/ringcentral/definitions/DirectoryResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-listDirectoryEntries) in API Explorer.
 
@@ -641,8 +641,8 @@ var result = rc.restapi(apiversion).account(accountid).directory().entries().sea
 rc.revoke();
 ```
 
-- Parameter `searchDirectoryEntriesRequest` is of type [SearchDirectoryEntriesRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SearchDirectoryEntriesRequest.cs)
-- `result` is of type [DirectoryResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DirectoryResource.cs)
+- Parameter `searchDirectoryEntriesRequest` is of type [SearchDirectoryEntriesRequest](./src/main/java/com/ringcentral/definitions/SearchDirectoryEntriesRequest.cs)
+- `result` is of type [DirectoryResource](./src/main/java/com/ringcentral/definitions/DirectoryResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-searchDirectoryEntries) in API Explorer.
 
@@ -659,7 +659,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [ContactResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ContactResource.cs)
+- `result` is of type [ContactResource](./src/main/java/com/ringcentral/definitions/ContactResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-readDirectoryEntry) in API Explorer.
 
@@ -676,7 +676,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [FederationResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/FederationResource.cs)
+- `result` is of type [FederationResource](./src/main/java/com/ringcentral/definitions/FederationResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-readAccountFederation) in API Explorer.
 
@@ -692,8 +692,8 @@ var result = rc.restapi(apiversion).account(accountid).extension().list(listExte
 rc.revoke();
 ```
 
-- Parameter `listExtensionsParameters` is of type [ListExtensionsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListExtensionsParameters.cs)
-- `result` is of type [GetExtensionListResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetExtensionListResponse.cs)
+- Parameter `listExtensionsParameters` is of type [ListExtensionsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionsParameters.cs)
+- `result` is of type [GetExtensionListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionListResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Extensions-listExtensions) in API Explorer.
 
@@ -709,8 +709,8 @@ var result = rc.restapi(apiversion).account(accountid).extension().post(extensio
 rc.revoke();
 ```
 
-- Parameter `extensionCreationRequest` is of type [ExtensionCreationRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ExtensionCreationRequest.cs)
-- `result` is of type [ExtensionCreationResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ExtensionCreationResponse.cs)
+- Parameter `extensionCreationRequest` is of type [ExtensionCreationRequest](./src/main/java/com/ringcentral/definitions/ExtensionCreationRequest.cs)
+- `result` is of type [ExtensionCreationResponse](./src/main/java/com/ringcentral/definitions/ExtensionCreationResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Extensions-createExtension) in API Explorer.
 
@@ -727,7 +727,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetExtensionInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetExtensionInfoResponse.cs)
+- `result` is of type [GetExtensionInfoResponse](./src/main/java/com/ringcentral/definitions/GetExtensionInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readExtension) in API Explorer.
 
@@ -743,8 +743,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).pu
 rc.revoke();
 ```
 
-- Parameter `extensionUpdateRequest` is of type [ExtensionUpdateRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ExtensionUpdateRequest.cs)
-- `result` is of type [GetExtensionInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetExtensionInfoResponse.cs)
+- Parameter `extensionUpdateRequest` is of type [ExtensionUpdateRequest](./src/main/java/com/ringcentral/definitions/ExtensionUpdateRequest.cs)
+- `result` is of type [GetExtensionInfoResponse](./src/main/java/com/ringcentral/definitions/GetExtensionInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateExtension) in API Explorer.
 
@@ -777,8 +777,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ac
 rc.revoke();
 ```
 
-- Parameter `listExtensionActiveCallsParameters` is of type [ListExtensionActiveCallsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListExtensionActiveCallsParameters.cs)
-- `result` is of type [ActiveCallsResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ActiveCallsResponse.cs)
+- Parameter `listExtensionActiveCallsParameters` is of type [ListExtensionActiveCallsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionActiveCallsParameters.cs)
+- `result` is of type [ActiveCallsResponse](./src/main/java/com/ringcentral/definitions/ActiveCallsResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-listExtensionActiveCalls) in API Explorer.
 
@@ -794,8 +794,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ad
 rc.revoke();
 ```
 
-- Parameter `syncAddressBookParameters` is of type [SyncAddressBookParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SyncAddressBookParameters.cs)
-- `result` is of type [AddressBookSync](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AddressBookSync.cs)
+- Parameter `syncAddressBookParameters` is of type [SyncAddressBookParameters](./src/main/java/com/ringcentral/definitions/SyncAddressBookParameters.cs)
+- `result` is of type [AddressBookSync](./src/main/java/com/ringcentral/definitions/AddressBookSync.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-syncAddressBook) in API Explorer.
 
@@ -811,8 +811,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ad
 rc.revoke();
 ```
 
-- Parameter `listContactsParameters` is of type [ListContactsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListContactsParameters.cs)
-- `result` is of type [ContactList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ContactList.cs)
+- Parameter `listContactsParameters` is of type [ListContactsParameters](./src/main/java/com/ringcentral/definitions/ListContactsParameters.cs)
+- `result` is of type [ContactList](./src/main/java/com/ringcentral/definitions/ContactList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-listContacts) in API Explorer.
 
@@ -828,9 +828,9 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ad
 rc.revoke();
 ```
 
-- Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PersonalContactRequest.cs)
-- Parameter `createContactParameters` is of type [CreateContactParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateContactParameters.cs)
-- `result` is of type [PersonalContactResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PersonalContactResource.cs)
+- Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/main/java/com/ringcentral/definitions/PersonalContactRequest.cs)
+- Parameter `createContactParameters` is of type [CreateContactParameters](./src/main/java/com/ringcentral/definitions/CreateContactParameters.cs)
+- `result` is of type [PersonalContactResource](./src/main/java/com/ringcentral/definitions/PersonalContactResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-createContact) in API Explorer.
 
@@ -847,7 +847,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [PersonalContactResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PersonalContactResource.cs)
+- `result` is of type [PersonalContactResource](./src/main/java/com/ringcentral/definitions/PersonalContactResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-readContact) in API Explorer.
 
@@ -863,9 +863,9 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ad
 rc.revoke();
 ```
 
-- Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PersonalContactRequest.cs)
-- Parameter `updateContactParameters` is of type [UpdateContactParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateContactParameters.cs)
-- `result` is of type [PersonalContactResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PersonalContactResource.cs)
+- Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/main/java/com/ringcentral/definitions/PersonalContactRequest.cs)
+- Parameter `updateContactParameters` is of type [UpdateContactParameters](./src/main/java/com/ringcentral/definitions/UpdateContactParameters.cs)
+- `result` is of type [PersonalContactResource](./src/main/java/com/ringcentral/definitions/PersonalContactResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-updateContact) in API Explorer.
 
@@ -898,8 +898,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).an
 rc.revoke();
 ```
 
-- Parameter `listAnsweringRulesParameters` is of type [ListAnsweringRulesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListAnsweringRulesParameters.cs)
-- `result` is of type [UserAnsweringRuleList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserAnsweringRuleList.cs)
+- Parameter `listAnsweringRulesParameters` is of type [ListAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListAnsweringRulesParameters.cs)
+- `result` is of type [UserAnsweringRuleList](./src/main/java/com/ringcentral/definitions/UserAnsweringRuleList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listAnsweringRules) in API Explorer.
 
@@ -915,8 +915,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).an
 rc.revoke();
 ```
 
-- Parameter `createAnsweringRuleRequest` is of type [CreateAnsweringRuleRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateAnsweringRuleRequest.cs)
-- `result` is of type [AnsweringRuleInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.cs)
+- Parameter `createAnsweringRuleRequest` is of type [CreateAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CreateAnsweringRuleRequest.cs)
+- `result` is of type [AnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createAnsweringRule) in API Explorer.
 
@@ -932,8 +932,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).an
 rc.revoke();
 ```
 
-- Parameter `readAnsweringRuleParameters` is of type [ReadAnsweringRuleParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadAnsweringRuleParameters.cs)
-- `result` is of type [AnsweringRuleInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.cs)
+- Parameter `readAnsweringRuleParameters` is of type [ReadAnsweringRuleParameters](./src/main/java/com/ringcentral/definitions/ReadAnsweringRuleParameters.cs)
+- `result` is of type [AnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readAnsweringRule) in API Explorer.
 
@@ -949,8 +949,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).an
 rc.revoke();
 ```
 
-- Parameter `updateAnsweringRuleRequest` is of type [UpdateAnsweringRuleRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateAnsweringRuleRequest.cs)
-- `result` is of type [AnsweringRuleInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.cs)
+- Parameter `updateAnsweringRuleRequest` is of type [UpdateAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/UpdateAnsweringRuleRequest.cs)
+- `result` is of type [AnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateAnsweringRule) in API Explorer.
 
@@ -984,7 +984,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [AuthProfileResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AuthProfileResource.cs)
+- `result` is of type [AuthProfileResource](./src/main/java/com/ringcentral/definitions/AuthProfileResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-readAuthorizationProfile) in API Explorer.
 
@@ -1000,8 +1000,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).au
 rc.revoke();
 ```
 
-- Parameter `checkUserPermissionParameters` is of type [CheckUserPermissionParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CheckUserPermissionParameters.cs)
-- `result` is of type [AuthProfileCheckResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AuthProfileCheckResource.cs)
+- Parameter `checkUserPermissionParameters` is of type [CheckUserPermissionParameters](./src/main/java/com/ringcentral/definitions/CheckUserPermissionParameters.cs)
+- `result` is of type [AuthProfileCheckResource](./src/main/java/com/ringcentral/definitions/AuthProfileCheckResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-checkUserPermission) in API Explorer.
 
@@ -1018,7 +1018,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetUserBusinessHoursResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetUserBusinessHoursResponse.cs)
+- `result` is of type [GetUserBusinessHoursResponse](./src/main/java/com/ringcentral/definitions/GetUserBusinessHoursResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-readUserBusinessHours) in API Explorer.
 
@@ -1034,8 +1034,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).bu
 rc.revoke();
 ```
 
-- Parameter `userBusinessHoursUpdateRequest` is of type [UserBusinessHoursUpdateRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserBusinessHoursUpdateRequest.cs)
-- `result` is of type [UserBusinessHoursUpdateResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserBusinessHoursUpdateResponse.cs)
+- Parameter `userBusinessHoursUpdateRequest` is of type [UserBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/UserBusinessHoursUpdateRequest.cs)
+- `result` is of type [UserBusinessHoursUpdateResponse](./src/main/java/com/ringcentral/definitions/UserBusinessHoursUpdateResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-updateUserBusinessHours) in API Explorer.
 
@@ -1051,8 +1051,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `readUserCallLogParameters` is of type [ReadUserCallLogParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadUserCallLogParameters.cs)
-- `result` is of type [UserCallLogResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserCallLogResponse.cs)
+- Parameter `readUserCallLogParameters` is of type [ReadUserCallLogParameters](./src/main/java/com/ringcentral/definitions/ReadUserCallLogParameters.cs)
+- `result` is of type [UserCallLogResponse](./src/main/java/com/ringcentral/definitions/UserCallLogResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readUserCallLog) in API Explorer.
 
@@ -1068,7 +1068,7 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `deleteUserCallLogParameters` is of type [DeleteUserCallLogParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DeleteUserCallLogParameters.cs)
+- Parameter `deleteUserCallLogParameters` is of type [DeleteUserCallLogParameters](./src/main/java/com/ringcentral/definitions/DeleteUserCallLogParameters.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-deleteUserCallLog) in API Explorer.
@@ -1085,8 +1085,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `syncUserCallLogParameters` is of type [SyncUserCallLogParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SyncUserCallLogParameters.cs)
-- `result` is of type [CallLogSync](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallLogSync.cs)
+- Parameter `syncUserCallLogParameters` is of type [SyncUserCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncUserCallLogParameters.cs)
+- `result` is of type [CallLogSync](./src/main/java/com/ringcentral/definitions/CallLogSync.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-syncUserCallLog) in API Explorer.
 
@@ -1102,8 +1102,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `readUserCallRecordParameters` is of type [ReadUserCallRecordParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadUserCallRecordParameters.cs)
-- `result` is of type [UserCallLogRecord](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserCallLogRecord.cs)
+- Parameter `readUserCallRecordParameters` is of type [ReadUserCallRecordParameters](./src/main/java/com/ringcentral/definitions/ReadUserCallRecordParameters.cs)
+- `result` is of type [UserCallLogRecord](./src/main/java/com/ringcentral/definitions/UserCallLogRecord.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readUserCallRecord) in API Explorer.
 
@@ -1120,7 +1120,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CallerBlockingSettings](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallerBlockingSettings.cs)
+- `result` is of type [CallerBlockingSettings](./src/main/java/com/ringcentral/definitions/CallerBlockingSettings.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-readCallerBlockingSettings) in API Explorer.
 
@@ -1136,8 +1136,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `callerBlockingSettingsUpdate` is of type [CallerBlockingSettingsUpdate](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallerBlockingSettingsUpdate.cs)
-- `result` is of type [CallerBlockingSettings](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallerBlockingSettings.cs)
+- Parameter `callerBlockingSettingsUpdate` is of type [CallerBlockingSettingsUpdate](./src/main/java/com/ringcentral/definitions/CallerBlockingSettingsUpdate.cs)
+- `result` is of type [CallerBlockingSettings](./src/main/java/com/ringcentral/definitions/CallerBlockingSettings.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-updateCallerBlockingSettings) in API Explorer.
 
@@ -1153,8 +1153,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `listBlockedAllowedNumbersParameters` is of type [ListBlockedAllowedNumbersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListBlockedAllowedNumbersParameters.cs)
-- `result` is of type [BlockedAllowedPhoneNumbersList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumbersList.cs)
+- Parameter `listBlockedAllowedNumbersParameters` is of type [ListBlockedAllowedNumbersParameters](./src/main/java/com/ringcentral/definitions/ListBlockedAllowedNumbersParameters.cs)
+- `result` is of type [BlockedAllowedPhoneNumbersList](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumbersList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-listBlockedAllowedNumbers) in API Explorer.
 
@@ -1170,8 +1170,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.cs)
-- `result` is of type [BlockedAllowedPhoneNumberInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.cs)
+- Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.cs)
+- `result` is of type [BlockedAllowedPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-createBlockedAllowedNumber) in API Explorer.
 
@@ -1188,7 +1188,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [BlockedAllowedPhoneNumberInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.cs)
+- `result` is of type [BlockedAllowedPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-readBlockedAllowedNumber) in API Explorer.
 
@@ -1221,8 +1221,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.cs)
-- `result` is of type [BlockedAllowedPhoneNumberInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.cs)
+- Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.cs)
+- `result` is of type [BlockedAllowedPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-updateBlockedAllowedNumber) in API Explorer.
 
@@ -1239,7 +1239,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [ExtensionCallerIdInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.cs)
+- `result` is of type [ExtensionCallerIdInfo](./src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readExtensionCallerId) in API Explorer.
 
@@ -1255,8 +1255,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ca
 rc.revoke();
 ```
 
-- Parameter `extensionCallerIdInfo` is of type [ExtensionCallerIdInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.cs)
-- `result` is of type [ExtensionCallerIdInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.cs)
+- Parameter `extensionCallerIdInfo` is of type [ExtensionCallerIdInfo](./src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.cs)
+- `result` is of type [ExtensionCallerIdInfo](./src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateExtensionCallerId) in API Explorer.
 
@@ -1272,8 +1272,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).co
 rc.revoke();
 ```
 
-- Parameter `createInternalTextMessageRequest` is of type [CreateInternalTextMessageRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateInternalTextMessageRequest.cs)
-- `result` is of type [GetMessageInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
+- Parameter `createInternalTextMessageRequest` is of type [CreateInternalTextMessageRequest](./src/main/java/com/ringcentral/definitions/CreateInternalTextMessageRequest.cs)
+- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Pager-Messages-createInternalTextMessage) in API Explorer.
 
@@ -1289,8 +1289,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).co
 rc.revoke();
 ```
 
-- Parameter `readConferencingSettingsParameters` is of type [ReadConferencingSettingsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadConferencingSettingsParameters.cs)
-- `result` is of type [GetConferencingInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetConferencingInfoResponse.cs)
+- Parameter `readConferencingSettingsParameters` is of type [ReadConferencingSettingsParameters](./src/main/java/com/ringcentral/definitions/ReadConferencingSettingsParameters.cs)
+- `result` is of type [GetConferencingInfoResponse](./src/main/java/com/ringcentral/definitions/GetConferencingInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readConferencingSettings) in API Explorer.
 
@@ -1306,8 +1306,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).co
 rc.revoke();
 ```
 
-- Parameter `updateConferencingInfoRequest` is of type [UpdateConferencingInfoRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateConferencingInfoRequest.cs)
-- `result` is of type [GetConferencingInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetConferencingInfoResponse.cs)
+- Parameter `updateConferencingInfoRequest` is of type [UpdateConferencingInfoRequest](./src/main/java/com/ringcentral/definitions/UpdateConferencingInfoRequest.cs)
+- `result` is of type [GetConferencingInfoResponse](./src/main/java/com/ringcentral/definitions/GetConferencingInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateConferencingSettings) in API Explorer.
 
@@ -1323,8 +1323,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).de
 rc.revoke();
 ```
 
-- Parameter `listExtensionDevicesParameters` is of type [ListExtensionDevicesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListExtensionDevicesParameters.cs)
-- `result` is of type [GetExtensionDevicesResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetExtensionDevicesResponse.cs)
+- Parameter `listExtensionDevicesParameters` is of type [ListExtensionDevicesParameters](./src/main/java/com/ringcentral/definitions/ListExtensionDevicesParameters.cs)
+- `result` is of type [GetExtensionDevicesResponse](./src/main/java/com/ringcentral/definitions/GetExtensionDevicesResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Devices-listExtensionDevices) in API Explorer.
 
@@ -1357,7 +1357,7 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).fa
 rc.revoke();
 ```
 
-- Parameter `favoriteCollection` is of type [FavoriteCollection](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/FavoriteCollection.cs)
+- Parameter `favoriteCollection` is of type [FavoriteCollection](./src/main/java/com/ringcentral/definitions/FavoriteCollection.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-updateFavoriteContactList) in API Explorer.
@@ -1374,8 +1374,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).fa
 rc.revoke();
 ```
 
-- Parameter `createFaxMessageRequest` is of type [CreateFaxMessageRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateFaxMessageRequest.cs)
-- `result` is of type [FaxResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/FaxResponse.cs)
+- Parameter `createFaxMessageRequest` is of type [CreateFaxMessageRequest](./src/main/java/com/ringcentral/definitions/CreateFaxMessageRequest.cs)
+- `result` is of type [FaxResponse](./src/main/java/com/ringcentral/definitions/FaxResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-createFaxMessage) in API Explorer.
 
@@ -1391,8 +1391,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).fo
 rc.revoke();
 ```
 
-- Parameter `listForwardingNumbersParameters` is of type [ListForwardingNumbersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListForwardingNumbersParameters.cs)
-- `result` is of type [GetExtensionForwardingNumberListResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetExtensionForwardingNumberListResponse.cs)
+- Parameter `listForwardingNumbersParameters` is of type [ListForwardingNumbersParameters](./src/main/java/com/ringcentral/definitions/ListForwardingNumbersParameters.cs)
+- `result` is of type [GetExtensionForwardingNumberListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionForwardingNumberListResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-listForwardingNumbers) in API Explorer.
 
@@ -1408,8 +1408,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).fo
 rc.revoke();
 ```
 
-- Parameter `createForwardingNumberRequest` is of type [CreateForwardingNumberRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateForwardingNumberRequest.cs)
-- `result` is of type [ForwardingNumberInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ForwardingNumberInfo.cs)
+- Parameter `createForwardingNumberRequest` is of type [CreateForwardingNumberRequest](./src/main/java/com/ringcentral/definitions/CreateForwardingNumberRequest.cs)
+- `result` is of type [ForwardingNumberInfo](./src/main/java/com/ringcentral/definitions/ForwardingNumberInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-createForwardingNumber) in API Explorer.
 
@@ -1426,7 +1426,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [ForwardingNumberResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ForwardingNumberResource.cs)
+- `result` is of type [ForwardingNumberResource](./src/main/java/com/ringcentral/definitions/ForwardingNumberResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-readForwardingNumber) in API Explorer.
 
@@ -1442,8 +1442,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).fo
 rc.revoke();
 ```
 
-- Parameter `updateForwardingNumberRequest` is of type [UpdateForwardingNumberRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateForwardingNumberRequest.cs)
-- `result` is of type [ForwardingNumberInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ForwardingNumberInfo.cs)
+- Parameter `updateForwardingNumberRequest` is of type [UpdateForwardingNumberRequest](./src/main/java/com/ringcentral/definitions/UpdateForwardingNumberRequest.cs)
+- `result` is of type [ForwardingNumberInfo](./src/main/java/com/ringcentral/definitions/ForwardingNumberInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-updateForwardingNumber) in API Explorer.
 
@@ -1476,8 +1476,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).gr
 rc.revoke();
 ```
 
-- Parameter `listExtensionGrantsParameters` is of type [ListExtensionGrantsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListExtensionGrantsParameters.cs)
-- `result` is of type [GetExtensionGrantListResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetExtensionGrantListResponse.cs)
+- Parameter `listExtensionGrantsParameters` is of type [ListExtensionGrantsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionGrantsParameters.cs)
+- `result` is of type [GetExtensionGrantListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionGrantListResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-listExtensionGrants) in API Explorer.
 
@@ -1493,8 +1493,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).gr
 rc.revoke();
 ```
 
-- Parameter `createCustomUserGreetingRequest` is of type [CreateCustomUserGreetingRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateCustomUserGreetingRequest.cs)
-- `result` is of type [CustomUserGreetingInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CustomUserGreetingInfo.cs)
+- Parameter `createCustomUserGreetingRequest` is of type [CreateCustomUserGreetingRequest](./src/main/java/com/ringcentral/definitions/CreateCustomUserGreetingRequest.cs)
+- `result` is of type [CustomUserGreetingInfo](./src/main/java/com/ringcentral/definitions/CustomUserGreetingInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCustomUserGreeting) in API Explorer.
 
@@ -1511,7 +1511,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CustomUserGreetingInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CustomUserGreetingInfo.cs)
+- `result` is of type [CustomUserGreetingInfo](./src/main/java/com/ringcentral/definitions/CustomUserGreetingInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCustomGreeting) in API Explorer.
 
@@ -1528,7 +1528,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [MeetingsResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MeetingsResource.cs)
+- `result` is of type [MeetingsResource](./src/main/java/com/ringcentral/definitions/MeetingsResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-listMeetings) in API Explorer.
 
@@ -1544,8 +1544,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).me
 rc.revoke();
 ```
 
-- Parameter `meetingRequestResource` is of type [MeetingRequestResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MeetingRequestResource.cs)
-- `result` is of type [MeetingResponseResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MeetingResponseResource.cs)
+- Parameter `meetingRequestResource` is of type [MeetingRequestResource](./src/main/java/com/ringcentral/definitions/MeetingRequestResource.cs)
+- `result` is of type [MeetingResponseResource](./src/main/java/com/ringcentral/definitions/MeetingResponseResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-createMeeting) in API Explorer.
 
@@ -1562,7 +1562,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [MeetingServiceInfoResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MeetingServiceInfoResource.cs)
+- `result` is of type [MeetingServiceInfoResource](./src/main/java/com/ringcentral/definitions/MeetingServiceInfoResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readMeetingServiceInfo) in API Explorer.
 
@@ -1579,7 +1579,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [MeetingResponseResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MeetingResponseResource.cs)
+- `result` is of type [MeetingResponseResource](./src/main/java/com/ringcentral/definitions/MeetingResponseResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-readMeeting) in API Explorer.
 
@@ -1595,8 +1595,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).me
 rc.revoke();
 ```
 
-- Parameter `meetingRequestResource` is of type [MeetingRequestResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MeetingRequestResource.cs)
-- `result` is of type [MeetingResponseResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MeetingResponseResource.cs)
+- Parameter `meetingRequestResource` is of type [MeetingRequestResource](./src/main/java/com/ringcentral/definitions/MeetingRequestResource.cs)
+- `result` is of type [MeetingResponseResource](./src/main/java/com/ringcentral/definitions/MeetingResponseResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-updateMeeting) in API Explorer.
 
@@ -1647,7 +1647,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [AssistantsResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AssistantsResource.cs)
+- `result` is of type [AssistantsResource](./src/main/java/com/ringcentral/definitions/AssistantsResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readAssistants) in API Explorer.
 
@@ -1664,7 +1664,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [AssistedUsersResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AssistedUsersResource.cs)
+- `result` is of type [AssistedUsersResource](./src/main/java/com/ringcentral/definitions/AssistedUsersResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readAssistedUsers) in API Explorer.
 
@@ -1680,8 +1680,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).me
 rc.revoke();
 ```
 
-- Parameter `listMessagesParameters` is of type [ListMessagesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListMessagesParameters.cs)
-- `result` is of type [GetMessageList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetMessageList.cs)
+- Parameter `listMessagesParameters` is of type [ListMessagesParameters](./src/main/java/com/ringcentral/definitions/ListMessagesParameters.cs)
+- `result` is of type [GetMessageList](./src/main/java/com/ringcentral/definitions/GetMessageList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-listMessages) in API Explorer.
 
@@ -1698,7 +1698,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetMessageInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
+- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-readMessage) in API Explorer.
 
@@ -1714,8 +1714,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).me
 rc.revoke();
 ```
 
-- Parameter `updateMessageRequest` is of type [UpdateMessageRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateMessageRequest.cs)
-- `result` is of type [GetMessageInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
+- Parameter `updateMessageRequest` is of type [UpdateMessageRequest](./src/main/java/com/ringcentral/definitions/UpdateMessageRequest.cs)
+- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-updateMessage) in API Explorer.
 
@@ -1731,7 +1731,7 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).me
 rc.revoke();
 ```
 
-- Parameter `deleteMessageParameters` is of type [DeleteMessageParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DeleteMessageParameters.cs)
+- Parameter `deleteMessageParameters` is of type [DeleteMessageParameters](./src/main/java/com/ringcentral/definitions/DeleteMessageParameters.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-deleteMessage) in API Explorer.
@@ -1748,7 +1748,7 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).me
 rc.revoke();
 ```
 
-- Parameter `readMessageContentParameters` is of type [ReadMessageContentParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadMessageContentParameters.cs)
+- Parameter `readMessageContentParameters` is of type [ReadMessageContentParameters](./src/main/java/com/ringcentral/definitions/ReadMessageContentParameters.cs)
 - `result` is of type `byte[]`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-readMessageContent) in API Explorer.
@@ -1765,8 +1765,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).me
 rc.revoke();
 ```
 
-- Parameter `syncMessagesParameters` is of type [SyncMessagesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SyncMessagesParameters.cs)
-- `result` is of type [GetMessageSyncResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetMessageSyncResponse.cs)
+- Parameter `syncMessagesParameters` is of type [SyncMessagesParameters](./src/main/java/com/ringcentral/definitions/SyncMessagesParameters.cs)
+- `result` is of type [GetMessageSyncResponse](./src/main/java/com/ringcentral/definitions/GetMessageSyncResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-syncMessages) in API Explorer.
 
@@ -1783,7 +1783,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [NotificationSettings](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/NotificationSettings.cs)
+- `result` is of type [NotificationSettings](./src/main/java/com/ringcentral/definitions/NotificationSettings.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readNotificationSettings) in API Explorer.
 
@@ -1799,8 +1799,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).no
 rc.revoke();
 ```
 
-- Parameter `notificationSettingsUpdateRequest` is of type [NotificationSettingsUpdateRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/NotificationSettingsUpdateRequest.cs)
-- `result` is of type [NotificationSettings](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/NotificationSettings.cs)
+- Parameter `notificationSettingsUpdateRequest` is of type [NotificationSettingsUpdateRequest](./src/main/java/com/ringcentral/definitions/NotificationSettingsUpdateRequest.cs)
+- `result` is of type [NotificationSettings](./src/main/java/com/ringcentral/definitions/NotificationSettings.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateNotificationSettings) in API Explorer.
 
@@ -1816,8 +1816,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ph
 rc.revoke();
 ```
 
-- Parameter `listExtensionPhoneNumbersParameters` is of type [ListExtensionPhoneNumbersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListExtensionPhoneNumbersParameters.cs)
-- `result` is of type [GetExtensionPhoneNumbersResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetExtensionPhoneNumbersResponse.cs)
+- Parameter `listExtensionPhoneNumbersParameters` is of type [ListExtensionPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListExtensionPhoneNumbersParameters.cs)
+- `result` is of type [GetExtensionPhoneNumbersResponse](./src/main/java/com/ringcentral/definitions/GetExtensionPhoneNumbersResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-listExtensionPhoneNumbers) in API Explorer.
 
@@ -1833,8 +1833,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).pr
 rc.revoke();
 ```
 
-- Parameter `readUserPresenceStatusParameters` is of type [ReadUserPresenceStatusParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadUserPresenceStatusParameters.cs)
-- `result` is of type [GetPresenceInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetPresenceInfo.cs)
+- Parameter `readUserPresenceStatusParameters` is of type [ReadUserPresenceStatusParameters](./src/main/java/com/ringcentral/definitions/ReadUserPresenceStatusParameters.cs)
+- `result` is of type [GetPresenceInfo](./src/main/java/com/ringcentral/definitions/GetPresenceInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Presence-readUserPresenceStatus) in API Explorer.
 
@@ -1850,8 +1850,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).pr
 rc.revoke();
 ```
 
-- Parameter `presenceInfoResource` is of type [PresenceInfoResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PresenceInfoResource.cs)
-- `result` is of type [PresenceInfoResource](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PresenceInfoResource.cs)
+- Parameter `presenceInfoResource` is of type [PresenceInfoResource](./src/main/java/com/ringcentral/definitions/PresenceInfoResource.cs)
+- `result` is of type [PresenceInfoResource](./src/main/java/com/ringcentral/definitions/PresenceInfoResource.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Presence-updateUserPresenceStatus) in API Explorer.
 
@@ -1884,7 +1884,7 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).pr
 rc.revoke();
 ```
 
-- Parameter `createUserProfileImageRequest` is of type [CreateUserProfileImageRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateUserProfileImageRequest.cs)
+- Parameter `createUserProfileImageRequest` is of type [CreateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/CreateUserProfileImageRequest.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-createUserProfileImage) in API Explorer.
@@ -1901,7 +1901,7 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).pr
 rc.revoke();
 ```
 
-- Parameter `updateUserProfileImageRequest` is of type [UpdateUserProfileImageRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateUserProfileImageRequest.cs)
+- Parameter `updateUserProfileImageRequest` is of type [UpdateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/UpdateUserProfileImageRequest.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateUserProfileImage) in API Explorer.
@@ -1935,8 +1935,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).ri
 rc.revoke();
 ```
 
-- Parameter `makeRingOutRequest` is of type [MakeRingOutRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MakeRingOutRequest.cs)
-- `result` is of type [GetRingOutStatusResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetRingOutStatusResponse.cs)
+- Parameter `makeRingOutRequest` is of type [MakeRingOutRequest](./src/main/java/com/ringcentral/definitions/MakeRingOutRequest.cs)
+- `result` is of type [GetRingOutStatusResponse](./src/main/java/com/ringcentral/definitions/GetRingOutStatusResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#RingOut-createRingOutCall) in API Explorer.
 
@@ -1953,7 +1953,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetRingOutStatusResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetRingOutStatusResponse.cs)
+- `result` is of type [GetRingOutStatusResponse](./src/main/java/com/ringcentral/definitions/GetRingOutStatusResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#RingOut-readRingOutCallStatus) in API Explorer.
 
@@ -1986,8 +1986,8 @@ var result = rc.restapi(apiversion).account(accountid).extension(extensionid).sm
 rc.revoke();
 ```
 
-- Parameter `createSmsMessage` is of type [CreateSMSMessage](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateSMSMessage.cs)
-- `result` is of type [GetMessageInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
+- Parameter `createSmsMessage` is of type [CreateSMSMessage](./src/main/java/com/ringcentral/definitions/CreateSMSMessage.cs)
+- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SMS-createSMSMessage) in API Explorer.
 
@@ -2003,8 +2003,8 @@ var result = rc.restapi(apiversion).account(accountid).greeting().post(createCom
 rc.revoke();
 ```
 
-- Parameter `createCompanyGreetingRequest` is of type [CreateCompanyGreetingRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateCompanyGreetingRequest.cs)
-- `result` is of type [CustomCompanyGreetingInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CustomCompanyGreetingInfo.cs)
+- Parameter `createCompanyGreetingRequest` is of type [CreateCompanyGreetingRequest](./src/main/java/com/ringcentral/definitions/CreateCompanyGreetingRequest.cs)
+- `result` is of type [CustomCompanyGreetingInfo](./src/main/java/com/ringcentral/definitions/CustomCompanyGreetingInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCompanyGreeting) in API Explorer.
 
@@ -2020,8 +2020,8 @@ var result = rc.restapi(apiversion).account(accountid).ivrmenus().post(ivrMenuIn
 rc.revoke();
 ```
 
-- Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
-- `result` is of type [IVRMenuInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
+- Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
+- `result` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-createIVRMenu) in API Explorer.
 
@@ -2038,7 +2038,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [IVRMenuInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
+- `result` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRMenu) in API Explorer.
 
@@ -2054,8 +2054,8 @@ var result = rc.restapi(apiversion).account(accountid).ivrmenus(ivrmenuid).put(i
 rc.revoke();
 ```
 
-- Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
-- `result` is of type [IVRMenuInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
+- Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
+- `result` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-updateIVRMenu) in API Explorer.
 
@@ -2071,8 +2071,8 @@ var result = rc.restapi(apiversion).account(accountid).ivrprompts().post(createI
 rc.revoke();
 ```
 
-- Parameter `createIvrPromptRequest` is of type [CreateIvrPromptRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateIvrPromptRequest.cs)
-- `result` is of type [PromptInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PromptInfo.cs)
+- Parameter `createIvrPromptRequest` is of type [CreateIvrPromptRequest](./src/main/java/com/ringcentral/definitions/CreateIvrPromptRequest.cs)
+- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-createIVRPrompt) in API Explorer.
 
@@ -2089,7 +2089,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [IVRPrompts](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/IVRPrompts.cs)
+- `result` is of type [IVRPrompts](./src/main/java/com/ringcentral/definitions/IVRPrompts.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-listIVRPrompts) in API Explorer.
 
@@ -2106,7 +2106,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [PromptInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PromptInfo.cs)
+- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRPrompt) in API Explorer.
 
@@ -2174,7 +2174,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [MessageStoreConfiguration](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.cs)
+- `result` is of type [MessageStoreConfiguration](./src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-readMessageStoreConfiguration) in API Explorer.
 
@@ -2190,8 +2190,8 @@ var result = rc.restapi(apiversion).account(accountid).messagestoreconfiguration
 rc.revoke();
 ```
 
-- Parameter `messageStoreConfiguration` is of type [MessageStoreConfiguration](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.cs)
-- `result` is of type [MessageStoreConfiguration](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.cs)
+- Parameter `messageStoreConfiguration` is of type [MessageStoreConfiguration](./src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.cs)
+- `result` is of type [MessageStoreConfiguration](./src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-updateMessageStoreConfiguration) in API Explorer.
 
@@ -2207,8 +2207,8 @@ var result = rc.restapi(apiversion).account(accountid).messagestorereport().post
 rc.revoke();
 ```
 
-- Parameter `createMessageStoreReportRequest` is of type [CreateMessageStoreReportRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateMessageStoreReportRequest.cs)
-- `result` is of type [MessageStoreReport](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MessageStoreReport.cs)
+- Parameter `createMessageStoreReportRequest` is of type [CreateMessageStoreReportRequest](./src/main/java/com/ringcentral/definitions/CreateMessageStoreReportRequest.cs)
+- `result` is of type [MessageStoreReport](./src/main/java/com/ringcentral/definitions/MessageStoreReport.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-createMessageStoreReport) in API Explorer.
 
@@ -2225,7 +2225,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [MessageStoreReport](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MessageStoreReport.cs)
+- `result` is of type [MessageStoreReport](./src/main/java/com/ringcentral/definitions/MessageStoreReport.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-readMessageStoreReportTask) in API Explorer.
 
@@ -2242,7 +2242,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [MessageStoreReportArchive](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MessageStoreReportArchive.cs)
+- `result` is of type [MessageStoreReportArchive](./src/main/java/com/ringcentral/definitions/MessageStoreReportArchive.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-readMessageStoreReportArchive) in API Explorer.
 
@@ -2275,7 +2275,7 @@ var result = rc.restapi(apiversion).account(accountid).pagingonlygroups(pagingon
 rc.revoke();
 ```
 
-- Parameter `editPagingGroupRequest` is of type [EditPagingGroupRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/EditPagingGroupRequest.cs)
+- Parameter `editPagingGroupRequest` is of type [EditPagingGroupRequest](./src/main/java/com/ringcentral/definitions/EditPagingGroupRequest.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Paging-Only-Groups-assignMultiplePagingGroupUsersDevices) in API Explorer.
@@ -2292,8 +2292,8 @@ var result = rc.restapi(apiversion).account(accountid).pagingonlygroups(pagingon
 rc.revoke();
 ```
 
-- Parameter `listPagingGroupDevicesParameters` is of type [ListPagingGroupDevicesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListPagingGroupDevicesParameters.cs)
-- `result` is of type [PagingOnlyGroupDevices](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PagingOnlyGroupDevices.cs)
+- Parameter `listPagingGroupDevicesParameters` is of type [ListPagingGroupDevicesParameters](./src/main/java/com/ringcentral/definitions/ListPagingGroupDevicesParameters.cs)
+- `result` is of type [PagingOnlyGroupDevices](./src/main/java/com/ringcentral/definitions/PagingOnlyGroupDevices.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Paging-Only-Groups-listPagingGroupDevices) in API Explorer.
 
@@ -2309,8 +2309,8 @@ var result = rc.restapi(apiversion).account(accountid).pagingonlygroups(pagingon
 rc.revoke();
 ```
 
-- Parameter `listPagingGroupUsersParameters` is of type [ListPagingGroupUsersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListPagingGroupUsersParameters.cs)
-- `result` is of type [PagingOnlyGroupUsers](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PagingOnlyGroupUsers.cs)
+- Parameter `listPagingGroupUsersParameters` is of type [ListPagingGroupUsersParameters](./src/main/java/com/ringcentral/definitions/ListPagingGroupUsersParameters.cs)
+- `result` is of type [PagingOnlyGroupUsers](./src/main/java/com/ringcentral/definitions/PagingOnlyGroupUsers.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Paging-Only-Groups-listPagingGroupUsers) in API Explorer.
 
@@ -2326,8 +2326,8 @@ var result = rc.restapi(apiversion).account(accountid).phonenumber().list(listAc
 rc.revoke();
 ```
 
-- Parameter `listAccountPhoneNumbersParameters` is of type [ListAccountPhoneNumbersParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersParameters.cs)
-- `result` is of type [AccountPhoneNumbers](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AccountPhoneNumbers.cs)
+- Parameter `listAccountPhoneNumbersParameters` is of type [ListAccountPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersParameters.cs)
+- `result` is of type [AccountPhoneNumbers](./src/main/java/com/ringcentral/definitions/AccountPhoneNumbers.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-listAccountPhoneNumbers) in API Explorer.
 
@@ -2344,7 +2344,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CompanyPhoneNumberInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CompanyPhoneNumberInfo.cs)
+- `result` is of type [CompanyPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/CompanyPhoneNumberInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-readAccountPhoneNumber) in API Explorer.
 
@@ -2360,8 +2360,8 @@ var result = rc.restapi(apiversion).account(accountid).presence().get(readAccoun
 rc.revoke();
 ```
 
-- Parameter `readAccountPresenceParameters` is of type [ReadAccountPresenceParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadAccountPresenceParameters.cs)
-- `result` is of type [AccountPresenceInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/AccountPresenceInfo.cs)
+- Parameter `readAccountPresenceParameters` is of type [ReadAccountPresenceParameters](./src/main/java/com/ringcentral/definitions/ReadAccountPresenceParameters.cs)
+- `result` is of type [AccountPresenceInfo](./src/main/java/com/ringcentral/definitions/AccountPresenceInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Presence-readAccountPresence) in API Explorer.
 
@@ -2378,7 +2378,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetCallRecordingResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetCallRecordingResponse.cs)
+- `result` is of type [GetCallRecordingResponse](./src/main/java/com/ringcentral/definitions/GetCallRecordingResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCallRecording) in API Explorer.
 
@@ -2412,7 +2412,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetServiceInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetServiceInfoResponse.cs)
+- `result` is of type [GetServiceInfoResponse](./src/main/java/com/ringcentral/definitions/GetServiceInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-readAcountServiceInfo) in API Explorer.
 
@@ -2428,8 +2428,8 @@ var result = rc.restapi(apiversion).account(accountid).telephony().callout().pos
 rc.revoke();
 ```
 
-- Parameter `makeCallOutRequest` is of type [MakeCallOutRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/MakeCallOutRequest.cs)
-- `result` is of type [CallSession](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallSession.cs)
+- Parameter `makeCallOutRequest` is of type [MakeCallOutRequest](./src/main/java/com/ringcentral/definitions/MakeCallOutRequest.cs)
+- `result` is of type [CallSession](./src/main/java/com/ringcentral/definitions/CallSession.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-createCallOutCallSession) in API Explorer.
 
@@ -2445,8 +2445,8 @@ var result = rc.restapi(apiversion).account(accountid).telephony().sessions(sess
 rc.revoke();
 ```
 
-- Parameter `readCallSessionStatusParameters` is of type [ReadCallSessionStatusParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadCallSessionStatusParameters.cs)
-- `result` is of type [CallSessionObject](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallSessionObject.cs)
+- Parameter `readCallSessionStatusParameters` is of type [ReadCallSessionStatusParameters](./src/main/java/com/ringcentral/definitions/ReadCallSessionStatusParameters.cs)
+- `result` is of type [CallSessionObject](./src/main/java/com/ringcentral/definitions/CallSessionObject.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-readCallSessionStatus) in API Explorer.
 
@@ -2480,7 +2480,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CallParty](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallParty.cs)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-readCallPartyStatus) in API Explorer.
 
@@ -2496,8 +2496,8 @@ var result = rc.restapi(apiversion).account(accountid).telephony().sessions(sess
 rc.revoke();
 ```
 
-- Parameter `partyUpdateRequest` is of type [PartyUpdateRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PartyUpdateRequest.cs)
-- `result` is of type [CallParty](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallParty.cs)
+- Parameter `partyUpdateRequest` is of type [PartyUpdateRequest](./src/main/java/com/ringcentral/definitions/PartyUpdateRequest.cs)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-updateCallParty) in API Explorer.
 
@@ -2513,7 +2513,7 @@ var result = rc.restapi(apiversion).account(accountid).telephony().sessions(sess
 rc.revoke();
 ```
 
-- Parameter `callPartyFlip` is of type [CallPartyFlip](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallPartyFlip.cs)
+- Parameter `callPartyFlip` is of type [CallPartyFlip](./src/main/java/com/ringcentral/definitions/CallPartyFlip.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-callFlipParty) in API Explorer.
@@ -2530,8 +2530,8 @@ var result = rc.restapi(apiversion).account(accountid).telephony().sessions(sess
 rc.revoke();
 ```
 
-- Parameter `forwardTarget` is of type [ForwardTarget](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ForwardTarget.cs)
-- `result` is of type [CallParty](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallParty.cs)
+- Parameter `forwardTarget` is of type [ForwardTarget](./src/main/java/com/ringcentral/definitions/ForwardTarget.cs)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-forwardCallParty) in API Explorer.
 
@@ -2548,7 +2548,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CallParty](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallParty.cs)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-holdCallParty) in API Explorer.
 
@@ -2581,9 +2581,9 @@ var result = rc.restapi(apiversion).account(accountid).telephony().sessions(sess
 rc.revoke();
 ```
 
-- Parameter `callRecordingUpdate` is of type [CallRecordingUpdate](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallRecordingUpdate.cs)
-- Parameter `pauseResumeCallRecordingParameters` is of type [PauseResumeCallRecordingParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/PauseResumeCallRecordingParameters.cs)
-- `result` is of type [CallRecording](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallRecording.cs)
+- Parameter `callRecordingUpdate` is of type [CallRecordingUpdate](./src/main/java/com/ringcentral/definitions/CallRecordingUpdate.cs)
+- Parameter `pauseResumeCallRecordingParameters` is of type [PauseResumeCallRecordingParameters](./src/main/java/com/ringcentral/definitions/PauseResumeCallRecordingParameters.cs)
+- `result` is of type [CallRecording](./src/main/java/com/ringcentral/definitions/CallRecording.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-pauseResumeCallRecording) in API Explorer.
 
@@ -2616,8 +2616,8 @@ var result = rc.restapi(apiversion).account(accountid).telephony().sessions(sess
 rc.revoke();
 ```
 
-- Parameter `transferTarget` is of type [TransferTarget](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/TransferTarget.cs)
-- `result` is of type [CallParty](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallParty.cs)
+- Parameter `transferTarget` is of type [TransferTarget](./src/main/java/com/ringcentral/definitions/TransferTarget.cs)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-transferCallParty) in API Explorer.
 
@@ -2634,7 +2634,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [CallParty](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CallParty.cs)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-unholdCallParty) in API Explorer.
 
@@ -2650,8 +2650,8 @@ var result = rc.restapi(apiversion).account(accountid).telephony().sessions(sess
 rc.revoke();
 ```
 
-- Parameter `superviseCallSessionRequest` is of type [SuperviseCallSessionRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SuperviseCallSessionRequest.cs)
-- `result` is of type [SuperviseCallSession](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SuperviseCallSession.cs)
+- Parameter `superviseCallSessionRequest` is of type [SuperviseCallSessionRequest](./src/main/java/com/ringcentral/definitions/SuperviseCallSessionRequest.cs)
+- `result` is of type [SuperviseCallSession](./src/main/java/com/ringcentral/definitions/SuperviseCallSession.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-superviseCallSession) in API Explorer.
 
@@ -2667,8 +2667,8 @@ var result = rc.restapi(apiversion).account(accountid).templates().list(listUser
 rc.revoke();
 ```
 
-- Parameter `listUserTemplatesParameters` is of type [ListUserTemplatesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListUserTemplatesParameters.cs)
-- `result` is of type [UserTemplates](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserTemplates.cs)
+- Parameter `listUserTemplatesParameters` is of type [ListUserTemplatesParameters](./src/main/java/com/ringcentral/definitions/ListUserTemplatesParameters.cs)
+- `result` is of type [UserTemplates](./src/main/java/com/ringcentral/definitions/UserTemplates.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Extensions-listUserTemplates) in API Explorer.
 
@@ -2685,7 +2685,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [TemplateInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/TemplateInfo.cs)
+- `result` is of type [TemplateInfo](./src/main/java/com/ringcentral/definitions/TemplateInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Extensions-readUserTemplate) in API Explorer.
 
@@ -2701,8 +2701,8 @@ var result = rc.restapi(apiversion).clientinfo().sipprovision().post(createSipRe
 rc.revoke();
 ```
 
-- Parameter `createSipRegistrationRequest` is of type [CreateSipRegistrationRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateSipRegistrationRequest.cs)
-- `result` is of type [CreateSipRegistrationResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateSipRegistrationResponse.cs)
+- Parameter `createSipRegistrationRequest` is of type [CreateSipRegistrationRequest](./src/main/java/com/ringcentral/definitions/CreateSipRegistrationRequest.cs)
+- `result` is of type [CreateSipRegistrationResponse](./src/main/java/com/ringcentral/definitions/CreateSipRegistrationResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SIP-createSIPRegistration) in API Explorer.
 
@@ -2718,8 +2718,8 @@ var result = rc.restapi(apiversion).dictionary().country().list(listCountriesPar
 rc.revoke();
 ```
 
-- Parameter `listCountriesParameters` is of type [ListCountriesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListCountriesParameters.cs)
-- `result` is of type [GetCountryListResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetCountryListResponse.cs)
+- Parameter `listCountriesParameters` is of type [ListCountriesParameters](./src/main/java/com/ringcentral/definitions/ListCountriesParameters.cs)
+- `result` is of type [GetCountryListResponse](./src/main/java/com/ringcentral/definitions/GetCountryListResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listCountries) in API Explorer.
 
@@ -2736,7 +2736,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetCountryInfoDictionaryResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetCountryInfoDictionaryResponse.cs)
+- `result` is of type [GetCountryInfoDictionaryResponse](./src/main/java/com/ringcentral/definitions/GetCountryInfoDictionaryResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readCountry) in API Explorer.
 
@@ -2752,8 +2752,8 @@ var result = rc.restapi(apiversion).dictionary().faxcoverpage().get(listFaxCover
 rc.revoke();
 ```
 
-- Parameter `listFaxCoverPagesParameters` is of type [ListFaxCoverPagesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListFaxCoverPagesParameters.cs)
-- `result` is of type [ListFaxCoverPagesResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListFaxCoverPagesResponse.cs)
+- Parameter `listFaxCoverPagesParameters` is of type [ListFaxCoverPagesParameters](./src/main/java/com/ringcentral/definitions/ListFaxCoverPagesParameters.cs)
+- `result` is of type [ListFaxCoverPagesResponse](./src/main/java/com/ringcentral/definitions/ListFaxCoverPagesResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages) in API Explorer.
 
@@ -2769,8 +2769,8 @@ var result = rc.restapi(apiversion).dictionary().greeting().list(listStandardGre
 rc.revoke();
 ```
 
-- Parameter `listStandardGreetingsParameters` is of type [ListStandardGreetingsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListStandardGreetingsParameters.cs)
-- `result` is of type [DictionaryGreetingList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DictionaryGreetingList.cs)
+- Parameter `listStandardGreetingsParameters` is of type [ListStandardGreetingsParameters](./src/main/java/com/ringcentral/definitions/ListStandardGreetingsParameters.cs)
+- `result` is of type [DictionaryGreetingList](./src/main/java/com/ringcentral/definitions/DictionaryGreetingList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listStandardGreetings) in API Explorer.
 
@@ -2787,7 +2787,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [DictionaryGreetingInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DictionaryGreetingInfo.cs)
+- `result` is of type [DictionaryGreetingInfo](./src/main/java/com/ringcentral/definitions/DictionaryGreetingInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readStandardGreeting) in API Explorer.
 
@@ -2804,7 +2804,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [LanguageList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/LanguageList.cs)
+- `result` is of type [LanguageList](./src/main/java/com/ringcentral/definitions/LanguageList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listLanguages) in API Explorer.
 
@@ -2821,7 +2821,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [LanguageInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/LanguageInfo.cs)
+- `result` is of type [LanguageInfo](./src/main/java/com/ringcentral/definitions/LanguageInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readLanguage) in API Explorer.
 
@@ -2837,8 +2837,8 @@ var result = rc.restapi(apiversion).dictionary().location().get(listLocationsPar
 rc.revoke();
 ```
 
-- Parameter `listLocationsParameters` is of type [ListLocationsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListLocationsParameters.cs)
-- `result` is of type [GetLocationListResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetLocationListResponse.cs)
+- Parameter `listLocationsParameters` is of type [ListLocationsParameters](./src/main/java/com/ringcentral/definitions/ListLocationsParameters.cs)
+- `result` is of type [GetLocationListResponse](./src/main/java/com/ringcentral/definitions/GetLocationListResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listLocations) in API Explorer.
 
@@ -2854,8 +2854,8 @@ var result = rc.restapi(apiversion).dictionary().state().list(listStatesParamete
 rc.revoke();
 ```
 
-- Parameter `listStatesParameters` is of type [ListStatesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListStatesParameters.cs)
-- `result` is of type [GetStateListResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetStateListResponse.cs)
+- Parameter `listStatesParameters` is of type [ListStatesParameters](./src/main/java/com/ringcentral/definitions/ListStatesParameters.cs)
+- `result` is of type [GetStateListResponse](./src/main/java/com/ringcentral/definitions/GetStateListResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listStates) in API Explorer.
 
@@ -2872,7 +2872,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GetStateInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetStateInfoResponse.cs)
+- `result` is of type [GetStateInfoResponse](./src/main/java/com/ringcentral/definitions/GetStateInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readState) in API Explorer.
 
@@ -2888,8 +2888,8 @@ var result = rc.restapi(apiversion).dictionary().timezone().list(listTimezonesPa
 rc.revoke();
 ```
 
-- Parameter `listTimezonesParameters` is of type [ListTimezonesParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListTimezonesParameters.cs)
-- `result` is of type [GetTimezoneListResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetTimezoneListResponse.cs)
+- Parameter `listTimezonesParameters` is of type [ListTimezonesParameters](./src/main/java/com/ringcentral/definitions/ListTimezonesParameters.cs)
+- `result` is of type [GetTimezoneListResponse](./src/main/java/com/ringcentral/definitions/GetTimezoneListResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listTimezones) in API Explorer.
 
@@ -2905,8 +2905,8 @@ var result = rc.restapi(apiversion).dictionary().timezone(timezoneid).get(readTi
 rc.revoke();
 ```
 
-- Parameter `readTimezoneParameters` is of type [ReadTimezoneParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadTimezoneParameters.cs)
-- `result` is of type [GetTimezoneInfoResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GetTimezoneInfoResponse.cs)
+- Parameter `readTimezoneParameters` is of type [ReadTimezoneParameters](./src/main/java/com/ringcentral/definitions/ReadTimezoneParameters.cs)
+- `result` is of type [GetTimezoneInfoResponse](./src/main/java/com/ringcentral/definitions/GetTimezoneInfoResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readTimezone) in API Explorer.
 
@@ -2922,9 +2922,9 @@ var result = rc.restapi(apiversion).glip().cards().post(glipMessageAttachmentInf
 rc.revoke();
 ```
 
-- Parameter `glipMessageAttachmentInfoRequest` is of type [GlipMessageAttachmentInfoRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfoRequest.cs)
-- Parameter `createGlipCardParameters` is of type [CreateGlipCardParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateGlipCardParameters.cs)
-- `result` is of type [GlipMessageAttachmentInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfo.cs)
+- Parameter `glipMessageAttachmentInfoRequest` is of type [GlipMessageAttachmentInfoRequest](./src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfoRequest.cs)
+- Parameter `createGlipCardParameters` is of type [CreateGlipCardParameters](./src/main/java/com/ringcentral/definitions/CreateGlipCardParameters.cs)
+- `result` is of type [GlipMessageAttachmentInfo](./src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-createGlipCard) in API Explorer.
 
@@ -2941,7 +2941,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipMessageAttachmentInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfo.cs)
+- `result` is of type [GlipMessageAttachmentInfo](./src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipCard) in API Explorer.
 
@@ -2957,7 +2957,7 @@ var result = rc.restapi(apiversion).glip().cards(cardid).put(glipMessageAttachme
 rc.revoke();
 ```
 
-- Parameter `glipMessageAttachmentInfoRequest` is of type [GlipMessageAttachmentInfoRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfoRequest.cs)
+- Parameter `glipMessageAttachmentInfoRequest` is of type [GlipMessageAttachmentInfoRequest](./src/main/java/com/ringcentral/definitions/GlipMessageAttachmentInfoRequest.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-updateGlipCard) in API Explorer.
@@ -2991,8 +2991,8 @@ var result = rc.restapi(apiversion).glip().chats().list(listGlipChatsParameters)
 rc.revoke();
 ```
 
-- Parameter `listGlipChatsParameters` is of type [ListGlipChatsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListGlipChatsParameters.cs)
-- `result` is of type [GlipChatsList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipChatsList.cs)
+- Parameter `listGlipChatsParameters` is of type [ListGlipChatsParameters](./src/main/java/com/ringcentral/definitions/ListGlipChatsParameters.cs)
+- `result` is of type [GlipChatsList](./src/main/java/com/ringcentral/definitions/GlipChatsList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listGlipChats) in API Explorer.
 
@@ -3009,7 +3009,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipChatInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipChatInfo.cs)
+- `result` is of type [GlipChatInfo](./src/main/java/com/ringcentral/definitions/GlipChatInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipChat) in API Explorer.
 
@@ -3042,8 +3042,8 @@ var result = rc.restapi(apiversion).glip().chats(chatid).posts().list(readGlipPo
 rc.revoke();
 ```
 
-- Parameter `readGlipPostsParameters` is of type [ReadGlipPostsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadGlipPostsParameters.cs)
-- `result` is of type [GlipPostsList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostsList.cs)
+- Parameter `readGlipPostsParameters` is of type [ReadGlipPostsParameters](./src/main/java/com/ringcentral/definitions/ReadGlipPostsParameters.cs)
+- `result` is of type [GlipPostsList](./src/main/java/com/ringcentral/definitions/GlipPostsList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPosts) in API Explorer.
 
@@ -3059,8 +3059,8 @@ var result = rc.restapi(apiversion).glip().chats(chatid).posts().post(glipPostPo
 rc.revoke();
 ```
 
-- Parameter `glipPostPostBody` is of type [GlipPostPostBody](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostPostBody.cs)
-- `result` is of type [GlipPostInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
+- Parameter `glipPostPostBody` is of type [GlipPostPostBody](./src/main/java/com/ringcentral/definitions/GlipPostPostBody.cs)
+- `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-createGlipPost) in API Explorer.
 
@@ -3077,7 +3077,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipPostInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
+- `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPost) in API Explorer.
 
@@ -3093,8 +3093,8 @@ var result = rc.restapi(apiversion).glip().chats(chatid).posts(postid).patch(gli
 rc.revoke();
 ```
 
-- Parameter `glipPatchPostBody` is of type [GlipPatchPostBody](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPatchPostBody.cs)
-- `result` is of type [GlipPostInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
+- Parameter `glipPatchPostBody` is of type [GlipPatchPostBody](./src/main/java/com/ringcentral/definitions/GlipPatchPostBody.cs)
+- `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-patchGlipPost) in API Explorer.
 
@@ -3179,7 +3179,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipCompany](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipCompany.cs)
+- `result` is of type [GlipCompany](./src/main/java/com/ringcentral/definitions/GlipCompany.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-readGlipCompany) in API Explorer.
 
@@ -3195,8 +3195,8 @@ var result = rc.restapi(apiversion).glip().conversations().list(listGlipConversa
 rc.revoke();
 ```
 
-- Parameter `listGlipConversationsParameters` is of type [ListGlipConversationsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListGlipConversationsParameters.cs)
-- `result` is of type [GlipConversationsList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipConversationsList.cs)
+- Parameter `listGlipConversationsParameters` is of type [ListGlipConversationsParameters](./src/main/java/com/ringcentral/definitions/ListGlipConversationsParameters.cs)
+- `result` is of type [GlipConversationsList](./src/main/java/com/ringcentral/definitions/GlipConversationsList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listGlipConversations) in API Explorer.
 
@@ -3212,8 +3212,8 @@ var result = rc.restapi(apiversion).glip().conversations().post(createGlipConver
 rc.revoke();
 ```
 
-- Parameter `createGlipConversationRequest` is of type [CreateGlipConversationRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateGlipConversationRequest.cs)
-- `result` is of type [GlipConversationInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipConversationInfo.cs)
+- Parameter `createGlipConversationRequest` is of type [CreateGlipConversationRequest](./src/main/java/com/ringcentral/definitions/CreateGlipConversationRequest.cs)
+- `result` is of type [GlipConversationInfo](./src/main/java/com/ringcentral/definitions/GlipConversationInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-createGlipConversation) in API Explorer.
 
@@ -3230,7 +3230,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipConversationInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipConversationInfo.cs)
+- `result` is of type [GlipConversationInfo](./src/main/java/com/ringcentral/definitions/GlipConversationInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipConversation) in API Explorer.
 
@@ -3246,8 +3246,8 @@ var result = rc.restapi(apiversion).glip().dataexport().post(createDataExportTas
 rc.revoke();
 ```
 
-- Parameter `createDataExportTaskRequest` is of type [CreateDataExportTaskRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateDataExportTaskRequest.cs)
-- `result` is of type [DataExportTask](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DataExportTask.cs)
+- Parameter `createDataExportTaskRequest` is of type [CreateDataExportTaskRequest](./src/main/java/com/ringcentral/definitions/CreateDataExportTaskRequest.cs)
+- `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-createDataExportTask) in API Explorer.
 
@@ -3264,7 +3264,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [DataExportTask](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/DataExportTask.cs)
+- `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readDataExportTask) in API Explorer.
 
@@ -3297,8 +3297,8 @@ var result = rc.restapi(apiversion).glip().events().list(readGlipEventsParameter
 rc.revoke();
 ```
 
-- Parameter `readGlipEventsParameters` is of type [ReadGlipEventsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ReadGlipEventsParameters.cs)
-- `result` is of type [GlipEventsInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventsInfo.cs)
+- Parameter `readGlipEventsParameters` is of type [ReadGlipEventsParameters](./src/main/java/com/ringcentral/definitions/ReadGlipEventsParameters.cs)
+- `result` is of type [GlipEventsInfo](./src/main/java/com/ringcentral/definitions/GlipEventsInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-readGlipEvents) in API Explorer.
 
@@ -3314,8 +3314,8 @@ var result = rc.restapi(apiversion).glip().events().post(glipEventCreate);
 rc.revoke();
 ```
 
-- Parameter `glipEventCreate` is of type [GlipEventCreate](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventCreate.cs)
-- `result` is of type [GlipEventInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
+- Parameter `glipEventCreate` is of type [GlipEventCreate](./src/main/java/com/ringcentral/definitions/GlipEventCreate.cs)
+- `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-createEvent) in API Explorer.
 
@@ -3332,7 +3332,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipEventInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
+- `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-readEvent) in API Explorer.
 
@@ -3348,8 +3348,8 @@ var result = rc.restapi(apiversion).glip().events(eventid).put(glipEventCreate);
 rc.revoke();
 ```
 
-- Parameter `glipEventCreate` is of type [GlipEventCreate](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventCreate.cs)
-- `result` is of type [GlipEventInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
+- Parameter `glipEventCreate` is of type [GlipEventCreate](./src/main/java/com/ringcentral/definitions/GlipEventCreate.cs)
+- `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-updateEvent) in API Explorer.
 
@@ -3383,7 +3383,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipEveryoneInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.cs)
+- `result` is of type [GlipEveryoneInfo](./src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipEveryone) in API Explorer.
 
@@ -3399,8 +3399,8 @@ var result = rc.restapi(apiversion).glip().everyone().patch(updateGlipEveryoneRe
 rc.revoke();
 ```
 
-- Parameter `updateGlipEveryoneRequest` is of type [UpdateGlipEveryoneRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateGlipEveryoneRequest.cs)
-- `result` is of type [GlipEveryoneInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.cs)
+- Parameter `updateGlipEveryoneRequest` is of type [UpdateGlipEveryoneRequest](./src/main/java/com/ringcentral/definitions/UpdateGlipEveryoneRequest.cs)
+- `result` is of type [GlipEveryoneInfo](./src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-patchGlipEveryone) in API Explorer.
 
@@ -3416,8 +3416,8 @@ var result = rc.restapi(apiversion).glip().favorites().get(listFavoriteChatsPara
 rc.revoke();
 ```
 
-- Parameter `listFavoriteChatsParameters` is of type [ListFavoriteChatsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListFavoriteChatsParameters.cs)
-- `result` is of type [GlipChatsListWithoutNavigation](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipChatsListWithoutNavigation.cs)
+- Parameter `listFavoriteChatsParameters` is of type [ListFavoriteChatsParameters](./src/main/java/com/ringcentral/definitions/ListFavoriteChatsParameters.cs)
+- `result` is of type [GlipChatsListWithoutNavigation](./src/main/java/com/ringcentral/definitions/GlipChatsListWithoutNavigation.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listFavoriteChats) in API Explorer.
 
@@ -3433,8 +3433,8 @@ var result = rc.restapi(apiversion).glip().groups().list(listGlipGroupsParameter
 rc.revoke();
 ```
 
-- Parameter `listGlipGroupsParameters` is of type [ListGlipGroupsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListGlipGroupsParameters.cs)
-- `result` is of type [GlipGroupList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipGroupList.cs)
+- Parameter `listGlipGroupsParameters` is of type [ListGlipGroupsParameters](./src/main/java/com/ringcentral/definitions/ListGlipGroupsParameters.cs)
+- `result` is of type [GlipGroupList](./src/main/java/com/ringcentral/definitions/GlipGroupList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listGlipGroups) in API Explorer.
 
@@ -3450,8 +3450,8 @@ var result = rc.restapi(apiversion).glip().groups().post(glipCreateGroup);
 rc.revoke();
 ```
 
-- Parameter `glipCreateGroup` is of type [GlipCreateGroup](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipCreateGroup.cs)
-- `result` is of type [GlipGroupInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipGroupInfo.cs)
+- Parameter `glipCreateGroup` is of type [GlipCreateGroup](./src/main/java/com/ringcentral/definitions/GlipCreateGroup.cs)
+- `result` is of type [GlipGroupInfo](./src/main/java/com/ringcentral/definitions/GlipGroupInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-createGlipGroup) in API Explorer.
 
@@ -3468,7 +3468,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipGroupInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipGroupInfo.cs)
+- `result` is of type [GlipGroupInfo](./src/main/java/com/ringcentral/definitions/GlipGroupInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipGroup) in API Explorer.
 
@@ -3484,8 +3484,8 @@ var result = rc.restapi(apiversion).glip().groups(groupid).bulkassign().post(edi
 rc.revoke();
 ```
 
-- Parameter `editGroupRequest` is of type [EditGroupRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/EditGroupRequest.cs)
-- `result` is of type [GlipGroupInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipGroupInfo.cs)
+- Parameter `editGroupRequest` is of type [EditGroupRequest](./src/main/java/com/ringcentral/definitions/EditGroupRequest.cs)
+- `result` is of type [GlipGroupInfo](./src/main/java/com/ringcentral/definitions/GlipGroupInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-assignGlipGroupMembers) in API Explorer.
 
@@ -3501,8 +3501,8 @@ var result = rc.restapi(apiversion).glip().groups(groupid).events().post(glipEve
 rc.revoke();
 ```
 
-- Parameter `glipEventCreate` is of type [GlipEventCreate](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventCreate.cs)
-- `result` is of type [GlipEventInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
+- Parameter `glipEventCreate` is of type [GlipEventCreate](./src/main/java/com/ringcentral/definitions/GlipEventCreate.cs)
+- `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-createEventbyGroupId) in API Explorer.
 
@@ -3519,7 +3519,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipEventInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
+- `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-listGroupEvents) in API Explorer.
 
@@ -3535,8 +3535,8 @@ var result = rc.restapi(apiversion).glip().groups(groupid).posts().get(listGlipG
 rc.revoke();
 ```
 
-- Parameter `listGlipGroupPostsParameters` is of type [ListGlipGroupPostsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListGlipGroupPostsParameters.cs)
-- `result` is of type [GlipPosts](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPosts.cs)
+- Parameter `listGlipGroupPostsParameters` is of type [ListGlipGroupPostsParameters](./src/main/java/com/ringcentral/definitions/ListGlipGroupPostsParameters.cs)
+- `result` is of type [GlipPosts](./src/main/java/com/ringcentral/definitions/GlipPosts.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-listGlipGroupPosts) in API Explorer.
 
@@ -3552,8 +3552,8 @@ var result = rc.restapi(apiversion).glip().groups(groupid).posts().post(glipCrea
 rc.revoke();
 ```
 
-- Parameter `glipCreatePost` is of type [GlipCreatePost](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipCreatePost.cs)
-- `result` is of type [GlipPostInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
+- Parameter `glipCreatePost` is of type [GlipCreatePost](./src/main/java/com/ringcentral/definitions/GlipCreatePost.cs)
+- `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-createGlipGroupPost) in API Explorer.
 
@@ -3569,7 +3569,7 @@ var result = rc.restapi(apiversion).glip().groups(groupid).posts(postid).text().
 rc.revoke();
 ```
 
-- Parameter `string` is of type [string](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/string.cs)
+- Parameter `string` is of type [string](./src/main/java/com/ringcentral/definitions/string.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-updateGlipPostText) in API Explorer.
@@ -3587,7 +3587,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipWebhookInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipWebhookInfo.cs)
+- `result` is of type [GlipWebhookInfo](./src/main/java/com/ringcentral/definitions/GlipWebhookInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-createGlipGroupWebhook) in API Explorer.
 
@@ -3604,7 +3604,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipWebhookList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipWebhookList.cs)
+- `result` is of type [GlipWebhookList](./src/main/java/com/ringcentral/definitions/GlipWebhookList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-listGlipGroupWebhooks) in API Explorer.
 
@@ -3621,7 +3621,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipPersonInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPersonInfo.cs)
+- `result` is of type [GlipPersonInfo](./src/main/java/com/ringcentral/definitions/GlipPersonInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-readGlipPerson) in API Explorer.
 
@@ -3637,8 +3637,8 @@ var result = rc.restapi(apiversion).glip().posts().get(listGlipPostsParameters);
 rc.revoke();
 ```
 
-- Parameter `listGlipPostsParameters` is of type [ListGlipPostsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListGlipPostsParameters.cs)
-- `result` is of type [GlipPosts](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPosts.cs)
+- Parameter `listGlipPostsParameters` is of type [ListGlipPostsParameters](./src/main/java/com/ringcentral/definitions/ListGlipPostsParameters.cs)
+- `result` is of type [GlipPosts](./src/main/java/com/ringcentral/definitions/GlipPosts.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-listGlipPosts) in API Explorer.
 
@@ -3654,8 +3654,8 @@ var result = rc.restapi(apiversion).glip().posts().post(glipCreatePost);
 rc.revoke();
 ```
 
-- Parameter `glipCreatePost` is of type [GlipCreatePost](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipCreatePost.cs)
-- `result` is of type [GlipPostInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
+- Parameter `glipCreatePost` is of type [GlipCreatePost](./src/main/java/com/ringcentral/definitions/GlipCreatePost.cs)
+- `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-createPost) in API Explorer.
 
@@ -3672,7 +3672,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipPreferencesInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPreferencesInfo.cs)
+- `result` is of type [GlipPreferencesInfo](./src/main/java/com/ringcentral/definitions/GlipPreferencesInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-readGlipPreferences) in API Explorer.
 
@@ -3688,8 +3688,8 @@ var result = rc.restapi(apiversion).glip().recent().chats().get(listRecentChatsP
 rc.revoke();
 ```
 
-- Parameter `listRecentChatsParameters` is of type [ListRecentChatsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListRecentChatsParameters.cs)
-- `result` is of type [GlipChatsListWithoutNavigation](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipChatsListWithoutNavigation.cs)
+- Parameter `listRecentChatsParameters` is of type [ListRecentChatsParameters](./src/main/java/com/ringcentral/definitions/ListRecentChatsParameters.cs)
+- `result` is of type [GlipChatsListWithoutNavigation](./src/main/java/com/ringcentral/definitions/GlipChatsListWithoutNavigation.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listRecentChats) in API Explorer.
 
@@ -3705,8 +3705,8 @@ var result = rc.restapi(apiversion).glip().teams().list(listGlipTeamsParameters)
 rc.revoke();
 ```
 
-- Parameter `listGlipTeamsParameters` is of type [ListGlipTeamsParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ListGlipTeamsParameters.cs)
-- `result` is of type [GlipTeamsList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipTeamsList.cs)
+- Parameter `listGlipTeamsParameters` is of type [ListGlipTeamsParameters](./src/main/java/com/ringcentral/definitions/ListGlipTeamsParameters.cs)
+- `result` is of type [GlipTeamsList](./src/main/java/com/ringcentral/definitions/GlipTeamsList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listGlipTeams) in API Explorer.
 
@@ -3722,8 +3722,8 @@ var result = rc.restapi(apiversion).glip().teams().post(glipPostTeamBody);
 rc.revoke();
 ```
 
-- Parameter `glipPostTeamBody` is of type [GlipPostTeamBody](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostTeamBody.cs)
-- `result` is of type [GlipTeamInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipTeamInfo.cs)
+- Parameter `glipPostTeamBody` is of type [GlipPostTeamBody](./src/main/java/com/ringcentral/definitions/GlipPostTeamBody.cs)
+- `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-createGlipTeam) in API Explorer.
 
@@ -3740,7 +3740,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipTeamInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipTeamInfo.cs)
+- `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipTeam) in API Explorer.
 
@@ -3756,8 +3756,8 @@ var result = rc.restapi(apiversion).glip().teams(chatid).patch(glipPatchTeamBody
 rc.revoke();
 ```
 
-- Parameter `glipPatchTeamBody` is of type [GlipPatchTeamBody](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPatchTeamBody.cs)
-- `result` is of type [GlipTeamInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipTeamInfo.cs)
+- Parameter `glipPatchTeamBody` is of type [GlipPatchTeamBody](./src/main/java/com/ringcentral/definitions/GlipPatchTeamBody.cs)
+- `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-patchGlipTeam) in API Explorer.
 
@@ -3790,7 +3790,7 @@ var result = rc.restapi(apiversion).glip().teams(chatid).add().post(glipPostMemb
 rc.revoke();
 ```
 
-- Parameter `glipPostMembersListBody` is of type [GlipPostMembersListBody](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostMembersListBody.cs)
+- Parameter `glipPostMembersListBody` is of type [GlipPostMembersListBody](./src/main/java/com/ringcentral/definitions/GlipPostMembersListBody.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-addGlipTeamMembers) in API Explorer.
@@ -3858,7 +3858,7 @@ var result = rc.restapi(apiversion).glip().teams(chatid).remove().post(glipPostM
 rc.revoke();
 ```
 
-- Parameter `glipPostMembersIdsListBody` is of type [GlipPostMembersIdsListBody](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipPostMembersIdsListBody.cs)
+- Parameter `glipPostMembersIdsListBody` is of type [GlipPostMembersIdsListBody](./src/main/java/com/ringcentral/definitions/GlipPostMembersIdsListBody.cs)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-removeGlipTeamMembers) in API Explorer.
@@ -3893,7 +3893,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipWebhookList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipWebhookList.cs)
+- `result` is of type [GlipWebhookList](./src/main/java/com/ringcentral/definitions/GlipWebhookList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-listGlipWebhooks) in API Explorer.
 
@@ -3910,7 +3910,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [GlipWebhookList](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/GlipWebhookList.cs)
+- `result` is of type [GlipWebhookList](./src/main/java/com/ringcentral/definitions/GlipWebhookList.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-readGlipWebhook) in API Explorer.
 
@@ -3977,9 +3977,9 @@ var result = rc.restapi(apiversion).numberparser().parse().post(parsePhoneNumber
 rc.revoke();
 ```
 
-- Parameter `parsePhoneNumberRequest` is of type [ParsePhoneNumberRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ParsePhoneNumberRequest.cs)
-- Parameter `parsePhoneNumberParameters` is of type [ParsePhoneNumberParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ParsePhoneNumberParameters.cs)
-- `result` is of type [ParsePhoneNumberResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ParsePhoneNumberResponse.cs)
+- Parameter `parsePhoneNumberRequest` is of type [ParsePhoneNumberRequest](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberRequest.cs)
+- Parameter `parsePhoneNumberParameters` is of type [ParsePhoneNumberParameters](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberParameters.cs)
+- `result` is of type [ParsePhoneNumberResponse](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-parsePhoneNumber) in API Explorer.
 
@@ -3995,8 +3995,8 @@ var result = rc.restapi(apiversion).numberporting().verifynumber().post(numberPo
 rc.revoke();
 ```
 
-- Parameter `numberPortingVerifyNumberRequest` is of type [NumberPortingVerifyNumberRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/NumberPortingVerifyNumberRequest.cs)
-- `result` is of type [NumberPortingVerifyNumberResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/NumberPortingVerifyNumberResponse.cs)
+- Parameter `numberPortingVerifyNumberRequest` is of type [NumberPortingVerifyNumberRequest](./src/main/java/com/ringcentral/definitions/NumberPortingVerifyNumberRequest.cs)
+- `result` is of type [NumberPortingVerifyNumberResponse](./src/main/java/com/ringcentral/definitions/NumberPortingVerifyNumberResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Number-Porting-verifyNumber) in API Explorer.
 
@@ -4030,7 +4030,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [RecordsCollectionResourceSubscriptionResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/RecordsCollectionResourceSubscriptionResponse.cs)
+- `result` is of type [RecordsCollectionResourceSubscriptionResponse](./src/main/java/com/ringcentral/definitions/RecordsCollectionResourceSubscriptionResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-listSubscriptions) in API Explorer.
 
@@ -4046,8 +4046,8 @@ var result = rc.restapi(apiversion).subscription().post(createSubscriptionReques
 rc.revoke();
 ```
 
-- Parameter `createSubscriptionRequest` is of type [CreateSubscriptionRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/CreateSubscriptionRequest.cs)
-- `result` is of type [SubscriptionInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
+- Parameter `createSubscriptionRequest` is of type [CreateSubscriptionRequest](./src/main/java/com/ringcentral/definitions/CreateSubscriptionRequest.cs)
+- `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-createSubscription) in API Explorer.
 
@@ -4064,7 +4064,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [SubscriptionInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
+- `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-readSubscription) in API Explorer.
 
@@ -4080,9 +4080,9 @@ var result = rc.restapi(apiversion).subscription(subscriptionid).put(modifySubsc
 rc.revoke();
 ```
 
-- Parameter `modifySubscriptionRequest` is of type [ModifySubscriptionRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ModifySubscriptionRequest.cs)
-- Parameter `updateSubscriptionParameters` is of type [UpdateSubscriptionParameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UpdateSubscriptionParameters.cs)
-- `result` is of type [SubscriptionInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
+- Parameter `modifySubscriptionRequest` is of type [ModifySubscriptionRequest](./src/main/java/com/ringcentral/definitions/ModifySubscriptionRequest.cs)
+- Parameter `updateSubscriptionParameters` is of type [UpdateSubscriptionParameters](./src/main/java/com/ringcentral/definitions/UpdateSubscriptionParameters.cs)
+- `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-updateSubscription) in API Explorer.
 
@@ -4116,7 +4116,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [SubscriptionInfo](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
+- `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-renewSubscription) in API Explorer.
 
@@ -4133,7 +4133,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [ServiceProviderConfig](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/ServiceProviderConfig.cs)
+- `result` is of type [ServiceProviderConfig](./src/main/java/com/ringcentral/definitions/ServiceProviderConfig.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-readServiceProviderConfig2) in API Explorer.
 
@@ -4149,8 +4149,8 @@ var result = rc.scim(version).users().list(searchViaGet2Parameters);
 rc.revoke();
 ```
 
-- Parameter `searchViaGet2Parameters` is of type [SearchViaGet2Parameters](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SearchViaGet2Parameters.cs)
-- `result` is of type [UserSearchResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserSearchResponse.cs)
+- Parameter `searchViaGet2Parameters` is of type [SearchViaGet2Parameters](./src/main/java/com/ringcentral/definitions/SearchViaGet2Parameters.cs)
+- `result` is of type [UserSearchResponse](./src/main/java/com/ringcentral/definitions/UserSearchResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-searchViaGet2) in API Explorer.
 
@@ -4166,8 +4166,8 @@ var result = rc.scim(version).users().post(user);
 rc.revoke();
 ```
 
-- Parameter `user` is of type [User](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/User.cs)
-- `result` is of type [UserResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserResponse.cs)
+- Parameter `user` is of type [User](./src/main/java/com/ringcentral/definitions/User.cs)
+- `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-createUser2) in API Explorer.
 
@@ -4183,8 +4183,8 @@ var result = rc.scim(version).users().dotsearch().post(searchRequest);
 rc.revoke();
 ```
 
-- Parameter `searchRequest` is of type [SearchRequest](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/SearchRequest.cs)
-- `result` is of type [UserSearchResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserSearchResponse.cs)
+- Parameter `searchRequest` is of type [SearchRequest](./src/main/java/com/ringcentral/definitions/SearchRequest.cs)
+- `result` is of type [UserSearchResponse](./src/main/java/com/ringcentral/definitions/UserSearchResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-searchViaPost2) in API Explorer.
 
@@ -4201,7 +4201,7 @@ rc.revoke();
 ```
 
 
-- `result` is of type [UserResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserResponse.cs)
+- `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-readUser2) in API Explorer.
 
@@ -4217,8 +4217,8 @@ var result = rc.scim(version).users(id).put(user);
 rc.revoke();
 ```
 
-- Parameter `user` is of type [User](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/User.cs)
-- `result` is of type [UserResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserResponse.cs)
+- Parameter `user` is of type [User](./src/main/java/com/ringcentral/definitions/User.cs)
+- `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-replaceUser2) in API Explorer.
 
@@ -4251,8 +4251,8 @@ var result = rc.scim(version).users(id).patch(userPatch);
 rc.revoke();
 ```
 
-- Parameter `userPatch` is of type [UserPatch](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserPatch.cs)
-- `result` is of type [UserResponse](./src/java/ringcentral-java/src/main/java/com/ringcentral/definitions/UserResponse.cs)
+- Parameter `userPatch` is of type [UserPatch](./src/main/java/com/ringcentral/definitions/UserPatch.cs)
+- `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.cs)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-patchUser2) in API Explorer.
 

@@ -3,7 +3,7 @@
   "scripts": {
     "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && node -r @babel/register definitions.js",
     "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && node -r @babel/register paths.js",
-    "generate": "yarn definitions && yarn paths && yarn samples"
+    "generate": "yarn definitions && yarn paths"
   },
   "dependencies": {
     "change-case": "^3.1.0",

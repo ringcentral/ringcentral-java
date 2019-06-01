@@ -60,8 +60,12 @@ Don't forget to replace `[version]` with expected version.
 ### Intialization & Authorization
 
 ```java
-RestClient restClient = new RestClient(clientId, clientSecret, server);
-restClient.authorize(username, extension, password);
+RestClient rc = new RestClient(clientId, clientSecret, server);
+rc.authorize(username, extension, password);
+
+// do something with `rc`
+
+rc.revoke();
 ```
 
 For the `server` parameter, there are two static final string variables in `RestClient`:
@@ -72,88 +76,17 @@ public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com
 ```
 
 
-### Url Builder
+## Code samples
 
-The following code snippets are equivalent, you can choose whichever based on your preferences:
+You can find [sample code for all the endpoints](./samples.md).
 
-```java
-String endpoint = "/restapi/v1.0/account/~/extension/~/sms";
-```
-
-```java
-String endpoint = restClient.restApi("v1.0").account("~").extension("~").sms().endpoint();
-```
-
-```java
-String endpoint = restClient.restApi().account().extension().sms().endpoint();
-```
-
-The following code snippets are also equivalent:
-
-```java
-restClient.post(
-    "/restapi/v1.0/account/~/extension/~/sms",
-    postParameters);
-```
-
-```java
-restClient.post(
-    restClient.restApi("v1.0").account("~").extension("~").sms().endpoint(),
-    postParameters);
-```
-
-```java
-restClient.post(
-    restClient.restApi().account().extension().sms().endpoint(),
-    postParameters);
-```
-
-```java
-restClient.restApi("v1.0").account("~").extension("~").sms()
-    .post(postParameters);
-```
-
-```java
-restClient.restApi().account().extension().sms()
-    .post(postParameters);
-```
-
-[Url Builder Examples](src/test/java/com/ringcentral/UrlBuilderTest.java)
-
-
-### Raw Response vs. Models
-
-#### Raw Response
-
-```java
-ResponseBody responseBody = restClient.restApi().account().extension().sms()
-    .post(postParameters);
-// String stringBody = responseBody.string();
-// byte[] bytes = resonseBody.bytes();
-// ...
-```
-
-- ❗️ ❗️ Please don't forget to invoke `responseBody.close()`. Ref: https://github.com/square/okhttp/issues/2311
-    - If you invoked `responseBody.string()` you don't need to invoke `responseBody.close()` because the former implicitly closes body.
-
-
-#### Models
-
-```java
-MessageInfo messageInfo = restClient.restApi().account().extension().sms()
-    .post(postParameters, MessageInfo.class);
-// System.out.println(messageInfo.creationTime)
-// ...
-```
-
-
-
+There is also lots of useful code for your reference in our [test cases](./src/test/java/com/ringcentral).
 
 
 ### Subscription & notification
 
 ```java
-Subscription subscription = restClient.subscription(
+Subscription subscription = new Subscription(rc,
     new String[]{
         "/restapi/v1.0/glip/posts",
         "/restapi/v1.0/account/~/extension/~/message-store",
@@ -164,20 +97,3 @@ Subscription subscription = restClient.subscription(
     });
 subscription.subscribe();
 ```
-
-[Example](src/test/java/com/ringcentral/SubscriptionTest.java)
-
-
-### Send fax
-
-[Example](src/test/java/com/ringcentral/FaxTest.java)
-
-
-### Upload & Download binary files
-
-[Example](src/test/java/com/ringcentral/BinaryTest.java)
-
-
-## More examples
-
-Please check the [test cases](src/test/java/com/ringcentral).

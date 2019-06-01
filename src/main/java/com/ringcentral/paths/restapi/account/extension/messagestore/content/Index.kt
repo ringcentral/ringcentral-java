@@ -24,7 +24,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.messages
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return rb.source().readByteArray()
+        return rb.bytes()
 
     }
 

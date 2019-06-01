@@ -97,7 +97,7 @@ public class Subscription {
         }
     }
 
-    public void subscribe(){
+    public void subscribe() {
         SubscriptionInfo subscriptionInfo = restClient.restapi().subscription().post(getPostParameters());
         setSubscription(subscriptionInfo);
         PNConfiguration pnConfiguration = new PNConfiguration();
@@ -129,13 +129,13 @@ public class Subscription {
 
     private CreateSubscriptionRequest getPostParameters() {
         return new CreateSubscriptionRequest()
-                .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
-                .eventFilters(events);
+            .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
+            .eventFilters(events);
     }
 
     private ModifySubscriptionRequest getPutParameters() {
         return new ModifySubscriptionRequest()
-                .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
-                .eventFilters(events);
+            .deliveryMode(new NotificationDeliveryModeRequest().transportType("PubNub").encryption(true))
+            .eventFilters(events);
     }
 }

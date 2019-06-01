@@ -19,7 +19,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     fun list(): ByteArray? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
-        return rb.source().readByteArray()
+        return rb.bytes()
 
     }
 
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return rb.source().readByteArray()
+        return rb.bytes()
 
     }
 

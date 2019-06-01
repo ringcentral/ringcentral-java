@@ -205,7 +205,7 @@ const generate = (prefix = '/') => {
       }
       if (responseType === 'ByteArray') {
         code += `
-        return rb.source().readByteArray()
+        return rb.bytes()
         `
       } else if (responseType === 'String') {
         code += `

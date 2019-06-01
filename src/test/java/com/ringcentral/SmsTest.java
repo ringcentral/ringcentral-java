@@ -14,24 +14,24 @@ public class SmsTest {
     @Test
     public void sendSms() throws IOException, RestException {
         RestClient rc = new RestClient(
-                System.getenv("RINGCENTRAL_CLIENT_ID"),
-                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-                System.getenv("RINGCENTRAL_SERVER_URL")
+            System.getenv("RINGCENTRAL_CLIENT_ID"),
+            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+            System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
         rc.authorize(
-                System.getenv("RINGCENTRAL_USERNAME"),
-                System.getenv("RINGCENTRAL_EXTENSION"),
-                System.getenv("RINGCENTRAL_PASSWORD")
+            System.getenv("RINGCENTRAL_USERNAME"),
+            System.getenv("RINGCENTRAL_EXTENSION"),
+            System.getenv("RINGCENTRAL_PASSWORD")
         );
 
         GetMessageInfoResponse response = rc.restapi().account().extension().sms().post(
-                new CreateSMSMessage()
-                        .text("hello world")
-                        .from(new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_USERNAME")))
-                        .to(new MessageStoreCallerInfoRequest[]{
-                                new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_RECEIVER"))
-                        })
+            new CreateSMSMessage()
+                .text("hello world")
+                .from(new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_USERNAME")))
+                .to(new MessageStoreCallerInfoRequest[]{
+                    new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_RECEIVER"))
+                })
         );
         assertNotNull(response);
         assertNotNull(response.subject);
@@ -43,15 +43,15 @@ public class SmsTest {
     @Test
     public void sendSms2() throws IOException, RestException {
         RestClient rc = new RestClient(
-                System.getenv("RINGCENTRAL_CLIENT_ID"),
-                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-                System.getenv("RINGCENTRAL_SERVER_URL")
+            System.getenv("RINGCENTRAL_CLIENT_ID"),
+            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+            System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
         rc.authorize(
-                System.getenv("RINGCENTRAL_USERNAME"),
-                System.getenv("RINGCENTRAL_EXTENSION"),
-                System.getenv("RINGCENTRAL_PASSWORD")
+            System.getenv("RINGCENTRAL_USERNAME"),
+            System.getenv("RINGCENTRAL_EXTENSION"),
+            System.getenv("RINGCENTRAL_PASSWORD")
         );
 
         CreateSMSMessage requestBody = new CreateSMSMessage();

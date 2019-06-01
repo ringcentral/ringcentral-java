@@ -13,15 +13,15 @@ public class LowLevelAPITest {
     @Test
     public void testParseObject() throws IOException, RestException {
         RestClient rc = new RestClient(
-                System.getenv("RINGCENTRAL_CLIENT_ID"),
-                System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-                System.getenv("RINGCENTRAL_SERVER_URL")
+            System.getenv("RINGCENTRAL_CLIENT_ID"),
+            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+            System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
         rc.authorize(
-                System.getenv("RINGCENTRAL_USERNAME"),
-                System.getenv("RINGCENTRAL_EXTENSION"),
-                System.getenv("RINGCENTRAL_PASSWORD")
+            System.getenv("RINGCENTRAL_USERNAME"),
+            System.getenv("RINGCENTRAL_EXTENSION"),
+            System.getenv("RINGCENTRAL_PASSWORD")
         );
         ResponseBody responseBody = rc.get("/restapi/v1.0/account/~/extension/~", null);
         String responseString = responseBody.string();

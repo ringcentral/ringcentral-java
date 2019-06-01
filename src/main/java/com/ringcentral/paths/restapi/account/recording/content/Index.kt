@@ -15,7 +15,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.recording.Index) {
     fun get(): ByteArray? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return rb.source().readByteArray()
+        return rb.bytes()
 
     }
 

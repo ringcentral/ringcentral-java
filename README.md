@@ -147,19 +147,7 @@ MessageInfo messageInfo = restClient.restApi().account().extension().sms()
 ```
 
 
-### Send sms
 
-[Example](src/test/java/com/ringcentral/SmsTest.java)
-
-
-### Glip related
-
-[Example](src/test/java/com/ringcentral/GlipTest.java)
-
-
-### Specify query parameters
-
-[Example](src/test/java/com/ringcentral/QueryParameterTest.java)
 
 
 ### Subscription & notification

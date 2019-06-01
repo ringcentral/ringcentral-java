@@ -14,9 +14,9 @@ public class RestException extends Exception {
 
     public RestException(Request request, Response response) throws IOException {
         super(MessageFormat.format("HTTP status code: {0}\n\n{1}\n\nRequest: {2}",
-                response.code(),
-                response.body().string(),
-                requestBodyToString(request.body())
+            response.code(),
+            response.body().string(),
+            requestBodyToString(request.body())
         ));
         this.request = request;
         this.response = response;

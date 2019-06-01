@@ -69,10 +69,10 @@ public class RestClient {
 
     public TokenInfo authorize(String username, String extension, String password) throws IOException, RestException {
         GetTokenRequest getTokenRequest = new GetTokenRequest()
-                .grant_type("password")
-                .username(username)
-                .extension(extension)
-                .password(password);
+            .grant_type("password")
+            .username(username)
+            .extension(extension)
+            .password(password);
         return authorize(getTokenRequest);
     }
 
@@ -216,7 +216,7 @@ public class RestClient {
     }
 
     public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
-            requestBody) throws IOException, RestException {
+        requestBody) throws IOException, RestException {
         HttpUrl.Builder urlBuilder = HttpUrl.parse(server).newBuilder(endpoint);
 
         if (queryParameters != null) {
@@ -258,8 +258,8 @@ public class RestClient {
 
         String userAgentHeader = String.format("RC-JAVA-SDK Java %s %s", System.getProperty("java.version"), System.getProperty("os.name"));
         Request request = builder.addHeader("Authorization", authorizationHeader())
-                .addHeader("X-User-Agent", userAgentHeader)
-                .build();
+            .addHeader("X-User-Agent", userAgentHeader)
+            .build();
 
         Response response = httpClient.newCall(request).execute();
         int statusCode = response.code();

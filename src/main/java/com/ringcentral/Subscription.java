@@ -34,7 +34,7 @@ public class Subscription {
     private Timer timer;
     private PubNub pubnub;
 
-    Subscription(RestClient restClient, String[] events, Consumer<String> messageCallback, Consumer<PNStatus> statusCallback, Consumer<PNPresenceEventResult> presenceCallback) {
+    public Subscription(RestClient restClient, String[] events, Consumer<String> messageCallback, Consumer<PNStatus> statusCallback, Consumer<PNPresenceEventResult> presenceCallback) {
         this.restClient = restClient;
         this.events = events;
         callback = new SubscribeCallback() {
@@ -72,7 +72,7 @@ public class Subscription {
         };
     }
 
-    Subscription(RestClient restClient, String[] eventFilters, Consumer<String> callback) {
+    public Subscription(RestClient restClient, String[] eventFilters, Consumer<String> callback) {
         this(restClient, eventFilters, callback, null, null);
     }
 

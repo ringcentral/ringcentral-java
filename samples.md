@@ -7,7 +7,7 @@ HTTP GET `/restapi`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi().list();
 rc.revoke();
 ```
@@ -24,7 +24,7 @@ HTTP POST `/restapi/oauth/revoke`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi().oauth().revoke().post(revokeTokenRequest);
 rc.revoke();
 ```
@@ -41,7 +41,7 @@ HTTP POST `/restapi/oauth/token`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi().oauth().token().post(getTokenRequest);
 rc.revoke();
 ```
@@ -58,7 +58,7 @@ HTTP GET `/restapi/{apiVersion}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).get();
 rc.revoke();
 ```
@@ -76,7 +76,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).get();
 rc.revoke();
 ```
@@ -95,7 +95,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/active-calls`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).activeCalls().get(listCompanyActiveCallsParameters);
 rc.revoke();
 ```
@@ -114,7 +114,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/answering-rule`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).answeringRule().post(companyAnsweringRuleRequest);
 rc.revoke();
 ```
@@ -133,7 +133,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/answering-rule`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).answeringRule().list();
 rc.revoke();
 ```
@@ -152,7 +152,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).get();
 rc.revoke();
 ```
@@ -171,7 +171,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).put(companyAnsweringRuleUpdate);
 rc.revoke();
 ```
@@ -190,7 +190,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).delete();
 rc.revoke();
 ```
@@ -209,7 +209,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/business-address`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).businessAddress().get();
 rc.revoke();
 ```
@@ -228,7 +228,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/business-address`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).businessAddress().put(modifyAccountBusinessAddressRequest);
 rc.revoke();
 ```
@@ -247,7 +247,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/business-hours`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).businessHours().get();
 rc.revoke();
 ```
@@ -266,7 +266,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/business-hours`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).businessHours().put(companyBusinessHoursUpdateRequest);
 rc.revoke();
 ```
@@ -285,7 +285,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-log`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callLog().list(readCompanyCallLogParameters);
 rc.revoke();
 ```
@@ -304,7 +304,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-log/{callRecordId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callLog(callRecordId).get();
 rc.revoke();
 ```
@@ -323,7 +323,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/call-monitoring-groups`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().post(createCallMonitoringGroupRequest);
 rc.revoke();
 ```
@@ -342,7 +342,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-monitoring-groups`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().get(listCallMonitoringGroupsParameters);
 rc.revoke();
 ```
@@ -361,7 +361,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).put(createCallMonitoringGroupRequest);
 rc.revoke();
 ```
@@ -380,7 +380,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).delete();
 rc.revoke();
 ```
@@ -399,7 +399,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bu
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).bulkAssign().post(callMonitoringBulkAssign);
 rc.revoke();
 ```
@@ -418,7 +418,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/mem
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).members().get(listCallMonitoringGroupMembersParameters);
 rc.revoke();
 ```
@@ -437,7 +437,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-queues`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callQueues().get(listCallQueuesParameters);
 rc.revoke();
 ```
@@ -456,7 +456,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).bulkAssign().post(callQueueBulkAssignResource);
 rc.revoke();
 ```
@@ -475,7 +475,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/members`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).members().get(listCallQueueMembersParameters);
 rc.revoke();
 ```
@@ -494,7 +494,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-recording`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callRecording().get();
 rc.revoke();
 ```
@@ -513,7 +513,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/call-recording`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callRecording().put(callRecordingSettingsResource);
 rc.revoke();
 ```
@@ -532,7 +532,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/call-recording/bulk-assign`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callRecording().bulkAssign().post(bulkAccountCallRecordingsResource);
 rc.revoke();
 ```
@@ -551,7 +551,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings().get(listCallRecordingCustomGreetingsParameters);
 rc.revoke();
 ```
@@ -570,7 +570,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings(greetingId).delete();
 rc.revoke();
 ```
@@ -589,7 +589,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-recording/extensions`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).callRecording().extensions().get();
 rc.revoke();
 ```
@@ -608,7 +608,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/department/bulk-assign`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).department().bulkAssign().post(departmentBulkAssignResource);
 rc.revoke();
 ```
@@ -627,7 +627,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/department/{departmentId}/members`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).department(departmentId).members().get(listDepartmentMembersParameters);
 rc.revoke();
 ```
@@ -646,7 +646,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/device/{deviceId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).device(deviceId).get(readDeviceParameters);
 rc.revoke();
 ```
@@ -665,7 +665,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/device/{deviceId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).device(deviceId).put(accountDeviceUpdate);
 rc.revoke();
 ```
@@ -684,7 +684,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/directory/entries`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).directory().entries().list(listDirectoryEntriesParameters);
 rc.revoke();
 ```
@@ -703,7 +703,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/directory/entries/search`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).directory().entries().search().post(searchDirectoryEntriesRequest);
 rc.revoke();
 ```
@@ -722,7 +722,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/directory/entries/{entryId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).directory().entries(entryId).get();
 rc.revoke();
 ```
@@ -741,7 +741,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/directory/federation`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).directory().federation().get();
 rc.revoke();
 ```
@@ -760,7 +760,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension().list(listExtensionsParameters);
 rc.revoke();
 ```
@@ -779,7 +779,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension().post(extensionCreationRequest);
 rc.revoke();
 ```
@@ -798,7 +798,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).get();
 rc.revoke();
 ```
@@ -818,7 +818,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).put(extensionUpdateRequest);
 rc.revoke();
 ```
@@ -838,7 +838,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).delete();
 rc.revoke();
 ```
@@ -858,7 +858,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).activeCalls().get(listExtensionActiveCallsParameters);
 rc.revoke();
 ```
@@ -878,7 +878,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBookSync().get(syncAddressBookParameters);
 rc.revoke();
 ```
@@ -898,7 +898,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().list(listContactsParameters);
 rc.revoke();
 ```
@@ -918,7 +918,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-boo
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().post(personalContactRequest, createContactParameters);
 rc.revoke();
 ```
@@ -939,7 +939,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).get();
 rc.revoke();
 ```
@@ -959,7 +959,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).put(personalContactRequest, updateContactParameters);
 rc.revoke();
 ```
@@ -980,7 +980,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-b
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).delete();
 rc.revoke();
 ```
@@ -1000,7 +1000,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-ru
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().list(listAnsweringRulesParameters);
 rc.revoke();
 ```
@@ -1020,7 +1020,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-r
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().post(createAnsweringRuleRequest);
 rc.revoke();
 ```
@@ -1040,7 +1040,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-ru
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).get(readAnsweringRuleParameters);
 rc.revoke();
 ```
@@ -1060,7 +1060,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-ru
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).put(updateAnsweringRuleRequest);
 rc.revoke();
 ```
@@ -1080,7 +1080,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).delete();
 rc.revoke();
 ```
@@ -1100,7 +1100,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profil
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().get();
 rc.revoke();
 ```
@@ -1120,7 +1120,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profil
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().check().get(checkUserPermissionParameters);
 rc.revoke();
 ```
@@ -1140,7 +1140,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hou
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().get();
 rc.revoke();
 ```
@@ -1160,7 +1160,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hou
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().put(userBusinessHoursUpdateRequest);
 rc.revoke();
 ```
@@ -1180,7 +1180,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().list(readUserCallLogParameters);
 rc.revoke();
 ```
@@ -1200,7 +1200,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().delete(deleteUserCallLogParameters);
 rc.revoke();
 ```
@@ -1220,7 +1220,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-syn
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLogSync().get(syncUserCallLogParameters);
 rc.revoke();
 ```
@@ -1240,7 +1240,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{ca
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog(callRecordId).get(readUserCallRecordParameters);
 rc.revoke();
 ```
@@ -1260,7 +1260,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-block
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().get();
 rc.revoke();
 ```
@@ -1280,7 +1280,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-block
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().put(callerBlockingSettingsUpdate);
 rc.revoke();
 ```
@@ -1300,7 +1300,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-block
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().list(listBlockedAllowedNumbersParameters);
 rc.revoke();
 ```
@@ -1320,7 +1320,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-bloc
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().post(addBlockedAllowedPhoneNumber);
 rc.revoke();
 ```
@@ -1340,7 +1340,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-block
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).get();
 rc.revoke();
 ```
@@ -1360,7 +1360,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-bl
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).delete();
 rc.revoke();
 ```
@@ -1380,7 +1380,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-block
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).put(addBlockedAllowedPhoneNumber);
 rc.revoke();
 ```
@@ -1400,7 +1400,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().get();
 rc.revoke();
 ```
@@ -1420,7 +1420,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().put(extensionCallerIdInfo);
 rc.revoke();
 ```
@@ -1440,7 +1440,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pag
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).companyPager().post(createInternalTextMessageRequest);
 rc.revoke();
 ```
@@ -1460,7 +1460,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).conferencing().get(readConferencingSettingsParameters);
 rc.revoke();
 ```
@@ -1480,7 +1480,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).conferencing().put(updateConferencingInfoRequest);
 rc.revoke();
 ```
@@ -1500,7 +1500,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/device`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).device().get(listExtensionDevicesParameters);
 rc.revoke();
 ```
@@ -1520,7 +1520,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).favorite().get();
 rc.revoke();
 ```
@@ -1540,7 +1540,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).favorite().put(favoriteCollection);
 rc.revoke();
 ```
@@ -1560,7 +1560,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).fax().post(createFaxMessageRequest);
 rc.revoke();
 ```
@@ -1580,7 +1580,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-n
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().list(listForwardingNumbersParameters);
 rc.revoke();
 ```
@@ -1600,7 +1600,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().post(createForwardingNumberRequest);
 rc.revoke();
 ```
@@ -1620,7 +1620,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-n
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).get();
 rc.revoke();
 ```
@@ -1640,7 +1640,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-n
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).put(updateForwardingNumberRequest);
 rc.revoke();
 ```
@@ -1660,7 +1660,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwardin
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).delete();
 rc.revoke();
 ```
@@ -1680,7 +1680,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).grant().get(listExtensionGrantsParameters);
 rc.revoke();
 ```
@@ -1700,7 +1700,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).greeting().post(createCustomUserGreetingRequest);
 rc.revoke();
 ```
@@ -1720,7 +1720,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{gr
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).greeting(greetingId).get();
 rc.revoke();
 ```
@@ -1740,7 +1740,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().list();
 rc.revoke();
 ```
@@ -1760,7 +1760,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().post(meetingRequestResource);
 rc.revoke();
 ```
@@ -1780,7 +1780,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/serv
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().get();
 rc.revoke();
 ```
@@ -1800,7 +1800,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{mee
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).get();
 rc.revoke();
 ```
@@ -1820,7 +1820,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{mee
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).put(meetingRequestResource);
 rc.revoke();
 ```
@@ -1840,7 +1840,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).delete();
 rc.revoke();
 ```
@@ -1860,7 +1860,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{me
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).end().post();
 rc.revoke();
 ```
@@ -1880,7 +1880,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-con
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assistants().get();
 rc.revoke();
 ```
@@ -1900,7 +1900,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-con
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assisted().get();
 rc.revoke();
 ```
@@ -1920,7 +1920,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-stor
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore().list(listMessagesParameters);
 rc.revoke();
 ```
@@ -1940,7 +1940,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-stor
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).get();
 rc.revoke();
 ```
@@ -1960,7 +1960,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-stor
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).put(updateMessageRequest);
 rc.revoke();
 ```
@@ -1980,7 +1980,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-s
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).delete(deleteMessageParameters);
 rc.revoke();
 ```
@@ -2000,7 +2000,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-stor
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).content(attachmentId).get(readMessageContentParameters);
 rc.revoke();
 ```
@@ -2020,7 +2020,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageSync().get(syncMessagesParameters);
 rc.revoke();
 ```
@@ -2040,7 +2040,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().get();
 rc.revoke();
 ```
@@ -2060,7 +2060,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().put(notificationSettingsUpdateRequest);
 rc.revoke();
 ```
@@ -2080,7 +2080,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).phoneNumber().get(listExtensionPhoneNumbersParameters);
 rc.revoke();
 ```
@@ -2100,7 +2100,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).presence().get(readUserPresenceStatusParameters);
 rc.revoke();
 ```
@@ -2120,7 +2120,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).presence().put(presenceInfoResource);
 rc.revoke();
 ```
@@ -2140,7 +2140,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-imag
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().list();
 rc.revoke();
 ```
@@ -2160,7 +2160,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-ima
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().post(createUserProfileImageRequest);
 rc.revoke();
 ```
@@ -2180,7 +2180,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-imag
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().put(updateUserProfileImageRequest);
 rc.revoke();
 ```
@@ -2200,7 +2200,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-imag
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage(scaleSize).get();
 rc.revoke();
 ```
@@ -2220,7 +2220,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut().post(makeRingOutRequest);
 rc.revoke();
 ```
@@ -2240,7 +2240,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ri
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).get();
 rc.revoke();
 ```
@@ -2260,7 +2260,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).delete();
 rc.revoke();
 ```
@@ -2280,7 +2280,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).sms().post(createSmsMessage);
 rc.revoke();
 ```
@@ -2300,7 +2300,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/greeting`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).greeting().post(createCompanyGreetingRequest);
 rc.revoke();
 ```
@@ -2319,7 +2319,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/ivr-menus`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrMenus().post(ivrMenuInfo);
 rc.revoke();
 ```
@@ -2338,7 +2338,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).get();
 rc.revoke();
 ```
@@ -2357,7 +2357,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).put(ivrMenuInfo);
 rc.revoke();
 ```
@@ -2376,7 +2376,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/ivr-prompts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().post(createIvrPromptRequest);
 rc.revoke();
 ```
@@ -2395,7 +2395,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/ivr-prompts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().list();
 rc.revoke();
 ```
@@ -2414,7 +2414,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).get();
 rc.revoke();
 ```
@@ -2433,7 +2433,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).delete();
 rc.revoke();
 ```
@@ -2452,7 +2452,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put();
 rc.revoke();
 ```
@@ -2471,7 +2471,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).content().get();
 rc.revoke();
 ```
@@ -2490,7 +2490,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/message-store-configuration`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().get();
 rc.revoke();
 ```
@@ -2509,7 +2509,7 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/message-store-configuration`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().put(messageStoreConfiguration);
 rc.revoke();
 ```
@@ -2528,7 +2528,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/message-store-report`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).messageStoreReport().post(createMessageStoreReportRequest);
 rc.revoke();
 ```
@@ -2547,7 +2547,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/message-store-report/{taskId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).get();
 rc.revoke();
 ```
@@ -2566,7 +2566,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archiv
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive().list();
 rc.revoke();
 ```
@@ -2585,7 +2585,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archiv
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive(archiveId).get();
 rc.revoke();
 ```
@@ -2604,7 +2604,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroup
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).bulkAssign().post(editPagingGroupRequest);
 rc.revoke();
 ```
@@ -2623,7 +2623,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupI
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).devices().get(listPagingGroupDevicesParameters);
 rc.revoke();
 ```
@@ -2642,7 +2642,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupI
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).users().get(listPagingGroupUsersParameters);
 rc.revoke();
 ```
@@ -2661,7 +2661,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/phone-number`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).phoneNumber().list(listAccountPhoneNumbersParameters);
 rc.revoke();
 ```
@@ -2680,7 +2680,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).phoneNumber(phoneNumberId).get();
 rc.revoke();
 ```
@@ -2699,7 +2699,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/presence`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).presence().get(readAccountPresenceParameters);
 rc.revoke();
 ```
@@ -2718,7 +2718,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/recording/{recordingId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).recording(recordingId).get();
 rc.revoke();
 ```
@@ -2737,7 +2737,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/recording/{recordingId}/content`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).recording(recordingId).content().get();
 rc.revoke();
 ```
@@ -2756,7 +2756,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/service-info`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).serviceInfo().get();
 rc.revoke();
 ```
@@ -2775,7 +2775,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/call-out`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().callOut().post(makeCallOutRequest);
 rc.revoke();
 ```
@@ -2794,7 +2794,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).get(readCallSessionStatusParameters);
 rc.revoke();
 ```
@@ -2813,7 +2813,7 @@ HTTP DELETE `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).delete();
 rc.revoke();
 ```
@@ -2832,7 +2832,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).get();
 rc.revoke();
 ```
@@ -2851,7 +2851,7 @@ HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/par
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).patch(partyUpdateRequest);
 rc.revoke();
 ```
@@ -2870,7 +2870,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).flip().post(callPartyFlip);
 rc.revoke();
 ```
@@ -2889,7 +2889,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).forward().post(forwardTarget);
 rc.revoke();
 ```
@@ -2908,7 +2908,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).hold().post();
 rc.revoke();
 ```
@@ -2927,7 +2927,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).recordings().post();
 rc.revoke();
 ```
@@ -2946,7 +2946,7 @@ HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/par
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).recordings(recordingId).patch(callRecordingUpdate, pauseResumeCallRecordingParameters);
 rc.revoke();
 ```
@@ -2966,7 +2966,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).reject().post();
 rc.revoke();
 ```
@@ -2985,7 +2985,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).transfer().post(transferTarget);
 rc.revoke();
 ```
@@ -3004,7 +3004,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).unhold().post();
 rc.revoke();
 ```
@@ -3023,7 +3023,7 @@ HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supe
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).supervise().post(superviseCallSessionRequest);
 rc.revoke();
 ```
@@ -3042,7 +3042,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/templates`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).templates().list(listUserTemplatesParameters);
 rc.revoke();
 ```
@@ -3061,7 +3061,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/templates/{templateId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).account(accountId).templates(templateId).get();
 rc.revoke();
 ```
@@ -3080,7 +3080,7 @@ HTTP POST `/restapi/v1.0/client-info/sip-provision`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).clientInfo().sipProvision().post(createSipRegistrationRequest);
 rc.revoke();
 ```
@@ -3098,7 +3098,7 @@ HTTP GET `/restapi/v1.0/dictionary/country`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().country().list(listCountriesParameters);
 rc.revoke();
 ```
@@ -3116,7 +3116,7 @@ HTTP GET `/restapi/v1.0/dictionary/country/{countryId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().country(countryId).get();
 rc.revoke();
 ```
@@ -3134,7 +3134,7 @@ HTTP GET `/restapi/v1.0/dictionary/fax-cover-page`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().faxCoverPage().get(listFaxCoverPagesParameters);
 rc.revoke();
 ```
@@ -3152,7 +3152,7 @@ HTTP GET `/restapi/v1.0/dictionary/greeting`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().greeting().list(listStandardGreetingsParameters);
 rc.revoke();
 ```
@@ -3170,7 +3170,7 @@ HTTP GET `/restapi/v1.0/dictionary/greeting/{greetingId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().greeting(greetingId).get();
 rc.revoke();
 ```
@@ -3188,7 +3188,7 @@ HTTP GET `/restapi/v1.0/dictionary/language`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().language().list();
 rc.revoke();
 ```
@@ -3206,7 +3206,7 @@ HTTP GET `/restapi/v1.0/dictionary/language/{languageId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().language(languageId).get();
 rc.revoke();
 ```
@@ -3224,7 +3224,7 @@ HTTP GET `/restapi/v1.0/dictionary/location`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().location().get(listLocationsParameters);
 rc.revoke();
 ```
@@ -3242,7 +3242,7 @@ HTTP GET `/restapi/v1.0/dictionary/state`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().state().list(listStatesParameters);
 rc.revoke();
 ```
@@ -3260,7 +3260,7 @@ HTTP GET `/restapi/v1.0/dictionary/state/{stateId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().state(stateId).get();
 rc.revoke();
 ```
@@ -3278,7 +3278,7 @@ HTTP GET `/restapi/v1.0/dictionary/timezone`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().timezone().list(listTimezonesParameters);
 rc.revoke();
 ```
@@ -3296,7 +3296,7 @@ HTTP GET `/restapi/v1.0/dictionary/timezone/{timezoneId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).dictionary().timezone(timezoneId).get(readTimezoneParameters);
 rc.revoke();
 ```
@@ -3314,7 +3314,7 @@ HTTP POST `/restapi/v1.0/glip/cards`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().cards().post(glipMessageAttachmentInfoRequest, createGlipCardParameters);
 rc.revoke();
 ```
@@ -3333,7 +3333,7 @@ HTTP GET `/restapi/v1.0/glip/cards/{cardId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().cards(cardId).get();
 rc.revoke();
 ```
@@ -3351,7 +3351,7 @@ HTTP PUT `/restapi/v1.0/glip/cards/{cardId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().cards(cardId).put(glipMessageAttachmentInfoRequest);
 rc.revoke();
 ```
@@ -3369,7 +3369,7 @@ HTTP DELETE `/restapi/v1.0/glip/cards/{cardId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().cards(cardId).delete();
 rc.revoke();
 ```
@@ -3387,7 +3387,7 @@ HTTP GET `/restapi/v1.0/glip/chats`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats().list(listGlipChatsParameters);
 rc.revoke();
 ```
@@ -3405,7 +3405,7 @@ HTTP GET `/restapi/v1.0/glip/chats/{chatId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).get();
 rc.revoke();
 ```
@@ -3423,7 +3423,7 @@ HTTP POST `/restapi/v1.0/glip/chats/{chatId}/favorite`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).favorite().post();
 rc.revoke();
 ```
@@ -3441,7 +3441,7 @@ HTTP GET `/restapi/v1.0/glip/chats/{chatId}/posts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).posts().list(readGlipPostsParameters);
 rc.revoke();
 ```
@@ -3459,7 +3459,7 @@ HTTP POST `/restapi/v1.0/glip/chats/{chatId}/posts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).posts().post(glipPostPostBody);
 rc.revoke();
 ```
@@ -3477,7 +3477,7 @@ HTTP GET `/restapi/v1.0/glip/chats/{chatId}/posts/{postId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).get();
 rc.revoke();
 ```
@@ -3495,7 +3495,7 @@ HTTP PATCH `/restapi/v1.0/glip/chats/{chatId}/posts/{postId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).patch(glipPatchPostBody);
 rc.revoke();
 ```
@@ -3513,7 +3513,7 @@ HTTP DELETE `/restapi/v1.0/glip/chats/{chatId}/posts/{postId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).delete();
 rc.revoke();
 ```
@@ -3531,7 +3531,7 @@ HTTP POST `/restapi/v1.0/glip/chats/{chatId}/read`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).read().post();
 rc.revoke();
 ```
@@ -3549,7 +3549,7 @@ HTTP POST `/restapi/v1.0/glip/chats/{chatId}/unfavorite`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).unfavorite().post();
 rc.revoke();
 ```
@@ -3567,7 +3567,7 @@ HTTP POST `/restapi/v1.0/glip/chats/{chatId}/unread`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().chats(chatId).unread().post();
 rc.revoke();
 ```
@@ -3585,7 +3585,7 @@ HTTP GET `/restapi/v1.0/glip/companies/{companyId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().companies(companyId).get();
 rc.revoke();
 ```
@@ -3603,7 +3603,7 @@ HTTP GET `/restapi/v1.0/glip/conversations`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().conversations().list(listGlipConversationsParameters);
 rc.revoke();
 ```
@@ -3621,7 +3621,7 @@ HTTP POST `/restapi/v1.0/glip/conversations`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().conversations().post(createGlipConversationRequest);
 rc.revoke();
 ```
@@ -3639,7 +3639,7 @@ HTTP GET `/restapi/v1.0/glip/conversations/{chatId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().conversations(chatId).get();
 rc.revoke();
 ```
@@ -3657,7 +3657,7 @@ HTTP POST `/restapi/v1.0/glip/data-export`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().dataExport().post(createDataExportTaskRequest);
 rc.revoke();
 ```
@@ -3675,7 +3675,7 @@ HTTP GET `/restapi/v1.0/glip/data-export/{taskId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().dataExport(taskId).get();
 rc.revoke();
 ```
@@ -3693,7 +3693,7 @@ HTTP GET `/restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().dataExport(taskId).archive(archiveId).get();
 rc.revoke();
 ```
@@ -3711,7 +3711,7 @@ HTTP GET `/restapi/v1.0/glip/events`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().events().list(readGlipEventsParameters);
 rc.revoke();
 ```
@@ -3729,7 +3729,7 @@ HTTP POST `/restapi/v1.0/glip/events`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().events().post(glipEventCreate);
 rc.revoke();
 ```
@@ -3747,7 +3747,7 @@ HTTP GET `/restapi/v1.0/glip/events/{eventId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().events(eventId).get();
 rc.revoke();
 ```
@@ -3765,7 +3765,7 @@ HTTP PUT `/restapi/v1.0/glip/events/{eventId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().events(eventId).put(glipEventCreate);
 rc.revoke();
 ```
@@ -3783,7 +3783,7 @@ HTTP DELETE `/restapi/v1.0/glip/events/{eventId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().events(eventId).delete();
 rc.revoke();
 ```
@@ -3801,7 +3801,7 @@ HTTP GET `/restapi/v1.0/glip/everyone`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().everyone().get();
 rc.revoke();
 ```
@@ -3819,7 +3819,7 @@ HTTP PATCH `/restapi/v1.0/glip/everyone`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().everyone().patch(updateGlipEveryoneRequest);
 rc.revoke();
 ```
@@ -3837,7 +3837,7 @@ HTTP GET `/restapi/v1.0/glip/favorites`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().favorites().get(listFavoriteChatsParameters);
 rc.revoke();
 ```
@@ -3855,7 +3855,7 @@ HTTP GET `/restapi/v1.0/glip/groups`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups().list(listGlipGroupsParameters);
 rc.revoke();
 ```
@@ -3873,7 +3873,7 @@ HTTP POST `/restapi/v1.0/glip/groups`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups().post(glipCreateGroup);
 rc.revoke();
 ```
@@ -3891,7 +3891,7 @@ HTTP GET `/restapi/v1.0/glip/groups/{groupId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).get();
 rc.revoke();
 ```
@@ -3909,7 +3909,7 @@ HTTP POST `/restapi/v1.0/glip/groups/{groupId}/bulk-assign`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).bulkAssign().post(editGroupRequest);
 rc.revoke();
 ```
@@ -3927,7 +3927,7 @@ HTTP POST `/restapi/v1.0/glip/groups/{groupId}/events`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).events().post(glipEventCreate);
 rc.revoke();
 ```
@@ -3945,7 +3945,7 @@ HTTP GET `/restapi/v1.0/glip/groups/{groupId}/events`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).events().get();
 rc.revoke();
 ```
@@ -3963,7 +3963,7 @@ HTTP GET `/restapi/v1.0/glip/groups/{groupId}/posts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).posts().get(listGlipGroupPostsParameters);
 rc.revoke();
 ```
@@ -3981,7 +3981,7 @@ HTTP POST `/restapi/v1.0/glip/groups/{groupId}/posts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).posts().post(glipCreatePost);
 rc.revoke();
 ```
@@ -3999,7 +3999,7 @@ HTTP PUT `/restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).posts(postId).text().put(string);
 rc.revoke();
 ```
@@ -4017,7 +4017,7 @@ HTTP POST `/restapi/v1.0/glip/groups/{groupId}/webhooks`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).webhooks().post();
 rc.revoke();
 ```
@@ -4035,7 +4035,7 @@ HTTP GET `/restapi/v1.0/glip/groups/{groupId}/webhooks`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().groups(groupId).webhooks().get();
 rc.revoke();
 ```
@@ -4053,7 +4053,7 @@ HTTP GET `/restapi/v1.0/glip/persons/{personId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().persons(personId).get();
 rc.revoke();
 ```
@@ -4071,7 +4071,7 @@ HTTP GET `/restapi/v1.0/glip/posts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().posts().get(listGlipPostsParameters);
 rc.revoke();
 ```
@@ -4089,7 +4089,7 @@ HTTP POST `/restapi/v1.0/glip/posts`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().posts().post(glipCreatePost);
 rc.revoke();
 ```
@@ -4107,7 +4107,7 @@ HTTP GET `/restapi/v1.0/glip/preferences`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().preferences().get();
 rc.revoke();
 ```
@@ -4125,7 +4125,7 @@ HTTP GET `/restapi/v1.0/glip/recent/chats`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().recent().chats().get(listRecentChatsParameters);
 rc.revoke();
 ```
@@ -4143,7 +4143,7 @@ HTTP GET `/restapi/v1.0/glip/teams`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams().list(listGlipTeamsParameters);
 rc.revoke();
 ```
@@ -4161,7 +4161,7 @@ HTTP POST `/restapi/v1.0/glip/teams`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams().post(glipPostTeamBody);
 rc.revoke();
 ```
@@ -4179,7 +4179,7 @@ HTTP GET `/restapi/v1.0/glip/teams/{chatId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).get();
 rc.revoke();
 ```
@@ -4197,7 +4197,7 @@ HTTP PATCH `/restapi/v1.0/glip/teams/{chatId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).patch(glipPatchTeamBody);
 rc.revoke();
 ```
@@ -4215,7 +4215,7 @@ HTTP DELETE `/restapi/v1.0/glip/teams/{chatId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).delete();
 rc.revoke();
 ```
@@ -4233,7 +4233,7 @@ HTTP POST `/restapi/v1.0/glip/teams/{chatId}/add`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).add().post(glipPostMembersListBody);
 rc.revoke();
 ```
@@ -4251,7 +4251,7 @@ HTTP POST `/restapi/v1.0/glip/teams/{chatId}/archive`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).archive().post();
 rc.revoke();
 ```
@@ -4269,7 +4269,7 @@ HTTP POST `/restapi/v1.0/glip/teams/{chatId}/join`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).join().post();
 rc.revoke();
 ```
@@ -4287,7 +4287,7 @@ HTTP POST `/restapi/v1.0/glip/teams/{chatId}/leave`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).leave().post();
 rc.revoke();
 ```
@@ -4305,7 +4305,7 @@ HTTP POST `/restapi/v1.0/glip/teams/{chatId}/remove`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).remove().post(glipPostMembersIdsListBody);
 rc.revoke();
 ```
@@ -4323,7 +4323,7 @@ HTTP POST `/restapi/v1.0/glip/teams/{chatId}/unarchive`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().teams(chatId).unarchive().post();
 rc.revoke();
 ```
@@ -4341,7 +4341,7 @@ HTTP GET `/restapi/v1.0/glip/webhooks`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().webhooks().list();
 rc.revoke();
 ```
@@ -4359,7 +4359,7 @@ HTTP GET `/restapi/v1.0/glip/webhooks/{webhookId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().webhooks(webhookId).get();
 rc.revoke();
 ```
@@ -4377,7 +4377,7 @@ HTTP DELETE `/restapi/v1.0/glip/webhooks/{webhookId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().webhooks(webhookId).delete();
 rc.revoke();
 ```
@@ -4395,7 +4395,7 @@ HTTP POST `/restapi/v1.0/glip/webhooks/{webhookId}/activate`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().webhooks(webhookId).activate().post();
 rc.revoke();
 ```
@@ -4413,7 +4413,7 @@ HTTP POST `/restapi/v1.0/glip/webhooks/{webhookId}/suspend`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).glip().webhooks(webhookId).suspend().post();
 rc.revoke();
 ```
@@ -4431,7 +4431,7 @@ HTTP POST `/restapi/v1.0/number-parser/parse`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).numberParser().parse().post(parsePhoneNumberRequest, parsePhoneNumberParameters);
 rc.revoke();
 ```
@@ -4450,7 +4450,7 @@ HTTP POST `/restapi/v1.0/number-porting/verify-number`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).numberPorting().verifyNumber().post(numberPortingVerifyNumberRequest);
 rc.revoke();
 ```
@@ -4468,7 +4468,7 @@ HTTP GET `/restapi/v1.0/status`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).status().get();
 rc.revoke();
 ```
@@ -4486,7 +4486,7 @@ HTTP GET `/restapi/v1.0/subscription`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).subscription().list();
 rc.revoke();
 ```
@@ -4504,7 +4504,7 @@ HTTP POST `/restapi/v1.0/subscription`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).subscription().post(createSubscriptionRequest);
 rc.revoke();
 ```
@@ -4522,7 +4522,7 @@ HTTP GET `/restapi/v1.0/subscription/{subscriptionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).subscription(subscriptionId).get();
 rc.revoke();
 ```
@@ -4540,7 +4540,7 @@ HTTP PUT `/restapi/v1.0/subscription/{subscriptionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).subscription(subscriptionId).put(modifySubscriptionRequest, updateSubscriptionParameters);
 rc.revoke();
 ```
@@ -4559,7 +4559,7 @@ HTTP DELETE `/restapi/v1.0/subscription/{subscriptionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).subscription(subscriptionId).delete();
 rc.revoke();
 ```
@@ -4577,7 +4577,7 @@ HTTP POST `/restapi/v1.0/subscription/{subscriptionId}/renew`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.restapi(apiVersion).subscription(subscriptionId).renew().post();
 rc.revoke();
 ```
@@ -4595,7 +4595,7 @@ HTTP GET `/scim/v2/ServiceProviderConfig`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).serviceProviderConfig().get();
 rc.revoke();
 ```
@@ -4613,7 +4613,7 @@ HTTP GET `/scim/v2/Users`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).users().list(searchViaGet2Parameters);
 rc.revoke();
 ```
@@ -4631,7 +4631,7 @@ HTTP POST `/scim/v2/Users`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).users().post(user);
 rc.revoke();
 ```
@@ -4649,7 +4649,7 @@ HTTP POST `/scim/v2/Users/.search`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).users().dotSearch().post(searchRequest);
 rc.revoke();
 ```
@@ -4667,7 +4667,7 @@ HTTP GET `/scim/v2/Users/{id}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).users(id).get();
 rc.revoke();
 ```
@@ -4685,7 +4685,7 @@ HTTP PUT `/scim/v2/Users/{id}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).users(id).put(user);
 rc.revoke();
 ```
@@ -4703,7 +4703,7 @@ HTTP DELETE `/scim/v2/Users/{id}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).users(id).delete();
 rc.revoke();
 ```
@@ -4721,7 +4721,7 @@ HTTP PATCH `/scim/v2/Users/{id}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).users(id).patch(userPatch);
 rc.revoke();
 ```
@@ -4739,7 +4739,7 @@ HTTP GET `/scim/v2/health`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.Authorize("username", "extension", "password");
+rc.authorize("username", "extension", "password");
 var result = rc.scim(version).health().get();
 rc.revoke();
 ```

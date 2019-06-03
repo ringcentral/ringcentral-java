@@ -9,6 +9,7 @@ import okhttp3.*;
 import okio.BufferedSink;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.text.MessageFormat;
 import java.util.*;
@@ -22,6 +23,7 @@ public class RestClient {
     public String server;
     public OkHttpClient httpClient;
     public TokenInfo token;
+    public List<HttpEventListener> httpEventListeners = new ArrayList<>();
 
     public RestClient(String clientId, String clientSecret, String server, OkHttpClient okHttpClient) {
         this.clientId = clientId;
@@ -228,7 +230,13 @@ public class RestClient {
                     e.printStackTrace();
                 }
                 if (value != null) {
-                    urlBuilder = urlBuilder.addQueryParameter(field.getName(), value.toString());
+                    if (value.getClass().isArray()) { // ?a=hello&a=world
+                        for (int i = 0; i < Array.getLength(value); i++) {
+                            urlBuilder = urlBuilder.addQueryParameter(field.getName(), Array.get(value, i).toString());
+                        }
+                    } else {
+                        urlBuilder = urlBuilder.addQueryParameter(field.getName(), value.toString());
+                    }
                 }
             }
         }
@@ -264,7 +272,10 @@ public class RestClient {
         Response response = httpClient.newCall(request).execute();
         int statusCode = response.code();
         if (statusCode < 200 || statusCode > 299) {
-            throw new RestException(request, response);
+            throw new RestException(response, request);
+        }
+        for (HttpEventListener httpEventListener : httpEventListeners) {
+            httpEventListener.afterHttpCall(response, request);
         }
         return response.body();
     }

@@ -277,7 +277,7 @@ public class RestClient {
         for (HttpEventListener httpEventListener : httpEventListeners) {
             httpEventListener.afterHttpCall(response, request);
         }
-        return response.body();
+        return response.peekBody(Long.MAX_VALUE);
     }
 
     // top level paths

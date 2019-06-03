@@ -12,7 +12,7 @@ public class Utils {
     public static String formatHttpMessage(Response response, Request request) {
         String responseBodyString = "";
         try {
-            responseBodyString = response.body().string();
+            responseBodyString = response.peekBody(Long.MAX_VALUE).string();
         } catch (IOException e) {
             e.printStackTrace();
         }

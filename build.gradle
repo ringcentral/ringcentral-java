@@ -13,17 +13,14 @@ version '1.0.0-beta5'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
     compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.14.2'
-    compile group: 'com.pubnub', name: 'pubnub-gson', version: '4.24.0'
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
-    testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 }
 
 def pomConfig = {

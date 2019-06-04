@@ -49,7 +49,7 @@ Don't forget to replace `[version]` with expected version.
 Don't forget to replace `[version]` with expected version.
 
 
-## Manually
+### Manually
 
 [Download jar here](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion) and save it into your java classpath.
 
@@ -83,17 +83,8 @@ You can find [sample code for all the endpoints](./samples.md).
 There is also lots of useful code for your reference in our [test cases](./src/test/java/com/ringcentral).
 
 
-### Subscription & notification
 
-```java
-Subscription subscription = new Subscription(rc,
-    new String[]{
-        "/restapi/v1.0/glip/posts",
-        "/restapi/v1.0/account/~/extension/~/message-store",
-        // more event filters here
-    },
-    (message) -> {
-        // do something with message
-    });
-subscription.subscribe();
-```
+## PubNub subscriptions & notificatioins
+
+
+Please refer to the [RingCentral PubNub SDK for Java](https://github.com/ringcentral/ringcentral-pubnub-java) project.

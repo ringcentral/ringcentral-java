@@ -83,8 +83,7 @@ This is because most of the time it's better to manage token lifecycle manually:
 
 For simple apps, token auto refresh could be beneficial. So we provide a sugar method: `rc.autoRefresh()`.
 This method will start a background timer to refresh token for you every 30 minutes.
-You can customize the refresh period, for example, change it to one hour: `rc.autoRefresh(1000 * 60 * 60)`.
-
+You can customize the refresh period, for example, change it to every 50 minutes: `rc.autoRefresh(1000 * 60 * 50)`.
 
 
 ## Code samples

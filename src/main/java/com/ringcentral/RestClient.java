@@ -44,10 +44,34 @@ public class RestClient {
         this(clientId, clientSecret, production ? PRODUCTION_SERVER : SANDBOX_SERVER, okHttpClient);
     }
 
+
     public RestClient(String clientId, String clientSecret, Boolean production) {
         this(clientId, clientSecret, production, null);
     }
 
+    public void autoRefresh(long period) {
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    refresh();
+                } catch (IOException | RestException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 0, period);
+    }
+
+    public void autoRefresh() {
+        this.autoRefresh(1000L * 60 * 30);
+    }
+
+    public TokenInfo refresh() throws IOException, RestException {
+        GetTokenRequest getTokenRequest = new GetTokenRequest()
+            .grant_type("refresh_token")
+            .refresh_token(token.refresh_token);
+        return authorize(getTokenRequest);
+    }
 
     private String basicKey() {
         return new String(Base64.getEncoder().encode(MessageFormat.format("{0}:{1}", clientId, clientSecret).getBytes()));

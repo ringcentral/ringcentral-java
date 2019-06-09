@@ -1,16 +1,19 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.*;
+import com.ringcentral.definitions.Attachment;
+import com.ringcentral.definitions.CreateIvrPromptRequest;
+import com.ringcentral.definitions.IVRPrompts;
+import com.ringcentral.definitions.PromptInfo;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.ResponseBody;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class IVRContentTest {
     @Test
@@ -55,7 +58,7 @@ public class IVRContentTest {
         rc.httpEventListeners.add(new HttpEventListener() {
             @Override
             public void afterHttpCall(Response response, Request request) {
-                String httpMessage = Utils.formatHttpMessage(response,request);
+                String httpMessage = Utils.formatHttpMessage(response, request);
             }
         });
 
@@ -87,7 +90,7 @@ public class IVRContentTest {
         rc.httpEventListeners.add(new HttpEventListener() {
             @Override
             public void afterHttpCall(Response response, Request request) {
-                String httpMessage = Utils.formatHttpMessage(response,request);
+                String httpMessage = Utils.formatHttpMessage(response, request);
             }
         });
 

@@ -76,6 +76,17 @@ public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com
 ```
 
 
+### Token refresh
+
+Since 1.0 version, the SDK by default does NOT do auto token refresh.
+This is because most of the time it's better to manage token lifecycle manually: `rc.refresh()`.
+
+For simple apps, token auto refresh could be beneficial. So we provide a sugar method: `rc.autoRefresh()`.
+This method will start a background timer to refresh token for you every 30 minutes.
+You can customize the refresh period, for example, change it to one hour: `rc.autoRefresh(1000 * 60 * 60)`.
+
+
+
 ## Code samples
 
 You can find [sample code for all the endpoints](./samples.md).

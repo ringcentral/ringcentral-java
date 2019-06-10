@@ -8,7 +8,6 @@ import org.junit.Test;
 import java.io.IOException;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 public class ProvisionExtensionsTest {
     @Test
@@ -31,15 +30,14 @@ public class ProvisionExtensionsTest {
            )
             .type("User")
        );
+        assertNotNull(extensionCreationResponse);
 
-        rc.httpEventListeners.add(new HttpEventListener() {
-            @Override
-            public void afterHttpCall(Response response, Request request) {
-                String message = Utils.formatHttpMessage(response, request);
-            }
+        rc.httpEventListeners.add((response, request) -> {
+            String message = Utils.formatHttpMessage(response, request);
         });
 
-        String r = rc.restapi().account().extension(extensionCreationResponse.id.toString()).delete();
+        String str = rc.restapi().account().extension(extensionCreationResponse.id.toString()).delete();
+        assertNotNull(str);
 
         rc.revoke();
     }

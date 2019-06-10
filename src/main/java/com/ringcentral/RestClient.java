@@ -18,6 +18,7 @@ public class RestClient {
     public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
+    private static final MediaType textMediaType = MediaType.parse("text/plain; charset=utf-8");
     public String clientId;
     public String clientSecret;
     public String server;
@@ -172,7 +173,11 @@ public class RestClient {
         RequestBody requestBody = null;
         switch (contentType) {
             case JSON:
-                requestBody = RequestBody.create(jsonMediaType, JSON.toJSONString(body));
+                if(body.getClass().equals(String.class)) {
+                    requestBody = RequestBody.create(textMediaType, (String)body);
+                } else {
+                    requestBody = RequestBody.create(jsonMediaType, JSON.toJSONString(body));
+                }
                 break;
             case FORM:
                 FormBody.Builder formBodyBuilder = new FormBody.Builder();

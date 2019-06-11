@@ -1,6 +1,8 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.*;
+import com.ringcentral.definitions.ContactInfoCreationRequest;
+import com.ringcentral.definitions.ExtensionCreationRequest;
+import com.ringcentral.definitions.ExtensionCreationResponse;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -27,11 +29,11 @@ public class ProvisionExtensionsTest {
         });
 
         ExtensionCreationResponse extensionCreationResponse = rc.restapi().account().extension().post(new ExtensionCreationRequest()
-        .extensionNumber("808").contact(new ContactInfoCreationRequest()
-               .email("a1b23c4d@example.com").firstName("First").lastName("Last")
-           )
+            .extensionNumber("808").contact(new ContactInfoCreationRequest()
+                .email("a1b23c4d@example.com").firstName("First").lastName("Last")
+            )
             .type("User")
-       );
+        );
         assertNotNull(extensionCreationResponse);
 
         String str = rc.restapi().account().extension(extensionCreationResponse.id.toString()).delete();

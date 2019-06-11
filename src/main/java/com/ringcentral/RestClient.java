@@ -173,10 +173,10 @@ public class RestClient {
         RequestBody requestBody = null;
         switch (contentType) {
             case JSON:
-                if(body.getClass().equals(String.class)) {
-                    requestBody = RequestBody.create(textMediaType, (String)body);
+                if (body != null && body.getClass().equals(String.class)) { // PUT text
+                    requestBody = RequestBody.create(textMediaType, (String) body);
                 } else {
-                    requestBody = RequestBody.create(jsonMediaType, JSON.toJSONString(body));
+                    requestBody = RequestBody.create(jsonMediaType, body == null ? "" : JSON.toJSONString(body));
                 }
                 break;
             case FORM:

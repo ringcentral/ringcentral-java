@@ -16,17 +16,18 @@ public class Utils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return MessageFormat.format("HTTP status code: {0}\n\n{1}\n\n{2}\n\nRequest: {3}\n\n{4}\n\nBody:{5}",
+        return MessageFormat.format("HTTP Response\n=============\nstatus code: {0}\n\n{1}\n{2}\n\nHTTP Request\n============\nHTTP {3} {4}\n\n{5}\n{6}",
             response.code(),
             response.headers().toString(),
             responseBodyString,
+            request.method(),
             request.url().toString(),
             request.headers().toString(),
             requestBodyToString(request.body())
         );
     }
 
-    public static String requestBodyToString(RequestBody requestBody) {
+    private static String requestBodyToString(RequestBody requestBody) {
         if (requestBody == null) {
             return "";
         }

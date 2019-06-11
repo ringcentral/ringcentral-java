@@ -22,6 +22,10 @@ public class ProvisionExtensionsTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
+        rc.httpEventListeners.add((response, request) -> {
+            String message = Utils.formatHttpMessage(response, request);
+        });
+
         ExtensionCreationResponse extensionCreationResponse = rc.restapi().account().extension().post(new ExtensionCreationRequest()
         .extensionNumber("808").contact(new ContactInfoCreationRequest()
                .email("a1b23c4d@example.com").firstName("First").lastName("Last")
@@ -29,10 +33,6 @@ public class ProvisionExtensionsTest {
             .type("User")
        );
         assertNotNull(extensionCreationResponse);
-
-        rc.httpEventListeners.add((response, request) -> {
-            String message = Utils.formatHttpMessage(response, request);
-        });
 
         String str = rc.restapi().account().extension(extensionCreationResponse.id.toString()).delete();
         assertNotNull(str);

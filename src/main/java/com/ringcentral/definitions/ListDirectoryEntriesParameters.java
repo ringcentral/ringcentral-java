@@ -6,7 +6,7 @@ public class ListDirectoryEntriesParameters {
      * If 'True' then contacts of all accounts in federation are returned. If 'False' then only contacts of the current account are returned, and account section is eliminated in this case
      * Default: true
      */
-    public String showFederated;
+    public Boolean showFederated;
     /**
      * Type of an extension
      * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ParkLocation, Limited
@@ -22,13 +22,13 @@ public class ListDirectoryEntriesParameters {
      * Maximum: 2000
      * Default: 1000
      */
-    public String perPage;
+    public Long perPage;
     /**
      * Internal identifier of the business site to which extensions belong
      */
     public String siteId;
 
-    public ListDirectoryEntriesParameters showFederated(String showFederated) {
+    public ListDirectoryEntriesParameters showFederated(Boolean showFederated) {
         this.showFederated = showFederated;
         return this;
     }
@@ -43,7 +43,7 @@ public class ListDirectoryEntriesParameters {
         return this;
     }
 
-    public ListDirectoryEntriesParameters perPage(String perPage) {
+    public ListDirectoryEntriesParameters perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }

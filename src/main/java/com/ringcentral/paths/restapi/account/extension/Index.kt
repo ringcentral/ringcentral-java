@@ -232,4 +232,8 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
         return com.ringcentral.paths.restapi.account.extension.device.Index(this)
     }
 
+
+    fun mms(): com.ringcentral.paths.restapi.account.extension.mms.Index {
+        return com.ringcentral.paths.restapi.account.extension.mms.Index(this)
+    }
 }

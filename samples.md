@@ -333,7 +333,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Monitoring-Groups-createCallMonitoringGroup) in API Explorer.
 
 
 ## Get Call Monitoring Groups List
@@ -352,7 +352,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listCallMonitoringGroups) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Monitoring-Groups-listCallMonitoringGroups) in API Explorer.
 
 
 ## Updates Call Monitoring Group
@@ -371,7 +371,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroup) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Monitoring-Groups-updateCallMonitoringGroup) in API Explorer.
 
 
 ## Delete Call Monitoring Group
@@ -390,7 +390,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-deleteCallMonitoringGroup) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Monitoring-Groups-deleteCallMonitoringGroup) in API Explorer.
 
 
 ## Update Call Monitoring Group List
@@ -409,7 +409,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroupList) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Monitoring-Groups-updateCallMonitoringGroupList) in API Explorer.
 
 
 ## Get Call Monitoring Group Member List
@@ -428,7 +428,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listCallMonitoringGroupMembers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Monitoring-Groups-listCallMonitoringGroupMembers) in API Explorer.
 
 
 ## Get Call Queues
@@ -1751,7 +1751,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-listMeetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-listMeetings) in API Explorer.
 
 
 ## Create Meetings
@@ -1771,7 +1771,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-createMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-createMeeting) in API Explorer.
 
 
 ## Get Meeting Service Info
@@ -1791,7 +1791,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readMeetingServiceInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Configuration-readMeetingServiceInfo) in API Explorer.
 
 
 ## Get Meeting Info
@@ -1811,7 +1811,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-readMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-readMeeting) in API Explorer.
 
 
 ## Update Meeting
@@ -1831,7 +1831,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-updateMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-updateMeeting) in API Explorer.
 
 
 ## Delete Meeting
@@ -1851,7 +1851,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-deleteMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-deleteMeeting) in API Explorer.
 
 
 ## End Meeting
@@ -1871,7 +1871,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Control-endMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-endMeeting) in API Explorer.
 
 
 ## Get Assistants
@@ -1891,7 +1891,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readAssistants) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Configuration-readAssistants) in API Explorer.
 
 
 ## Get Assisted Users
@@ -1911,7 +1911,7 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readAssistedUsers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Configuration-readAssistedUsers) in API Explorer.
 
 
 ## Get Message List
@@ -2728,7 +2728,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCallRecording) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recordings-readCallRecording) in API Explorer.
 
 
 ## Get Call Recordings Data
@@ -2747,7 +2747,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-listCallRecordingData) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recordings-listCallRecordingData) in API Explorer.
 
 
 ## Get Account Service Info
@@ -2766,7 +2766,7 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-readAcountServiceInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountServiceInfo) in API Explorer.
 
 
 ## Create CallOut Call Session
@@ -3612,7 +3612,7 @@ rc.revoke();
 - `result` is of type [GlipConversationsList](./src/main/java/com/ringcentral/definitions/GlipConversationsList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-listGlipConversations) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Conversations-listGlipConversations) in API Explorer.
 
 
 ## Create/Open Conversation
@@ -3630,7 +3630,7 @@ rc.revoke();
 - `result` is of type [GlipConversationInfo](./src/main/java/com/ringcentral/definitions/GlipConversationInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-createGlipConversation) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Conversations-createGlipConversation) in API Explorer.
 
 
 ## Get Conversation
@@ -3648,7 +3648,7 @@ rc.revoke();
 - `result` is of type [GlipConversationInfo](./src/main/java/com/ringcentral/definitions/GlipConversationInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipConversation) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Conversations-readGlipConversation) in API Explorer.
 
 
 ## Create Data Export Task
@@ -3720,7 +3720,7 @@ rc.revoke();
 - `result` is of type [GlipEventsInfo](./src/main/java/com/ringcentral/definitions/GlipEventsInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-readGlipEvents) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-readGlipEvents) in API Explorer.
 
 
 ## Create Event
@@ -3738,7 +3738,7 @@ rc.revoke();
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-createEvent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-createEvent) in API Explorer.
 
 
 ## Get Event
@@ -3756,7 +3756,7 @@ rc.revoke();
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-readEvent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-readEvent) in API Explorer.
 
 
 ## Update Event
@@ -3774,7 +3774,7 @@ rc.revoke();
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-updateEvent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-updateEvent) in API Explorer.
 
 
 ## Delete Event
@@ -3792,7 +3792,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-deleteEvent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-deleteEvent) in API Explorer.
 
 
 ## Get Everyone Chat
@@ -3810,7 +3810,7 @@ rc.revoke();
 - `result` is of type [GlipEveryoneInfo](./src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipEveryone) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-readGlipEveryone) in API Explorer.
 
 
 ## Update Everyone Сhat
@@ -3828,7 +3828,7 @@ rc.revoke();
 - `result` is of type [GlipEveryoneInfo](./src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-patchGlipEveryone) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-patchGlipEveryone) in API Explorer.
 
 
 ## Get Favorite Chats
@@ -3936,7 +3936,7 @@ rc.revoke();
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-createEventbyGroupId) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-createEventbyGroupId) in API Explorer.
 
 
 ## Get Group Events
@@ -3954,7 +3954,7 @@ rc.revoke();
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-listGroupEvents) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-listGroupEvents) in API Explorer.
 
 
 ## Get Group Posts
@@ -4152,7 +4152,7 @@ rc.revoke();
 - `result` is of type [GlipTeamsList](./src/main/java/com/ringcentral/definitions/GlipTeamsList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-listGlipTeams) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-listGlipTeams) in API Explorer.
 
 
 ## Create Team
@@ -4170,7 +4170,7 @@ rc.revoke();
 - `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-createGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-createGlipTeam) in API Explorer.
 
 
 ## Get Team
@@ -4188,7 +4188,7 @@ rc.revoke();
 - `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-readGlipTeam) in API Explorer.
 
 
 ## Update Team
@@ -4206,7 +4206,7 @@ rc.revoke();
 - `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-patchGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-patchGlipTeam) in API Explorer.
 
 
 ## Delete Team
@@ -4224,7 +4224,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-deleteGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-deleteGlipTeam) in API Explorer.
 
 
 ## Add Team Members
@@ -4242,7 +4242,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-addGlipTeamMembers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-addGlipTeamMembers) in API Explorer.
 
 
 ## Archive Team
@@ -4260,7 +4260,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-archiveGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-archiveGlipTeam) in API Explorer.
 
 
 ## Join Team
@@ -4278,7 +4278,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-joinGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-joinGlipTeam) in API Explorer.
 
 
 ## Leave Team
@@ -4296,7 +4296,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-leaveGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-leaveGlipTeam) in API Explorer.
 
 
 ## Remove Team Members
@@ -4314,7 +4314,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-removeGlipTeamMembers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-removeGlipTeamMembers) in API Explorer.
 
 
 ## Unarchive Team
@@ -4332,7 +4332,7 @@ rc.revoke();
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-unarchiveGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-unarchiveGlipTeam) in API Explorer.
 
 
 ## Get Webhooks
@@ -4441,25 +4441,7 @@ rc.revoke();
 - `result` is of type [ParsePhoneNumberResponse](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-parsePhoneNumber) in API Explorer.
-
-
-## Verify Number
-
-HTTP POST `/restapi/v1.0/number-porting/verify-number`
-
-```cs
-RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).numberPorting().verifyNumber().post(numberPortingVerifyNumberRequest);
-rc.revoke();
-```
-
-- Parameter `numberPortingVerifyNumberRequest` is of type [NumberPortingVerifyNumberRequest](./src/main/java/com/ringcentral/definitions/NumberPortingVerifyNumberRequest.java)
-- `result` is of type [NumberPortingVerifyNumberResponse](./src/main/java/com/ringcentral/definitions/NumberPortingVerifyNumberResponse.java)
-- Parameter `apiVersion` is optional with default value `v1.0`
-
-[Try it out](https://developer.ringcentral.com/api-reference#Number-Porting-verifyNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-parsePhoneNumber) in API Explorer.
 
 
 ## Get Service Status

@@ -16,9 +16,9 @@ public class PersonalContactResource {
      */
     public String email;
     /**
-     *
+     * Internal identifier of the contact
      */
-    public String id;
+    public Long id;
     /**
      * Notes for the contact
      */
@@ -139,7 +139,7 @@ public class PersonalContactResource {
         return this;
     }
 
-    public PersonalContactResource id(String id) {
+    public PersonalContactResource id(Long id) {
         this.id = id;
         return this;
     }

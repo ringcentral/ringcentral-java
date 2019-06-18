@@ -13,7 +13,7 @@ public class DetailedExtensionPresenceEventBody {
      */
     public String telephonyStatus;
     /**
-     * List of the latest 10 active calls on extension
+     * List of the latest 7 active calls on extension
      */
     public ActiveCallInfoWithoutSIP[] activeCalls;
     /**

@@ -80,9 +80,4 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
         return com.ringcentral.paths.restapi.numberparser.Index(this)
     }
 
-
-    fun numberporting(): com.ringcentral.paths.restapi.numberporting.Index {
-        return com.ringcentral.paths.restapi.numberporting.Index(this)
-    }
-
 }

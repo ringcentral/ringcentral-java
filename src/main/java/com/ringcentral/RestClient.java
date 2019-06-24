@@ -314,7 +314,7 @@ public class RestClient {
         if (request.client_id == null) {
             request.client_id = clientId;
         }
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(this.server).newBuilder().addPathSegments("/restapi/oauth/authorize");
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(this.server).newBuilder().addPathSegments("restapi/oauth/authorize");
         for (Field field : request.getClass().getFields()) {
             Object value = null;
             try {

@@ -2,8 +2,7 @@ package com.ringcentral;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class AuthorizeUriTest {
     @Test
@@ -20,5 +19,6 @@ public class AuthorizeUriTest {
         assertTrue(authorizeUri.contains("https://"));
         assertTrue(authorizeUri.contains("client_id="));
         assertTrue(authorizeUri.contains("oauth2callback"));
+        assertFalse(authorizeUri.contains("//restapi"));
     }
 }

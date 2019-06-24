@@ -1,10 +1,7 @@
 package com.ringcentral;
 
 import com.alibaba.fastjson.JSON;
-import com.ringcentral.definitions.Attachment;
-import com.ringcentral.definitions.GetTokenRequest;
-import com.ringcentral.definitions.RevokeTokenRequest;
-import com.ringcentral.definitions.TokenInfo;
+import com.ringcentral.definitions.*;
 import okhttp3.*;
 import okio.BufferedSink;
 
@@ -307,6 +304,38 @@ public class RestClient {
             httpEventListener.afterHttpCall(response, request);
         }
         return response.peekBody(Long.MAX_VALUE);
+    }
+
+    public String authorizeUri(AuthorizeRequest request) {
+        if (request.response_type == null) {
+            request.response_type = "code";
+        }
+
+        if (request.client_id == null) {
+            request.client_id = clientId;
+        }
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(this.server).newBuilder().addPathSegments("/restapi/oauth/authorize");
+        for (Field field : request.getClass().getFields()) {
+            Object value = null;
+            try {
+                value = field.get(request);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            if (value != null) {
+                urlBuilder = urlBuilder.addQueryParameter(field.getName(), value.toString());
+            }
+        }
+        return urlBuilder.build().toString();
+    }
+
+    public String authorizeUri(String redirectUri, String state) {
+        AuthorizeRequest authorizeRequest = new AuthorizeRequest().redirect_uri(redirectUri).state(state);
+        return authorizeUri(authorizeRequest);
+    }
+
+    public String authorizeUri(String redirectUri) {
+        return authorizeUri(redirectUri, "");
     }
 
     // top level paths

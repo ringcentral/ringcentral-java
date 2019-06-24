@@ -100,6 +100,14 @@ public class RestClient {
         return authorize(getTokenRequest);
     }
 
+    public TokenInfo authorize(String authCode, String redirectUri) throws IOException, RestException {
+        GetTokenRequest getTokenRequest = new GetTokenRequest()
+            .grant_type("authorization_code")
+            .code(authCode)
+            .redirect_uri(redirectUri);
+        return authorize(getTokenRequest);
+    }
+
     public TokenInfo authorize(GetTokenRequest getTokenRequest) throws IOException, RestException {
         token = null;
         token = this.restapi(null).oauth().token().post(getTokenRequest);

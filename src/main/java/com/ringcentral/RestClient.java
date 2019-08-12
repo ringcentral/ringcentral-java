@@ -251,7 +251,8 @@ public class RestClient {
         return request(httpMethod, endpoint, queryParameters, requestBody);
     }
 
-    public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
+    // this method returns the raw response instead of just the body
+    public Response requestRaw(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
         requestBody) throws IOException, RestException {
         HttpUrl.Builder urlBuilder = HttpUrl.parse(server).newBuilder(endpoint);
 
@@ -311,6 +312,12 @@ public class RestClient {
         for (HttpEventListener httpEventListener : httpEventListeners) {
             httpEventListener.afterHttpCall(response, request);
         }
+        return response;
+    }
+
+    public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
+        requestBody) throws IOException, RestException {
+        Response response = requestRaw(httpMethod, endpoint, queryParameters, requestBody);
         return response.peekBody(Long.MAX_VALUE);
     }
 

@@ -24,9 +24,11 @@ public class ConsumeTextTest {
 
         String groupId = rc.restapi().glip().groups().list().records[0].id;
         String postId = rc.restapi().glip().groups(groupId).posts().get().records[0].id;
-        String newText = UUID.randomUUID().toString();
-        String updatedText = rc.restapi().glip().groups(groupId).posts(postId).text().put(newText);
-        assertEquals(updatedText, newText);
+
+        // below is for experiment only
+//        String newText = UUID.randomUUID().toString();
+//        String updatedText = rc.restapi().glip().groups(groupId).posts(postId).text().put(newText);
+//        assertEquals(updatedText, newText);
 
         rc.revoke();
     }

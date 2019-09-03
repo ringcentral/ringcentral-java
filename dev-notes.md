@@ -33,8 +33,3 @@ The generated code is formatted by IntelliJ IDEA.
 Update version numbers in `build.gradle`.
 
     ./gradlew -PbintrayUser=bintrayUser -PbintrayApiKey=bintrayApiKey bintrayUpload
-
-
-## Todo
-
-- Rewrite in Kotlin - optional, low priority

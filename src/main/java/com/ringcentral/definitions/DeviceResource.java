@@ -50,7 +50,7 @@ public class DeviceResource {
      */
     public PhoneLineResource[] phoneLines;
     /**
-     * Address for emergency cases. The same emergency address is assigned to all numbers of a single device ,
+     * Address for emergency cases. The same emergency address is assigned to all numbers of a single device
      */
     public EmergencyServiceAddressResource emergencyServiceAddress;
     /**

@@ -4,12 +4,13 @@ package com.ringcentral.definitions;
 public class ListAnsweringRulesParameters {
     /**
      * Default: Simple
+     * Enum: Detailed, Simple
      */
     public String view;
     /**
-     * Default: false
+     * If true, then only active call handling rules are returned
      */
-    public String enabledOnly;
+    public Boolean enabledOnly;
     /**
      * Default: 1
      */
@@ -24,7 +25,7 @@ public class ListAnsweringRulesParameters {
         return this;
     }
 
-    public ListAnsweringRulesParameters enabledOnly(String enabledOnly) {
+    public ListAnsweringRulesParameters enabledOnly(Boolean enabledOnly) {
         this.enabledOnly = enabledOnly;
         return this;
     }

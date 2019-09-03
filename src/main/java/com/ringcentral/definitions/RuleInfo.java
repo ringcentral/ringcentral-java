@@ -17,7 +17,7 @@ public class RuleInfo {
     /**
      * Forwarding number (or group) data
      */
-    public ForwardingNumberInfoRules[] forwardingNumbers;
+    public CreateAnsweringRuleForwardingNumberInfo[] forwardingNumbers;
 
     public RuleInfo index(Long index) {
         this.index = index;
@@ -34,7 +34,7 @@ public class RuleInfo {
         return this;
     }
 
-    public RuleInfo forwardingNumbers(ForwardingNumberInfoRules[] forwardingNumbers) {
+    public RuleInfo forwardingNumbers(CreateAnsweringRuleForwardingNumberInfo[] forwardingNumbers) {
         this.forwardingNumbers = forwardingNumbers;
         return this;
     }

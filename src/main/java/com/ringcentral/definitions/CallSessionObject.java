@@ -15,9 +15,9 @@ public class CallSessionObject {
      */
     public String voiceCallToken;
     /**
-     * Information on a party of a call session
+     *
      */
-    public CallParty parties;
+    public CallParty[] parties;
     /**
      * Date and time of the latest session update represented in Unix time format
      */
@@ -38,7 +38,7 @@ public class CallSessionObject {
         return this;
     }
 
-    public CallSessionObject parties(CallParty parties) {
+    public CallSessionObject parties(CallParty[] parties) {
         this.parties = parties;
         return this;
     }

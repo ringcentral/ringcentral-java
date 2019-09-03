@@ -3,12 +3,12 @@ package com.ringcentral.definitions;
 
 public class NotificationDeliveryModeRequest {
     /**
-     * Notifications transportation provider name. 'APNS' (Apple Push Notifications Service)
-     * Enum: PubNub, WebHook, APNS, PubNub/APNS, PubNub/GCM
+     * Notifications transportation provider name
+     * Enum: PubNub, WebHook, RC/APNS, RC/GCM
      */
     public String transportType;
     /**
-     * Mandatory for 'APNS' and 'WebHook' transport types. For 'APNS' - internal identifier of a device 'device_token' for 'WebHook' - URL of a consumer service (cannot be changed during subscription update)
+     * Mandatory for 'WebHook' transport type, URL of a consumer service (cannot be changed during subscription update)
      */
     public String address;
     /**
@@ -16,11 +16,11 @@ public class NotificationDeliveryModeRequest {
      */
     public Boolean encryption;
     /**
-     * For 'PubNub/APNS', 'APNS' and 'PubNub/GCM' transport types. Name of a certificate
+     * For 'RC/APNS' and 'RC/GCM' transport types. Name of a certificate
      */
     public String certificateName;
     /**
-     * For 'PubNub/APNS' and 'PubNub/GCM' transport types. Identifier of a registration
+     * For 'RC/APNS' and 'RC/GCM' transport types. Identifier of a registration
      */
     public String registrationId;
     /**

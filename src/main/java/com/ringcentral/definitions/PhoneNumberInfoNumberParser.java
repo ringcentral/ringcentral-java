@@ -9,7 +9,7 @@ public class PhoneNumberInfoNumberParser {
     /**
      * Information on a country the phone number belongs to
      */
-    public GetCountryInfoNumberParser[] country;
+    public GetCountryInfoNumberParser country;
     /**
      * Dialing format of a phone number
      */
@@ -60,7 +60,7 @@ public class PhoneNumberInfoNumberParser {
         return this;
     }
 
-    public PhoneNumberInfoNumberParser country(GetCountryInfoNumberParser[] country) {
+    public PhoneNumberInfoNumberParser country(GetCountryInfoNumberParser country) {
         this.country = country;
         return this;
     }

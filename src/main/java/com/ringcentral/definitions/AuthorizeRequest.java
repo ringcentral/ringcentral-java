@@ -46,6 +46,34 @@ public class AuthorizeRequest {
      * Enum: hide_logo, hide_tos, hide_remember_me, external_popup, old_ui
      */
     public String ui_options;
+    /**
+     *
+     */
+    public String scope;
+    /**
+     *
+     */
+    public String accept_language;
+    /**
+     *
+     */
+    public String request;
+    /**
+     *
+     */
+    public String request_uri;
+    /**
+     *
+     */
+    public String nonce;
+    /**
+     *
+     */
+    public String code_challenge;
+    /**
+     *
+     */
+    public String code_challenge_method;
 
     public AuthorizeRequest response_type(String response_type) {
         this.response_type = response_type;
@@ -94,6 +122,41 @@ public class AuthorizeRequest {
 
     public AuthorizeRequest ui_options(String ui_options) {
         this.ui_options = ui_options;
+        return this;
+    }
+
+    public AuthorizeRequest scope(String scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    public AuthorizeRequest accept_language(String accept_language) {
+        this.accept_language = accept_language;
+        return this;
+    }
+
+    public AuthorizeRequest request(String request) {
+        this.request = request;
+        return this;
+    }
+
+    public AuthorizeRequest request_uri(String request_uri) {
+        this.request_uri = request_uri;
+        return this;
+    }
+
+    public AuthorizeRequest nonce(String nonce) {
+        this.nonce = nonce;
+        return this;
+    }
+
+    public AuthorizeRequest code_challenge(String code_challenge) {
+        this.code_challenge = code_challenge;
+        return this;
+    }
+
+    public AuthorizeRequest code_challenge_method(String code_challenge_method) {
+        this.code_challenge_method = code_challenge_method;
         return this;
     }
 

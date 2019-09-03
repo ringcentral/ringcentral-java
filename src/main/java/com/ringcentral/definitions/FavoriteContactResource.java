@@ -5,10 +5,6 @@ public class FavoriteContactResource {
     /**
      *
      */
-    public String uri;
-    /**
-     *
-     */
     public String id;
     /**
      *
@@ -18,11 +14,6 @@ public class FavoriteContactResource {
      *
      */
     public String contactId;
-
-    public FavoriteContactResource uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
 
     public FavoriteContactResource id(String id) {
         this.id = id;

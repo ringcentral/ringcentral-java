@@ -1,6 +1,23 @@
 # RingCentral Java SDK Code Samples
 
 
+## Get Glip Data Archive
+
+HTTP GET `/media/v1/glip/data-export/{taskId}/archive/{archiveId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.media().v1().glip().dataExport(taskId).archive(archiveId).get();
+rc.revoke();
+```
+
+
+- `result` is of type `byte[]`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readComplianceArchive) in API Explorer.
+
+
 ## Get API Versions
 
 HTTP GET `/restapi`
@@ -32,7 +49,7 @@ rc.revoke();
 - Parameter `revokeTokenRequest` is of type [RevokeTokenRequest](./src/main/java/com/ringcentral/definitions/RevokeTokenRequest.java)
 - `result` is `null`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Authentication-revokeToken) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#OAuth-2.0-revokeToken) in API Explorer.
 
 
 ## Get Token
@@ -49,7 +66,7 @@ rc.revoke();
 - Parameter `getTokenRequest` is of type [GetTokenRequest](./src/main/java/com/ringcentral/definitions/GetTokenRequest.java)
 - `result` is of type [TokenInfo](./src/main/java/com/ringcentral/definitions/TokenInfo.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Authentication-getToken) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#OAuth-2.0-getToken) in API Explorer.
 
 
 ## Get Version Info
@@ -296,6 +313,25 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCompanyCallLog) in API Explorer.
+
+
+## Sync Company Call Log
+
+HTTP GET `/restapi/v1.0/account/{accountId}/call-log-sync`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).callLogSync().get(syncAccountCallLogParameters);
+rc.revoke();
+```
+
+- Parameter `syncAccountCallLogParameters` is of type [SyncAccountCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncAccountCallLogParameters.java)
+- `result` is of type [AccountCallLogSyncResponse](./src/main/java/com/ringcentral/definitions/AccountCallLogSyncResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-syncAccountCallLog) in API Explorer.
 
 
 ## Get Company Call Log Record(s)
@@ -752,6 +788,500 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-readAccountFederation) in API Explorer.
+
+
+## Get Device List
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/devices`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().get(listDevicesAutomaticLocationUpdatesParameters);
+rc.revoke();
+```
+
+- Parameter `listDevicesAutomaticLocationUpdatesParameters` is of type [ListDevicesAutomaticLocationUpdatesParameters](./src/main/java/com/ringcentral/definitions/ListDevicesAutomaticLocationUpdatesParameters.java)
+- `result` is of type [ListDevicesAutomaticLocationUpdates](./src/main/java/com/ringcentral/definitions/ListDevicesAutomaticLocationUpdates.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-listDevicesAutomaticLocationUpdates) in API Explorer.
+
+
+## Enable Automatic Location Updates for Devices
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/devices/bulk-assign`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().bulkAssign().post(assignMultipleDevicesAutomaticLocationUpdates);
+rc.revoke();
+```
+
+- Parameter `assignMultipleDevicesAutomaticLocationUpdates` is of type [AssignMultipleDevicesAutomaticLocationUpdates](./src/main/java/com/ringcentral/definitions/AssignMultipleDevicesAutomaticLocationUpdates.java)
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-assignMultipleDevicesAutomaticLocationUpdates) in API Explorer.
+
+
+## Get Network Map
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().list();
+rc.revoke();
+```
+
+
+- `result` is of type [NetworksList](./src/main/java/com/ringcentral/definitions/NetworksList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-listNetworks) in API Explorer.
+
+
+## Create Network
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().post(createNetworkRequest);
+rc.revoke();
+```
+
+- Parameter `createNetworkRequest` is of type [CreateNetworkRequest](./src/main/java/com/ringcentral/definitions/CreateNetworkRequest.java)
+- `result` is of type [NetworkInfo](./src/main/java/com/ringcentral/definitions/NetworkInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-createNetwork) in API Explorer.
+
+
+## Get Network
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).get();
+rc.revoke();
+```
+
+
+- `result` is of type [NetworkInfo](./src/main/java/com/ringcentral/definitions/NetworkInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-readNetwork) in API Explorer.
+
+
+## Update Network
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).put(updateNetworkRequest);
+rc.revoke();
+```
+
+- Parameter `updateNetworkRequest` is of type [UpdateNetworkRequest](./src/main/java/com/ringcentral/definitions/UpdateNetworkRequest.java)
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-updateNetwork) in API Explorer.
+
+
+## Delete Network
+
+HTTP DELETE `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).delete();
+rc.revoke();
+```
+
+
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-deleteNetwork) in API Explorer.
+
+
+## Get Account Switch List
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().list(listAccountSwitchesParameters);
+rc.revoke();
+```
+
+- Parameter `listAccountSwitchesParameters` is of type [ListAccountSwitchesParameters](./src/main/java/com/ringcentral/definitions/ListAccountSwitchesParameters.java)
+- `result` is of type [SwitchesList](./src/main/java/com/ringcentral/definitions/SwitchesList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-listAccountSwitches) in API Explorer.
+
+
+## Create Switch
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().post(createSwitchInfo);
+rc.revoke();
+```
+
+- Parameter `createSwitchInfo` is of type [CreateSwitchInfo](./src/main/java/com/ringcentral/definitions/CreateSwitchInfo.java)
+- `result` is of type [SwitchInfo](./src/main/java/com/ringcentral/definitions/SwitchInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-createSwitch) in API Explorer.
+
+
+## Create Multiple Switches
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-create`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkCreate().post(createMultipleSwitchesRequest);
+rc.revoke();
+```
+
+- Parameter `createMultipleSwitchesRequest` is of type [CreateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/CreateMultipleSwitchesRequest.java)
+- `result` is of type [CreateMultipleSwitchesResponse](./src/main/java/com/ringcentral/definitions/CreateMultipleSwitchesResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-createMultipleSwitches) in API Explorer.
+
+
+## Update Multiple Switches
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-update`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkUpdate().post(updateMultipleSwitchesRequest);
+rc.revoke();
+```
+
+- Parameter `updateMultipleSwitchesRequest` is of type [UpdateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/UpdateMultipleSwitchesRequest.java)
+- `result` is of type [UpdateMultipleSwitchesResponse](./src/main/java/com/ringcentral/definitions/UpdateMultipleSwitchesResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-updateMultipleSwitches) in API Explorer.
+
+
+## Validate Multiple Switches
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-validate`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkValidate().post(validateMultipleSwitchesRequest);
+rc.revoke();
+```
+
+- Parameter `validateMultipleSwitchesRequest` is of type [ValidateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/ValidateMultipleSwitchesRequest.java)
+- `result` is of type [ValidateMultipleSwitchesResponse](./src/main/java/com/ringcentral/definitions/ValidateMultipleSwitchesResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-validateMultipleSwitches) in API Explorer.
+
+
+## Get Switch
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).get();
+rc.revoke();
+```
+
+
+- `result` is of type [SwitchInfo](./src/main/java/com/ringcentral/definitions/SwitchInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-readSwitch) in API Explorer.
+
+
+## Update Switch
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).put(updateSwitchInfo);
+rc.revoke();
+```
+
+- Parameter `updateSwitchInfo` is of type [UpdateSwitchInfo](./src/main/java/com/ringcentral/definitions/UpdateSwitchInfo.java)
+- `result` is of type [SwitchInfo](./src/main/java/com/ringcentral/definitions/SwitchInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-updateSwitch) in API Explorer.
+
+
+## Delete Switch
+
+HTTP DELETE `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).delete();
+rc.revoke();
+```
+
+
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-deleteSwitch) in API Explorer.
+
+
+## Get Emergency Map Configuration Task
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/tasks/{taskId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().tasks(taskId).get();
+rc.revoke();
+```
+
+
+- `result` is of type [AutomaticLocationUpdatesTaskInfo](./src/main/java/com/ringcentral/definitions/AutomaticLocationUpdatesTaskInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-readAutomaticLocationUpdatesTask) in API Explorer.
+
+
+## Get User List
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/users`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().get(listAutomaticLocationUpdatesUsersParameters);
+rc.revoke();
+```
+
+- Parameter `listAutomaticLocationUpdatesUsersParameters` is of type [ListAutomaticLocationUpdatesUsersParameters](./src/main/java/com/ringcentral/definitions/ListAutomaticLocationUpdatesUsersParameters.java)
+- `result` is of type [AutomaticLocationUpdatesUserList](./src/main/java/com/ringcentral/definitions/AutomaticLocationUpdatesUserList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-listAutomaticLocationUpdatesUsers) in API Explorer.
+
+
+## Enable Automatic Location Updates for Users
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/users/bulk-assign`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().bulkAssign().post(bulkAssignAutomaticaLocationUpdatesUsers);
+rc.revoke();
+```
+
+- Parameter `bulkAssignAutomaticaLocationUpdatesUsers` is of type [BulkAssignAutomaticaLocationUpdatesUsers](./src/main/java/com/ringcentral/definitions/BulkAssignAutomaticaLocationUpdatesUsers.java)
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-assignMultipleAutomaticaLocationUpdatesUsers) in API Explorer.
+
+
+## Get Wireless Point List
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().list(listWirelessPointsParameters);
+rc.revoke();
+```
+
+- Parameter `listWirelessPointsParameters` is of type [ListWirelessPointsParameters](./src/main/java/com/ringcentral/definitions/ListWirelessPointsParameters.java)
+- `result` is of type [WirelessPointsList](./src/main/java/com/ringcentral/definitions/WirelessPointsList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-listWirelessPoints) in API Explorer.
+
+
+## Create Wireless Point
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().post(createWirelessPoint);
+rc.revoke();
+```
+
+- Parameter `createWirelessPoint` is of type [CreateWirelessPoint](./src/main/java/com/ringcentral/definitions/CreateWirelessPoint.java)
+- `result` is of type [WirelessPointInfo](./src/main/java/com/ringcentral/definitions/WirelessPointInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-createWirelessPoint) in API Explorer.
+
+
+## Create Multiple Wireless Points
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-create`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkCreate().post(createMultipleWirelessPointsRequest);
+rc.revoke();
+```
+
+- Parameter `createMultipleWirelessPointsRequest` is of type [CreateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/CreateMultipleWirelessPointsRequest.java)
+- `result` is of type [CreateMultipleWirelessPointsResponse](./src/main/java/com/ringcentral/definitions/CreateMultipleWirelessPointsResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-createMultipleWirelessPoints) in API Explorer.
+
+
+## Update Multiple Wireless Points
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-update`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkUpdate().post(updateMultipleWirelessPointsRequest);
+rc.revoke();
+```
+
+- Parameter `updateMultipleWirelessPointsRequest` is of type [UpdateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/UpdateMultipleWirelessPointsRequest.java)
+- `result` is of type [UpdateMultipleWirelessPointsResponse](./src/main/java/com/ringcentral/definitions/UpdateMultipleWirelessPointsResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-updateMultipleWirelessPoints) in API Explorer.
+
+
+## Validate Multiple Wireless Points
+
+HTTP POST `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-validate`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkValidate().post(validateMultipleWirelessPointsRequest);
+rc.revoke();
+```
+
+- Parameter `validateMultipleWirelessPointsRequest` is of type [ValidateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/ValidateMultipleWirelessPointsRequest.java)
+- `result` is of type [ValidateMultipleWirelessPointsResponse](./src/main/java/com/ringcentral/definitions/ValidateMultipleWirelessPointsResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-validateMultipleWirelessPoints) in API Explorer.
+
+
+## Get Wireless Point
+
+HTTP GET `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).get();
+rc.revoke();
+```
+
+
+- `result` is of type [WirelessPointInfo](./src/main/java/com/ringcentral/definitions/WirelessPointInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-readWirelessPoint) in API Explorer.
+
+
+## Update Wireless Point
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).put(updateWirelessPoint);
+rc.revoke();
+```
+
+- Parameter `updateWirelessPoint` is of type [UpdateWirelessPoint](./src/main/java/com/ringcentral/definitions/UpdateWirelessPoint.java)
+- `result` is of type [WirelessPointInfo](./src/main/java/com/ringcentral/definitions/WirelessPointInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-updateWirelessPoint) in API Explorer.
+
+
+## Delete Wireless Point
+
+HTTP DELETE `/restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).delete();
+rc.revoke();
+```
+
+
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-deleteWirelessPoint) in API Explorer.
 
 
 ## Get Extension List
@@ -1526,7 +2056,7 @@ rc.revoke();
 ```
 
 
-- `result` is `null`
+- `result` is of type [FavoriteContactList](./src/main/java/com/ringcentral/definitions/FavoriteContactList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
@@ -1546,7 +2076,7 @@ rc.revoke();
 ```
 
 - Parameter `favoriteCollection` is of type [FavoriteCollection](./src/main/java/com/ringcentral/definitions/FavoriteCollection.java)
-- `result` is `null`
+- `result` is of type [FavoriteContactList](./src/main/java/com/ringcentral/definitions/FavoriteContactList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
@@ -2034,6 +2564,26 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-syncMessages) in API Explorer.
 
 
+## Create MMS Message
+
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/mms`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).mms().post(createSmsMessage);
+rc.revoke();
+```
+
+- Parameter `createSmsMessage` is of type [CreateSMSMessage](./src/main/java/com/ringcentral/definitions/CreateSMSMessage.java)
+- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#MMS-createMMS) in API Explorer.
+
+
 ## Get Notification Settings
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings`
@@ -2274,7 +2824,7 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#RingOut-deleteRingOutCall) in API Explorer.
 
 
-## Create SMS/MMS Message
+## Send SMS
 
 HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms`
 
@@ -2453,12 +3003,12 @@ HTTP PUT `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}`
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put();
+var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put(updateIvrPromptRequest);
 rc.revoke();
 ```
 
-
-- `result` is `null`
+- Parameter `updateIvrPromptRequest` is of type [UpdateIVRPromptRequest](./src/main/java/com/ringcentral/definitions/UpdateIVRPromptRequest.java)
+- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
@@ -2477,7 +3027,7 @@ rc.revoke();
 ```
 
 
-- `result` is `null`
+- `result` is of type `byte[]`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
@@ -2790,17 +3340,17 @@ rc.revoke();
 
 ## Get Call Session Status
 
-HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}`
+HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).get(readCallSessionStatusParameters);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).get(readCallSessionStatusParameters);
 rc.revoke();
 ```
 
 - Parameter `readCallSessionStatusParameters` is of type [ReadCallSessionStatusParameters](./src/main/java/com/ringcentral/definitions/ReadCallSessionStatusParameters.java)
-- `result` is of type [CallSessionObject](./src/main/java/com/ringcentral/definitions/CallSessionObject.java)
+- `result` is of type [CallSession](./src/main/java/com/ringcentral/definitions/CallSession.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
@@ -2809,12 +3359,12 @@ rc.revoke();
 
 ## Drop Call Session
 
-HTTP DELETE `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}`
+HTTP DELETE `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).delete();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).delete();
 rc.revoke();
 ```
 
@@ -2828,12 +3378,12 @@ rc.revoke();
 
 ## Get Call Party Status
 
-HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}`
+HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).get();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).get();
 rc.revoke();
 ```
 
@@ -2847,12 +3397,12 @@ rc.revoke();
 
 ## Update Call Party
 
-HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}`
+HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).patch(partyUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).patch(partyUpdateRequest);
 rc.revoke();
 ```
 
@@ -2864,14 +3414,33 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-updateCallParty) in API Explorer.
 
 
-## Call Flip on Party
+## Answer Call Party
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/flip`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/answer`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).flip().post(callPartyFlip);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).answer().post(answerTarget);
+rc.revoke();
+```
+
+- Parameter `answerTarget` is of type [AnswerTarget](./src/main/java/com/ringcentral/definitions/AnswerTarget.java)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-answerCallParty) in API Explorer.
+
+
+## Call Flip on Party
+
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/flip`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).flip().post(callPartyFlip);
 rc.revoke();
 ```
 
@@ -2885,12 +3454,12 @@ rc.revoke();
 
 ## Forward Call Party
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/forward`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/forward`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).forward().post(forwardTarget);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).forward().post(forwardTarget);
 rc.revoke();
 ```
 
@@ -2904,12 +3473,12 @@ rc.revoke();
 
 ## Hold Call Party
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/hold`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/hold`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).hold().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).hold().post();
 rc.revoke();
 ```
 
@@ -2921,14 +3490,52 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-holdCallParty) in API Explorer.
 
 
-## Create Recording
+## Pickup Call
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/pickup`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).recordings().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).pickup().post(pickupTarget);
+rc.revoke();
+```
+
+- Parameter `pickupTarget` is of type [PickupTarget](./src/main/java/com/ringcentral/definitions/PickupTarget.java)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-pickupCallParty) in API Explorer.
+
+
+## Play audio files into a party.
+
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/play`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).play().post(playTarget);
+rc.revoke();
+```
+
+- Parameter `playTarget` is of type [PlayTarget](./src/main/java/com/ringcentral/definitions/PlayTarget.java)
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-playCallParty) in API Explorer.
+
+
+## Create Recording
+
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings().post();
 rc.revoke();
 ```
 
@@ -2942,12 +3549,12 @@ rc.revoke();
 
 ## Pause/Resume Recording
 
-HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings/{recordingId}`
+HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings/{recordingId}`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).recordings(recordingId).patch(callRecordingUpdate, pauseResumeCallRecordingParameters);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings(recordingId).patch(callRecordingUpdate, pauseResumeCallRecordingParameters);
 rc.revoke();
 ```
 
@@ -2962,12 +3569,12 @@ rc.revoke();
 
 ## Reject Call Party
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/reject`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/reject`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).reject().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).reject().post();
 rc.revoke();
 ```
 
@@ -2981,12 +3588,12 @@ rc.revoke();
 
 ## Transfer Call Party
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/transfer`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/transfer`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).transfer().post(transferTarget);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).transfer().post(transferTarget);
 rc.revoke();
 ```
 
@@ -3000,12 +3607,12 @@ rc.revoke();
 
 ## Unhold Call Party
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/unhold`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/unhold`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).parties(partyId).unhold().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).unhold().post();
 rc.revoke();
 ```
 
@@ -3019,12 +3626,12 @@ rc.revoke();
 
 ## Supervise Call
 
-HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise`
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise`
 
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(sessionId).supervise().post(superviseCallSessionRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).supervise().post(superviseCallSessionRequest);
 rc.revoke();
 ```
 
@@ -3543,6 +4150,42 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-markChatRead) in API Explorer.
 
 
+## Get Chat Tasks
+
+HTTP GET `/restapi/v1.0/glip/chats/{chatId}/tasks`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().chats(chatId).tasks().get(listChatTasksParameters);
+rc.revoke();
+```
+
+- Parameter `listChatTasksParameters` is of type [ListChatTasksParameters](./src/main/java/com/ringcentral/definitions/ListChatTasksParameters.java)
+- `result` is of type [GlipTaskList](./src/main/java/com/ringcentral/definitions/GlipTaskList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-listChatTasks) in API Explorer.
+
+
+## Create Task
+
+HTTP POST `/restapi/v1.0/glip/chats/{chatId}/tasks`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().chats(chatId).tasks().post(glipCreateTask);
+rc.revoke();
+```
+
+- Parameter `glipCreateTask` is of type [GlipCreateTask](./src/main/java/com/ringcentral/definitions/GlipCreateTask.java)
+- `result` is of type [GlipTaskInfo](./src/main/java/com/ringcentral/definitions/GlipTaskInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-createTask) in API Explorer.
+
+
 ## Remove Chat from Favorites
 
 HTTP POST `/restapi/v1.0/glip/chats/{chatId}/unfavorite`
@@ -3685,24 +4328,6 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readDataExportTask) in API Explorer.
-
-
-## Get Glip Data Archive
-
-HTTP GET `/restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}`
-
-```cs
-RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
-rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).glip().dataExport(taskId).archive(archiveId).get();
-rc.revoke();
-```
-
-
-- `result` is `null`
-- Parameter `apiVersion` is optional with default value `v1.0`
-
-[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readComplianceArchive) in API Explorer.
 
 
 ## Get User Events List
@@ -4135,6 +4760,78 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listRecentChats) in API Explorer.
+
+
+## Get Task
+
+HTTP GET `/restapi/v1.0/glip/tasks/{taskId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().tasks(taskId).get();
+rc.revoke();
+```
+
+
+- `result` is of type [GlipTaskInfo](./src/main/java/com/ringcentral/definitions/GlipTaskInfo.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-readTask) in API Explorer.
+
+
+## Patch Task
+
+HTTP PATCH `/restapi/v1.0/glip/tasks/{taskId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().tasks(taskId).patch(glipUpdateTask);
+rc.revoke();
+```
+
+- Parameter `glipUpdateTask` is of type [GlipUpdateTask](./src/main/java/com/ringcentral/definitions/GlipUpdateTask.java)
+- `result` is of type [GlipTaskList](./src/main/java/com/ringcentral/definitions/GlipTaskList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-patchTask) in API Explorer.
+
+
+## Delete Task
+
+HTTP DELETE `/restapi/v1.0/glip/tasks/{taskId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().tasks(taskId).delete();
+rc.revoke();
+```
+
+
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-deleteTask) in API Explorer.
+
+
+## Complete Task
+
+HTTP POST `/restapi/v1.0/glip/tasks/{taskId}/complete`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().tasks(taskId).complete().post(glipCompleteTask);
+rc.revoke();
+```
+
+- Parameter `glipCompleteTask` is of type [GlipCompleteTask](./src/main/java/com/ringcentral/definitions/GlipCompleteTask.java)
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-completeTask) in API Explorer.
 
 
 ## Get Teams
@@ -4589,7 +5286,7 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-readServiceProviderConfig2) in API Explorer.
 
 
-## Search or List Users
+## Search/List Users
 
 HTTP GET `/scim/v2/Users`
 
@@ -4625,7 +5322,7 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-createUser2) in API Explorer.
 
 
-## Search or List Users
+## Search/List Users
 
 HTTP POST `/scim/v2/Users/.search`
 
@@ -4715,7 +5412,7 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#SCIM-patchUser2) in API Explorer.
 
 
-## check health
+## Check Health
 
 HTTP GET `/scim/v2/health`
 

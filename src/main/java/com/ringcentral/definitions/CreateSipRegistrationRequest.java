@@ -6,14 +6,14 @@ public class CreateSipRegistrationRequest {
      * Device unique description
      * Required
      */
-    public DeviceInfoRequest[] device;
+    public DeviceInfoRequest device;
     /**
      * SIP settings for device
      * Required
      */
     public SIPInfoRequest[] sipInfo;
 
-    public CreateSipRegistrationRequest device(DeviceInfoRequest[] device) {
+    public CreateSipRegistrationRequest device(DeviceInfoRequest device) {
         this.device = device;
         return this;
     }

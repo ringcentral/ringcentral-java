@@ -54,6 +54,10 @@ public class EmergencyServiceAddressResource {
      * Full name of a country
      */
     public String countryName;
+    /**
+     * Specifies if emergency address is out of country
+     */
+    public Boolean outOfCountry;
 
     public EmergencyServiceAddressResource street(String street) {
         this.street = street;
@@ -117,6 +121,11 @@ public class EmergencyServiceAddressResource {
 
     public EmergencyServiceAddressResource countryName(String countryName) {
         this.countryName = countryName;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource outOfCountry(Boolean outOfCountry) {
+        this.outOfCountry = outOfCountry;
         return this;
     }
 

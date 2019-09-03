@@ -8,7 +8,7 @@ public class NotificationBlacklistedData {
      */
     public String blacklistedAt;
     /**
-     * Reason of adding subscrition to a black list
+     * Reason for adding subscrition to a black list
      */
     public String reason;
 

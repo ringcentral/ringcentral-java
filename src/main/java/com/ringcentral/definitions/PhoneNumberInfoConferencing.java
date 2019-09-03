@@ -25,6 +25,10 @@ public class PhoneNumberInfoConferencing {
      * Dial-in phone number to connect to a conference
      */
     public String phoneNumber;
+    /**
+     * Indicates if the number is 'premium' (account phone number with the `ConferencingNumber` usageType)
+     */
+    public Boolean premium;
 
     public PhoneNumberInfoConferencing country(GetCountryInfoConferencing country) {
         this.country = country;
@@ -48,6 +52,11 @@ public class PhoneNumberInfoConferencing {
 
     public PhoneNumberInfoConferencing phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public PhoneNumberInfoConferencing premium(Boolean premium) {
+        this.premium = premium;
         return this;
     }
 

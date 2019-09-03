@@ -19,7 +19,7 @@ public class MeetingResponseResource {
      */
     public String topic;
     /**
-     *
+     * Enum: Scheduled, Instant, Recurring
      */
     public String meetingType;
     /**

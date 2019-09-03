@@ -21,11 +21,17 @@ public class QueueInfo {
      */
     public Long holdAudioInterruptionPeriod;
     /**
+     * Specifies the type of action to be taken after the hold time (waiting for an available call queue member) expires. If 'TransferToExtension' option is selected, the extension specified in `transfer` field is used
+     * Default: Voicemail
+     * Enum: TransferToExtension, Voicemail
+     */
+    public String holdTimeExpirationAction;
+    /**
      * Maximum time in seconds to wait for a call queue member before trying the next member
      */
     public Long agentTimeout;
     /**
-     * Minimum post-call wrap up time in seconds before agent status is automatically set
+     * Minimum post-call wrap up time in seconds before agent status is automatically set; the value range is from 180 to 300
      */
     public Long wrapUpTime;
     /**
@@ -33,7 +39,7 @@ public class QueueInfo {
      */
     public Long holdTime;
     /**
-     * Maximum count of callers on hold
+     * Maximum count of callers on hold; the limitation is 25 callers
      */
     public Long maxCallers;
     /**
@@ -59,6 +65,11 @@ public class QueueInfo {
 
     public QueueInfo holdAudioInterruptionPeriod(Long holdAudioInterruptionPeriod) {
         this.holdAudioInterruptionPeriod = holdAudioInterruptionPeriod;
+        return this;
+    }
+
+    public QueueInfo holdTimeExpirationAction(String holdTimeExpirationAction) {
+        this.holdTimeExpirationAction = holdTimeExpirationAction;
         return this;
     }
 

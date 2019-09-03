@@ -7,7 +7,7 @@ public class ForwardTarget {
      */
     public String phoneNumber;
     /**
-     * VM owner's extension id
+     * Voicemail owner extension identifier
      */
     public String voicemail;
 

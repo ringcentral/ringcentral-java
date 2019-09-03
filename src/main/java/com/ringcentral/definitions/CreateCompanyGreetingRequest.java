@@ -8,6 +8,10 @@ public class CreateCompanyGreetingRequest {
      */
     public String type;
     /**
+     * Internal identifier of a language. See Get Language List
+     */
+    public String languageId;
+    /**
      * Meida file to upload
      */
     public Attachment binary;
@@ -18,6 +22,11 @@ public class CreateCompanyGreetingRequest {
 
     public CreateCompanyGreetingRequest type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public CreateCompanyGreetingRequest languageId(String languageId) {
+        this.languageId = languageId;
         return this;
     }
 

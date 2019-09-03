@@ -10,7 +10,7 @@ public class ParsePhoneNumberResponse {
      * Information on a user home country
      * Required
      */
-    public GetCountryInfoNumberParser[] homeCountry;
+    public GetCountryInfoNumberParser homeCountry;
     /**
      * Parsed phone numbers data
      * Required
@@ -22,7 +22,7 @@ public class ParsePhoneNumberResponse {
         return this;
     }
 
-    public ParsePhoneNumberResponse homeCountry(GetCountryInfoNumberParser[] homeCountry) {
+    public ParsePhoneNumberResponse homeCountry(GetCountryInfoNumberParser homeCountry) {
         this.homeCountry = homeCountry;
         return this;
     }

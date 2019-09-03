@@ -34,6 +34,10 @@ public class TokenInfo {
      * Application instance identifier
      */
     public String endpoint_id;
+    /**
+     *
+     */
+    public String id_token;
 
     public TokenInfo access_token(String access_token) {
         this.access_token = access_token;
@@ -72,6 +76,11 @@ public class TokenInfo {
 
     public TokenInfo endpoint_id(String endpoint_id) {
         this.endpoint_id = endpoint_id;
+        return this;
+    }
+
+    public TokenInfo id_token(String id_token) {
+        this.id_token = id_token;
         return this;
     }
 

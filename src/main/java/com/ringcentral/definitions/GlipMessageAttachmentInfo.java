@@ -33,11 +33,11 @@ public class GlipMessageAttachmentInfo {
      */
     public String text;
     /**
-     * url used to display a single image at the bottom of a message
+     * Link to an image displayed at the bottom of a message
      */
     public String imageUri;
     /**
-     * url used to display a thumbnail to the right of a message (82x82)
+     * Link to an image preview displayed to the right of a message (82x82)
      */
     public String thumbnailUri;
     /**

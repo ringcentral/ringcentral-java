@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class CreateSubscriptionRequest {
     /**
-     * Collection of URIs to API resources. For APNS transport type only message event filter is available
+     * Collection of URIs to API resources
      * Required
      */
     public String[] eventFilters;

@@ -53,6 +53,42 @@ public class GetTokenRequest {
      * The unique identifier of a client application. If not specified, the previously specified or auto generated value is used by default
      */
     public String endpoint_id;
+    /**
+     *
+     */
+    public String pin;
+    /**
+     *
+     */
+    public String client_id;
+    /**
+     *
+     */
+    public String account_id;
+    /**
+     *
+     */
+    public String partner_account_id;
+    /**
+     *
+     */
+    public String client_assertion_type;
+    /**
+     *
+     */
+    public String client_assertion;
+    /**
+     *
+     */
+    public String assertion;
+    /**
+     *
+     */
+    public String brand_id;
+    /**
+     *
+     */
+    public String code_verifier;
 
     public GetTokenRequest username(String username) {
         this.username = username;
@@ -106,6 +142,51 @@ public class GetTokenRequest {
 
     public GetTokenRequest endpoint_id(String endpoint_id) {
         this.endpoint_id = endpoint_id;
+        return this;
+    }
+
+    public GetTokenRequest pin(String pin) {
+        this.pin = pin;
+        return this;
+    }
+
+    public GetTokenRequest client_id(String client_id) {
+        this.client_id = client_id;
+        return this;
+    }
+
+    public GetTokenRequest account_id(String account_id) {
+        this.account_id = account_id;
+        return this;
+    }
+
+    public GetTokenRequest partner_account_id(String partner_account_id) {
+        this.partner_account_id = partner_account_id;
+        return this;
+    }
+
+    public GetTokenRequest client_assertion_type(String client_assertion_type) {
+        this.client_assertion_type = client_assertion_type;
+        return this;
+    }
+
+    public GetTokenRequest client_assertion(String client_assertion) {
+        this.client_assertion = client_assertion;
+        return this;
+    }
+
+    public GetTokenRequest assertion(String assertion) {
+        this.assertion = assertion;
+        return this;
+    }
+
+    public GetTokenRequest brand_id(String brand_id) {
+        this.brand_id = brand_id;
+        return this;
+    }
+
+    public GetTokenRequest code_verifier(String code_verifier) {
+        this.code_verifier = code_verifier;
         return this;
     }
 

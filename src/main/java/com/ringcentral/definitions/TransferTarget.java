@@ -7,11 +7,11 @@ public class TransferTarget {
      */
     public String phoneNumber;
     /**
-     * VM owner's extension id
+     * Voicemail owner extension identifier
      */
     public String voicemail;
     /**
-     * Park orbit id
+     * Park orbit identifier
      */
     public String parkOrbit;
 

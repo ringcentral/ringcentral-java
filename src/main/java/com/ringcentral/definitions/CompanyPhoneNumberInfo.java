@@ -41,10 +41,18 @@ public class CompanyPhoneNumberInfo {
      */
     public String type;
     /**
-     * Usage type of a phone number
-     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber
+     * Usage type of a phone number. Usage type of a phone number. Numbers of 'NumberPool' type wont't be returned for phone number list requests
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool
      */
     public String usageType;
+    /**
+     * Temporary phone number, if any. Returned for phone numbers in `Pending` porting status only
+     */
+    public TemporaryNumberInfo temporaryNumber;
+    /**
+     * CCRN (Contact Center Routing Number) provider. If not specified then the default value 'InContact/North America' is used, its ID is '1'
+     */
+    public ContactCenterProvider contactCenterProvider;
 
     public CompanyPhoneNumberInfo id(String id) {
         this.id = id;
@@ -93,6 +101,16 @@ public class CompanyPhoneNumberInfo {
 
     public CompanyPhoneNumberInfo usageType(String usageType) {
         this.usageType = usageType;
+        return this;
+    }
+
+    public CompanyPhoneNumberInfo temporaryNumber(TemporaryNumberInfo temporaryNumber) {
+        this.temporaryNumber = temporaryNumber;
+        return this;
+    }
+
+    public CompanyPhoneNumberInfo contactCenterProvider(ContactCenterProvider contactCenterProvider) {
+        this.contactCenterProvider = contactCenterProvider;
         return this;
     }
 

@@ -11,6 +11,10 @@ public class CallLogCallerInfo {
      */
     public String extensionNumber;
     /**
+     * Internal identifier of an extension
+     */
+    public String extensionId;
+    /**
      * Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)
      */
     public String location;
@@ -30,6 +34,11 @@ public class CallLogCallerInfo {
 
     public CallLogCallerInfo extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public CallLogCallerInfo extensionId(String extensionId) {
+        this.extensionId = extensionId;
         return this;
     }
 

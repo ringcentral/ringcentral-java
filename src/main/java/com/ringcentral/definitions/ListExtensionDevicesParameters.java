@@ -9,7 +9,7 @@ public class ListExtensionDevicesParameters {
     public String linePooling;
     /**
      * Device feature or multiple features supported
-     * Enum: Intercom, Paging, BLA
+     * Enum: Intercom, Paging, BLA, HELD
      */
     public String feature;
 

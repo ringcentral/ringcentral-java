@@ -10,10 +10,19 @@ public class PeerInfo {
     /**
      *
      */
+    public String telephonySessionId;
+    /**
+     *
+     */
     public String partyId;
 
     public PeerInfo sessionId(String sessionId) {
         this.sessionId = sessionId;
+        return this;
+    }
+
+    public PeerInfo telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
         return this;
     }
 

@@ -25,7 +25,7 @@ public class ExtensionContactInfo {
     /**
      * Business address of extension user company
      */
-    public ContactAddressInfo businessAddress;
+    public ContactAddressInfoDevices businessAddress;
 
     public ExtensionContactInfo firstName(String firstName) {
         this.firstName = firstName;
@@ -52,7 +52,7 @@ public class ExtensionContactInfo {
         return this;
     }
 
-    public ExtensionContactInfo businessAddress(ContactAddressInfo businessAddress) {
+    public ExtensionContactInfo businessAddress(ContactAddressInfoDevices businessAddress) {
         this.businessAddress = businessAddress;
         return this;
     }

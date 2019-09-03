@@ -13,7 +13,7 @@ public class GlipWebhookInfo {
     /**
      * Internal identifiers of groups where a webhook has been created
      */
-    public String[] groupsId;
+    public String[] groupIds;
     /**
      * Webhook creation time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
      */
@@ -42,8 +42,8 @@ public class GlipWebhookInfo {
         return this;
     }
 
-    public GlipWebhookInfo groupsId(String[] groupsId) {
-        this.groupsId = groupsId;
+    public GlipWebhookInfo groupIds(String[] groupIds) {
+        this.groupIds = groupIds;
         return this;
     }
 

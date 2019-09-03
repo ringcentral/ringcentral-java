@@ -5,7 +5,7 @@ public class AccountDeviceUpdate {
     /**
      * Address for emergency cases. The same emergency address is assigned to all numbers of a single device
      */
-    public EmergencyAddressInfoRequest emergencyServiceAddress;
+    public EmergencyServiceAddressResourceRequest emergencyServiceAddress;
     /**
      * Information on extension that the device is assigned to
      */
@@ -19,7 +19,7 @@ public class AccountDeviceUpdate {
      */
     public Boolean useAsCommonPhone;
 
-    public AccountDeviceUpdate emergencyServiceAddress(EmergencyAddressInfoRequest emergencyServiceAddress) {
+    public AccountDeviceUpdate emergencyServiceAddress(EmergencyServiceAddressResourceRequest emergencyServiceAddress) {
         this.emergencyServiceAddress = emergencyServiceAddress;
         return this;
     }

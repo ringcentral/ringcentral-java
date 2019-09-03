@@ -151,7 +151,7 @@ const generate = (prefix = '/') => {
             bodyClass = 'String'
             bodyParam = 'body'
           } else {
-            bodyClass = R.last(body.schema['$ref'].split('/'))
+            bodyClass = R.last(body.schema.$ref.split('/'))
             bodyParam = changeCase.lowerCaseFirst(bodyClass)
             bodyClass = 'com.ringcentral.definitions.' + bodyClass
           }
@@ -160,9 +160,9 @@ const generate = (prefix = '/') => {
       if (formUrlEncoded || multipart) {
         bodyClass = `com.ringcentral.definitions.${changeCase.pascalCase(operation.detail.operationId)}Request`
         bodyParam = `${operation.detail.operationId}Request`
-        body = (operation.detail.parameters || []).filter(p => p.in === 'body' && p.schema && p.schema['$ref'])[0]
+        body = (operation.detail.parameters || []).filter(p => p.in === 'body' && p.schema && p.schema.$ref)[0]
         if (body) {
-          bodyClass = R.last(body.schema['$ref'].split('/'))
+          bodyClass = R.last(body.schema.$ref.split('/'))
           bodyParam = changeCase.lowerCaseFirst(bodyClass)
           bodyClass = 'com.ringcentral.definitions.' + bodyClass
         }
@@ -192,15 +192,15 @@ const generate = (prefix = '/') => {
 ` : ''}`
       if (formUrlEncoded) {
         code += `
-        val rb: okhttp3.ResponseBody = rc.${method.toLowerCase()}(this.path(${(!withParam && paramName) ? 'false' : ''})${bodyParam ? `, ${bodyParam}` : ''}${queryParams.length > 0 ? `, queryParams` : ', null'}, com.ringcentral.ContentType.FORM)
+        val rb: okhttp3.ResponseBody = rc.${method.toLowerCase()}(this.path(${(!withParam && paramName) ? 'false' : ''})${bodyParam ? `, ${bodyParam}` : ''}${queryParams.length > 0 ? ', queryParams' : ', null'}, com.ringcentral.ContentType.FORM)
         `
       } else if (multipart) {
         code += `
-        val rb: okhttp3.ResponseBody = rc.${method.toLowerCase()}(this.path(${(!withParam && paramName) ? 'false' : ''})${bodyParam ? `, ${bodyParam}` : ''}${queryParams.length > 0 ? `, queryParams` : ', null'}, com.ringcentral.ContentType.MULTIPART)
+        val rb: okhttp3.ResponseBody = rc.${method.toLowerCase()}(this.path(${(!withParam && paramName) ? 'false' : ''})${bodyParam ? `, ${bodyParam}` : ''}${queryParams.length > 0 ? ', queryParams' : ', null'}, com.ringcentral.ContentType.MULTIPART)
         `
       } else {
         code += `
-        val rb: okhttp3.ResponseBody = rc.${method.toLowerCase()}(this.path(${(!withParam && paramName) ? 'false' : ''})${bodyParam ? `, ${bodyParam}` : ''}${queryParams.length > 0 ? `, queryParams` : ''})
+        val rb: okhttp3.ResponseBody = rc.${method.toLowerCase()}(this.path(${(!withParam && paramName) ? 'false' : ''})${bodyParam ? `, ${bodyParam}` : ''}${queryParams.length > 0 ? ', queryParams' : ''})
         `
       }
       if (responseType === 'ByteArray') {
@@ -247,29 +247,12 @@ const generate = (prefix = '/') => {
 generate('/')
 
 const mmsFolderPath = path.join(outputDir, 'restapi', 'account', 'extension', 'mms')
-fs.mkdirSync(mmsFolderPath)
-fs.writeFileSync(path.join(mmsFolderPath, 'Index.kt'), `package com.ringcentral.paths.restapi.account.extension.mms
-
-class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
-    var rc: com.ringcentral.RestClient = parent.rc
-
-
-    fun path(): String {
-        return "\${parent.path()}/sms"
-    }
-
-    /**
+// fs.mkdirSync(mmsFolderPath)
+appendCodeToFile(path.join(mmsFolderPath, 'Index.kt'), `/**
      * Operation: Create MMS Message
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/mms
      */
     fun post(createMMSMessage: com.ringcentral.definitions.CreateMMSMessage): com.ringcentral.definitions.GetMessageInfoResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createMMSMessage, null, com.ringcentral.ContentType.MULTIPART)
-
         return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
-
-    }
-}`)
-
-appendCodeToFile(path.join(outputDir, 'restapi', 'account', 'extension', 'Index.kt'), `fun mms(): com.ringcentral.paths.restapi.account.extension.mms.Index {
-  return com.ringcentral.paths.restapi.account.extension.mms.Index(this)
-}`)
+    }`)

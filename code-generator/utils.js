@@ -27,8 +27,8 @@ export const getResponseType = responses => {
   if (responseSchema) {
     if (responseSchema.type === 'string' && responseSchema.format === 'binary') {
       responseType = 'ByteArray'
-    } else if (responseSchema['$ref']) {
-      responseType = 'com.ringcentral.definitions.' + R.last(responseSchema['$ref'].split('/'))
+    } else if (responseSchema.$ref) {
+      responseType = 'com.ringcentral.definitions.' + R.last(responseSchema.$ref.split('/'))
     }
   }
   return responseType

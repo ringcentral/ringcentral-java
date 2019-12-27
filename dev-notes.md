@@ -23,8 +23,6 @@ Test a specific test case:
 
 All the files inside `src/main/java/com/ringcentral/definitions/` and `src/main/java/com/ringcentral/paths/` are auto-generated.
 
-Please refer to [rc-codegen](https://github.com/tylerlong/rc-codegen) project.
-
 The generated code is formatted by IntelliJ IDEA.
 
 

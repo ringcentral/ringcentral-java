@@ -1,7 +1,8 @@
 import yaml from 'js-yaml'
 import fs from 'fs'
 import * as R from 'ramda'
-import changeCase from 'change-case'
+import { pascalCase, titleCase } from 'change-case'
+import { lowerCaseFirst } from 'lower-case-first'
 import path from 'path'
 
 import { normalizePath, deNormalizePath, getResponseType, appendCodeToFile } from './utils'
@@ -17,7 +18,7 @@ const paths = Object.keys(doc.paths)
 const normalizedPaths = paths.map(p => normalizePath(p))
 
 const getRoutes = (prefix, name) => {
-  return [...prefix.split('/').filter(t => t !== '' && !t.startsWith('{')), name].map(t => changeCase.pascalCase(t))
+  return [...prefix.split('/').filter(t => t !== '' && !t.startsWith('{')), name].map(t => pascalCase(t))
 }
 const getFolderPath = (prefix, name) => {
   return path.join(outputDir, ...getRoutes(prefix, name))
@@ -128,7 +129,7 @@ const generate = (prefix = '/') => {
     })
 
     operations.forEach(operation => {
-      const method = changeCase.pascalCase(operation.method)
+      const method = pascalCase(operation.method)
       const smartMethod = (operation.method === 'get' && !operation.endpoint.endsWith('}') &&
         R.any(o => o.method === 'get' && o.endpoint === operation.endpoint + `/{${paramName}}`)(operations)) ? 'List' : method
       const responses = operation.detail.responses
@@ -152,18 +153,18 @@ const generate = (prefix = '/') => {
             bodyParam = 'body'
           } else {
             bodyClass = R.last(body.schema.$ref.split('/'))
-            bodyParam = changeCase.lowerCaseFirst(bodyClass)
+            bodyParam = lowerCaseFirst(bodyClass)
             bodyClass = 'com.ringcentral.definitions.' + bodyClass
           }
         }
       }
       if (formUrlEncoded || multipart) {
-        bodyClass = `com.ringcentral.definitions.${changeCase.pascalCase(operation.detail.operationId)}Request`
+        bodyClass = `com.ringcentral.definitions.${pascalCase(operation.detail.operationId)}Request`
         bodyParam = `${operation.detail.operationId}Request`
         body = (operation.detail.parameters || []).filter(p => p.in === 'body' && p.schema && p.schema.$ref)[0]
         if (body) {
           bodyClass = R.last(body.schema.$ref.split('/'))
-          bodyParam = changeCase.lowerCaseFirst(bodyClass)
+          bodyParam = lowerCaseFirst(bodyClass)
           bodyClass = 'com.ringcentral.definitions.' + bodyClass
         }
       }
@@ -175,12 +176,12 @@ const generate = (prefix = '/') => {
         methodParams.push(`${bodyParam}: ${bodyClass}`)
       }
       if (queryParams.length > 0) {
-        methodParams.push(`queryParams: com.ringcentral.definitions.${changeCase.pascalCase(operation.detail.operationId)}Parameters? = null`)
+        methodParams.push(`queryParams: com.ringcentral.definitions.${pascalCase(operation.detail.operationId)}Parameters? = null`)
       }
       code += `
 
       /**
-       * Operation: ${operation.detail.summary || changeCase.titleCase(operation.detail.operationId)}
+       * Operation: ${operation.detail.summary || titleCase(operation.detail.operationId)}
        * Http ${method} ${operation.endpoint}
        */
       ${methodParams.join(', ').includes(' = ') ? '@JvmOverloads ' : ''}fun ${smartMethod.toLowerCase()}(${methodParams.join(', ')}) : ${responseType}?

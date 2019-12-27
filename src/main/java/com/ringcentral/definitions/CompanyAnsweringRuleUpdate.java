@@ -29,9 +29,15 @@ public class CompanyAnsweringRuleUpdate {
      */
     public String callHandlingAction;
     /**
-     * Extension to which the call is forwarded in 'Bypass' mode
+     * Type of an answering rule
+     * Default: Custom
+     * Enum: BusinessHours, AfterHours, Custom
      */
-    public CompanyAnsweringRuleCallersInfoRequest extension;
+    public String type;
+    /**
+     * Internal identifier of the extension the call is forwarded to. Supported for 'Bypass' mode only (that should be specified in `callHandlingAction` field)
+     */
+    public String extension;
     /**
      * Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
      */
@@ -67,7 +73,12 @@ public class CompanyAnsweringRuleUpdate {
         return this;
     }
 
-    public CompanyAnsweringRuleUpdate extension(CompanyAnsweringRuleCallersInfoRequest extension) {
+    public CompanyAnsweringRuleUpdate type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public CompanyAnsweringRuleUpdate extension(String extension) {
         this.extension = extension;
         return this;
     }

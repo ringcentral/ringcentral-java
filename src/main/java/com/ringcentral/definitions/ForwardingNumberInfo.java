@@ -25,7 +25,11 @@ public class ForwardingNumberInfo {
     /**
      * Number assigned to the call flip phone number, corresponds to the shortcut dial number
      */
-    public Long flipNumber;
+    public String flipNumber;
+    /**
+     * Forwarding device information
+     */
+    public CreateForwardingNumberDeviceInfo device;
     /**
      * Forwarding phone number type
      * Enum: Home, Mobile, Work, PhoneLine, Outage, Other
@@ -57,8 +61,13 @@ public class ForwardingNumberInfo {
         return this;
     }
 
-    public ForwardingNumberInfo flipNumber(Long flipNumber) {
+    public ForwardingNumberInfo flipNumber(String flipNumber) {
         this.flipNumber = flipNumber;
+        return this;
+    }
+
+    public ForwardingNumberInfo device(CreateForwardingNumberDeviceInfo device) {
+        this.device = device;
         return this;
     }
 

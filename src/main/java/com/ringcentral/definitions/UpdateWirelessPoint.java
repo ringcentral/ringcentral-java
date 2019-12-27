@@ -21,7 +21,7 @@ public class UpdateWirelessPoint {
     /**
      * Emergency address information. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
-    public LocationUpdatesEmergencyAddressInfo emergencyAddress;
+    public LocationUpdatesEmergencyAddressInfoRequest emergencyAddress;
     /**
      * Internal identifier of the emergency response location (address). Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
@@ -47,7 +47,7 @@ public class UpdateWirelessPoint {
         return this;
     }
 
-    public UpdateWirelessPoint emergencyAddress(LocationUpdatesEmergencyAddressInfo emergencyAddress) {
+    public UpdateWirelessPoint emergencyAddress(LocationUpdatesEmergencyAddressInfoRequest emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

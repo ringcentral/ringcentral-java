@@ -9,7 +9,7 @@ public class CallQueueMemberInfo {
     /**
      * Internal identifier of a call queue member
      */
-    public String id;
+    public Long id;
     /**
      * Extension number of a call queue member
      */
@@ -20,7 +20,7 @@ public class CallQueueMemberInfo {
         return this;
     }
 
-    public CallQueueMemberInfo id(String id) {
+    public CallQueueMemberInfo id(Long id) {
         this.id = id;
         return this;
     }

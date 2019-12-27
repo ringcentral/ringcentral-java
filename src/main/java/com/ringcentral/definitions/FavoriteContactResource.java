@@ -13,6 +13,10 @@ public class FavoriteContactResource {
     /**
      *
      */
+    public String accountId;
+    /**
+     *
+     */
     public String contactId;
 
     public FavoriteContactResource id(String id) {
@@ -22,6 +26,11 @@ public class FavoriteContactResource {
 
     public FavoriteContactResource extensionId(String extensionId) {
         this.extensionId = extensionId;
+        return this;
+    }
+
+    public FavoriteContactResource accountId(String accountId) {
+        this.accountId = accountId;
         return this;
     }
 

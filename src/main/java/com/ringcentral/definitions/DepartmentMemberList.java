@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class DepartmentMemberList {
     /**
+     * Link to the list of department members
+     */
+    public String uri;
+    /**
      * List of department members extensions
      */
     public ExtensionInfo[] records;
@@ -14,6 +18,11 @@ public class DepartmentMemberList {
      * Information on paging
      */
     public ProvisioningPagingInfo paging;
+
+    public DepartmentMemberList uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public DepartmentMemberList records(ExtensionInfo[] records) {
         this.records = records;

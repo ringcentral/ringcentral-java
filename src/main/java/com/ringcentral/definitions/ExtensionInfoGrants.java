@@ -15,8 +15,12 @@ public class ExtensionInfoGrants {
      */
     public String extensionNumber;
     /**
+     * Name of extension
+     */
+    public String name;
+    /**
      * Extension type
-     * Enum: User, Fax User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, Park Location
+     * Enum: User, Fax User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation
      */
     public String type;
 
@@ -32,6 +36,11 @@ public class ExtensionInfoGrants {
 
     public ExtensionInfoGrants extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public ExtensionInfoGrants name(String name) {
+        this.name = name;
         return this;
     }
 

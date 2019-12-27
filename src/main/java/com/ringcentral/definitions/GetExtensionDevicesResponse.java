@@ -3,10 +3,14 @@ package com.ringcentral.definitions;
 
 public class GetExtensionDevicesResponse {
     /**
+     * Link to the list of extension devices
+     */
+    public String uri;
+    /**
      * List of extension devices
      * Required
      */
-    public GetDeviceInfoResponse[] records;
+    public ExtensionDeviceResponse[] records;
     /**
      * Information on navigation
      * Required
@@ -18,7 +22,12 @@ public class GetExtensionDevicesResponse {
      */
     public DeviceProvisioningPagingInfo paging;
 
-    public GetExtensionDevicesResponse records(GetDeviceInfoResponse[] records) {
+    public GetExtensionDevicesResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public GetExtensionDevicesResponse records(ExtensionDeviceResponse[] records) {
         this.records = records;
         return this;
     }

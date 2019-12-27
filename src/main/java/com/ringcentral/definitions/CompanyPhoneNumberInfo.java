@@ -3,9 +3,13 @@ package com.ringcentral.definitions;
 
 public class CompanyPhoneNumberInfo {
     /**
+     * Link to a company phone number resource
+     */
+    public String uri;
+    /**
      * Internal identifier of a phone number
      */
-    public String id;
+    public Long id;
     /**
      * Brief information on a phone number country
      */
@@ -54,7 +58,12 @@ public class CompanyPhoneNumberInfo {
      */
     public ContactCenterProvider contactCenterProvider;
 
-    public CompanyPhoneNumberInfo id(String id) {
+    public CompanyPhoneNumberInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public CompanyPhoneNumberInfo id(Long id) {
         this.id = id;
         return this;
     }

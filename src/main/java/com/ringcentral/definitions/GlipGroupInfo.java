@@ -24,7 +24,7 @@ public class GlipGroupInfo {
      */
     public String description;
     /**
-     * Identifier(s) of group members
+     * “List of glip members”
      */
     public String[] members;
     /**

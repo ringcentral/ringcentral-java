@@ -10,7 +10,7 @@ public class IVRMenuPromptInfo {
     /**
      * For 'Audio' mode only. Prompt media reference
      */
-    public PromptLanguageInfo audio;
+    public AudioPromptInfo audio;
     /**
      * For 'TextToSpeech' mode only. Prompt text
      */
@@ -18,14 +18,14 @@ public class IVRMenuPromptInfo {
     /**
      * For 'TextToSpeech' mode only. Prompt language metadata
      */
-    public AudioPromptInfo language;
+    public PromptLanguageInfo language;
 
     public IVRMenuPromptInfo mode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    public IVRMenuPromptInfo audio(PromptLanguageInfo audio) {
+    public IVRMenuPromptInfo audio(AudioPromptInfo audio) {
         this.audio = audio;
         return this;
     }
@@ -35,7 +35,7 @@ public class IVRMenuPromptInfo {
         return this;
     }
 
-    public IVRMenuPromptInfo language(AudioPromptInfo language) {
+    public IVRMenuPromptInfo language(PromptLanguageInfo language) {
         this.language = language;
         return this;
     }

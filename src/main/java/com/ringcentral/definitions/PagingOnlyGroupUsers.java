@@ -3,7 +3,11 @@ package com.ringcentral.definitions;
 
 public class PagingOnlyGroupUsers {
     /**
-     * List of users allowed to page this group
+     * Link to the list of users allowed to page the Paging Only group
+     */
+    public String uri;
+    /**
+     * List of users allowed to page the Paging Only group
      */
     public PagingGroupExtensionInfo[] records;
     /**
@@ -14,6 +18,11 @@ public class PagingOnlyGroupUsers {
      * Information on paging
      */
     public ProvisioningPagingInfo paging;
+
+    public PagingOnlyGroupUsers uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public PagingOnlyGroupUsers records(PagingGroupExtensionInfo[] records) {
         this.records = records;

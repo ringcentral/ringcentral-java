@@ -34,11 +34,11 @@ public class ReadCompanyCallLogParameters {
      */
     public String recordingType;
     /**
-     * The start datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours
+     * The start datetime for resulting records in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601]  format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours
      */
     public String dateFrom;
     /**
-     * The end datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time
+     * The end datetime for resulting records in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601]  format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time
      */
     public String dateTo;
     /**
@@ -52,7 +52,7 @@ public class ReadCompanyCallLogParameters {
      */
     public Long perPage;
     /**
-     * Internal identifier of a session
+     * Internal identifier of a call session
      */
     public String sessionId;
 

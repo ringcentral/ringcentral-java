@@ -3,9 +3,29 @@ package com.ringcentral.definitions;
 
 public class ShippingAddressInfo {
     /**
-     * Name of a receiver
+     * Name of a primary contact person (receiver)
      */
     public String customerName;
+    /**
+     * Name of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     */
+    public String additionalCustomerName;
+    /**
+     * Email of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia.
+     */
+    public String customerEmail;
+    /**
+     * Email of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     */
+    public String additionalCustomerEmail;
+    /**
+     * Phone number of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia
+     */
+    public String customerPhone;
+    /**
+     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK & Australia.
+     */
+    public String additionalCustomerPhone;
     /**
      * Street address, line 1 - street address, P.O. box, company name, c/o
      */
@@ -54,9 +74,38 @@ public class ShippingAddressInfo {
      * Zip code
      */
     public String zip;
+    /**
+     * National taxpayer identification number. Should be specified for Brazil (CNPJ/CPF number) and Argentina (CUIT number).
+     */
+    public String taxId;
 
     public ShippingAddressInfo customerName(String customerName) {
         this.customerName = customerName;
+        return this;
+    }
+
+    public ShippingAddressInfo additionalCustomerName(String additionalCustomerName) {
+        this.additionalCustomerName = additionalCustomerName;
+        return this;
+    }
+
+    public ShippingAddressInfo customerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
+        return this;
+    }
+
+    public ShippingAddressInfo additionalCustomerEmail(String additionalCustomerEmail) {
+        this.additionalCustomerEmail = additionalCustomerEmail;
+        return this;
+    }
+
+    public ShippingAddressInfo customerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+        return this;
+    }
+
+    public ShippingAddressInfo additionalCustomerPhone(String additionalCustomerPhone) {
+        this.additionalCustomerPhone = additionalCustomerPhone;
         return this;
     }
 
@@ -117,6 +166,11 @@ public class ShippingAddressInfo {
 
     public ShippingAddressInfo zip(String zip) {
         this.zip = zip;
+        return this;
+    }
+
+    public ShippingAddressInfo taxId(String taxId) {
+        this.taxId = taxId;
         return this;
     }
 

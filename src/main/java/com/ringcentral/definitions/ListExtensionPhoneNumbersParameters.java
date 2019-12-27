@@ -3,6 +3,11 @@ package com.ringcentral.definitions;
 
 public class ListExtensionPhoneNumbersParameters {
     /**
+     * Status of a phone number. Multiple values are supported
+     * Enum: Normal, Pending, PortedIn, Temporary
+     */
+    public String status;
+    /**
      * Usage type of a phone number
      */
     public String[] usageType;
@@ -14,6 +19,11 @@ public class ListExtensionPhoneNumbersParameters {
      * Indicates the page size (number of items). If not specified, the value is '100' by default
      */
     public Long perPage;
+
+    public ListExtensionPhoneNumbersParameters status(String status) {
+        this.status = status;
+        return this;
+    }
 
     public ListExtensionPhoneNumbersParameters usageType(String[] usageType) {
         this.usageType = usageType;

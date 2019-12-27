@@ -15,10 +15,9 @@ public class CallMonitoringGroupMemberInfo {
      */
     public String extensionNumber;
     /**
-     * Call monitoring permission; mltiple values allowed: * "Monitoring" - User can monitor a group * "Monitored" - User can be monitored
-     * Enum: Monitoring, Monitored
+     *
      */
-    public String permissions;
+    public String[] permissions;
 
     public CallMonitoringGroupMemberInfo uri(String uri) {
         this.uri = uri;
@@ -35,7 +34,7 @@ public class CallMonitoringGroupMemberInfo {
         return this;
     }
 
-    public CallMonitoringGroupMemberInfo permissions(String permissions) {
+    public CallMonitoringGroupMemberInfo permissions(String[] permissions) {
         this.permissions = permissions;
         return this;
     }

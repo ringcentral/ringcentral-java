@@ -45,6 +45,19 @@ public class SubscriptionInfo {
      *
      */
     public NotificationBlacklistedData blacklistedData;
+    /**
+     * Notifications transportation provider name
+     * Enum: PubNub, WebHook, RC/APNS, RC/GCM
+     */
+    public String transportType;
+    /**
+     * Name of a certificate. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     */
+    public String certificateName;
+    /**
+     * Identifier of a registration. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     */
+    public String registrationId;
 
     public SubscriptionInfo id(String id) {
         this.id = id;
@@ -93,6 +106,21 @@ public class SubscriptionInfo {
 
     public SubscriptionInfo blacklistedData(NotificationBlacklistedData blacklistedData) {
         this.blacklistedData = blacklistedData;
+        return this;
+    }
+
+    public SubscriptionInfo transportType(String transportType) {
+        this.transportType = transportType;
+        return this;
+    }
+
+    public SubscriptionInfo certificateName(String certificateName) {
+        this.certificateName = certificateName;
+        return this;
+    }
+
+    public SubscriptionInfo registrationId(String registrationId) {
+        this.registrationId = registrationId;
         return this;
     }
 

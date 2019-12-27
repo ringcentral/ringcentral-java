@@ -17,6 +17,22 @@ public class SIPFlagsResponse {
      * Enum: True, False
      */
     public String outboundCallsEnabled;
+    /**
+     *
+     */
+    public Boolean dscpEnabled;
+    /**
+     *
+     */
+    public Long dscpSignaling;
+    /**
+     *
+     */
+    public Long dscpVoice;
+    /**
+     *
+     */
+    public Long dscpVideo;
 
     public SIPFlagsResponse voipFeatureEnabled(String voipFeatureEnabled) {
         this.voipFeatureEnabled = voipFeatureEnabled;
@@ -30,6 +46,26 @@ public class SIPFlagsResponse {
 
     public SIPFlagsResponse outboundCallsEnabled(String outboundCallsEnabled) {
         this.outboundCallsEnabled = outboundCallsEnabled;
+        return this;
+    }
+
+    public SIPFlagsResponse dscpEnabled(Boolean dscpEnabled) {
+        this.dscpEnabled = dscpEnabled;
+        return this;
+    }
+
+    public SIPFlagsResponse dscpSignaling(Long dscpSignaling) {
+        this.dscpSignaling = dscpSignaling;
+        return this;
+    }
+
+    public SIPFlagsResponse dscpVoice(Long dscpVoice) {
+        this.dscpVoice = dscpVoice;
+        return this;
+    }
+
+    public SIPFlagsResponse dscpVideo(Long dscpVideo) {
+        this.dscpVideo = dscpVideo;
         return this;
     }
 

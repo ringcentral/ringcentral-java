@@ -17,7 +17,7 @@ public class DeviceResource {
     /**
      * Device type
      * Default: HardPhone
-     * Enum: HardPhone, SoftPhone, OtherPhone, Paging, WebPhone
+     * Enum: BLA, HardPhone, SoftPhone, OtherPhone, Paging, WebPhone
      */
     public String type;
     /**
@@ -54,7 +54,7 @@ public class DeviceResource {
      */
     public EmergencyServiceAddressResource emergencyServiceAddress;
     /**
-     * Shipping information, according to which devices (in case of HardPhone ) or e911 stickers (in case of SoftPhone and OtherPhone ) will be delivered to the customer
+     * Shipping information, according to which devices (in case of HardPhone) or e911 stickers (in case of SoftPhone and OtherPhone) will be delivered to the customer
      */
     public ShippingResource shipping;
     /**
@@ -70,6 +70,14 @@ public class DeviceResource {
      * Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone.
      */
     public Boolean useAsCommonPhone;
+    /**
+     * Network location status. 'True' if device is located in the configured corporate network, in this case `bssid` or public/private IP addresses (`hostIp`) must be found in the corporate maps. If `bssid` is not found in the Wireless Access Points map, then the search is performed by public/private IP addresses in the IP Networks map. 'False' if network parameters are not found in corporate maps (`bssid` and public/private IP addresses for wi-fi or for Ethernet connection)
+     */
+    public Boolean inCompanyNet;
+    /**
+     * Datetime of receiving last location report in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z
+     */
+    public String lastLocationReportTime;
 
     public DeviceResource id(String id) {
         this.id = id;
@@ -148,6 +156,16 @@ public class DeviceResource {
 
     public DeviceResource useAsCommonPhone(Boolean useAsCommonPhone) {
         this.useAsCommonPhone = useAsCommonPhone;
+        return this;
+    }
+
+    public DeviceResource inCompanyNet(Boolean inCompanyNet) {
+        this.inCompanyNet = inCompanyNet;
+        return this;
+    }
+
+    public DeviceResource lastLocationReportTime(String lastLocationReportTime) {
+        this.lastLocationReportTime = lastLocationReportTime;
         return this;
     }
 

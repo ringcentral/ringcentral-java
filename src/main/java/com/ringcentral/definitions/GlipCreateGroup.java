@@ -21,9 +21,9 @@ public class GlipCreateGroup {
      */
     public String description;
     /**
-     * Identifier(s) of group members. For 'PrivateChat' group type 2 members only are supported
+     * “List of glip members. For 'PrivateChat' group type 2 members only are supported”
      */
-    public String[] members;
+    public GlipMemberInfo[] members;
 
     public GlipCreateGroup type(String type) {
         this.type = type;
@@ -45,7 +45,7 @@ public class GlipCreateGroup {
         return this;
     }
 
-    public GlipCreateGroup members(String[] members) {
+    public GlipCreateGroup members(GlipMemberInfo[] members) {
         this.members = members;
         return this;
     }

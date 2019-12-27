@@ -5,7 +5,7 @@ public class GetRingOutStatusResponse {
     /**
      * Internal identifier of a RingOut call
      */
-    public String id;
+    public Long id;
     /**
      *
      */
@@ -15,7 +15,7 @@ public class GetRingOutStatusResponse {
      */
     public RingOutStatusInfo status;
 
-    public GetRingOutStatusResponse id(String id) {
+    public GetRingOutStatusResponse id(Long id) {
         this.id = id;
         return this;
     }

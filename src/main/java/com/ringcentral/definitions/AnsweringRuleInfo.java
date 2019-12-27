@@ -37,7 +37,7 @@ public class AnsweringRuleInfo {
     public CallersInfo[] callers;
     /**
      * Specifies how incoming calls are forwarded
-     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly
+     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly, SharedLines
      */
     public String callHandlingAction;
     /**

@@ -31,29 +31,13 @@ public class EmergencyServiceAddressResourceRequest {
      */
     public String stateId;
     /**
-     * ISO code of a state
-     */
-    public String stateIsoCode;
-    /**
-     * Full name of a state
-     */
-    public String stateName;
-    /**
-     * Internal identifier of a country
-     */
-    public String countryId;
-    /**
-     * ISO code of a country
-     */
-    public String countryIsoCode;
-    /**
      * Country name
      */
     public String country;
     /**
-     * Full name of a country
+     * Internal identifier of a country
      */
-    public String countryName;
+    public String countryId;
 
     public EmergencyServiceAddressResourceRequest street(String street) {
         this.street = street;
@@ -90,33 +74,13 @@ public class EmergencyServiceAddressResourceRequest {
         return this;
     }
 
-    public EmergencyServiceAddressResourceRequest stateIsoCode(String stateIsoCode) {
-        this.stateIsoCode = stateIsoCode;
-        return this;
-    }
-
-    public EmergencyServiceAddressResourceRequest stateName(String stateName) {
-        this.stateName = stateName;
-        return this;
-    }
-
-    public EmergencyServiceAddressResourceRequest countryId(String countryId) {
-        this.countryId = countryId;
-        return this;
-    }
-
-    public EmergencyServiceAddressResourceRequest countryIsoCode(String countryIsoCode) {
-        this.countryIsoCode = countryIsoCode;
-        return this;
-    }
-
     public EmergencyServiceAddressResourceRequest country(String country) {
         this.country = country;
         return this;
     }
 
-    public EmergencyServiceAddressResourceRequest countryName(String countryName) {
-        this.countryName = countryName;
+    public EmergencyServiceAddressResourceRequest countryId(String countryId) {
+        this.countryId = countryId;
         return this;
     }
 

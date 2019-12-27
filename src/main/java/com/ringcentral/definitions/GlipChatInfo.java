@@ -42,7 +42,7 @@ public class GlipChatInfo {
     /**
      *
      */
-    public GlipChatMemberInfo[] members;
+    public GlipMemberInfo[] members;
 
     public GlipChatInfo id(String id) {
         this.id = id;
@@ -84,7 +84,7 @@ public class GlipChatInfo {
         return this;
     }
 
-    public GlipChatInfo members(GlipChatMemberInfo[] members) {
+    public GlipChatInfo members(GlipMemberInfo[] members) {
         this.members = members;
         return this;
     }

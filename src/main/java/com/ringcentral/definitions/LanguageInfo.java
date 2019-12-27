@@ -23,6 +23,10 @@ public class LanguageInfo {
      */
     public String localeCode;
     /**
+     * Country code according to the ISO standard, see [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)
+     */
+    public String isoCode;
+    /**
      * Official name of a language
      */
     public String name;
@@ -53,6 +57,11 @@ public class LanguageInfo {
 
     public LanguageInfo localeCode(String localeCode) {
         this.localeCode = localeCode;
+        return this;
+    }
+
+    public LanguageInfo isoCode(String isoCode) {
+        this.isoCode = isoCode;
         return this;
     }
 

@@ -18,6 +18,10 @@ public class TimezoneInfo {
      * Meaningful description of the timezone
      */
     public String description;
+    /**
+     *
+     */
+    public String bias;
 
     public TimezoneInfo id(String id) {
         this.id = id;
@@ -36,6 +40,11 @@ public class TimezoneInfo {
 
     public TimezoneInfo description(String description) {
         this.description = description;
+        return this;
+    }
+
+    public TimezoneInfo bias(String bias) {
+        this.bias = bias;
         return this;
     }
 

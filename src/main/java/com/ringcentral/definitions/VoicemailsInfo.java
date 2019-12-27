@@ -23,6 +23,10 @@ public class VoicemailsInfo {
      */
     public Boolean includeAttachment;
     /**
+     * Specifies whether to add voicemail transcription or not
+     */
+    public Boolean includeTranscription;
+    /**
      * Indicates whether email should be automatically marked as read
      */
     public Boolean markAsRead;
@@ -49,6 +53,11 @@ public class VoicemailsInfo {
 
     public VoicemailsInfo includeAttachment(Boolean includeAttachment) {
         this.includeAttachment = includeAttachment;
+        return this;
+    }
+
+    public VoicemailsInfo includeTranscription(Boolean includeTranscription) {
+        this.includeTranscription = includeTranscription;
         return this;
     }
 

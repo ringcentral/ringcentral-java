@@ -3,22 +3,28 @@ package com.ringcentral.definitions;
 
 public class AccountCallLogResponse {
     /**
-     * List of call log records
-     * Required
+     * Link to the list of company call log records
      */
-    public CallLogRecord[] records;
+    public String uri;
+    /**
+     * List of call log records
+     */
+    public CompanyCallLogRecord[] records;
     /**
      * Information on navigation
-     * Required
      */
     public CallLogNavigationInfo navigation;
     /**
      * Information on paging
-     * Required
      */
     public CallLogPagingInfo paging;
 
-    public AccountCallLogResponse records(CallLogRecord[] records) {
+    public AccountCallLogResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public AccountCallLogResponse records(CompanyCallLogRecord[] records) {
         this.records = records;
         return this;
     }

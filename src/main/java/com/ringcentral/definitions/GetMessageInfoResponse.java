@@ -5,7 +5,7 @@ public class GetMessageInfoResponse {
     /**
      * Internal identifier of a message
      */
-    public String id;
+    public Long id;
     /**
      * Canonical URI of a message
      */
@@ -52,13 +52,13 @@ public class GetMessageInfoResponse {
     /**
      * Sender information
      */
-    public MessageStoreCallerInfoResponse from;
+    public MessageStoreCallerInfoResponseFrom from;
     /**
      * The datetime when the message was modified on server in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
      */
     public String lastModifiedTime;
     /**
-     * Message status. Different message types may have different allowed status values.For outbound faxes the aggregated message status is returned: If status for at least one recipient is 'Queued', then 'Queued' value is returned If status for at least one recipient is 'SendingFailed', then 'SendingFailed' value is returned In other cases Sent status is returned
+     * Message status. Different message types may have different allowed status values. For outbound faxes the aggregated message status is returned: If status for at least one recipient is 'Queued', then 'Queued' value is returned If status for at least one recipient is 'SendingFailed', then 'SendingFailed' value is returned In other cases Sent status is returned
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
@@ -91,7 +91,7 @@ public class GetMessageInfoResponse {
     /**
      * Recipient information
      */
-    public MessageStoreCallerInfoResponse[] to;
+    public MessageStoreCallerInfoResponseTo[] to;
     /**
      * Message type
      * Enum: Fax, SMS, VoiceMail, Pager, Text
@@ -99,11 +99,19 @@ public class GetMessageInfoResponse {
     public String type;
     /**
      * Voicemail only. Status of voicemail to text transcription. If VoicemailToText feature is not activated for account, the 'NotAvailable' value is returned
-     * Enum: NotAvailable, InProgress, TimedOut, Completed, CompletedPartially, Failed
+     * Enum: NotAvailable, InProgress, TimedOut, Completed, CompletedPartially, Failed, Unknown
      */
     public String vmTranscriptionStatus;
+    /**
+     * Cover page identifier. For the list of available cover page identifiers please call the Fax Cover Pages method
+     */
+    public Long coverIndex;
+    /**
+     * Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols
+     */
+    public String coverPageText;
 
-    public GetMessageInfoResponse id(String id) {
+    public GetMessageInfoResponse id(Long id) {
         this.id = id;
         return this;
     }
@@ -158,7 +166,7 @@ public class GetMessageInfoResponse {
         return this;
     }
 
-    public GetMessageInfoResponse from(MessageStoreCallerInfoResponse from) {
+    public GetMessageInfoResponse from(MessageStoreCallerInfoResponseFrom from) {
         this.from = from;
         return this;
     }
@@ -203,7 +211,7 @@ public class GetMessageInfoResponse {
         return this;
     }
 
-    public GetMessageInfoResponse to(MessageStoreCallerInfoResponse[] to) {
+    public GetMessageInfoResponse to(MessageStoreCallerInfoResponseTo[] to) {
         this.to = to;
         return this;
     }
@@ -215,6 +223,16 @@ public class GetMessageInfoResponse {
 
     public GetMessageInfoResponse vmTranscriptionStatus(String vmTranscriptionStatus) {
         this.vmTranscriptionStatus = vmTranscriptionStatus;
+        return this;
+    }
+
+    public GetMessageInfoResponse coverIndex(Long coverIndex) {
+        this.coverIndex = coverIndex;
+        return this;
+    }
+
+    public GetMessageInfoResponse coverPageText(String coverPageText) {
+        this.coverPageText = coverPageText;
         return this;
     }
 

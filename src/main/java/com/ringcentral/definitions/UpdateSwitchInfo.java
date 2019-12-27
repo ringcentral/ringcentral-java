@@ -21,7 +21,7 @@ public class UpdateSwitchInfo {
     /**
      * Emergency address assigned to the switch. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
-    public LocationUpdatesEmergencyAddressInfo emergencyAddress;
+    public LocationUpdatesEmergencyAddressInfoRequest emergencyAddress;
     /**
      * Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
@@ -47,7 +47,7 @@ public class UpdateSwitchInfo {
         return this;
     }
 
-    public UpdateSwitchInfo emergencyAddress(LocationUpdatesEmergencyAddressInfo emergencyAddress) {
+    public UpdateSwitchInfo emergencyAddress(LocationUpdatesEmergencyAddressInfoRequest emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

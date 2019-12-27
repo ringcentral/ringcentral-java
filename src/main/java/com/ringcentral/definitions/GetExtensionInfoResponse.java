@@ -25,7 +25,7 @@ public class GetExtensionInfoResponse {
      */
     public String extensionNumber;
     /**
-     * Extension user name
+     * Extension name. For user extension types the value is a combination of the specified first name and last name
      */
     public String name;
     /**
@@ -64,9 +64,9 @@ public class GetExtensionInfoResponse {
      */
     public String setupWizardState;
     /**
-     * Extension current state. If the status is 'Unassigned'. Returned for all extensions
+     * Extension current state. If 'Unassigned' is specified, then extensions without ‘extensionNumber’ are returned. If not specified, then all extensions are returned
      * Required
-     * Enum: Enabled, Disabled, NotActivated, Unassigned
+     * Enum: Enabled, Disabled, NotActivated, Unassigned, Frozen
      */
     public String status;
     /**
@@ -76,17 +76,21 @@ public class GetExtensionInfoResponse {
     /**
      * Extension type
      * Required
-     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnlyGroup, IvrMenu, ApplicationExtension, ParkLocation
+     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnlyGroup, IvrMenu, ApplicationExtension, ParkLocation, Bot, Limited, Site
      */
     public String type;
     /**
      * For Department extension type only. Call queue settings
      */
-    public CallQueueExtensionInfo callQueueExtensionInfo;
+    public CallQueueExtensionInfo callQueueInfo;
     /**
      * Hides extension from showing in company directory. Supported for extensions of User type only
      */
     public Boolean hidden;
+    /**
+     * Site data. If multi-site feature is turned on for the account, then internal identifier of a site must be specified. To assign the wireless point to the main site (company) set site ID to `main-site`
+     */
+    public AutomaticLocationUpdatesSiteInfo site;
 
     public GetExtensionInfoResponse id(Long id) {
         this.id = id;
@@ -173,13 +177,18 @@ public class GetExtensionInfoResponse {
         return this;
     }
 
-    public GetExtensionInfoResponse callQueueExtensionInfo(CallQueueExtensionInfo callQueueExtensionInfo) {
-        this.callQueueExtensionInfo = callQueueExtensionInfo;
+    public GetExtensionInfoResponse callQueueInfo(CallQueueExtensionInfo callQueueInfo) {
+        this.callQueueInfo = callQueueInfo;
         return this;
     }
 
     public GetExtensionInfoResponse hidden(Boolean hidden) {
         this.hidden = hidden;
+        return this;
+    }
+
+    public GetExtensionInfoResponse site(AutomaticLocationUpdatesSiteInfo site) {
+        this.site = site;
         return this;
     }
 

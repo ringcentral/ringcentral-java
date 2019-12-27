@@ -15,6 +15,10 @@ public class ModifyAccountBusinessAddressRequest {
      * Required
      */
     public BusinessAddressInfo businessAddress;
+    /**
+     * Custom site name
+     */
+    public String mainSiteName;
 
     public ModifyAccountBusinessAddressRequest company(String company) {
         this.company = company;
@@ -28,6 +32,11 @@ public class ModifyAccountBusinessAddressRequest {
 
     public ModifyAccountBusinessAddressRequest businessAddress(BusinessAddressInfo businessAddress) {
         this.businessAddress = businessAddress;
+        return this;
+    }
+
+    public ModifyAccountBusinessAddressRequest mainSiteName(String mainSiteName) {
+        this.mainSiteName = mainSiteName;
         return this;
     }
 

@@ -13,7 +13,7 @@ public class CallerIdDeviceInfo {
     /**
      * Name of a device
      */
-    public String phoneNumber;
+    public String name;
 
     public CallerIdDeviceInfo id(String id) {
         this.id = id;
@@ -25,8 +25,8 @@ public class CallerIdDeviceInfo {
         return this;
     }
 
-    public CallerIdDeviceInfo phoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public CallerIdDeviceInfo name(String name) {
+        this.name = name;
         return this;
     }
 

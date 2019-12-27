@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class GetExtensionForwardingNumberListResponse {
     /**
+     * Link to the forwarding number list resource
+     */
+    public String uri;
+    /**
      * List of forwarding phone numbers
      */
     public ForwardingNumberInfo[] records;
@@ -14,6 +18,11 @@ public class GetExtensionForwardingNumberListResponse {
      * Information on paging
      */
     public CallHandlingPagingInfo paging;
+
+    public GetExtensionForwardingNumberListResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetExtensionForwardingNumberListResponse records(ForwardingNumberInfo[] records) {
         this.records = records;

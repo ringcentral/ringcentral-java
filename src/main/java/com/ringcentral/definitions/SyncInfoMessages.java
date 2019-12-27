@@ -15,6 +15,10 @@ public class SyncInfoMessages {
      * Last synchronization datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
      */
     public String syncTime;
+    /**
+     *
+     */
+    public Boolean olderRecordsExist;
 
     public SyncInfoMessages syncType(String syncType) {
         this.syncType = syncType;
@@ -28,6 +32,11 @@ public class SyncInfoMessages {
 
     public SyncInfoMessages syncTime(String syncTime) {
         this.syncTime = syncTime;
+        return this;
+    }
+
+    public SyncInfoMessages olderRecordsExist(Boolean olderRecordsExist) {
+        this.olderRecordsExist = olderRecordsExist;
         return this;
     }
 

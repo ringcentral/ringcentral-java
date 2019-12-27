@@ -19,6 +19,10 @@ public class LocationUpdatesEmergencyAddressInfo {
      */
     public String countryName;
     /**
+     * Customer name
+     */
+    public String customerName;
+    /**
      * State/Province name. Mandatory for the USA, the UK and Canada
      */
     public String state;
@@ -68,6 +72,11 @@ public class LocationUpdatesEmergencyAddressInfo {
 
     public LocationUpdatesEmergencyAddressInfo countryName(String countryName) {
         this.countryName = countryName;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfo customerName(String customerName) {
+        this.customerName = customerName;
         return this;
     }
 

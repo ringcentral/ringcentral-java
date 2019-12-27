@@ -19,6 +19,10 @@ public class ModelInfo {
      * Device feature or multiple features supported
      */
     public String[] features;
+    /**
+     * Max supported count of phone lines
+     */
+    public Long lineCount;
 
     public ModelInfo id(String id) {
         this.id = id;
@@ -37,6 +41,11 @@ public class ModelInfo {
 
     public ModelInfo features(String[] features) {
         this.features = features;
+        return this;
+    }
+
+    public ModelInfo lineCount(Long lineCount) {
+        this.lineCount = lineCount;
         return this;
     }
 

@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class GetExtensionGrantListResponse {
     /**
+     * Link to the list of extension grants
+     */
+    public String uri;
+    /**
      * List of extension grants with details
      * Required
      */
@@ -17,6 +21,11 @@ public class GetExtensionGrantListResponse {
      * Required
      */
     public ProvisioningPagingInfo paging;
+
+    public GetExtensionGrantListResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetExtensionGrantListResponse records(GrantInfo[] records) {
         this.records = records;

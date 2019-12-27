@@ -20,9 +20,9 @@ public class GlipConversationInfo {
      */
     public String lastModifiedTime;
     /**
-     *
+     * List of glip members
      */
-    public GlipChatMemberInfo[] members;
+    public CreateGlipMember[] members;
 
     public GlipConversationInfo id(String id) {
         this.id = id;
@@ -44,7 +44,7 @@ public class GlipConversationInfo {
         return this;
     }
 
-    public GlipConversationInfo members(GlipChatMemberInfo[] members) {
+    public GlipConversationInfo members(CreateGlipMember[] members) {
         this.members = members;
         return this;
     }

@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class GetExtensionPhoneNumbersResponse {
     /**
+     * Link to the user's phone number list resource
+     */
+    public String uri;
+    /**
      * List of phone numbers
      * Required
      */
@@ -17,6 +21,11 @@ public class GetExtensionPhoneNumbersResponse {
      * Required
      */
     public ProvisioningPagingInfo paging;
+
+    public GetExtensionPhoneNumbersResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetExtensionPhoneNumbersResponse records(UserPhoneNumberInfo[] records) {
         this.records = records;

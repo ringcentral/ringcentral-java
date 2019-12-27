@@ -16,8 +16,8 @@ public class CustomCompanyGreetingInfo {
      */
     public String type;
     /**
-     * Content media type in WAV/MP3 format
-     * Enum: WAV, MP3
+     * Content media type
+     * Enum: audio/mpeg, audio/wav
      */
     public String contentType;
     /**

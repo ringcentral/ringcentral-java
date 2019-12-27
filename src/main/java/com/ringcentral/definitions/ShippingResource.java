@@ -5,7 +5,7 @@ public class ShippingResource {
     /**
      *
      */
-    public EmergencyServiceAddressResource address;
+    public ShippingAddressInfo address;
     /**
      *
      */
@@ -23,7 +23,7 @@ public class ShippingResource {
      */
     public String trackingNumber;
 
-    public ShippingResource address(EmergencyServiceAddressResource address) {
+    public ShippingResource address(ShippingAddressInfo address) {
         this.address = address;
         return this;
     }

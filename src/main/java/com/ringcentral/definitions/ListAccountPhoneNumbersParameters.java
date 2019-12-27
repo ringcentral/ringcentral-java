@@ -16,6 +16,11 @@ public class ListAccountPhoneNumbersParameters {
      * Usage type of a phone number
      */
     public String[] usageType;
+    /**
+     * Status of a phone number. Multiple values are supported
+     * Enum: Normal, Pending, PortedIn, Temporary
+     */
+    public String status;
 
     public ListAccountPhoneNumbersParameters page(Long page) {
         this.page = page;
@@ -29,6 +34,11 @@ public class ListAccountPhoneNumbersParameters {
 
     public ListAccountPhoneNumbersParameters usageType(String[] usageType) {
         this.usageType = usageType;
+        return this;
+    }
+
+    public ListAccountPhoneNumbersParameters status(String status) {
+        this.status = status;
         return this;
     }
 

@@ -12,12 +12,12 @@ public class CustomUserGreetingInfo {
     public String id;
     /**
      * Type of a custom user greeting
-     * Enum: Introductory, Announcement, ConnectingAudio, ConnectingMessage, Voicemail, Unavailable, HoldMusic
+     * Enum: Introductory, Announcement, InterruptPrompt, ConnectingAudio, ConnectingMessage, Voicemail, Unavailable, HoldMusic, PronouncedName
      */
     public String type;
     /**
-     * Content media type in WAV/MP3 format
-     * Enum: WAV, MP3
+     * Content media type
+     * Enum: audio/mpeg, audio/wav
      */
     public String contentType;
     /**

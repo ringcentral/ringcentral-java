@@ -20,6 +20,14 @@ public class SuperviseCallSession {
      */
     public String id;
     /**
+     * Internal identifier of an account that monitors a call
+     */
+    public String accountId;
+    /**
+     * Internal identifier of an extension that monitors a call
+     */
+    public String extensionId;
+    /**
      * Specifies if a call participant is muted or not. **Note:** If a call is also controlled via Hard phone or RingCentral App (not only through the API by calling call control methods) then it cannot be fully muted/unmuted via API only, in this case the action should be duplicated via Hard phone/RC App interfaces
      */
     public Boolean muted;
@@ -53,6 +61,16 @@ public class SuperviseCallSession {
 
     public SuperviseCallSession id(String id) {
         this.id = id;
+        return this;
+    }
+
+    public SuperviseCallSession accountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    public SuperviseCallSession extensionId(String extensionId) {
+        this.extensionId = extensionId;
         return this;
     }
 

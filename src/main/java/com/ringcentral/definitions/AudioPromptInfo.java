@@ -3,11 +3,11 @@ package com.ringcentral.definitions;
 
 public class AudioPromptInfo {
     /**
-     * Link to an prompt audio file
+     * Link to a prompt audio file
      */
     public String uri;
     /**
-     * Internal identifier of an prompt
+     * Internal identifier of a prompt
      */
     public String id;
 

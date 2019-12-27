@@ -17,17 +17,22 @@ public class GetDeviceInfoResponse {
     /**
      * Device type
      * Default: HardPhone
-     * Enum: SoftPhone, OtherPhone, HardPhone
+     * Enum: BLA, SoftPhone, OtherPhone, HardPhone, WebPhone, Paging
      */
     public String type;
     /**
-     * Device name. Mandatory if ordering  SoftPhone  or  OtherPhone . Optional for  HardPhone . If not specified for HardPhone, then device  model  name is used as device  name
+     * Device name. Mandatory if ordering  SoftPhone  or  OtherPhone. Optional for  HardPhone. If not specified for HardPhone, then device model name is used as device name
      */
     public String name;
     /**
      * Serial number for HardPhone (is returned only when the phone is shipped and provisioned); endpoint_id for softphone and mobile applications
      */
     public String serial;
+    /**
+     * Device status
+     * Enum: Offline, Online
+     */
+    public String status;
     /**
      * PC name for softphone
      */
@@ -72,6 +77,11 @@ public class GetDeviceInfoResponse {
      * Datetime of receiving last location report in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z
      */
     public String lastLocationReportTime;
+    /**
+     * Pooling type of a deviceHost - device with standalone paid phone line which can be linked to Glip/Softphone instanceGuest - device with a linked phone lineNone - device without a phone line or with specific line (free, BLA, etc.) = ['Host', 'Guest', 'None']
+     * Enum: Host, Guest, None
+     */
+    public String linePooling;
 
     public GetDeviceInfoResponse id(String id) {
         this.id = id;
@@ -100,6 +110,11 @@ public class GetDeviceInfoResponse {
 
     public GetDeviceInfoResponse serial(String serial) {
         this.serial = serial;
+        return this;
+    }
+
+    public GetDeviceInfoResponse status(String status) {
+        this.status = status;
         return this;
     }
 
@@ -155,6 +170,11 @@ public class GetDeviceInfoResponse {
 
     public GetDeviceInfoResponse lastLocationReportTime(String lastLocationReportTime) {
         this.lastLocationReportTime = lastLocationReportTime;
+        return this;
+    }
+
+    public GetDeviceInfoResponse linePooling(String linePooling) {
+        this.linePooling = linePooling;
         return this;
     }
 

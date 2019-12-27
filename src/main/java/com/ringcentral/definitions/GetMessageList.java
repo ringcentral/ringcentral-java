@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class GetMessageList {
     /**
+     * Link to the list of user messages
+     */
+    public String uri;
+    /**
      * List of records with message information
      * Required
      */
@@ -17,6 +21,11 @@ public class GetMessageList {
      * Required
      */
     public MessagingPagingInfo paging;
+
+    public GetMessageList uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetMessageList records(GetMessageInfoResponse[] records) {
         this.records = records;

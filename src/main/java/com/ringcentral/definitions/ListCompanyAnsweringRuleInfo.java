@@ -24,6 +24,14 @@ public class ListCompanyAnsweringRuleInfo {
      * Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number
      */
     public String name;
+    /**
+     * Answering rules are applied when calling to selected number(s)
+     */
+    public CalledNumberInfo[] calledNumbers;
+    /**
+     *
+     */
+    public CompanyAnsweringRuleExtensionInfo extension;
 
     public ListCompanyAnsweringRuleInfo id(String id) {
         this.id = id;
@@ -47,6 +55,16 @@ public class ListCompanyAnsweringRuleInfo {
 
     public ListCompanyAnsweringRuleInfo name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public ListCompanyAnsweringRuleInfo calledNumbers(CalledNumberInfo[] calledNumbers) {
+        this.calledNumbers = calledNumbers;
+        return this;
+    }
+
+    public ListCompanyAnsweringRuleInfo extension(CompanyAnsweringRuleExtensionInfo extension) {
+        this.extension = extension;
         return this;
     }
 

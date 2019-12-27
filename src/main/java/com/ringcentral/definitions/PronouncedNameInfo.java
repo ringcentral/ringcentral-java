@@ -11,6 +11,10 @@ public class PronouncedNameInfo {
      * Custom text
      */
     public String text;
+    /**
+     *
+     */
+    public PronouncedNamePromptInfo prompt;
 
     public PronouncedNameInfo type(String type) {
         this.type = type;
@@ -19,6 +23,11 @@ public class PronouncedNameInfo {
 
     public PronouncedNameInfo text(String text) {
         this.text = text;
+        return this;
+    }
+
+    public PronouncedNameInfo prompt(PronouncedNamePromptInfo prompt) {
+        this.prompt = prompt;
         return this;
     }
 

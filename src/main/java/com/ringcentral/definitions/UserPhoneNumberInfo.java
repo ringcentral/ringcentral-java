@@ -3,17 +3,25 @@ package com.ringcentral.definitions;
 
 public class UserPhoneNumberInfo {
     /**
+     * Link to the user's phone number resource
+     */
+    public String uri;
+    /**
      * Internal identifier of a phone number
      */
-    public String id;
+    public Long id;
     /**
      * Brief information on a phone number country
      */
     public CountryInfo country;
     /**
+     * CCRN (Contact Center Routing Number) provider. If not specified then the default value 'InContact/North America' is used, its ID is '1'
+     */
+    public ContactCenterProvider contactCenterProvider;
+    /**
      * Information on the extension, to which the phone number is assigned. Returned only for the request of Account phone number list
      */
-    public ExtensionInfo extension;
+    public UserPhoneNumberExtensionInfo extension;
     /**
      * Custom user name of a phone number, if any
      */
@@ -50,7 +58,12 @@ public class UserPhoneNumberInfo {
      */
     public String[] features;
 
-    public UserPhoneNumberInfo id(String id) {
+    public UserPhoneNumberInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public UserPhoneNumberInfo id(Long id) {
         this.id = id;
         return this;
     }
@@ -60,7 +73,12 @@ public class UserPhoneNumberInfo {
         return this;
     }
 
-    public UserPhoneNumberInfo extension(ExtensionInfo extension) {
+    public UserPhoneNumberInfo contactCenterProvider(ContactCenterProvider contactCenterProvider) {
+        this.contactCenterProvider = contactCenterProvider;
+        return this;
+    }
+
+    public UserPhoneNumberInfo extension(UserPhoneNumberExtensionInfo extension) {
         this.extension = extension;
         return this;
     }

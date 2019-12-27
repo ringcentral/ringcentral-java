@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class CreateForwardingNumberRequest {
     /**
+     * Number assigned to the call flip phone number, corresponds to the shortcut dial number
+     */
+    public Long flipNumber;
+    /**
      * Forwarding/Call flip phone number
      */
     public String phoneNumber;
@@ -19,6 +23,11 @@ public class CreateForwardingNumberRequest {
      * Reference to the other extension device. Applicable for 'PhoneLine' type only. Cannot be specified together with 'phoneNumber' parameter.
      */
     public CreateForwardingNumberDeviceInfo device;
+
+    public CreateForwardingNumberRequest flipNumber(Long flipNumber) {
+        this.flipNumber = flipNumber;
+        return this;
+    }
 
     public CreateForwardingNumberRequest phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;

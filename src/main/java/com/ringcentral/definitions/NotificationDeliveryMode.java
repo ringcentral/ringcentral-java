@@ -3,11 +3,6 @@ package com.ringcentral.definitions;
 
 public class NotificationDeliveryMode {
     /**
-     * Notifications transportation provider name
-     * Enum: PubNub, RC/APNS
-     */
-    public String transportType;
-    /**
      * Optional parameter. Specifies if the message will be encrypted or not
      */
     public Boolean encryption;
@@ -31,11 +26,19 @@ public class NotificationDeliveryMode {
      * Key for notification message decryption (for PubNub transport type only)
      */
     public String encryptionKey;
-
-    public NotificationDeliveryMode transportType(String transportType) {
-        this.transportType = transportType;
-        return this;
-    }
+    /**
+     * Notifications transportation provider name
+     * Enum: PubNub, WebHook, RC/APNS, RC/GCM
+     */
+    public String transportType;
+    /**
+     * Name of a certificate. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     */
+    public String certificateName;
+    /**
+     * Identifier of a registration. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     */
+    public String registrationId;
 
     public NotificationDeliveryMode encryption(Boolean encryption) {
         this.encryption = encryption;
@@ -64,6 +67,21 @@ public class NotificationDeliveryMode {
 
     public NotificationDeliveryMode encryptionKey(String encryptionKey) {
         this.encryptionKey = encryptionKey;
+        return this;
+    }
+
+    public NotificationDeliveryMode transportType(String transportType) {
+        this.transportType = transportType;
+        return this;
+    }
+
+    public NotificationDeliveryMode certificateName(String certificateName) {
+        this.certificateName = certificateName;
+        return this;
+    }
+
+    public NotificationDeliveryMode registrationId(String registrationId) {
+        this.registrationId = registrationId;
         return this;
     }
 

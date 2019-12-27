@@ -30,6 +30,14 @@ public class GrantInfo {
      * Specifies whether the current extension is allowed to call Paging Only group referenced to in extension object
      */
     public Boolean groupPaging;
+    /**
+     * Specifies whether the current extension is assigned as a Full-Access manager in the call queue referenced in extension object
+     */
+    public Boolean callQueueSetup;
+    /**
+     * Specifies whether the current extension is assigned as a Members-Only manager in the call queue referenced in extension object
+     */
+    public Boolean callQueueMembersSetup;
 
     public GrantInfo uri(String uri) {
         this.uri = uri;
@@ -63,6 +71,16 @@ public class GrantInfo {
 
     public GrantInfo groupPaging(Boolean groupPaging) {
         this.groupPaging = groupPaging;
+        return this;
+    }
+
+    public GrantInfo callQueueSetup(Boolean callQueueSetup) {
+        this.callQueueSetup = callQueueSetup;
+        return this;
+    }
+
+    public GrantInfo callQueueMembersSetup(Boolean callQueueMembersSetup) {
+        this.callQueueMembersSetup = callQueueMembersSetup;
         return this;
     }
 

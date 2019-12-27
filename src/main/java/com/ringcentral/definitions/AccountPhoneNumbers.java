@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class AccountPhoneNumbers {
     /**
+     * Link to the list of account phone numbers
+     */
+    public String uri;
+    /**
      * List of account phone numbers
      */
     public CompanyPhoneNumberInfo[] records;
@@ -14,6 +18,11 @@ public class AccountPhoneNumbers {
      * Information on paging
      */
     public ProvisioningPagingInfo paging;
+
+    public AccountPhoneNumbers uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public AccountPhoneNumbers records(CompanyPhoneNumberInfo[] records) {
         this.records = records;

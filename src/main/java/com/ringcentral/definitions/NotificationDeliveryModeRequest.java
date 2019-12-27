@@ -16,15 +16,15 @@ public class NotificationDeliveryModeRequest {
      */
     public Boolean encryption;
     /**
-     * For 'RC/APNS' and 'RC/GCM' transport types. Name of a certificate
+     * Name of a certificate. Supported for 'RC/APNS' and 'RC/GCM' transport types
      */
     public String certificateName;
     /**
-     * For 'RC/APNS' and 'RC/GCM' transport types. Identifier of a registration
+     * Identifier of a registration. Supported for 'RC/APNS' and 'RC/GCM' transport types
      */
     public String registrationId;
     /**
-     * For 'Webhook' transport type. Subscription verification key ensuring data security
+     * Verification key of a subscription ensuring data security. Supported for 'Webhook' transport type
      */
     public String verificationToken;
 

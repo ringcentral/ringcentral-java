@@ -5,13 +5,13 @@ public class ExtensionInfoCallLog {
     /**
      * Internal identifier of an extension
      */
-    public String id;
+    public Long id;
     /**
      * Canonical URI of an extension
      */
     public String uri;
 
-    public ExtensionInfoCallLog id(String id) {
+    public ExtensionInfoCallLog id(Long id) {
         this.id = id;
         return this;
     }

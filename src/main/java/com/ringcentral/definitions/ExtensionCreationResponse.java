@@ -19,7 +19,7 @@ public class ExtensionCreationResponse {
      */
     public String extensionNumber;
     /**
-     * Extension user name
+     * Extension name. For user extension types the value is a combination of the specified first name and last name
      */
     public String name;
     /**
@@ -56,7 +56,7 @@ public class ExtensionCreationResponse {
      */
     public String setupWizardState;
     /**
-     * Extension current state. If the status is 'Unassigned'. Returned for all extensions
+     * Extension current state. If 'Unassigned' is specified, then extensions without ‘extensionNumber’ are returned. If not specified, then all extensions are returned
      * Enum: Enabled, Disabled, NotActivated, Unassigned
      */
     public String status;

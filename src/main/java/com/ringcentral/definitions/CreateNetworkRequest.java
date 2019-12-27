@@ -17,7 +17,7 @@ public class CreateNetworkRequest {
     /**
      *
      */
-    public PrivateIpRangeInfo[] privateIpRanges;
+    public PrivateIpRangeInfoRequest[] privateIpRanges;
 
     public CreateNetworkRequest name(String name) {
         this.name = name;
@@ -34,7 +34,7 @@ public class CreateNetworkRequest {
         return this;
     }
 
-    public CreateNetworkRequest privateIpRanges(PrivateIpRangeInfo[] privateIpRanges) {
+    public CreateNetworkRequest privateIpRanges(PrivateIpRangeInfoRequest[] privateIpRanges) {
         this.privateIpRanges = privateIpRanges;
         return this;
     }

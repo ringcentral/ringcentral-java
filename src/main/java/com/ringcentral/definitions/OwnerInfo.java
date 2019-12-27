@@ -3,11 +3,11 @@ package com.ringcentral.definitions;
 
 public class OwnerInfo {
     /**
-     * Internal identifier of an account
+     * Internal identifier of an account that monitors a call
      */
     public String accountId;
     /**
-     * Internal identifier of an extension
+     * Internal identifier of an extension that monitors a call
      */
     public String extensionId;
 

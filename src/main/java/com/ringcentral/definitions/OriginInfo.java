@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class OriginInfo {
     /**
      * Session origin type
-     * Enum: RingOut, RingMe, Conference, GreetingRecording, VerificartionCall, Call
+     * Enum: Call, RingOut, RingMe, Conference, GreetingsRecording, VerificationCall, Zoom, CallOut
      */
     public String type;
 

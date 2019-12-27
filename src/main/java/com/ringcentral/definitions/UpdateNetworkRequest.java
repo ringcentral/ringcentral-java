@@ -17,7 +17,7 @@ public class UpdateNetworkRequest {
     /**
      *
      */
-    public PrivateIpRangeInfo[] privateIpRanges;
+    public PrivateIpRangeInfoRequest[] privateIpRanges;
 
     public UpdateNetworkRequest name(String name) {
         this.name = name;
@@ -34,7 +34,7 @@ public class UpdateNetworkRequest {
         return this;
     }
 
-    public UpdateNetworkRequest privateIpRanges(PrivateIpRangeInfo[] privateIpRanges) {
+    public UpdateNetworkRequest privateIpRanges(PrivateIpRangeInfoRequest[] privateIpRanges) {
         this.privateIpRanges = privateIpRanges;
         return this;
     }

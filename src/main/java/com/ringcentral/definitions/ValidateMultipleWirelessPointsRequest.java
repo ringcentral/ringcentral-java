@@ -5,9 +5,9 @@ public class ValidateMultipleWirelessPointsRequest {
     /**
      *
      */
-    public WirelessPointInfo[] records;
+    public WirelessPointInfoRequest[] records;
 
-    public ValidateMultipleWirelessPointsRequest records(WirelessPointInfo[] records) {
+    public ValidateMultipleWirelessPointsRequest records(WirelessPointInfoRequest[] records) {
         this.records = records;
         return this;
     }

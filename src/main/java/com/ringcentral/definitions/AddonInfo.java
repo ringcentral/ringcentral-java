@@ -13,7 +13,7 @@ public class AddonInfo {
     /**
      *
      */
-    public String count;
+    public Long count;
 
     public AddonInfo id(String id) {
         this.id = id;
@@ -25,7 +25,7 @@ public class AddonInfo {
         return this;
     }
 
-    public AddonInfo count(String count) {
+    public AddonInfo count(Long count) {
         this.count = count;
         return this;
     }

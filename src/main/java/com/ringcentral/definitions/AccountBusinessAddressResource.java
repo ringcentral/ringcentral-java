@@ -18,6 +18,10 @@ public class AccountBusinessAddressResource {
      *
      */
     public String email;
+    /**
+     * Custom site name
+     */
+    public String mainSiteName;
 
     public AccountBusinessAddressResource uri(String uri) {
         this.uri = uri;
@@ -36,6 +40,11 @@ public class AccountBusinessAddressResource {
 
     public AccountBusinessAddressResource email(String email) {
         this.email = email;
+        return this;
+    }
+
+    public AccountBusinessAddressResource mainSiteName(String mainSiteName) {
+        this.mainSiteName = mainSiteName;
         return this;
     }
 

@@ -5,7 +5,7 @@ public class MessageAttachmentInfo {
     /**
      * Internal identifier of a message attachment
      */
-    public String id;
+    public Long id;
     /**
      * Canonical URI of a message attachment
      */
@@ -26,13 +26,21 @@ public class MessageAttachmentInfo {
     /**
      * Name of a file attached
      */
-    public String filename;
+    public String fileName;
     /**
      * Size of attachment in bytes
      */
     public Long size;
+    /**
+     * Attachment height in pixels if available
+     */
+    public Long height;
+    /**
+     * Attachment width in pixels if available
+     */
+    public Long width;
 
-    public MessageAttachmentInfo id(String id) {
+    public MessageAttachmentInfo id(Long id) {
         this.id = id;
         return this;
     }
@@ -57,13 +65,23 @@ public class MessageAttachmentInfo {
         return this;
     }
 
-    public MessageAttachmentInfo filename(String filename) {
-        this.filename = filename;
+    public MessageAttachmentInfo fileName(String fileName) {
+        this.fileName = fileName;
         return this;
     }
 
     public MessageAttachmentInfo size(Long size) {
         this.size = size;
+        return this;
+    }
+
+    public MessageAttachmentInfo height(Long height) {
+        this.height = height;
+        return this;
+    }
+
+    public MessageAttachmentInfo width(Long width) {
+        this.width = width;
         return this;
     }
 

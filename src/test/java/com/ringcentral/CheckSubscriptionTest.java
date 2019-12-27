@@ -1,9 +1,7 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.ReadUserCallLogParameters;
 import com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse;
 import com.ringcentral.definitions.SubscriptionInfo;
-import com.ringcentral.definitions.UserCallLogResponse;
 import org.junit.Test;
 
 import java.io.IOException;

@@ -3,6 +3,11 @@ package com.ringcentral.definitions;
 
 public class GetStateListResponse {
     /**
+     * Link to the states list resource
+     * Required
+     */
+    public String uri;
+    /**
      * List of states
      * Required
      */
@@ -17,6 +22,11 @@ public class GetStateListResponse {
      * Required
      */
     public ProvisioningPagingInfo paging;
+
+    public GetStateListResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetStateListResponse records(GetStateInfoResponse[] records) {
         this.records = records;

@@ -24,9 +24,9 @@ public class GlipGroupsEvent {
      */
     public String description;
     /**
-     * Identifier(s) of group members
+     * “List of glip members”
      */
-    public String[] members;
+    public GlipMemberInfo[] members;
     /**
      * Group creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
      */
@@ -66,7 +66,7 @@ public class GlipGroupsEvent {
         return this;
     }
 
-    public GlipGroupsEvent members(String[] members) {
+    public GlipGroupsEvent members(GlipMemberInfo[] members) {
         this.members = members;
         return this;
     }

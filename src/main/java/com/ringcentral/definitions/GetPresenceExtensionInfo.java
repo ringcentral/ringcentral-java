@@ -5,7 +5,7 @@ public class GetPresenceExtensionInfo {
     /**
      * Internal identifier of an extension
      */
-    public String id;
+    public Long id;
     /**
      * Canonical URI of an extension
      */
@@ -15,7 +15,7 @@ public class GetPresenceExtensionInfo {
      */
     public String extensionNumber;
 
-    public GetPresenceExtensionInfo id(String id) {
+    public GetPresenceExtensionInfo id(Long id) {
         this.id = id;
         return this;
     }

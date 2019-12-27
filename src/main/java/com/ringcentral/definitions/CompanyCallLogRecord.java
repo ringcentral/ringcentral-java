@@ -15,6 +15,19 @@ public class CompanyCallLogRecord {
      */
     public String sessionId;
     /**
+     *
+     */
+    public ExtensionInfoCallLog extension;
+    /**
+     * Telephony identifier of a call session
+     */
+    public String telephonySessionId;
+    /**
+     * Call transport
+     * Enum: PSTN, VoIP
+     */
+    public String transport;
+    /**
      * Caller information
      */
     public CallLogCallerInfo from;
@@ -51,7 +64,11 @@ public class CompanyCallLogRecord {
      */
     public String reason;
     /**
-     * The call start datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
+     *
+     */
+    public String reasonDescription;
+    /**
+     * The call start datetime in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
      */
     public String startTime;
     /**
@@ -62,6 +79,22 @@ public class CompanyCallLogRecord {
      * Call recording data. Returned if a call is recorded
      */
     public CallLogRecordingInfo recording;
+    /**
+     * Indicates that the recording is too short and therefore wouldn't be returned. The flag is not returned if the value is false
+     */
+    public Boolean shortRecording;
+    /**
+     * For 'Detailed' view only. Leg description
+     */
+    public CallLogRecordLegInfo[] legs;
+    /**
+     * Billing information related to the call. Returned for 'Detailed' view only
+     */
+    public BillingInfo billing;
+    /**
+     * For 'Detailed' view only. The datetime when the call log record was modified in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
+     */
+    public String lastModifiedTime;
 
     public CompanyCallLogRecord id(String id) {
         this.id = id;
@@ -75,6 +108,21 @@ public class CompanyCallLogRecord {
 
     public CompanyCallLogRecord sessionId(String sessionId) {
         this.sessionId = sessionId;
+        return this;
+    }
+
+    public CompanyCallLogRecord extension(ExtensionInfoCallLog extension) {
+        this.extension = extension;
+        return this;
+    }
+
+    public CompanyCallLogRecord telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
+        return this;
+    }
+
+    public CompanyCallLogRecord transport(String transport) {
+        this.transport = transport;
         return this;
     }
 
@@ -118,6 +166,11 @@ public class CompanyCallLogRecord {
         return this;
     }
 
+    public CompanyCallLogRecord reasonDescription(String reasonDescription) {
+        this.reasonDescription = reasonDescription;
+        return this;
+    }
+
     public CompanyCallLogRecord startTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -130,6 +183,26 @@ public class CompanyCallLogRecord {
 
     public CompanyCallLogRecord recording(CallLogRecordingInfo recording) {
         this.recording = recording;
+        return this;
+    }
+
+    public CompanyCallLogRecord shortRecording(Boolean shortRecording) {
+        this.shortRecording = shortRecording;
+        return this;
+    }
+
+    public CompanyCallLogRecord legs(CallLogRecordLegInfo[] legs) {
+        this.legs = legs;
+        return this;
+    }
+
+    public CompanyCallLogRecord billing(BillingInfo billing) {
+        this.billing = billing;
+        return this;
+    }
+
+    public CompanyCallLogRecord lastModifiedTime(String lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
         return this;
     }
 

@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class GetCountryListResponse {
     /**
+     * Link to the list of countries supported
+     */
+    public String uri;
+    /**
      * List of countries with the country data
      * Required
      */
@@ -17,6 +21,11 @@ public class GetCountryListResponse {
      * Required
      */
     public ProvisioningPagingInfo paging;
+
+    public GetCountryListResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetCountryListResponse records(GetCountryInfoDictionaryResponse[] records) {
         this.records = records;

@@ -19,9 +19,9 @@ public class GlipPostTeamBody {
      */
     public String description;
     /**
-     * Identifier(s) of team members.
+     * List of glip members
      */
-    public Object[] members;
+    public CreateGlipMember[] members;
 
     public GlipPostTeamBody _public(Boolean _public) {
         this._public = _public;
@@ -38,7 +38,7 @@ public class GlipPostTeamBody {
         return this;
     }
 
-    public GlipPostTeamBody members(Object[] members) {
+    public GlipPostTeamBody members(CreateGlipMember[] members) {
         this.members = members;
         return this;
     }

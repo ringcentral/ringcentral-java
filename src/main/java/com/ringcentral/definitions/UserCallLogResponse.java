@@ -6,7 +6,7 @@ public class UserCallLogResponse {
      * List of call log records
      * Required
      */
-    public CallLogRecord[] records;
+    public UserCallLogRecord[] records;
     /**
      * Information on navigation
      * Required
@@ -18,7 +18,7 @@ public class UserCallLogResponse {
      */
     public CallLogPagingInfo paging;
 
-    public UserCallLogResponse records(CallLogRecord[] records) {
+    public UserCallLogResponse records(UserCallLogRecord[] records) {
         this.records = records;
         return this;
     }

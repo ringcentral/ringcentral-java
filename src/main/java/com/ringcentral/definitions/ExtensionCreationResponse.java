@@ -56,8 +56,12 @@ public class ExtensionCreationResponse {
      */
     public String setupWizardState;
     /**
+     * Site data. If multi-site feature is turned on for the account, then internal identifier of a site must be specified. To assign the wireless point to the main site (company) set site ID to `main-site`
+     */
+    public AutomaticLocationUpdatesSiteInfo site;
+    /**
      * Extension current state. If 'Unassigned' is specified, then extensions without ‘extensionNumber’ are returned. If not specified, then all extensions are returned
-     * Enum: Enabled, Disabled, NotActivated, Unassigned
+     * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;
     /**
@@ -66,7 +70,7 @@ public class ExtensionCreationResponse {
     public ExtensionStatusInfo statusInfo;
     /**
      * Extension type
-     * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnlyGroup, ParkLocation
+     * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, Limited
      */
     public String type;
     /**
@@ -136,6 +140,11 @@ public class ExtensionCreationResponse {
 
     public ExtensionCreationResponse setupWizardState(String setupWizardState) {
         this.setupWizardState = setupWizardState;
+        return this;
+    }
+
+    public ExtensionCreationResponse site(AutomaticLocationUpdatesSiteInfo site) {
+        this.site = site;
         return this;
     }
 

@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val callRec
      */
     fun get(): com.ringcentral.definitions.CompanyCallLogRecord? {
         if (this.callRecordId == null) {
-            throw NullPointerException("callRecordId")
+            throw NullPointerException("callRecordId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

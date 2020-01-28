@@ -23,9 +23,9 @@ public class LocationInfo {
      */
     public String nxx;
     /**
-     * ID and URI of the state this location belongs to, see State Info
+     * Information on the state this location belongs to
      */
-    public String state;
+    public LocationStateInfo state;
 
     public LocationInfo uri(String uri) {
         this.uri = uri;
@@ -52,7 +52,7 @@ public class LocationInfo {
         return this;
     }
 
-    public LocationInfo state(String state) {
+    public LocationInfo state(LocationStateInfo state) {
         this.state = state;
         return this;
     }

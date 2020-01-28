@@ -1,5 +1,7 @@
 package com.ringcentral.definitions;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 
 public class GetServiceInfoResponse {
     /**
@@ -19,6 +21,10 @@ public class GetServiceInfoResponse {
      */
     public ServicePlanInfo servicePlan;
     /**
+     *
+     */
+    public ServicePlanInfo targetServicePlan;
+    /**
      * Information on account billing plan
      */
     public BillingPlanInfo billingPlan;
@@ -30,6 +36,11 @@ public class GetServiceInfoResponse {
      * Limits which are effective for the account
      */
     public AccountLimits limits;
+    /**
+     *
+     */
+    @JSONField(name = "package")
+    public PackageInfo _package;
 
     public GetServiceInfoResponse uri(String uri) {
         this.uri = uri;
@@ -51,6 +62,11 @@ public class GetServiceInfoResponse {
         return this;
     }
 
+    public GetServiceInfoResponse targetServicePlan(ServicePlanInfo targetServicePlan) {
+        this.targetServicePlan = targetServicePlan;
+        return this;
+    }
+
     public GetServiceInfoResponse billingPlan(BillingPlanInfo billingPlan) {
         this.billingPlan = billingPlan;
         return this;
@@ -63,6 +79,11 @@ public class GetServiceInfoResponse {
 
     public GetServiceInfoResponse limits(AccountLimits limits) {
         this.limits = limits;
+        return this;
+    }
+
+    public GetServiceInfoResponse _package(PackageInfo _package) {
+        this._package = _package;
         return this;
     }
 

@@ -42,7 +42,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      */
     fun get(): com.ringcentral.definitions.CompanyAnsweringRuleInfo? {
         if (this.ruleId == null) {
-            throw NullPointerException("ruleId")
+            throw NullPointerException("ruleId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -58,7 +58,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      */
     fun put(companyAnsweringRuleUpdate: com.ringcentral.definitions.CompanyAnsweringRuleUpdate): com.ringcentral.definitions.CompanyAnsweringRuleInfo? {
         if (this.ruleId == null) {
-            throw NullPointerException("ruleId")
+            throw NullPointerException("ruleId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), companyAnsweringRuleUpdate)
@@ -74,7 +74,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      */
     fun delete(): String? {
         if (this.ruleId == null) {
-            throw NullPointerException("ruleId")
+            throw NullPointerException("ruleId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

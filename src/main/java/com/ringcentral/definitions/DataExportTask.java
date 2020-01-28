@@ -20,13 +20,21 @@ public class DataExportTask {
     public String lastModifiedTime;
     /**
      * Task status
-     * Enum: Accepted, InProgress, Completed, Failed
+     * Enum: Accepted, InProgress, Completed, Failed, Canceled
      */
     public String status;
     /**
-     * Data collection archives. Returned by task ID
+     * Internal identifier of a user
      */
-    public ExportTaskResultInfo[] result;
+    public String creator;
+    /**
+     * Information specififed in request
+     */
+    public SpecificInfo specific;
+    /**
+     * Data collection sets. Returned by task ID
+     */
+    public ExportTaskResultInfo[] datasets;
 
     public DataExportTask uri(String uri) {
         this.uri = uri;
@@ -53,8 +61,18 @@ public class DataExportTask {
         return this;
     }
 
-    public DataExportTask result(ExportTaskResultInfo[] result) {
-        this.result = result;
+    public DataExportTask creator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+
+    public DataExportTask specific(SpecificInfo specific) {
+        this.specific = specific;
+        return this;
+    }
+
+    public DataExportTask datasets(ExportTaskResultInfo[] datasets) {
+        this.datasets = datasets;
         return this;
     }
 

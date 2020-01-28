@@ -32,7 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val time
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadTimezoneParameters? = null): com.ringcentral.definitions.GetTimezoneInfoResponse? {
         if (this.timezoneId == null) {
-            throw NullPointerException("timezoneId")
+            throw NullPointerException("timezoneId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

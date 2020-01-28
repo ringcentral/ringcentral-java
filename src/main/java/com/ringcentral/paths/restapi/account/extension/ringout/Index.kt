@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun get(): com.ringcentral.definitions.GetRingOutStatusResponse? {
         if (this.ringoutId == null) {
-            throw NullPointerException("ringoutId")
+            throw NullPointerException("ringoutId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -46,7 +46,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun delete(): String? {
         if (this.ringoutId == null) {
-            throw NullPointerException("ringoutId")
+            throw NullPointerException("ringoutId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

@@ -18,7 +18,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun get(): com.ringcentral.definitions.AutomaticLocationUpdatesTaskInfo? {
         if (this.taskId == null) {
-            throw NullPointerException("taskId")
+            throw NullPointerException("taskId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

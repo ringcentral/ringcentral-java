@@ -44,7 +44,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadAnsweringRuleParameters? = null): com.ringcentral.definitions.AnsweringRuleInfo? {
         if (this.ruleId == null) {
-            throw NullPointerException("ruleId")
+            throw NullPointerException("ruleId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
@@ -60,7 +60,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun put(updateAnsweringRuleRequest: com.ringcentral.definitions.UpdateAnsweringRuleRequest): com.ringcentral.definitions.AnsweringRuleInfo? {
         if (this.ruleId == null) {
-            throw NullPointerException("ruleId")
+            throw NullPointerException("ruleId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateAnsweringRuleRequest)
@@ -76,7 +76,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun delete(): String? {
         if (this.ruleId == null) {
-            throw NullPointerException("ruleId")
+            throw NullPointerException("ruleId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

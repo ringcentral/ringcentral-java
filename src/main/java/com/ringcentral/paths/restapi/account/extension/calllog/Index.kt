@@ -45,7 +45,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadUserCallRecordParameters? = null): com.ringcentral.definitions.UserCallLogRecord? {
         if (this.callRecordId == null) {
-            throw NullPointerException("callRecordId")
+            throw NullPointerException("callRecordId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

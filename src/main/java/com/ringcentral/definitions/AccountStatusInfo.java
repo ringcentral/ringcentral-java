@@ -8,7 +8,7 @@ public class AccountStatusInfo {
     public String comment;
     /**
      * Type of suspension
-     * Enum: Voluntarily, Involuntarily
+     * Enum: SuspendedVoluntarily, SuspendedInvoluntarily, UserResumed
      */
     public String reason;
     /**

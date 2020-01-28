@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val templat
      */
     fun get(): com.ringcentral.definitions.TemplateInfo? {
         if (this.templateId == null) {
-            throw NullPointerException("templateId")
+            throw NullPointerException("templateId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

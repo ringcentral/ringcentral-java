@@ -18,7 +18,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
      */
     fun get(): com.ringcentral.definitions.GlipTaskInfo? {
         if (this.taskId == null) {
-            throw NullPointerException("taskId")
+            throw NullPointerException("taskId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -34,7 +34,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
      */
     fun patch(glipUpdateTask: com.ringcentral.definitions.GlipUpdateTask): com.ringcentral.definitions.GlipTaskList? {
         if (this.taskId == null) {
-            throw NullPointerException("taskId")
+            throw NullPointerException("taskId");
         }
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipUpdateTask)
@@ -50,7 +50,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
      */
     fun delete(): String? {
         if (this.taskId == null) {
-            throw NullPointerException("taskId")
+            throw NullPointerException("taskId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

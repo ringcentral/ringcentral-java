@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun get(): com.ringcentral.definitions.ForwardingNumberInfo? {
         if (this.forwardingNumberId == null) {
-            throw NullPointerException("forwardingNumberId")
+            throw NullPointerException("forwardingNumberId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun put(updateForwardingNumberRequest: com.ringcentral.definitions.UpdateForwardingNumberRequest): com.ringcentral.definitions.ForwardingNumberInfo? {
         if (this.forwardingNumberId == null) {
-            throw NullPointerException("forwardingNumberId")
+            throw NullPointerException("forwardingNumberId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateForwardingNumberRequest)
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun delete(): String? {
         if (this.forwardingNumberId == null) {
-            throw NullPointerException("forwardingNumberId")
+            throw NullPointerException("forwardingNumberId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

@@ -42,7 +42,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      */
     fun get(): com.ringcentral.definitions.SubscriptionInfo? {
         if (this.subscriptionId == null) {
-            throw NullPointerException("subscriptionId")
+            throw NullPointerException("subscriptionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
     @JvmOverloads
     fun put(modifySubscriptionRequest: com.ringcentral.definitions.ModifySubscriptionRequest, queryParams: com.ringcentral.definitions.UpdateSubscriptionParameters? = null): com.ringcentral.definitions.SubscriptionInfo? {
         if (this.subscriptionId == null) {
-            throw NullPointerException("subscriptionId")
+            throw NullPointerException("subscriptionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), modifySubscriptionRequest, queryParams)
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      */
     fun delete(): String? {
         if (this.subscriptionId == null) {
-            throw NullPointerException("subscriptionId")
+            throw NullPointerException("subscriptionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

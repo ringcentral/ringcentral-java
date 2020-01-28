@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val webhookId:
      */
     fun get(): com.ringcentral.definitions.GlipWebhookList? {
         if (this.webhookId == null) {
-            throw NullPointerException("webhookId")
+            throw NullPointerException("webhookId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -46,7 +46,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val webhookId:
      */
     fun delete(): String? {
         if (this.webhookId == null) {
-            throw NullPointerException("webhookId")
+            throw NullPointerException("webhookId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

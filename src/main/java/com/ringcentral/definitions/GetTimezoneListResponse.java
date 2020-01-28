@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class GetTimezoneListResponse {
     /**
+     * Link to the timezone list resource
+     */
+    public String uri;
+    /**
      * List of timezones
      * Required
      */
@@ -17,6 +21,11 @@ public class GetTimezoneListResponse {
      * Required
      */
     public ProvisioningPagingInfo paging;
+
+    public GetTimezoneListResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetTimezoneListResponse records(GetTimezoneInfoResponse[] records) {
         this.records = records;

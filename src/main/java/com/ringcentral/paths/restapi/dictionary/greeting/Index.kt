@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val gree
      */
     fun get(): com.ringcentral.definitions.DictionaryGreetingInfo? {
         if (this.greetingId == null) {
-            throw NullPointerException("greetingId")
+            throw NullPointerException("greetingId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

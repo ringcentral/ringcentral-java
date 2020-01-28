@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class WirelessPointsList {
     /**
-     * Link to the wireless points resource
+     * Link to the wireless point list resource
      */
     public String uri;
     /**

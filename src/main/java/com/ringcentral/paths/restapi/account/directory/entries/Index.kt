@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.directory.Index, v
      */
     fun get(): com.ringcentral.definitions.ContactResource? {
         if (this.entryId == null) {
-            throw NullPointerException("entryId")
+            throw NullPointerException("entryId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

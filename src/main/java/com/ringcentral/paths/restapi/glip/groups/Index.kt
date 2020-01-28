@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val groupId: S
      */
     fun get(): com.ringcentral.definitions.GlipGroupInfo? {
         if (this.groupId == null) {
-            throw NullPointerException("groupId")
+            throw NullPointerException("groupId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

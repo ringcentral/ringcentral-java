@@ -16,6 +16,10 @@ public class GreetingInfo {
      *
      */
     public PresetInfo preset;
+    /**
+     *
+     */
+    public CustomGreetingInfo custom;
 
     public GreetingInfo type(String type) {
         this.type = type;
@@ -29,6 +33,11 @@ public class GreetingInfo {
 
     public GreetingInfo preset(PresetInfo preset) {
         this.preset = preset;
+        return this;
+    }
+
+    public GreetingInfo custom(CustomGreetingInfo custom) {
+        this.custom = custom;
         return this;
     }
 

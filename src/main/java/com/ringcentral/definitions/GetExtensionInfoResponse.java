@@ -13,6 +13,10 @@ public class GetExtensionInfoResponse {
      */
     public String uri;
     /**
+     * Account information
+     */
+    public GetExtensionAccountInfo account;
+    /**
      * Contact detailed information
      */
     public ContactInfo contact;
@@ -38,7 +42,6 @@ public class GetExtensionInfoResponse {
     public ExtensionPermissions permissions;
     /**
      * Information on profile image
-     * Required
      */
     public ProfileImageInfo profileImage;
     /**
@@ -65,8 +68,7 @@ public class GetExtensionInfoResponse {
     public String setupWizardState;
     /**
      * Extension current state. If 'Unassigned' is specified, then extensions without ‘extensionNumber’ are returned. If not specified, then all extensions are returned
-     * Required
-     * Enum: Enabled, Disabled, NotActivated, Unassigned, Frozen
+     * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;
     /**
@@ -75,8 +77,7 @@ public class GetExtensionInfoResponse {
     public ExtensionStatusInfo statusInfo;
     /**
      * Extension type
-     * Required
-     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnlyGroup, IvrMenu, ApplicationExtension, ParkLocation, Bot, Limited, Site
+     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, Limited, Site
      */
     public String type;
     /**
@@ -99,6 +100,11 @@ public class GetExtensionInfoResponse {
 
     public GetExtensionInfoResponse uri(String uri) {
         this.uri = uri;
+        return this;
+    }
+
+    public GetExtensionInfoResponse account(GetExtensionAccountInfo account) {
+        this.account = account;
         return this;
     }
 

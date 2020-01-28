@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun get(): com.ringcentral.definitions.SwitchInfo? {
         if (this.switchId == null) {
-            throw NullPointerException("switchId")
+            throw NullPointerException("switchId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun put(updateSwitchInfo: com.ringcentral.definitions.UpdateSwitchInfo): com.ringcentral.definitions.SwitchInfo? {
         if (this.switchId == null) {
-            throw NullPointerException("switchId")
+            throw NullPointerException("switchId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateSwitchInfo)
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun delete(): String? {
         if (this.switchId == null) {
-            throw NullPointerException("switchId")
+            throw NullPointerException("switchId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

@@ -18,7 +18,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val noteId: St
      */
     fun get(): com.ringcentral.definitions.GetGlipNoteInfo? {
         if (this.noteId == null) {
-            throw NullPointerException("noteId")
+            throw NullPointerException("noteId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -34,7 +34,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val noteId: St
      */
     fun patch(glipNoteCreate: com.ringcentral.definitions.GlipNoteCreate): com.ringcentral.definitions.GlipNoteInfo? {
         if (this.noteId == null) {
-            throw NullPointerException("noteId")
+            throw NullPointerException("noteId");
         }
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipNoteCreate)
@@ -50,7 +50,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val noteId: St
      */
     fun delete(): String? {
         if (this.noteId == null) {
-            throw NullPointerException("noteId")
+            throw NullPointerException("noteId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
      */
     fun get(): com.ringcentral.definitions.GetExtensionInfoResponse? {
         if (this.extensionId == null) {
-            throw NullPointerException("extensionId")
+            throw NullPointerException("extensionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
      */
     fun put(extensionUpdateRequest: com.ringcentral.definitions.ExtensionUpdateRequest): com.ringcentral.definitions.GetExtensionInfoResponse? {
         if (this.extensionId == null) {
-            throw NullPointerException("extensionId")
+            throw NullPointerException("extensionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), extensionUpdateRequest)
@@ -76,7 +76,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
     @JvmOverloads
     fun delete(queryParams: com.ringcentral.definitions.DeleteExtensionParameters? = null): String? {
         if (this.extensionId == null) {
-            throw NullPointerException("extensionId")
+            throw NullPointerException("extensionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path(), queryParams)
@@ -236,6 +236,11 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
 
     fun conferencing(): com.ringcentral.paths.restapi.account.extension.conferencing.Index {
         return com.ringcentral.paths.restapi.account.extension.conferencing.Index(this)
+    }
+
+
+    fun callqueues(): com.ringcentral.paths.restapi.account.extension.callqueues.Index {
+        return com.ringcentral.paths.restapi.account.extension.callqueues.Index(this)
     }
 
 

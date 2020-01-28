@@ -57,6 +57,10 @@ public class CompanyPhoneNumberInfo {
      * CCRN (Contact Center Routing Number) provider. If not specified then the default value 'InContact/North America' is used, its ID is '1'
      */
     public ContactCenterProvider contactCenterProvider;
+    /**
+     * Vanity pattern for this number. Returned only when vanity search option is requested. Vanity pattern corresponds to request parameters nxx plus line or numberPattern
+     */
+    public String vanityPattern;
 
     public CompanyPhoneNumberInfo uri(String uri) {
         this.uri = uri;
@@ -120,6 +124,11 @@ public class CompanyPhoneNumberInfo {
 
     public CompanyPhoneNumberInfo contactCenterProvider(ContactCenterProvider contactCenterProvider) {
         this.contactCenterProvider = contactCenterProvider;
+        return this;
+    }
+
+    public CompanyPhoneNumberInfo vanityPattern(String vanityPattern) {
+        this.vanityPattern = vanityPattern;
         return this;
     }
 

@@ -19,7 +19,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val deviceI
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadDeviceParameters? = null): com.ringcentral.definitions.GetDeviceInfoResponse? {
         if (this.deviceId == null) {
-            throw NullPointerException("deviceId")
+            throw NullPointerException("deviceId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val deviceI
      */
     fun put(accountDeviceUpdate: com.ringcentral.definitions.AccountDeviceUpdate): com.ringcentral.definitions.DeviceResource? {
         if (this.deviceId == null) {
-            throw NullPointerException("deviceId")
+            throw NullPointerException("deviceId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), accountDeviceUpdate)

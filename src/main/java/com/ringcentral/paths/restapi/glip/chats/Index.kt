@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      */
     fun get(): com.ringcentral.definitions.GlipChatInfo? {
         if (this.chatId == null) {
-            throw NullPointerException("chatId")
+            throw NullPointerException("chatId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

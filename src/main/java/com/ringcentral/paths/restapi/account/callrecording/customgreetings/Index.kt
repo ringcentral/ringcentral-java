@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callrecording.Inde
      */
     fun delete(): String? {
         if (this.greetingId == null) {
-            throw NullPointerException("greetingId")
+            throw NullPointerException("greetingId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

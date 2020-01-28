@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val stat
      */
     fun get(): com.ringcentral.definitions.GetStateInfoResponse? {
         if (this.stateId == null) {
-            throw NullPointerException("stateId")
+            throw NullPointerException("stateId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

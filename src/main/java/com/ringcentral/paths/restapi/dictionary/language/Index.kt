@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val lang
      */
     fun get(): com.ringcentral.definitions.LanguageInfo? {
         if (this.languageId == null) {
-            throw NullPointerException("languageId")
+            throw NullPointerException("languageId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

@@ -29,7 +29,7 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
      */
     fun get(): com.ringcentral.definitions.GetVersionResponse? {
         if (this.apiVersion == null) {
-            throw NullPointerException("apiVersion")
+            throw NullPointerException("apiVersion");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

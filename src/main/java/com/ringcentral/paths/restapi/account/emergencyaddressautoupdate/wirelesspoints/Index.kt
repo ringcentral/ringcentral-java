@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun get(): com.ringcentral.definitions.WirelessPointInfo? {
         if (this.pointId == null) {
-            throw NullPointerException("pointId")
+            throw NullPointerException("pointId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun put(updateWirelessPoint: com.ringcentral.definitions.UpdateWirelessPoint): com.ringcentral.definitions.WirelessPointInfo? {
         if (this.pointId == null) {
-            throw NullPointerException("pointId")
+            throw NullPointerException("pointId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateWirelessPoint)
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun delete(): String? {
         if (this.pointId == null) {
-            throw NullPointerException("pointId")
+            throw NullPointerException("pointId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

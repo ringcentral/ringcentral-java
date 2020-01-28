@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val phoneNu
      */
     fun get(): com.ringcentral.definitions.CompanyPhoneNumberInfo? {
         if (this.phoneNumberId == null) {
-            throw NullPointerException("phoneNumberId")
+            throw NullPointerException("phoneNumberId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

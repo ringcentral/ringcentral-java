@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      */
     fun get(): com.ringcentral.definitions.UserResponse? {
         if (this.id == null) {
-            throw NullPointerException("id")
+            throw NullPointerException("id");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      */
     fun put(user: com.ringcentral.definitions.User): com.ringcentral.definitions.UserResponse? {
         if (this.id == null) {
-            throw NullPointerException("id")
+            throw NullPointerException("id");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), user)
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      */
     fun delete(): String? {
         if (this.id == null) {
-            throw NullPointerException("id")
+            throw NullPointerException("id");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
@@ -91,7 +91,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      */
     fun patch(userPatch: com.ringcentral.definitions.UserPatch): com.ringcentral.definitions.UserResponse? {
         if (this.id == null) {
-            throw NullPointerException("id")
+            throw NullPointerException("id");
         }
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), userPatch)

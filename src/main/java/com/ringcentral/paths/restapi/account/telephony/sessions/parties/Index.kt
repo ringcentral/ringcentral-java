@@ -18,7 +18,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      */
     fun get(): com.ringcentral.definitions.CallParty? {
         if (this.partyId == null) {
-            throw NullPointerException("partyId")
+            throw NullPointerException("partyId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -34,7 +34,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      */
     fun patch(partyUpdateRequest: com.ringcentral.definitions.PartyUpdateRequest): com.ringcentral.definitions.CallParty? {
         if (this.partyId == null) {
-            throw NullPointerException("partyId")
+            throw NullPointerException("partyId");
         }
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), partyUpdateRequest)

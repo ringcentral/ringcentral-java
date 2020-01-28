@@ -42,7 +42,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
      */
     fun get(): com.ringcentral.definitions.PromptInfo? {
         if (this.promptId == null) {
-            throw NullPointerException("promptId")
+            throw NullPointerException("promptId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -58,7 +58,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
      */
     fun delete(): String? {
         if (this.promptId == null) {
-            throw NullPointerException("promptId")
+            throw NullPointerException("promptId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
@@ -74,7 +74,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
      */
     fun put(updateIVRPromptRequest: com.ringcentral.definitions.UpdateIVRPromptRequest): com.ringcentral.definitions.PromptInfo? {
         if (this.promptId == null) {
-            throw NullPointerException("promptId")
+            throw NullPointerException("promptId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateIVRPromptRequest)

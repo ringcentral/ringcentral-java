@@ -5,11 +5,15 @@ public class GetAccountInfoResponse {
     /**
      * Internal identifier of an account
      */
-    public String id;
+    public Long id;
     /**
      * Canonical URI of an account
      */
     public String uri;
+    /**
+     * Internal identifier of an account in the billing system
+     */
+    public String bsid;
     /**
      * Main phone number of the current account
      */
@@ -27,13 +31,18 @@ public class GetAccountInfoResponse {
      */
     public ServiceInfo serviceInfo;
     /**
-     * Specifies account configuration wizard state (web service setup). The default value is 'NotStarted'
+     * Specifies account configuration wizard state (web service setup)
+     * Default: NotStarted
      * Enum: NotStarted, Incomplete, Completed
      */
     public String setupWizardState;
     /**
+     * Account sign up data
+     */
+    public SignupInfoResource signupInfo;
+    /**
      * Status of the current account
-     * Enum: Confirmed, Disabled
+     * Enum: Initial, Confirmed, Unconfirmed, Disabled
      */
     public String status;
     /**
@@ -61,13 +70,18 @@ public class GetAccountInfoResponse {
      */
     public AccountLimits limits;
 
-    public GetAccountInfoResponse id(String id) {
+    public GetAccountInfoResponse id(Long id) {
         this.id = id;
         return this;
     }
 
     public GetAccountInfoResponse uri(String uri) {
         this.uri = uri;
+        return this;
+    }
+
+    public GetAccountInfoResponse bsid(String bsid) {
+        this.bsid = bsid;
         return this;
     }
 
@@ -93,6 +107,11 @@ public class GetAccountInfoResponse {
 
     public GetAccountInfoResponse setupWizardState(String setupWizardState) {
         this.setupWizardState = setupWizardState;
+        return this;
+    }
+
+    public GetAccountInfoResponse signupInfo(SignupInfoResource signupInfo) {
+        this.signupInfo = signupInfo;
         return this;
     }
 

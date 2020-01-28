@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class WirelessPointInfo {
     /**
+     * Link to the wireless point resource
+     */
+    public String uri;
+    /**
      * Internal identifier of a wireless point
      */
     public String id;
@@ -26,6 +30,11 @@ public class WirelessPointInfo {
      * Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+
+    public WirelessPointInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public WirelessPointInfo id(String id) {
         this.id = id;

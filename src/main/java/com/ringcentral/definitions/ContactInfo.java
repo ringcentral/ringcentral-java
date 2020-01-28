@@ -21,7 +21,6 @@ public class ContactInfo {
     public String jobTitle;
     /**
      * Email of extension user
-     * Required
      */
     public String email;
     /**

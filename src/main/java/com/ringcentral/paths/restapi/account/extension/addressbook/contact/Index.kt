@@ -44,7 +44,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.addressb
      */
     fun get(): com.ringcentral.definitions.PersonalContactResource? {
         if (this.contactId == null) {
-            throw NullPointerException("contactId")
+            throw NullPointerException("contactId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -61,7 +61,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.addressb
     @JvmOverloads
     fun put(personalContactRequest: com.ringcentral.definitions.PersonalContactRequest, queryParams: com.ringcentral.definitions.UpdateContactParameters? = null): com.ringcentral.definitions.PersonalContactResource? {
         if (this.contactId == null) {
-            throw NullPointerException("contactId")
+            throw NullPointerException("contactId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), personalContactRequest, queryParams)
@@ -77,7 +77,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.addressb
      */
     fun delete(): String? {
         if (this.contactId == null) {
-            throw NullPointerException("contactId")
+            throw NullPointerException("contactId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

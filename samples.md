@@ -1843,6 +1843,26 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readUserCallRecord) in API Explorer.
 
 
+## Update User Call Queues
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queues`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueues().put(userCallQueues);
+rc.revoke();
+```
+
+- Parameter `userCallQueues` is of type [UserCallQueues](./src/main/java/com/ringcentral/definitions/UserCallQueues.java)
+- `result` is of type [UserCallQueues](./src/main/java/com/ringcentral/definitions/UserCallQueues.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-updateUserCallQueues) in API Explorer.
+
+
 ## Get Caller Blocking Settings
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking`
@@ -4563,6 +4583,24 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-createDataExportTask) in API Explorer.
 
 
+## Get Data Export Task List
+
+HTTP GET `/restapi/v1.0/glip/data-export`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().dataExport().list(listDataExportTasksParameters);
+rc.revoke();
+```
+
+- Parameter `listDataExportTasksParameters` is of type [ListDataExportTasksParameters](./src/main/java/com/ringcentral/definitions/ListDataExportTasksParameters.java)
+- `result` is of type [DataExportTaskList](./src/main/java/com/ringcentral/definitions/DataExportTaskList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-listDataExportTasks) in API Explorer.
+
+
 ## Get Data Export Task
 
 HTTP GET `/restapi/v1.0/glip/data-export/{taskId}`
@@ -4579,6 +4617,24 @@ rc.revoke();
 - Parameter `apiVersion` is optional with default value `v1.0`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readDataExportTask) in API Explorer.
+
+
+## Get Data Export Task Dataset
+
+HTTP GET `/restapi/v1.0/glip/data-export/{taskId}/datasets/{datasetId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).glip().dataExport(taskId).datasets(datasetId).get();
+rc.revoke();
+```
+
+
+- `result` is of type `byte[]`
+- Parameter `apiVersion` is optional with default value `v1.0`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readDataExportTaskDataset) in API Explorer.
 
 
 ## Get User Events List

@@ -3,21 +3,30 @@ package com.ringcentral.definitions;
 
 public class ExportTaskResultInfo {
     /**
-     * Size of the collected data archive in bytes
+     * Internal identifier of a dataset
      */
-    public Long size;
+    public String id;
     /**
-     * Canonical URI for downloading an archive
+     * Link for downloading a dataset
      */
     public String uri;
+    /**
+     * Size of ta dataset in bytes
+     */
+    public Long size;
 
-    public ExportTaskResultInfo size(Long size) {
-        this.size = size;
+    public ExportTaskResultInfo id(String id) {
+        this.id = id;
         return this;
     }
 
     public ExportTaskResultInfo uri(String uri) {
         this.uri = uri;
+        return this;
+    }
+
+    public ExportTaskResultInfo size(Long size) {
+        this.size = size;
         return this;
     }
 

@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      */
     fun get(): com.ringcentral.definitions.GlipPostInfo? {
         if (this.postId == null) {
-            throw NullPointerException("postId")
+            throw NullPointerException("postId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      */
     fun patch(glipPatchPostBody: com.ringcentral.definitions.GlipPatchPostBody): com.ringcentral.definitions.GlipPostInfo? {
         if (this.postId == null) {
-            throw NullPointerException("postId")
+            throw NullPointerException("postId");
         }
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipPatchPostBody)
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      */
     fun delete(): String? {
         if (this.postId == null) {
-            throw NullPointerException("postId")
+            throw NullPointerException("postId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

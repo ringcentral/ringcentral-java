@@ -27,6 +27,10 @@ public class RegionalSettings {
      * Enum: 12h, 24h
      */
     public String timeFormat;
+    /**
+     *
+     */
+    public String bias;
 
     public RegionalSettings homeCountry(CountryInfo homeCountry) {
         this.homeCountry = homeCountry;
@@ -55,6 +59,11 @@ public class RegionalSettings {
 
     public RegionalSettings timeFormat(String timeFormat) {
         this.timeFormat = timeFormat;
+        return this;
+    }
+
+    public RegionalSettings bias(String bias) {
+        this.bias = bias;
         return this;
     }
 

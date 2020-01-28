@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      */
     fun get(): com.ringcentral.definitions.GlipEventInfo? {
         if (this.eventId == null) {
-            throw NullPointerException("eventId")
+            throw NullPointerException("eventId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      */
     fun put(glipEventCreate: com.ringcentral.definitions.GlipEventCreate): com.ringcentral.definitions.GlipEventInfo? {
         if (this.eventId == null) {
-            throw NullPointerException("eventId")
+            throw NullPointerException("eventId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), glipEventCreate)
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      */
     fun delete(): String? {
         if (this.eventId == null) {
-            throw NullPointerException("eventId")
+            throw NullPointerException("eventId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

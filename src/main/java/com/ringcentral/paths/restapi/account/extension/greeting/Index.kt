@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun get(): com.ringcentral.definitions.CustomUserGreetingInfo? {
         if (this.greetingId == null) {
-            throw NullPointerException("greetingId")
+            throw NullPointerException("greetingId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

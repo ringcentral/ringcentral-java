@@ -10,6 +10,14 @@ public class DictionaryGreetingList {
      * List of greetings
      */
     public DictionaryGreetingInfo[] records;
+    /**
+     * Information on navigation
+     */
+    public CallHandlingNavigationInfo navigation;
+    /**
+     * Information on paging
+     */
+    public CallHandlingPagingInfo paging;
 
     public DictionaryGreetingList uri(String uri) {
         this.uri = uri;
@@ -18,6 +26,16 @@ public class DictionaryGreetingList {
 
     public DictionaryGreetingList records(DictionaryGreetingInfo[] records) {
         this.records = records;
+        return this;
+    }
+
+    public DictionaryGreetingList navigation(CallHandlingNavigationInfo navigation) {
+        this.navigation = navigation;
+        return this;
+    }
+
+    public DictionaryGreetingList paging(CallHandlingPagingInfo paging) {
+        this.paging = paging;
         return this;
     }
 

@@ -9,14 +9,14 @@ public class RecipientInfo {
     /**
      * Internal identifier of a recipient extension
      */
-    public String id;
+    public Long id;
 
     public RecipientInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    public RecipientInfo id(String id) {
+    public RecipientInfo id(Long id) {
         this.id = id;
         return this;
     }

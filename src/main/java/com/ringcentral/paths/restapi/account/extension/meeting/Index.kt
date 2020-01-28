@@ -42,7 +42,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun get(): com.ringcentral.definitions.MeetingResponseResource? {
         if (this.meetingId == null) {
-            throw NullPointerException("meetingId")
+            throw NullPointerException("meetingId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -58,7 +58,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun put(meetingRequestResource: com.ringcentral.definitions.MeetingRequestResource): com.ringcentral.definitions.MeetingResponseResource? {
         if (this.meetingId == null) {
-            throw NullPointerException("meetingId")
+            throw NullPointerException("meetingId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), meetingRequestResource)
@@ -74,7 +74,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun delete(): String? {
         if (this.meetingId == null) {
-            throw NullPointerException("meetingId")
+            throw NullPointerException("meetingId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

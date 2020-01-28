@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
      */
     fun get(): com.ringcentral.definitions.EmergencyLocationInfo? {
         if (this.locationId == null) {
-            throw NullPointerException("locationId")
+            throw NullPointerException("locationId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
      */
     fun put(emergencyLocationInfoRequest: com.ringcentral.definitions.EmergencyLocationInfoRequest): com.ringcentral.definitions.EmergencyLocationInfo? {
         if (this.locationId == null) {
-            throw NullPointerException("locationId")
+            throw NullPointerException("locationId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), emergencyLocationInfoRequest)

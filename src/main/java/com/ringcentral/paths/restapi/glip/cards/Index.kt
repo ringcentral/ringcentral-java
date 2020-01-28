@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val cardId: St
      */
     fun get(): com.ringcentral.definitions.GlipMessageAttachmentInfo? {
         if (this.cardId == null) {
-            throw NullPointerException("cardId")
+            throw NullPointerException("cardId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -47,7 +47,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val cardId: St
      */
     fun put(glipMessageAttachmentInfoRequest: com.ringcentral.definitions.GlipMessageAttachmentInfoRequest): String? {
         if (this.cardId == null) {
-            throw NullPointerException("cardId")
+            throw NullPointerException("cardId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), glipMessageAttachmentInfoRequest)
@@ -63,7 +63,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val cardId: St
      */
     fun delete(): String? {
         if (this.cardId == null) {
-            throw NullPointerException("cardId")
+            throw NullPointerException("cardId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

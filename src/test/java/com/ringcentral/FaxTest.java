@@ -3,7 +3,7 @@ package com.ringcentral;
 import com.ringcentral.definitions.Attachment;
 import com.ringcentral.definitions.CreateFaxMessageRequest;
 import com.ringcentral.definitions.FaxResponse;
-import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
+import com.ringcentral.definitions.MessageStoreCalleeInfoRequest;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -30,8 +30,8 @@ public class FaxTest {
 
         FaxResponse r = rc.restapi().account().extension().fax().post(
             new CreateFaxMessageRequest()
-                .to(new MessageStoreCallerInfoRequest[]{
-                    new MessageStoreCallerInfoRequest()
+                .to(new MessageStoreCalleeInfoRequest[]{
+                    new MessageStoreCalleeInfoRequest()
                         .phoneNumber(System.getenv("RINGCENTRAL_USERNAME"))
                 })
                 .attachments(

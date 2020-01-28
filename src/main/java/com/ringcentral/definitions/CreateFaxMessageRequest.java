@@ -14,7 +14,7 @@ public class CreateFaxMessageRequest {
     /**
      * To Phone Number
      */
-    public MessageStoreCallerInfoRequest[] to;
+    public MessageStoreCalleeInfoRequest[] to;
     /**
      * Timestamp to send fax at. If not specified (current or the past), the fax is sent immediately
      */
@@ -42,7 +42,7 @@ public class CreateFaxMessageRequest {
         return this;
     }
 
-    public CreateFaxMessageRequest to(MessageStoreCallerInfoRequest[] to) {
+    public CreateFaxMessageRequest to(MessageStoreCalleeInfoRequest[] to) {
         this.to = to;
         return this;
     }

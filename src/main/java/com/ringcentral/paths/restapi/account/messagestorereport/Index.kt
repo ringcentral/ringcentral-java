@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val taskId:
      */
     fun get(): com.ringcentral.definitions.MessageStoreReport? {
         if (this.taskId == null) {
-            throw NullPointerException("taskId")
+            throw NullPointerException("taskId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

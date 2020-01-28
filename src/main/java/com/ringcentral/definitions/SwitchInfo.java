@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class SwitchInfo {
     /**
+     * Link to the network switch resource
+     */
+    public String uri;
+    /**
      * Internal identifier of a network switch
      */
     public String id;
@@ -26,6 +30,11 @@ public class SwitchInfo {
      * Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+
+    public SwitchInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public SwitchInfo id(String id) {
         this.id = id;

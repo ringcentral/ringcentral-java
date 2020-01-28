@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
      */
     fun get(): com.ringcentral.definitions.IVRMenuInfo? {
         if (this.ivrMenuId == null) {
-            throw NullPointerException("ivrMenuId")
+            throw NullPointerException("ivrMenuId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -46,7 +46,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
      */
     fun put(iVRMenuInfo: com.ringcentral.definitions.IVRMenuInfo): com.ringcentral.definitions.IVRMenuInfo? {
         if (this.ivrMenuId == null) {
-            throw NullPointerException("ivrMenuId")
+            throw NullPointerException("ivrMenuId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), iVRMenuInfo)

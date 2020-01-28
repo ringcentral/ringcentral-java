@@ -18,7 +18,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val accountId: Stri
      */
     fun get(): com.ringcentral.definitions.GetAccountInfoResponse? {
         if (this.accountId == null) {
-            throw NullPointerException("accountId")
+            throw NullPointerException("accountId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

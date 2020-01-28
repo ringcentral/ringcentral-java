@@ -18,7 +18,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val personId: 
      */
     fun get(): com.ringcentral.definitions.GlipPersonInfo? {
         if (this.personId == null) {
-            throw NullPointerException("personId")
+            throw NullPointerException("personId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

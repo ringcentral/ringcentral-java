@@ -19,7 +19,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.messages
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadMessageContentParameters? = null): ByteArray? {
         if (this.attachmentId == null) {
-            throw NullPointerException("attachmentId")
+            throw NullPointerException("attachmentId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

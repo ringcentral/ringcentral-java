@@ -19,7 +19,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.Index, v
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadCallSessionStatusParameters? = null): com.ringcentral.definitions.CallSession? {
         if (this.telephonySessionId == null) {
-            throw NullPointerException("telephonySessionId")
+            throw NullPointerException("telephonySessionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.Index, v
      */
     fun delete(): String? {
         if (this.telephonySessionId == null) {
-            throw NullPointerException("telephonySessionId")
+            throw NullPointerException("telephonySessionId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

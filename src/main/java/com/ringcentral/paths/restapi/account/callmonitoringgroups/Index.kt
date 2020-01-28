@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      */
     fun put(createCallMonitoringGroupRequest: com.ringcentral.definitions.CreateCallMonitoringGroupRequest): com.ringcentral.definitions.CallMonitoringGroup? {
         if (this.groupId == null) {
-            throw NullPointerException("groupId")
+            throw NullPointerException("groupId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), createCallMonitoringGroupRequest)
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      */
     fun delete(): String? {
         if (this.groupId == null) {
-            throw NullPointerException("groupId")
+            throw NullPointerException("groupId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

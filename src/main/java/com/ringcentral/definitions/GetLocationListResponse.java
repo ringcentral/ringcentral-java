@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class GetLocationListResponse {
     /**
+     * Link to the location list resource
+     */
+    public String uri;
+    /**
      * List of locations
      */
     public LocationInfo[] records;
@@ -16,6 +20,11 @@ public class GetLocationListResponse {
      * Required
      */
     public ProvisioningPagingInfo paging;
+
+    public GetLocationListResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public GetLocationListResponse records(LocationInfo[] records) {
         this.records = records;

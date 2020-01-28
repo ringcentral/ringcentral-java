@@ -45,7 +45,7 @@ public class ExtensionCreationRequest {
     /**
      * Extension type
      * Required
-     * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnlyGroup, ParkLocation
+     * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation
      */
     public String type;
     /**

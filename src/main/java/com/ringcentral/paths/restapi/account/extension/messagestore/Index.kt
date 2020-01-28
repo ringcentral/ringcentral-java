@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun get(): com.ringcentral.definitions.GetMessageInfoResponse? {
         if (this.messageId == null) {
-            throw NullPointerException("messageId")
+            throw NullPointerException("messageId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -47,7 +47,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun put(updateMessageRequest: com.ringcentral.definitions.UpdateMessageRequest): com.ringcentral.definitions.GetMessageInfoResponse? {
         if (this.messageId == null) {
-            throw NullPointerException("messageId")
+            throw NullPointerException("messageId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateMessageRequest)
@@ -64,7 +64,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     @JvmOverloads
     fun delete(queryParams: com.ringcentral.definitions.DeleteMessageParameters? = null): String? {
         if (this.messageId == null) {
-            throw NullPointerException("messageId")
+            throw NullPointerException("messageId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path(), queryParams)

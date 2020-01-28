@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val coun
      */
     fun get(): com.ringcentral.definitions.GetCountryInfoDictionaryResponse? {
         if (this.countryId == null) {
-            throw NullPointerException("countryId")
+            throw NullPointerException("countryId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

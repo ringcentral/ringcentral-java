@@ -42,7 +42,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun get(): com.ringcentral.definitions.NetworkInfo? {
         if (this.networkId == null) {
-            throw NullPointerException("networkId")
+            throw NullPointerException("networkId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -58,7 +58,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun put(updateNetworkRequest: com.ringcentral.definitions.UpdateNetworkRequest): String? {
         if (this.networkId == null) {
-            throw NullPointerException("networkId")
+            throw NullPointerException("networkId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateNetworkRequest)
@@ -74,7 +74,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      */
     fun delete(): String? {
         if (this.networkId == null) {
-            throw NullPointerException("networkId")
+            throw NullPointerException("networkId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())

@@ -43,7 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerbl
      */
     fun get(): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
         if (this.blockedNumberId == null) {
-            throw NullPointerException("blockedNumberId")
+            throw NullPointerException("blockedNumberId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
@@ -59,7 +59,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerbl
      */
     fun delete(): String? {
         if (this.blockedNumberId == null) {
-            throw NullPointerException("blockedNumberId")
+            throw NullPointerException("blockedNumberId");
         }
 
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
@@ -75,7 +75,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerbl
      */
     fun put(addBlockedAllowedPhoneNumber: com.ringcentral.definitions.AddBlockedAllowedPhoneNumber): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
         if (this.blockedNumberId == null) {
-            throw NullPointerException("blockedNumberId")
+            throw NullPointerException("blockedNumberId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), addBlockedAllowedPhoneNumber)

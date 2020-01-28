@@ -54,7 +54,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      */
     fun get(): ByteArray? {
         if (this.scaleSize == null) {
-            throw NullPointerException("scaleSize")
+            throw NullPointerException("scaleSize");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

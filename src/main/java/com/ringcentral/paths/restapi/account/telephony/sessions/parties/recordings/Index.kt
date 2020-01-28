@@ -31,7 +31,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
     @JvmOverloads
     fun patch(callRecordingUpdate: com.ringcentral.definitions.CallRecordingUpdate, queryParams: com.ringcentral.definitions.PauseResumeCallRecordingParameters? = null): com.ringcentral.definitions.CallRecording? {
         if (this.recordingId == null) {
-            throw NullPointerException("recordingId")
+            throw NullPointerException("recordingId");
         }
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), callRecordingUpdate, queryParams)

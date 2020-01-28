@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.messagestorereport
      */
     fun get(): String? {
         if (this.archiveId == null) {
-            throw NullPointerException("archiveId")
+            throw NullPointerException("archiveId");
         }
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())

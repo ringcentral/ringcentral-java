@@ -52,7 +52,7 @@ const generateField = (m, f) => {
     p += `@JSONField(name="${f.name}")`
     pName = f.name.replace(/[:.](\w)/g, '_$1')
     p += `\n        public ${f.type} ${pName};`
-  } else if (f.name === 'public' || f.name === 'default') {
+  } else if (f.name === 'public' || f.name === 'default' || f.name === 'package') {
     p += `@JSONField(name="${f.name}")`
     pName = `_${f.name}`
     p += `\n        public ${f.type} ${pName};`

@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UnifiedPresence::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UnifiedPresence::class.java)
       
     }
     
@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), updateUnifiedPresence)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UnifiedPresence::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UnifiedPresence::class.java)
       
     }
     

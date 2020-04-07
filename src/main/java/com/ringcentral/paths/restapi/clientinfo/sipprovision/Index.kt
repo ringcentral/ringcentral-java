@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.clientinfo.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createSipRegistrationRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CreateSipRegistrationResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CreateSipRegistrationResponse::class.java)
       
     }
     

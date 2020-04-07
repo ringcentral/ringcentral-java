@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.pagingonlygroups.I
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.PagingOnlyGroupDevices::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PagingOnlyGroupDevices::class.java)
       
     }
     

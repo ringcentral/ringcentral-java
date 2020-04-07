@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetMessageList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageList::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
       
     }
     
@@ -58,7 +58,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateMessageRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
       
     }
     

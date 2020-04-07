@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), iVRMenuInfo)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.IVRMenuInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.IVRMenuInfo::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.IVRMenuInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.IVRMenuInfo::class.java)
       
     }
     
@@ -58,7 +58,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), iVRMenuInfo)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.IVRMenuInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.IVRMenuInfo::class.java)
       
     }
     

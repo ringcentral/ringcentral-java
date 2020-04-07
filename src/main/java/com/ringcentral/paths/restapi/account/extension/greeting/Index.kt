@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createCustomUserGreetingRequest, null, com.ringcentral.ContentType.MULTIPART)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CustomUserGreetingInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomUserGreetingInfo::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CustomUserGreetingInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomUserGreetingInfo::class.java)
       
     }
     

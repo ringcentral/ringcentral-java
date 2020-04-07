@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.AccountCallLogSyncResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AccountCallLogSyncResponse::class.java)
       
     }
     

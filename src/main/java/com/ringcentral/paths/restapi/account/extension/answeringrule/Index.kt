@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UserAnsweringRuleList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UserAnsweringRuleList::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createAnsweringRuleRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CustomAnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomAnsweringRuleInfo::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.AnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AnsweringRuleInfo::class.java)
       
     }
     
@@ -71,7 +71,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateAnsweringRuleRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.AnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AnsweringRuleInfo::class.java)
       
     }
     

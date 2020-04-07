@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.ServiceProviderConfig::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ServiceProviderConfig::class.java)
       
     }
     

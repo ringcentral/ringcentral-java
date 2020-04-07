@@ -1,5 +1,6 @@
 package com.ringcentral;
 
+import com.google.gson.Gson;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
@@ -9,6 +10,8 @@ import java.io.IOException;
 import java.text.MessageFormat;
 
 public class Utils {
+    public static Gson gson = new Gson();
+
     public static String formatHttpMessage(Response response, Request request) {
         String responseBodyString = "";
         try {

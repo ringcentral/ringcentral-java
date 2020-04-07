@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val gree
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.DictionaryGreetingList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.DictionaryGreetingList::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val gree
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.DictionaryGreetingInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.DictionaryGreetingInfo::class.java)
       
     }
     

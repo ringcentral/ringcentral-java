@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.NetworksList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.NetworksList::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createNetworkRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.NetworkInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.NetworkInfo::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.NetworkInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.NetworkInfo::class.java)
       
     }
     

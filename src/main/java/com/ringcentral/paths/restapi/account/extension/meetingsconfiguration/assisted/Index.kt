@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.meetings
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.AssistedUsersResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AssistedUsersResource::class.java)
       
     }
     

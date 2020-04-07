@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipEventsInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipEventsInfo::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), glipEventCreate)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
       
     }
     
@@ -71,7 +71,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), glipEventCreate)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
       
     }
     

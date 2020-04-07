@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createSubscriptionRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
       
     }
     
@@ -71,7 +71,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), modifySubscriptionRequest, queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
       
     }
     

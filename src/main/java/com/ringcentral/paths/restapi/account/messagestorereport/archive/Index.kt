@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.messagestorereport
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.MessageStoreReportArchive::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageStoreReportArchive::class.java)
       
     }
     

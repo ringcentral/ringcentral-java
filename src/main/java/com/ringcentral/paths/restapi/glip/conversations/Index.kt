@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipConversationsList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipConversationsList::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createGlipConversationRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipConversationInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipConversationInfo::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipConversationInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipConversationInfo::class.java)
       
     }
     

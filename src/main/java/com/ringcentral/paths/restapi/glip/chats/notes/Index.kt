@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), glipNoteCreate)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipNoteInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipNoteInfo::class.java)
       
     }
     
@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipNotesInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipNotesInfo::class.java)
       
     }
     

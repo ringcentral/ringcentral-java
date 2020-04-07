@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createSMSMessage, null, com.ringcentral.ContentType.MULTIPART)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
       
     }
     
@@ -28,6 +28,6 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      */
     fun post(createMMSMessage: com.ringcentral.definitions.CreateMMSMessage): com.ringcentral.definitions.GetMessageInfoResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createMMSMessage, null, com.ringcentral.ContentType.MULTIPART)
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
     }
 }

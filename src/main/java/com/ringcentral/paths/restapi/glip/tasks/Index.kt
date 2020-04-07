@@ -27,7 +27,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipTaskInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipTaskInfo::class.java)
       
     }
     
@@ -45,7 +45,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipUpdateTask)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipTaskList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipTaskList::class.java)
       
     }
     

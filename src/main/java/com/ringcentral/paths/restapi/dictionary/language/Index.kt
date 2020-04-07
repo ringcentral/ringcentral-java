@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val lang
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.LanguageList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.LanguageList::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val lang
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.LanguageInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.LanguageInfo::class.java)
       
     }
     

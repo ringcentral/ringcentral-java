@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.directory.entries.
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), searchDirectoryEntriesRequest)
         
-        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.DirectoryResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.DirectoryResource::class.java)
       
     }
     

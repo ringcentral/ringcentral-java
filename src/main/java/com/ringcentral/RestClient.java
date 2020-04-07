@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.text.MessageFormat;
-import java.util.*;
 
 public class RestClient {
     public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";

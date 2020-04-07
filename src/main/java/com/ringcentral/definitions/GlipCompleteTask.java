@@ -10,7 +10,7 @@ public class GlipCompleteTask {
     /**
      *
      */
-    public Object[] assignees;
+    public GlipCompleteTaskAssignee[] assignees;
     /**
      * Current completeness percentage of a task with the 'Percentage' completeness condition. 'Mandatory' if `completenessCondition` is set to `Percentage`, otherwise 'Optional'
      * Maximum: 100
@@ -22,7 +22,7 @@ public class GlipCompleteTask {
         return this;
     }
 
-    public GlipCompleteTask assignees(Object[] assignees) {
+    public GlipCompleteTask assignees(GlipCompleteTaskAssignee[] assignees) {
         this.assignees = assignees;
         return this;
     }

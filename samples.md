@@ -134,11 +134,11 @@ HTTP GET `/restapi/v1.0/account/{accountId}/answering-rule`
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).answeringRule().list();
+var result = rc.restapi(apiVersion).account(accountId).answeringRule().list(listCompanyAnsweringRulesParameters);
 rc.revoke();
 ```
 
-
+- Parameter `listCompanyAnsweringRulesParameters` is of type [ListCompanyAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListCompanyAnsweringRulesParameters.java)
 - `result` is of type [CompanyAnsweringRuleList](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -324,11 +324,11 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-log/{callRecordId}`
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).callLog(callRecordId).get();
+var result = rc.restapi(apiVersion).account(accountId).callLog(callRecordId).get(readCompanyCallRecordParameters);
 rc.revoke();
 ```
 
-
+- Parameter `readCompanyCallRecordParameters` is of type [ReadCompanyCallRecordParameters](./src/main/java/com/ringcentral/definitions/ReadCompanyCallRecordParameters.java)
 - `result` is of type [CompanyCallLogRecord](./src/main/java/com/ringcentral/definitions/CompanyCallLogRecord.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -457,7 +457,7 @@ HTTP GET `/restapi/v1.0/account/{accountId}/call-queues`
 ```cs
 RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
 rc.authorize("username", "extension", "password");
-var result = rc.restapi(apiVersion).account(accountId).callQueues().get(listCallQueuesParameters);
+var result = rc.restapi(apiVersion).account(accountId).callQueues().list(listCallQueuesParameters);
 rc.revoke();
 ```
 
@@ -467,6 +467,44 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueues) in API Explorer.
+
+
+## Get Call Queue
+
+HTTP GET `/restapi/v1.0/account/{accountId}/call-queues/{groupId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).get();
+rc.revoke();
+```
+
+
+- `result` is of type [CallQueueDetails](./src/main/java/com/ringcentral/definitions/CallQueueDetails.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-readCallQueueInfo) in API Explorer.
+
+
+## Update Call Queue
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/call-queues/{groupId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).put(callQueueUpdateDetails);
+rc.revoke();
+```
+
+- Parameter `callQueueUpdateDetails` is of type [CallQueueUpdateDetails](./src/main/java/com/ringcentral/definitions/CallQueueUpdateDetails.java)
+- `result` is of type [CallQueueDetails](./src/main/java/com/ringcentral/definitions/CallQueueDetails.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-updateCallQueueInfo) in API Explorer.
 
 
 ## Assign Multiple Call Queue Members
@@ -505,6 +543,44 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueueMembers) in API Explorer.
+
+
+## Get Call Queue Presence
+
+HTTP GET `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().get();
+rc.revoke();
+```
+
+
+- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-readCallQueuePresence) in API Explorer.
+
+
+## Update Call Queue Presence
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().put(callQueueUpdatePresence);
+rc.revoke();
+```
+
+- Parameter `callQueueUpdatePresence` is of type [CallQueueUpdatePresence](./src/main/java/com/ringcentral/definitions/CallQueueUpdatePresence.java)
+- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-updateCallQueuePresence) in API Explorer.
 
 
 ## Get Call Recording Settings
@@ -619,6 +695,82 @@ rc.revoke();
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCallRecordingExtensions) in API Explorer.
+
+
+## Create Custom Field
+
+HTTP POST `/restapi/v1.0/account/{accountId}/custom-fields`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).customFields().post(customFieldCreateRequest);
+rc.revoke();
+```
+
+- Parameter `customFieldCreateRequest` is of type [CustomFieldCreateRequest](./src/main/java/com/ringcentral/definitions/CustomFieldCreateRequest.java)
+- `result` is of type [CustomFieldResource](./src/main/java/com/ringcentral/definitions/CustomFieldResource.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Custom-Fields-createCustomField) in API Explorer.
+
+
+## Get Custom Field List
+
+HTTP GET `/restapi/v1.0/account/{accountId}/custom-fields`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).customFields().get();
+rc.revoke();
+```
+
+
+- `result` is of type [CustomFieldsResource](./src/main/java/com/ringcentral/definitions/CustomFieldsResource.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Custom-Fields-listCustomFields) in API Explorer.
+
+
+## Update Сustom Field
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/custom-fields/{fieldId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).put(customFieldUpdateRequest);
+rc.revoke();
+```
+
+- Parameter `customFieldUpdateRequest` is of type [CustomFieldUpdateRequest](./src/main/java/com/ringcentral/definitions/CustomFieldUpdateRequest.java)
+- `result` is of type [CustomFieldResource](./src/main/java/com/ringcentral/definitions/CustomFieldResource.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Custom-Fields-updateCustomField) in API Explorer.
+
+
+## Delete Custom Field
+
+HTTP DELETE `/restapi/v1.0/account/{accountId}/custom-fields/{fieldId}`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).delete();
+rc.revoke();
+```
+
+
+- `result` is `null`
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Custom-Fields-deleteCustomField) in API Explorer.
 
 
 ## Assign Multiple Department Members
@@ -1843,6 +1995,46 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readUserCallRecord) in API Explorer.
 
 
+## Get Agent’s Call Queue Presence
+
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueuePresence().get(readExtensionCallQueuePresenceParameters);
+rc.revoke();
+```
+
+- Parameter `readExtensionCallQueuePresenceParameters` is of type [ReadExtensionCallQueuePresenceParameters](./src/main/java/com/ringcentral/definitions/ReadExtensionCallQueuePresenceParameters.java)
+- `result` is of type [ExtensionCallQueuePresenceList](./src/main/java/com/ringcentral/definitions/ExtensionCallQueuePresenceList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-readExtensionCallQueuePresence) in API Explorer.
+
+
+## Update Call Queue Presence
+
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueuePresence().put(extensionCallQueueUpdatePresenceList);
+rc.revoke();
+```
+
+- Parameter `extensionCallQueueUpdatePresenceList` is of type [ExtensionCallQueueUpdatePresenceList](./src/main/java/com/ringcentral/definitions/ExtensionCallQueueUpdatePresenceList.java)
+- `result` is of type [ExtensionCallQueuePresenceList](./src/main/java/com/ringcentral/definitions/ExtensionCallQueuePresenceList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-updateExtensionCallQueuePresence) in API Explorer.
+
+
 ## Update User Call Queues
 
 HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queues`
@@ -2443,6 +2635,26 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Configuration-readMeetingServiceInfo) in API Explorer.
 
 
+## Update Meeting Service Info
+
+HTTP PATCH `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info`
+
+```cs
+RestClient rc = new RestClient("clientID", "clientSecret", "serverURL");
+rc.authorize("username", "extension", "password");
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().patch(meetingServiceInfoRequest);
+rc.revoke();
+```
+
+- Parameter `meetingServiceInfoRequest` is of type [MeetingServiceInfoRequest](./src/main/java/com/ringcentral/definitions/MeetingServiceInfoRequest.java)
+- `result` is of type [MeetingServiceInfoResource](./src/main/java/com/ringcentral/definitions/MeetingServiceInfoResource.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Configuration-updateMeetingServiceInfo) in API Explorer.
+
+
 ## Get Meeting Info
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}`
@@ -2603,7 +2815,7 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-readMessage) in API Explorer.
 
 
-## Update Message(s)
+## Update Message List
 
 HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}`
 

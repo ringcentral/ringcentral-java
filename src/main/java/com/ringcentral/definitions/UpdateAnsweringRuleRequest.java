@@ -28,7 +28,7 @@ public class UpdateAnsweringRuleRequest {
     public ScheduleInfo schedule;
     /**
      * Specifies how incoming calls are forwarded
-     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly
+     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly, SharedLines
      */
     public String callHandlingAction;
     /**
@@ -53,7 +53,7 @@ public class UpdateAnsweringRuleRequest {
      */
     public String screening;
     /**
-     * Indicates whether inactive numbers should be returned or not.
+     * Indicates whether inactive numbers should be returned or not
      */
     public Boolean showInactiveNumbers;
 

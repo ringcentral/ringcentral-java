@@ -7,7 +7,7 @@ public class DeviceResource {
      */
     public String id;
     /**
-     * Canonical URI of a device
+     * Link to a device resource
      */
     public String uri;
     /**
@@ -25,6 +25,10 @@ public class DeviceResource {
      * Enum: Online, Offline
      */
     public String status;
+    /**
+     * Site data
+     */
+    public DeviceSiteInfo site;
     /**
      * Device name. Mandatory if ordering SoftPhone or OtherPhone . Optional for HardPhone . If not specified for HardPhone, then device model name is used as device name
      */
@@ -101,6 +105,11 @@ public class DeviceResource {
 
     public DeviceResource status(String status) {
         this.status = status;
+        return this;
+    }
+
+    public DeviceResource site(DeviceSiteInfo site) {
+        this.site = site;
         return this;
     }
 

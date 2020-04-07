@@ -23,7 +23,7 @@ public class TokenInfo {
      */
     public String scope;
     /**
-     * Type of token. The only possible value supported is Bearer. This value should be used when specifying access token in Authorization header of subsequent API requests
+     * Type of token. The only possible value supported is Bearer. This value should be used when specifying access token in `Authorization` header of subsequent API requests
      */
     public String token_type;
     /**

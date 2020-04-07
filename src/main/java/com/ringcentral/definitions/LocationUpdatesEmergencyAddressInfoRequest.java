@@ -7,9 +7,37 @@ public class LocationUpdatesEmergencyAddressInfoRequest {
      */
     public String country;
     /**
+     * Internal identifier of a country
+     */
+    public String countryId;
+    /**
+     * ISO code of a country
+     */
+    public String countryIsoCode;
+    /**
+     * Full name of a country
+     */
+    public String countryName;
+    /**
+     * Customer name
+     */
+    public String customerName;
+    /**
      * State/Province name. Mandatory for the USA, the UK and Canada
      */
     public String state;
+    /**
+     * Internal identifier of a state
+     */
+    public String stateId;
+    /**
+     * ISO code of a state
+     */
+    public String stateIsoCode;
+    /**
+     * Full name of a state
+     */
+    public String stateName;
     /**
      * City name
      */
@@ -32,8 +60,43 @@ public class LocationUpdatesEmergencyAddressInfoRequest {
         return this;
     }
 
+    public LocationUpdatesEmergencyAddressInfoRequest countryId(String countryId) {
+        this.countryId = countryId;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoRequest countryIsoCode(String countryIsoCode) {
+        this.countryIsoCode = countryIsoCode;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoRequest countryName(String countryName) {
+        this.countryName = countryName;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoRequest customerName(String customerName) {
+        this.customerName = customerName;
+        return this;
+    }
+
     public LocationUpdatesEmergencyAddressInfoRequest state(String state) {
         this.state = state;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoRequest stateId(String stateId) {
+        this.stateId = stateId;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoRequest stateIsoCode(String stateIsoCode) {
+        this.stateIsoCode = stateIsoCode;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoRequest stateName(String stateName) {
+        this.stateName = stateName;
         return this;
     }
 

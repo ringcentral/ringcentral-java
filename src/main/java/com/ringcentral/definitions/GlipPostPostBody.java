@@ -10,14 +10,14 @@ public class GlipPostPostBody {
     /**
      * Identifier(s) of attachments.
      */
-    public Object[] attachments;
+    public GlipPostPostBodyAttachment[] attachments;
 
     public GlipPostPostBody text(String text) {
         this.text = text;
         return this;
     }
 
-    public GlipPostPostBody attachments(Object[] attachments) {
+    public GlipPostPostBody attachments(GlipPostPostBodyAttachment[] attachments) {
         this.attachments = attachments;
         return this;
     }

@@ -31,6 +31,11 @@ public class DetailedExtensionPresenceEventBody {
      */
     public String userStatus;
     /**
+     * Meetings presence status
+     * Enum: Connected, Disconnected
+     */
+    public String meetingStatus;
+    /**
      * Extended DnD (Do not Disturb) status
      * Enum: TakeAllCalls, DoNotAcceptAnyCalls, DoNotAcceptDepartmentCalls, TakeDepartmentCallsOnly
      */
@@ -83,6 +88,11 @@ public class DetailedExtensionPresenceEventBody {
 
     public DetailedExtensionPresenceEventBody userStatus(String userStatus) {
         this.userStatus = userStatus;
+        return this;
+    }
+
+    public DetailedExtensionPresenceEventBody meetingStatus(String meetingStatus) {
+        this.meetingStatus = meetingStatus;
         return this;
     }
 

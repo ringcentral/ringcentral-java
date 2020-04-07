@@ -32,7 +32,7 @@ public class PartySuperviseResponse {
      */
     public Boolean muted;
     /**
-     *
+     * Deprecated. Infromation a call owner
      */
     public OwnerInfo owner;
     /**

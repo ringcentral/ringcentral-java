@@ -7,10 +7,6 @@ public class PartyInfo {
      */
     public String phoneNumber;
     /**
-     * Internal identifier of an extension
-     */
-    public String extensionId;
-    /**
      * Displayed name of a party
      */
     public String name;
@@ -18,14 +14,13 @@ public class PartyInfo {
      * Internal identifier of a device
      */
     public String deviceId;
+    /**
+     * Internal identifier of an extension
+     */
+    public String extensionId;
 
     public PartyInfo phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-        return this;
-    }
-
-    public PartyInfo extensionId(String extensionId) {
-        this.extensionId = extensionId;
         return this;
     }
 
@@ -36,6 +31,11 @@ public class PartyInfo {
 
     public PartyInfo deviceId(String deviceId) {
         this.deviceId = deviceId;
+        return this;
+    }
+
+    public PartyInfo extensionId(String extensionId) {
+        this.extensionId = extensionId;
         return this;
     }
 

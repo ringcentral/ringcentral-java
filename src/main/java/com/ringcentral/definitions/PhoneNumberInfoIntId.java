@@ -13,7 +13,7 @@ public class PhoneNumberInfoIntId {
     /**
      * Information on the extension, to which the phone number is assigned. Returned only for the request of Account phone number list
      */
-    public ExtensionInfo extension;
+    public DeviceProvisioningExtensionInfo extension;
     /**
      * Custom user name of a phone number, if any
      */
@@ -56,7 +56,7 @@ public class PhoneNumberInfoIntId {
         return this;
     }
 
-    public PhoneNumberInfoIntId extension(ExtensionInfo extension) {
+    public PhoneNumberInfoIntId extension(DeviceProvisioningExtensionInfo extension) {
         this.extension = extension;
         return this;
     }

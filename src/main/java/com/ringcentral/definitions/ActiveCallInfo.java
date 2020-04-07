@@ -46,6 +46,14 @@ public class ActiveCallInfo {
      *
      */
     public String terminationType;
+    /**
+     * Primary call session information. Supported for Call Queues only
+     */
+    public PrimaryCQInfo primary;
+    /**
+     * Additional call session information. Supported for Call Queues only
+     */
+    public AdditionalCQInfo additional;
 
     public ActiveCallInfo id(String id) {
         this.id = id;
@@ -99,6 +107,16 @@ public class ActiveCallInfo {
 
     public ActiveCallInfo terminationType(String terminationType) {
         this.terminationType = terminationType;
+        return this;
+    }
+
+    public ActiveCallInfo primary(PrimaryCQInfo primary) {
+        this.primary = primary;
+        return this;
+    }
+
+    public ActiveCallInfo additional(AdditionalCQInfo additional) {
+        this.additional = additional;
         return this;
     }
 

@@ -6,9 +6,9 @@ public class CreateMultipleSwitchesResponse {
     /**
      *
      */
-    public BulkTaskInfo[] task;
+    public BulkTaskInfo task;
 
-    public CreateMultipleSwitchesResponse task(BulkTaskInfo[] task) {
+    public CreateMultipleSwitchesResponse task(BulkTaskInfo task) {
         this.task = task;
         return this;
     }

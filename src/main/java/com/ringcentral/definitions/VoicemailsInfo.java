@@ -27,7 +27,7 @@ public class VoicemailsInfo {
      */
     public Boolean includeTranscription;
     /**
-     * Indicates whether email should be automatically marked as read
+     * Indicates whether a voicemail should be automatically marked as read
      */
     public Boolean markAsRead;
 

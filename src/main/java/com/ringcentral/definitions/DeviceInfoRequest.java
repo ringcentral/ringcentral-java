@@ -14,6 +14,10 @@ public class DeviceInfoRequest {
      * Supported for SoftPhone only. Computer name
      */
     public String computerName;
+    /**
+     * Serial number for HardPhone; endpoint_id for softphone and mobile applications. Returned only when the phone is shipped and provisioned
+     */
+    public String serial;
 
     public DeviceInfoRequest id(String id) {
         this.id = id;
@@ -27,6 +31,11 @@ public class DeviceInfoRequest {
 
     public DeviceInfoRequest computerName(String computerName) {
         this.computerName = computerName;
+        return this;
+    }
+
+    public DeviceInfoRequest serial(String serial) {
+        this.serial = serial;
         return this;
     }
 

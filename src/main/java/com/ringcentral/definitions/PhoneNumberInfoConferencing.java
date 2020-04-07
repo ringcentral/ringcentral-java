@@ -1,6 +1,6 @@
 package com.ringcentral.definitions;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.google.gson.annotations.SerializedName;
 
 
 public class PhoneNumberInfoConferencing {
@@ -11,7 +11,7 @@ public class PhoneNumberInfoConferencing {
     /**
      * 'True' if the number is default for the conference. Default conference number is a domestic number that can be set by user (otherwise it is set by the system). Only one default number per country is allowed
      */
-    @JSONField(name = "default")
+    @SerializedName("default")
     public Boolean _default;
     /**
      * 'True' if the greeting message is played on this number

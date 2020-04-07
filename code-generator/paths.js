@@ -214,7 +214,7 @@ const generate = (prefix = '/') => {
         `
       } else {
         code += `
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), ${responseType}::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), ${responseType}::class.java)
       `
       }
       code += `
@@ -255,5 +255,5 @@ appendCodeToFile(path.join(mmsFolderPath, 'Index.kt'), `/**
      */
     fun post(createMMSMessage: com.ringcentral.definitions.CreateMMSMessage): com.ringcentral.definitions.GetMessageInfoResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createMMSMessage, null, com.ringcentral.ContentType.MULTIPART)
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
     }`)

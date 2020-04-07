@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipChatsList::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipChatsList::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipChatInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipChatInfo::class.java)
       
     }
     

@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.CallQueues::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CallQueues::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.CallQueueDetails::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CallQueueDetails::class.java)
       
     }
     
@@ -58,7 +58,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callQueueUpdateDetails)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.CallQueueDetails::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CallQueueDetails::class.java)
       
     }
     

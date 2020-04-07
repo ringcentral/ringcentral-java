@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createIVRPromptRequest, null, com.ringcentral.ContentType.MULTIPART)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.IVRPrompts::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.IVRPrompts::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
       
     }
     
@@ -89,7 +89,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateIVRPromptRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
       
     }
     

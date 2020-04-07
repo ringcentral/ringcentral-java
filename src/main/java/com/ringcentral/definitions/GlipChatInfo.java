@@ -1,6 +1,6 @@
 package com.ringcentral.definitions;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.google.gson.annotations.SerializedName;
 
 
 public class GlipChatInfo {
@@ -16,7 +16,7 @@ public class GlipChatInfo {
     /**
      * For 'Team' chat type only. Team access level.
      */
-    @JSONField(name = "public")
+    @SerializedName("public")
     public Boolean _public;
     /**
      * For 'Team','Everyone' chats types only. Chat name.

@@ -1,6 +1,6 @@
 package com.ringcentral.definitions;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.google.gson.annotations.SerializedName;
 
 
 public class NotificationInfo {
@@ -19,7 +19,7 @@ public class NotificationInfo {
     /**
      * Content availability
      */
-    @JSONField(name = "content-available")
+    @SerializedName("content-available")
     public String contentAvailable;
     /**
      * Category of a message

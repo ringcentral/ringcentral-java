@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipPostsList::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipPostsList::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), glipPostPostBody)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
       
     }
     
@@ -71,7 +71,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipPatchPostBody)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
       
     }
     

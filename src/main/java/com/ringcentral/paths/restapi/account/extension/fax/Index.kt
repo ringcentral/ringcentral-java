@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createFaxMessageRequest, null, com.ringcentral.ContentType.MULTIPART)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.FaxResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.FaxResponse::class.java)
       
     }
     

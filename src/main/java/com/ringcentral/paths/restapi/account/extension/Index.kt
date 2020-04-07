@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetExtensionListResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetExtensionListResponse::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), extensionCreationRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.ExtensionCreationResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.ExtensionCreationResponse::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetExtensionInfoResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetExtensionInfoResponse::class.java)
       
     }
     
@@ -71,7 +71,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), extensionUpdateRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetExtensionInfoResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetExtensionInfoResponse::class.java)
       
     }
     

@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.SwitchesList::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.SwitchesList::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createSwitchInfo)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.SwitchInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.SwitchInfo::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.SwitchInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.SwitchInfo::class.java)
       
     }
     
@@ -71,7 +71,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateSwitchInfo)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.SwitchInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.SwitchInfo::class.java)
       
     }
     

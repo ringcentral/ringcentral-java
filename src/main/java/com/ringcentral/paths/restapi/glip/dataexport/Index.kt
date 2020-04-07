@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createDataExportTaskRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.DataExportTask::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.DataExportTask::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.DataExportTaskList::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.DataExportTaskList::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.DataExportTask::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.DataExportTask::class.java)
       
     }
     

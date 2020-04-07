@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.google.gson.annotations.SerializedName;
 
 
 public class GlipPostTeamBody {
     /**
      * Team access level.
      */
-    @JSONField(name = "public")
+    @SerializedName("public")
     public Boolean _public;
     /**
      * Team name.

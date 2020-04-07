@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.oauth.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), getTokenRequest, null, com.ringcentral.ContentType.FORM)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.TokenInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.TokenInfo::class.java)
       
     }
     

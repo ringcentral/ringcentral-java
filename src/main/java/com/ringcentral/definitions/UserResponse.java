@@ -1,6 +1,6 @@
 package com.ringcentral.definitions;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.google.gson.annotations.SerializedName;
 
 
 public class UserResponse {
@@ -43,7 +43,7 @@ public class UserResponse {
     /**
      *
      */
-    @JSONField(name = "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
+    @SerializedName("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
     public EnterpriseUser urn_ietf_params_scim_schemas_extension_enterprise_2_0_User;
     /**
      * MUST be same as work type email address

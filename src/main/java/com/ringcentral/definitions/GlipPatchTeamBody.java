@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.google.gson.annotations.SerializedName;
 
 
 public class GlipPatchTeamBody {
     /**
      * Team access level
      */
-    @JSONField(name = "public")
+    @SerializedName("public")
     public Boolean _public;
     /**
      * Team name. Maximum number of characters supported is 250

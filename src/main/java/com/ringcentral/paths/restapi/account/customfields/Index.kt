@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), customFieldCreateRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.CustomFieldResource::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CustomFieldResource::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.CustomFieldsResource::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CustomFieldsResource::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), customFieldUpdateRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.CustomFieldResource::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.CustomFieldResource::class.java)
       
     }
     

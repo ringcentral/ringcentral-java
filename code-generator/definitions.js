@@ -45,15 +45,15 @@ const generateField = (m, f) => {
   let p = ''
   let pName = f.name
   if (f.name.includes('-')) {
-    p += `@JSONField(name="${f.name}")`
+    p += `@SerializedName("${f.name}")`
     pName = f.name.replace(/-([a-z])/g, (match, p1) => p1.toUpperCase())
     p += `\n        public ${f.type} ${pName};`
   } else if (f.name.includes(':') || f.name.includes('.')) {
-    p += `@JSONField(name="${f.name}")`
+    p += `@SerializedName("${f.name}")`
     pName = f.name.replace(/[:.](\w)/g, '_$1')
     p += `\n        public ${f.type} ${pName};`
   } else if (f.name === 'public' || f.name === 'default' || f.name === 'package') {
-    p += `@JSONField(name="${f.name}")`
+    p += `@SerializedName("${f.name}")`
     pName = `_${f.name}`
     p += `\n        public ${f.type} ${pName};`
   } else {
@@ -98,8 +98,8 @@ public class ${m.name}
     ${fields.join('\n\n        ')}
 }
 `
-  if (code.includes('@JSONField(name=')) {
-    code = 'import com.alibaba.fastjson.annotation.JSONField;\n\n' + code
+  if (code.includes('@SerializedName("')) {
+    code = 'import com.google.gson.annotations.SerializedName;\n\n' + code
   }
   return 'package com.ringcentral.definitions;\n\n' + code
 }

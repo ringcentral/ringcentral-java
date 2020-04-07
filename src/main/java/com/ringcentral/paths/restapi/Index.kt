@@ -22,7 +22,7 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetVersionsResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetVersionsResponse::class.java)
       
     }
     
@@ -40,7 +40,7 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetVersionResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetVersionResponse::class.java)
       
     }
     

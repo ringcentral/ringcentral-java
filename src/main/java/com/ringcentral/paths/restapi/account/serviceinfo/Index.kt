@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GetServiceInfoResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GetServiceInfoResponse::class.java)
       
     }
     

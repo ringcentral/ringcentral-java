@@ -1,6 +1,6 @@
 package com.ringcentral;
 
-import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
 import com.ringcentral.definitions.*;
 import okhttp3.*;
 import okio.BufferedSink;
@@ -16,6 +16,7 @@ public class RestClient {
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
     private static final MediaType textMediaType = MediaType.parse("text/plain; charset=utf-8");
+    public static Gson gson = new Gson();
     public String clientId;
     public String clientSecret;
     public String server;
@@ -181,7 +182,7 @@ public class RestClient {
                 if (body != null && body.getClass().equals(String.class)) { // PUT text
                     requestBody = RequestBody.create(textMediaType, (String) body);
                 } else {
-                    requestBody = RequestBody.create(jsonMediaType, body == null ? "" : JSON.toJSONString(body));
+                    requestBody = RequestBody.create(jsonMediaType, body == null ? "" : gson.toJson(body));
                 }
                 break;
             case FORM:
@@ -225,7 +226,7 @@ public class RestClient {
                     }
                 }
                 if (fields.size() > 0) {
-                    multipartBodyBuilder.addPart(RequestBody.create(jsonMediaType, JSON.toJSONString(fields)));
+                    multipartBodyBuilder.addPart(RequestBody.create(jsonMediaType, gson.toJson(fields)));
                 }
                 for (Attachment attachment : attachments) {
                     multipartBodyBuilder.addFormDataPart(attachmentName, attachment.fileName, new RequestBody() {

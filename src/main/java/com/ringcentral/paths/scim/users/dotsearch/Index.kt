@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.scim.users.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), searchRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.UserSearchResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UserSearchResponse::class.java)
       
     }
     

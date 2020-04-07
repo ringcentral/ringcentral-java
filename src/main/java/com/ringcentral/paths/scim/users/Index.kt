@@ -22,7 +22,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.UserSearchResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UserSearchResponse::class.java)
       
     }
     
@@ -35,7 +35,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
       {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createUser)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
       
     }
     
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
       
     }
     
@@ -71,7 +71,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), user)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
       
     }
     
@@ -107,7 +107,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
 
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), userPatch)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.UserResponse::class.java)
       
     }
     

@@ -17,7 +17,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipEveryoneInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipEveryoneInfo::class.java)
       
     }
     
@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index) {
       {
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), updateGlipEveryoneRequest)
         
-        return com.alibaba.fastjson.JSON.parseObject(rb.string(), com.ringcentral.definitions.GlipEveryoneInfo::class.java)
+        return com.google.gson.Gson().fromJson(rb.string(), com.ringcentral.definitions.GlipEveryoneInfo::class.java)
       
     }
     

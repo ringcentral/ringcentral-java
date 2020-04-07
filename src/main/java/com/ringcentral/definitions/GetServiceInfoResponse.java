@@ -1,6 +1,6 @@
 package com.ringcentral.definitions;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.google.gson.annotations.SerializedName;
 
 
 public class GetServiceInfoResponse {
@@ -39,7 +39,7 @@ public class GetServiceInfoResponse {
     /**
      *
      */
-    @JSONField(name = "package")
+    @SerializedName("package")
     public PackageInfo _package;
 
     public GetServiceInfoResponse uri(String uri) {

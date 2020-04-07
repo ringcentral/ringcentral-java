@@ -1,6 +1,6 @@
 package com.ringcentral;
 
-import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
 import com.ringcentral.definitions.GetExtensionInfoResponse;
 import okhttp3.ResponseBody;
 import org.junit.Test;
@@ -25,7 +25,7 @@ public class LowLevelAPITest {
         );
         ResponseBody responseBody = rc.get("/restapi/v1.0/account/~/extension/~", null);
         String responseString = responseBody.string();
-        GetExtensionInfoResponse extensionInfo = JSON.parseObject(responseString, GetExtensionInfoResponse.class);
+        GetExtensionInfoResponse extensionInfo = new Gson().fromJson(responseString, GetExtensionInfoResponse.class);
         assertNotNull(extensionInfo);
         assertNotNull(extensionInfo.extensionNumber);
 

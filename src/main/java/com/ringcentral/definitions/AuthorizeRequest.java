@@ -71,7 +71,7 @@ public class AuthorizeRequest {
      */
     public String code_challenge;
     /**
-     *
+     * Enum: plain, S256
      */
     public String code_challenge_method;
 

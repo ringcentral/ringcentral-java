@@ -18,6 +18,10 @@ public class CreateNetworkRequest {
      *
      */
     public PrivateIpRangeInfoRequest[] privateIpRanges;
+    /**
+     * Emergency response location information
+     */
+    public ERLLocationInfo emergencyLocation;
 
     public CreateNetworkRequest name(String name) {
         this.name = name;
@@ -36,6 +40,11 @@ public class CreateNetworkRequest {
 
     public CreateNetworkRequest privateIpRanges(PrivateIpRangeInfoRequest[] privateIpRanges) {
         this.privateIpRanges = privateIpRanges;
+        return this;
+    }
+
+    public CreateNetworkRequest emergencyLocation(ERLLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 

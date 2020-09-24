@@ -5,7 +5,7 @@ public class ListMeetingRecordingsResponse {
     /**
      *
      */
-    public MeetingRecordings[] records;
+    public MeetingRecording[] records;
     /**
      *
      */
@@ -15,7 +15,7 @@ public class ListMeetingRecordingsResponse {
      */
     public MeetingRecordingsNavigationInfo navigation;
 
-    public ListMeetingRecordingsResponse records(MeetingRecordings[] records) {
+    public ListMeetingRecordingsResponse records(MeetingRecording[] records) {
         this.records = records;
         return this;
     }

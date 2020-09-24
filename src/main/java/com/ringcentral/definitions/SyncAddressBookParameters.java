@@ -4,8 +4,9 @@ package com.ringcentral.definitions;
 public class SyncAddressBookParameters {
     /**
      * Type of synchronization
+     * Enum: FSync, ISync
      */
-    public String[] syncType;
+    public String syncType;
     /**
      * Value of syncToken property of the last sync request response
      */
@@ -19,7 +20,7 @@ public class SyncAddressBookParameters {
      */
     public Long pageId;
 
-    public SyncAddressBookParameters syncType(String[] syncType) {
+    public SyncAddressBookParameters syncType(String syncType) {
         this.syncType = syncType;
         return this;
     }

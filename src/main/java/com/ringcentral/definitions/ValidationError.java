@@ -14,6 +14,14 @@ public class ValidationError {
      * Name of invalid parameter
      */
     public String parameterName;
+    /**
+     *
+     */
+    public String featureName;
+    /**
+     *
+     */
+    public String parameterValue;
 
     public ValidationError errorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -27,6 +35,16 @@ public class ValidationError {
 
     public ValidationError parameterName(String parameterName) {
         this.parameterName = parameterName;
+        return this;
+    }
+
+    public ValidationError featureName(String featureName) {
+        this.featureName = featureName;
+        return this;
+    }
+
+    public ValidationError parameterValue(String parameterValue) {
+        this.parameterValue = parameterValue;
         return this;
     }
 

@@ -17,13 +17,17 @@ public class GetServiceInfoResponse {
      */
     public BrandInfo brand;
     /**
+     * Information on the contracted country of account
+     */
+    public ContractedCountryInfo contractedCountry;
+    /**
      * Information on account service plan
      */
     public ServicePlanInfo servicePlan;
     /**
      *
      */
-    public ServicePlanInfo targetServicePlan;
+    public TargetServicePlanInfo targetServicePlan;
     /**
      * Information on account billing plan
      */
@@ -57,12 +61,17 @@ public class GetServiceInfoResponse {
         return this;
     }
 
+    public GetServiceInfoResponse contractedCountry(ContractedCountryInfo contractedCountry) {
+        this.contractedCountry = contractedCountry;
+        return this;
+    }
+
     public GetServiceInfoResponse servicePlan(ServicePlanInfo servicePlan) {
         this.servicePlan = servicePlan;
         return this;
     }
 
-    public GetServiceInfoResponse targetServicePlan(ServicePlanInfo targetServicePlan) {
+    public GetServiceInfoResponse targetServicePlan(TargetServicePlanInfo targetServicePlan) {
         this.targetServicePlan = targetServicePlan;
         return this;
     }

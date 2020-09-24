@@ -22,6 +22,10 @@ public class ServiceInfo {
      * Information on account target service plan
      */
     public TargetServicePlanInfo targetServicePlan;
+    /**
+     * Information on the contracted country of account
+     */
+    public ContractedCountryInfo contractedCountry;
 
     public ServiceInfo uri(String uri) {
         this.uri = uri;
@@ -45,6 +49,11 @@ public class ServiceInfo {
 
     public ServiceInfo targetServicePlan(TargetServicePlanInfo targetServicePlan) {
         this.targetServicePlan = targetServicePlan;
+        return this;
+    }
+
+    public ServiceInfo contractedCountry(ContractedCountryInfo contractedCountry) {
+        this.contractedCountry = contractedCountry;
         return this;
     }
 

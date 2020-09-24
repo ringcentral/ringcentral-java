@@ -11,7 +11,7 @@ public class CompanyAnsweringRuleInfo {
      */
     public String uri;
     /**
-     * Specifies if the rule is active or inactive. The default value is 'True'
+     * Specifies if the rule is active or inactive
      * Default: true
      */
     public Boolean enabled;
@@ -45,7 +45,7 @@ public class CompanyAnsweringRuleInfo {
     /**
      * Extension to which the call is forwarded in 'Bypass' mode
      */
-    public CompanyAnsweringRuleCallersInfoRequest extension;
+    public CompanyAnsweringRuleExtensionInfoRequest extension;
     /**
      * Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
      */
@@ -96,7 +96,7 @@ public class CompanyAnsweringRuleInfo {
         return this;
     }
 
-    public CompanyAnsweringRuleInfo extension(CompanyAnsweringRuleCallersInfoRequest extension) {
+    public CompanyAnsweringRuleInfo extension(CompanyAnsweringRuleExtensionInfoRequest extension) {
         this.extension = extension;
         return this;
     }

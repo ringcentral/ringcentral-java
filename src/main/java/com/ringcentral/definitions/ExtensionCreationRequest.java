@@ -4,13 +4,16 @@ package com.ringcentral.definitions;
 public class ExtensionCreationRequest {
     /**
      * Contact Information
-     * Required
      */
     public ContactInfoCreationRequest contact;
     /**
      * Number of extension
      */
     public String extensionNumber;
+    /**
+     *
+     */
+    public CustomFieldInfo[] customFields;
     /**
      * Password for extension. If not specified, the password is auto-generated
      */
@@ -20,13 +23,17 @@ public class ExtensionCreationRequest {
      */
     public ReferenceInfo[] references;
     /**
-     *
-     */
-    public Roles[] roles;
-    /**
      * Extension region data (timezone, home country, language)
      */
     public RegionalSettings regionalSettings;
+    /**
+     * Additional extension identifier, created by partner application and applied on client side
+     */
+    public String partnerId;
+    /**
+     * IVR PIN
+     */
+    public String ivrPin;
     /**
      * Specifies extension configuration wizard state (web service setup).
      * Default: NotStarted
@@ -34,8 +41,12 @@ public class ExtensionCreationRequest {
      */
     public String setupWizardState;
     /**
+     *
+     */
+    public SiteInfo site;
+    /**
      * Extension current state
-     * Enum: Enabled, Disabled, NotActivated, Unassigned
+     * Enum: Enabled, Disabled, NotActivated, Unassigned, Frozen
      */
     public String status;
     /**
@@ -44,8 +55,7 @@ public class ExtensionCreationRequest {
     public ExtensionStatusInfo statusInfo;
     /**
      * Extension type
-     * Required
-     * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation
+     * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, Limited
      */
     public String type;
     /**
@@ -63,6 +73,11 @@ public class ExtensionCreationRequest {
         return this;
     }
 
+    public ExtensionCreationRequest customFields(CustomFieldInfo[] customFields) {
+        this.customFields = customFields;
+        return this;
+    }
+
     public ExtensionCreationRequest password(String password) {
         this.password = password;
         return this;
@@ -73,18 +88,28 @@ public class ExtensionCreationRequest {
         return this;
     }
 
-    public ExtensionCreationRequest roles(Roles[] roles) {
-        this.roles = roles;
-        return this;
-    }
-
     public ExtensionCreationRequest regionalSettings(RegionalSettings regionalSettings) {
         this.regionalSettings = regionalSettings;
         return this;
     }
 
+    public ExtensionCreationRequest partnerId(String partnerId) {
+        this.partnerId = partnerId;
+        return this;
+    }
+
+    public ExtensionCreationRequest ivrPin(String ivrPin) {
+        this.ivrPin = ivrPin;
+        return this;
+    }
+
     public ExtensionCreationRequest setupWizardState(String setupWizardState) {
         this.setupWizardState = setupWizardState;
+        return this;
+    }
+
+    public ExtensionCreationRequest site(SiteInfo site) {
+        this.site = site;
         return this;
     }
 

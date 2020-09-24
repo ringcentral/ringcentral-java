@@ -20,13 +20,13 @@ public class DataExportTask {
     public String lastModifiedTime;
     /**
      * Task status
-     * Enum: Accepted, InProgress, Completed, Failed, Canceled
+     * Enum: Accepted, InProgress, Completed, Failed, Expired
      */
     public String status;
     /**
-     * Internal identifier of a user
+     * Task creator information
      */
-    public String creator;
+    public CreatorInfo creator;
     /**
      * Information specififed in request
      */
@@ -61,7 +61,7 @@ public class DataExportTask {
         return this;
     }
 
-    public DataExportTask creator(String creator) {
+    public DataExportTask creator(CreatorInfo creator) {
         this.creator = creator;
         return this;
     }

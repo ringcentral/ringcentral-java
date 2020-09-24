@@ -15,6 +15,10 @@ public class ExtensionCreationResponse {
      */
     public ContactInfo contact;
     /**
+     *
+     */
+    public CustomFieldInfo[] customFields;
+    /**
      * Number of department extension
      */
     public String extensionNumber;
@@ -38,10 +42,6 @@ public class ExtensionCreationResponse {
      * List of non-RC internal identifiers assigned to an extension
      */
     public ReferenceInfo[] references;
-    /**
-     *
-     */
-    public Roles[] roles;
     /**
      * Extension region data (timezone, home country, language)
      */
@@ -93,6 +93,11 @@ public class ExtensionCreationResponse {
         return this;
     }
 
+    public ExtensionCreationResponse customFields(CustomFieldInfo[] customFields) {
+        this.customFields = customFields;
+        return this;
+    }
+
     public ExtensionCreationResponse extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
         return this;
@@ -120,11 +125,6 @@ public class ExtensionCreationResponse {
 
     public ExtensionCreationResponse references(ReferenceInfo[] references) {
         this.references = references;
-        return this;
-    }
-
-    public ExtensionCreationResponse roles(Roles[] roles) {
-        this.roles = roles;
         return this;
     }
 

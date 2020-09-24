@@ -7,6 +7,10 @@ public class NotificationSettings {
      */
     public String uri;
     /**
+     * List of extensions specified as email notification recipients. Returned only for call queues where queue managers are assigned as user extensions.
+     */
+    public EmailRecipientInfo[] emailRecipients;
+    /**
      * List of notification recipient email addresses
      */
     public String[] emailAddresses;
@@ -41,6 +45,11 @@ public class NotificationSettings {
 
     public NotificationSettings uri(String uri) {
         this.uri = uri;
+        return this;
+    }
+
+    public NotificationSettings emailRecipients(EmailRecipientInfo[] emailRecipients) {
+        this.emailRecipients = emailRecipients;
         return this;
     }
 

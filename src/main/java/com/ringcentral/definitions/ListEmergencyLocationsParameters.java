@@ -3,9 +3,25 @@ package com.ringcentral.definitions;
 
 public class ListEmergencyLocationsParameters {
     /**
-     * Filters entries containing the specified substring in address fields. The characters range is 0-64; not case-sensitive. If empty then the filter is ignored
+     * Filters entries containing the specified substring in address and name fields. The characters range is 0-64; not case-sensitive. If empty then the filter is ignored
      */
     public String searchString;
+    /**
+     * Internal identifier of a site for filtering. To filter by Main Site (Company) `main-site` value should be specified
+     */
+    public String siteId;
+    /**
+     * Enum: Valid, Invalid
+     */
+    public String addressStatus;
+    /**
+     * Enum: Active, Inactive
+     */
+    public String usageStatus;
+    /**
+     *
+     */
+    public String domesticCountryId;
     /**
      * Comma-separated list of fields to order results prefixed by plus sign '+' (ascending order) or minus sign '-' (descending order). Supported values: 'address'
      * Default: address
@@ -23,6 +39,26 @@ public class ListEmergencyLocationsParameters {
 
     public ListEmergencyLocationsParameters searchString(String searchString) {
         this.searchString = searchString;
+        return this;
+    }
+
+    public ListEmergencyLocationsParameters siteId(String siteId) {
+        this.siteId = siteId;
+        return this;
+    }
+
+    public ListEmergencyLocationsParameters addressStatus(String addressStatus) {
+        this.addressStatus = addressStatus;
+        return this;
+    }
+
+    public ListEmergencyLocationsParameters usageStatus(String usageStatus) {
+        this.usageStatus = usageStatus;
+        return this;
+    }
+
+    public ListEmergencyLocationsParameters domesticCountryId(String domesticCountryId) {
+        this.domesticCountryId = domesticCountryId;
         return this;
     }
 

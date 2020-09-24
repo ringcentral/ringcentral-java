@@ -19,6 +19,10 @@ public class IVRMenuInfo {
      */
     public String extensionNumber;
     /**
+     * Site data
+     */
+    public String site;
+    /**
      * Prompt metadata
      */
     public IVRMenuPromptInfo prompt;
@@ -44,6 +48,11 @@ public class IVRMenuInfo {
 
     public IVRMenuInfo extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public IVRMenuInfo site(String site) {
+        this.site = site;
         return this;
     }
 

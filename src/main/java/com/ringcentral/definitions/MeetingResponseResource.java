@@ -19,7 +19,7 @@ public class MeetingResponseResource {
      */
     public String topic;
     /**
-     * Enum: Scheduled, Instant, Recurring
+     * Enum: Instant, Scheduled, ScheduledRecurring, Recurring
      */
     public String meetingType;
     /**
@@ -62,6 +62,10 @@ public class MeetingResponseResource {
      *
      */
     public String[] audioOptions;
+    /**
+     * List of meeting occurrences
+     */
+    public MeetingOccurrenceInfo[] occurrences;
 
     public MeetingResponseResource uri(String uri) {
         this.uri = uri;
@@ -135,6 +139,11 @@ public class MeetingResponseResource {
 
     public MeetingResponseResource audioOptions(String[] audioOptions) {
         this.audioOptions = audioOptions;
+        return this;
+    }
+
+    public MeetingResponseResource occurrences(MeetingOccurrenceInfo[] occurrences) {
+        this.occurrences = occurrences;
         return this;
     }
 

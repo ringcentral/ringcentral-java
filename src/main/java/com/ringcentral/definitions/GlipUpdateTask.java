@@ -9,7 +9,7 @@ public class GlipUpdateTask {
     /**
      *
      */
-    public GlipUpdateTaskAssignee[] assignees;
+    public AssigneeInfo[] assignees;
     /**
      * Enum: Simple, AllAssignees, Percentage
      */
@@ -41,14 +41,14 @@ public class GlipUpdateTask {
     /**
      *
      */
-    public GlipUpdateTaskAttachment[] attachments;
+    public GlipAttachmentInfoRequest[] attachments;
 
     public GlipUpdateTask subject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    public GlipUpdateTask assignees(GlipUpdateTaskAssignee[] assignees) {
+    public GlipUpdateTask assignees(AssigneeInfo[] assignees) {
         this.assignees = assignees;
         return this;
     }
@@ -88,7 +88,7 @@ public class GlipUpdateTask {
         return this;
     }
 
-    public GlipUpdateTask attachments(GlipUpdateTaskAttachment[] attachments) {
+    public GlipUpdateTask attachments(GlipAttachmentInfoRequest[] attachments) {
         this.attachments = attachments;
         return this;
     }

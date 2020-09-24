@@ -23,9 +23,13 @@ public class UpdateWirelessPoint {
      */
     public LocationUpdatesEmergencyAddressInfoRequest emergencyAddress;
     /**
-     * Internal identifier of the emergency response location (address). Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
+     * Deprecated. Internal identifier of the emergency response location (address). Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+    /**
+     * Emergency response location information
+     */
+    public ERLLocationInfo emergencyLocation;
 
     public UpdateWirelessPoint id(String id) {
         this.id = id;
@@ -54,6 +58,11 @@ public class UpdateWirelessPoint {
 
     public UpdateWirelessPoint emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
+        return this;
+    }
+
+    public UpdateWirelessPoint emergencyLocation(ERLLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 

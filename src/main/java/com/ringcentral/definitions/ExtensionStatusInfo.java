@@ -8,7 +8,7 @@ public class ExtensionStatusInfo {
     public String comment;
     /**
      * Type of suspension
-     * Enum: Voluntarily, Involuntarily, SuspendedVoluntarily
+     * Enum: Voluntarily, Involuntarily, SuspendedVoluntarily, SuspendedVoluntarily2
      */
     public String reason;
 

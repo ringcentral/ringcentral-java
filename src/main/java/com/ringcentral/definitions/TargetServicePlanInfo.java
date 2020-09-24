@@ -14,6 +14,10 @@ public class TargetServicePlanInfo {
      * Edition of a service plan
      */
     public String edition;
+    /**
+     * Enum: Freyja, Phoenix
+     */
+    public String freemiumProductType;
 
     public TargetServicePlanInfo id(String id) {
         this.id = id;
@@ -27,6 +31,11 @@ public class TargetServicePlanInfo {
 
     public TargetServicePlanInfo edition(String edition) {
         this.edition = edition;
+        return this;
+    }
+
+    public TargetServicePlanInfo freemiumProductType(String freemiumProductType) {
+        this.freemiumProductType = freemiumProductType;
         return this;
     }
 

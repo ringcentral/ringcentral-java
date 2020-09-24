@@ -8,6 +8,7 @@ public class UpdateForwardingNumberRequest {
     public String phoneNumber;
     /**
      * Forwarding/Call flip number title
+     * Enum: Business Mobile Phone
      */
     public String label;
     /**
@@ -16,7 +17,7 @@ public class UpdateForwardingNumberRequest {
     public String flipNumber;
     /**
      * Forwarding phone number type
-     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other
+     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone
      */
     public String type;
 

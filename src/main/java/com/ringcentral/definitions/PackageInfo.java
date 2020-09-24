@@ -3,11 +3,11 @@ package com.ringcentral.definitions;
 
 public class PackageInfo {
     /**
-     *
+     * Billing package version
      */
     public String version;
     /**
-     *
+     * Billing package identifier
      */
     public String id;
 

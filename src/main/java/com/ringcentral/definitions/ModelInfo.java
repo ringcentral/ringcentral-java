@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class ModelInfo {
     /**
-     * Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier
+     * Internal identifier of a HardPhone device model
      */
     public String id;
     /**
@@ -12,7 +12,6 @@ public class ModelInfo {
     public String name;
     /**
      * Addons description
-     * Required
      */
     public AddonInfo[] addons;
     /**

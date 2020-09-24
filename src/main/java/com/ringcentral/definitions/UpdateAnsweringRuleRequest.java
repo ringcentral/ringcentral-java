@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class UpdateAnsweringRuleRequest {
     /**
+     * Identifier of an answering rule
+     */
+    public String id;
+    /**
      * Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded
      */
     public ForwardingInfoCreateRuleRequest forwarding;
@@ -32,6 +36,11 @@ public class UpdateAnsweringRuleRequest {
      */
     public String callHandlingAction;
     /**
+     * Type of an answering rule
+     * Enum: BusinessHours, AfterHours, Custom
+     */
+    public String type;
+    /**
      * Unconditional forwarding parameters. Returned if 'UnconditionalForwarding' is specified in 'callHandlingAction'
      */
     public UnconditionalForwardingInfo unconditionalForwarding;
@@ -56,6 +65,15 @@ public class UpdateAnsweringRuleRequest {
      * Indicates whether inactive numbers should be returned or not
      */
     public Boolean showInactiveNumbers;
+    /**
+     * Transfer settings applied for department (call queue) extension type, with 'TransferToExtension' call handling action
+     */
+    public TransferredExtensionInfo transfer;
+
+    public UpdateAnsweringRuleRequest id(String id) {
+        this.id = id;
+        return this;
+    }
 
     public UpdateAnsweringRuleRequest forwarding(ForwardingInfoCreateRuleRequest forwarding) {
         this.forwarding = forwarding;
@@ -92,6 +110,11 @@ public class UpdateAnsweringRuleRequest {
         return this;
     }
 
+    public UpdateAnsweringRuleRequest type(String type) {
+        this.type = type;
+        return this;
+    }
+
     public UpdateAnsweringRuleRequest unconditionalForwarding(UnconditionalForwardingInfo unconditionalForwarding) {
         this.unconditionalForwarding = unconditionalForwarding;
         return this;
@@ -119,6 +142,11 @@ public class UpdateAnsweringRuleRequest {
 
     public UpdateAnsweringRuleRequest showInactiveNumbers(Boolean showInactiveNumbers) {
         this.showInactiveNumbers = showInactiveNumbers;
+        return this;
+    }
+
+    public UpdateAnsweringRuleRequest transfer(TransferredExtensionInfo transfer) {
+        this.transfer = transfer;
         return this;
     }
 

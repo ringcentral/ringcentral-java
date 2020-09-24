@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class DeviceInfoRequest {
     /**
-     * Device unique identifier, retrieved on previous session (if any)
+     * Device unique identifier, retrieved at previous session (if any)
      */
     public String id;
     /**
@@ -15,7 +15,7 @@ public class DeviceInfoRequest {
      */
     public String computerName;
     /**
-     * Serial number for HardPhone; endpoint_id for softphone and mobile applications. Returned only when the phone is shipped and provisioned
+     * Serial number for HardPhone; `endpoint_id` for softphone and mobile applications. Returned only when the phone is shipped and provisioned
      */
     public String serial;
 

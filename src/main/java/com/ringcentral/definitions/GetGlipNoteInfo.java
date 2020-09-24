@@ -25,7 +25,7 @@ public class GetGlipNoteInfo {
     /**
      * Note creator information
      */
-    public NoteCreatorInfo creator;
+    public CreatorInfo creator;
     /**
      * Note last modification information
      */
@@ -77,7 +77,7 @@ public class GetGlipNoteInfo {
         return this;
     }
 
-    public GetGlipNoteInfo creator(NoteCreatorInfo creator) {
+    public GetGlipNoteInfo creator(CreatorInfo creator) {
         this.creator = creator;
         return this;
     }

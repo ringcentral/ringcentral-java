@@ -21,7 +21,7 @@ public class TaskResultRecord {
     /**
      *
      */
-    public TaskResultRecordErrorsInfo errors;
+    public TaskResultRecordErrorsInfo[] errors;
 
     public TaskResultRecord id(String id) {
         this.id = id;
@@ -43,7 +43,7 @@ public class TaskResultRecord {
         return this;
     }
 
-    public TaskResultRecord errors(TaskResultRecordErrorsInfo errors) {
+    public TaskResultRecord errors(TaskResultRecordErrorsInfo[] errors) {
         this.errors = errors;
         return this;
     }

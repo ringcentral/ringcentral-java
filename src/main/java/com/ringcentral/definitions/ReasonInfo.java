@@ -11,6 +11,10 @@ public class ReasonInfo {
      * Reason description
      */
     public String message;
+    /**
+     *
+     */
+    public String permission;
 
     public ReasonInfo code(String code) {
         this.code = code;
@@ -19,6 +23,11 @@ public class ReasonInfo {
 
     public ReasonInfo message(String message) {
         this.message = message;
+        return this;
+    }
+
+    public ReasonInfo permission(String permission) {
+        this.permission = permission;
         return this;
     }
 

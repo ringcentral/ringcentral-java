@@ -21,9 +21,9 @@ public class GetAccountInfoResponse {
     /**
      * Operator's extension information. This extension will receive all calls and messages intended for the operator
      */
-    public GetExtensionInfoResponse operator;
+    public AccountOperatorInfo operator;
     /**
-     * Additional account identifier, developed and applied by the client
+     * Additional account identifier, created by partner application and applied on client side
      */
     public String partnerId;
     /**
@@ -52,7 +52,7 @@ public class GetAccountInfoResponse {
     /**
      * Account level region data (web service Auto-Receptionist settings)
      */
-    public RegionalSettings regionalSettings;
+    public AccountRegionalSettings regionalSettings;
     /**
      * Specifies whether an account is included into any federation of accounts or not
      */
@@ -90,7 +90,7 @@ public class GetAccountInfoResponse {
         return this;
     }
 
-    public GetAccountInfoResponse operator(GetExtensionInfoResponse operator) {
+    public GetAccountInfoResponse operator(AccountOperatorInfo operator) {
         this.operator = operator;
         return this;
     }
@@ -125,7 +125,7 @@ public class GetAccountInfoResponse {
         return this;
     }
 
-    public GetAccountInfoResponse regionalSettings(RegionalSettings regionalSettings) {
+    public GetAccountInfoResponse regionalSettings(AccountRegionalSettings regionalSettings) {
         this.regionalSettings = regionalSettings;
         return this;
     }

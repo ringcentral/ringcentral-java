@@ -3,9 +3,13 @@ package com.ringcentral.definitions;
 
 public class SearchDirectoryEntriesRequest {
     /**
-     * String value to filter the contacts. The value specified is searched through the following fields: `firstName`, `lastName`, `extensionNumber`, `phoneNumber`, `email`
+     * String value to filter the contacts. The value specified is searched through the following fields: `firstName`, `lastName`, `extensionNumber`, `phoneNumber`, `email`, `jobTitle`, `department`
      */
     public String searchString;
+    /**
+     * Default: firstName,lastName,extensionNumber,phoneNumber,email
+     */
+    public String[] searchFields;
     /**
      * If 'True' then contacts of all accounts in federation are returned. If 'False' then only contacts of the current account are returned, and account section is eliminated in this case
      * Default: true
@@ -13,7 +17,7 @@ public class SearchDirectoryEntriesRequest {
     public Boolean showFederated;
     /**
      * Type of extension to filter the contacts
-     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, IvrMenu, Limited, ApplicationExtension, Site, Bot
+     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, IvrMenu, Limited, ApplicationExtension, Site, Bot, ProxyAdmin
      */
     public String extensionType;
     /**
@@ -31,6 +35,11 @@ public class SearchDirectoryEntriesRequest {
 
     public SearchDirectoryEntriesRequest searchString(String searchString) {
         this.searchString = searchString;
+        return this;
+    }
+
+    public SearchDirectoryEntriesRequest searchFields(String[] searchFields) {
+        this.searchFields = searchFields;
         return this;
     }
 

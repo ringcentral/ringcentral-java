@@ -50,6 +50,10 @@ public class EmergencyLocationAddressInfo {
      * Postal (Zip) code
      */
     public String zip;
+    /**
+     * Customer name
+     */
+    public String customerName;
 
     public EmergencyLocationAddressInfo country(String country) {
         this.country = country;
@@ -108,6 +112,11 @@ public class EmergencyLocationAddressInfo {
 
     public EmergencyLocationAddressInfo zip(String zip) {
         this.zip = zip;
+        return this;
+    }
+
+    public EmergencyLocationAddressInfo customerName(String customerName) {
+        this.customerName = customerName;
         return this;
     }
 

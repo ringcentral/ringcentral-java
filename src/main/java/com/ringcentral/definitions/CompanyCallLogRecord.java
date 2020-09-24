@@ -46,6 +46,14 @@ public class CompanyCallLogRecord {
      */
     public String direction;
     /**
+     *
+     */
+    public CallLogRecordMessage message;
+    /**
+     * Information on a delegate extension that actually implemented a call action. For Secretary call log the field is returned if the current extension implemented a call. For Boss call log the field contains information on a Secretary extension which actually implemented a call on behalf of the current extension
+     */
+    public DelegateInfo delegate;
+    /**
      * Indicates whether the record is deleted. Returned for deleted records, for ISync requests
      */
     public Boolean deleted;
@@ -143,6 +151,16 @@ public class CompanyCallLogRecord {
 
     public CompanyCallLogRecord direction(String direction) {
         this.direction = direction;
+        return this;
+    }
+
+    public CompanyCallLogRecord message(CallLogRecordMessage message) {
+        this.message = message;
+        return this;
+    }
+
+    public CompanyCallLogRecord delegate(DelegateInfo delegate) {
+        this.delegate = delegate;
         return this;
     }
 

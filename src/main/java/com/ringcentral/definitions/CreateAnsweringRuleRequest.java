@@ -8,12 +8,10 @@ public class CreateAnsweringRuleRequest {
     public Boolean enabled;
     /**
      * Type of an answering rule. The 'Custom' value should be specified
-     * Required
      */
     public String type;
     /**
      * Name of an answering rule specified by user
-     * Required
      */
     public String name;
     /**
@@ -30,7 +28,7 @@ public class CreateAnsweringRuleRequest {
     public ScheduleInfo schedule;
     /**
      * Specifies how incoming calls are forwarded
-     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly
+     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly, SharedLines
      */
     public String callHandlingAction;
     /**

@@ -17,13 +17,16 @@ public class CreateSwitchInfo {
     public SwitchSiteInfo site;
     /**
      * Emergency address assigned to the switch. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
-     * Required
      */
     public LocationUpdatesEmergencyAddressInfoRequest emergencyAddress;
     /**
-     * Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
+     * Deprecated. Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+    /**
+     * Emergency response location information
+     */
+    public ERLLocationInfo emergencyLocation;
 
     public CreateSwitchInfo chassisId(String chassisId) {
         this.chassisId = chassisId;
@@ -47,6 +50,11 @@ public class CreateSwitchInfo {
 
     public CreateSwitchInfo emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
+        return this;
+    }
+
+    public CreateSwitchInfo emergencyLocation(ERLLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 

@@ -37,7 +37,7 @@ public class CustomAnsweringRuleInfo {
     public CallersInfo[] callers;
     /**
      * Specifies how incoming calls are forwarded
-     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly
+     * Enum: ForwardCalls, UnconditionalForwarding, AgentQueue, TransferToExtension, TakeMessagesOnly, PlayAnnouncementOnly, SharedLines
      */
     public String callHandlingAction;
     /**
@@ -69,6 +69,10 @@ public class CustomAnsweringRuleInfo {
      * Enum: Off, NoCallerId, UnknownCallerId, Always
      */
     public String screening;
+    /**
+     * SharedLines call handling action settings
+     */
+    public SharedLinesInfo sharedLines;
 
     public CustomAnsweringRuleInfo uri(String uri) {
         this.uri = uri;
@@ -147,6 +151,11 @@ public class CustomAnsweringRuleInfo {
 
     public CustomAnsweringRuleInfo screening(String screening) {
         this.screening = screening;
+        return this;
+    }
+
+    public CustomAnsweringRuleInfo sharedLines(SharedLinesInfo sharedLines) {
+        this.sharedLines = sharedLines;
         return this;
     }
 

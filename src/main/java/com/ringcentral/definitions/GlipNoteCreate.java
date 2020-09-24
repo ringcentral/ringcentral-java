@@ -8,7 +8,7 @@ public class GlipNoteCreate {
      */
     public String title;
     /**
-     * Contents of a note; HTML-markuped text. Max allowed length is 102400 characters (100 Kb).
+     * Contents of a note; HTML-markuped text. Max allowed length is 1048576 characters (1 Mb).
      */
     public String body;
 

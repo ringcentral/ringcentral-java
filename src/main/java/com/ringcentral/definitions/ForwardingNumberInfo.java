@@ -16,6 +16,7 @@ public class ForwardingNumberInfo {
     public String phoneNumber;
     /**
      * Forwarding/Call flip number title
+     * Enum: Business Mobile Phone
      */
     public String label;
     /**
@@ -32,7 +33,7 @@ public class ForwardingNumberInfo {
     public CreateForwardingNumberDeviceInfo device;
     /**
      * Forwarding phone number type
-     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other
+     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone
      */
     public String type;
 

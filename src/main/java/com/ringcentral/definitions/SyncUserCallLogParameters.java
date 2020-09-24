@@ -4,8 +4,10 @@ package com.ringcentral.definitions;
 public class SyncUserCallLogParameters {
     /**
      * Type of synchronization
+     * Default: FSync
+     * Enum: FSync, ISync
      */
-    public String[] syncType;
+    public String syncType;
     /**
      * Value of syncToken property of last sync request response
      */
@@ -33,7 +35,7 @@ public class SyncUserCallLogParameters {
      */
     public Boolean showDeleted;
 
-    public SyncUserCallLogParameters syncType(String[] syncType) {
+    public SyncUserCallLogParameters syncType(String syncType) {
         this.syncType = syncType;
         return this;
     }

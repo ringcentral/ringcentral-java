@@ -3,8 +3,8 @@ package com.ringcentral.definitions;
 
 public class ListDataExportTasksParameters {
     /**
-     * Status of the task(s) to be returned. Multiple values supported
-     * Enum: Accepted, InProgress, Completed, Failed, Canceled
+     * Status of the task(s) to be returned. Multiple values are supported
+     * Enum: Accepted, InProgress, Completed, Failed, Expired
      */
     public String status;
     /**

@@ -8,7 +8,7 @@ public class OrderBy {
     public Long index;
     /**
      * Field name by which to sort the contacts
-     * Enum: firstName, lastName, extensionNumber, phoneNumber, email
+     * Enum: firstName, lastName, extensionNumber, phoneNumber, email, jobTitle, department
      */
     public String fieldName;
     /**

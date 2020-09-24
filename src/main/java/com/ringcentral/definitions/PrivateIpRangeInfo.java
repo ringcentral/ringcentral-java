@@ -26,6 +26,10 @@ public class PrivateIpRangeInfo {
      * Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+    /**
+     *
+     */
+    public Boolean matched;
 
     public PrivateIpRangeInfo id(String id) {
         this.id = id;
@@ -54,6 +58,11 @@ public class PrivateIpRangeInfo {
 
     public PrivateIpRangeInfo emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
+        return this;
+    }
+
+    public PrivateIpRangeInfo matched(Boolean matched) {
+        this.matched = matched;
         return this;
     }
 

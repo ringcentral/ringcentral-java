@@ -8,7 +8,6 @@ public class ContactInfoCreationRequest {
     public String firstName;
     /**
      * For User extension type only. Extension user last name
-     * Required
      */
     public String lastName;
     /**
@@ -21,7 +20,6 @@ public class ContactInfoCreationRequest {
     public String jobTitle;
     /**
      * Email of extension user
-     * Required
      */
     public String email;
     /**

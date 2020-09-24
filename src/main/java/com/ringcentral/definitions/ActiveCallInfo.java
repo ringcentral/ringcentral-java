@@ -31,7 +31,8 @@ public class ActiveCallInfo {
      */
     public String startTime;
     /**
-     *
+     * Telephony presence status
+     * Enum: NoCall, CallConnected, Ringing, OnHold, ParkedCall
      */
     public String telephonyStatus;
     /**
@@ -42,6 +43,18 @@ public class ActiveCallInfo {
      *
      */
     public String sessionId;
+    /**
+     * Telephony identifier of a call session
+     */
+    public String telephonySessionId;
+    /**
+     * Extension ID of the call owner on whose behalf a call is performed
+     */
+    public String onBehalfOf;
+    /**
+     * Internal identifier of a call party
+     */
+    public String partyId;
     /**
      *
      */
@@ -102,6 +115,21 @@ public class ActiveCallInfo {
 
     public ActiveCallInfo sessionId(String sessionId) {
         this.sessionId = sessionId;
+        return this;
+    }
+
+    public ActiveCallInfo telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
+        return this;
+    }
+
+    public ActiveCallInfo onBehalfOf(String onBehalfOf) {
+        this.onBehalfOf = onBehalfOf;
+        return this;
+    }
+
+    public ActiveCallInfo partyId(String partyId) {
+        this.partyId = partyId;
         return this;
     }
 

@@ -8,6 +8,15 @@ public class QueueInfo {
      */
     public String transferMode;
     /**
+     * Call transfer information
+     */
+    public TransferInfo[] transfer;
+    /**
+     * Specifies the type of action to be taken if: members are available but no one answers, or all members are busy/unavailable. This option is available for Business hours only. For simultaneous transfer mode only 'WaitPrimaryMembers' and 'WaitPrimaryAndOverflowMembers' are supported
+     * Enum: WaitPrimaryMembers, WaitPrimaryAndOverflowMembers, Voicemail, TransferToExtension, UnconditionalForwarding
+     */
+    public String noAnswerAction;
+    /**
      * Information on a call forwarding rule
      */
     public FixedOrderAgents[] fixedOrderAgents;
@@ -21,9 +30,9 @@ public class QueueInfo {
      */
     public Long holdAudioInterruptionPeriod;
     /**
-     * Specifies the type of action to be taken after the hold time (waiting for an available call queue member) expires. If 'TransferToExtension' option is selected, the extension specified in `transfer` field is used
+     * Specifies the type of action to be taken after the hold time (waiting for an available call queue member) expires. If 'TransferToExtension' option is selected, the extension specified in `transfer` field is used. The default value is `Voicemail`
      * Default: Voicemail
-     * Enum: TransferToExtension, Voicemail
+     * Enum: TransferToExtension, UnconditionalForwarding, Voicemail
      */
     public String holdTimeExpirationAction;
     /**
@@ -43,13 +52,27 @@ public class QueueInfo {
      */
     public Long maxCallers;
     /**
-     * Action which should be taken if count of callers on hold exceeds the maximum
-     * Enum: Voicemail, Announcement
+     * Specifies the type of action to be taken if count of callers on hold exceeds the supported maximum
+     * Enum: Voicemail, Announcement, TransferToExtension, UnconditionalForwarding
      */
     public String maxCallersAction;
+    /**
+     *
+     */
+    public UnconditionalForwardingInfo[] unconditionalForwarding;
 
     public QueueInfo transferMode(String transferMode) {
         this.transferMode = transferMode;
+        return this;
+    }
+
+    public QueueInfo transfer(TransferInfo[] transfer) {
+        this.transfer = transfer;
+        return this;
+    }
+
+    public QueueInfo noAnswerAction(String noAnswerAction) {
+        this.noAnswerAction = noAnswerAction;
         return this;
     }
 
@@ -95,6 +118,11 @@ public class QueueInfo {
 
     public QueueInfo maxCallersAction(String maxCallersAction) {
         this.maxCallersAction = maxCallersAction;
+        return this;
+    }
+
+    public QueueInfo unconditionalForwarding(UnconditionalForwardingInfo[] unconditionalForwarding) {
+        this.unconditionalForwarding = unconditionalForwarding;
         return this;
     }
 

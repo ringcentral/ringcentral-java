@@ -46,6 +46,10 @@ public class GetDeviceInfoResponse {
      */
     public ExtensionInfoIntId extension;
     /**
+     * Device emergency settings
+     */
+    public DeviceEmergencyInfo emergency;
+    /**
      * Address for emergency cases. The same emergency address is assigned to all the numbers of one device
      */
     public EmergencyServiceAddressResource emergencyServiceAddress;
@@ -82,6 +86,10 @@ public class GetDeviceInfoResponse {
      * Enum: Host, Guest, None
      */
     public String linePooling;
+    /**
+     * Billing information. Returned for device update request if `prestatement` query parameter is set to 'true'
+     */
+    public BillingStatementInfo billingStatement;
 
     public GetDeviceInfoResponse id(String id) {
         this.id = id;
@@ -133,6 +141,11 @@ public class GetDeviceInfoResponse {
         return this;
     }
 
+    public GetDeviceInfoResponse emergency(DeviceEmergencyInfo emergency) {
+        this.emergency = emergency;
+        return this;
+    }
+
     public GetDeviceInfoResponse emergencyServiceAddress(EmergencyServiceAddressResource emergencyServiceAddress) {
         this.emergencyServiceAddress = emergencyServiceAddress;
         return this;
@@ -175,6 +188,11 @@ public class GetDeviceInfoResponse {
 
     public GetDeviceInfoResponse linePooling(String linePooling) {
         this.linePooling = linePooling;
+        return this;
+    }
+
+    public GetDeviceInfoResponse billingStatement(BillingStatementInfo billingStatement) {
+        this.billingStatement = billingStatement;
         return this;
     }
 

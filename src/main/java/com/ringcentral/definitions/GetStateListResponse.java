@@ -4,22 +4,18 @@ package com.ringcentral.definitions;
 public class GetStateListResponse {
     /**
      * Link to the states list resource
-     * Required
      */
     public String uri;
     /**
      * List of states
-     * Required
      */
     public GetStateInfoResponse[] records;
     /**
      * Information on navigation
-     * Required
      */
     public ProvisioningNavigationInfo navigation;
     /**
      * Information on paging
-     * Required
      */
     public ProvisioningPagingInfo paging;
 

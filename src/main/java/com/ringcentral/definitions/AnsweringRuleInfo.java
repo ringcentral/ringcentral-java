@@ -69,6 +69,10 @@ public class AnsweringRuleInfo {
      * Enum: Off, NoCallerId, UnknownCallerId, Always
      */
     public String screening;
+    /**
+     * SharedLines call handling action settings
+     */
+    public SharedLinesInfo sharedLines;
 
     public AnsweringRuleInfo uri(String uri) {
         this.uri = uri;
@@ -147,6 +151,11 @@ public class AnsweringRuleInfo {
 
     public AnsweringRuleInfo screening(String screening) {
         this.screening = screening;
+        return this;
+    }
+
+    public AnsweringRuleInfo sharedLines(SharedLinesInfo sharedLines) {
+        this.sharedLines = sharedLines;
         return this;
     }
 

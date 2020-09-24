@@ -11,6 +11,10 @@ public class ContactAddressInfo {
      */
     public String city;
     /**
+     * Country name
+     */
+    public String country;
+    /**
      * State/province name
      */
     public String state;
@@ -26,6 +30,11 @@ public class ContactAddressInfo {
 
     public ContactAddressInfo city(String city) {
         this.city = city;
+        return this;
+    }
+
+    public ContactAddressInfo country(String country) {
+        this.country = country;
         return this;
     }
 

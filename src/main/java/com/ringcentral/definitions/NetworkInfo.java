@@ -3,6 +3,14 @@ package com.ringcentral.definitions;
 
 public class NetworkInfo {
     /**
+     * Internal identifier of a network
+     */
+    public String id;
+    /**
+     * Link to a network resource
+     */
+    public String uri;
+    /**
      *
      */
     public String name;
@@ -18,6 +26,20 @@ public class NetworkInfo {
      *
      */
     public PrivateIpRangeInfo[] privateIpRanges;
+    /**
+     * Emergency response location information
+     */
+    public ERLLocationInfo emergencyLocation;
+
+    public NetworkInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public NetworkInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public NetworkInfo name(String name) {
         this.name = name;
@@ -36,6 +58,11 @@ public class NetworkInfo {
 
     public NetworkInfo privateIpRanges(PrivateIpRangeInfo[] privateIpRanges) {
         this.privateIpRanges = privateIpRanges;
+        return this;
+    }
+
+    public NetworkInfo emergencyLocation(ERLLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 

@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class CreateSipRegistrationRequest {
     /**
-     * Device unique description
+     * Device information
      */
     public DeviceInfoRequest device;
     /**

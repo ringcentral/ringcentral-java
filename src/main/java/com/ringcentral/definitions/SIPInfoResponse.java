@@ -23,6 +23,18 @@ public class SIPInfoResponse {
      */
     public String outboundProxy;
     /**
+     * SIP outbound IPv6 proxy
+     */
+    public String outboundProxyIPv6;
+    /**
+     * SIP outbound proxy backup
+     */
+    public String outboundProxyBackup;
+    /**
+     * SIP outbound IPv6 proxy backup
+     */
+    public String outboundProxyIPv6Backup;
+    /**
      * Preferred transport. SIP info will be returned for this transport if supported
      * Enum: UDP, TCP, TLS, WS, WSS
      */
@@ -58,6 +70,21 @@ public class SIPInfoResponse {
 
     public SIPInfoResponse outboundProxy(String outboundProxy) {
         this.outboundProxy = outboundProxy;
+        return this;
+    }
+
+    public SIPInfoResponse outboundProxyIPv6(String outboundProxyIPv6) {
+        this.outboundProxyIPv6 = outboundProxyIPv6;
+        return this;
+    }
+
+    public SIPInfoResponse outboundProxyBackup(String outboundProxyBackup) {
+        this.outboundProxyBackup = outboundProxyBackup;
+        return this;
+    }
+
+    public SIPInfoResponse outboundProxyIPv6Backup(String outboundProxyIPv6Backup) {
+        this.outboundProxyIPv6Backup = outboundProxyIPv6Backup;
         return this;
     }
 

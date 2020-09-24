@@ -23,6 +23,10 @@ public class UserAnsweringRuleListRecord {
      * Specifies if an answering rule is active or inactive
      */
     public Boolean enabled;
+    /**
+     * SharedLines call handling action settings
+     */
+    public SharedLinesInfo sharedLines;
 
     public UserAnsweringRuleListRecord uri(String uri) {
         this.uri = uri;
@@ -46,6 +50,11 @@ public class UserAnsweringRuleListRecord {
 
     public UserAnsweringRuleListRecord enabled(Boolean enabled) {
         this.enabled = enabled;
+        return this;
+    }
+
+    public UserAnsweringRuleListRecord sharedLines(SharedLinesInfo sharedLines) {
+        this.sharedLines = sharedLines;
         return this;
     }
 

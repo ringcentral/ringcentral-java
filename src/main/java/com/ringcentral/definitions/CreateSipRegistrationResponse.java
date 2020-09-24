@@ -19,7 +19,7 @@ public class CreateSipRegistrationResponse {
      * SIP flags data
      * Required
      */
-    public SIPFlagsResponse[] sipFlags;
+    public SIPFlagsResponse sipFlags;
     /**
      *
      */
@@ -40,7 +40,7 @@ public class CreateSipRegistrationResponse {
         return this;
     }
 
-    public CreateSipRegistrationResponse sipFlags(SIPFlagsResponse[] sipFlags) {
+    public CreateSipRegistrationResponse sipFlags(SIPFlagsResponse sipFlags) {
         this.sipFlags = sipFlags;
         return this;
     }

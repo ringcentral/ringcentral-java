@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class ExtensionUpdateRequest {
     /**
-     * Enum: Disabled, Enabled, NotActivated
+     * Enum: Disabled, Enabled, NotActivated, Frozen
      */
     public String status;
     /**
@@ -35,7 +35,7 @@ public class ExtensionUpdateRequest {
      */
     public String setupWizardState;
     /**
-     * Extension partner identifier
+     * Additional extension identifier, created by partner application and applied on client side
      */
     public String partnerId;
     /**
@@ -54,6 +54,27 @@ public class ExtensionUpdateRequest {
      *
      */
     public UserTransitionInfo[] transition;
+    /**
+     *
+     */
+    public CustomFieldInfo[] customFields;
+    /**
+     * Hides extension from showing in company directory. Supported for extensions of User type only
+     */
+    public Boolean hidden;
+    /**
+     * Site data. If multi-site feature is turned on for the account, then internal identifier of a site must be specified. To assign the wireless point to the main site (company) set site ID to `main-site`
+     */
+    public AutomaticLocationUpdatesSiteInfo site;
+    /**
+     * Extension type
+     * Enum: User, Fax User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation
+     */
+    public String type;
+    /**
+     * List of non-RC internal identifiers assigned to an extension
+     */
+    public ReferenceInfo[] references;
 
     public ExtensionUpdateRequest status(String status) {
         this.status = status;
@@ -117,6 +138,31 @@ public class ExtensionUpdateRequest {
 
     public ExtensionUpdateRequest transition(UserTransitionInfo[] transition) {
         this.transition = transition;
+        return this;
+    }
+
+    public ExtensionUpdateRequest customFields(CustomFieldInfo[] customFields) {
+        this.customFields = customFields;
+        return this;
+    }
+
+    public ExtensionUpdateRequest hidden(Boolean hidden) {
+        this.hidden = hidden;
+        return this;
+    }
+
+    public ExtensionUpdateRequest site(AutomaticLocationUpdatesSiteInfo site) {
+        this.site = site;
+        return this;
+    }
+
+    public ExtensionUpdateRequest type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public ExtensionUpdateRequest references(ReferenceInfo[] references) {
+        this.references = references;
         return this;
     }
 

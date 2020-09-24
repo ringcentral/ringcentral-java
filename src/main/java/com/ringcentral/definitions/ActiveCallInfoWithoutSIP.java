@@ -28,18 +28,26 @@ public class ActiveCallInfoWithoutSIP {
      */
     public String toName;
     /**
+     * Internal identifier of a call party
+     */
+    public String partyId;
+    /**
      * Time when the call is actually started
      */
     public String startTime;
+    /**
+     * Internal identifier of a call session
+     */
+    public String sessionId;
     /**
      * Telephony call status
      * Enum: NoCall, CallConnected, Ringing, OnHold, ParkedCall
      */
     public String telephonyStatus;
     /**
-     * Internal identifier of a call session
+     * Telephony identifier of a call session
      */
-    public String sessionId;
+    public String telephonySessionId;
     /**
      * Type of call termination. Supported for calls in 'NoCall' status. If the returned termination type is 'intermediate' it means the call is not actually ended, the connection is established on one of the devices
      * Enum: final, intermediate
@@ -76,8 +84,18 @@ public class ActiveCallInfoWithoutSIP {
         return this;
     }
 
+    public ActiveCallInfoWithoutSIP partyId(String partyId) {
+        this.partyId = partyId;
+        return this;
+    }
+
     public ActiveCallInfoWithoutSIP startTime(String startTime) {
         this.startTime = startTime;
+        return this;
+    }
+
+    public ActiveCallInfoWithoutSIP sessionId(String sessionId) {
+        this.sessionId = sessionId;
         return this;
     }
 
@@ -86,8 +104,8 @@ public class ActiveCallInfoWithoutSIP {
         return this;
     }
 
-    public ActiveCallInfoWithoutSIP sessionId(String sessionId) {
-        this.sessionId = sessionId;
+    public ActiveCallInfoWithoutSIP telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
         return this;
     }
 

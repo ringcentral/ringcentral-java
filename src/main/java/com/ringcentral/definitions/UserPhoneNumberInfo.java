@@ -32,7 +32,7 @@ public class UserPhoneNumberInfo {
     public String location;
     /**
      * Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system
-     * Enum: External, TollFree, Local
+     * Enum: External, TollFree, Local, BusinessMobileNumberProvider
      */
     public String paymentType;
     /**
@@ -50,7 +50,7 @@ public class UserPhoneNumberInfo {
     public String type;
     /**
      * Usage type of a phone number. Numbers of 'NumberPool' type wont't be returned for phone number list requests
-     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber
      */
     public String usageType;
     /**

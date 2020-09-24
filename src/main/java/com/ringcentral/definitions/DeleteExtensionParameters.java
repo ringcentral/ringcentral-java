@@ -7,7 +7,7 @@ public class DeleteExtensionParameters {
      */
     public Boolean savePhoneLines;
     /**
-     *
+     * Default: true
      */
     public Boolean savePhoneNumbers;
 

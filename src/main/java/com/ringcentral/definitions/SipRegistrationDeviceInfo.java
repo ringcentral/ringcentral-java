@@ -48,6 +48,10 @@ public class SipRegistrationDeviceInfo {
      */
     public DeviceEmergencyServiceAddressResource emergencyServiceAddress;
     /**
+     * Emergency response location settings of a device
+     */
+    public SipRegistrationDeviceEmergencyInfo emergency;
+    /**
      * Shipping information, according to which devices (in case of HardPhone ) or e911 stickers (in case of SoftPhone and OtherPhone ) will be delivered to the customer
      */
     public Shipping shipping;
@@ -133,6 +137,11 @@ public class SipRegistrationDeviceInfo {
 
     public SipRegistrationDeviceInfo emergencyServiceAddress(DeviceEmergencyServiceAddressResource emergencyServiceAddress) {
         this.emergencyServiceAddress = emergencyServiceAddress;
+        return this;
+    }
+
+    public SipRegistrationDeviceInfo emergency(SipRegistrationDeviceEmergencyInfo emergency) {
+        this.emergency = emergency;
         return this;
     }
 

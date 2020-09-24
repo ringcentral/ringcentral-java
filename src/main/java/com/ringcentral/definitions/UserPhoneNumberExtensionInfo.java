@@ -20,7 +20,7 @@ public class UserPhoneNumberExtensionInfo {
     public String partnerId;
     /**
      * Extension type
-     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation
+     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Site
      */
     public String type;
     /**

@@ -4,7 +4,6 @@ package com.ringcentral.definitions;
 public class CreateInternalTextMessageRequest {
     /**
      * Sender of a pager message.
-     * Required
      */
     public PagerCallerInfoRequest from;
     /**

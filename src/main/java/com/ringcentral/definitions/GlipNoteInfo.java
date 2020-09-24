@@ -21,7 +21,7 @@ public class GlipNoteInfo {
     /**
      * Note creator information
      */
-    public NoteCreatorInfo creator;
+    public CreatorInfo creator;
     /**
      * Note last modification information
      */
@@ -68,7 +68,7 @@ public class GlipNoteInfo {
         return this;
     }
 
-    public GlipNoteInfo creator(NoteCreatorInfo creator) {
+    public GlipNoteInfo creator(CreatorInfo creator) {
         this.creator = creator;
         return this;
     }

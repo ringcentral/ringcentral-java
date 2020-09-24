@@ -27,9 +27,13 @@ public class SwitchInfo {
      */
     public LocationUpdatesEmergencyAddressInfo emergencyAddress;
     /**
-     * Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
+     * Deprecated. Emergency response location (address) internal identifier. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+    /**
+     * Emergency response location information
+     */
+    public ERLLocationInfo emergencyLocation;
 
     public SwitchInfo uri(String uri) {
         this.uri = uri;
@@ -63,6 +67,11 @@ public class SwitchInfo {
 
     public SwitchInfo emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
+        return this;
+    }
+
+    public SwitchInfo emergencyLocation(ERLLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 

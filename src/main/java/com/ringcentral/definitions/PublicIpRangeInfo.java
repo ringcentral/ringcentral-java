@@ -14,6 +14,10 @@ public class PublicIpRangeInfo {
      *
      */
     public String endIp;
+    /**
+     *
+     */
+    public Boolean matched;
 
     public PublicIpRangeInfo id(String id) {
         this.id = id;
@@ -27,6 +31,11 @@ public class PublicIpRangeInfo {
 
     public PublicIpRangeInfo endIp(String endIp) {
         this.endIp = endIp;
+        return this;
+    }
+
+    public PublicIpRangeInfo matched(Boolean matched) {
+        this.matched = matched;
         return this;
     }
 

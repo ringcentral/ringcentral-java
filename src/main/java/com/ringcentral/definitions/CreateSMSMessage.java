@@ -3,12 +3,12 @@ package com.ringcentral.definitions;
 
 public class CreateSMSMessage {
     /**
-     * Sender of an SMS message. The phoneNumber property must be filled to correspond to one of the account phone numbers which is allowed to send SMS
+     * Message sender information. The `phoneNumber` value should be one the account phone numbers allowed to send text messages
      * Required
      */
     public MessageStoreCallerInfoRequest from;
     /**
-     * Receiver of an SMS message. The phoneNumber property must be filled
+     * Message receiver(s) information. The `phoneNumber` value is required
      * Required
      */
     public MessageStoreCallerInfoRequest[] to;
@@ -17,6 +17,10 @@ public class CreateSMSMessage {
      * Required
      */
     public String text;
+    /**
+     *
+     */
+    public MessageCountryInfo country;
 
     public CreateSMSMessage from(MessageStoreCallerInfoRequest from) {
         this.from = from;
@@ -30,6 +34,11 @@ public class CreateSMSMessage {
 
     public CreateSMSMessage text(String text) {
         this.text = text;
+        return this;
+    }
+
+    public CreateSMSMessage country(MessageCountryInfo country) {
+        this.country = country;
         return this;
     }
 

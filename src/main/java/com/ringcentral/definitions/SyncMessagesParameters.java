@@ -36,8 +36,9 @@ public class SyncMessagesParameters {
     public String syncToken;
     /**
      * Type of message synchronization
+     * Enum: FSync, ISync
      */
-    public String[] syncType;
+    public String syncType;
 
     public SyncMessagesParameters conversationId(Long conversationId) {
         this.conversationId = conversationId;
@@ -79,7 +80,7 @@ public class SyncMessagesParameters {
         return this;
     }
 
-    public SyncMessagesParameters syncType(String[] syncType) {
+    public SyncMessagesParameters syncType(String syncType) {
         this.syncType = syncType;
         return this;
     }

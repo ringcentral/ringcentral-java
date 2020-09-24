@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class CallLogRecordLegInfo {
     /**
      * Action description of the call operation
-     * Enum: Unknown, Phone Call, Phone Login, Incoming Fax, Accept Call, External Application, FindMe, FollowMe, Outgoing Fax, CallOut-CallMe, Call Return, Calling Card, Monitoring, Ring Directly, RingOut Web, Text Relay, VoIP Call, RingOut PC, RingMe, Transfer, 411 Info, Emergency, E911 Update, Support, RingOut Mobile
+     * Enum: Unknown, Phone Call, Phone Login, Incoming Fax, Accept Call, External Application, FindMe, FollowMe, Outgoing Fax, CallOut-CallMe, Call Return, Calling Card, Monitoring, Ring Directly, RingOut Web, Text Relay, VoIP Call, RingOut PC, RingMe, Transfer, 411 Info, Emergency, E911 Update, Support, RingOut Mobile, MeetingsCall, SilentMonitoring
      */
     public String action;
     /**
@@ -122,6 +122,10 @@ public class CallLogRecordLegInfo {
      *
      */
     public CallLogRecordMessage message;
+    /**
+     * Telephony identifier of a call session
+     */
+    public String telephonySessionId;
 
     public CallLogRecordLegInfo action(String action) {
         this.action = action;
@@ -220,6 +224,11 @@ public class CallLogRecordLegInfo {
 
     public CallLogRecordLegInfo message(CallLogRecordMessage message) {
         this.message = message;
+        return this;
+    }
+
+    public CallLogRecordLegInfo telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
         return this;
     }
 

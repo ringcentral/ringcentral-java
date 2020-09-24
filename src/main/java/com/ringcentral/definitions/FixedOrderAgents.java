@@ -5,13 +5,13 @@ public class FixedOrderAgents {
     /**
      *
      */
-    public ExtensionInfo extension;
+    public FixedOrderAgentsExtensionInfo extension;
     /**
      * Ordinal of an agent (call queue member)
      */
     public Long index;
 
-    public FixedOrderAgents extension(ExtensionInfo extension) {
+    public FixedOrderAgents extension(FixedOrderAgentsExtensionInfo extension) {
         this.extension = extension;
         return this;
     }

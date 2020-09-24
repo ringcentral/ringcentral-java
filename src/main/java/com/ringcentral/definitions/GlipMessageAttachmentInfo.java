@@ -9,7 +9,7 @@ public class GlipMessageAttachmentInfo {
     /**
      * Type of an attachment
      * Default: Card
-     * Enum: Card, Event, Note
+     * Enum: Card, Event, File, Note, Task
      */
     public String type;
     /**

@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class NotificationDeliveryModeRequest {
     /**
      * Notifications transportation provider name
-     * Enum: PubNub, WebHook, RC/APNS, RC/GCM
+     * Enum: PubNub, WebHook, RC/APNS, RC/GCM, WebSocket
      */
     public String transportType;
     /**

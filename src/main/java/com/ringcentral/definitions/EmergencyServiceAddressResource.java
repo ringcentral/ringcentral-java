@@ -58,6 +58,35 @@ public class EmergencyServiceAddressResource {
      * Specifies if emergency address is out of country
      */
     public Boolean outOfCountry;
+    /**
+     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to 'True'
+     * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
+     */
+    public String syncStatus;
+    /**
+     * Name of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     */
+    public String additionalCustomerName;
+    /**
+     * Email of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia.
+     */
+    public String customerEmail;
+    /**
+     * Email of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     */
+    public String additionalCustomerEmail;
+    /**
+     * Phone number of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia
+     */
+    public String customerPhone;
+    /**
+     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK & Australia.
+     */
+    public String additionalCustomerPhone;
+    /**
+     * Internal identifier of a tax
+     */
+    public String taxId;
 
     public EmergencyServiceAddressResource street(String street) {
         this.street = street;
@@ -126,6 +155,41 @@ public class EmergencyServiceAddressResource {
 
     public EmergencyServiceAddressResource outOfCountry(Boolean outOfCountry) {
         this.outOfCountry = outOfCountry;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource syncStatus(String syncStatus) {
+        this.syncStatus = syncStatus;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource additionalCustomerName(String additionalCustomerName) {
+        this.additionalCustomerName = additionalCustomerName;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource customerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource additionalCustomerEmail(String additionalCustomerEmail) {
+        this.additionalCustomerEmail = additionalCustomerEmail;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource customerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource additionalCustomerPhone(String additionalCustomerPhone) {
+        this.additionalCustomerPhone = additionalCustomerPhone;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource taxId(String taxId) {
+        this.taxId = taxId;
         return this;
     }
 

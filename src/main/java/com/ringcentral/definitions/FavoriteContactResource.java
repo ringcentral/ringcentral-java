@@ -5,7 +5,7 @@ public class FavoriteContactResource {
     /**
      *
      */
-    public String id;
+    public Long id;
     /**
      *
      */
@@ -19,7 +19,7 @@ public class FavoriteContactResource {
      */
     public String contactId;
 
-    public FavoriteContactResource id(String id) {
+    public FavoriteContactResource id(Long id) {
         this.id = id;
         return this;
     }

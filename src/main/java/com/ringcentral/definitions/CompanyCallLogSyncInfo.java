@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class CompanyCallLogSyncInfo {
     /**
      * Type of synchronization
-     * Enum: Fsync, ISync
+     * Enum: FSync, ISync
      */
     public String syncType;
     /**

@@ -3,29 +3,29 @@ package com.ringcentral.definitions;
 
 public class CallQueueInfo {
     /**
+     * Link to a call queue
+     */
+    public String uri;
+    /**
      * Internal identifier of a call queue
      */
     public String id;
-    /**
-     * Name of a call queue
-     */
-    public String name;
     /**
      * Extension number of a call queue
      */
     public String extensionNumber;
     /**
-     * Flag allow members to change their queue status
+     * Name of a call queue
      */
-    public Boolean editableMemberStatus;
+    public String name;
 
-    public CallQueueInfo id(String id) {
-        this.id = id;
+    public CallQueueInfo uri(String uri) {
+        this.uri = uri;
         return this;
     }
 
-    public CallQueueInfo name(String name) {
-        this.name = name;
+    public CallQueueInfo id(String id) {
+        this.id = id;
         return this;
     }
 
@@ -34,8 +34,8 @@ public class CallQueueInfo {
         return this;
     }
 
-    public CallQueueInfo editableMemberStatus(Boolean editableMemberStatus) {
-        this.editableMemberStatus = editableMemberStatus;
+    public CallQueueInfo name(String name) {
+        this.name = name;
         return this;
     }
 

@@ -12,7 +12,6 @@ public class ModifyAccountBusinessAddressRequest {
     public String email;
     /**
      * Company business address
-     * Required
      */
     public BusinessAddressInfo businessAddress;
     /**

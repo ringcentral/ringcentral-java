@@ -22,9 +22,13 @@ public class CreateWirelessPoint {
      */
     public LocationUpdatesEmergencyAddressInfoRequest emergencyAddress;
     /**
-     * Internal identifier of the emergency response location (address). Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
+     * Deprecated. Internal identifier of the emergency response location (address). Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+    /**
+     * Emergency response location information
+     */
+    public ERLLocationInfo emergencyLocation;
 
     public CreateWirelessPoint bssid(String bssid) {
         this.bssid = bssid;
@@ -48,6 +52,11 @@ public class CreateWirelessPoint {
 
     public CreateWirelessPoint emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
+        return this;
+    }
+
+    public CreateWirelessPoint emergencyLocation(ERLLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 

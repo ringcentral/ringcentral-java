@@ -22,7 +22,7 @@ public class GlipTaskInfo {
     /**
      *
      */
-    public GlipTaskInfoCreator creator;
+    public CreatorInfo creator;
     /**
      * Chat IDs where the task is posted or shared.
      */
@@ -37,9 +37,9 @@ public class GlipTaskInfo {
      */
     public String subject;
     /**
-     * Task name/subject
+     *
      */
-    public GlipTaskInfoAssignee[] assignees;
+    public TaskAssigneeInfo[] assignees;
     /**
      * Specifies how to determine task completeness
      * Enum: Simple, AllAssignees, Percentage
@@ -100,7 +100,7 @@ public class GlipTaskInfo {
         return this;
     }
 
-    public GlipTaskInfo creator(GlipTaskInfoCreator creator) {
+    public GlipTaskInfo creator(CreatorInfo creator) {
         this.creator = creator;
         return this;
     }
@@ -120,7 +120,7 @@ public class GlipTaskInfo {
         return this;
     }
 
-    public GlipTaskInfo assignees(GlipTaskInfoAssignee[] assignees) {
+    public GlipTaskInfo assignees(TaskAssigneeInfo[] assignees) {
         this.assignees = assignees;
         return this;
     }

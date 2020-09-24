@@ -54,9 +54,17 @@ public class UserCallLogRecord {
      */
     public String direction;
     /**
+     *
+     */
+    public CallLogRecordMessage message;
+    /**
      * The call start datetime in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
      */
     public String startTime;
+    /**
+     * Information on a delegate extension that actually implemented a call action. For Secretary call log the field is returned if the current extension implemented a call. For Boss call log the field contains information on a Secretary extension which actually implemented a call on behalf of the current extension
+     */
+    public DelegateInfo delegate;
     /**
      * Indicates whether the record is deleted. Returned for deleted records, for ISync requests
      */
@@ -70,7 +78,7 @@ public class UserCallLogRecord {
      */
     public String lastModifiedTime;
     /**
-     *
+     * Call recording data. Returned if a call is recorded
      */
     public CallLogRecordingInfo recording;
     /**
@@ -190,8 +198,18 @@ public class UserCallLogRecord {
         return this;
     }
 
+    public UserCallLogRecord message(CallLogRecordMessage message) {
+        this.message = message;
+        return this;
+    }
+
     public UserCallLogRecord startTime(String startTime) {
         this.startTime = startTime;
+        return this;
+    }
+
+    public UserCallLogRecord delegate(DelegateInfo delegate) {
+        this.delegate = delegate;
         return this;
     }
 

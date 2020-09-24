@@ -13,7 +13,7 @@ public class FeatureInfo {
     /**
      *
      */
-    public ParamsInfo params;
+    public ParamsInfo[] params;
     /**
      * Reason of the feature unavailability. Returned only if `available` is set to 'false'
      */
@@ -29,7 +29,7 @@ public class FeatureInfo {
         return this;
     }
 
-    public FeatureInfo params(ParamsInfo params) {
+    public FeatureInfo params(ParamsInfo[] params) {
         this.params = params;
         return this;
     }

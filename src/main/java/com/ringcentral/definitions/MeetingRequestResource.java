@@ -7,7 +7,7 @@ public class MeetingRequestResource {
      */
     public String topic;
     /**
-     * Enum: Scheduled, Instant, Recurring
+     * Enum: Instant, Scheduled, ScheduledRecurring, Recurring
      */
     public String meetingType;
     /**
@@ -42,6 +42,16 @@ public class MeetingRequestResource {
      *
      */
     public String[] audioOptions;
+    /**
+     * Recurrence settings
+     */
+    public RecurrenceInfo recurrence;
+    /**
+     * Automatic record type
+     * Default: local
+     * Enum: local, cloud, none
+     */
+    public String autoRecordType;
 
     public MeetingRequestResource topic(String topic) {
         this.topic = topic;
@@ -90,6 +100,16 @@ public class MeetingRequestResource {
 
     public MeetingRequestResource audioOptions(String[] audioOptions) {
         this.audioOptions = audioOptions;
+        return this;
+    }
+
+    public MeetingRequestResource recurrence(RecurrenceInfo recurrence) {
+        this.recurrence = recurrence;
+        return this;
+    }
+
+    public MeetingRequestResource autoRecordType(String autoRecordType) {
+        this.autoRecordType = autoRecordType;
         return this;
     }
 

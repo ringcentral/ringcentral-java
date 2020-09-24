@@ -3,21 +3,30 @@ package com.ringcentral.definitions;
 
 public class DelegateInfo {
     /**
-     * Internal identifier of a Secretary extension
+     *
      */
-    public String id;
+    public DelegateExtensionInfo extension;
     /**
-     * Custom name of a Secretary extension
+     * Specifies whether Secretary is permitted to pickup calls on behalf of Boss
      */
-    public String name;
+    public Boolean callPickup;
+    /**
+     * Specifies whether Secretary is permitted to organize conference on behalf of Boss
+     */
+    public Boolean conferencing;
 
-    public DelegateInfo id(String id) {
-        this.id = id;
+    public DelegateInfo extension(DelegateExtensionInfo extension) {
+        this.extension = extension;
         return this;
     }
 
-    public DelegateInfo name(String name) {
-        this.name = name;
+    public DelegateInfo callPickup(Boolean callPickup) {
+        this.callPickup = callPickup;
+        return this;
+    }
+
+    public DelegateInfo conferencing(Boolean conferencing) {
+        this.conferencing = conferencing;
         return this;
     }
 

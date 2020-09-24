@@ -4,12 +4,10 @@ package com.ringcentral.definitions;
 public class GetExtensionInfoResponse {
     /**
      * Internal identifier of an extension
-     * Required
      */
     public Long id;
     /**
      * Canonical URI of an extension
-     * Required
      */
     public String uri;
     /**
@@ -21,6 +19,10 @@ public class GetExtensionInfoResponse {
      */
     public ContactInfo contact;
     /**
+     *
+     */
+    public CustomFieldInfo[] customFields;
+    /**
      * Information on department extension(s), to which the requested extension belongs. Returned only for user extensions, members of department, requested by single extensionId
      */
     public DepartmentInfo[] departments;
@@ -28,6 +30,10 @@ public class GetExtensionInfoResponse {
      * Number of department extension
      */
     public String extensionNumber;
+    /**
+     *
+     */
+    public String[] extensionNumbers;
     /**
      * Extension name. For user extension types the value is a combination of the specified first name and last name
      */
@@ -77,7 +83,7 @@ public class GetExtensionInfoResponse {
     public ExtensionStatusInfo statusInfo;
     /**
      * Extension type
-     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, Limited, Site
+     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, Limited, Site, ProxyAdmin
      */
     public String type;
     /**
@@ -113,6 +119,11 @@ public class GetExtensionInfoResponse {
         return this;
     }
 
+    public GetExtensionInfoResponse customFields(CustomFieldInfo[] customFields) {
+        this.customFields = customFields;
+        return this;
+    }
+
     public GetExtensionInfoResponse departments(DepartmentInfo[] departments) {
         this.departments = departments;
         return this;
@@ -120,6 +131,11 @@ public class GetExtensionInfoResponse {
 
     public GetExtensionInfoResponse extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public GetExtensionInfoResponse extensionNumbers(String[] extensionNumbers) {
+        this.extensionNumbers = extensionNumbers;
         return this;
     }
 

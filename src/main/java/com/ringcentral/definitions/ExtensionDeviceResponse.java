@@ -50,6 +50,10 @@ public class ExtensionDeviceResponse {
      */
     public EmergencyServiceAddressResource emergencyServiceAddress;
     /**
+     * Device emergency settings
+     */
+    public DeviceEmergencyInfo emergency;
+    /**
      * Phone lines information
      */
     public PhoneLinesInfo[] phoneLines;
@@ -135,6 +139,11 @@ public class ExtensionDeviceResponse {
 
     public ExtensionDeviceResponse emergencyServiceAddress(EmergencyServiceAddressResource emergencyServiceAddress) {
         this.emergencyServiceAddress = emergencyServiceAddress;
+        return this;
+    }
+
+    public ExtensionDeviceResponse emergency(DeviceEmergencyInfo emergency) {
+        this.emergency = emergency;
         return this;
     }
 

@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class DevicePhoneLinesInfo {
     /**
+     * Internal identifier of a phone line
+     */
+    public String id;
+    /**
      * Type of phone line
      * Enum: Standalone, StandaloneFree, BlaPrimary, BlaSecondary
      */
@@ -15,6 +19,11 @@ public class DevicePhoneLinesInfo {
      * Phone number information
      */
     public DevicePhoneNumberInfo phoneInfo;
+
+    public DevicePhoneLinesInfo id(String id) {
+        this.id = id;
+        return this;
+    }
 
     public DevicePhoneLinesInfo lineType(String lineType) {
         this.lineType = lineType;

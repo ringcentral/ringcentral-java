@@ -3,9 +3,9 @@ package com.ringcentral.definitions;
 
 public class ListExtensionsParameters {
     /**
-     * Extension number to retrieve
+     * Number of extension to be retrieved
      */
-    public String extensionId;
+    public String extensionNumber;
     /**
      * Extension email address
      */
@@ -29,8 +29,8 @@ public class ListExtensionsParameters {
      */
     public String[] type;
 
-    public ListExtensionsParameters extensionId(String extensionId) {
-        this.extensionId = extensionId;
+    public ListExtensionsParameters extensionNumber(String extensionNumber) {
+        this.extensionNumber = extensionNumber;
         return this;
     }
 

@@ -10,7 +10,7 @@ public class GlipCreateTask {
     /**
      * Required
      */
-    public GlipCreateTaskAssignee[] assignees;
+    public AssigneeInfo[] assignees;
     /**
      * Default: Simple
      * Enum: Simple, AllAssignees, Percentage
@@ -44,14 +44,14 @@ public class GlipCreateTask {
     /**
      *
      */
-    public GlipCreateTaskAttachment[] attachments;
+    public GlipAttachmentInfoRequest[] attachments;
 
     public GlipCreateTask subject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    public GlipCreateTask assignees(GlipCreateTaskAssignee[] assignees) {
+    public GlipCreateTask assignees(AssigneeInfo[] assignees) {
         this.assignees = assignees;
         return this;
     }
@@ -91,7 +91,7 @@ public class GlipCreateTask {
         return this;
     }
 
-    public GlipCreateTask attachments(GlipCreateTaskAttachment[] attachments) {
+    public GlipCreateTask attachments(GlipAttachmentInfoRequest[] attachments) {
         this.attachments = attachments;
         return this;
     }

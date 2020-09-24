@@ -1,7 +1,7 @@
 import yaml from 'js-yaml'
 import fs from 'fs'
 import * as R from 'ramda'
-import { pascalCase, titleCase } from 'change-case'
+import { pascalCase, capitalCase } from 'change-case'
 import { lowerCaseFirst } from 'lower-case-first'
 import path from 'path'
 
@@ -9,7 +9,7 @@ import { normalizePath, deNormalizePath, getResponseType, appendCodeToFile } fro
 
 const outputDir = '../src/main/java/com/ringcentral/paths'
 
-const doc = yaml.safeLoad(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform-adjusted.yml', 'utf8'))
+const doc = yaml.safeLoad(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform.yml', 'utf8'))
 
 // Delete /restapi/oauth/authorize: https://git.ringcentral.com/platform/api-metadata-specs/issues/26
 delete doc.paths['/restapi/oauth/authorize']
@@ -181,7 +181,7 @@ const generate = (prefix = '/') => {
       code += `
 
       /**
-       * Operation: ${operation.detail.summary || titleCase(operation.detail.operationId)}
+       * Operation: ${operation.detail.summary || capitalCase(operation.detail.operationId)}
        * Http ${method} ${operation.endpoint}
        */
       ${methodParams.join(', ').includes(' = ') ? '@JvmOverloads ' : ''}fun ${smartMethod.toLowerCase()}(${methodParams.join(', ')}) : ${responseType}?
@@ -246,14 +246,3 @@ const generate = (prefix = '/') => {
 }
 
 generate('/')
-
-const mmsFolderPath = path.join(outputDir, 'restapi', 'account', 'extension', 'mms')
-// fs.mkdirSync(mmsFolderPath)
-appendCodeToFile(path.join(mmsFolderPath, 'Index.kt'), `/**
-     * Operation: Create MMS Message
-     * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/mms
-     */
-    fun post(createMMSMessage: com.ringcentral.definitions.CreateMMSMessage): com.ringcentral.definitions.GetMessageInfoResponse? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(), createMMSMessage, null, com.ringcentral.ContentType.MULTIPART)
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
-    }`)

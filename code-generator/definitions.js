@@ -5,7 +5,7 @@ import { pascalCase } from 'change-case'
 
 const outputDir = '../src/main/java/com/ringcentral/definitions'
 
-const doc = yaml.safeLoad(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform-adjusted.yml', 'utf8'))
+const doc = yaml.safeLoad(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform.yml', 'utf8'))
 const definitions = doc.definitions
 const models = Object.keys(definitions).map(k => ({ name: k, ...definitions[k] }))
   .filter(m => m.type !== 'array')
@@ -18,6 +18,8 @@ models.forEach(m => {
 const normalizeType = f => {
   if (f.type === 'integer') {
     return 'Long'
+  } else if(f.type === 'number') {
+    return 'Double'
   } else if (f.type === 'array') {
     return `${normalizeType(f.items)}[]`
   } else if (f.type === undefined || f.type === 'object') {

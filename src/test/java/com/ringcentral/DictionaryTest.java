@@ -2,11 +2,10 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.GetCountryInfoDictionaryResponse;
 import com.ringcentral.definitions.GetCountryListResponse;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
-
-import static org.junit.Assert.assertTrue;
 
 public class DictionaryTest {
     @Test
@@ -24,7 +23,7 @@ public class DictionaryTest {
         );
 
         GetCountryInfoDictionaryResponse c = rc.restapi().dictionary().country("46").get();
-        assertEquals("China", c.name);
+        Assert.assertEquals("China", c.name);
 
         rc.revoke();
     }
@@ -44,7 +43,7 @@ public class DictionaryTest {
         );
 
         GetCountryListResponse r = rc.restapi().dictionary().country().list();
-        assertTrue(r.records.length > 0);
+        Assert.assertTrue(r.records.length > 0);
 
         rc.revoke();
     }

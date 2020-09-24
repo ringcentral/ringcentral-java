@@ -6,13 +6,12 @@ import com.ringcentral.definitions.IVRPrompts;
 import com.ringcentral.definitions.PromptInfo;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
-import static org.junit.Assert.assertNotNull;
 
 public class IVRContentTest {
     @Test
@@ -31,8 +30,8 @@ public class IVRContentTest {
 
         IVRPrompts ivrPrompts = rc.restapi().account().ivrprompts().list();
         PromptInfo promptInfo = rc.restapi().account().ivrprompts(ivrPrompts.records[0].id).get();
-        assertNotNull(promptInfo.id);
-        assertEquals(promptInfo.id, ivrPrompts.records[0].id);
+        Assert.assertNotNull(promptInfo.id);
+        Assert.assertEquals(promptInfo.id, ivrPrompts.records[0].id);
 
 //        ResponseBody responseBody = rc.get("/restapi/v1.0/account/~/ivr-prompts/"+ promptInfo.id + "/content");
 //        byte[] bytes = responseBody.bytes();
@@ -95,7 +94,7 @@ public class IVRContentTest {
 
         IVRPrompts ivrPrompts = rc.restapi().account().ivrprompts().list();
         PromptInfo promptInfo = rc.restapi().account().ivrprompts(ivrPrompts.records[0].id).get();
-        assertNotNull(promptInfo.id);
+        Assert.assertNotNull(promptInfo.id);
 
 //        PromptInfo promptInfo = rc.restapi().account().ivrprompts().put(new CreateIvrPromptRequest()
 //            .name("Uploaded via API")

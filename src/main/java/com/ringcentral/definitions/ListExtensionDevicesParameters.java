@@ -12,6 +12,17 @@ public class ListExtensionDevicesParameters {
      * Enum: Intercom, Paging, BLA, HELD
      */
     public String feature;
+    
+    /**
+     * Indicates the page number to retrieve. Only positive number values are accepted
+     * Default: 1
+     */
+    public Long page;
+    /**
+     * Indicates the page size (number of items)
+     * Default: 100
+     */
+    public Long perPage;
 
     public ListExtensionDevicesParameters linePooling(String linePooling) {
         this.linePooling = linePooling;
@@ -20,6 +31,16 @@ public class ListExtensionDevicesParameters {
 
     public ListExtensionDevicesParameters feature(String feature) {
         this.feature = feature;
+        return this;
+    }
+    
+    public ListExtensionDevicesParameters page(Long page) {
+        this.page = page;
+        return this;
+    }
+
+    public ListExtensionDevicesParameters perPage(Long perPage) {
+        this.perPage = perPage;
         return this;
     }
 

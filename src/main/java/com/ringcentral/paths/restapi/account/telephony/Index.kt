@@ -14,6 +14,11 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     }
 
 
+    fun conference(): com.ringcentral.paths.restapi.account.telephony.conference.Index {
+        return com.ringcentral.paths.restapi.account.telephony.conference.Index(this)
+    }
+
+
     @JvmOverloads
     fun sessions(telephonySessionId: String? = null): com.ringcentral.paths.restapi.account.telephony.sessions.Index {
         return com.ringcentral.paths.restapi.account.telephony.sessions.Index(this, telephonySessionId)

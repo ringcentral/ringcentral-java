@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class MeetingRequestResource {
     /**
-     *
+     * Custom topic of a meeting
      */
     public String topic;
     /**
@@ -11,15 +11,15 @@ public class MeetingRequestResource {
      */
     public String meetingType;
     /**
-     *
+     * Timing of a meeting
      */
     public MeetingScheduleResource schedule;
     /**
-     *
+     * Meeting password
      */
     public String password;
     /**
-     *
+     * Meeting host information
      */
     public HostInfoRequest host;
     /**
@@ -31,11 +31,11 @@ public class MeetingRequestResource {
      */
     public Boolean startHostVideo;
     /**
-     *
+     * Starting meetings with participant video on/off (true/false)
      */
     public Boolean startParticipantsVideo;
     /**
-     *
+     * If true, then personal user's meeting ID is applied for creation of this meeting
      */
     public Boolean usePersonalMeetingId;
     /**
@@ -48,10 +48,26 @@ public class MeetingRequestResource {
     public RecurrenceInfo recurrence;
     /**
      * Automatic record type
-     * Default: local
+     * Default: none
      * Enum: local, cloud, none
      */
     public String autoRecordType;
+    /**
+     * If true, then only signed-in users can join this meeting
+     */
+    public Boolean enforceLogin;
+    /**
+     * If true, then participants are muted on entry
+     */
+    public Boolean muteParticipantsOnEntry;
+    /**
+     * If true, then the waiting room for participants is enabled
+     */
+    public Boolean enableWaitingRoom;
+    /**
+     * List of global dial-in countries (eg. US, UK, AU, etc.)
+     */
+    public String[] globalDialInCountries;
 
     public MeetingRequestResource topic(String topic) {
         this.topic = topic;
@@ -110,6 +126,26 @@ public class MeetingRequestResource {
 
     public MeetingRequestResource autoRecordType(String autoRecordType) {
         this.autoRecordType = autoRecordType;
+        return this;
+    }
+
+    public MeetingRequestResource enforceLogin(Boolean enforceLogin) {
+        this.enforceLogin = enforceLogin;
+        return this;
+    }
+
+    public MeetingRequestResource muteParticipantsOnEntry(Boolean muteParticipantsOnEntry) {
+        this.muteParticipantsOnEntry = muteParticipantsOnEntry;
+        return this;
+    }
+
+    public MeetingRequestResource enableWaitingRoom(Boolean enableWaitingRoom) {
+        this.enableWaitingRoom = enableWaitingRoom;
+        return this;
+    }
+
+    public MeetingRequestResource globalDialInCountries(String[] globalDialInCountries) {
+        this.globalDialInCountries = globalDialInCountries;
         return this;
     }
 

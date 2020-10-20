@@ -5,7 +5,7 @@ public class MobilePickupData {
     /**
      * The list of extension IDs, configured to pick a call from Desktop/Mobile applications
      */
-    public String ccMailboxes;
+    public String[] ccMailboxes;
     /**
      * SIP proxy registration name
      */
@@ -23,7 +23,7 @@ public class MobilePickupData {
      */
     public String srvLvlExt;
 
-    public MobilePickupData ccMailboxes(String ccMailboxes) {
+    public MobilePickupData ccMailboxes(String[] ccMailboxes) {
         this.ccMailboxes = ccMailboxes;
         return this;
     }

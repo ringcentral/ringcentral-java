@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class RecordingInfo {
     /**
-     * Internal identifier of a Recording resource
+     * Internal identifier of a recording resource
      */
     public String id;
     /**

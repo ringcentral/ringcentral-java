@@ -1,15 +1,24 @@
 package com.ringcentral.definitions;
 
 
-// Format of response in case that any error occured during request processing
+// Error response
 public class ErrorResponse {
     /**
-     * Collection of all gathered errors
+     * Error code
      */
-    public Error[] errors;
+    public String errorCode;
+    /**
+     * Human-readable description of an error. Not suitable for end users
+     */
+    public String description;
 
-    public ErrorResponse errors(Error[] errors) {
-        this.errors = errors;
+    public ErrorResponse errorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    public ErrorResponse description(String description) {
+        this.description = description;
         return this;
     }
 

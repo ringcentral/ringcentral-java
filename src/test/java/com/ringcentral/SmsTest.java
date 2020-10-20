@@ -2,6 +2,7 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.CreateSMSMessage;
 import com.ringcentral.definitions.GetMessageInfoResponse;
+import com.ringcentral.definitions.GetSMSMessageInfoResponse;
 import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
 import org.junit.Test;
 
@@ -25,7 +26,7 @@ public class SmsTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        GetMessageInfoResponse response = rc.restapi().account().extension().sms().post(
+        GetSMSMessageInfoResponse response = rc.restapi().account().extension().sms().post(
             new CreateSMSMessage()
                 .text("hello world")
                 .from(new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_USERNAME")))
@@ -62,7 +63,7 @@ public class SmsTest {
         callee.phoneNumber = System.getenv("RINGCENTRAL_RECEIVER");
         requestBody.to = new MessageStoreCallerInfoRequest[]{callee};
 
-        GetMessageInfoResponse response = rc.restapi().account().extension().sms().post(requestBody);
+        GetSMSMessageInfoResponse response = rc.restapi().account().extension().sms().post(requestBody);
         assertNotNull(response);
         assertNotNull(response.subject);
         assertTrue(response.subject.contains("hello world"));

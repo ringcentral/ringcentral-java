@@ -83,6 +83,11 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val accountId: Stri
     }
 
 
+    fun a2psms(): com.ringcentral.paths.restapi.account.a2psms.Index {
+        return com.ringcentral.paths.restapi.account.a2psms.Index(this)
+    }
+
+
     @JvmOverloads
     fun calllog(callRecordId: String? = null): com.ringcentral.paths.restapi.account.calllog.Index {
         return com.ringcentral.paths.restapi.account.calllog.Index(this, callRecordId)

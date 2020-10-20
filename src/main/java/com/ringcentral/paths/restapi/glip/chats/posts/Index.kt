@@ -26,11 +26,11 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
 
 
     /**
-     * Operation: Create Glip Post
+     * Operation: Create Post
      * Http Post /restapi/v1.0/glip/chats/{chatId}/posts
      */
-    fun post(): com.ringcentral.definitions.GlipPostInfo? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false))
+    fun post(glipPostPostBody: com.ringcentral.definitions.GlipPostPostBody): com.ringcentral.definitions.GlipPostInfo? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(false), glipPostPostBody)
 
         return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
 

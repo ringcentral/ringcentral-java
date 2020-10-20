@@ -7,11 +7,11 @@ public class MeetingRecordingInfo {
      */
     public String id;
     /**
-     *
+     * Link for recording file download
      */
     public String contentDownloadUri;
     /**
-     * Enum: video/mp4, audio/m4a, text/vtt
+     * Enum: video/mp4, audio/m4a, text/plain
      */
     public String contentType;
     /**

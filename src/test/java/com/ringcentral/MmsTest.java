@@ -1,9 +1,6 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.Attachment;
-import com.ringcentral.definitions.CreateMMSMessage;
-import com.ringcentral.definitions.GetMessageInfoResponse;
-import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
+import com.ringcentral.definitions.*;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -28,7 +25,7 @@ public class MmsTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        GetMessageInfoResponse response = rc.restapi().account().extension().mms().post(
+        GetSMSMessageInfoResponse response = rc.restapi().account().extension().mms().post(
             new CreateMMSMessage()
                 .text("hello world")
                 .from(new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_USERNAME")))

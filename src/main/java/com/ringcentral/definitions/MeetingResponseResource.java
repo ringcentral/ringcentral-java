@@ -3,19 +3,19 @@ package com.ringcentral.definitions;
 
 public class MeetingResponseResource {
     /**
-     *
+     * Link to a meeting resource
      */
     public String uri;
     /**
-     *
+     * Universally unique identifier of a meeting"
      */
     public String uuid;
     /**
-     *
+     * Internal identifier of a meeting
      */
     public String id;
     /**
-     *
+     * Custom topic of a meeting
      */
     public String topic;
     /**
@@ -23,7 +23,7 @@ public class MeetingResponseResource {
      */
     public String meetingType;
     /**
-     *
+     * Meeting password
      */
     public String password;
     /**
@@ -31,31 +31,31 @@ public class MeetingResponseResource {
      */
     public String h323Password;
     /**
-     *
+     * Status of a meeting
      */
     public String status;
     /**
-     *
+     * Meeting links
      */
     public MeetingLinks links;
     /**
-     *
+     * Meeting schedule information
      */
     public MeetingScheduleResource schedule;
     /**
-     *
+     * Meeting host information
      */
     public HostInfoRequest host;
     /**
-     *
+     * If true, then participants can join the meeting before host arrives
      */
     public Boolean allowJoinBeforeHost;
     /**
-     *
+     * Starting meetings with host video on/off (true/false)
      */
     public Boolean startHostVideo;
     /**
-     *
+     * Starting meetings with participant video on/off (true/false)
      */
     public Boolean startParticipantsVideo;
     /**
@@ -63,9 +63,31 @@ public class MeetingResponseResource {
      */
     public String[] audioOptions;
     /**
-     * List of meeting occurrences
+     * Meeting recurrence information
      */
-    public MeetingOccurrenceInfo[] occurrences;
+    public RecurrenceInfo reccurence;
+    /**
+     * Automatic record type
+     * Default: none
+     * Enum: local, cloud, none
+     */
+    public String autoRecordType;
+    /**
+     * If true, then only signed-in users can join this meeting
+     */
+    public Boolean enforceLogin;
+    /**
+     * If true, then participants are muted on entry
+     */
+    public Boolean muteParticipantsOnEntry;
+    /**
+     * If true, then the waiting room for participants is enabled
+     */
+    public Boolean enableWaitingRoom;
+    /**
+     * List of global dial-in countries (eg. US, UK, AU, etc.)
+     */
+    public String[] globalDialInCountries;
 
     public MeetingResponseResource uri(String uri) {
         this.uri = uri;
@@ -142,8 +164,33 @@ public class MeetingResponseResource {
         return this;
     }
 
-    public MeetingResponseResource occurrences(MeetingOccurrenceInfo[] occurrences) {
-        this.occurrences = occurrences;
+    public MeetingResponseResource reccurence(RecurrenceInfo reccurence) {
+        this.reccurence = reccurence;
+        return this;
+    }
+
+    public MeetingResponseResource autoRecordType(String autoRecordType) {
+        this.autoRecordType = autoRecordType;
+        return this;
+    }
+
+    public MeetingResponseResource enforceLogin(Boolean enforceLogin) {
+        this.enforceLogin = enforceLogin;
+        return this;
+    }
+
+    public MeetingResponseResource muteParticipantsOnEntry(Boolean muteParticipantsOnEntry) {
+        this.muteParticipantsOnEntry = muteParticipantsOnEntry;
+        return this;
+    }
+
+    public MeetingResponseResource enableWaitingRoom(Boolean enableWaitingRoom) {
+        this.enableWaitingRoom = enableWaitingRoom;
+        return this;
+    }
+
+    public MeetingResponseResource globalDialInCountries(String[] globalDialInCountries) {
+        this.globalDialInCountries = globalDialInCountries;
         return this;
     }
 

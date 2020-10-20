@@ -13,7 +13,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
     }
 
     /**
-     * Operation: Get Subscriptions
+     * Operation: Get Subscription List
      * Http Get /restapi/v1.0/subscription
      */
     fun list(): com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse? {
@@ -53,7 +53,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
 
 
     /**
-     * Operation: Renew Subscription / Update Event Filters
+     * Operation: Update Subscription
      * Http Put /restapi/v1.0/subscription/{subscriptionId}
      */
     @JvmOverloads

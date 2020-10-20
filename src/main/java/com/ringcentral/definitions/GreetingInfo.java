@@ -19,7 +19,7 @@ public class GreetingInfo {
     /**
      *
      */
-    public CustomGreetingInfo custom;
+    public CustomGreetingInfoRequest custom;
 
     public GreetingInfo type(String type) {
         this.type = type;
@@ -36,7 +36,7 @@ public class GreetingInfo {
         return this;
     }
 
-    public GreetingInfo custom(CustomGreetingInfo custom) {
+    public GreetingInfo custom(CustomGreetingInfoRequest custom) {
         this.custom = custom;
         return this;
     }

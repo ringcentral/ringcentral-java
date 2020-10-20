@@ -60,6 +60,11 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
     }
 
 
+    fun bringin(): com.ringcentral.paths.restapi.account.telephony.sessions.parties.bringin.Index {
+        return com.ringcentral.paths.restapi.account.telephony.sessions.parties.bringin.Index(this)
+    }
+
+
     fun hold(): com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index {
         return com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index(this)
     }

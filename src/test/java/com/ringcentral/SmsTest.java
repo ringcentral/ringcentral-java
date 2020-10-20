@@ -1,7 +1,6 @@
 package com.ringcentral;
 
 import com.ringcentral.definitions.CreateSMSMessage;
-import com.ringcentral.definitions.GetMessageInfoResponse;
 import com.ringcentral.definitions.GetSMSMessageInfoResponse;
 import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
 import org.junit.Test;

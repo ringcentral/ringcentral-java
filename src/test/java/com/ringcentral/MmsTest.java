@@ -1,6 +1,9 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.*;
+import com.ringcentral.definitions.Attachment;
+import com.ringcentral.definitions.CreateMMSMessage;
+import com.ringcentral.definitions.GetSMSMessageInfoResponse;
+import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
 import org.junit.Test;
 
 import java.io.IOException;

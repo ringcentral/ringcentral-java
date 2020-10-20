@@ -14,10 +14,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi().list();
+var result = rc.restapi().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetVersionsResponse](./src/main/java/com/ringcentral/definitions/GetVersionsResponse.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIVersions) in API Explorer.
@@ -36,10 +36,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi().oauth().revoke().post(revokeTokenRequest);
+var result = rc.restapi().oauth().revoke().post(revokeTokenRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `revokeTokenRequest` is of type [RevokeTokenRequest](./src/main/java/com/ringcentral/definitions/RevokeTokenRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 
 [Try it out](https://developer.ringcentral.com/api-reference#OAuth-2.0-revokeToken) in API Explorer.
@@ -58,10 +59,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi().oauth().token().post(getTokenRequest);
+var result = rc.restapi().oauth().token().post(getTokenRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `getTokenRequest` is of type [GetTokenRequest](./src/main/java/com/ringcentral/definitions/GetTokenRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [TokenInfo](./src/main/java/com/ringcentral/definitions/TokenInfo.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#OAuth-2.0-getToken) in API Explorer.
@@ -80,10 +82,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).get();
+var result = rc.restapi(apiVersion).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetVersionResponse](./src/main/java/com/ringcentral/definitions/GetVersionResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -103,15 +105,138 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).get();
+var result = rc.restapi(apiVersion).account(accountId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetAccountInfoResponse](./src/main/java/com/ringcentral/definitions/GetAccountInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountInfo) in API Explorer.
+
+
+## Send A2P SMS
+
+Name|Value
+-|-
+HTTP Method|`POST`
+Endpoint|`/restapi/v1.0/account/{accountId}/a2p-sms/batch`
+Rate Limit Group|`Light`
+App Permission|`N/A`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).a2pSms().batch().post(messageBatchCreateRequest, restRequestConfig);
+rc.revoke();
+```
+- Parameter `messageBatchCreateRequest` is of type [MessageBatchCreateRequest](./src/main/java/com/ringcentral/definitions/MessageBatchCreateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [MessageBatchResponse](./src/main/java/com/ringcentral/definitions/MessageBatchResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-createA2PSMS) in API Explorer.
+
+
+## Get A2P SMS Batch
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/a2p-sms/batch/{batchId}`
+Rate Limit Group|`Light`
+App Permission|`N/A`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).a2pSms().batch(batchId).get(restRequestConfig);
+rc.revoke();
+```
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [MessageBatchResponse](./src/main/java/com/ringcentral/definitions/MessageBatchResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-readA2PBatch) in API Explorer.
+
+
+## Get A2P SMS List
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/a2p-sms/messages`
+Rate Limit Group|`Light`
+App Permission|`N/A`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).a2pSms().messages().list(listA2PsmsParameters, restRequestConfig);
+rc.revoke();
+```
+- Parameter `listA2PsmsParameters` is of type [ListA2PsmsParameters](./src/main/java/com/ringcentral/definitions/ListA2PsmsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [MessageListResponse](./src/main/java/com/ringcentral/definitions/MessageListResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-listA2PSMS) in API Explorer.
+
+
+## Get A2P SMS
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/a2p-sms/messages/{messageId}`
+Rate Limit Group|`Light`
+App Permission|`N/A`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).a2pSms().messages(messageId).get(restRequestConfig);
+rc.revoke();
+```
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [MessageDetailsResponse](./src/main/java/com/ringcentral/definitions/MessageDetailsResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-readA2PSMS) in API Explorer.
+
+
+## Get Opted Out Numbers
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/a2p-sms/opt-outs`
+Rate Limit Group|`Light`
+App Permission|`N/A`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).a2pSms().optOuts().get(readA2PsmsOptOutsParameters, restRequestConfig);
+rc.revoke();
+```
+- Parameter `readA2PsmsOptOutsParameters` is of type [ReadA2PsmsOptOutsParameters](./src/main/java/com/ringcentral/definitions/ReadA2PsmsOptOutsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [OptOutListResponse](./src/main/java/com/ringcentral/definitions/OptOutListResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-readA2PSMSOptOuts) in API Explorer.
 
 
 ## Get Company Active Calls
@@ -127,10 +252,11 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).activeCalls().get(listCompanyActiveCallsParameters);
+var result = rc.restapi(apiVersion).account(accountId).activeCalls().get(listCompanyActiveCallsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCompanyActiveCallsParameters` is of type [ListCompanyActiveCallsParameters](./src/main/java/com/ringcentral/definitions/ListCompanyActiveCallsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyActiveCallsResponse](./src/main/java/com/ringcentral/definitions/CompanyActiveCallsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -151,15 +277,16 @@ User Permission|`EditCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule().post(companyAnsweringRuleRequest);
+var result = rc.restapi(apiVersion).account(accountId).answeringRule().post(companyAnsweringRuleRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `companyAnsweringRuleRequest` is of type [CompanyAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-createCompanyAnsweringRule) in API Explorer.
 
 
 ## Get Company Call Handling Rule List
@@ -175,15 +302,16 @@ User Permission|`ReadCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule().list(listCompanyAnsweringRulesParameters);
+var result = rc.restapi(apiVersion).account(accountId).answeringRule().list(listCompanyAnsweringRulesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCompanyAnsweringRulesParameters` is of type [ListCompanyAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListCompanyAnsweringRulesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyAnsweringRuleList](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCompanyAnsweringRules) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-listCompanyAnsweringRules) in API Explorer.
 
 
 ## Get Company Call Handling Rule
@@ -199,15 +327,15 @@ User Permission|`ReadCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).get();
+var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-readCompanyAnsweringRule) in API Explorer.
 
 
 ## Update Company Call Handling Rule
@@ -223,15 +351,16 @@ User Permission|`EditCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).put(companyAnsweringRuleUpdate);
+var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).put(companyAnsweringRuleUpdate, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `companyAnsweringRuleUpdate` is of type [CompanyAnsweringRuleUpdate](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleUpdate.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-updateCompanyAnsweringRule) in API Explorer.
 
 
 ## Delete Company Call Handling Rule
@@ -247,15 +376,15 @@ User Permission|`EditCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).delete();
+var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-deleteCompanyAnsweringRule) in API Explorer.
 
 
 ## Get Account Business Address
@@ -271,10 +400,10 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessAddress().get();
+var result = rc.restapi(apiVersion).account(accountId).businessAddress().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -295,10 +424,11 @@ User Permission|`EditCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessAddress().put(modifyAccountBusinessAddressRequest);
+var result = rc.restapi(apiVersion).account(accountId).businessAddress().put(modifyAccountBusinessAddressRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `modifyAccountBusinessAddressRequest` is of type [ModifyAccountBusinessAddressRequest](./src/main/java/com/ringcentral/definitions/ModifyAccountBusinessAddressRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -319,10 +449,10 @@ User Permission|`ReadUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessHours().get();
+var result = rc.restapi(apiVersion).account(accountId).businessHours().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -343,10 +473,11 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessHours().put(companyBusinessHoursUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).businessHours().put(companyBusinessHoursUpdateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `companyBusinessHoursUpdateRequest` is of type [CompanyBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/CompanyBusinessHoursUpdateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -367,10 +498,11 @@ User Permission|`FullCompanyCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callLog().list(readCompanyCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).callLog().list(readCompanyCallLogParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readCompanyCallLogParameters` is of type [ReadCompanyCallLogParameters](./src/main/java/com/ringcentral/definitions/ReadCompanyCallLogParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AccountCallLogResponse](./src/main/java/com/ringcentral/definitions/AccountCallLogResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -391,10 +523,11 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callLogSync().get(syncAccountCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).callLogSync().get(syncAccountCallLogParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `syncAccountCallLogParameters` is of type [SyncAccountCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncAccountCallLogParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AccountCallLogSyncResponse](./src/main/java/com/ringcentral/definitions/AccountCallLogSyncResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -415,10 +548,11 @@ User Permission|`FullCompanyCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callLog(callRecordId).get(readCompanyCallRecordParameters);
+var result = rc.restapi(apiVersion).account(accountId).callLog(callRecordId).get(readCompanyCallRecordParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readCompanyCallRecordParameters` is of type [ReadCompanyCallRecordParameters](./src/main/java/com/ringcentral/definitions/ReadCompanyCallRecordParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyCallLogRecord](./src/main/java/com/ringcentral/definitions/CompanyCallLogRecord.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -439,10 +573,11 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().post(createCallMonitoringGroupRequest);
+var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().post(createCallMonitoringGroupRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallMonitoringGroup](./src/main/java/com/ringcentral/definitions/CallMonitoringGroup.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -463,10 +598,11 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().get(listCallMonitoringGroupsParameters);
+var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().get(listCallMonitoringGroupsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCallMonitoringGroupsParameters` is of type [ListCallMonitoringGroupsParameters](./src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallMonitoringGroups](./src/main/java/com/ringcentral/definitions/CallMonitoringGroups.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -487,10 +623,11 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).put(createCallMonitoringGroupRequest);
+var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).put(createCallMonitoringGroupRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallMonitoringGroup](./src/main/java/com/ringcentral/definitions/CallMonitoringGroup.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -511,10 +648,10 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).delete();
+var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -535,10 +672,11 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).bulkAssign().post(callMonitoringBulkAssign);
+var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).bulkAssign().post(callMonitoringBulkAssign, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `callMonitoringBulkAssign` is of type [CallMonitoringBulkAssign](./src/main/java/com/ringcentral/definitions/CallMonitoringBulkAssign.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -559,10 +697,11 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).members().get(listCallMonitoringGroupMembersParameters);
+var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).members().get(listCallMonitoringGroupMembersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCallMonitoringGroupMembersParameters` is of type [ListCallMonitoringGroupMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupMembersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallMonitoringGroupMemberList](./src/main/java/com/ringcentral/definitions/CallMonitoringGroupMemberList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -583,15 +722,65 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues().get(listCallQueuesParameters);
+var result = rc.restapi(apiVersion).account(accountId).callQueues().list(listCallQueuesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCallQueuesParameters` is of type [ListCallQueuesParameters](./src/main/java/com/ringcentral/definitions/ListCallQueuesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallQueues](./src/main/java/com/ringcentral/definitions/CallQueues.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueues) in API Explorer.
+
+
+## Get Call Queue
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/call-queues/{groupId}`
+Rate Limit Group|`Light`
+App Permission|`ReadAccounts`
+User Permission|`ReadExtensions`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).get(restRequestConfig);
+rc.revoke();
+```
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [CallQueueDetails](./src/main/java/com/ringcentral/definitions/CallQueueDetails.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-readCallQueueInfo) in API Explorer.
+
+
+## Update Call Queue
+
+Name|Value
+-|-
+HTTP Method|`PUT`
+Endpoint|`/restapi/v1.0/account/{accountId}/call-queues/{groupId}`
+Rate Limit Group|`Light`
+App Permission|`EditExtensions`
+User Permission|`EditUserInfo`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).put(callQueueUpdateDetails, restRequestConfig);
+rc.revoke();
+```
+- Parameter `callQueueUpdateDetails` is of type [CallQueueUpdateDetails](./src/main/java/com/ringcentral/definitions/CallQueueUpdateDetails.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [CallQueueDetails](./src/main/java/com/ringcentral/definitions/CallQueueDetails.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-updateCallQueueInfo) in API Explorer.
 
 
 ## Assign Multiple Call Queue Members
@@ -607,10 +796,11 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).bulkAssign().post(callQueueBulkAssignResource);
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).bulkAssign().post(callQueueBulkAssignResource, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `callQueueBulkAssignResource` is of type [CallQueueBulkAssignResource](./src/main/java/com/ringcentral/definitions/CallQueueBulkAssignResource.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -631,15 +821,65 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).members().get(listCallQueueMembersParameters);
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).members().get(listCallQueueMembersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCallQueueMembersParameters` is of type [ListCallQueueMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallQueueMembersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallQueueMembers](./src/main/java/com/ringcentral/definitions/CallQueueMembers.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueueMembers) in API Explorer.
+
+
+## Get Call Queue Presence
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence`
+Rate Limit Group|`Light`
+App Permission|`ReadPresence`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().get(restRequestConfig);
+rc.revoke();
+```
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-readCallQueuePresence) in API Explorer.
+
+
+## Update Call Queue Presence
+
+Name|Value
+-|-
+HTTP Method|`PUT`
+Endpoint|`/restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence`
+Rate Limit Group|`Medium`
+App Permission|`EditPresence`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().put(callQueueUpdatePresence, restRequestConfig);
+rc.revoke();
+```
+- Parameter `callQueueUpdatePresence` is of type [CallQueueUpdatePresence](./src/main/java/com/ringcentral/definitions/CallQueueUpdatePresence.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-updateCallQueuePresence) in API Explorer.
 
 
 ## Get Call Recording Settings
@@ -655,15 +895,15 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().get();
+var result = rc.restapi(apiVersion).account(accountId).callRecording().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCallRecordingSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-readCallRecordingSettings) in API Explorer.
 
 
 ## Update Call Recording Settings
@@ -679,15 +919,16 @@ User Permission|`EditCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().put(callRecordingSettingsResource);
+var result = rc.restapi(apiVersion).account(accountId).callRecording().put(callRecordingSettingsResource, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `callRecordingSettingsResource` is of type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCallRecordingSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-updateCallRecordingSettings) in API Explorer.
 
 
 ## Update Call Recording Extension List
@@ -703,15 +944,16 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().bulkAssign().post(bulkAccountCallRecordingsResource);
+var result = rc.restapi(apiVersion).account(accountId).callRecording().bulkAssign().post(bulkAccountCallRecordingsResource, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `bulkAccountCallRecordingsResource` is of type [BulkAccountCallRecordingsResource](./src/main/java/com/ringcentral/definitions/BulkAccountCallRecordingsResource.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCallRecordingExtensionList) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-updateCallRecordingExtensionList) in API Explorer.
 
 
 ## Get Call Recording Custom Greeting List
@@ -727,15 +969,16 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings().get(listCallRecordingCustomGreetingsParameters);
+var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings().get(listCallRecordingCustomGreetingsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCallRecordingCustomGreetingsParameters` is of type [ListCallRecordingCustomGreetingsParameters](./src/main/java/com/ringcentral/definitions/ListCallRecordingCustomGreetingsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallRecordingCustomGreetings](./src/main/java/com/ringcentral/definitions/CallRecordingCustomGreetings.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCallRecordingCustomGreetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-listCallRecordingCustomGreetings) in API Explorer.
 
 
 ## Delete Call Recording Custom Greeting
@@ -751,15 +994,15 @@ User Permission|`EditCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings(greetingId).delete();
+var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings(greetingId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteCallRecordingCustomGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-deleteCallRecordingCustomGreeting) in API Explorer.
 
 
 ## Get Call Recording Extension List
@@ -775,15 +1018,15 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().extensions().get();
+var result = rc.restapi(apiVersion).account(accountId).callRecording().extensions().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallRecordingExtensions](./src/main/java/com/ringcentral/definitions/CallRecordingExtensions.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCallRecordingExtensions) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-listCallRecordingExtensions) in API Explorer.
 
 
 ## Create Custom Field
@@ -799,10 +1042,11 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields().post(customFieldCreateRequest);
+var result = rc.restapi(apiVersion).account(accountId).customFields().post(customFieldCreateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `customFieldCreateRequest` is of type [CustomFieldCreateRequest](./src/main/java/com/ringcentral/definitions/CustomFieldCreateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CustomFieldResource](./src/main/java/com/ringcentral/definitions/CustomFieldResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -823,10 +1067,10 @@ User Permission|`ReadUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields().get();
+var result = rc.restapi(apiVersion).account(accountId).customFields().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CustomFieldsResource](./src/main/java/com/ringcentral/definitions/CustomFieldsResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -847,10 +1091,11 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).put(customFieldUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).put(customFieldUpdateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `customFieldUpdateRequest` is of type [CustomFieldUpdateRequest](./src/main/java/com/ringcentral/definitions/CustomFieldUpdateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CustomFieldResource](./src/main/java/com/ringcentral/definitions/CustomFieldResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -871,10 +1116,10 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).delete();
+var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -895,10 +1140,11 @@ User Permission|`ReadCompanyDevices`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).device(deviceId).get(readDeviceParameters);
+var result = rc.restapi(apiVersion).account(accountId).device(deviceId).get(readDeviceParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readDeviceParameters` is of type [ReadDeviceParameters](./src/main/java/com/ringcentral/definitions/ReadDeviceParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetDeviceInfoResponse](./src/main/java/com/ringcentral/definitions/GetDeviceInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -919,11 +1165,12 @@ User Permission|`EditCompanyDevices`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).device(deviceId).put(accountDeviceUpdate, updateDeviceParameters);
+var result = rc.restapi(apiVersion).account(accountId).device(deviceId).put(accountDeviceUpdate, updateDeviceParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `accountDeviceUpdate` is of type [AccountDeviceUpdate](./src/main/java/com/ringcentral/definitions/AccountDeviceUpdate.java)
 - Parameter `updateDeviceParameters` is of type [UpdateDeviceParameters](./src/main/java/com/ringcentral/definitions/UpdateDeviceParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetDeviceInfoResponse](./src/main/java/com/ringcentral/definitions/GetDeviceInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -944,10 +1191,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).directory().entries().list(listDirectoryEntriesParameters);
+var result = rc.restapi(apiVersion).account(accountId).directory().entries().list(listDirectoryEntriesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listDirectoryEntriesParameters` is of type [ListDirectoryEntriesParameters](./src/main/java/com/ringcentral/definitions/ListDirectoryEntriesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [DirectoryResource](./src/main/java/com/ringcentral/definitions/DirectoryResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -968,10 +1216,11 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).directory().entries().search().post(searchDirectoryEntriesRequest);
+var result = rc.restapi(apiVersion).account(accountId).directory().entries().search().post(searchDirectoryEntriesRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `searchDirectoryEntriesRequest` is of type [SearchDirectoryEntriesRequest](./src/main/java/com/ringcentral/definitions/SearchDirectoryEntriesRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [DirectoryResource](./src/main/java/com/ringcentral/definitions/DirectoryResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -992,10 +1241,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).directory().entries(entryId).get();
+var result = rc.restapi(apiVersion).account(accountId).directory().entries(entryId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ContactResource](./src/main/java/com/ringcentral/definitions/ContactResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1016,10 +1265,10 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).directory().federation().get();
+var result = rc.restapi(apiVersion).account(accountId).directory().federation().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [FederationResource](./src/main/java/com/ringcentral/definitions/FederationResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1040,10 +1289,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().get(listDevicesAutomaticLocationUpdatesParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().get(listDevicesAutomaticLocationUpdatesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listDevicesAutomaticLocationUpdatesParameters` is of type [ListDevicesAutomaticLocationUpdatesParameters](./src/main/java/com/ringcentral/definitions/ListDevicesAutomaticLocationUpdatesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ListDevicesAutomaticLocationUpdates](./src/main/java/com/ringcentral/definitions/ListDevicesAutomaticLocationUpdates.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1064,10 +1314,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().bulkAssign().post(assignMultipleDevicesAutomaticLocationUpdates);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().bulkAssign().post(assignMultipleDevicesAutomaticLocationUpdates, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `assignMultipleDevicesAutomaticLocationUpdates` is of type [AssignMultipleDevicesAutomaticLocationUpdates](./src/main/java/com/ringcentral/definitions/AssignMultipleDevicesAutomaticLocationUpdates.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1088,10 +1339,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().list();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [NetworksList](./src/main/java/com/ringcentral/definitions/NetworksList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1112,10 +1363,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().post(createNetworkRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().post(createNetworkRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createNetworkRequest` is of type [CreateNetworkRequest](./src/main/java/com/ringcentral/definitions/CreateNetworkRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [NetworkInfo](./src/main/java/com/ringcentral/definitions/NetworkInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1136,10 +1388,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [NetworkInfo](./src/main/java/com/ringcentral/definitions/NetworkInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1160,10 +1412,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).put(updateNetworkRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).put(updateNetworkRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateNetworkRequest` is of type [UpdateNetworkRequest](./src/main/java/com/ringcentral/definitions/UpdateNetworkRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1184,10 +1437,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).delete();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1208,10 +1461,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().list(listAccountSwitchesParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().list(listAccountSwitchesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listAccountSwitchesParameters` is of type [ListAccountSwitchesParameters](./src/main/java/com/ringcentral/definitions/ListAccountSwitchesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SwitchesList](./src/main/java/com/ringcentral/definitions/SwitchesList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1232,10 +1486,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().post(createSwitchInfo);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().post(createSwitchInfo, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createSwitchInfo` is of type [CreateSwitchInfo](./src/main/java/com/ringcentral/definitions/CreateSwitchInfo.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SwitchInfo](./src/main/java/com/ringcentral/definitions/SwitchInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1256,10 +1511,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkCreate().post(createMultipleSwitchesRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkCreate().post(createMultipleSwitchesRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createMultipleSwitchesRequest` is of type [CreateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/CreateMultipleSwitchesRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CreateMultipleSwitchesResponse](./src/main/java/com/ringcentral/definitions/CreateMultipleSwitchesResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1280,10 +1536,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkUpdate().post(updateMultipleSwitchesRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkUpdate().post(updateMultipleSwitchesRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateMultipleSwitchesRequest` is of type [UpdateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/UpdateMultipleSwitchesRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UpdateMultipleSwitchesResponse](./src/main/java/com/ringcentral/definitions/UpdateMultipleSwitchesResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1304,10 +1561,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkValidate().post(validateMultipleSwitchesRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkValidate().post(validateMultipleSwitchesRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `validateMultipleSwitchesRequest` is of type [ValidateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/ValidateMultipleSwitchesRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ValidateMultipleSwitchesResponse](./src/main/java/com/ringcentral/definitions/ValidateMultipleSwitchesResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1328,10 +1586,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SwitchInfo](./src/main/java/com/ringcentral/definitions/SwitchInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1352,10 +1610,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).put(updateSwitchInfo);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).put(updateSwitchInfo, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateSwitchInfo` is of type [UpdateSwitchInfo](./src/main/java/com/ringcentral/definitions/UpdateSwitchInfo.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SwitchInfo](./src/main/java/com/ringcentral/definitions/SwitchInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1376,10 +1635,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).delete();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1400,10 +1659,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().tasks(taskId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().tasks(taskId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AutomaticLocationUpdatesTaskInfo](./src/main/java/com/ringcentral/definitions/AutomaticLocationUpdatesTaskInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1424,10 +1683,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().get(listAutomaticLocationUpdatesUsersParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().get(listAutomaticLocationUpdatesUsersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listAutomaticLocationUpdatesUsersParameters` is of type [ListAutomaticLocationUpdatesUsersParameters](./src/main/java/com/ringcentral/definitions/ListAutomaticLocationUpdatesUsersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AutomaticLocationUpdatesUserList](./src/main/java/com/ringcentral/definitions/AutomaticLocationUpdatesUserList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1448,10 +1708,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().bulkAssign().post(bulkAssignAutomaticLocationUpdatesUsers);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().bulkAssign().post(bulkAssignAutomaticLocationUpdatesUsers, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `bulkAssignAutomaticLocationUpdatesUsers` is of type [BulkAssignAutomaticLocationUpdatesUsers](./src/main/java/com/ringcentral/definitions/BulkAssignAutomaticLocationUpdatesUsers.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1472,10 +1733,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().list(listWirelessPointsParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().list(listWirelessPointsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listWirelessPointsParameters` is of type [ListWirelessPointsParameters](./src/main/java/com/ringcentral/definitions/ListWirelessPointsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [WirelessPointsList](./src/main/java/com/ringcentral/definitions/WirelessPointsList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1496,10 +1758,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().post(createWirelessPoint);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().post(createWirelessPoint, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createWirelessPoint` is of type [CreateWirelessPoint](./src/main/java/com/ringcentral/definitions/CreateWirelessPoint.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [WirelessPointInfo](./src/main/java/com/ringcentral/definitions/WirelessPointInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1520,10 +1783,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkCreate().post(createMultipleWirelessPointsRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkCreate().post(createMultipleWirelessPointsRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createMultipleWirelessPointsRequest` is of type [CreateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/CreateMultipleWirelessPointsRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CreateMultipleWirelessPointsResponse](./src/main/java/com/ringcentral/definitions/CreateMultipleWirelessPointsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1544,10 +1808,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkUpdate().post(updateMultipleWirelessPointsRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkUpdate().post(updateMultipleWirelessPointsRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateMultipleWirelessPointsRequest` is of type [UpdateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/UpdateMultipleWirelessPointsRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UpdateMultipleWirelessPointsResponse](./src/main/java/com/ringcentral/definitions/UpdateMultipleWirelessPointsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1568,10 +1833,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkValidate().post(validateMultipleWirelessPointsRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkValidate().post(validateMultipleWirelessPointsRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `validateMultipleWirelessPointsRequest` is of type [ValidateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/ValidateMultipleWirelessPointsRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ValidateMultipleWirelessPointsResponse](./src/main/java/com/ringcentral/definitions/ValidateMultipleWirelessPointsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1592,10 +1858,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [WirelessPointInfo](./src/main/java/com/ringcentral/definitions/WirelessPointInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1616,10 +1882,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).put(updateWirelessPoint);
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).put(updateWirelessPoint, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateWirelessPoint` is of type [UpdateWirelessPoint](./src/main/java/com/ringcentral/definitions/UpdateWirelessPoint.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [WirelessPointInfo](./src/main/java/com/ringcentral/definitions/WirelessPointInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1640,10 +1907,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).delete();
+var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1664,10 +1931,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations().post(emergencyLocationInfoRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyLocations().post(emergencyLocationInfoRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `emergencyLocationInfoRequest` is of type [EmergencyLocationInfoRequest](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfoRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1682,16 +1950,17 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/v1.0/account/{accountId}/emergency-locations`
 Rate Limit Group|`Light`
-App Permission|`EditAccounts`
+App Permission|`ReadAccounts`
 User Permission|`ConfigureEmergencyMaps`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations().list(listEmergencyLocationsParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyLocations().list(listEmergencyLocationsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listEmergencyLocationsParameters` is of type [ListEmergencyLocationsParameters](./src/main/java/com/ringcentral/definitions/ListEmergencyLocationsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [EmergencyLocationList](./src/main/java/com/ringcentral/definitions/EmergencyLocationList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1712,10 +1981,10 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations(locationId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyLocations(locationId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [EmergencyLocationInfo](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1736,10 +2005,11 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations(locationId).put(emergencyLocationInfoRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyLocations(locationId).put(emergencyLocationInfoRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `emergencyLocationInfoRequest` is of type [EmergencyLocationInfoRequest](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfoRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [EmergencyLocationInfo](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1760,10 +2030,11 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension().list(listExtensionsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension().list(listExtensionsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listExtensionsParameters` is of type [ListExtensionsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetExtensionListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionListResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1784,10 +2055,11 @@ User Permission|`AddRemoveUsers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension().post(extensionCreationRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension().post(extensionCreationRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `extensionCreationRequest` is of type [ExtensionCreationRequest](./src/main/java/com/ringcentral/definitions/ExtensionCreationRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ExtensionCreationResponse](./src/main/java/com/ringcentral/definitions/ExtensionCreationResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1808,10 +2080,10 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetExtensionInfoResponse](./src/main/java/com/ringcentral/definitions/GetExtensionInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1833,10 +2105,11 @@ User Permission|`EditUserInfo OR EditUserCredentials`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).put(extensionUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).put(extensionUpdateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `extensionUpdateRequest` is of type [ExtensionUpdateRequest](./src/main/java/com/ringcentral/definitions/ExtensionUpdateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetExtensionInfoResponse](./src/main/java/com/ringcentral/definitions/GetExtensionInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1858,10 +2131,11 @@ User Permission|`AddRemoveUsers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).delete(deleteExtensionParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).delete(deleteExtensionParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `deleteExtensionParameters` is of type [DeleteExtensionParameters](./src/main/java/com/ringcentral/definitions/DeleteExtensionParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1883,10 +2157,11 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).activeCalls().get(listExtensionActiveCallsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).activeCalls().get(listExtensionActiveCallsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listExtensionActiveCallsParameters` is of type [ListExtensionActiveCallsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionActiveCallsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserActiveCallsResponse](./src/main/java/com/ringcentral/definitions/UserActiveCallsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1908,10 +2183,11 @@ User Permission|`ReadPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBookSync().get(syncAddressBookParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBookSync().get(syncAddressBookParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `syncAddressBookParameters` is of type [SyncAddressBookParameters](./src/main/java/com/ringcentral/definitions/SyncAddressBookParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AddressBookSync](./src/main/java/com/ringcentral/definitions/AddressBookSync.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1933,10 +2209,11 @@ User Permission|`ReadPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().list(listContactsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().list(listContactsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listContactsParameters` is of type [ListContactsParameters](./src/main/java/com/ringcentral/definitions/ListContactsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ContactList](./src/main/java/com/ringcentral/definitions/ContactList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1958,11 +2235,12 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().post(personalContactRequest, createContactParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().post(personalContactRequest, createContactParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/main/java/com/ringcentral/definitions/PersonalContactRequest.java)
 - Parameter `createContactParameters` is of type [CreateContactParameters](./src/main/java/com/ringcentral/definitions/CreateContactParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PersonalContactResource](./src/main/java/com/ringcentral/definitions/PersonalContactResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -1984,10 +2262,10 @@ User Permission|`ReadPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PersonalContactResource](./src/main/java/com/ringcentral/definitions/PersonalContactResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2009,11 +2287,12 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).put(personalContactRequest, updateContactParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).put(personalContactRequest, updateContactParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/main/java/com/ringcentral/definitions/PersonalContactRequest.java)
 - Parameter `updateContactParameters` is of type [UpdateContactParameters](./src/main/java/com/ringcentral/definitions/UpdateContactParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PersonalContactResource](./src/main/java/com/ringcentral/definitions/PersonalContactResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2035,10 +2314,10 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2060,16 +2339,17 @@ User Permission|`ReadUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().list(listAnsweringRulesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().list(listAnsweringRulesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listAnsweringRulesParameters` is of type [ListAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListAnsweringRulesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserAnsweringRuleList](./src/main/java/com/ringcentral/definitions/UserAnsweringRuleList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listAnsweringRules) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-listAnsweringRules) in API Explorer.
 
 
 ## Create Call Handling Rule
@@ -2085,16 +2365,17 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().post(createAnsweringRuleRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().post(createAnsweringRuleRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createAnsweringRuleRequest` is of type [CreateAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CreateAnsweringRuleRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CustomAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CustomAnsweringRuleInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-createAnsweringRule) in API Explorer.
 
 
 ## Get Call Handling Rule
@@ -2110,16 +2391,17 @@ User Permission|`ReadUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).get(readAnsweringRuleParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).get(readAnsweringRuleParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readAnsweringRuleParameters` is of type [ReadAnsweringRuleParameters](./src/main/java/com/ringcentral/definitions/ReadAnsweringRuleParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-readAnsweringRule) in API Explorer.
 
 
 ## Update Call Handling Rule
@@ -2135,16 +2417,17 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).put(updateAnsweringRuleRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).put(updateAnsweringRuleRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateAnsweringRuleRequest` is of type [UpdateAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/UpdateAnsweringRuleRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/AnsweringRuleInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-updateAnsweringRule) in API Explorer.
 
 
 ## Delete Call Handling Rule
@@ -2160,16 +2443,16 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-deleteAnsweringRule) in API Explorer.
 
 
 ## Get Authorization Profile
@@ -2185,10 +2468,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AuthProfileResource](./src/main/java/com/ringcentral/definitions/AuthProfileResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2210,10 +2493,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().check().get(checkUserPermissionParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().check().get(checkUserPermissionParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `checkUserPermissionParameters` is of type [CheckUserPermissionParameters](./src/main/java/com/ringcentral/definitions/CheckUserPermissionParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AuthProfileCheckResource](./src/main/java/com/ringcentral/definitions/AuthProfileCheckResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2235,10 +2519,10 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetUserBusinessHoursResponse](./src/main/java/com/ringcentral/definitions/GetUserBusinessHoursResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2260,10 +2544,11 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().put(userBusinessHoursUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().put(userBusinessHoursUpdateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `userBusinessHoursUpdateRequest` is of type [UserBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/UserBusinessHoursUpdateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserBusinessHoursUpdateResponse](./src/main/java/com/ringcentral/definitions/UserBusinessHoursUpdateResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2285,10 +2570,11 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().list(readUserCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().list(readUserCallLogParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readUserCallLogParameters` is of type [ReadUserCallLogParameters](./src/main/java/com/ringcentral/definitions/ReadUserCallLogParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserCallLogResponse](./src/main/java/com/ringcentral/definitions/UserCallLogResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2310,10 +2596,11 @@ User Permission|`EditCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().delete(deleteUserCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().delete(deleteUserCallLogParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `deleteUserCallLogParameters` is of type [DeleteUserCallLogParameters](./src/main/java/com/ringcentral/definitions/DeleteUserCallLogParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2335,10 +2622,11 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLogSync().get(syncUserCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLogSync().get(syncUserCallLogParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `syncUserCallLogParameters` is of type [SyncUserCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncUserCallLogParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallLogSync](./src/main/java/com/ringcentral/definitions/CallLogSync.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2360,16 +2648,69 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog(callRecordId).get(readUserCallRecordParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog(callRecordId).get(readUserCallRecordParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readUserCallRecordParameters` is of type [ReadUserCallRecordParameters](./src/main/java/com/ringcentral/definitions/ReadUserCallRecordParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserCallLogRecord](./src/main/java/com/ringcentral/definitions/UserCallLogRecord.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readUserCallRecord) in API Explorer.
+
+
+## Get Agent’s Call Queue Presence
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence`
+Rate Limit Group|`Light`
+App Permission|`ReadPresence`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueuePresence().get(readExtensionCallQueuePresenceParameters, restRequestConfig);
+rc.revoke();
+```
+- Parameter `readExtensionCallQueuePresenceParameters` is of type [ReadExtensionCallQueuePresenceParameters](./src/main/java/com/ringcentral/definitions/ReadExtensionCallQueuePresenceParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [ExtensionCallQueuePresenceList](./src/main/java/com/ringcentral/definitions/ExtensionCallQueuePresenceList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-readExtensionCallQueuePresence) in API Explorer.
+
+
+## Update Call Queue Presence
+
+Name|Value
+-|-
+HTTP Method|`PUT`
+Endpoint|`/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-queue-presence`
+Rate Limit Group|`Medium`
+App Permission|`EditPresence`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueuePresence().put(extensionCallQueueUpdatePresenceList, restRequestConfig);
+rc.revoke();
+```
+- Parameter `extensionCallQueueUpdatePresenceList` is of type [ExtensionCallQueueUpdatePresenceList](./src/main/java/com/ringcentral/definitions/ExtensionCallQueueUpdatePresenceList.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [ExtensionCallQueuePresenceList](./src/main/java/com/ringcentral/definitions/ExtensionCallQueuePresenceList.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-updateExtensionCallQueuePresence) in API Explorer.
 
 
 ## Update User Call Queues
@@ -2385,10 +2726,11 @@ User Permission|`JoinLeaveCallQueue`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueues().put(userCallQueues);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueues().put(userCallQueues, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `userCallQueues` is of type [UserCallQueues](./src/main/java/com/ringcentral/definitions/UserCallQueues.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserCallQueues](./src/main/java/com/ringcentral/definitions/UserCallQueues.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2410,10 +2752,10 @@ User Permission|`ReadBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallerBlockingSettings](./src/main/java/com/ringcentral/definitions/CallerBlockingSettings.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2435,10 +2777,11 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().put(callerBlockingSettingsUpdate);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().put(callerBlockingSettingsUpdate, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `callerBlockingSettingsUpdate` is of type [CallerBlockingSettingsUpdate](./src/main/java/com/ringcentral/definitions/CallerBlockingSettingsUpdate.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallerBlockingSettings](./src/main/java/com/ringcentral/definitions/CallerBlockingSettings.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2460,10 +2803,11 @@ User Permission|`ReadBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().list(listBlockedAllowedNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().list(listBlockedAllowedNumbersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listBlockedAllowedNumbersParameters` is of type [ListBlockedAllowedNumbersParameters](./src/main/java/com/ringcentral/definitions/ListBlockedAllowedNumbersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [BlockedAllowedPhoneNumbersList](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumbersList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2485,10 +2829,11 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().post(addBlockedAllowedPhoneNumber);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().post(addBlockedAllowedPhoneNumber, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [BlockedAllowedPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2510,10 +2855,10 @@ User Permission|`ReadBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [BlockedAllowedPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2535,10 +2880,10 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2560,10 +2905,11 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).put(addBlockedAllowedPhoneNumber);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).put(addBlockedAllowedPhoneNumber, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [BlockedAllowedPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/BlockedAllowedPhoneNumberInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2585,10 +2931,10 @@ User Permission|`ReadCallerIDSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ExtensionCallerIdInfo](./src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2610,10 +2956,11 @@ User Permission|`EditCallerIDSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().put(extensionCallerIdInfo);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().put(extensionCallerIdInfo, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `extensionCallerIdInfo` is of type [ExtensionCallerIdInfo](./src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ExtensionCallerIdInfo](./src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2635,11 +2982,12 @@ User Permission|`InternalSMS`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).companyPager().post(createInternalTextMessageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).companyPager().post(createInternalTextMessageRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createInternalTextMessageRequest` is of type [CreateInternalTextMessageRequest](./src/main/java/com/ringcentral/definitions/CreateInternalTextMessageRequest.java)
-- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [GetInternalTextMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetInternalTextMessageInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
@@ -2660,10 +3008,11 @@ User Permission|`OrganizeConference`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).conferencing().get(readConferencingSettingsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).conferencing().get(readConferencingSettingsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readConferencingSettingsParameters` is of type [ReadConferencingSettingsParameters](./src/main/java/com/ringcentral/definitions/ReadConferencingSettingsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetConferencingInfoResponse](./src/main/java/com/ringcentral/definitions/GetConferencingInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2685,10 +3034,11 @@ User Permission|`OrganizeConference`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).conferencing().put(updateConferencingInfoRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).conferencing().put(updateConferencingInfoRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateConferencingInfoRequest` is of type [UpdateConferencingInfoRequest](./src/main/java/com/ringcentral/definitions/UpdateConferencingInfoRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetConferencingInfoResponse](./src/main/java/com/ringcentral/definitions/GetConferencingInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2710,10 +3060,11 @@ User Permission|`ReadUserDevices`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).device().get(listExtensionDevicesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).device().get(listExtensionDevicesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listExtensionDevicesParameters` is of type [ListExtensionDevicesParameters](./src/main/java/com/ringcentral/definitions/ListExtensionDevicesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetExtensionDevicesResponse](./src/main/java/com/ringcentral/definitions/GetExtensionDevicesResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2735,10 +3086,10 @@ User Permission|`ReadPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).favorite().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).favorite().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [FavoriteContactList](./src/main/java/com/ringcentral/definitions/FavoriteContactList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2760,10 +3111,11 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).favorite().put(favoriteCollection);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).favorite().put(favoriteCollection, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `favoriteCollection` is of type [FavoriteCollection](./src/main/java/com/ringcentral/definitions/FavoriteCollection.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [FavoriteContactList](./src/main/java/com/ringcentral/definitions/FavoriteContactList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2785,10 +3137,11 @@ User Permission|`OutboundFaxes`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).fax().post(createFaxMessageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).fax().post(createFaxMessageRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createFaxMessageRequest` is of type [CreateFaxMessageRequest](./src/main/java/com/ringcentral/definitions/CreateFaxMessageRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [FaxResponse](./src/main/java/com/ringcentral/definitions/FaxResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2810,10 +3163,11 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).features().get(readUserFeaturesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).features().get(readUserFeaturesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readUserFeaturesParameters` is of type [ReadUserFeaturesParameters](./src/main/java/com/ringcentral/definitions/ReadUserFeaturesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [FeatureList](./src/main/java/com/ringcentral/definitions/FeatureList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2835,10 +3189,11 @@ User Permission|`ReadUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().list(listForwardingNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().list(listForwardingNumbersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listForwardingNumbersParameters` is of type [ListForwardingNumbersParameters](./src/main/java/com/ringcentral/definitions/ListForwardingNumbersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetExtensionForwardingNumberListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionForwardingNumberListResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2860,10 +3215,11 @@ User Permission|`EditUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().post(createForwardingNumberRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().post(createForwardingNumberRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createForwardingNumberRequest` is of type [CreateForwardingNumberRequest](./src/main/java/com/ringcentral/definitions/CreateForwardingNumberRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ForwardingNumberInfo](./src/main/java/com/ringcentral/definitions/ForwardingNumberInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2885,10 +3241,10 @@ User Permission|`ReadUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ForwardingNumberInfo](./src/main/java/com/ringcentral/definitions/ForwardingNumberInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2910,10 +3266,11 @@ User Permission|`EditUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).put(updateForwardingNumberRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).put(updateForwardingNumberRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateForwardingNumberRequest` is of type [UpdateForwardingNumberRequest](./src/main/java/com/ringcentral/definitions/UpdateForwardingNumberRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ForwardingNumberInfo](./src/main/java/com/ringcentral/definitions/ForwardingNumberInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2935,10 +3292,10 @@ User Permission|`EditUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2960,10 +3317,11 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).grant().get(listExtensionGrantsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).grant().get(listExtensionGrantsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listExtensionGrantsParameters` is of type [ListExtensionGrantsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionGrantsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetExtensionGrantListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionGrantListResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -2985,16 +3343,18 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).greeting().post(createCustomUserGreetingRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).greeting().post(createCustomUserGreetingRequest, createCustomUserGreetingParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createCustomUserGreetingRequest` is of type [CreateCustomUserGreetingRequest](./src/main/java/com/ringcentral/definitions/CreateCustomUserGreetingRequest.java)
+- Parameter `createCustomUserGreetingParameters` is of type [CreateCustomUserGreetingParameters](./src/main/java/com/ringcentral/definitions/CreateCustomUserGreetingParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CustomUserGreetingInfo](./src/main/java/com/ringcentral/definitions/CustomUserGreetingInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCustomUserGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-createCustomUserGreeting) in API Explorer.
 
 
 ## Get Custom Greeting
@@ -3010,16 +3370,16 @@ User Permission|`ReadUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).greeting(greetingId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).greeting(greetingId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CustomUserGreetingInfo](./src/main/java/com/ringcentral/definitions/CustomUserGreetingInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCustomGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-readCustomGreeting) in API Explorer.
 
 
 ## Get Scheduled Meetings
@@ -3035,10 +3395,10 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().list();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MeetingsResource](./src/main/java/com/ringcentral/definitions/MeetingsResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3060,10 +3420,11 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().post(meetingRequestResource);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().post(meetingRequestResource, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `meetingRequestResource` is of type [MeetingRequestResource](./src/main/java/com/ringcentral/definitions/MeetingRequestResource.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MeetingResponseResource](./src/main/java/com/ringcentral/definitions/MeetingResponseResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3085,10 +3446,11 @@ User Permission|`MeetingsRecordings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingRecordings().get(listUserMeetingRecordingsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingRecordings().get(listUserMeetingRecordingsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listUserMeetingRecordingsParameters` is of type [ListUserMeetingRecordingsParameters](./src/main/java/com/ringcentral/definitions/ListUserMeetingRecordingsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ListMeetingRecordingsResponse](./src/main/java/com/ringcentral/definitions/ListMeetingRecordingsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3110,10 +3472,10 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MeetingServiceInfoResource](./src/main/java/com/ringcentral/definitions/MeetingServiceInfoResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3135,10 +3497,11 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().patch(meetingServiceInfoRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().patch(meetingServiceInfoRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `meetingServiceInfoRequest` is of type [MeetingServiceInfoRequest](./src/main/java/com/ringcentral/definitions/MeetingServiceInfoRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MeetingServiceInfoResource](./src/main/java/com/ringcentral/definitions/MeetingServiceInfoResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3160,16 +3523,16 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().userSettings().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().userSettings().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MeetingUserSettingsResponse](./src/main/java/com/ringcentral/definitions/MeetingUserSettingsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-GetUserSetting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Configuration-GetUserSetting) in API Explorer.
 
 
 ## Get Meeting Info
@@ -3185,10 +3548,10 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MeetingResponseResource](./src/main/java/com/ringcentral/definitions/MeetingResponseResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3210,10 +3573,11 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).put(meetingRequestResource);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).put(meetingRequestResource, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `meetingRequestResource` is of type [MeetingRequestResource](./src/main/java/com/ringcentral/definitions/MeetingRequestResource.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MeetingResponseResource](./src/main/java/com/ringcentral/definitions/MeetingResponseResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3235,10 +3599,10 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3260,16 +3624,41 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).end().post();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).end().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-endMeeting) in API Explorer.
+
+
+## Get Meeting Invitation
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/invitation`
+Rate Limit Group|`Light`
+App Permission|`Meetings`
+User Permission|`Meetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting(meetingId).invitation().get(restRequestConfig);
+rc.revoke();
+```
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [PublicMeetingInvitationResponse](./src/main/java/com/ringcentral/definitions/PublicMeetingInvitationResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Management-readMeetingInvitation) in API Explorer.
 
 
 ## Get Assistants
@@ -3285,10 +3674,10 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assistants().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assistants().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AssistantsResource](./src/main/java/com/ringcentral/definitions/AssistantsResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3310,10 +3699,10 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assisted().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assisted().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AssistedUsersResource](./src/main/java/com/ringcentral/definitions/AssistedUsersResource.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3335,10 +3724,11 @@ User Permission|`ReadMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore().list(listMessagesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore().list(listMessagesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listMessagesParameters` is of type [ListMessagesParameters](./src/main/java/com/ringcentral/definitions/ListMessagesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetMessageList](./src/main/java/com/ringcentral/definitions/GetMessageList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3360,10 +3750,10 @@ User Permission|`ReadMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3385,11 +3775,12 @@ User Permission|`EditMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).put(updateMessageRequest, updateMessageParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).put(updateMessageRequest, updateMessageParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateMessageRequest` is of type [UpdateMessageRequest](./src/main/java/com/ringcentral/definitions/UpdateMessageRequest.java)
 - Parameter `updateMessageParameters` is of type [UpdateMessageParameters](./src/main/java/com/ringcentral/definitions/UpdateMessageParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3411,10 +3802,11 @@ User Permission|`EditMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).delete(deleteMessageParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).delete(deleteMessageParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `deleteMessageParameters` is of type [DeleteMessageParameters](./src/main/java/com/ringcentral/definitions/DeleteMessageParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3436,10 +3828,11 @@ User Permission|`ReadMessageContent`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).content(attachmentId).get(readMessageContentParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).content(attachmentId).get(readMessageContentParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readMessageContentParameters` is of type [ReadMessageContentParameters](./src/main/java/com/ringcentral/definitions/ReadMessageContentParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type `byte[]`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3465,10 +3858,11 @@ User Permission|`ReadMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageSync().get(syncMessagesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageSync().get(syncMessagesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `syncMessagesParameters` is of type [SyncMessagesParameters](./src/main/java/com/ringcentral/definitions/SyncMessagesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetMessageSyncResponse](./src/main/java/com/ringcentral/definitions/GetMessageSyncResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3477,7 +3871,7 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Store-syncMessages) in API Explorer.
 
 
-## Create MMS Message
+## Send MMS
 
 Name|Value
 -|-
@@ -3490,16 +3884,17 @@ User Permission|`OutboundSMS`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).mms().post(createMmsMessage);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).mms().post(createMmsMessage, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createMmsMessage` is of type [CreateMMSMessage](./src/main/java/com/ringcentral/definitions/CreateMMSMessage.java)
-- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [GetSMSMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetSMSMessageInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#MMS-createMMS) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-createMMS) in API Explorer.
 
 
 ## Get Notification Settings
@@ -3515,10 +3910,10 @@ User Permission|`ReadMessagesNotificationsSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [NotificationSettings](./src/main/java/com/ringcentral/definitions/NotificationSettings.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3540,10 +3935,11 @@ User Permission|`EditMessagesNotificationsSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().put(notificationSettingsUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().put(notificationSettingsUpdateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `notificationSettingsUpdateRequest` is of type [NotificationSettingsUpdateRequest](./src/main/java/com/ringcentral/definitions/NotificationSettingsUpdateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [NotificationSettings](./src/main/java/com/ringcentral/definitions/NotificationSettings.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3565,10 +3961,11 @@ User Permission|`ReadUserPhoneNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).phoneNumber().get(listExtensionPhoneNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).phoneNumber().get(listExtensionPhoneNumbersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listExtensionPhoneNumbersParameters` is of type [ListExtensionPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListExtensionPhoneNumbersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetExtensionPhoneNumbersResponse](./src/main/java/com/ringcentral/definitions/GetExtensionPhoneNumbersResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3590,10 +3987,11 @@ User Permission|`ReadPresenceStatus`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).presence().get(readUserPresenceStatusParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).presence().get(readUserPresenceStatusParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readUserPresenceStatusParameters` is of type [ReadUserPresenceStatusParameters](./src/main/java/com/ringcentral/definitions/ReadUserPresenceStatusParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetPresenceInfo](./src/main/java/com/ringcentral/definitions/GetPresenceInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3615,10 +4013,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).presence().put(presenceInfoResource);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).presence().put(presenceInfoResource, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `presenceInfoResource` is of type [PresenceInfoResource](./src/main/java/com/ringcentral/definitions/PresenceInfoResource.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PresenceInfoResponse](./src/main/java/com/ringcentral/definitions/PresenceInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3640,10 +4039,10 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().list();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type `byte[]`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3669,10 +4068,11 @@ User Permission|`EditUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().post(createUserProfileImageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().post(createUserProfileImageRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createUserProfileImageRequest` is of type [CreateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/CreateUserProfileImageRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3694,10 +4094,11 @@ User Permission|`EditUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().put(updateUserProfileImageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().put(updateUserProfileImageRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateUserProfileImageRequest` is of type [UpdateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/UpdateUserProfileImageRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3719,10 +4120,10 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage(scaleSize).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage(scaleSize).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type `byte[]`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3748,10 +4149,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut().post(makeRingOutRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut().post(makeRingOutRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `makeRingOutRequest` is of type [MakeRingOutRequest](./src/main/java/com/ringcentral/definitions/MakeRingOutRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetRingOutStatusResponse](./src/main/java/com/ringcentral/definitions/GetRingOutStatusResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3773,10 +4175,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetRingOutStatusResponse](./src/main/java/com/ringcentral/definitions/GetRingOutStatusResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3798,10 +4200,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3823,11 +4225,12 @@ User Permission|`OutboundSMS`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).sms().post(createSmsMessage);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).sms().post(createSmsMessage, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createSmsMessage` is of type [CreateSMSMessage](./src/main/java/com/ringcentral/definitions/CreateSMSMessage.java)
-- `result` is of type [GetMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetMessageInfoResponse.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [GetSMSMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetSMSMessageInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
@@ -3848,10 +4251,10 @@ User Permission|`ReadPresenceStatus`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedPresence().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedPresence().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UnifiedPresence](./src/main/java/com/ringcentral/definitions/UnifiedPresence.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3873,10 +4276,11 @@ User Permission|`EditPresenceStatus`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedPresence().patch(updateUnifiedPresence);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedPresence().patch(updateUnifiedPresence, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateUnifiedPresence` is of type [UpdateUnifiedPresence](./src/main/java/com/ringcentral/definitions/UpdateUnifiedPresence.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UnifiedPresence](./src/main/java/com/ringcentral/definitions/UnifiedPresence.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3898,10 +4302,10 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserVideoConfiguration](./src/main/java/com/ringcentral/definitions/UserVideoConfiguration.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3923,10 +4327,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().put(userVideoConfiguration);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().put(userVideoConfiguration, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `userVideoConfiguration` is of type [UserVideoConfiguration](./src/main/java/com/ringcentral/definitions/UserVideoConfiguration.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserVideoConfiguration](./src/main/java/com/ringcentral/definitions/UserVideoConfiguration.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -3948,15 +4353,16 @@ User Permission|`ReadUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).greeting().post(createCompanyGreetingRequest);
+var result = rc.restapi(apiVersion).account(accountId).greeting().post(createCompanyGreetingRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createCompanyGreetingRequest` is of type [CreateCompanyGreetingRequest](./src/main/java/com/ringcentral/definitions/CreateCompanyGreetingRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CustomCompanyGreetingInfo](./src/main/java/com/ringcentral/definitions/CustomCompanyGreetingInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCompanyGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-createCompanyGreeting) in API Explorer.
 
 
 ## Create IVR Menu
@@ -3972,15 +4378,16 @@ User Permission|`AutoReceptionist`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrMenus().post(ivrMenuInfo);
+var result = rc.restapi(apiVersion).account(accountId).ivrMenus().post(ivrMenuInfo, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-createIVRMenu) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-createIVRMenu) in API Explorer.
 
 
 ## Get IVR Menu
@@ -3996,15 +4403,15 @@ User Permission|`AutoReceptionist`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).get();
+var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRMenu) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-readIVRMenu) in API Explorer.
 
 
 ## Update IVR Menu
@@ -4020,15 +4427,16 @@ User Permission|`AutoReceptionist`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).put(ivrMenuInfo);
+var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).put(ivrMenuInfo, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-updateIVRMenu) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-updateIVRMenu) in API Explorer.
 
 
 ## Create IVR Prompts
@@ -4044,15 +4452,16 @@ User Permission|`EditCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().post(createIvrPromptRequest);
+var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().post(createIvrPromptRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createIvrPromptRequest` is of type [CreateIvrPromptRequest](./src/main/java/com/ringcentral/definitions/CreateIvrPromptRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-createIVRPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-createIVRPrompt) in API Explorer.
 
 
 ## Get IVR Prompt List
@@ -4068,15 +4477,15 @@ User Permission|`ReadCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().list();
+var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [IVRPrompts](./src/main/java/com/ringcentral/definitions/IVRPrompts.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-listIVRPrompts) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-listIVRPrompts) in API Explorer.
 
 
 ## Get IVR Prompt
@@ -4092,15 +4501,15 @@ User Permission|`ReadCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).get();
+var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-readIVRPrompt) in API Explorer.
 
 
 ## Delete IVR Prompt
@@ -4116,15 +4525,15 @@ User Permission|`EditCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).delete();
+var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-deleteIVRPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-deleteIVRPrompt) in API Explorer.
 
 
 ## Update IVR Prompt
@@ -4140,15 +4549,16 @@ User Permission|`EditCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put(updateIvrPromptRequest);
+var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put(updateIvrPromptRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateIvrPromptRequest` is of type [UpdateIVRPromptRequest](./src/main/java/com/ringcentral/definitions/UpdateIVRPromptRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-updateIVRPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-updateIVRPrompt) in API Explorer.
 
 
 ## Get IVR Prompt Content
@@ -4164,15 +4574,15 @@ User Permission|`ReadCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).content().get();
+var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).content().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type `byte[]`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRPromptContent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-readIVRPromptContent) in API Explorer.
 
 ### ❗❗❗ Code sample above may not work
 
@@ -4192,15 +4602,40 @@ User Permission|`MeetingsRecordings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).meetingRecordings().get(listAccountMeetingRecordingsParameters);
+var result = rc.restapi(apiVersion).account(accountId).meetingRecordings().get(listAccountMeetingRecordingsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listAccountMeetingRecordingsParameters` is of type [ListAccountMeetingRecordingsParameters](./src/main/java/com/ringcentral/definitions/ListAccountMeetingRecordingsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ListMeetingRecordingsResponse](./src/main/java/com/ringcentral/definitions/ListMeetingRecordingsResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings) in API Explorer.
+
+
+## Get Locked Meeting Settings
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/v1.0/account/{accountId}/meeting/locked-settings`
+Rate Limit Group|`Light`
+App Permission|`Meetings`
+User Permission|`Meetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).meeting().lockedSettings().get(restRequestConfig);
+rc.revoke();
+```
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [AccountLockedSettingResponse](./src/main/java/com/ringcentral/definitions/AccountLockedSettingResponse.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Configuration-GetAccountLockedSetting) in API Explorer.
 
 
 ## Get Message Store Configuration
@@ -4216,10 +4651,10 @@ User Permission|`AccountAdministration`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().get();
+var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MessageStoreConfiguration](./src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4240,10 +4675,11 @@ User Permission|`AccountAdministration`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().put(messageStoreConfiguration);
+var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().put(messageStoreConfiguration, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `messageStoreConfiguration` is of type [MessageStoreConfiguration](./src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MessageStoreConfiguration](./src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4264,10 +4700,11 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport().post(createMessageStoreReportRequest);
+var result = rc.restapi(apiVersion).account(accountId).messageStoreReport().post(createMessageStoreReportRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createMessageStoreReportRequest` is of type [CreateMessageStoreReportRequest](./src/main/java/com/ringcentral/definitions/CreateMessageStoreReportRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MessageStoreReport](./src/main/java/com/ringcentral/definitions/MessageStoreReport.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4288,10 +4725,10 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).get();
+var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MessageStoreReport](./src/main/java/com/ringcentral/definitions/MessageStoreReport.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4312,10 +4749,10 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive().list();
+var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [MessageStoreReportArchive](./src/main/java/com/ringcentral/definitions/MessageStoreReportArchive.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4336,10 +4773,10 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive(archiveId).get();
+var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive(archiveId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4360,10 +4797,11 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).bulkAssign().post(editPagingGroupRequest);
+var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).bulkAssign().post(editPagingGroupRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `editPagingGroupRequest` is of type [EditPagingGroupRequest](./src/main/java/com/ringcentral/definitions/EditPagingGroupRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4384,10 +4822,11 @@ User Permission|`ReadCompanyDevices`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).devices().get(listPagingGroupDevicesParameters);
+var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).devices().get(listPagingGroupDevicesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listPagingGroupDevicesParameters` is of type [ListPagingGroupDevicesParameters](./src/main/java/com/ringcentral/definitions/ListPagingGroupDevicesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PagingOnlyGroupDevices](./src/main/java/com/ringcentral/definitions/PagingOnlyGroupDevices.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4408,10 +4847,11 @@ User Permission|`ReadUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).users().get(listPagingGroupUsersParameters);
+var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).users().get(listPagingGroupUsersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listPagingGroupUsersParameters` is of type [ListPagingGroupUsersParameters](./src/main/java/com/ringcentral/definitions/ListPagingGroupUsersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PagingOnlyGroupUsers](./src/main/java/com/ringcentral/definitions/PagingOnlyGroupUsers.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4432,10 +4872,11 @@ User Permission|`ReadCompanyPhoneNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).phoneNumber().list(listAccountPhoneNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).phoneNumber().list(listAccountPhoneNumbersParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listAccountPhoneNumbersParameters` is of type [ListAccountPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AccountPhoneNumbers](./src/main/java/com/ringcentral/definitions/AccountPhoneNumbers.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4456,10 +4897,10 @@ User Permission|`ReadCompanyPhoneNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).phoneNumber(phoneNumberId).get();
+var result = rc.restapi(apiVersion).account(accountId).phoneNumber(phoneNumberId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CompanyPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/CompanyPhoneNumberInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4480,10 +4921,11 @@ User Permission|`ReadPresenceStatus`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).presence().get(readAccountPresenceParameters);
+var result = rc.restapi(apiVersion).account(accountId).presence().get(readAccountPresenceParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readAccountPresenceParameters` is of type [ReadAccountPresenceParameters](./src/main/java/com/ringcentral/definitions/ReadAccountPresenceParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [AccountPresenceInfo](./src/main/java/com/ringcentral/definitions/AccountPresenceInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4504,10 +4946,10 @@ User Permission|`ReadCallRecording`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).recording(recordingId).get();
+var result = rc.restapi(apiVersion).account(accountId).recording(recordingId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetCallRecordingResponse](./src/main/java/com/ringcentral/definitions/GetCallRecordingResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4528,10 +4970,10 @@ User Permission|`ReadCallRecording`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).recording(recordingId).content().get();
+var result = rc.restapi(apiVersion).account(accountId).recording(recordingId).content().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type `byte[]`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4556,10 +4998,10 @@ User Permission|`ReadServicePlanInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).serviceInfo().get();
+var result = rc.restapi(apiVersion).account(accountId).serviceInfo().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetServiceInfoResponse](./src/main/java/com/ringcentral/definitions/GetServiceInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4580,15 +5022,40 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().callOut().post(makeCallOutRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().callOut().post(makeCallOutRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `makeCallOutRequest` is of type [MakeCallOutRequest](./src/main/java/com/ringcentral/definitions/MakeCallOutRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallSession](./src/main/java/com/ringcentral/definitions/CallSession.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-createCallOutCallSession) in API Explorer.
+
+
+## Start Conference Call Session
+
+Name|Value
+-|-
+HTTP Method|`POST`
+Endpoint|`/restapi/v1.0/account/{accountId}/telephony/conference`
+Rate Limit Group|`Heavy`
+App Permission|`TelephonySessions`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).telephony().conference().post(restRequestConfig);
+rc.revoke();
+```
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [CallSessionObject](./src/main/java/com/ringcentral/definitions/CallSessionObject.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-createConferenceCallSession) in API Explorer.
 
 
 ## Get Call Session Status
@@ -4604,10 +5071,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).get(readCallSessionStatusParameters);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).get(readCallSessionStatusParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readCallSessionStatusParameters` is of type [ReadCallSessionStatusParameters](./src/main/java/com/ringcentral/definitions/ReadCallSessionStatusParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallSession](./src/main/java/com/ringcentral/definitions/CallSession.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4628,15 +5096,40 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).delete();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-deleteCallSession) in API Explorer.
+
+
+## Bring-In Call Party
+
+Name|Value
+-|-
+HTTP Method|`POST`
+Endpoint|`/restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/bring-in`
+Rate Limit Group|`Light`
+App Permission|`TelephonySessions`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties().bringIn().post(addPartyRequest, restRequestConfig);
+rc.revoke();
+```
+- Parameter `addPartyRequest` is of type [AddPartyRequest](./src/main/java/com/ringcentral/definitions/AddPartyRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
+- `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-createCallPartyWithBringIn) in API Explorer.
 
 
 ## Get Call Party Status
@@ -4652,10 +5145,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).get();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4676,10 +5169,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).delete();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4700,10 +5193,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).patch(partyUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).patch(partyUpdateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `partyUpdateRequest` is of type [PartyUpdateRequest](./src/main/java/com/ringcentral/definitions/PartyUpdateRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4724,10 +5218,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).answer().post(answerTarget);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).answer().post(answerTarget, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `answerTarget` is of type [AnswerTarget](./src/main/java/com/ringcentral/definitions/AnswerTarget.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4748,10 +5243,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).bridge().post(bridgeTargetRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).bridge().post(bridgeTargetRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `bridgeTargetRequest` is of type [BridgeTargetRequest](./src/main/java/com/ringcentral/definitions/BridgeTargetRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4772,10 +5268,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).flip().post(callPartyFlip);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).flip().post(callPartyFlip, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `callPartyFlip` is of type [CallPartyFlip](./src/main/java/com/ringcentral/definitions/CallPartyFlip.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4796,10 +5293,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).forward().post(forwardTarget);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).forward().post(forwardTarget, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `forwardTarget` is of type [ForwardTarget](./src/main/java/com/ringcentral/definitions/ForwardTarget.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4820,10 +5318,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).hold().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).hold().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4844,10 +5342,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).ignore().post(ignoreRequestBody);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).ignore().post(ignoreRequestBody, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `ignoreRequestBody` is of type [IgnoreRequestBody](./src/main/java/com/ringcentral/definitions/IgnoreRequestBody.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4868,10 +5367,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).park().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).park().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4892,10 +5391,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).pickup().post(pickupTarget);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).pickup().post(pickupTarget, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `pickupTarget` is of type [PickupTarget](./src/main/java/com/ringcentral/definitions/PickupTarget.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4916,10 +5416,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4940,11 +5440,12 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings(recordingId).patch(callRecordingUpdate, pauseResumeCallRecordingParameters);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings(recordingId).patch(callRecordingUpdate, pauseResumeCallRecordingParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `callRecordingUpdate` is of type [CallRecordingUpdate](./src/main/java/com/ringcentral/definitions/CallRecordingUpdate.java)
 - Parameter `pauseResumeCallRecordingParameters` is of type [PauseResumeCallRecordingParameters](./src/main/java/com/ringcentral/definitions/PauseResumeCallRecordingParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallRecording](./src/main/java/com/ringcentral/definitions/CallRecording.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4965,10 +5466,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).reject().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).reject().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -4989,10 +5490,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).reply().post(callPartyReply);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).reply().post(callPartyReply, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `callPartyReply` is of type [CallPartyReply](./src/main/java/com/ringcentral/definitions/CallPartyReply.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ReplyParty](./src/main/java/com/ringcentral/definitions/ReplyParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -5013,10 +5515,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).supervise().post(partySuperviseRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).supervise().post(partySuperviseRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `partySuperviseRequest` is of type [PartySuperviseRequest](./src/main/java/com/ringcentral/definitions/PartySuperviseRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [PartySuperviseResponse](./src/main/java/com/ringcentral/definitions/PartySuperviseResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -5037,10 +5540,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).transfer().post(transferTarget);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).transfer().post(transferTarget, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `transferTarget` is of type [TransferTarget](./src/main/java/com/ringcentral/definitions/TransferTarget.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -5061,10 +5565,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).unhold().post();
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).unhold().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CallParty](./src/main/java/com/ringcentral/definitions/CallParty.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -5085,10 +5589,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).supervise().post(superviseCallSessionRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).supervise().post(superviseCallSessionRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `superviseCallSessionRequest` is of type [SuperviseCallSessionRequest](./src/main/java/com/ringcentral/definitions/SuperviseCallSessionRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SuperviseCallSession](./src/main/java/com/ringcentral/definitions/SuperviseCallSession.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -5109,10 +5614,11 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).templates().list(listUserTemplatesParameters);
+var result = rc.restapi(apiVersion).account(accountId).templates().list(listUserTemplatesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listUserTemplatesParameters` is of type [ListUserTemplatesParameters](./src/main/java/com/ringcentral/definitions/ListUserTemplatesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserTemplates](./src/main/java/com/ringcentral/definitions/UserTemplates.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -5133,10 +5639,10 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).templates(templateId).get();
+var result = rc.restapi(apiVersion).account(accountId).templates(templateId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [TemplateInfo](./src/main/java/com/ringcentral/definitions/TemplateInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
@@ -5144,7 +5650,7 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Extensions-readUserTemplate) in API Explorer.
 
 
-## Register SIP Device
+## Register Device
 
 Name|Value
 -|-
@@ -5157,14 +5663,15 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).clientInfo().sipProvision().post(createSipRegistrationRequest);
+var result = rc.restapi(apiVersion).clientInfo().sipProvision().post(createSipRegistrationRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createSipRegistrationRequest` is of type [CreateSipRegistrationRequest](./src/main/java/com/ringcentral/definitions/CreateSipRegistrationRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [CreateSipRegistrationResponse](./src/main/java/com/ringcentral/definitions/CreateSipRegistrationResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#SIP-createSIPRegistration) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Device-SIP-Registration-createSIPRegistration) in API Explorer.
 
 
 ## Get Country List
@@ -5180,10 +5687,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().country().list(listCountriesParameters);
+var result = rc.restapi(apiVersion).dictionary().country().list(listCountriesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listCountriesParameters` is of type [ListCountriesParameters](./src/main/java/com/ringcentral/definitions/ListCountriesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetCountryListResponse](./src/main/java/com/ringcentral/definitions/GetCountryListResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5203,10 +5711,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().country(countryId).get();
+var result = rc.restapi(apiVersion).dictionary().country(countryId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetCountryInfoDictionaryResponse](./src/main/java/com/ringcentral/definitions/GetCountryInfoDictionaryResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5226,10 +5734,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().faxCoverPage().get(listFaxCoverPagesParameters);
+var result = rc.restapi(apiVersion).dictionary().faxCoverPage().get(listFaxCoverPagesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listFaxCoverPagesParameters` is of type [ListFaxCoverPagesParameters](./src/main/java/com/ringcentral/definitions/ListFaxCoverPagesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ListFaxCoverPagesResponse](./src/main/java/com/ringcentral/definitions/ListFaxCoverPagesResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5249,14 +5758,15 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().greeting().list(listStandardGreetingsParameters);
+var result = rc.restapi(apiVersion).dictionary().greeting().list(listStandardGreetingsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listStandardGreetingsParameters` is of type [ListStandardGreetingsParameters](./src/main/java/com/ringcentral/definitions/ListStandardGreetingsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [DictionaryGreetingList](./src/main/java/com/ringcentral/definitions/DictionaryGreetingList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listStandardGreetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-listStandardGreetings) in API Explorer.
 
 
 ## Get Standard Greeting
@@ -5272,14 +5782,14 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().greeting(greetingId).get();
+var result = rc.restapi(apiVersion).dictionary().greeting(greetingId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [DictionaryGreetingInfo](./src/main/java/com/ringcentral/definitions/DictionaryGreetingInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readStandardGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-readStandardGreeting) in API Explorer.
 
 
 ## Get Language List
@@ -5295,10 +5805,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().language().list();
+var result = rc.restapi(apiVersion).dictionary().language().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [LanguageList](./src/main/java/com/ringcentral/definitions/LanguageList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5318,10 +5828,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().language(languageId).get();
+var result = rc.restapi(apiVersion).dictionary().language(languageId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [LanguageInfo](./src/main/java/com/ringcentral/definitions/LanguageInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5341,10 +5851,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().location().get(listLocationsParameters);
+var result = rc.restapi(apiVersion).dictionary().location().get(listLocationsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listLocationsParameters` is of type [ListLocationsParameters](./src/main/java/com/ringcentral/definitions/ListLocationsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetLocationListResponse](./src/main/java/com/ringcentral/definitions/GetLocationListResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5364,10 +5875,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().state().list(listStatesParameters);
+var result = rc.restapi(apiVersion).dictionary().state().list(listStatesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listStatesParameters` is of type [ListStatesParameters](./src/main/java/com/ringcentral/definitions/ListStatesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetStateListResponse](./src/main/java/com/ringcentral/definitions/GetStateListResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5387,10 +5899,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().state(stateId).get();
+var result = rc.restapi(apiVersion).dictionary().state(stateId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetStateInfoResponse](./src/main/java/com/ringcentral/definitions/GetStateInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5410,10 +5922,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().timezone().list(listTimezonesParameters);
+var result = rc.restapi(apiVersion).dictionary().timezone().list(listTimezonesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listTimezonesParameters` is of type [ListTimezonesParameters](./src/main/java/com/ringcentral/definitions/ListTimezonesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetTimezoneListResponse](./src/main/java/com/ringcentral/definitions/GetTimezoneListResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5433,10 +5946,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().timezone(timezoneId).get(readTimezoneParameters);
+var result = rc.restapi(apiVersion).dictionary().timezone(timezoneId).get(readTimezoneParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readTimezoneParameters` is of type [ReadTimezoneParameters](./src/main/java/com/ringcentral/definitions/ReadTimezoneParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetTimezoneInfoResponse](./src/main/java/com/ringcentral/definitions/GetTimezoneInfoResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5456,10 +5970,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats().list(listGlipChatsParameters);
+var result = rc.restapi(apiVersion).glip().chats().list(listGlipChatsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listGlipChatsParameters` is of type [ListGlipChatsParameters](./src/main/java/com/ringcentral/definitions/ListGlipChatsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipChatsList](./src/main/java/com/ringcentral/definitions/GlipChatsList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5479,10 +5994,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).get();
+var result = rc.restapi(apiVersion).glip().chats(chatId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipChatInfo](./src/main/java/com/ringcentral/definitions/GlipChatInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5502,10 +6017,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).favorite().post();
+var result = rc.restapi(apiVersion).glip().chats(chatId).favorite().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5525,10 +6040,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).notes().post(glipNoteCreate);
+var result = rc.restapi(apiVersion).glip().chats(chatId).notes().post(glipNoteCreate, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipNoteCreate` is of type [GlipNoteCreate](./src/main/java/com/ringcentral/definitions/GlipNoteCreate.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipNoteInfo](./src/main/java/com/ringcentral/definitions/GlipNoteInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5548,10 +6064,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).notes().get(listChatNotesParameters);
+var result = rc.restapi(apiVersion).glip().chats(chatId).notes().get(listChatNotesParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listChatNotesParameters` is of type [ListChatNotesParameters](./src/main/java/com/ringcentral/definitions/ListChatNotesParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipNotesInfo](./src/main/java/com/ringcentral/definitions/GlipNotesInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5571,10 +6088,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).posts().list(readGlipPostsParameters);
+var result = rc.restapi(apiVersion).glip().chats(chatId).posts().list(readGlipPostsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readGlipPostsParameters` is of type [ReadGlipPostsParameters](./src/main/java/com/ringcentral/definitions/ReadGlipPostsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipPostsList](./src/main/java/com/ringcentral/definitions/GlipPostsList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5594,10 +6112,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).posts().post(glipPostPostBody);
+var result = rc.restapi(apiVersion).glip().chats(chatId).posts().post(glipPostPostBody, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipPostPostBody` is of type [GlipPostPostBody](./src/main/java/com/ringcentral/definitions/GlipPostPostBody.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5617,10 +6136,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).get();
+var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5640,10 +6159,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).patch(glipPatchPostBody);
+var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).patch(glipPatchPostBody, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipPatchPostBody` is of type [GlipPatchPostBody](./src/main/java/com/ringcentral/definitions/GlipPatchPostBody.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5663,10 +6183,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).delete();
+var result = rc.restapi(apiVersion).glip().chats(chatId).posts(postId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5686,10 +6206,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).read().post();
+var result = rc.restapi(apiVersion).glip().chats(chatId).read().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5709,10 +6229,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).tasks().get(listChatTasksParameters);
+var result = rc.restapi(apiVersion).glip().chats(chatId).tasks().get(listChatTasksParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listChatTasksParameters` is of type [ListChatTasksParameters](./src/main/java/com/ringcentral/definitions/ListChatTasksParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTaskList](./src/main/java/com/ringcentral/definitions/GlipTaskList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5732,10 +6253,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).tasks().post(glipCreateTask);
+var result = rc.restapi(apiVersion).glip().chats(chatId).tasks().post(glipCreateTask, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipCreateTask` is of type [GlipCreateTask](./src/main/java/com/ringcentral/definitions/GlipCreateTask.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTaskInfo](./src/main/java/com/ringcentral/definitions/GlipTaskInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5755,10 +6277,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).unfavorite().post();
+var result = rc.restapi(apiVersion).glip().chats(chatId).unfavorite().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5778,10 +6300,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().chats(chatId).unread().post();
+var result = rc.restapi(apiVersion).glip().chats(chatId).unread().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5801,10 +6323,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().companies(companyId).get();
+var result = rc.restapi(apiVersion).glip().companies(companyId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipCompany](./src/main/java/com/ringcentral/definitions/GlipCompany.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5824,10 +6346,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().conversations().list(listGlipConversationsParameters);
+var result = rc.restapi(apiVersion).glip().conversations().list(listGlipConversationsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listGlipConversationsParameters` is of type [ListGlipConversationsParameters](./src/main/java/com/ringcentral/definitions/ListGlipConversationsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipConversationsList](./src/main/java/com/ringcentral/definitions/GlipConversationsList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5847,10 +6370,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().conversations().post(createGlipConversationRequest);
+var result = rc.restapi(apiVersion).glip().conversations().post(createGlipConversationRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createGlipConversationRequest` is of type [CreateGlipConversationRequest](./src/main/java/com/ringcentral/definitions/CreateGlipConversationRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipConversationInfo](./src/main/java/com/ringcentral/definitions/GlipConversationInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5870,10 +6394,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().conversations(chatId).get();
+var result = rc.restapi(apiVersion).glip().conversations(chatId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipConversationInfo](./src/main/java/com/ringcentral/definitions/GlipConversationInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5893,10 +6417,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport().post(createDataExportTaskRequest);
+var result = rc.restapi(apiVersion).glip().dataExport().post(createDataExportTaskRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createDataExportTaskRequest` is of type [CreateDataExportTaskRequest](./src/main/java/com/ringcentral/definitions/CreateDataExportTaskRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5916,10 +6441,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport().list(listDataExportTasksParameters);
+var result = rc.restapi(apiVersion).glip().dataExport().list(listDataExportTasksParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listDataExportTasksParameters` is of type [ListDataExportTasksParameters](./src/main/java/com/ringcentral/definitions/ListDataExportTasksParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [DataExportTaskList](./src/main/java/com/ringcentral/definitions/DataExportTaskList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5939,10 +6465,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport(taskId).get();
+var result = rc.restapi(apiVersion).glip().dataExport(taskId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5962,10 +6488,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport(taskId).datasets(datasetId).get();
+var result = rc.restapi(apiVersion).glip().dataExport(taskId).datasets(datasetId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type `byte[]`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -5989,10 +6515,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().events().list(readGlipEventsParameters);
+var result = rc.restapi(apiVersion).glip().events().list(readGlipEventsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readGlipEventsParameters` is of type [ReadGlipEventsParameters](./src/main/java/com/ringcentral/definitions/ReadGlipEventsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEventsInfo](./src/main/java/com/ringcentral/definitions/GlipEventsInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6012,10 +6539,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().events().post(glipEventCreate);
+var result = rc.restapi(apiVersion).glip().events().post(glipEventCreate, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipEventCreate` is of type [GlipEventCreate](./src/main/java/com/ringcentral/definitions/GlipEventCreate.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6035,10 +6563,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().events(eventId).get();
+var result = rc.restapi(apiVersion).glip().events(eventId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6058,10 +6586,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().events(eventId).put(glipEventCreate);
+var result = rc.restapi(apiVersion).glip().events(eventId).put(glipEventCreate, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipEventCreate` is of type [GlipEventCreate](./src/main/java/com/ringcentral/definitions/GlipEventCreate.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6081,10 +6610,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().events(eventId).delete();
+var result = rc.restapi(apiVersion).glip().events(eventId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6104,10 +6633,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().everyone().get();
+var result = rc.restapi(apiVersion).glip().everyone().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEveryoneInfo](./src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6127,10 +6656,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().everyone().patch(updateGlipEveryoneRequest);
+var result = rc.restapi(apiVersion).glip().everyone().patch(updateGlipEveryoneRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `updateGlipEveryoneRequest` is of type [UpdateGlipEveryoneRequest](./src/main/java/com/ringcentral/definitions/UpdateGlipEveryoneRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEveryoneInfo](./src/main/java/com/ringcentral/definitions/GlipEveryoneInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6150,10 +6680,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().favorites().get(listFavoriteChatsParameters);
+var result = rc.restapi(apiVersion).glip().favorites().get(listFavoriteChatsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listFavoriteChatsParameters` is of type [ListFavoriteChatsParameters](./src/main/java/com/ringcentral/definitions/ListFavoriteChatsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipChatsListWithoutNavigation](./src/main/java/com/ringcentral/definitions/GlipChatsListWithoutNavigation.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6173,10 +6704,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().groups(groupId).events().post(glipEventCreate);
+var result = rc.restapi(apiVersion).glip().groups(groupId).events().post(glipEventCreate, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipEventCreate` is of type [GlipEventCreate](./src/main/java/com/ringcentral/definitions/GlipEventCreate.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6196,10 +6728,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().groups(groupId).events().get();
+var result = rc.restapi(apiVersion).glip().groups(groupId).events().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipEventInfo](./src/main/java/com/ringcentral/definitions/GlipEventInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6219,10 +6751,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().groups(groupId).posts().post(glipCreatePost);
+var result = rc.restapi(apiVersion).glip().groups(groupId).posts().post(glipCreatePost, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipCreatePost` is of type [GlipCreatePost](./src/main/java/com/ringcentral/definitions/GlipCreatePost.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipPostInfo](./src/main/java/com/ringcentral/definitions/GlipPostInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6242,10 +6775,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().groups(groupId).webhooks().post();
+var result = rc.restapi(apiVersion).glip().groups(groupId).webhooks().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipWebhookInfo](./src/main/java/com/ringcentral/definitions/GlipWebhookInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6265,10 +6798,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().groups(groupId).webhooks().get();
+var result = rc.restapi(apiVersion).glip().groups(groupId).webhooks().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipWebhookList](./src/main/java/com/ringcentral/definitions/GlipWebhookList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6288,10 +6821,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().notes(noteId).get();
+var result = rc.restapi(apiVersion).glip().notes(noteId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GetGlipNoteInfo](./src/main/java/com/ringcentral/definitions/GetGlipNoteInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6311,10 +6844,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().notes(noteId).patch(glipNoteCreate);
+var result = rc.restapi(apiVersion).glip().notes(noteId).patch(glipNoteCreate, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipNoteCreate` is of type [GlipNoteCreate](./src/main/java/com/ringcentral/definitions/GlipNoteCreate.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipNoteInfo](./src/main/java/com/ringcentral/definitions/GlipNoteInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6334,10 +6868,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().notes(noteId).delete();
+var result = rc.restapi(apiVersion).glip().notes(noteId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6357,10 +6891,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().notes(noteId).lock().post();
+var result = rc.restapi(apiVersion).glip().notes(noteId).lock().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6380,10 +6914,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().notes(noteId).publish().post();
+var result = rc.restapi(apiVersion).glip().notes(noteId).publish().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6403,10 +6937,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().notes(noteId).unlock().post();
+var result = rc.restapi(apiVersion).glip().notes(noteId).unlock().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6426,10 +6960,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().persons(personId).get();
+var result = rc.restapi(apiVersion).glip().persons(personId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipPersonInfo](./src/main/java/com/ringcentral/definitions/GlipPersonInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6449,10 +6983,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().preferences().get();
+var result = rc.restapi(apiVersion).glip().preferences().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipPreferencesInfo](./src/main/java/com/ringcentral/definitions/GlipPreferencesInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6472,10 +7006,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().recent().chats().get(listRecentChatsParameters);
+var result = rc.restapi(apiVersion).glip().recent().chats().get(listRecentChatsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listRecentChatsParameters` is of type [ListRecentChatsParameters](./src/main/java/com/ringcentral/definitions/ListRecentChatsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipChatsListWithoutNavigation](./src/main/java/com/ringcentral/definitions/GlipChatsListWithoutNavigation.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6495,10 +7030,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().tasks(taskId).get();
+var result = rc.restapi(apiVersion).glip().tasks(taskId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTaskInfo](./src/main/java/com/ringcentral/definitions/GlipTaskInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6518,10 +7053,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().tasks(taskId).patch(glipUpdateTask);
+var result = rc.restapi(apiVersion).glip().tasks(taskId).patch(glipUpdateTask, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipUpdateTask` is of type [GlipUpdateTask](./src/main/java/com/ringcentral/definitions/GlipUpdateTask.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTaskList](./src/main/java/com/ringcentral/definitions/GlipTaskList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6541,10 +7077,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().tasks(taskId).delete();
+var result = rc.restapi(apiVersion).glip().tasks(taskId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6564,10 +7100,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().tasks(taskId).complete().post(glipCompleteTask);
+var result = rc.restapi(apiVersion).glip().tasks(taskId).complete().post(glipCompleteTask, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipCompleteTask` is of type [GlipCompleteTask](./src/main/java/com/ringcentral/definitions/GlipCompleteTask.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6587,10 +7124,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams().list(listGlipTeamsParameters);
+var result = rc.restapi(apiVersion).glip().teams().list(listGlipTeamsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listGlipTeamsParameters` is of type [ListGlipTeamsParameters](./src/main/java/com/ringcentral/definitions/ListGlipTeamsParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTeamsList](./src/main/java/com/ringcentral/definitions/GlipTeamsList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6610,10 +7148,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams().post(glipPostTeamBody);
+var result = rc.restapi(apiVersion).glip().teams().post(glipPostTeamBody, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipPostTeamBody` is of type [GlipPostTeamBody](./src/main/java/com/ringcentral/definitions/GlipPostTeamBody.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6633,10 +7172,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).get();
+var result = rc.restapi(apiVersion).glip().teams(chatId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6656,10 +7195,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).patch(glipPatchTeamBody);
+var result = rc.restapi(apiVersion).glip().teams(chatId).patch(glipPatchTeamBody, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipPatchTeamBody` is of type [GlipPatchTeamBody](./src/main/java/com/ringcentral/definitions/GlipPatchTeamBody.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipTeamInfo](./src/main/java/com/ringcentral/definitions/GlipTeamInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6679,10 +7219,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).delete();
+var result = rc.restapi(apiVersion).glip().teams(chatId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6702,10 +7242,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).add().post(glipPostMembersListBody);
+var result = rc.restapi(apiVersion).glip().teams(chatId).add().post(glipPostMembersListBody, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipPostMembersListBody` is of type [GlipPostMembersListBody](./src/main/java/com/ringcentral/definitions/GlipPostMembersListBody.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6725,10 +7266,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).archive().post();
+var result = rc.restapi(apiVersion).glip().teams(chatId).archive().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6748,10 +7289,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).join().post();
+var result = rc.restapi(apiVersion).glip().teams(chatId).join().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6771,10 +7312,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).leave().post();
+var result = rc.restapi(apiVersion).glip().teams(chatId).leave().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6794,10 +7335,11 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).remove().post(glipPostMembersIdsListBody);
+var result = rc.restapi(apiVersion).glip().teams(chatId).remove().post(glipPostMembersIdsListBody, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `glipPostMembersIdsListBody` is of type [GlipPostMembersIdsListBody](./src/main/java/com/ringcentral/definitions/GlipPostMembersIdsListBody.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6817,10 +7359,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().teams(chatId).unarchive().post();
+var result = rc.restapi(apiVersion).glip().teams(chatId).unarchive().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6840,10 +7382,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().webhooks().list();
+var result = rc.restapi(apiVersion).glip().webhooks().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipWebhookList](./src/main/java/com/ringcentral/definitions/GlipWebhookList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6863,10 +7405,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().webhooks(webhookId).get();
+var result = rc.restapi(apiVersion).glip().webhooks(webhookId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [GlipWebhookList](./src/main/java/com/ringcentral/definitions/GlipWebhookList.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6886,10 +7428,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().webhooks(webhookId).delete();
+var result = rc.restapi(apiVersion).glip().webhooks(webhookId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6909,10 +7451,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().webhooks(webhookId).activate().post();
+var result = rc.restapi(apiVersion).glip().webhooks(webhookId).activate().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6932,10 +7474,10 @@ User Permission|`Glip`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().webhooks(webhookId).suspend().post();
+var result = rc.restapi(apiVersion).glip().webhooks(webhookId).suspend().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -6955,41 +7497,19 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).numberParser().parse().post(parsePhoneNumberRequest, parsePhoneNumberParameters);
+var result = rc.restapi(apiVersion).numberParser().parse().post(parsePhoneNumberRequest, parsePhoneNumberParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `parsePhoneNumberRequest` is of type [ParsePhoneNumberRequest](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberRequest.java)
 - Parameter `parsePhoneNumberParameters` is of type [ParsePhoneNumberParameters](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ParsePhoneNumberResponse](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-parsePhoneNumber) in API Explorer.
 
 
-## Get Service Status
-
-Name|Value
--|-
-HTTP Method|`GET`
-Endpoint|`/restapi/v1.0/status`
-Rate Limit Group|`NoThrottling`
-App Permission|`N/A`
-User Permission|`N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).status().get();
-rc.revoke();
-```
-
-- `result` is `null`
-- Parameter `apiVersion` is optional with default value `v1.0`
-
-[Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIStatus) in API Explorer.
-
-
-## Get Subscriptions
+## Get Subscription List
 
 Name|Value
 -|-
@@ -7002,10 +7522,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).subscription().list();
+var result = rc.restapi(apiVersion).subscription().list(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [RecordsCollectionResourceSubscriptionResponse](./src/main/java/com/ringcentral/definitions/RecordsCollectionResourceSubscriptionResponse.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -7025,10 +7545,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).subscription().post(createSubscriptionRequest);
+var result = rc.restapi(apiVersion).subscription().post(createSubscriptionRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createSubscriptionRequest` is of type [CreateSubscriptionRequest](./src/main/java/com/ringcentral/definitions/CreateSubscriptionRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -7048,17 +7569,17 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).subscription(subscriptionId).get();
+var result = rc.restapi(apiVersion).subscription(subscriptionId).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-readSubscription) in API Explorer.
 
 
-## Renew Subscription / Update Event Filters
+## Update Subscription
 
 Name|Value
 -|-
@@ -7071,11 +7592,12 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).subscription(subscriptionId).put(modifySubscriptionRequest, updateSubscriptionParameters);
+var result = rc.restapi(apiVersion).subscription(subscriptionId).put(modifySubscriptionRequest, updateSubscriptionParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `modifySubscriptionRequest` is of type [ModifySubscriptionRequest](./src/main/java/com/ringcentral/definitions/ModifySubscriptionRequest.java)
 - Parameter `updateSubscriptionParameters` is of type [UpdateSubscriptionParameters](./src/main/java/com/ringcentral/definitions/UpdateSubscriptionParameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -7095,10 +7617,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).subscription(subscriptionId).delete();
+var result = rc.restapi(apiVersion).subscription(subscriptionId).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -7118,10 +7640,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).subscription(subscriptionId).renew().post();
+var result = rc.restapi(apiVersion).subscription(subscriptionId).renew().post(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.java)
 - Parameter `apiVersion` is optional with default value `v1.0`
 
@@ -7141,10 +7663,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).serviceProviderConfig().get();
+var result = rc.scim(version).serviceProviderConfig().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [ServiceProviderConfig](./src/main/java/com/ringcentral/definitions/ServiceProviderConfig.java)
 - Parameter `version` is optional with default value `v2`
 
@@ -7164,10 +7686,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users().list(searchViaGet2Parameters);
+var result = rc.scim(version).users().list(searchViaGet2Parameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `searchViaGet2Parameters` is of type [SearchViaGet2Parameters](./src/main/java/com/ringcentral/definitions/SearchViaGet2Parameters.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserSearchResponse](./src/main/java/com/ringcentral/definitions/UserSearchResponse.java)
 - Parameter `version` is optional with default value `v2`
 
@@ -7187,10 +7710,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users().post(createUser);
+var result = rc.scim(version).users().post(createUser, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `createUser` is of type [CreateUser](./src/main/java/com/ringcentral/definitions/CreateUser.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.java)
 - Parameter `version` is optional with default value `v2`
 
@@ -7210,10 +7734,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users().dotSearch().post(searchRequest);
+var result = rc.scim(version).users().dotSearch().post(searchRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `searchRequest` is of type [SearchRequest](./src/main/java/com/ringcentral/definitions/SearchRequest.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserSearchResponse](./src/main/java/com/ringcentral/definitions/UserSearchResponse.java)
 - Parameter `version` is optional with default value `v2`
 
@@ -7233,10 +7758,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users(id).get();
+var result = rc.scim(version).users(id).get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.java)
 - Parameter `version` is optional with default value `v2`
 
@@ -7256,10 +7781,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users(id).put(user);
+var result = rc.scim(version).users(id).put(user, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `user` is of type [User](./src/main/java/com/ringcentral/definitions/User.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.java)
 - Parameter `version` is optional with default value `v2`
 
@@ -7279,10 +7805,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users(id).delete();
+var result = rc.scim(version).users(id).delete(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `version` is optional with default value `v2`
 
@@ -7302,10 +7828,11 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users(id).patch(userPatch);
+var result = rc.scim(version).users(id).patch(userPatch, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `userPatch` is of type [UserPatch](./src/main/java/com/ringcentral/definitions/UserPatch.java)
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is of type [UserResponse](./src/main/java/com/ringcentral/definitions/UserResponse.java)
 - Parameter `version` is optional with default value `v2`
 
@@ -7325,10 +7852,10 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).health().get();
+var result = rc.scim(version).health().get(restRequestConfig);
 rc.revoke();
 ```
-
+- Parameter `restRequestConfig` is of type [RestRequestConfig](./src/main/java/com/ringcentral/definitions/RestRequestConfig.java)
 - `result` is `null`
 - Parameter `version` is optional with default value `v2`
 

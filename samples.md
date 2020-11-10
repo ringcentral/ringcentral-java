@@ -127,7 +127,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().batch().post(messageBatchCreateRequest, restRequestConfig);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().batch().post(messageBatchCreateRequest, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `messageBatchCreateRequest` is of type [MessageBatchCreateRequest](./src/main/java/com/ringcentral/definitions/MessageBatchCreateRequest.java)
@@ -151,7 +151,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().batch(batchId).get(restRequestConfig);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().batch(batchId).get(restRequestConfig);
 rc.revoke();
 ```
 
@@ -175,7 +175,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().messages().list(listA2PsmsParameters, restRequestConfig);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().messages().list(listA2PsmsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `listA2PsmsParameters` is of type [ListA2PsmsParameters](./src/main/java/com/ringcentral/definitions/ListA2PsmsParameters.java)
@@ -199,7 +199,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().messages(messageId).get(restRequestConfig);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().messages(messageId).get(restRequestConfig);
 rc.revoke();
 ```
 
@@ -223,7 +223,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().optOuts().get(readA2PsmsOptOutsParameters, restRequestConfig);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().optOuts().get(readA2PsmsOptOutsParameters, restRequestConfig);
 rc.revoke();
 ```
 - Parameter `readA2PsmsOptOutsParameters` is of type [ReadA2PsmsOptOutsParameters](./src/main/java/com/ringcentral/definitions/ReadA2PsmsOptOutsParameters.java)

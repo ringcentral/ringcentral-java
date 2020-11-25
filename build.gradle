@@ -8,7 +8,7 @@ plugins {
 }
 
 group 'com.ringcentral'
-version '1.6.0'
+version '1.6.1'
 
 sourceCompatibility = 1.8
 
@@ -66,7 +66,7 @@ publishing {
             artifact javadocJar
             groupId 'com.ringcentral'
             artifactId 'ringcentral'
-            version '1.6.0'
+            version '1.6.1'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'RingCentral Java SDK')
@@ -98,9 +98,9 @@ bintray {
         githubRepo = 'ringcentral/ringcentral-java' //Optional Github repository
         githubReleaseNotesFile = 'README.md' //Optional Github readme file
         version {
-            name = '1.6.0'
-            desc = 'RingCentral Java SDK 1.6.0'
-            vcsTag = '1.6.0'
+            name = '1.6.1'
+            desc = 'RingCentral Java SDK 1.6.1'
+            vcsTag = '1.6.1'
             gpg {
                 sign = true
             }

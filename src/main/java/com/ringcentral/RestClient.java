@@ -74,11 +74,11 @@ public class RestClient {
         return new String(Base64.getEncoder().encode(MessageFormat.format("{0}:{1}", clientId, clientSecret).getBytes()));
     }
 
-    private String authorizationHeader() {
-        if (token != null) {
-            return MessageFormat.format("Bearer {0}", token.access_token);
+    private String authorizationHeader(String endpoint) {
+        if(endpoint.equals("/restapi/oauth/token") || endpoint.equals("/restapi/oauth/revoke")) {
+            return MessageFormat.format("Basic {0}", basicKey());
         }
-        return MessageFormat.format("Basic {0}", basicKey());
+        return MessageFormat.format("Bearer {0}", token.access_token);
     }
 
     public void revoke() throws IOException, RestException {
@@ -86,8 +86,8 @@ public class RestClient {
             return;
         }
         RevokeTokenRequest revokeTokenRequest = new RevokeTokenRequest().token(token.access_token);
-        token = null;
         this.restapi(null).oauth().revoke().post(revokeTokenRequest);
+        token = null;
     }
 
     public TokenInfo authorize(String username, String extension, String password) throws IOException, RestException {
@@ -108,7 +108,6 @@ public class RestClient {
     }
 
     public TokenInfo authorize(GetTokenRequest getTokenRequest) throws IOException, RestException {
-        token = null;
         token = this.restapi(null).oauth().token().post(getTokenRequest);
         return token;
     }
@@ -299,7 +298,7 @@ public class RestClient {
         }
 
         String userAgentHeader = String.format("RC-JAVA-SDK Java %s %s", System.getProperty("java.version"), System.getProperty("os.name"));
-        Request request = builder.addHeader("Authorization", authorizationHeader())
+        Request request = builder.addHeader("Authorization", authorizationHeader(endpoint))
             .addHeader("X-User-Agent", userAgentHeader)
             .build();
 

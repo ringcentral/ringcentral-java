@@ -22,9 +22,21 @@ export const appendCodeToFile = (filePath, content) => {
 }
 
 export const getResponseType = responses => {
-  const responseSchema = (responses[200] || responses[201] || responses[202] || responses[204] || responses[205] || responses[302] || responses.default).schema
+  // const responseSchema = (responses[200] || responses[201] || responses[202] || responses[204] || responses[205] || responses[302] || responses.default).schema
+  // let responseType
+  // if (responseSchema) {
+  //   if (responseSchema.type === 'string' && responseSchema.format === 'binary') {
+  //     responseType = 'ByteArray'
+  //   } else if (responseSchema.$ref) {
+  //     responseType = 'com.ringcentral.definitions.' + R.last(responseSchema.$ref.split('/'))
+  //   }
+  // }
+  // return responseType
+
+  const responseContent = (responses[200] || responses[201] || responses[202] || responses[204] || responses[205] || responses[302] || responses.default).content
   let responseType
-  if (responseSchema) {
+  if (responseContent && !R.isEmpty(responseContent)) {
+    const responseSchema = responseContent[Object.keys(responseContent)[0]].schema
     if (responseSchema.type === 'string' && responseSchema.format === 'binary') {
       responseType = 'ByteArray'
     } else if (responseSchema.$ref) {

@@ -5,9 +5,9 @@ import { pascalCase } from 'change-case'
 
 const outputDir = '../src/main/java/com/ringcentral/definitions'
 
-const doc = yaml.safeLoad(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform.yml', 'utf8'))
-const definitions = doc.definitions
-const models = Object.keys(definitions).map(k => ({ name: k, ...definitions[k] }))
+const doc = yaml.load(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform.yml', 'utf8'))
+const schemas = doc.components.schemas
+const models = Object.keys(schemas).map(k => ({ name: k, ...schemas[k] }))
   .filter(m => m.type !== 'array')
 
 const keys = []
@@ -16,29 +16,54 @@ models.forEach(m => {
 })
 
 const normalizeType = f => {
-  if (f.type === 'integer') {
-    return 'Long'
-  } else if(f.type === 'number') {
+
+  if (f.$ref) {
+    return f.$ref.split('/').slice(-1)[0]
+  } else if (f.type === 'number') {
     return 'Double'
+  } else if (f.type === 'integer') {
+    return 'Long'
   } else if (f.type === 'array') {
     return `${normalizeType(f.items)}[]`
-  } else if (f.type === undefined || f.type === 'object') {
-    if (!f.$ref) {
-      return 'Object' // anonymous object
-    }
-    return f.$ref.split('/').slice(-1)[0]
   } else if (f.type === 'boolean') {
     return 'Boolean'
   } else if (f.type === 'file') {
     return 'Attachment'
   } else if (f.type === 'string') {
+    if(f.format === 'binary') {
+      return 'Attachment'
+    }
     return 'String'
   } else {
+    console.log(f)
     throw new Error(`Unknown type ${f.type}`)
   }
+
+  // if (f.type === 'integer') {
+  //   return 'Long'
+  // } else if(f.type === 'number') {
+  //   return 'Double'
+  // } else if (f.type === 'array') {
+  //   return `${normalizeType(f.items)}[]`
+  // } else if (f.type === undefined || f.type === 'object') {
+  //   if (!f.$ref) {
+  //     return 'Object' // anonymous object
+  //   }
+  //   return f.$ref.split('/').slice(-1)[0]
+  // } else if (f.type === 'boolean') {
+  //   return 'Boolean'
+  // } else if (f.type === 'file') {
+  //   return 'Attachment'
+  // } else if (f.type === 'string') {
+  //   return 'String'
+  // } else {
+  //   throw new Error(`Unknown type ${f.type}`)
+  // }
 }
 
 const normalizeField = f => {
+  f = Object.assign(f, f.schema)
+  delete f.schema
   f.type = normalizeType(f)
   return f
 }
@@ -119,18 +144,43 @@ models.forEach(m => {
 Object.keys(doc.paths).forEach(p => {
   Object.keys(doc.paths[p]).forEach(method => {
     const operation = doc.paths[p][method]
-    if ((operation.parameters || []).some(p => p.in === 'formData')) {
+    if(operation.requestBody && operation.requestBody.content
+      && (operation.requestBody.content['application/x-www-form-urlencoded']
+        || operation.requestBody.content['multipart/form-data'])) {
       const operationId = operation.operationId
       const className = pascalCase(operationId) + 'Request'
-      const fields = operation.parameters.filter(p => p.in === 'formData')
-        .map(p => {
+
+
+
+      const properties = (operation.requestBody.content['application/x-www-form-urlencoded']
+        || operation.requestBody.content['multipart/form-data']).schema.properties
+      if(properties) { // could be a $ref without properties
+        const fields = Object.keys(properties).map(k => ({...properties[k], name: k})).map(p => {
+          console.log(JSON.stringify(p, null, 2))
           p = normalizeField(p)
           if (p.$ref) {
             p.type = p.$ref.split('/').slice(-1)[0]
           }
-          return generateField({ name: className }, p)
+          return generateField({name: className}, p)
         })
-      fs.writeFileSync(path.join(outputDir, `${className}.java`), generateCode({ name: className }, fields))
+        fs.writeFileSync(path.join(outputDir, `${className}.java`), generateCode({ name: className }, fields))
+      }
+
+
+
+      // const fields = operation.parameters.filter(p => p.in === 'formData')
+      //   .map(p => {
+      //     p = normalizeField(p)
+      //     if (p.$ref) {
+      //       p.type = p.$ref.split('/').slice(-1)[0]
+      //     }
+      //     return generateField({ name: className }, p)
+      //   })
+      // fs.writeFileSync(path.join(outputDir, `${className}.java`), generateCode({ name: className }, fields))
+
+
+
+
     }
   })
 })

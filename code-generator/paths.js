@@ -9,7 +9,7 @@ import { normalizePath, deNormalizePath, getResponseType, appendCodeToFile } fro
 
 const outputDir = '../src/main/java/com/ringcentral/paths'
 
-const doc = yaml.safeLoad(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform.yml', 'utf8'))
+const doc = yaml.load(fs.readFileSync('/Users/tyler.liu/src/dotnet/RingCentral.Net/code-generator/rc-platform.yml', 'utf8'))
 
 // Delete /restapi/oauth/authorize: https://git.ringcentral.com/platform/api-metadata-specs/issues/26
 delete doc.paths['/restapi/oauth/authorize']
@@ -139,15 +139,17 @@ const generate = (prefix = '/') => {
       }
 
       let body, bodyClass, bodyParam, formUrlEncoded, multipart
-      if (operation.detail.consumes && operation.detail.consumes[0] === 'application/x-www-form-urlencoded') {
+      if (operation.detail.requestBody && operation.detail.requestBody.content && operation.detail.requestBody.content['application/x-www-form-urlencoded']) {
         formUrlEncoded = true
-      } else if (R.any(item => item.startsWith('multipart/'), operation.detail.consumes ?? [])) {
+      } else if (operation.detail.requestBody && operation.detail.requestBody.content && operation.detail.requestBody.content['multipart/form-data']) {
         multipart = true
       } else if (operation.detail.consumes && !operation.detail.consumes.some(c => c === 'application/json') && !operation.detail.consumes.some(c => c.startsWith('text/'))) {
-        throw Error(`Unsupported consume content type: ${operation.detail.consumes.join(', ')}`)
+        throw new Error(`Unsupported consume content type: ${operation.detail.consumes.join(', ')}`)
       } else {
-        body = (operation.detail.parameters || []).filter(p => p.in === 'body')[0]
-        if (body) {
+        const requestBody = operation.detail.requestBody
+        if(requestBody) {
+          const content = requestBody.content
+          body = content[Object.keys(content)[0]]
           if (body.schema.type === 'string') {
             bodyClass = 'String'
             bodyParam = 'body'
@@ -161,8 +163,9 @@ const generate = (prefix = '/') => {
       if (formUrlEncoded || multipart) {
         bodyClass = `com.ringcentral.definitions.${pascalCase(operation.detail.operationId)}Request`
         bodyParam = `${operation.detail.operationId}Request`
-        body = (operation.detail.parameters || []).filter(p => p.in === 'body' && p.schema && p.schema.$ref)[0]
-        if (body) {
+        const content = operation.detail.requestBody.content
+        body = content[Object.keys(content)[0]]
+        if (body && body.schema && body.schema.$ref) {
           bodyClass = R.last(body.schema.$ref.split('/'))
           bodyParam = lowerCaseFirst(bodyClass)
           bodyClass = 'com.ringcentral.definitions.' + bodyClass

@@ -23,7 +23,10 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val accountId: Stri
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetAccountInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetAccountInfoResponse::class.java
+        )
 
     }
 
@@ -185,6 +188,16 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val accountId: Stri
     @JvmOverloads
     fun callmonitoringgroups(groupId: String? = null): com.ringcentral.paths.restapi.account.callmonitoringgroups.Index {
         return com.ringcentral.paths.restapi.account.callmonitoringgroups.Index(this, groupId)
+    }
+
+
+    fun extensionbulkupdate(): com.ringcentral.paths.restapi.account.extensionbulkupdate.Index {
+        return com.ringcentral.paths.restapi.account.extensionbulkupdate.Index(this)
+    }
+
+
+    fun addressbookbulkupload(): com.ringcentral.paths.restapi.account.addressbookbulkupload.Index {
+        return com.ringcentral.paths.restapi.account.addressbookbulkupload.Index(this)
     }
 
 

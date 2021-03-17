@@ -36,7 +36,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetMessageInfoResponse::class.java
+        )
 
     }
 
@@ -46,14 +49,20 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
      */
     @JvmOverloads
-    fun put(updateMessageRequest: com.ringcentral.definitions.UpdateMessageRequest, queryParams: com.ringcentral.definitions.UpdateMessageParameters? = null): com.ringcentral.definitions.GetMessageInfoResponse? {
+    fun put(
+        updateMessageRequest: com.ringcentral.definitions.UpdateMessageRequest,
+        queryParams: com.ringcentral.definitions.UpdateMessageParameters? = null
+    ): com.ringcentral.definitions.GetMessageInfoResponse? {
         if (this.messageId == null) {
             throw NullPointerException("messageId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateMessageRequest, queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetMessageInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetMessageInfoResponse::class.java
+        )
 
     }
 

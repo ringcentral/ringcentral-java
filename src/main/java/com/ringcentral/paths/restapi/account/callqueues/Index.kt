@@ -36,7 +36,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallQueueDetails::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallQueueDetails::class.java
+        )
 
     }
 
@@ -52,7 +55,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callQueueUpdateDetails)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallQueueDetails::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallQueueDetails::class.java
+        )
 
     }
 

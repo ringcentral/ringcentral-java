@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index) {
     fun get(): com.ringcentral.definitions.GlipPreferencesInfo? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipPreferencesInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GlipPreferencesInfo::class.java
+        )
 
     }
 

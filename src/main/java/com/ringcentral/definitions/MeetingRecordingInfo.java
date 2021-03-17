@@ -1,69 +1,91 @@
 package com.ringcentral.definitions;
 
 
-public class MeetingRecordingInfo {
+public class MeetingRecordingInfo
+{
     /**
-     *
-     */
-    public String id;
-    /**
-     * Link for recording file download
-     */
-    public String contentDownloadUri;
-    /**
-     * Enum: video/mp4, audio/m4a, text/plain
-     */
-    public String contentType;
-    /**
-     *
-     */
-    public Long size;
-    /**
-     * Starting time of a recording
-     */
-    public String startTime;
-    /**
-     * Ending time of a recording
-     */
-    public String endTime;
-    /**
-     * Enum: Completed, Processing
-     */
-    public String status;
+         * Unique identifier of a meeting instance
+         */
+        public String uuid;
+  public MeetingRecordingInfo uuid(String uuid)
+  {
+    this.uuid = uuid;
+    return this;
+  }
+  
 
-    public MeetingRecordingInfo id(String id) {
-        this.id = id;
-        return this;
-    }
+        /**
+         */
+        public String id;
+  public MeetingRecordingInfo id(String id)
+  {
+    this.id = id;
+    return this;
+  }
+  
 
-    public MeetingRecordingInfo contentDownloadUri(String contentDownloadUri) {
-        this.contentDownloadUri = contentDownloadUri;
-        return this;
-    }
+        /**
+         * Link for downloading the recorded file (mp4, mp3 audio and text/plain chat file)
+         */
+        public String contentDownloadUri;
+  public MeetingRecordingInfo contentDownloadUri(String contentDownloadUri)
+  {
+    this.contentDownloadUri = contentDownloadUri;
+    return this;
+  }
+  
 
-    public MeetingRecordingInfo contentType(String contentType) {
-        this.contentType = contentType;
-        return this;
-    }
+        /**
+         * Enum: video/mp4, audio/m4a, text/plain
+         */
+        public String contentType;
+  public MeetingRecordingInfo contentType(String contentType)
+  {
+    this.contentType = contentType;
+    return this;
+  }
+  
 
-    public MeetingRecordingInfo size(Long size) {
-        this.size = size;
-        return this;
-    }
+        /**
+         */
+        public Long size;
+  public MeetingRecordingInfo size(Long size)
+  {
+    this.size = size;
+    return this;
+  }
+  
 
-    public MeetingRecordingInfo startTime(String startTime) {
-        this.startTime = startTime;
-        return this;
-    }
+        /**
+         * Starting time of a recording
+         */
+        public String startTime;
+  public MeetingRecordingInfo startTime(String startTime)
+  {
+    this.startTime = startTime;
+    return this;
+  }
+  
 
-    public MeetingRecordingInfo endTime(String endTime) {
-        this.endTime = endTime;
-        return this;
-    }
+        /**
+         * Ending time of a recording
+         */
+        public String endTime;
+  public MeetingRecordingInfo endTime(String endTime)
+  {
+    this.endTime = endTime;
+    return this;
+  }
+  
 
-    public MeetingRecordingInfo status(String status) {
-        this.status = status;
-        return this;
-    }
-
+        /**
+         * Enum: Completed, Processing
+         */
+        public String status;
+  public MeetingRecordingInfo status(String status)
+  {
+    this.status = status;
+    return this;
+  }
+  
 }

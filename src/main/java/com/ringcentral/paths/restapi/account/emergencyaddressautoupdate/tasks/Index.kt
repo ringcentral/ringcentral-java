@@ -1,6 +1,9 @@
 package com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.tasks
 
-class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.Index, val taskId: String? = null) {
+class Index(
+    val parent: com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.Index,
+    val taskId: String? = null
+) {
     var rc: com.ringcentral.RestClient = parent.rc
 
 
@@ -23,7 +26,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AutomaticLocationUpdatesTaskInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AutomaticLocationUpdatesTaskInfo::class.java
+        )
 
     }
 

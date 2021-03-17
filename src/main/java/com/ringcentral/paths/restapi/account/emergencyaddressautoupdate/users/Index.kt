@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
     fun get(queryParams: com.ringcentral.definitions.ListAutomaticLocationUpdatesUsersParameters? = null): com.ringcentral.definitions.AutomaticLocationUpdatesUserList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AutomaticLocationUpdatesUserList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AutomaticLocationUpdatesUserList::class.java
+        )
 
     }
 

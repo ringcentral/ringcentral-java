@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun get(queryParams: com.ringcentral.definitions.ListExtensionDevicesParameters? = null): com.ringcentral.definitions.GetExtensionDevicesResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetExtensionDevicesResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetExtensionDevicesResponse::class.java
+        )
 
     }
 

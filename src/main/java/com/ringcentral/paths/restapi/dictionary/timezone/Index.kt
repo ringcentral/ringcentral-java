@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val time
     fun list(queryParams: com.ringcentral.definitions.ListTimezonesParameters? = null): com.ringcentral.definitions.GetTimezoneListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetTimezoneListResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetTimezoneListResponse::class.java
+        )
 
     }
 
@@ -37,7 +40,10 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val time
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetTimezoneInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetTimezoneInfoResponse::class.java
+        )
 
     }
 

@@ -1,6 +1,9 @@
 package com.ringcentral.paths.restapi.account.extension.addressbook.contact
 
-class Index(val parent: com.ringcentral.paths.restapi.account.extension.addressbook.Index, val contactId: String? = null) {
+class Index(
+    val parent: com.ringcentral.paths.restapi.account.extension.addressbook.Index,
+    val contactId: String? = null
+) {
     var rc: com.ringcentral.RestClient = parent.rc
 
 
@@ -30,10 +33,16 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.addressb
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
      */
     @JvmOverloads
-    fun post(personalContactRequest: com.ringcentral.definitions.PersonalContactRequest, queryParams: com.ringcentral.definitions.CreateContactParameters? = null): com.ringcentral.definitions.PersonalContactResource? {
+    fun post(
+        personalContactRequest: com.ringcentral.definitions.PersonalContactRequest,
+        queryParams: com.ringcentral.definitions.CreateContactParameters? = null
+    ): com.ringcentral.definitions.PersonalContactResource? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), personalContactRequest, queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PersonalContactResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.PersonalContactResource::class.java
+        )
 
     }
 
@@ -49,7 +58,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.addressb
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PersonalContactResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.PersonalContactResource::class.java
+        )
 
     }
 
@@ -59,14 +71,20 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.addressb
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
      */
     @JvmOverloads
-    fun put(personalContactRequest: com.ringcentral.definitions.PersonalContactRequest, queryParams: com.ringcentral.definitions.UpdateContactParameters? = null): com.ringcentral.definitions.PersonalContactResource? {
+    fun put(
+        personalContactRequest: com.ringcentral.definitions.PersonalContactRequest,
+        queryParams: com.ringcentral.definitions.UpdateContactParameters? = null
+    ): com.ringcentral.definitions.PersonalContactResource? {
         if (this.contactId == null) {
             throw NullPointerException("contactId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), personalContactRequest, queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PersonalContactResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.PersonalContactResource::class.java
+        )
 
     }
 

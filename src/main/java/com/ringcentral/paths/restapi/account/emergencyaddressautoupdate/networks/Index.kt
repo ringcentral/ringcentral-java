@@ -1,6 +1,9 @@
 package com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.networks
 
-class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.Index, val networkId: String? = null) {
+class Index(
+    val parent: com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.Index,
+    val networkId: String? = null
+) {
     var rc: com.ringcentral.RestClient = parent.rc
 
 

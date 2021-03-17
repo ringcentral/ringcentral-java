@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun get(queryParams: com.ringcentral.definitions.ReadConferencingSettingsParameters? = null): com.ringcentral.definitions.GetConferencingInfoResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetConferencingInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetConferencingInfoResponse::class.java
+        )
 
     }
 
@@ -28,7 +31,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun put(updateConferencingInfoRequest: com.ringcentral.definitions.UpdateConferencingInfoRequest): com.ringcentral.definitions.GetConferencingInfoResponse? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateConferencingInfoRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetConferencingInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetConferencingInfoResponse::class.java
+        )
 
     }
 

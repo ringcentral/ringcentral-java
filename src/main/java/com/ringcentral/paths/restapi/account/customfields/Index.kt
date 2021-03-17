@@ -13,25 +13,31 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
     }
 
     /**
-     * Operation: Create Custom Field
-     * Http Post /restapi/v1.0/account/{accountId}/custom-fields
-     */
-    fun post(customFieldCreateRequest: com.ringcentral.definitions.CustomFieldCreateRequest): com.ringcentral.definitions.CustomFieldResource? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), customFieldCreateRequest)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomFieldResource::class.java)
-
-    }
-
-
-    /**
      * Operation: Get Custom Field List
      * Http Get /restapi/v1.0/account/{accountId}/custom-fields
      */
     fun get(): com.ringcentral.definitions.CustomFieldsResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomFieldsResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CustomFieldsResource::class.java
+        )
+
+    }
+
+
+    /**
+     * Operation: Create Custom Field
+     * Http Post /restapi/v1.0/account/{accountId}/custom-fields
+     */
+    fun post(customFieldCreateRequest: com.ringcentral.definitions.CustomFieldCreateRequest): com.ringcentral.definitions.CustomFieldResource? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(false), customFieldCreateRequest)
+
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CustomFieldResource::class.java
+        )
 
     }
 
@@ -47,7 +53,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), customFieldUpdateRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomFieldResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CustomFieldResource::class.java
+        )
 
     }
 

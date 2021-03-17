@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
     fun post(superviseCallSessionRequest: com.ringcentral.definitions.SuperviseCallSessionRequest): com.ringcentral.definitions.SuperviseCallSession? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), superviseCallSessionRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SuperviseCallSession::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.SuperviseCallSession::class.java
+        )
 
     }
 

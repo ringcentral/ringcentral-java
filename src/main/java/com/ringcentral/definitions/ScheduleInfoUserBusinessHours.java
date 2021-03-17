@@ -1,15 +1,16 @@
 package com.ringcentral.definitions;
 
 
-public class ScheduleInfoUserBusinessHours {
+    // Schedule when an answering rule is applied
+public class ScheduleInfoUserBusinessHours
+{
     /**
-     * Weekly schedule
-     */
-    public WeeklyScheduleInfo weeklyRanges;
-
-    public ScheduleInfoUserBusinessHours weeklyRanges(WeeklyScheduleInfo weeklyRanges) {
-        this.weeklyRanges = weeklyRanges;
-        return this;
-    }
-
+         */
+        public WeeklyScheduleInfo weeklyRanges;
+  public ScheduleInfoUserBusinessHours weeklyRanges(WeeklyScheduleInfo weeklyRanges)
+  {
+    this.weeklyRanges = weeklyRanges;
+    return this;
+  }
+  
 }

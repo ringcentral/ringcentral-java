@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callmonitoringgrou
     fun get(queryParams: com.ringcentral.definitions.ListCallMonitoringGroupMembersParameters? = null): com.ringcentral.definitions.CallMonitoringGroupMemberList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallMonitoringGroupMemberList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallMonitoringGroupMemberList::class.java
+        )
 
     }
 

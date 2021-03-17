@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun get(queryParams: com.ringcentral.definitions.ReadExtensionCallQueuePresenceParameters? = null): com.ringcentral.definitions.ExtensionCallQueuePresenceList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ExtensionCallQueuePresenceList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ExtensionCallQueuePresenceList::class.java
+        )
 
     }
 
@@ -28,7 +31,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun put(extensionCallQueueUpdatePresenceList: com.ringcentral.definitions.ExtensionCallQueueUpdatePresenceList): com.ringcentral.definitions.ExtensionCallQueuePresenceList? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), extensionCallQueueUpdatePresenceList)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ExtensionCallQueuePresenceList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ExtensionCallQueuePresenceList::class.java
+        )
 
     }
 

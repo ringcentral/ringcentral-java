@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.scim.users.Index) {
     fun post(searchRequest: com.ringcentral.definitions.SearchRequest): com.ringcentral.definitions.UserSearchResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), searchRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UserSearchResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.UserSearchResponse::class.java
+        )
 
     }
 

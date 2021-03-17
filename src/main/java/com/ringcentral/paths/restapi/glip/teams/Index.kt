@@ -54,22 +54,6 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
 
 
     /**
-     * Operation: Update Team
-     * Http Patch /restapi/v1.0/glip/teams/{chatId}
-     */
-    fun patch(glipPatchTeamBody: com.ringcentral.definitions.GlipPatchTeamBody): com.ringcentral.definitions.GlipTeamInfo? {
-        if (this.chatId == null) {
-            throw NullPointerException("chatId");
-        }
-
-        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipPatchTeamBody)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipTeamInfo::class.java)
-
-    }
-
-
-    /**
      * Operation: Delete Team
      * Http Delete /restapi/v1.0/glip/teams/{chatId}
      */
@@ -81,6 +65,22 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
 
         return rb.string()
+
+    }
+
+
+    /**
+     * Operation: Update Team
+     * Http Patch /restapi/v1.0/glip/teams/{chatId}
+     */
+    fun patch(glipPatchTeamBody: com.ringcentral.definitions.GlipPatchTeamBody): com.ringcentral.definitions.GlipTeamInfo? {
+        if (this.chatId == null) {
+            throw NullPointerException("chatId");
+        }
+
+        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipPatchTeamBody)
+
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipTeamInfo::class.java)
 
     }
 

@@ -13,9 +13,13 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/mms
      */
     fun post(createMMSMessage: com.ringcentral.definitions.CreateMMSMessage): com.ringcentral.definitions.GetSMSMessageInfoResponse? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(), createMMSMessage, null, com.ringcentral.ContentType.MULTIPART)
+        val rb: okhttp3.ResponseBody =
+            rc.post(this.path(), createMMSMessage, null, com.ringcentral.ContentType.MULTIPART)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetSMSMessageInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetSMSMessageInfoResponse::class.java
+        )
 
     }
 

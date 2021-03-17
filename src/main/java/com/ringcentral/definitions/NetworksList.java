@@ -1,42 +1,46 @@
 package com.ringcentral.definitions;
 
 
-public class NetworksList {
+public class NetworksList
+{
     /**
-     * Link to a networks resource
-     */
-    public String uri;
-    /**
-     *
-     */
-    public NetworkInfo[] records;
-    /**
-     *
-     */
-    public ProvisioningNavigationInfo navigation;
-    /**
-     *
-     */
-    public ProvisioningPagingInfo paging;
+         * Link to a networks resource
+         */
+        public String uri;
+  public NetworksList uri(String uri)
+  {
+    this.uri = uri;
+    return this;
+  }
+  
 
-    public NetworksList uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
+        /**
+         */
+        public NetworkInfo[] records;
+  public NetworksList records(NetworkInfo[] records)
+  {
+    this.records = records;
+    return this;
+  }
+  
 
-    public NetworksList records(NetworkInfo[] records) {
-        this.records = records;
-        return this;
-    }
+        /**
+         */
+        public ProvisioningNavigationInfo navigation;
+  public NetworksList navigation(ProvisioningNavigationInfo navigation)
+  {
+    this.navigation = navigation;
+    return this;
+  }
+  
 
-    public NetworksList navigation(ProvisioningNavigationInfo navigation) {
-        this.navigation = navigation;
-        return this;
-    }
-
-    public NetworksList paging(ProvisioningPagingInfo paging) {
-        this.paging = paging;
-        return this;
-    }
-
+        /**
+         */
+        public ProvisioningPagingInfo paging;
+  public NetworksList paging(ProvisioningPagingInfo paging)
+  {
+    this.paging = paging;
+    return this;
+  }
+  
 }

@@ -75,7 +75,7 @@ public class RestClient {
     }
 
     private String authorizationHeader(String endpoint) {
-        if(endpoint.equals("/restapi/oauth/token") || endpoint.equals("/restapi/oauth/revoke")) {
+        if (endpoint.equals("/restapi/oauth/token") || endpoint.equals("/restapi/oauth/revoke")) {
             return MessageFormat.format("Basic {0}", basicKey());
         }
         return MessageFormat.format("Bearer {0}", token.access_token);

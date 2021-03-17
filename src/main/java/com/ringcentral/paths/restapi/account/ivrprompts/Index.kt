@@ -13,18 +13,6 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
     }
 
     /**
-     * Operation: Create IVR Prompts
-     * Http Post /restapi/v1.0/account/{accountId}/ivr-prompts
-     */
-    fun post(createIVRPromptRequest: com.ringcentral.definitions.CreateIvrPromptRequest): com.ringcentral.definitions.PromptInfo? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createIVRPromptRequest, null, com.ringcentral.ContentType.MULTIPART)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
-
-    }
-
-
-    /**
      * Operation: Get IVR Prompt List
      * Http Get /restapi/v1.0/account/{accountId}/ivr-prompts
      */
@@ -32,6 +20,19 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
         return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.IVRPrompts::class.java)
+
+    }
+
+
+    /**
+     * Operation: Create IVR Prompts
+     * Http Post /restapi/v1.0/account/{accountId}/ivr-prompts
+     */
+    fun post(createIVRPromptRequest: com.ringcentral.definitions.CreateIvrPromptRequest): com.ringcentral.definitions.PromptInfo? {
+        val rb: okhttp3.ResponseBody =
+            rc.post(this.path(false), createIVRPromptRequest, null, com.ringcentral.ContentType.MULTIPART)
+
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
 
     }
 
@@ -53,22 +54,6 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
 
 
     /**
-     * Operation: Delete IVR Prompt
-     * Http Delete /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
-     */
-    fun delete(): String? {
-        if (this.promptId == null) {
-            throw NullPointerException("promptId");
-        }
-
-        val rb: okhttp3.ResponseBody = rc.delete(this.path())
-
-        return rb.string()
-
-    }
-
-
-    /**
      * Operation: Update IVR Prompt
      * Http Put /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
      */
@@ -80,6 +65,22 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateIVRPromptRequest)
 
         return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PromptInfo::class.java)
+
+    }
+
+
+    /**
+     * Operation: Delete IVR Prompt
+     * Http Delete /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
+     */
+    fun delete(): String? {
+        if (this.promptId == null) {
+            throw NullPointerException("promptId");
+        }
+
+        val rb: okhttp3.ResponseBody = rc.delete(this.path())
+
+        return rb.string()
 
     }
 

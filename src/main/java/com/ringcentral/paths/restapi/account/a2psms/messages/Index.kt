@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
     fun list(queryParams: com.ringcentral.definitions.ListA2PsmsParameters? = null): com.ringcentral.definitions.MessageListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageListResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MessageListResponse::class.java
+        )
 
     }
 
@@ -36,7 +39,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageDetailsResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MessageDetailsResponse::class.java
+        )
 
     }
 

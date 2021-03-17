@@ -13,18 +13,6 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
     }
 
     /**
-     * Operation: Create Company Call Handling Rule
-     * Http Post /restapi/v1.0/account/{accountId}/answering-rule
-     */
-    fun post(companyAnsweringRuleRequest: com.ringcentral.definitions.CompanyAnsweringRuleRequest): com.ringcentral.definitions.CompanyAnsweringRuleInfo? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), companyAnsweringRuleRequest)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CompanyAnsweringRuleInfo::class.java)
-
-    }
-
-
-    /**
      * Operation: Get Company Call Handling Rule List
      * Http Get /restapi/v1.0/account/{accountId}/answering-rule
      */
@@ -32,7 +20,25 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
     fun list(queryParams: com.ringcentral.definitions.ListCompanyAnsweringRulesParameters? = null): com.ringcentral.definitions.CompanyAnsweringRuleList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CompanyAnsweringRuleList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CompanyAnsweringRuleList::class.java
+        )
+
+    }
+
+
+    /**
+     * Operation: Create Company Call Handling Rule
+     * Http Post /restapi/v1.0/account/{accountId}/answering-rule
+     */
+    fun post(companyAnsweringRuleRequest: com.ringcentral.definitions.CompanyAnsweringRuleRequest): com.ringcentral.definitions.CompanyAnsweringRuleInfo? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(false), companyAnsweringRuleRequest)
+
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CompanyAnsweringRuleInfo::class.java
+        )
 
     }
 
@@ -48,7 +54,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CompanyAnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CompanyAnsweringRuleInfo::class.java
+        )
 
     }
 
@@ -64,7 +73,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), companyAnsweringRuleUpdate)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CompanyAnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CompanyAnsweringRuleInfo::class.java
+        )
 
     }
 

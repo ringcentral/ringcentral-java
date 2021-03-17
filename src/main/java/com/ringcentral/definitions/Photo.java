@@ -1,25 +1,28 @@
 package com.ringcentral.definitions;
 
 
-public class Photo {
+public class Photo
+{
     /**
-     * Required
-     * Enum: photo
-     */
-    public String type;
-    /**
-     * Required
-     */
-    public String value;
+         * Required
+         * Enum: photo
+         */
+        public String type;
+  public Photo type(String type)
+  {
+    this.type = type;
+    return this;
+  }
+  
 
-    public Photo type(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public Photo value(String value) {
-        this.value = value;
-        return this;
-    }
-
+        /**
+         * Required
+         */
+        public String value;
+  public Photo value(String value)
+  {
+    this.value = value;
+    return this;
+  }
+  
 }

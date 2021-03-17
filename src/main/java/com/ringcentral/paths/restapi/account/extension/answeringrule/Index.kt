@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     fun list(queryParams: com.ringcentral.definitions.ListAnsweringRulesParameters? = null): com.ringcentral.definitions.UserAnsweringRuleList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UserAnsweringRuleList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.UserAnsweringRuleList::class.java
+        )
 
     }
 
@@ -32,7 +35,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     fun post(createAnsweringRuleRequest: com.ringcentral.definitions.CreateAnsweringRuleRequest): com.ringcentral.definitions.CustomAnsweringRuleInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createAnsweringRuleRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomAnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CustomAnsweringRuleInfo::class.java
+        )
 
     }
 
@@ -49,7 +55,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AnsweringRuleInfo::class.java
+        )
 
     }
 
@@ -65,7 +74,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateAnsweringRuleRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AnsweringRuleInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AnsweringRuleInfo::class.java
+        )
 
     }
 

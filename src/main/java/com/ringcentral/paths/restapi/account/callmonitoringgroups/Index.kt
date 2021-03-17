@@ -13,18 +13,6 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
     }
 
     /**
-     * Operation: Create Call Monitoring Group
-     * Http Post /restapi/v1.0/account/{accountId}/call-monitoring-groups
-     */
-    fun post(createCallMonitoringGroupRequest: com.ringcentral.definitions.CreateCallMonitoringGroupRequest): com.ringcentral.definitions.CallMonitoringGroup? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createCallMonitoringGroupRequest)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallMonitoringGroup::class.java)
-
-    }
-
-
-    /**
      * Operation: Get Call Monitoring Groups List
      * Http Get /restapi/v1.0/account/{accountId}/call-monitoring-groups
      */
@@ -32,7 +20,25 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
     fun get(queryParams: com.ringcentral.definitions.ListCallMonitoringGroupsParameters? = null): com.ringcentral.definitions.CallMonitoringGroups? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallMonitoringGroups::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallMonitoringGroups::class.java
+        )
+
+    }
+
+
+    /**
+     * Operation: Create Call Monitoring Group
+     * Http Post /restapi/v1.0/account/{accountId}/call-monitoring-groups
+     */
+    fun post(createCallMonitoringGroupRequest: com.ringcentral.definitions.CreateCallMonitoringGroupRequest): com.ringcentral.definitions.CallMonitoringGroup? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createCallMonitoringGroupRequest)
+
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallMonitoringGroup::class.java
+        )
 
     }
 
@@ -48,7 +54,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), createCallMonitoringGroupRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallMonitoringGroup::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallMonitoringGroup::class.java
+        )
 
     }
 

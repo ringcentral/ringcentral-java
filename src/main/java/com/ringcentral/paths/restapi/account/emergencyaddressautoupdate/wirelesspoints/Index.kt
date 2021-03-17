@@ -1,6 +1,9 @@
 package com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.wirelesspoints
 
-class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.Index, val pointId: String? = null) {
+class Index(
+    val parent: com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.Index,
+    val pointId: String? = null
+) {
     var rc: com.ringcentral.RestClient = parent.rc
 
 
@@ -20,7 +23,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
     fun list(queryParams: com.ringcentral.definitions.ListWirelessPointsParameters? = null): com.ringcentral.definitions.WirelessPointsList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.WirelessPointsList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.WirelessPointsList::class.java
+        )
 
     }
 
@@ -32,7 +38,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
     fun post(createWirelessPoint: com.ringcentral.definitions.CreateWirelessPoint): com.ringcentral.definitions.WirelessPointInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createWirelessPoint)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.WirelessPointInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.WirelessPointInfo::class.java
+        )
 
     }
 
@@ -48,7 +57,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.WirelessPointInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.WirelessPointInfo::class.java
+        )
 
     }
 
@@ -64,7 +76,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateWirelessPoint)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.WirelessPointInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.WirelessPointInfo::class.java
+        )
 
     }
 

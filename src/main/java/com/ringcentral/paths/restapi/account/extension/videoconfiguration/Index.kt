@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun get(): com.ringcentral.definitions.UserVideoConfiguration? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UserVideoConfiguration::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.UserVideoConfiguration::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun put(userVideoConfiguration: com.ringcentral.definitions.UserVideoConfiguration): com.ringcentral.definitions.UserVideoConfiguration? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), userVideoConfiguration)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UserVideoConfiguration::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.UserVideoConfiguration::class.java
+        )
 
     }
 

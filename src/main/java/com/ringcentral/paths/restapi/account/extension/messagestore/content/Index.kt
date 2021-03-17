@@ -1,6 +1,9 @@
 package com.ringcentral.paths.restapi.account.extension.messagestore.content
 
-class Index(val parent: com.ringcentral.paths.restapi.account.extension.messagestore.Index, val attachmentId: String? = null) {
+class Index(
+    val parent: com.ringcentral.paths.restapi.account.extension.messagestore.Index,
+    val attachmentId: String? = null
+) {
     var rc: com.ringcentral.RestClient = parent.rc
 
 

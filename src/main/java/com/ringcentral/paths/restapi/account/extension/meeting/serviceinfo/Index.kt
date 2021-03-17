@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.meeting.
     fun get(): com.ringcentral.definitions.MeetingServiceInfoResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MeetingServiceInfoResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MeetingServiceInfoResource::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.meeting.
     fun patch(meetingServiceInfoRequest: com.ringcentral.definitions.MeetingServiceInfoRequest): com.ringcentral.definitions.MeetingServiceInfoResource? {
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), meetingServiceInfoRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MeetingServiceInfoResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MeetingServiceInfoResource::class.java
+        )
 
     }
 

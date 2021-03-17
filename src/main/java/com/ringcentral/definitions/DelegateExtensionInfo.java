@@ -1,33 +1,38 @@
 package com.ringcentral.definitions;
 
 
-public class DelegateExtensionInfo {
+public class DelegateExtensionInfo
+{
     /**
-     * Canonical URI of an extension
-     */
-    public String uri;
-    /**
-     * Extension name
-     */
-    public String name;
-    /**
-     * Number of an extension
-     */
-    public String extensionNumber;
+         * Canonical URI of an extension
+         */
+        public String uri;
+  public DelegateExtensionInfo uri(String uri)
+  {
+    this.uri = uri;
+    return this;
+  }
+  
 
-    public DelegateExtensionInfo uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
+        /**
+         * Extension name
+         */
+        public String name;
+  public DelegateExtensionInfo name(String name)
+  {
+    this.name = name;
+    return this;
+  }
+  
 
-    public DelegateExtensionInfo name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public DelegateExtensionInfo extensionNumber(String extensionNumber) {
-        this.extensionNumber = extensionNumber;
-        return this;
-    }
-
+        /**
+         * Number of an extension
+         */
+        public String extensionNumber;
+  public DelegateExtensionInfo extensionNumber(String extensionNumber)
+  {
+    this.extensionNumber = extensionNumber;
+    return this;
+  }
+  
 }

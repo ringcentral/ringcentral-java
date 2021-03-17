@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     fun get(): com.ringcentral.definitions.AccountBusinessAddressResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AccountBusinessAddressResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AccountBusinessAddressResource::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     fun put(modifyAccountBusinessAddressRequest: com.ringcentral.definitions.ModifyAccountBusinessAddressRequest): com.ringcentral.definitions.AccountBusinessAddressResource? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), modifyAccountBusinessAddressRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AccountBusinessAddressResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AccountBusinessAddressResource::class.java
+        )
 
     }
 

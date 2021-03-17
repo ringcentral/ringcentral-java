@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.meeting.Index) {
     fun get(): com.ringcentral.definitions.AccountLockedSettingResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AccountLockedSettingResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AccountLockedSettingResponse::class.java
+        )
 
     }
 

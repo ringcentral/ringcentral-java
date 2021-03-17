@@ -49,14 +49,14 @@ class Index(val parent: com.ringcentral.paths.restapi.Index) {
 
 
     @JvmOverloads
-    fun groups(groupId: String? = null): com.ringcentral.paths.restapi.glip.groups.Index {
-        return com.ringcentral.paths.restapi.glip.groups.Index(this, groupId)
+    fun events(eventId: String? = null): com.ringcentral.paths.restapi.glip.events.Index {
+        return com.ringcentral.paths.restapi.glip.events.Index(this, eventId)
     }
 
 
     @JvmOverloads
-    fun events(eventId: String? = null): com.ringcentral.paths.restapi.glip.events.Index {
-        return com.ringcentral.paths.restapi.glip.events.Index(this, eventId)
+    fun groups(groupId: String? = null): com.ringcentral.paths.restapi.glip.groups.Index {
+        return com.ringcentral.paths.restapi.glip.groups.Index(this, groupId)
     }
 
 

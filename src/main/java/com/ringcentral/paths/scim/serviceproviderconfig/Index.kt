@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.scim.Index) {
     fun get(): com.ringcentral.definitions.ServiceProviderConfig? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ServiceProviderConfig::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ServiceProviderConfig::class.java
+        )
 
     }
 

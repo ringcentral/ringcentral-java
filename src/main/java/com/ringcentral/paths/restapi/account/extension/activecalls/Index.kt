@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun get(queryParams: com.ringcentral.definitions.ListExtensionActiveCallsParameters? = null): com.ringcentral.definitions.UserActiveCallsResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UserActiveCallsResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.UserActiveCallsResponse::class.java
+        )
 
     }
 

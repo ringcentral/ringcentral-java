@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
     fun post(partySuperviseRequest: com.ringcentral.definitions.PartySuperviseRequest): com.ringcentral.definitions.PartySuperviseResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), partySuperviseRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PartySuperviseResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.PartySuperviseResponse::class.java
+        )
 
     }
 

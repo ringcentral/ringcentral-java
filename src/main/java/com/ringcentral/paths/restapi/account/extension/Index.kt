@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
     fun list(queryParams: com.ringcentral.definitions.ListExtensionsParameters? = null): com.ringcentral.definitions.GetExtensionListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetExtensionListResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetExtensionListResponse::class.java
+        )
 
     }
 
@@ -32,7 +35,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
     fun post(extensionCreationRequest: com.ringcentral.definitions.ExtensionCreationRequest): com.ringcentral.definitions.ExtensionCreationResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), extensionCreationRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ExtensionCreationResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ExtensionCreationResponse::class.java
+        )
 
     }
 
@@ -48,7 +54,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetExtensionInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetExtensionInfoResponse::class.java
+        )
 
     }
 
@@ -64,7 +73,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), extensionUpdateRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetExtensionInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetExtensionInfoResponse::class.java
+        )
 
     }
 
@@ -176,6 +188,11 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
     }
 
 
+    fun meetingconfiguration(): com.ringcentral.paths.restapi.account.extension.meetingconfiguration.Index {
+        return com.ringcentral.paths.restapi.account.extension.meetingconfiguration.Index(this)
+    }
+
+
     fun meetingsconfiguration(): com.ringcentral.paths.restapi.account.extension.meetingsconfiguration.Index {
         return com.ringcentral.paths.restapi.account.extension.meetingsconfiguration.Index(this)
     }
@@ -224,6 +241,11 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
 
     fun grant(): com.ringcentral.paths.restapi.account.extension.grant.Index {
         return com.ringcentral.paths.restapi.account.extension.grant.Index(this)
+    }
+
+
+    fun emergencylocations(): com.ringcentral.paths.restapi.account.extension.emergencylocations.Index {
+        return com.ringcentral.paths.restapi.account.extension.emergencylocations.Index(this)
     }
 
 

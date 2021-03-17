@@ -1,45 +1,50 @@
 package com.ringcentral.definitions;
 
 
-public class GetCountryListResponse {
+public class GetCountryListResponse
+{
     /**
-     * Link to the list of countries supported
-     */
-    public String uri;
-    /**
-     * List of countries with the country data
-     * Required
-     */
-    public GetCountryInfoDictionaryResponse[] records;
-    /**
-     * Information on navigation
-     * Required
-     */
-    public ProvisioningNavigationInfo navigation;
-    /**
-     * Information on paging
-     * Required
-     */
-    public ProvisioningPagingInfo paging;
+         * Link to the list of countries supported
+         */
+        public String uri;
+  public GetCountryListResponse uri(String uri)
+  {
+    this.uri = uri;
+    return this;
+  }
+  
 
-    public GetCountryListResponse uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
+        /**
+         * List of countries with the country data
+         * Required
+         */
+        public GetCountryInfoDictionaryResponse[] records;
+  public GetCountryListResponse records(GetCountryInfoDictionaryResponse[] records)
+  {
+    this.records = records;
+    return this;
+  }
+  
 
-    public GetCountryListResponse records(GetCountryInfoDictionaryResponse[] records) {
-        this.records = records;
-        return this;
-    }
+        /**
+         * Required
+         */
+        public ProvisioningNavigationInfo navigation;
+  public GetCountryListResponse navigation(ProvisioningNavigationInfo navigation)
+  {
+    this.navigation = navigation;
+    return this;
+  }
+  
 
-    public GetCountryListResponse navigation(ProvisioningNavigationInfo navigation) {
-        this.navigation = navigation;
-        return this;
-    }
-
-    public GetCountryListResponse paging(ProvisioningPagingInfo paging) {
-        this.paging = paging;
-        return this;
-    }
-
+        /**
+         * Required
+         */
+        public ProvisioningPagingInfo paging;
+  public GetCountryListResponse paging(ProvisioningPagingInfo paging)
+  {
+    this.paging = paging;
+    return this;
+  }
+  
 }

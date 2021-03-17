@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callqueues.Index) 
     fun get(queryParams: com.ringcentral.definitions.ListCallQueueMembersParameters? = null): com.ringcentral.definitions.CallQueueMembers? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallQueueMembers::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallQueueMembers::class.java
+        )
 
     }
 

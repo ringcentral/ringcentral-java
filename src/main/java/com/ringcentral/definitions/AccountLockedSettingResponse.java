@@ -1,24 +1,35 @@
 package com.ringcentral.definitions;
 
 
-public class AccountLockedSettingResponse {
+public class AccountLockedSettingResponse
+{
     /**
-     * Scheduling meeting settings locked on account level
-     */
-    public ScheduleUserMeetingInfo scheduleMeeting;
-    /**
-     * Meeting recording settings locked on account level
-     */
-    public UserMeetingRecordingSetting recording;
+         */
+        public ScheduleUserMeetingInfo scheduleMeeting;
+  public AccountLockedSettingResponse scheduleMeeting(ScheduleUserMeetingInfo scheduleMeeting)
+  {
+    this.scheduleMeeting = scheduleMeeting;
+    return this;
+  }
+  
 
-    public AccountLockedSettingResponse scheduleMeeting(ScheduleUserMeetingInfo scheduleMeeting) {
-        this.scheduleMeeting = scheduleMeeting;
-        return this;
-    }
+        /**
+         */
+        public UserMeetingRecordingSetting recording;
+  public AccountLockedSettingResponse recording(UserMeetingRecordingSetting recording)
+  {
+    this.recording = recording;
+    return this;
+  }
+  
 
-    public AccountLockedSettingResponse recording(UserMeetingRecordingSetting recording) {
-        this.recording = recording;
-        return this;
-    }
-
+        /**
+         */
+        public TelephonyLockedSettings telephony;
+  public AccountLockedSettingResponse telephony(TelephonyLockedSettings telephony)
+  {
+    this.telephony = telephony;
+    return this;
+  }
+  
 }

@@ -13,9 +13,13 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Http Post /restapi/v1.0/account/{accountId}/greeting
      */
     fun post(createCompanyGreetingRequest: com.ringcentral.definitions.CreateCompanyGreetingRequest): com.ringcentral.definitions.CustomCompanyGreetingInfo? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(), createCompanyGreetingRequest, null, com.ringcentral.ContentType.MULTIPART)
+        val rb: okhttp3.ResponseBody =
+            rc.post(this.path(), createCompanyGreetingRequest, null, com.ringcentral.ContentType.MULTIPART)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomCompanyGreetingInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CustomCompanyGreetingInfo::class.java
+        )
 
     }
 

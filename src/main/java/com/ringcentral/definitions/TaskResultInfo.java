@@ -1,15 +1,17 @@
 package com.ringcentral.definitions;
 
 
-public class TaskResultInfo {
+    // Task detailed result. Returned for failed and completed tasks
+public class TaskResultInfo
+{
     /**
-     * Detailed task results by elements from initial request
-     */
-    public TaskResultRecord[] records;
-
-    public TaskResultInfo records(TaskResultRecord[] records) {
-        this.records = records;
-        return this;
-    }
-
+         * Detailed task results by elements from initial request
+         */
+        public TaskResultRecord[] records;
+  public TaskResultInfo records(TaskResultRecord[] records)
+  {
+    this.records = records;
+    return this;
+  }
+  
 }

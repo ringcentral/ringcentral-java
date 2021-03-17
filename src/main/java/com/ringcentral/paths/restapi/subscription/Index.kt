@@ -19,7 +19,10 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
     fun list(): com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse::class.java
+        )
 
     }
 
@@ -31,7 +34,10 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
     fun post(createSubscriptionRequest: com.ringcentral.definitions.CreateSubscriptionRequest): com.ringcentral.definitions.SubscriptionInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createSubscriptionRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.SubscriptionInfo::class.java
+        )
 
     }
 
@@ -47,7 +53,10 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.SubscriptionInfo::class.java
+        )
 
     }
 
@@ -56,15 +65,17 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      * Operation: Update Subscription
      * Http Put /restapi/v1.0/subscription/{subscriptionId}
      */
-    @JvmOverloads
-    fun put(modifySubscriptionRequest: com.ringcentral.definitions.ModifySubscriptionRequest, queryParams: com.ringcentral.definitions.UpdateSubscriptionParameters? = null): com.ringcentral.definitions.SubscriptionInfo? {
+    fun put(modifySubscriptionRequest: com.ringcentral.definitions.ModifySubscriptionRequest): com.ringcentral.definitions.SubscriptionInfo? {
         if (this.subscriptionId == null) {
             throw NullPointerException("subscriptionId");
         }
 
-        val rb: okhttp3.ResponseBody = rc.put(this.path(), modifySubscriptionRequest, queryParams)
+        val rb: okhttp3.ResponseBody = rc.put(this.path(), modifySubscriptionRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.SubscriptionInfo::class.java
+        )
 
     }
 

@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callrecording.Inde
     fun get(): com.ringcentral.definitions.CallRecordingExtensions? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallRecordingExtensions::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallRecordingExtensions::class.java
+        )
 
     }
 

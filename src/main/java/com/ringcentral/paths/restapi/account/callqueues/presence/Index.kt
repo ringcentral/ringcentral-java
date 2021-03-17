@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callqueues.Index) 
     fun get(): com.ringcentral.definitions.CallQueuePresence? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallQueuePresence::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallQueuePresence::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callqueues.Index) 
     fun put(callQueueUpdatePresence: com.ringcentral.definitions.CallQueueUpdatePresence): com.ringcentral.definitions.CallQueuePresence? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callQueueUpdatePresence)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallQueuePresence::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallQueuePresence::class.java
+        )
 
     }
 

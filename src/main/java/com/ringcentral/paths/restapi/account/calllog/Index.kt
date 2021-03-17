@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val callRec
     fun list(queryParams: com.ringcentral.definitions.ReadCompanyCallLogParameters? = null): com.ringcentral.definitions.AccountCallLogResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AccountCallLogResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AccountCallLogResponse::class.java
+        )
 
     }
 
@@ -37,7 +40,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val callRec
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CompanyCallLogRecord::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CompanyCallLogRecord::class.java
+        )
 
     }
 

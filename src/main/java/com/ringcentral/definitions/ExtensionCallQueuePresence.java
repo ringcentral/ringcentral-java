@@ -1,24 +1,26 @@
 package com.ringcentral.definitions;
 
 
-public class ExtensionCallQueuePresence {
+public class ExtensionCallQueuePresence
+{
     /**
-     * Call queue information
-     */
-    public CallQueueInfo callQueue;
-    /**
-     * Call queue agent availability for calls of this queue
-     */
-    public Boolean acceptCalls;
+         */
+        public CallQueueInfo callQueue;
+  public ExtensionCallQueuePresence callQueue(CallQueueInfo callQueue)
+  {
+    this.callQueue = callQueue;
+    return this;
+  }
+  
 
-    public ExtensionCallQueuePresence callQueue(CallQueueInfo callQueue) {
-        this.callQueue = callQueue;
-        return this;
-    }
-
-    public ExtensionCallQueuePresence acceptCalls(Boolean acceptCalls) {
-        this.acceptCalls = acceptCalls;
-        return this;
-    }
-
+        /**
+         * Call queue agent availability for calls of this queue
+         */
+        public Boolean acceptCalls;
+  public ExtensionCallQueuePresence acceptCalls(Boolean acceptCalls)
+  {
+    this.acceptCalls = acceptCalls;
+    return this;
+  }
+  
 }

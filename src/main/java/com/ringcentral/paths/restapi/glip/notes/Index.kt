@@ -29,22 +29,6 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val noteId: St
 
 
     /**
-     * Operation: Update Note
-     * Http Patch /restapi/v1.0/glip/notes/{noteId}
-     */
-    fun patch(glipNoteCreate: com.ringcentral.definitions.GlipNoteCreate): com.ringcentral.definitions.GlipNoteInfo? {
-        if (this.noteId == null) {
-            throw NullPointerException("noteId");
-        }
-
-        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipNoteCreate)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipNoteInfo::class.java)
-
-    }
-
-
-    /**
      * Operation: Delete Note
      * Http Delete /restapi/v1.0/glip/notes/{noteId}
      */
@@ -56,6 +40,22 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val noteId: St
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
 
         return rb.string()
+
+    }
+
+
+    /**
+     * Operation: Update Note
+     * Http Patch /restapi/v1.0/glip/notes/{noteId}
+     */
+    fun patch(glipNoteCreate: com.ringcentral.definitions.GlipNoteCreate): com.ringcentral.definitions.GlipNoteInfo? {
+        if (this.noteId == null) {
+            throw NullPointerException("noteId");
+        }
+
+        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipNoteCreate)
+
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipNoteInfo::class.java)
 
     }
 

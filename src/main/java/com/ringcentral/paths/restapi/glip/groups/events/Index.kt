@@ -9,11 +9,11 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.groups.Index) {
     }
 
     /**
-     * Operation: Create Event by Group ID
-     * Http Post /restapi/v1.0/glip/groups/{groupId}/events
+     * Operation: Get Group Events
+     * Http Get /restapi/v1.0/glip/groups/{groupId}/events
      */
-    fun post(glipEventCreate: com.ringcentral.definitions.GlipEventCreate): com.ringcentral.definitions.GlipEventInfo? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(), glipEventCreate)
+    fun get(): com.ringcentral.definitions.GlipEventInfo? {
+        val rb: okhttp3.ResponseBody = rc.get(this.path())
 
         return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
 
@@ -21,11 +21,11 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.groups.Index) {
 
 
     /**
-     * Operation: Get Group Events
-     * Http Get /restapi/v1.0/glip/groups/{groupId}/events
+     * Operation: Create Event by Group ID
+     * Http Post /restapi/v1.0/glip/groups/{groupId}/events
      */
-    fun get(): com.ringcentral.definitions.GlipEventInfo? {
-        val rb: okhttp3.ResponseBody = rc.get(this.path())
+    fun post(glipEventCreate: com.ringcentral.definitions.GlipEventCreate): com.ringcentral.definitions.GlipEventInfo? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(), glipEventCreate)
 
         return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipEventInfo::class.java)
 

@@ -13,18 +13,6 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
     }
 
     /**
-     * Operation: Create Data Export Task
-     * Http Post /restapi/v1.0/glip/data-export
-     */
-    fun post(createDataExportTaskRequest: com.ringcentral.definitions.CreateDataExportTaskRequest): com.ringcentral.definitions.DataExportTask? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createDataExportTaskRequest)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.DataExportTask::class.java)
-
-    }
-
-
-    /**
      * Operation: Get Data Export Task List
      * Http Get /restapi/v1.0/glip/data-export
      */
@@ -32,7 +20,22 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
     fun list(queryParams: com.ringcentral.definitions.ListDataExportTasksParameters? = null): com.ringcentral.definitions.DataExportTaskList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.DataExportTaskList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.DataExportTaskList::class.java
+        )
+
+    }
+
+
+    /**
+     * Operation: Create Data Export Task
+     * Http Post /restapi/v1.0/glip/data-export
+     */
+    fun post(createDataExportTaskRequest: com.ringcentral.definitions.CreateDataExportTaskRequest): com.ringcentral.definitions.DataExportTask? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createDataExportTaskRequest)
+
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.DataExportTask::class.java)
 
     }
 

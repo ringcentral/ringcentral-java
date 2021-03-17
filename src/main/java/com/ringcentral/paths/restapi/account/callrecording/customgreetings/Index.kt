@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callrecording.Inde
     fun get(queryParams: com.ringcentral.definitions.ListCallRecordingCustomGreetingsParameters? = null): com.ringcentral.definitions.CallRecordingCustomGreetings? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallRecordingCustomGreetings::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallRecordingCustomGreetings::class.java
+        )
 
     }
 

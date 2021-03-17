@@ -1,24 +1,27 @@
 package com.ringcentral.definitions;
 
 
-public class VoicemailInfo {
+    // Specifies whether to take a voicemail and who should do it
+public class VoicemailInfo
+{
     /**
-     * If 'True' then voicemails are allowed to be received
-     */
-    public Boolean enabled;
-    /**
-     * Recipient data
-     */
-    public RecipientInfo recipient;
+         * If 'True' then voicemails are allowed to be received
+         */
+        public Boolean enabled;
+  public VoicemailInfo enabled(Boolean enabled)
+  {
+    this.enabled = enabled;
+    return this;
+  }
+  
 
-    public VoicemailInfo enabled(Boolean enabled) {
-        this.enabled = enabled;
-        return this;
-    }
-
-    public VoicemailInfo recipient(RecipientInfo recipient) {
-        this.recipient = recipient;
-        return this;
-    }
-
+        /**
+         */
+        public RecipientInfo recipient;
+  public VoicemailInfo recipient(RecipientInfo recipient)
+  {
+    this.recipient = recipient;
+    return this;
+  }
+  
 }

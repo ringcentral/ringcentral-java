@@ -18,7 +18,10 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
     fun list(): com.ringcentral.definitions.GetVersionsResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetVersionsResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetVersionsResponse::class.java
+        )
 
     }
 
@@ -34,7 +37,10 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetVersionResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetVersionResponse::class.java
+        )
 
     }
 

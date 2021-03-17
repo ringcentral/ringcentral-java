@@ -1,42 +1,47 @@
 package com.ringcentral.definitions;
 
 
-public class GetExtensionForwardingNumberListResponse {
+public class GetExtensionForwardingNumberListResponse
+{
     /**
-     * Link to the forwarding number list resource
-     */
-    public String uri;
-    /**
-     * List of forwarding phone numbers
-     */
-    public ForwardingNumberInfo[] records;
-    /**
-     * Information on navigation
-     */
-    public CallHandlingNavigationInfo navigation;
-    /**
-     * Information on paging
-     */
-    public CallHandlingPagingInfo paging;
+         * Link to the forwarding number list resource
+         */
+        public String uri;
+  public GetExtensionForwardingNumberListResponse uri(String uri)
+  {
+    this.uri = uri;
+    return this;
+  }
+  
 
-    public GetExtensionForwardingNumberListResponse uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
+        /**
+         * List of forwarding phone numbers
+         */
+        public ForwardingNumberInfo[] records;
+  public GetExtensionForwardingNumberListResponse records(ForwardingNumberInfo[] records)
+  {
+    this.records = records;
+    return this;
+  }
+  
 
-    public GetExtensionForwardingNumberListResponse records(ForwardingNumberInfo[] records) {
-        this.records = records;
-        return this;
-    }
+        /**
+         */
+        public CallHandlingNavigationInfo navigation;
+  public GetExtensionForwardingNumberListResponse navigation(CallHandlingNavigationInfo navigation)
+  {
+    this.navigation = navigation;
+    return this;
+  }
+  
 
-    public GetExtensionForwardingNumberListResponse navigation(CallHandlingNavigationInfo navigation) {
-        this.navigation = navigation;
-        return this;
-    }
-
-    public GetExtensionForwardingNumberListResponse paging(CallHandlingPagingInfo paging) {
-        this.paging = paging;
-        return this;
-    }
-
+        /**
+         */
+        public CallHandlingPagingInfo paging;
+  public GetExtensionForwardingNumberListResponse paging(CallHandlingPagingInfo paging)
+  {
+    this.paging = paging;
+    return this;
+  }
+  
 }

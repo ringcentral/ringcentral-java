@@ -1,24 +1,28 @@
 package com.ringcentral.definitions;
 
 
-public class ContactCenterProvider {
+    // CCRN (Contact Center Routing Number) provider. If not specified then the default value 'InContact/North America' is used, its ID is '1'
+public class ContactCenterProvider
+{
     /**
-     * Internal identifier of the provider
-     */
-    public String id;
-    /**
-     * Provider's name
-     */
-    public String name;
+         * Internal identifier of the provider
+         */
+        public String id;
+  public ContactCenterProvider id(String id)
+  {
+    this.id = id;
+    return this;
+  }
+  
 
-    public ContactCenterProvider id(String id) {
-        this.id = id;
-        return this;
-    }
-
-    public ContactCenterProvider name(String name) {
-        this.name = name;
-        return this;
-    }
-
+        /**
+         * Provider's name
+         */
+        public String name;
+  public ContactCenterProvider name(String name)
+  {
+    this.name = name;
+    return this;
+  }
+  
 }

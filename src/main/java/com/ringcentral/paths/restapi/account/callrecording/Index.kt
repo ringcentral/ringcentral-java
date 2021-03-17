@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     fun get(): com.ringcentral.definitions.CallRecordingSettingsResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallRecordingSettingsResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallRecordingSettingsResource::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     fun put(callRecordingSettingsResource: com.ringcentral.definitions.CallRecordingSettingsResource): com.ringcentral.definitions.CallRecordingSettingsResource? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callRecordingSettingsResource)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallRecordingSettingsResource::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallRecordingSettingsResource::class.java
+        )
 
     }
 

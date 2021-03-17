@@ -9,18 +9,6 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
     }
 
     /**
-     * Operation: Create Note
-     * Http Post /restapi/v1.0/glip/chats/{chatId}/notes
-     */
-    fun post(glipNoteCreate: com.ringcentral.definitions.GlipNoteCreate): com.ringcentral.definitions.GlipNoteInfo? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(), glipNoteCreate)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipNoteInfo::class.java)
-
-    }
-
-
-    /**
      * Operation: Get Chat Notes
      * Http Get /restapi/v1.0/glip/chats/{chatId}/notes
      */
@@ -29,6 +17,18 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
         return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipNotesInfo::class.java)
+
+    }
+
+
+    /**
+     * Operation: Create Note
+     * Http Post /restapi/v1.0/glip/chats/{chatId}/notes
+     */
+    fun post(glipNoteCreate: com.ringcentral.definitions.GlipNoteCreate): com.ringcentral.definitions.GlipNoteInfo? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(), glipNoteCreate)
+
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipNoteInfo::class.java)
 
     }
 

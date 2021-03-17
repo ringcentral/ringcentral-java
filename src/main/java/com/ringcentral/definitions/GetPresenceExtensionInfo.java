@@ -1,33 +1,39 @@
 package com.ringcentral.definitions;
 
 
-public class GetPresenceExtensionInfo {
+    // Information on extension, for which this presence data is returned
+public class GetPresenceExtensionInfo
+{
     /**
-     * Internal identifier of an extension
-     */
-    public Long id;
-    /**
-     * Canonical URI of an extension
-     */
-    public String uri;
-    /**
-     * Extension number (usually 3 or 4 digits)
-     */
-    public String extensionNumber;
+         * Internal identifier of an extension
+         */
+        public Long id;
+  public GetPresenceExtensionInfo id(Long id)
+  {
+    this.id = id;
+    return this;
+  }
+  
 
-    public GetPresenceExtensionInfo id(Long id) {
-        this.id = id;
-        return this;
-    }
+        /**
+         * Canonical URI of an extension
+         */
+        public String uri;
+  public GetPresenceExtensionInfo uri(String uri)
+  {
+    this.uri = uri;
+    return this;
+  }
+  
 
-    public GetPresenceExtensionInfo uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
-
-    public GetPresenceExtensionInfo extensionNumber(String extensionNumber) {
-        this.extensionNumber = extensionNumber;
-        return this;
-    }
-
+        /**
+         * Extension number (usually 3 or 4 digits)
+         */
+        public String extensionNumber;
+  public GetPresenceExtensionInfo extensionNumber(String extensionNumber)
+  {
+    this.extensionNumber = extensionNumber;
+    return this;
+  }
+  
 }

@@ -1,6 +1,9 @@
 package com.ringcentral.paths.restapi.account.extension.callerblocking.phonenumbers
 
-class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerblocking.Index, val blockedNumberId: String? = null) {
+class Index(
+    val parent: com.ringcentral.paths.restapi.account.extension.callerblocking.Index,
+    val blockedNumberId: String? = null
+) {
     var rc: com.ringcentral.RestClient = parent.rc
 
 
@@ -20,7 +23,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerbl
     fun list(queryParams: com.ringcentral.definitions.ListBlockedAllowedNumbersParameters? = null): com.ringcentral.definitions.BlockedAllowedPhoneNumbersList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.BlockedAllowedPhoneNumbersList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.BlockedAllowedPhoneNumbersList::class.java
+        )
 
     }
 
@@ -32,7 +38,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerbl
     fun post(addBlockedAllowedPhoneNumber: com.ringcentral.definitions.AddBlockedAllowedPhoneNumber): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), addBlockedAllowedPhoneNumber)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo::class.java
+        )
 
     }
 
@@ -48,7 +57,29 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerbl
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo::class.java
+        )
+
+    }
+
+
+    /**
+     * Operation: Update Blocked/Allowed Number
+     * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
+     */
+    fun put(addBlockedAllowedPhoneNumber: com.ringcentral.definitions.AddBlockedAllowedPhoneNumber): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
+        if (this.blockedNumberId == null) {
+            throw NullPointerException("blockedNumberId");
+        }
+
+        val rb: okhttp3.ResponseBody = rc.put(this.path(), addBlockedAllowedPhoneNumber)
+
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo::class.java
+        )
 
     }
 
@@ -65,22 +96,6 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.callerbl
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
 
         return rb.string()
-
-    }
-
-
-    /**
-     * Operation: Update Blocked/Allowed Number
-     * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
-     */
-    fun put(addBlockedAllowedPhoneNumber: com.ringcentral.definitions.AddBlockedAllowedPhoneNumber): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
-        if (this.blockedNumberId == null) {
-            throw NullPointerException("blockedNumberId");
-        }
-
-        val rb: okhttp3.ResponseBody = rc.put(this.path(), addBlockedAllowedPhoneNumber)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo::class.java)
 
     }
 

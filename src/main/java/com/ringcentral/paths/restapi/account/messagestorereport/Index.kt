@@ -19,7 +19,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val taskId:
     fun post(createMessageStoreReportRequest: com.ringcentral.definitions.CreateMessageStoreReportRequest): com.ringcentral.definitions.MessageStoreReport? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createMessageStoreReportRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageStoreReport::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MessageStoreReport::class.java
+        )
 
     }
 
@@ -35,7 +38,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val taskId:
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageStoreReport::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MessageStoreReport::class.java
+        )
 
     }
 

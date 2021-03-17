@@ -13,11 +13,6 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val groupId: S
     }
 
 
-    fun posts(): com.ringcentral.paths.restapi.glip.groups.posts.Index {
-        return com.ringcentral.paths.restapi.glip.groups.posts.Index(this)
-    }
-
-
     fun events(): com.ringcentral.paths.restapi.glip.groups.events.Index {
         return com.ringcentral.paths.restapi.glip.groups.events.Index(this)
     }

@@ -54,22 +54,6 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
 
 
     /**
-     * Operation: Update Post
-     * Http Patch /restapi/v1.0/glip/chats/{chatId}/posts/{postId}
-     */
-    fun patch(glipPatchPostBody: com.ringcentral.definitions.GlipPatchPostBody): com.ringcentral.definitions.GlipPostInfo? {
-        if (this.postId == null) {
-            throw NullPointerException("postId");
-        }
-
-        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipPatchPostBody)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
-
-    }
-
-
-    /**
      * Operation: Delete Post
      * Http Delete /restapi/v1.0/glip/chats/{chatId}/posts/{postId}
      */
@@ -81,6 +65,22 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
 
         return rb.string()
+
+    }
+
+
+    /**
+     * Operation: Update Post
+     * Http Patch /restapi/v1.0/glip/chats/{chatId}/posts/{postId}
+     */
+    fun patch(glipPatchPostBody: com.ringcentral.definitions.GlipPatchPostBody): com.ringcentral.definitions.GlipPostInfo? {
+        if (this.postId == null) {
+            throw NullPointerException("postId");
+        }
+
+        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipPatchPostBody)
+
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipPostInfo::class.java)
 
     }
 

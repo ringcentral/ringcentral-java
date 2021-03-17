@@ -13,18 +13,6 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
     }
 
     /**
-     * Operation: Add Emergency Location
-     * Http Post /restapi/v1.0/account/{accountId}/emergency-locations
-     */
-    fun post(emergencyLocationInfoRequest: com.ringcentral.definitions.EmergencyLocationInfoRequest): String? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), emergencyLocationInfoRequest)
-
-        return rb.string()
-
-    }
-
-
-    /**
      * Operation: Get Emergency Location List
      * Http Get /restapi/v1.0/account/{accountId}/emergency-locations
      */
@@ -32,7 +20,22 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
     fun list(queryParams: com.ringcentral.definitions.ListEmergencyLocationsParameters? = null): com.ringcentral.definitions.EmergencyLocationList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.EmergencyLocationList::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.EmergencyLocationList::class.java
+        )
+
+    }
+
+
+    /**
+     * Operation: Add Emergency Location
+     * Http Post /restapi/v1.0/account/{accountId}/emergency-locations
+     */
+    fun post(emergencyLocationInfoRequest: com.ringcentral.definitions.EmergencyLocationInfoRequest): String? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(false), emergencyLocationInfoRequest)
+
+        return rb.string()
 
     }
 
@@ -48,7 +51,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.EmergencyLocationInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.EmergencyLocationInfo::class.java
+        )
 
     }
 
@@ -64,7 +70,27 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), emergencyLocationInfoRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.EmergencyLocationInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.EmergencyLocationInfo::class.java
+        )
+
+    }
+
+
+    /**
+     * Operation: Delete Emergency Location
+     * Http Delete /restapi/v1.0/account/{accountId}/emergency-locations/{locationId}
+     */
+    @JvmOverloads
+    fun delete(queryParams: com.ringcentral.definitions.DeleteEmergencyLocationParameters? = null): String? {
+        if (this.locationId == null) {
+            throw NullPointerException("locationId");
+        }
+
+        val rb: okhttp3.ResponseBody = rc.delete(this.path(), queryParams)
+
+        return rb.string()
 
     }
 

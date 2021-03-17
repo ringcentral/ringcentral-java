@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.pagingonlygroups.I
     fun get(queryParams: com.ringcentral.definitions.ListPagingGroupUsersParameters? = null): com.ringcentral.definitions.PagingOnlyGroupUsers? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PagingOnlyGroupUsers::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.PagingOnlyGroupUsers::class.java
+        )
 
     }
 

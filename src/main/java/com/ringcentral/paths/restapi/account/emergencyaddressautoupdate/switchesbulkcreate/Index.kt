@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
     fun post(createMultipleSwitchesRequest: com.ringcentral.definitions.CreateMultipleSwitchesRequest): com.ringcentral.definitions.CreateMultipleSwitchesResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createMultipleSwitchesRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CreateMultipleSwitchesResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CreateMultipleSwitchesResponse::class.java
+        )
 
     }
 

@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     fun list(queryParams: com.ringcentral.definitions.ListForwardingNumbersParameters? = null): com.ringcentral.definitions.GetExtensionForwardingNumberListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetExtensionForwardingNumberListResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetExtensionForwardingNumberListResponse::class.java
+        )
 
     }
 
@@ -32,7 +35,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
     fun post(createForwardingNumberRequest: com.ringcentral.definitions.CreateForwardingNumberRequest): com.ringcentral.definitions.ForwardingNumberInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createForwardingNumberRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ForwardingNumberInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ForwardingNumberInfo::class.java
+        )
 
     }
 
@@ -48,7 +54,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ForwardingNumberInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ForwardingNumberInfo::class.java
+        )
 
     }
 
@@ -64,7 +73,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), updateForwardingNumberRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ForwardingNumberInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ForwardingNumberInfo::class.java
+        )
 
     }
 

@@ -29,22 +29,6 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
 
 
     /**
-     * Operation: Patch Task
-     * Http Patch /restapi/v1.0/glip/tasks/{taskId}
-     */
-    fun patch(glipUpdateTask: com.ringcentral.definitions.GlipUpdateTask): com.ringcentral.definitions.GlipTaskList? {
-        if (this.taskId == null) {
-            throw NullPointerException("taskId");
-        }
-
-        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipUpdateTask)
-
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipTaskList::class.java)
-
-    }
-
-
-    /**
      * Operation: Delete Task
      * Http Delete /restapi/v1.0/glip/tasks/{taskId}
      */
@@ -56,6 +40,22 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
         val rb: okhttp3.ResponseBody = rc.delete(this.path())
 
         return rb.string()
+
+    }
+
+
+    /**
+     * Operation: Patch Task
+     * Http Patch /restapi/v1.0/glip/tasks/{taskId}
+     */
+    fun patch(glipUpdateTask: com.ringcentral.definitions.GlipUpdateTask): com.ringcentral.definitions.GlipTaskList? {
+        if (this.taskId == null) {
+            throw NullPointerException("taskId");
+        }
+
+        val rb: okhttp3.ResponseBody = rc.patch(this.path(), glipUpdateTask)
+
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GlipTaskList::class.java)
 
     }
 

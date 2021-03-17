@@ -1,24 +1,28 @@
 package com.ringcentral.definitions;
 
 
-public class ContactDirectorySiteInfo {
+    // Site Data
+public class ContactDirectorySiteInfo
+{
     /**
-     * Internal Identifier of a site
-     */
-    public String id;
-    /**
-     * Custom name of a site
-     */
-    public String name;
+         * Internal Identifier of a site
+         */
+        public String id;
+  public ContactDirectorySiteInfo id(String id)
+  {
+    this.id = id;
+    return this;
+  }
+  
 
-    public ContactDirectorySiteInfo id(String id) {
-        this.id = id;
-        return this;
-    }
-
-    public ContactDirectorySiteInfo name(String name) {
-        this.name = name;
-        return this;
-    }
-
+        /**
+         * Custom name of a site
+         */
+        public String name;
+  public ContactDirectorySiteInfo name(String name)
+  {
+    this.name = name;
+    return this;
+  }
+  
 }

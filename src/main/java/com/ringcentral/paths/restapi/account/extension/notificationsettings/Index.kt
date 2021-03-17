@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun get(): com.ringcentral.definitions.NotificationSettings? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.NotificationSettings::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.NotificationSettings::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun put(notificationSettingsUpdateRequest: com.ringcentral.definitions.NotificationSettingsUpdateRequest): com.ringcentral.definitions.NotificationSettings? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), notificationSettingsUpdateRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.NotificationSettings::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.NotificationSettings::class.java
+        )
 
     }
 

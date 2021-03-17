@@ -25,11 +25,12 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
 
     /**
-     * Operation: Upload User Profile Image
-     * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
+     * Operation: Update User Profile Image
+     * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
      */
-    fun post(createUserProfileImageRequest: com.ringcentral.definitions.CreateUserProfileImageRequest): String? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createUserProfileImageRequest, null, com.ringcentral.ContentType.MULTIPART)
+    fun put(updateUserProfileImageRequest: com.ringcentral.definitions.UpdateUserProfileImageRequest): String? {
+        val rb: okhttp3.ResponseBody =
+            rc.put(this.path(false), updateUserProfileImageRequest, null, com.ringcentral.ContentType.MULTIPART)
 
         return rb.string()
 
@@ -37,11 +38,12 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
 
     /**
-     * Operation: Update User Profile Image
-     * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
+     * Operation: Upload User Profile Image
+     * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
      */
-    fun put(updateUserProfileImageRequest: com.ringcentral.definitions.UpdateUserProfileImageRequest): String? {
-        val rb: okhttp3.ResponseBody = rc.put(this.path(false), updateUserProfileImageRequest, null, com.ringcentral.ContentType.MULTIPART)
+    fun post(createUserProfileImageRequest: com.ringcentral.definitions.CreateUserProfileImageRequest): String? {
+        val rb: okhttp3.ResponseBody =
+            rc.post(this.path(false), createUserProfileImageRequest, null, com.ringcentral.ContentType.MULTIPART)
 
         return rb.string()
 

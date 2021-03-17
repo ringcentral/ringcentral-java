@@ -17,10 +17,21 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting
      */
     @JvmOverloads
-    fun post(createCustomUserGreetingRequest: com.ringcentral.definitions.CreateCustomUserGreetingRequest, queryParams: com.ringcentral.definitions.CreateCustomUserGreetingParameters? = null): com.ringcentral.definitions.CustomUserGreetingInfo? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createCustomUserGreetingRequest, queryParams, com.ringcentral.ContentType.MULTIPART)
+    fun post(
+        createCustomUserGreetingRequest: com.ringcentral.definitions.CreateCustomUserGreetingRequest,
+        queryParams: com.ringcentral.definitions.CreateCustomUserGreetingParameters? = null
+    ): com.ringcentral.definitions.CustomUserGreetingInfo? {
+        val rb: okhttp3.ResponseBody = rc.post(
+            this.path(false),
+            createCustomUserGreetingRequest,
+            queryParams,
+            com.ringcentral.ContentType.MULTIPART
+        )
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomUserGreetingInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CustomUserGreetingInfo::class.java
+        )
 
     }
 
@@ -36,7 +47,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CustomUserGreetingInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CustomUserGreetingInfo::class.java
+        )
 
     }
 

@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun get(): com.ringcentral.definitions.CallerBlockingSettings? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallerBlockingSettings::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallerBlockingSettings::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
     fun put(callerBlockingSettingsUpdate: com.ringcentral.definitions.CallerBlockingSettingsUpdate): com.ringcentral.definitions.CallerBlockingSettings? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callerBlockingSettingsUpdate)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.CallerBlockingSettings::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CallerBlockingSettings::class.java
+        )
 
     }
 

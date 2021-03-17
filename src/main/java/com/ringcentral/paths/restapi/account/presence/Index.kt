@@ -16,7 +16,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     fun get(queryParams: com.ringcentral.definitions.ReadAccountPresenceParameters? = null): com.ringcentral.definitions.AccountPresenceInfo? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.AccountPresenceInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.AccountPresenceInfo::class.java
+        )
 
     }
 

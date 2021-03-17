@@ -13,10 +13,16 @@ class Index(val parent: com.ringcentral.paths.restapi.numberparser.Index) {
      * Http Post /restapi/v1.0/number-parser/parse
      */
     @JvmOverloads
-    fun post(parsePhoneNumberRequest: com.ringcentral.definitions.ParsePhoneNumberRequest, queryParams: com.ringcentral.definitions.ParsePhoneNumberParameters? = null): com.ringcentral.definitions.ParsePhoneNumberResponse? {
+    fun post(
+        parsePhoneNumberRequest: com.ringcentral.definitions.ParsePhoneNumberRequest,
+        queryParams: com.ringcentral.definitions.ParsePhoneNumberParameters? = null
+    ): com.ringcentral.definitions.ParsePhoneNumberResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), parsePhoneNumberRequest, queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.ParsePhoneNumberResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.ParsePhoneNumberResponse::class.java
+        )
 
     }
 

@@ -25,10 +25,13 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Update User Presence Status
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
      */
-    fun put(presenceInfoResource: com.ringcentral.definitions.PresenceInfoResource): com.ringcentral.definitions.PresenceInfoResponse? {
-        val rb: okhttp3.ResponseBody = rc.put(this.path(), presenceInfoResource)
+    fun put(presenceInfoRequest: com.ringcentral.definitions.PresenceInfoRequest): com.ringcentral.definitions.PresenceInfoResponse? {
+        val rb: okhttp3.ResponseBody = rc.put(this.path(), presenceInfoRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.PresenceInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.PresenceInfoResponse::class.java
+        )
 
     }
 

@@ -1,24 +1,28 @@
 package com.ringcentral.definitions;
 
 
-public class GetCountryInfoState {
+    // Information on a country the state belongs to
+public class GetCountryInfoState
+{
     /**
-     * Internal identifier of a state
-     */
-    public String id;
-    /**
-     * Canonical URI of a state
-     */
-    public String uri;
+         * Internal identifier of a state
+         */
+        public String id;
+  public GetCountryInfoState id(String id)
+  {
+    this.id = id;
+    return this;
+  }
+  
 
-    public GetCountryInfoState id(String id) {
-        this.id = id;
-        return this;
-    }
-
-    public GetCountryInfoState uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
-
+        /**
+         * Canonical URI of a state
+         */
+        public String uri;
+  public GetCountryInfoState uri(String uri)
+  {
+    this.uri = uri;
+    return this;
+  }
+  
 }

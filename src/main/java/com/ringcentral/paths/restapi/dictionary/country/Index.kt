@@ -20,7 +20,10 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val coun
     fun list(queryParams: com.ringcentral.definitions.ListCountriesParameters? = null): com.ringcentral.definitions.GetCountryListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetCountryListResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetCountryListResponse::class.java
+        )
 
     }
 
@@ -36,7 +39,10 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val coun
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetCountryInfoDictionaryResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetCountryInfoDictionaryResponse::class.java
+        )
 
     }
 

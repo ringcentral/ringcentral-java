@@ -16,10 +16,13 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
      * Operation: Send A2P SMS
      * Http Post /restapi/v1.0/account/{accountId}/a2p-sms/batch
      */
-    fun post(messageBatchCreateRequest: com.ringcentral.definitions.MessageBatchCreateRequest): com.ringcentral.definitions.MessageBatchResponse? {
-        val rb: okhttp3.ResponseBody = rc.post(this.path(false), messageBatchCreateRequest)
+    fun post(createSMSMessageBatchRequest: com.ringcentral.definitions.CreateSMSMessageBatchRequest): com.ringcentral.definitions.CreateMessageBatchResponse? {
+        val rb: okhttp3.ResponseBody = rc.post(this.path(false), createSMSMessageBatchRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageBatchResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.CreateMessageBatchResponse::class.java
+        )
 
     }
 
@@ -35,7 +38,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
 
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageBatchResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MessageBatchResponse::class.java
+        )
 
     }
 

@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
     fun post(updateMultipleWirelessPointsRequest: com.ringcentral.definitions.UpdateMultipleWirelessPointsRequest): com.ringcentral.definitions.UpdateMultipleWirelessPointsResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), updateMultipleWirelessPointsRequest)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.UpdateMultipleWirelessPointsResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.UpdateMultipleWirelessPointsResponse::class.java
+        )
 
     }
 

@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     fun get(): com.ringcentral.definitions.MessageStoreConfiguration? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageStoreConfiguration::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MessageStoreConfiguration::class.java
+        )
 
     }
 
@@ -27,7 +30,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
     fun put(messageStoreConfiguration: com.ringcentral.definitions.MessageStoreConfiguration): com.ringcentral.definitions.MessageStoreConfiguration? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), messageStoreConfiguration)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.MessageStoreConfiguration::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.MessageStoreConfiguration::class.java
+        )
 
     }
 

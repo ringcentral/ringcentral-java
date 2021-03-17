@@ -1,6 +1,9 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings
 
-class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions.parties.Index, val recordingId: String? = null) {
+class Index(
+    val parent: com.ringcentral.paths.restapi.account.telephony.sessions.parties.Index,
+    val recordingId: String? = null
+) {
     var rc: com.ringcentral.RestClient = parent.rc
 
 
@@ -29,7 +32,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Http Patch /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings/{recordingId}
      */
     @JvmOverloads
-    fun patch(callRecordingUpdate: com.ringcentral.definitions.CallRecordingUpdate, queryParams: com.ringcentral.definitions.PauseResumeCallRecordingParameters? = null): com.ringcentral.definitions.CallRecording? {
+    fun patch(
+        callRecordingUpdate: com.ringcentral.definitions.CallRecordingUpdate,
+        queryParams: com.ringcentral.definitions.PauseResumeCallRecordingParameters? = null
+    ): com.ringcentral.definitions.CallRecording? {
         if (this.recordingId == null) {
             throw NullPointerException("recordingId");
         }

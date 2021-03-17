@@ -24,7 +24,10 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val deviceI
 
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetDeviceInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetDeviceInfoResponse::class.java
+        )
 
     }
 
@@ -34,14 +37,20 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val deviceI
      * Http Put /restapi/v1.0/account/{accountId}/device/{deviceId}
      */
     @JvmOverloads
-    fun put(accountDeviceUpdate: com.ringcentral.definitions.AccountDeviceUpdate, queryParams: com.ringcentral.definitions.UpdateDeviceParameters? = null): com.ringcentral.definitions.GetDeviceInfoResponse? {
+    fun put(
+        accountDeviceUpdate: com.ringcentral.definitions.AccountDeviceUpdate,
+        queryParams: com.ringcentral.definitions.UpdateDeviceParameters? = null
+    ): com.ringcentral.definitions.GetDeviceInfoResponse? {
         if (this.deviceId == null) {
             throw NullPointerException("deviceId");
         }
 
         val rb: okhttp3.ResponseBody = rc.put(this.path(), accountDeviceUpdate, queryParams)
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.GetDeviceInfoResponse::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.GetDeviceInfoResponse::class.java
+        )
 
     }
 

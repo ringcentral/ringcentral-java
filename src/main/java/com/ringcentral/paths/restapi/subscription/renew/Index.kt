@@ -15,7 +15,10 @@ class Index(val parent: com.ringcentral.paths.restapi.subscription.Index) {
     fun post(): com.ringcentral.definitions.SubscriptionInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path())
 
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), com.ringcentral.definitions.SubscriptionInfo::class.java)
+        return com.ringcentral.Utils.gson.fromJson(
+            rb.string(),
+            com.ringcentral.definitions.SubscriptionInfo::class.java
+        )
 
     }
 

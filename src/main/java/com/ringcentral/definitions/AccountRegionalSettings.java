@@ -1,70 +1,78 @@
 package com.ringcentral.definitions;
 
 
-public class AccountRegionalSettings {
+    // Account level region data (web service Auto-Receptionist settings)
+public class AccountRegionalSettings
+{
     /**
-     * Extension country information
-     */
-    public CountryInfo homeCountry;
-    /**
-     * Extension timezone information
-     */
-    public TimezoneInfo timezone;
-    /**
-     * User interface language data
-     */
-    public LanguageInfo language;
-    /**
-     * Information on language used for telephony greetings
-     */
-    public GreetingLanguageInfo greetingLanguage;
-    /**
-     * Formatting language preferences for numbers, dates and currencies
-     */
-    public FormattingLocaleInfo formattingLocale;
-    /**
-     * Time format setting. The default value is '12h' = ['12h', '24h']
-     * Enum: 12h, 24h
-     */
-    public String timeFormat;
-    /**
-     * Currency information
-     */
-    public CurrencyInfo currency;
+         */
+        public CountryInfo homeCountry;
+  public AccountRegionalSettings homeCountry(CountryInfo homeCountry)
+  {
+    this.homeCountry = homeCountry;
+    return this;
+  }
+  
 
-    public AccountRegionalSettings homeCountry(CountryInfo homeCountry) {
-        this.homeCountry = homeCountry;
-        return this;
-    }
+        /**
+         */
+        public TimezoneInfo timezone;
+  public AccountRegionalSettings timezone(TimezoneInfo timezone)
+  {
+    this.timezone = timezone;
+    return this;
+  }
+  
 
-    public AccountRegionalSettings timezone(TimezoneInfo timezone) {
-        this.timezone = timezone;
-        return this;
-    }
+        /**
+         */
+        public LanguageInfo language;
+  public AccountRegionalSettings language(LanguageInfo language)
+  {
+    this.language = language;
+    return this;
+  }
+  
 
-    public AccountRegionalSettings language(LanguageInfo language) {
-        this.language = language;
-        return this;
-    }
+        /**
+         */
+        public GreetingLanguageInfo greetingLanguage;
+  public AccountRegionalSettings greetingLanguage(GreetingLanguageInfo greetingLanguage)
+  {
+    this.greetingLanguage = greetingLanguage;
+    return this;
+  }
+  
 
-    public AccountRegionalSettings greetingLanguage(GreetingLanguageInfo greetingLanguage) {
-        this.greetingLanguage = greetingLanguage;
-        return this;
-    }
+        /**
+         */
+        public FormattingLocaleInfo formattingLocale;
+  public AccountRegionalSettings formattingLocale(FormattingLocaleInfo formattingLocale)
+  {
+    this.formattingLocale = formattingLocale;
+    return this;
+  }
+  
 
-    public AccountRegionalSettings formattingLocale(FormattingLocaleInfo formattingLocale) {
-        this.formattingLocale = formattingLocale;
-        return this;
-    }
+        /**
+         * Time format setting. The default value is '12h' = ['12h', '24h']
+         * Enum: 12h, 24h
+         */
+        public String timeFormat;
+  public AccountRegionalSettings timeFormat(String timeFormat)
+  {
+    this.timeFormat = timeFormat;
+    return this;
+  }
+  
 
-    public AccountRegionalSettings timeFormat(String timeFormat) {
-        this.timeFormat = timeFormat;
-        return this;
-    }
-
-    public AccountRegionalSettings currency(CurrencyInfo currency) {
-        this.currency = currency;
-        return this;
-    }
-
+        /**
+         */
+        public CurrencyInfo currency;
+  public AccountRegionalSettings currency(CurrencyInfo currency)
+  {
+    this.currency = currency;
+    return this;
+  }
+  
 }

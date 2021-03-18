@@ -127,7 +127,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().batch().post(createSmsMessageBatchRequest);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().batch().post(createSmsMessageBatchRequest);
 rc.revoke();
 ```
 - Parameter `createSmsMessageBatchRequest` is of type [CreateSMSMessageBatchRequest](./src/main/java/com/ringcentral/definitions/CreateSMSMessageBatchRequest.java)
@@ -151,7 +151,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().batch(batchId).get();
+var result = rc.restapi(apiVersion).account(accountId).a2psms().batch(batchId).get();
 rc.revoke();
 ```
 
@@ -175,7 +175,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().messages().list(listA2PsmsParameters);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().messages().list(listA2PsmsParameters);
 rc.revoke();
 ```
 - Parameter `listA2PsmsParameters` is of type [ListA2PsmsParameters](./src/main/java/com/ringcentral/definitions/ListA2PsmsParameters.java)
@@ -199,7 +199,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().messages(messageId).get();
+var result = rc.restapi(apiVersion).account(accountId).a2psms().messages(messageId).get();
 rc.revoke();
 ```
 
@@ -223,7 +223,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).a2pSms().optOuts().get(readA2PsmsOptOutsParameters);
+var result = rc.restapi(apiVersion).account(accountId).a2psms().optouts().get(readA2PsmsOptOutsParameters);
 rc.revoke();
 ```
 - Parameter `readA2PsmsOptOutsParameters` is of type [ReadA2PsmsOptOutsParameters](./src/main/java/com/ringcentral/definitions/ReadA2PsmsOptOutsParameters.java)
@@ -247,7 +247,7 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).activeCalls().get(listCompanyActiveCallsParameters);
+var result = rc.restapi(apiVersion).account(accountId).activecalls().get(listCompanyActiveCallsParameters);
 rc.revoke();
 ```
 - Parameter `listCompanyActiveCallsParameters` is of type [ListCompanyActiveCallsParameters](./src/main/java/com/ringcentral/definitions/ListCompanyActiveCallsParameters.java)
@@ -271,7 +271,7 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).addressBookBulkUpload().post(addressBookBulkUploadRequest);
+var result = rc.restapi(apiVersion).account(accountId).addressbookbulkupload().post(addressBookBulkUploadRequest);
 rc.revoke();
 ```
 - Parameter `addressBookBulkUploadRequest` is of type [AddressBookBulkUploadRequest](./src/main/java/com/ringcentral/definitions/AddressBookBulkUploadRequest.java)
@@ -295,7 +295,7 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).addressBookBulkUpload().tasks(taskId).get();
+var result = rc.restapi(apiVersion).account(accountId).addressbookbulkupload().tasks(taskId).get();
 rc.revoke();
 ```
 
@@ -319,7 +319,7 @@ User Permission|`ReadCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule().list(listCompanyAnsweringRulesParameters);
+var result = rc.restapi(apiVersion).account(accountId).answeringrule().list(listCompanyAnsweringRulesParameters);
 rc.revoke();
 ```
 - Parameter `listCompanyAnsweringRulesParameters` is of type [ListCompanyAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListCompanyAnsweringRulesParameters.java)
@@ -343,7 +343,7 @@ User Permission|`EditCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule().post(companyAnsweringRuleRequest);
+var result = rc.restapi(apiVersion).account(accountId).answeringrule().post(companyAnsweringRuleRequest);
 rc.revoke();
 ```
 - Parameter `companyAnsweringRuleRequest` is of type [CompanyAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleRequest.java)
@@ -367,7 +367,7 @@ User Permission|`ReadCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).get();
+var result = rc.restapi(apiVersion).account(accountId).answeringrule(ruleId).get();
 rc.revoke();
 ```
 
@@ -391,7 +391,7 @@ User Permission|`EditCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).put(companyAnsweringRuleUpdate);
+var result = rc.restapi(apiVersion).account(accountId).answeringrule(ruleId).put(companyAnsweringRuleUpdate);
 rc.revoke();
 ```
 - Parameter `companyAnsweringRuleUpdate` is of type [CompanyAnsweringRuleUpdate](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleUpdate.java)
@@ -415,7 +415,7 @@ User Permission|`EditCompanyAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).delete();
+var result = rc.restapi(apiVersion).account(accountId).answeringrule(ruleId).delete();
 rc.revoke();
 ```
 
@@ -439,7 +439,7 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessAddress().get();
+var result = rc.restapi(apiVersion).account(accountId).businessaddress().get();
 rc.revoke();
 ```
 
@@ -463,7 +463,7 @@ User Permission|`EditCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessAddress().put(modifyAccountBusinessAddressRequest);
+var result = rc.restapi(apiVersion).account(accountId).businessaddress().put(modifyAccountBusinessAddressRequest);
 rc.revoke();
 ```
 - Parameter `modifyAccountBusinessAddressRequest` is of type [ModifyAccountBusinessAddressRequest](./src/main/java/com/ringcentral/definitions/ModifyAccountBusinessAddressRequest.java)
@@ -487,7 +487,7 @@ User Permission|`ReadUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessHours().get();
+var result = rc.restapi(apiVersion).account(accountId).businesshours().get();
 rc.revoke();
 ```
 
@@ -511,7 +511,7 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).businessHours().put(companyBusinessHoursUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).businesshours().put(companyBusinessHoursUpdateRequest);
 rc.revoke();
 ```
 - Parameter `companyBusinessHoursUpdateRequest` is of type [CompanyBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/CompanyBusinessHoursUpdateRequest.java)
@@ -535,7 +535,7 @@ User Permission|`FullCompanyCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callLog().list(readCompanyCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).calllog().list(readCompanyCallLogParameters);
 rc.revoke();
 ```
 - Parameter `readCompanyCallLogParameters` is of type [ReadCompanyCallLogParameters](./src/main/java/com/ringcentral/definitions/ReadCompanyCallLogParameters.java)
@@ -559,7 +559,7 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callLogSync().get(syncAccountCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).calllogsync().get(syncAccountCallLogParameters);
 rc.revoke();
 ```
 - Parameter `syncAccountCallLogParameters` is of type [SyncAccountCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncAccountCallLogParameters.java)
@@ -583,7 +583,7 @@ User Permission|`FullCompanyCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callLog(callRecordId).get(readCompanyCallRecordParameters);
+var result = rc.restapi(apiVersion).account(accountId).calllog(callRecordId).get(readCompanyCallRecordParameters);
 rc.revoke();
 ```
 - Parameter `readCompanyCallRecordParameters` is of type [ReadCompanyCallRecordParameters](./src/main/java/com/ringcentral/definitions/ReadCompanyCallRecordParameters.java)
@@ -607,7 +607,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().get(listCallMonitoringGroupsParameters);
+var result = rc.restapi(apiVersion).account(accountId).callmonitoringgroups().get(listCallMonitoringGroupsParameters);
 rc.revoke();
 ```
 - Parameter `listCallMonitoringGroupsParameters` is of type [ListCallMonitoringGroupsParameters](./src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupsParameters.java)
@@ -631,7 +631,7 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups().post(createCallMonitoringGroupRequest);
+var result = rc.restapi(apiVersion).account(accountId).callmonitoringgroups().post(createCallMonitoringGroupRequest);
 rc.revoke();
 ```
 - Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.java)
@@ -655,7 +655,7 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).put(createCallMonitoringGroupRequest);
+var result = rc.restapi(apiVersion).account(accountId).callmonitoringgroups(groupId).put(createCallMonitoringGroupRequest);
 rc.revoke();
 ```
 - Parameter `createCallMonitoringGroupRequest` is of type [CreateCallMonitoringGroupRequest](./src/main/java/com/ringcentral/definitions/CreateCallMonitoringGroupRequest.java)
@@ -679,7 +679,7 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).delete();
+var result = rc.restapi(apiVersion).account(accountId).callmonitoringgroups(groupId).delete();
 rc.revoke();
 ```
 
@@ -703,7 +703,7 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).bulkAssign().post(callMonitoringBulkAssign);
+var result = rc.restapi(apiVersion).account(accountId).callmonitoringgroups(groupId).bulkassign().post(callMonitoringBulkAssign);
 rc.revoke();
 ```
 - Parameter `callMonitoringBulkAssign` is of type [CallMonitoringBulkAssign](./src/main/java/com/ringcentral/definitions/CallMonitoringBulkAssign.java)
@@ -727,7 +727,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callMonitoringGroups(groupId).members().get(listCallMonitoringGroupMembersParameters);
+var result = rc.restapi(apiVersion).account(accountId).callmonitoringgroups(groupId).members().get(listCallMonitoringGroupMembersParameters);
 rc.revoke();
 ```
 - Parameter `listCallMonitoringGroupMembersParameters` is of type [ListCallMonitoringGroupMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallMonitoringGroupMembersParameters.java)
@@ -751,7 +751,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues().list(listCallQueuesParameters);
+var result = rc.restapi(apiVersion).account(accountId).callqueues().list(listCallQueuesParameters);
 rc.revoke();
 ```
 - Parameter `listCallQueuesParameters` is of type [ListCallQueuesParameters](./src/main/java/com/ringcentral/definitions/ListCallQueuesParameters.java)
@@ -775,7 +775,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).get();
+var result = rc.restapi(apiVersion).account(accountId).callqueues(groupId).get();
 rc.revoke();
 ```
 
@@ -799,7 +799,7 @@ User Permission|`EditUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).put(callQueueUpdateDetails);
+var result = rc.restapi(apiVersion).account(accountId).callqueues(groupId).put(callQueueUpdateDetails);
 rc.revoke();
 ```
 - Parameter `callQueueUpdateDetails` is of type [CallQueueUpdateDetails](./src/main/java/com/ringcentral/definitions/CallQueueUpdateDetails.java)
@@ -823,7 +823,7 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).bulkAssign().post(callQueueBulkAssignResource);
+var result = rc.restapi(apiVersion).account(accountId).callqueues(groupId).bulkassign().post(callQueueBulkAssignResource);
 rc.revoke();
 ```
 - Parameter `callQueueBulkAssignResource` is of type [CallQueueBulkAssignResource](./src/main/java/com/ringcentral/definitions/CallQueueBulkAssignResource.java)
@@ -847,7 +847,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).members().get(listCallQueueMembersParameters);
+var result = rc.restapi(apiVersion).account(accountId).callqueues(groupId).members().get(listCallQueueMembersParameters);
 rc.revoke();
 ```
 - Parameter `listCallQueueMembersParameters` is of type [ListCallQueueMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallQueueMembersParameters.java)
@@ -871,7 +871,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().get();
+var result = rc.restapi(apiVersion).account(accountId).callqueues(groupId).presence().get();
 rc.revoke();
 ```
 
@@ -895,7 +895,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().put(callQueueUpdatePresence);
+var result = rc.restapi(apiVersion).account(accountId).callqueues(groupId).presence().put(callQueueUpdatePresence);
 rc.revoke();
 ```
 - Parameter `callQueueUpdatePresence` is of type [CallQueueUpdatePresence](./src/main/java/com/ringcentral/definitions/CallQueueUpdatePresence.java)
@@ -919,7 +919,7 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().get();
+var result = rc.restapi(apiVersion).account(accountId).callrecording().get();
 rc.revoke();
 ```
 
@@ -943,7 +943,7 @@ User Permission|`EditCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().put(callRecordingSettingsResource);
+var result = rc.restapi(apiVersion).account(accountId).callrecording().put(callRecordingSettingsResource);
 rc.revoke();
 ```
 - Parameter `callRecordingSettingsResource` is of type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
@@ -967,7 +967,7 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().bulkAssign().post(bulkAccountCallRecordingsResource);
+var result = rc.restapi(apiVersion).account(accountId).callrecording().bulkassign().post(bulkAccountCallRecordingsResource);
 rc.revoke();
 ```
 - Parameter `bulkAccountCallRecordingsResource` is of type [BulkAccountCallRecordingsResource](./src/main/java/com/ringcentral/definitions/BulkAccountCallRecordingsResource.java)
@@ -991,7 +991,7 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings().get(listCallRecordingCustomGreetingsParameters);
+var result = rc.restapi(apiVersion).account(accountId).callrecording().customgreetings().get(listCallRecordingCustomGreetingsParameters);
 rc.revoke();
 ```
 - Parameter `listCallRecordingCustomGreetingsParameters` is of type [ListCallRecordingCustomGreetingsParameters](./src/main/java/com/ringcentral/definitions/ListCallRecordingCustomGreetingsParameters.java)
@@ -1015,7 +1015,7 @@ User Permission|`EditCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().customGreetings(greetingId).delete();
+var result = rc.restapi(apiVersion).account(accountId).callrecording().customgreetings(greetingId).delete();
 rc.revoke();
 ```
 
@@ -1039,7 +1039,7 @@ User Permission|`ReadCompanyInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).callRecording().extensions().get();
+var result = rc.restapi(apiVersion).account(accountId).callrecording().extensions().get();
 rc.revoke();
 ```
 
@@ -1063,7 +1063,7 @@ User Permission|`ReadUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields().get();
+var result = rc.restapi(apiVersion).account(accountId).customfields().get();
 rc.revoke();
 ```
 
@@ -1087,7 +1087,7 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields().post(customFieldCreateRequest);
+var result = rc.restapi(apiVersion).account(accountId).customfields().post(customFieldCreateRequest);
 rc.revoke();
 ```
 - Parameter `customFieldCreateRequest` is of type [CustomFieldCreateRequest](./src/main/java/com/ringcentral/definitions/CustomFieldCreateRequest.java)
@@ -1111,7 +1111,7 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).put(customFieldUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).customfields(fieldId).put(customFieldUpdateRequest);
 rc.revoke();
 ```
 - Parameter `customFieldUpdateRequest` is of type [CustomFieldUpdateRequest](./src/main/java/com/ringcentral/definitions/CustomFieldUpdateRequest.java)
@@ -1135,7 +1135,7 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).customFields(fieldId).delete();
+var result = rc.restapi(apiVersion).account(accountId).customfields(fieldId).delete();
 rc.revoke();
 ```
 
@@ -1304,7 +1304,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().get(listDevicesAutomaticLocationUpdatesParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().devices().get(listDevicesAutomaticLocationUpdatesParameters);
 rc.revoke();
 ```
 - Parameter `listDevicesAutomaticLocationUpdatesParameters` is of type [ListDevicesAutomaticLocationUpdatesParameters](./src/main/java/com/ringcentral/definitions/ListDevicesAutomaticLocationUpdatesParameters.java)
@@ -1328,7 +1328,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().devices().bulkAssign().post(assignMultipleDevicesAutomaticLocationUpdates);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().devices().bulkassign().post(assignMultipleDevicesAutomaticLocationUpdates);
 rc.revoke();
 ```
 - Parameter `assignMultipleDevicesAutomaticLocationUpdates` is of type [AssignMultipleDevicesAutomaticLocationUpdates](./src/main/java/com/ringcentral/definitions/AssignMultipleDevicesAutomaticLocationUpdates.java)
@@ -1352,7 +1352,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().list();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().networks().list();
 rc.revoke();
 ```
 
@@ -1376,7 +1376,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks().post(createNetworkRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().networks().post(createNetworkRequest);
 rc.revoke();
 ```
 - Parameter `createNetworkRequest` is of type [CreateNetworkRequest](./src/main/java/com/ringcentral/definitions/CreateNetworkRequest.java)
@@ -1400,7 +1400,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().networks(networkId).get();
 rc.revoke();
 ```
 
@@ -1424,7 +1424,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).put(updateNetworkRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().networks(networkId).put(updateNetworkRequest);
 rc.revoke();
 ```
 - Parameter `updateNetworkRequest` is of type [UpdateNetworkRequest](./src/main/java/com/ringcentral/definitions/UpdateNetworkRequest.java)
@@ -1448,7 +1448,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().networks(networkId).delete();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().networks(networkId).delete();
 rc.revoke();
 ```
 
@@ -1472,7 +1472,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().list(listAccountSwitchesParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switches().list(listAccountSwitchesParameters);
 rc.revoke();
 ```
 - Parameter `listAccountSwitchesParameters` is of type [ListAccountSwitchesParameters](./src/main/java/com/ringcentral/definitions/ListAccountSwitchesParameters.java)
@@ -1496,7 +1496,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches().post(createSwitchInfo);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switches().post(createSwitchInfo);
 rc.revoke();
 ```
 - Parameter `createSwitchInfo` is of type [CreateSwitchInfo](./src/main/java/com/ringcentral/definitions/CreateSwitchInfo.java)
@@ -1520,7 +1520,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkCreate().post(createMultipleSwitchesRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switchesbulkcreate().post(createMultipleSwitchesRequest);
 rc.revoke();
 ```
 - Parameter `createMultipleSwitchesRequest` is of type [CreateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/CreateMultipleSwitchesRequest.java)
@@ -1544,7 +1544,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkUpdate().post(updateMultipleSwitchesRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switchesbulkupdate().post(updateMultipleSwitchesRequest);
 rc.revoke();
 ```
 - Parameter `updateMultipleSwitchesRequest` is of type [UpdateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/UpdateMultipleSwitchesRequest.java)
@@ -1568,7 +1568,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switchesBulkValidate().post(validateMultipleSwitchesRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switchesbulkvalidate().post(validateMultipleSwitchesRequest);
 rc.revoke();
 ```
 - Parameter `validateMultipleSwitchesRequest` is of type [ValidateMultipleSwitchesRequest](./src/main/java/com/ringcentral/definitions/ValidateMultipleSwitchesRequest.java)
@@ -1592,7 +1592,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switches(switchId).get();
 rc.revoke();
 ```
 
@@ -1616,7 +1616,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).put(updateSwitchInfo);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switches(switchId).put(updateSwitchInfo);
 rc.revoke();
 ```
 - Parameter `updateSwitchInfo` is of type [UpdateSwitchInfo](./src/main/java/com/ringcentral/definitions/UpdateSwitchInfo.java)
@@ -1640,7 +1640,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().switches(switchId).delete();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().switches(switchId).delete();
 rc.revoke();
 ```
 
@@ -1664,7 +1664,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().tasks(taskId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().tasks(taskId).get();
 rc.revoke();
 ```
 
@@ -1688,7 +1688,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().get(listAutomaticLocationUpdatesUsersParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().users().get(listAutomaticLocationUpdatesUsersParameters);
 rc.revoke();
 ```
 - Parameter `listAutomaticLocationUpdatesUsersParameters` is of type [ListAutomaticLocationUpdatesUsersParameters](./src/main/java/com/ringcentral/definitions/ListAutomaticLocationUpdatesUsersParameters.java)
@@ -1712,7 +1712,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().users().bulkAssign().post(bulkAssignAutomaticLocationUpdatesUsers);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().users().bulkassign().post(bulkAssignAutomaticLocationUpdatesUsers);
 rc.revoke();
 ```
 - Parameter `bulkAssignAutomaticLocationUpdatesUsers` is of type [BulkAssignAutomaticLocationUpdatesUsers](./src/main/java/com/ringcentral/definitions/BulkAssignAutomaticLocationUpdatesUsers.java)
@@ -1736,7 +1736,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().list(listWirelessPointsParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspoints().list(listWirelessPointsParameters);
 rc.revoke();
 ```
 - Parameter `listWirelessPointsParameters` is of type [ListWirelessPointsParameters](./src/main/java/com/ringcentral/definitions/ListWirelessPointsParameters.java)
@@ -1760,7 +1760,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints().post(createWirelessPoint);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspoints().post(createWirelessPoint);
 rc.revoke();
 ```
 - Parameter `createWirelessPoint` is of type [CreateWirelessPoint](./src/main/java/com/ringcentral/definitions/CreateWirelessPoint.java)
@@ -1784,7 +1784,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkCreate().post(createMultipleWirelessPointsRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspointsbulkcreate().post(createMultipleWirelessPointsRequest);
 rc.revoke();
 ```
 - Parameter `createMultipleWirelessPointsRequest` is of type [CreateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/CreateMultipleWirelessPointsRequest.java)
@@ -1808,7 +1808,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkUpdate().post(updateMultipleWirelessPointsRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspointsbulkupdate().post(updateMultipleWirelessPointsRequest);
 rc.revoke();
 ```
 - Parameter `updateMultipleWirelessPointsRequest` is of type [UpdateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/UpdateMultipleWirelessPointsRequest.java)
@@ -1832,7 +1832,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPointsBulkValidate().post(validateMultipleWirelessPointsRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspointsbulkvalidate().post(validateMultipleWirelessPointsRequest);
 rc.revoke();
 ```
 - Parameter `validateMultipleWirelessPointsRequest` is of type [ValidateMultipleWirelessPointsRequest](./src/main/java/com/ringcentral/definitions/ValidateMultipleWirelessPointsRequest.java)
@@ -1856,7 +1856,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspoints(pointId).get();
 rc.revoke();
 ```
 
@@ -1880,7 +1880,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).put(updateWirelessPoint);
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspoints(pointId).put(updateWirelessPoint);
 rc.revoke();
 ```
 - Parameter `updateWirelessPoint` is of type [UpdateWirelessPoint](./src/main/java/com/ringcentral/definitions/UpdateWirelessPoint.java)
@@ -1904,7 +1904,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyAddressAutoUpdate().wirelessPoints(pointId).delete();
+var result = rc.restapi(apiVersion).account(accountId).emergencyaddressautoupdate().wirelesspoints(pointId).delete();
 rc.revoke();
 ```
 
@@ -1928,7 +1928,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations().list(listEmergencyLocationsParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencylocations().list(listEmergencyLocationsParameters);
 rc.revoke();
 ```
 - Parameter `listEmergencyLocationsParameters` is of type [ListEmergencyLocationsParameters](./src/main/java/com/ringcentral/definitions/ListEmergencyLocationsParameters.java)
@@ -1952,7 +1952,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations().post(emergencyLocationInfoRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencylocations().post(emergencyLocationInfoRequest);
 rc.revoke();
 ```
 - Parameter `emergencyLocationInfoRequest` is of type [EmergencyLocationInfoRequest](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfoRequest.java)
@@ -1976,7 +1976,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations(locationId).get();
+var result = rc.restapi(apiVersion).account(accountId).emergencylocations(locationId).get();
 rc.revoke();
 ```
 
@@ -2000,7 +2000,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations(locationId).put(emergencyLocationInfoRequest);
+var result = rc.restapi(apiVersion).account(accountId).emergencylocations(locationId).put(emergencyLocationInfoRequest);
 rc.revoke();
 ```
 - Parameter `emergencyLocationInfoRequest` is of type [EmergencyLocationInfoRequest](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfoRequest.java)
@@ -2024,7 +2024,7 @@ User Permission|`ConfigureEmergencyMaps`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).emergencyLocations(locationId).delete(deleteEmergencyLocationParameters);
+var result = rc.restapi(apiVersion).account(accountId).emergencylocations(locationId).delete(deleteEmergencyLocationParameters);
 rc.revoke();
 ```
 - Parameter `deleteEmergencyLocationParameters` is of type [DeleteEmergencyLocationParameters](./src/main/java/com/ringcentral/definitions/DeleteEmergencyLocationParameters.java)
@@ -2096,7 +2096,7 @@ User Permission|`EditExtensionInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extensionBulkUpdate().post(extensionBulkUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).extensionbulkupdate().post(extensionBulkUpdateRequest);
 rc.revoke();
 ```
 - Parameter `extensionBulkUpdateRequest` is of type [ExtensionBulkUpdateRequest](./src/main/java/com/ringcentral/definitions/ExtensionBulkUpdateRequest.java)
@@ -2120,7 +2120,7 @@ User Permission|`EditExtensionInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extensionBulkUpdate().tasks(taskId).get();
+var result = rc.restapi(apiVersion).account(accountId).extensionbulkupdate().tasks(taskId).get();
 rc.revoke();
 ```
 
@@ -2219,7 +2219,7 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).activeCalls().get(listExtensionActiveCallsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).activecalls().get(listExtensionActiveCallsParameters);
 rc.revoke();
 ```
 - Parameter `listExtensionActiveCallsParameters` is of type [ListExtensionActiveCallsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionActiveCallsParameters.java)
@@ -2244,7 +2244,7 @@ User Permission|`ReadPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBookSync().get(syncAddressBookParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressbooksync().get(syncAddressBookParameters);
 rc.revoke();
 ```
 - Parameter `syncAddressBookParameters` is of type [SyncAddressBookParameters](./src/main/java/com/ringcentral/definitions/SyncAddressBookParameters.java)
@@ -2269,7 +2269,7 @@ User Permission|`ReadPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().list(listContactsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressbook().contact().list(listContactsParameters);
 rc.revoke();
 ```
 - Parameter `listContactsParameters` is of type [ListContactsParameters](./src/main/java/com/ringcentral/definitions/ListContactsParameters.java)
@@ -2294,7 +2294,7 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact().post(personalContactRequest, createContactParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressbook().contact().post(personalContactRequest, createContactParameters);
 rc.revoke();
 ```
 - Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/main/java/com/ringcentral/definitions/PersonalContactRequest.java)
@@ -2320,7 +2320,7 @@ User Permission|`ReadPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressbook().contact(contactId).get();
 rc.revoke();
 ```
 
@@ -2345,7 +2345,7 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).put(personalContactRequest, updateContactParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressbook().contact(contactId).put(personalContactRequest, updateContactParameters);
 rc.revoke();
 ```
 - Parameter `personalContactRequest` is of type [PersonalContactRequest](./src/main/java/com/ringcentral/definitions/PersonalContactRequest.java)
@@ -2371,7 +2371,7 @@ User Permission|`EditPersonalContacts`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressBook().contact(contactId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).addressbook().contact(contactId).delete();
 rc.revoke();
 ```
 
@@ -2396,7 +2396,7 @@ User Permission|`ReadUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().list(listAnsweringRulesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringrule().list(listAnsweringRulesParameters);
 rc.revoke();
 ```
 - Parameter `listAnsweringRulesParameters` is of type [ListAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListAnsweringRulesParameters.java)
@@ -2421,7 +2421,7 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule().post(createAnsweringRuleRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringrule().post(createAnsweringRuleRequest);
 rc.revoke();
 ```
 - Parameter `createAnsweringRuleRequest` is of type [CreateAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CreateAnsweringRuleRequest.java)
@@ -2446,7 +2446,7 @@ User Permission|`ReadUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).get(readAnsweringRuleParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringrule(ruleId).get(readAnsweringRuleParameters);
 rc.revoke();
 ```
 - Parameter `readAnsweringRuleParameters` is of type [ReadAnsweringRuleParameters](./src/main/java/com/ringcentral/definitions/ReadAnsweringRuleParameters.java)
@@ -2471,7 +2471,7 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).put(updateAnsweringRuleRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringrule(ruleId).put(updateAnsweringRuleRequest);
 rc.revoke();
 ```
 - Parameter `updateAnsweringRuleRequest` is of type [UpdateAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/UpdateAnsweringRuleRequest.java)
@@ -2496,7 +2496,7 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringRule(ruleId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).answeringrule(ruleId).delete();
 rc.revoke();
 ```
 
@@ -2521,7 +2521,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzprofile().get();
 rc.revoke();
 ```
 
@@ -2546,7 +2546,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzProfile().check().get(checkUserPermissionParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).authzprofile().check().get(checkUserPermissionParameters);
 rc.revoke();
 ```
 - Parameter `checkUserPermissionParameters` is of type [CheckUserPermissionParameters](./src/main/java/com/ringcentral/definitions/CheckUserPermissionParameters.java)
@@ -2571,7 +2571,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businesshours().get();
 rc.revoke();
 ```
 
@@ -2596,7 +2596,7 @@ User Permission|`EditUserAnsweringRules`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businessHours().put(userBusinessHoursUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).businesshours().put(userBusinessHoursUpdateRequest);
 rc.revoke();
 ```
 - Parameter `userBusinessHoursUpdateRequest` is of type [UserBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/UserBusinessHoursUpdateRequest.java)
@@ -2621,7 +2621,7 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().list(readUserCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).calllog().list(readUserCallLogParameters);
 rc.revoke();
 ```
 - Parameter `readUserCallLogParameters` is of type [ReadUserCallLogParameters](./src/main/java/com/ringcentral/definitions/ReadUserCallLogParameters.java)
@@ -2646,7 +2646,7 @@ User Permission|`EditCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog().delete(deleteUserCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).calllog().delete(deleteUserCallLogParameters);
 rc.revoke();
 ```
 - Parameter `deleteUserCallLogParameters` is of type [DeleteUserCallLogParameters](./src/main/java/com/ringcentral/definitions/DeleteUserCallLogParameters.java)
@@ -2671,7 +2671,7 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLogSync().get(syncUserCallLogParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).calllogsync().get(syncUserCallLogParameters);
 rc.revoke();
 ```
 - Parameter `syncUserCallLogParameters` is of type [SyncUserCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncUserCallLogParameters.java)
@@ -2696,7 +2696,7 @@ User Permission|`ReadCallLog`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callLog(callRecordId).get(readUserCallRecordParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).calllog(callRecordId).get(readUserCallRecordParameters);
 rc.revoke();
 ```
 - Parameter `readUserCallRecordParameters` is of type [ReadUserCallRecordParameters](./src/main/java/com/ringcentral/definitions/ReadUserCallRecordParameters.java)
@@ -2721,7 +2721,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueuePresence().get(readExtensionCallQueuePresenceParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callqueuepresence().get(readExtensionCallQueuePresenceParameters);
 rc.revoke();
 ```
 - Parameter `readExtensionCallQueuePresenceParameters` is of type [ReadExtensionCallQueuePresenceParameters](./src/main/java/com/ringcentral/definitions/ReadExtensionCallQueuePresenceParameters.java)
@@ -2746,7 +2746,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueuePresence().put(extensionCallQueueUpdatePresenceList);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callqueuepresence().put(extensionCallQueueUpdatePresenceList);
 rc.revoke();
 ```
 - Parameter `extensionCallQueueUpdatePresenceList` is of type [ExtensionCallQueueUpdatePresenceList](./src/main/java/com/ringcentral/definitions/ExtensionCallQueueUpdatePresenceList.java)
@@ -2771,7 +2771,7 @@ User Permission|`JoinLeaveCallQueue`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callQueues().put(userCallQueues);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callqueues().put(userCallQueues);
 rc.revoke();
 ```
 - Parameter `userCallQueues` is of type [UserCallQueues](./src/main/java/com/ringcentral/definitions/UserCallQueues.java)
@@ -2796,7 +2796,7 @@ User Permission|`ReadBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerblocking().get();
 rc.revoke();
 ```
 
@@ -2821,7 +2821,7 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().put(callerBlockingSettingsUpdate);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerblocking().put(callerBlockingSettingsUpdate);
 rc.revoke();
 ```
 - Parameter `callerBlockingSettingsUpdate` is of type [CallerBlockingSettingsUpdate](./src/main/java/com/ringcentral/definitions/CallerBlockingSettingsUpdate.java)
@@ -2846,7 +2846,7 @@ User Permission|`ReadBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().list(listBlockedAllowedNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerblocking().phonenumbers().list(listBlockedAllowedNumbersParameters);
 rc.revoke();
 ```
 - Parameter `listBlockedAllowedNumbersParameters` is of type [ListBlockedAllowedNumbersParameters](./src/main/java/com/ringcentral/definitions/ListBlockedAllowedNumbersParameters.java)
@@ -2871,7 +2871,7 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers().post(addBlockedAllowedPhoneNumber);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerblocking().phonenumbers().post(addBlockedAllowedPhoneNumber);
 rc.revoke();
 ```
 - Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.java)
@@ -2896,7 +2896,7 @@ User Permission|`ReadBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerblocking().phonenumbers(blockedNumberId).get();
 rc.revoke();
 ```
 
@@ -2921,7 +2921,7 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).put(addBlockedAllowedPhoneNumber);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerblocking().phonenumbers(blockedNumberId).put(addBlockedAllowedPhoneNumber);
 rc.revoke();
 ```
 - Parameter `addBlockedAllowedPhoneNumber` is of type [AddBlockedAllowedPhoneNumber](./src/main/java/com/ringcentral/definitions/AddBlockedAllowedPhoneNumber.java)
@@ -2946,7 +2946,7 @@ User Permission|`EditBlockedNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerBlocking().phoneNumbers(blockedNumberId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerblocking().phonenumbers(blockedNumberId).delete();
 rc.revoke();
 ```
 
@@ -2971,7 +2971,7 @@ User Permission|`ReadCallerIDSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerid().get();
 rc.revoke();
 ```
 
@@ -2996,7 +2996,7 @@ User Permission|`EditCallerIDSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerId().put(extensionCallerIdInfo);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).callerid().put(extensionCallerIdInfo);
 rc.revoke();
 ```
 - Parameter `extensionCallerIdInfo` is of type [ExtensionCallerIdInfo](./src/main/java/com/ringcentral/definitions/ExtensionCallerIdInfo.java)
@@ -3021,7 +3021,7 @@ User Permission|`InternalSMS`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).companyPager().post(createInternalTextMessageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).companypager().post(createInternalTextMessageRequest);
 rc.revoke();
 ```
 - Parameter `createInternalTextMessageRequest` is of type [CreateInternalTextMessageRequest](./src/main/java/com/ringcentral/definitions/CreateInternalTextMessageRequest.java)
@@ -3121,7 +3121,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).emergencyLocations().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).emergencylocations().get();
 rc.revoke();
 ```
 
@@ -3246,7 +3246,7 @@ User Permission|`ReadUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().list(listForwardingNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingnumber().list(listForwardingNumbersParameters);
 rc.revoke();
 ```
 - Parameter `listForwardingNumbersParameters` is of type [ListForwardingNumbersParameters](./src/main/java/com/ringcentral/definitions/ListForwardingNumbersParameters.java)
@@ -3271,7 +3271,7 @@ User Permission|`EditUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber().post(createForwardingNumberRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingnumber().post(createForwardingNumberRequest);
 rc.revoke();
 ```
 - Parameter `createForwardingNumberRequest` is of type [CreateForwardingNumberRequest](./src/main/java/com/ringcentral/definitions/CreateForwardingNumberRequest.java)
@@ -3296,7 +3296,7 @@ User Permission|`ReadUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingnumber(forwardingNumberId).get();
 rc.revoke();
 ```
 
@@ -3321,7 +3321,7 @@ User Permission|`EditUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).put(updateForwardingNumberRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingnumber(forwardingNumberId).put(updateForwardingNumberRequest);
 rc.revoke();
 ```
 - Parameter `updateForwardingNumberRequest` is of type [UpdateForwardingNumberRequest](./src/main/java/com/ringcentral/definitions/UpdateForwardingNumberRequest.java)
@@ -3346,7 +3346,7 @@ User Permission|`EditUserForwardingFlipNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingNumber(forwardingNumberId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).forwardingnumber(forwardingNumberId).delete();
 rc.revoke();
 ```
 
@@ -3497,7 +3497,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingConfiguration().profileImage().post(createUserMeetingProfileImageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingconfiguration().profileimage().post(createUserMeetingProfileImageRequest);
 rc.revoke();
 ```
 - Parameter `createUserMeetingProfileImageRequest` is of type [CreateUserMeetingProfileImageRequest](./src/main/java/com/ringcentral/definitions/CreateUserMeetingProfileImageRequest.java)
@@ -3522,7 +3522,7 @@ User Permission|`MeetingsRecordings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingRecordings().get(listUserMeetingRecordingsParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingrecordings().get(listUserMeetingRecordingsParameters);
 rc.revoke();
 ```
 - Parameter `listUserMeetingRecordingsParameters` is of type [ListUserMeetingRecordingsParameters](./src/main/java/com/ringcentral/definitions/ListUserMeetingRecordingsParameters.java)
@@ -3547,7 +3547,7 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceinfo().get();
 rc.revoke();
 ```
 
@@ -3572,7 +3572,7 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceInfo().patch(meetingServiceInfoRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().serviceinfo().patch(meetingServiceInfoRequest);
 rc.revoke();
 ```
 - Parameter `meetingServiceInfoRequest` is of type [MeetingServiceInfoRequest](./src/main/java/com/ringcentral/definitions/MeetingServiceInfoRequest.java)
@@ -3597,7 +3597,7 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().userSettings().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meeting().usersettings().get();
 rc.revoke();
 ```
 
@@ -3747,7 +3747,7 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assistants().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsconfiguration().assistants().get();
 rc.revoke();
 ```
 
@@ -3772,7 +3772,7 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsConfiguration().assisted().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).meetingsconfiguration().assisted().get();
 rc.revoke();
 ```
 
@@ -3797,7 +3797,7 @@ User Permission|`ReadMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore().list(listMessagesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messagestore().list(listMessagesParameters);
 rc.revoke();
 ```
 - Parameter `listMessagesParameters` is of type [ListMessagesParameters](./src/main/java/com/ringcentral/definitions/ListMessagesParameters.java)
@@ -3822,7 +3822,7 @@ User Permission|`ReadMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messagestore(messageId).get();
 rc.revoke();
 ```
 
@@ -3847,7 +3847,7 @@ User Permission|`EditMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).put(updateMessageRequest, updateMessageParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messagestore(messageId).put(updateMessageRequest, updateMessageParameters);
 rc.revoke();
 ```
 - Parameter `updateMessageRequest` is of type [UpdateMessageRequest](./src/main/java/com/ringcentral/definitions/UpdateMessageRequest.java)
@@ -3873,7 +3873,7 @@ User Permission|`EditMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).delete(deleteMessageParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messagestore(messageId).delete(deleteMessageParameters);
 rc.revoke();
 ```
 - Parameter `deleteMessageParameters` is of type [DeleteMessageParameters](./src/main/java/com/ringcentral/definitions/DeleteMessageParameters.java)
@@ -3898,7 +3898,7 @@ User Permission|`ReadMessageContent`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStore(messageId).content(attachmentId).get(readMessageContentParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messagestore(messageId).content(attachmentId).get(readMessageContentParameters);
 rc.revoke();
 ```
 - Parameter `readMessageContentParameters` is of type [ReadMessageContentParameters](./src/main/java/com/ringcentral/definitions/ReadMessageContentParameters.java)
@@ -3927,7 +3927,7 @@ User Permission|`ReadMessages`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageSync().get(syncMessagesParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messagesync().get(syncMessagesParameters);
 rc.revoke();
 ```
 - Parameter `syncMessagesParameters` is of type [SyncMessagesParameters](./src/main/java/com/ringcentral/definitions/SyncMessagesParameters.java)
@@ -3977,7 +3977,7 @@ User Permission|`ReadMessagesNotificationsSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationsettings().get();
 rc.revoke();
 ```
 
@@ -4002,7 +4002,7 @@ User Permission|`EditMessagesNotificationsSettings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationSettings().put(notificationSettingsUpdateRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).notificationsettings().put(notificationSettingsUpdateRequest);
 rc.revoke();
 ```
 - Parameter `notificationSettingsUpdateRequest` is of type [NotificationSettingsUpdateRequest](./src/main/java/com/ringcentral/definitions/NotificationSettingsUpdateRequest.java)
@@ -4027,7 +4027,7 @@ User Permission|`ReadUserPhoneNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).phoneNumber().get(listExtensionPhoneNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).phonenumber().get(listExtensionPhoneNumbersParameters);
 rc.revoke();
 ```
 - Parameter `listExtensionPhoneNumbersParameters` is of type [ListExtensionPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListExtensionPhoneNumbersParameters.java)
@@ -4102,7 +4102,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().list();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileimage().list();
 rc.revoke();
 ```
 
@@ -4131,7 +4131,7 @@ User Permission|`EditUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().put(updateUserProfileImageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileimage().put(updateUserProfileImageRequest);
 rc.revoke();
 ```
 - Parameter `updateUserProfileImageRequest` is of type [UpdateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/UpdateUserProfileImageRequest.java)
@@ -4156,7 +4156,7 @@ User Permission|`EditUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage().post(createUserProfileImageRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileimage().post(createUserProfileImageRequest);
 rc.revoke();
 ```
 - Parameter `createUserProfileImageRequest` is of type [CreateUserProfileImageRequest](./src/main/java/com/ringcentral/definitions/CreateUserProfileImageRequest.java)
@@ -4181,7 +4181,7 @@ User Permission|`ReadExtensions`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileImage(scaleSize).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).profileimage(scaleSize).get();
 rc.revoke();
 ```
 
@@ -4210,7 +4210,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut().post(makeRingOutRequest);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringout().post(makeRingOutRequest);
 rc.revoke();
 ```
 - Parameter `makeRingOutRequest` is of type [MakeRingOutRequest](./src/main/java/com/ringcentral/definitions/MakeRingOutRequest.java)
@@ -4235,7 +4235,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringout(ringoutId).get();
 rc.revoke();
 ```
 
@@ -4260,7 +4260,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringOut(ringoutId).delete();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).ringout(ringoutId).delete();
 rc.revoke();
 ```
 
@@ -4310,7 +4310,7 @@ User Permission|`ReadPresenceStatus`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedPresence().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedpresence().get();
 rc.revoke();
 ```
 
@@ -4335,7 +4335,7 @@ User Permission|`EditPresenceStatus`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedPresence().patch(updateUnifiedPresence);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).unifiedpresence().patch(updateUnifiedPresence);
 rc.revoke();
 ```
 - Parameter `updateUnifiedPresence` is of type [UpdateUnifiedPresence](./src/main/java/com/ringcentral/definitions/UpdateUnifiedPresence.java)
@@ -4360,7 +4360,7 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().get();
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoconfiguration().get();
 rc.revoke();
 ```
 
@@ -4385,7 +4385,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().put(userVideoConfiguration);
+var result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoconfiguration().put(userVideoConfiguration);
 rc.revoke();
 ```
 - Parameter `userVideoConfiguration` is of type [UserVideoConfiguration](./src/main/java/com/ringcentral/definitions/UserVideoConfiguration.java)
@@ -4434,7 +4434,7 @@ User Permission|`AutoReceptionist`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrMenus().post(ivrMenuInfo);
+var result = rc.restapi(apiVersion).account(accountId).ivrmenus().post(ivrMenuInfo);
 rc.revoke();
 ```
 - Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.java)
@@ -4458,7 +4458,7 @@ User Permission|`AutoReceptionist`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).get();
+var result = rc.restapi(apiVersion).account(accountId).ivrmenus(ivrMenuId).get();
 rc.revoke();
 ```
 
@@ -4482,7 +4482,7 @@ User Permission|`AutoReceptionist`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrMenus(ivrMenuId).put(ivrMenuInfo);
+var result = rc.restapi(apiVersion).account(accountId).ivrmenus(ivrMenuId).put(ivrMenuInfo);
 rc.revoke();
 ```
 - Parameter `ivrMenuInfo` is of type [IVRMenuInfo](./src/main/java/com/ringcentral/definitions/IVRMenuInfo.java)
@@ -4506,7 +4506,7 @@ User Permission|`ReadCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().list();
+var result = rc.restapi(apiVersion).account(accountId).ivrprompts().list();
 rc.revoke();
 ```
 
@@ -4530,7 +4530,7 @@ User Permission|`EditCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts().post(createIvrPromptRequest);
+var result = rc.restapi(apiVersion).account(accountId).ivrprompts().post(createIvrPromptRequest);
 rc.revoke();
 ```
 - Parameter `createIvrPromptRequest` is of type [CreateIvrPromptRequest](./src/main/java/com/ringcentral/definitions/CreateIvrPromptRequest.java)
@@ -4554,7 +4554,7 @@ User Permission|`ReadCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).get();
+var result = rc.restapi(apiVersion).account(accountId).ivrprompts(promptId).get();
 rc.revoke();
 ```
 
@@ -4578,7 +4578,7 @@ User Permission|`EditCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put(updateIvrPromptRequest);
+var result = rc.restapi(apiVersion).account(accountId).ivrprompts(promptId).put(updateIvrPromptRequest);
 rc.revoke();
 ```
 - Parameter `updateIvrPromptRequest` is of type [UpdateIVRPromptRequest](./src/main/java/com/ringcentral/definitions/UpdateIVRPromptRequest.java)
@@ -4602,7 +4602,7 @@ User Permission|`EditCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).delete();
+var result = rc.restapi(apiVersion).account(accountId).ivrprompts(promptId).delete();
 rc.revoke();
 ```
 
@@ -4626,7 +4626,7 @@ User Permission|`ReadCompanyGreetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).content().get();
+var result = rc.restapi(apiVersion).account(accountId).ivrprompts(promptId).content().get();
 rc.revoke();
 ```
 
@@ -4654,7 +4654,7 @@ User Permission|`MeetingsRecordings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).meetingRecordings().get(listAccountMeetingRecordingsParameters);
+var result = rc.restapi(apiVersion).account(accountId).meetingrecordings().get(listAccountMeetingRecordingsParameters);
 rc.revoke();
 ```
 - Parameter `listAccountMeetingRecordingsParameters` is of type [ListAccountMeetingRecordingsParameters](./src/main/java/com/ringcentral/definitions/ListAccountMeetingRecordingsParameters.java)
@@ -4678,7 +4678,7 @@ User Permission|`Meetings`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).meeting().lockedSettings().get();
+var result = rc.restapi(apiVersion).account(accountId).meeting().lockedsettings().get();
 rc.revoke();
 ```
 
@@ -4702,7 +4702,7 @@ User Permission|`AccountAdministration`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().get();
+var result = rc.restapi(apiVersion).account(accountId).messagestoreconfiguration().get();
 rc.revoke();
 ```
 
@@ -4726,7 +4726,7 @@ User Permission|`AccountAdministration`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreConfiguration().put(messageStoreConfiguration);
+var result = rc.restapi(apiVersion).account(accountId).messagestoreconfiguration().put(messageStoreConfiguration);
 rc.revoke();
 ```
 - Parameter `messageStoreConfiguration` is of type [MessageStoreConfiguration](./src/main/java/com/ringcentral/definitions/MessageStoreConfiguration.java)
@@ -4750,7 +4750,7 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport().post(createMessageStoreReportRequest);
+var result = rc.restapi(apiVersion).account(accountId).messagestorereport().post(createMessageStoreReportRequest);
 rc.revoke();
 ```
 - Parameter `createMessageStoreReportRequest` is of type [CreateMessageStoreReportRequest](./src/main/java/com/ringcentral/definitions/CreateMessageStoreReportRequest.java)
@@ -4774,7 +4774,7 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).get();
+var result = rc.restapi(apiVersion).account(accountId).messagestorereport(taskId).get();
 rc.revoke();
 ```
 
@@ -4798,7 +4798,7 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive().list();
+var result = rc.restapi(apiVersion).account(accountId).messagestorereport(taskId).archive().list();
 rc.revoke();
 ```
 
@@ -4822,7 +4822,7 @@ User Permission|`Users`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).messageStoreReport(taskId).archive(archiveId).get();
+var result = rc.restapi(apiVersion).account(accountId).messagestorereport(taskId).archive(archiveId).get();
 rc.revoke();
 ```
 
@@ -4850,7 +4850,7 @@ User Permission|`Groups`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).bulkAssign().post(editPagingGroupRequest);
+var result = rc.restapi(apiVersion).account(accountId).pagingonlygroups(pagingOnlyGroupId).bulkassign().post(editPagingGroupRequest);
 rc.revoke();
 ```
 - Parameter `editPagingGroupRequest` is of type [EditPagingGroupRequest](./src/main/java/com/ringcentral/definitions/EditPagingGroupRequest.java)
@@ -4874,7 +4874,7 @@ User Permission|`ReadCompanyDevices`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).devices().get(listPagingGroupDevicesParameters);
+var result = rc.restapi(apiVersion).account(accountId).pagingonlygroups(pagingOnlyGroupId).devices().get(listPagingGroupDevicesParameters);
 rc.revoke();
 ```
 - Parameter `listPagingGroupDevicesParameters` is of type [ListPagingGroupDevicesParameters](./src/main/java/com/ringcentral/definitions/ListPagingGroupDevicesParameters.java)
@@ -4898,7 +4898,7 @@ User Permission|`ReadUserInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).pagingOnlyGroups(pagingOnlyGroupId).users().get(listPagingGroupUsersParameters);
+var result = rc.restapi(apiVersion).account(accountId).pagingonlygroups(pagingOnlyGroupId).users().get(listPagingGroupUsersParameters);
 rc.revoke();
 ```
 - Parameter `listPagingGroupUsersParameters` is of type [ListPagingGroupUsersParameters](./src/main/java/com/ringcentral/definitions/ListPagingGroupUsersParameters.java)
@@ -4922,7 +4922,7 @@ User Permission|`ReadCompanyPhoneNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).phoneNumber().list(listAccountPhoneNumbersParameters);
+var result = rc.restapi(apiVersion).account(accountId).phonenumber().list(listAccountPhoneNumbersParameters);
 rc.revoke();
 ```
 - Parameter `listAccountPhoneNumbersParameters` is of type [ListAccountPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersParameters.java)
@@ -4946,7 +4946,7 @@ User Permission|`ReadCompanyPhoneNumbers`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).phoneNumber(phoneNumberId).get();
+var result = rc.restapi(apiVersion).account(accountId).phonenumber(phoneNumberId).get();
 rc.revoke();
 ```
 
@@ -5046,7 +5046,7 @@ User Permission|`ReadServicePlanInfo`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).serviceInfo().get();
+var result = rc.restapi(apiVersion).account(accountId).serviceinfo().get();
 rc.revoke();
 ```
 
@@ -5070,7 +5070,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().callOut().post(makeCallOutRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().callout().post(makeCallOutRequest);
 rc.revoke();
 ```
 - Parameter `makeCallOutRequest` is of type [MakeCallOutRequest](./src/main/java/com/ringcentral/definitions/MakeCallOutRequest.java)
@@ -5166,7 +5166,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties().bringIn().post(addPartyRequest);
+var result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties().bringin().post(addPartyRequest);
 rc.revoke();
 ```
 - Parameter `addPartyRequest` is of type [AddPartyRequest](./src/main/java/com/ringcentral/definitions/AddPartyRequest.java)
@@ -5695,7 +5695,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).clientInfo().sipProvision().post(createSipRegistrationRequest);
+var result = rc.restapi(apiVersion).clientinfo().sipprovision().post(createSipRegistrationRequest);
 rc.revoke();
 ```
 - Parameter `createSipRegistrationRequest` is of type [CreateSipRegistrationRequest](./src/main/java/com/ringcentral/definitions/CreateSipRegistrationRequest.java)
@@ -5764,7 +5764,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).dictionary().faxCoverPage().get(listFaxCoverPagesParameters);
+var result = rc.restapi(apiVersion).dictionary().faxcoverpage().get(listFaxCoverPagesParameters);
 rc.revoke();
 ```
 - Parameter `listFaxCoverPagesParameters` is of type [ListFaxCoverPagesParameters](./src/main/java/com/ringcentral/definitions/ListFaxCoverPagesParameters.java)
@@ -6431,7 +6431,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport().list(listDataExportTasksParameters);
+var result = rc.restapi(apiVersion).glip().dataexport().list(listDataExportTasksParameters);
 rc.revoke();
 ```
 - Parameter `listDataExportTasksParameters` is of type [ListDataExportTasksParameters](./src/main/java/com/ringcentral/definitions/ListDataExportTasksParameters.java)
@@ -6454,7 +6454,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport().post(createDataExportTaskRequest);
+var result = rc.restapi(apiVersion).glip().dataexport().post(createDataExportTaskRequest);
 rc.revoke();
 ```
 - Parameter `createDataExportTaskRequest` is of type [CreateDataExportTaskRequest](./src/main/java/com/ringcentral/definitions/CreateDataExportTaskRequest.java)
@@ -6477,7 +6477,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport(taskId).get();
+var result = rc.restapi(apiVersion).glip().dataexport(taskId).get();
 rc.revoke();
 ```
 
@@ -6500,7 +6500,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).glip().dataExport(taskId).datasets(datasetId).get();
+var result = rc.restapi(apiVersion).glip().dataexport(taskId).datasets(datasetId).get();
 rc.revoke();
 ```
 
@@ -7470,7 +7470,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.restapi(apiVersion).numberParser().parse().post(parsePhoneNumberRequest, parsePhoneNumberParameters);
+var result = rc.restapi(apiVersion).numberparser().parse().post(parsePhoneNumberRequest, parsePhoneNumberParameters);
 rc.revoke();
 ```
 - Parameter `parsePhoneNumberRequest` is of type [ParsePhoneNumberRequest](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberRequest.java)
@@ -7632,7 +7632,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).serviceProviderConfig().get();
+var result = rc.scim(version).serviceproviderconfig().get();
 rc.revoke();
 ```
 
@@ -7701,7 +7701,7 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-var result = rc.scim(version).users().dotSearch().post(searchRequest);
+var result = rc.scim(version).users().dotsearch().post(searchRequest);
 rc.revoke();
 ```
 - Parameter `searchRequest` is of type [SearchRequest](./src/main/java/com/ringcentral/definitions/SearchRequest.java)

@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Sync Messages
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.SyncMessagesParameters? = null): com.ringcentral.definitions.GetMessageSyncResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

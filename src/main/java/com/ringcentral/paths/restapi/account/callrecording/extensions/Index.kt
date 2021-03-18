@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callrecording.Inde
      * Operation: Get Call Recording Extension List
      * Http Get /restapi/v1.0/account/{accountId}/call-recording/extensions
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CallRecordingExtensions? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

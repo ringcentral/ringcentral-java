@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Get Conversations
      * Http Get /restapi/v1.0/glip/conversations
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListGlipConversationsParameters? = null): com.ringcentral.definitions.GlipConversationsList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Create/Open Conversation
      * Http Post /restapi/v1.0/glip/conversations
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createGlipConversationRequest: com.ringcentral.definitions.CreateGlipConversationRequest): com.ringcentral.definitions.GlipConversationInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createGlipConversationRequest)
 
@@ -47,6 +49,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Get Conversation
      * Http Get /restapi/v1.0/glip/conversations/{chatId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipConversationInfo? {
         if (this.chatId == null) {
             throw NullPointerException("chatId");

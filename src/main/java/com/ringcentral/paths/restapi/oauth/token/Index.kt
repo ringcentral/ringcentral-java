@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.oauth.Index) {
      * Operation: Get Token
      * Http Post /restapi/oauth/token
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(getTokenRequest: com.ringcentral.definitions.GetTokenRequest): com.ringcentral.definitions.TokenInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), getTokenRequest, null, com.ringcentral.ContentType.FORM)
 

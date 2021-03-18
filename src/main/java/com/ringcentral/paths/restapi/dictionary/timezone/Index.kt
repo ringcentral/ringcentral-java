@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val time
      * Operation: Get Timezone List
      * Http Get /restapi/v1.0/dictionary/timezone
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListTimezonesParameters? = null): com.ringcentral.definitions.GetTimezoneListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val time
      * Operation: Get Timezone
      * Http Get /restapi/v1.0/dictionary/timezone/{timezoneId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadTimezoneParameters? = null): com.ringcentral.definitions.GetTimezoneInfoResponse? {
         if (this.timezoneId == null) {

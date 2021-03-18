@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val companyId:
      * Operation: Get Company Info
      * Http Get /restapi/v1.0/glip/companies/{companyId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipCompany? {
         if (this.companyId == null) {
             throw NullPointerException("companyId");

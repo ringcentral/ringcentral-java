@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
      * Operation: Get Extension List
      * Http Get /restapi/v1.0/account/{accountId}/extension
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListExtensionsParameters? = null): com.ringcentral.definitions.GetExtensionListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
      * Operation: Create Extension
      * Http Post /restapi/v1.0/account/{accountId}/extension
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(extensionCreationRequest: com.ringcentral.definitions.ExtensionCreationRequest): com.ringcentral.definitions.ExtensionCreationResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), extensionCreationRequest)
 
@@ -47,6 +49,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
      * Operation: Get Extension
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetExtensionInfoResponse? {
         if (this.extensionId == null) {
             throw NullPointerException("extensionId");
@@ -66,6 +69,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
      * Operation: Update Extension
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(extensionUpdateRequest: com.ringcentral.definitions.ExtensionUpdateRequest): com.ringcentral.definitions.GetExtensionInfoResponse? {
         if (this.extensionId == null) {
             throw NullPointerException("extensionId");
@@ -85,6 +89,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val extensi
      * Operation: Delete Extension
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun delete(queryParams: com.ringcentral.definitions.DeleteExtensionParameters? = null): String? {
         if (this.extensionId == null) {

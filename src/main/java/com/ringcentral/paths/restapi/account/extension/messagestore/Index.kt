@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Message List
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListMessagesParameters? = null): com.ringcentral.definitions.GetMessageList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -29,6 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Message
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetMessageInfoResponse? {
         if (this.messageId == null) {
             throw NullPointerException("messageId");
@@ -48,6 +50,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Update Message List
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun put(
         updateMessageRequest: com.ringcentral.definitions.UpdateMessageRequest,
@@ -71,6 +74,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Delete Message
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun delete(queryParams: com.ringcentral.definitions.DeleteMessageParameters? = null): String? {
         if (this.messageId == null) {

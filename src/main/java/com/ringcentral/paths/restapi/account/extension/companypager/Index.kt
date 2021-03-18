@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Create Internal Text Message
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createInternalTextMessageRequest: com.ringcentral.definitions.CreateInternalTextMessageRequest): com.ringcentral.definitions.GetInternalTextMessageInfoResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createInternalTextMessageRequest)
 

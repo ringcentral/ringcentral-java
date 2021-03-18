@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      * Operation: Get Device List
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/devices
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListDevicesAutomaticLocationUpdatesParameters? = null): com.ringcentral.definitions.ListDevicesAutomaticLocationUpdates? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

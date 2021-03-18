@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Get Chats
      * Http Get /restapi/v1.0/glip/chats
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListGlipChatsParameters? = null): com.ringcentral.definitions.GlipChatsList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -29,6 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Get Chat
      * Http Get /restapi/v1.0/glip/chats/{chatId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipChatInfo? {
         if (this.chatId == null) {
             throw NullPointerException("chatId");

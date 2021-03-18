@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index) {
      * Operation: Get Fax Cover Page List
      * Http Get /restapi/v1.0/dictionary/fax-cover-page
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListFaxCoverPagesParameters? = null): com.ringcentral.definitions.ListFaxCoverPagesResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      * Operation: Get Call Monitoring Groups List
      * Http Get /restapi/v1.0/account/{accountId}/call-monitoring-groups
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListCallMonitoringGroupsParameters? = null): com.ringcentral.definitions.CallMonitoringGroups? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      * Operation: Create Call Monitoring Group
      * Http Post /restapi/v1.0/account/{accountId}/call-monitoring-groups
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createCallMonitoringGroupRequest: com.ringcentral.definitions.CreateCallMonitoringGroupRequest): com.ringcentral.definitions.CallMonitoringGroup? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createCallMonitoringGroupRequest)
 
@@ -47,6 +49,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      * Operation: Updates Call Monitoring Group
      * Http Put /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(createCallMonitoringGroupRequest: com.ringcentral.definitions.CreateCallMonitoringGroupRequest): com.ringcentral.definitions.CallMonitoringGroup? {
         if (this.groupId == null) {
             throw NullPointerException("groupId");
@@ -66,6 +69,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      * Operation: Delete Call Monitoring Group
      * Http Delete /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.groupId == null) {
             throw NullPointerException("groupId");

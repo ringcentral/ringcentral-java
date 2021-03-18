@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.addressbookbulkupl
      * Operation: Get Contacts Update Task
      * Http Get /restapi/v1.0/account/{accountId}/address-book-bulk-upload/tasks/{taskId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.AddressBookBulkUploadResponse? {
         if (this.taskId == null) {
             throw NullPointerException("taskId");

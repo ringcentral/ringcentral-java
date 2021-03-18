@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Get Account Meeting Recordings List
      * Http Get /restapi/v1.0/account/{accountId}/meeting-recordings
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListAccountMeetingRecordingsParameters? = null): com.ringcentral.definitions.ListMeetingRecordingsResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

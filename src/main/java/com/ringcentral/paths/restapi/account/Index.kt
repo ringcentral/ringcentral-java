@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val accountId: Stri
      * Operation: Get Account Info
      * Http Get /restapi/v1.0/account/{accountId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetAccountInfoResponse? {
         if (this.accountId == null) {
             throw NullPointerException("accountId");

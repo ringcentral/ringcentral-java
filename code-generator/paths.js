@@ -187,6 +187,7 @@ const generate = (prefix = '/') => {
        * Operation: ${operation.detail.summary || capitalCase(operation.detail.operationId)}
        * Http ${method} ${operation.endpoint}
        */
+       @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
       ${methodParams.join(', ').includes(' = ') ? '@JvmOverloads ' : ''}fun ${smartMethod.toLowerCase()}(${methodParams.join(', ')}) : ${responseType}?
       {${withParam ? `
           if (this.${paramName} == null)

@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.directory.entries.
      * Operation: Search Company Directory Entries
      * Http Post /restapi/v1.0/account/{accountId}/directory/entries/search
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(searchDirectoryEntriesRequest: com.ringcentral.definitions.SearchDirectoryEntriesRequest): com.ringcentral.definitions.DirectoryResource? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), searchDirectoryEntriesRequest)
 

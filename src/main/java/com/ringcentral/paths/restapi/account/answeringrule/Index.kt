@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      * Operation: Get Company Call Handling Rule List
      * Http Get /restapi/v1.0/account/{accountId}/answering-rule
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListCompanyAnsweringRulesParameters? = null): com.ringcentral.definitions.CompanyAnsweringRuleList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      * Operation: Create Company Call Handling Rule
      * Http Post /restapi/v1.0/account/{accountId}/answering-rule
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(companyAnsweringRuleRequest: com.ringcentral.definitions.CompanyAnsweringRuleRequest): com.ringcentral.definitions.CompanyAnsweringRuleInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), companyAnsweringRuleRequest)
 
@@ -47,6 +49,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      * Operation: Get Company Call Handling Rule
      * Http Get /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CompanyAnsweringRuleInfo? {
         if (this.ruleId == null) {
             throw NullPointerException("ruleId");
@@ -66,6 +69,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      * Operation: Update Company Call Handling Rule
      * Http Put /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(companyAnsweringRuleUpdate: com.ringcentral.definitions.CompanyAnsweringRuleUpdate): com.ringcentral.definitions.CompanyAnsweringRuleInfo? {
         if (this.ruleId == null) {
             throw NullPointerException("ruleId");
@@ -85,6 +89,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ruleId:
      * Operation: Delete Company Call Handling Rule
      * Http Delete /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.ruleId == null) {
             throw NullPointerException("ruleId");

@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.tasks.Index) {
      * Operation: Complete Task
      * Http Post /restapi/v1.0/glip/tasks/{taskId}/complete
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipCompleteTask: com.ringcentral.definitions.GlipCompleteTask): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), glipCompleteTask)
 

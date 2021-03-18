@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
      * Operation: Get Emergency Location List
      * Http Get /restapi/v1.0/account/{accountId}/emergency-locations
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListEmergencyLocationsParameters? = null): com.ringcentral.definitions.EmergencyLocationList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
      * Operation: Add Emergency Location
      * Http Post /restapi/v1.0/account/{accountId}/emergency-locations
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(emergencyLocationInfoRequest: com.ringcentral.definitions.EmergencyLocationInfoRequest): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), emergencyLocationInfoRequest)
 
@@ -44,6 +46,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
      * Operation: Get Emergency Location
      * Http Get /restapi/v1.0/account/{accountId}/emergency-locations/{locationId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.EmergencyLocationInfo? {
         if (this.locationId == null) {
             throw NullPointerException("locationId");
@@ -63,6 +66,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
      * Operation: Update Emergency Location
      * Http Put /restapi/v1.0/account/{accountId}/emergency-locations/{locationId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(emergencyLocationInfoRequest: com.ringcentral.definitions.EmergencyLocationInfoRequest): com.ringcentral.definitions.EmergencyLocationInfo? {
         if (this.locationId == null) {
             throw NullPointerException("locationId");
@@ -82,6 +86,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val locatio
      * Operation: Delete Emergency Location
      * Http Delete /restapi/v1.0/account/{accountId}/emergency-locations/{locationId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun delete(queryParams: com.ringcentral.definitions.DeleteEmergencyLocationParameters? = null): String? {
         if (this.locationId == null) {

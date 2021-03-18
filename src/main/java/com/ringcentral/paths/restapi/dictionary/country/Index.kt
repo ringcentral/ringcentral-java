@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val coun
      * Operation: Get Country List
      * Http Get /restapi/v1.0/dictionary/country
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListCountriesParameters? = null): com.ringcentral.definitions.GetCountryListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val coun
      * Operation: Get Country
      * Http Get /restapi/v1.0/dictionary/country/{countryId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetCountryInfoDictionaryResponse? {
         if (this.countryId == null) {
             throw NullPointerException("countryId");

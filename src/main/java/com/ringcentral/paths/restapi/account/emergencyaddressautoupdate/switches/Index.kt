@@ -19,6 +19,7 @@ class Index(
      * Operation: Get Account Switch List
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListAccountSwitchesParameters? = null): com.ringcentral.definitions.SwitchesList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(
      * Operation: Create Switch
      * Http Post /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createSwitchInfo: com.ringcentral.definitions.CreateSwitchInfo): com.ringcentral.definitions.SwitchInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createSwitchInfo)
 
@@ -44,6 +46,7 @@ class Index(
      * Operation: Get Switch
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.SwitchInfo? {
         if (this.switchId == null) {
             throw NullPointerException("switchId");
@@ -60,6 +63,7 @@ class Index(
      * Operation: Update Switch
      * Http Put /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(updateSwitchInfo: com.ringcentral.definitions.UpdateSwitchInfo): com.ringcentral.definitions.SwitchInfo? {
         if (this.switchId == null) {
             throw NullPointerException("switchId");
@@ -76,6 +80,7 @@ class Index(
      * Operation: Delete Switch
      * Http Delete /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches/{switchId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.switchId == null) {
             throw NullPointerException("switchId");

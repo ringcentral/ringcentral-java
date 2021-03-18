@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      * Operation: Validate Multiple Switches
      * Http Post /restapi/v1.0/account/{accountId}/emergency-address-auto-update/switches-bulk-validate
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(validateMultipleSwitchesRequest: com.ringcentral.definitions.ValidateMultipleSwitchesRequest): com.ringcentral.definitions.ValidateMultipleSwitchesResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), validateMultipleSwitchesRequest)
 

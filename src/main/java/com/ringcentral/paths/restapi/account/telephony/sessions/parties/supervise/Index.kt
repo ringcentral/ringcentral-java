@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Operation: Supervise Call Party
      * Http Post /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/supervise
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(partySuperviseRequest: com.ringcentral.definitions.PartySuperviseRequest): com.ringcentral.definitions.PartySuperviseResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), partySuperviseRequest)
 

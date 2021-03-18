@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.pagingonlygroups.I
      * Operation: Get Paging Group Users
      * Http Get /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListPagingGroupUsersParameters? = null): com.ringcentral.definitions.PagingOnlyGroupUsers? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

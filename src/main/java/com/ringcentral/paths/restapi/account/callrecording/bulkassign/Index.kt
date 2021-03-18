@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callrecording.Inde
      * Operation: Update Call Recording Extension List
      * Http Post /restapi/v1.0/account/{accountId}/call-recording/bulk-assign
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(bulkAccountCallRecordingsResource: com.ringcentral.definitions.BulkAccountCallRecordingsResource): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), bulkAccountCallRecordingsResource)
 

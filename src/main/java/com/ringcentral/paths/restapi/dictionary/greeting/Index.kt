@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val gree
      * Operation: Get Standard Greeting List
      * Http Get /restapi/v1.0/dictionary/greeting
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListStandardGreetingsParameters? = null): com.ringcentral.definitions.DictionaryGreetingList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val gree
      * Operation: Get Standard Greeting
      * Http Get /restapi/v1.0/dictionary/greeting/{greetingId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.DictionaryGreetingInfo? {
         if (this.greetingId == null) {
             throw NullPointerException("greetingId");

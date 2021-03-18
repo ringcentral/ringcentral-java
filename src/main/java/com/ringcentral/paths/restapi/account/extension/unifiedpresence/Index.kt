@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Get Unified Presence
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/unified-presence
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.UnifiedPresence? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -24,6 +25,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Update Unified Presence
      * Http Patch /restapi/v1.0/account/{accountId}/extension/{extensionId}/unified-presence
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun patch(updateUnifiedPresence: com.ringcentral.definitions.UpdateUnifiedPresence): com.ringcentral.definitions.UnifiedPresence? {
         val rb: okhttp3.ResponseBody = rc.patch(this.path(), updateUnifiedPresence)
 

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.messagestorereport
      * Operation: Get Message Store Report Archive
      * Http Get /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun list(): com.ringcentral.definitions.MessageStoreReportArchive? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -31,6 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.messagestorereport
      * Operation: Get Message Store Report Archive Content
      * Http Get /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): ByteArray? {
         if (this.archiveId == null) {
             throw NullPointerException("archiveId");

@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
      * Operation: Get Chat Tasks
      * Http Get /restapi/v1.0/glip/chats/{chatId}/tasks
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListChatTasksParameters? = null): com.ringcentral.definitions.GlipTaskList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
@@ -25,6 +26,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
      * Operation: Create Task
      * Http Post /restapi/v1.0/glip/chats/{chatId}/tasks
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipCreateTask: com.ringcentral.definitions.GlipCreateTask): com.ringcentral.definitions.GlipTaskInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), glipCreateTask)
 

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      * Operation: Get User Events List
      * Http Get /restapi/v1.0/glip/events
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ReadGlipEventsParameters? = null): com.ringcentral.definitions.GlipEventsInfo? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -29,6 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      * Operation: Create Event
      * Http Post /restapi/v1.0/glip/events
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipEventCreate: com.ringcentral.definitions.GlipEventCreate): com.ringcentral.definitions.GlipEventInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), glipEventCreate)
 
@@ -41,6 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      * Operation: Get Event
      * Http Get /restapi/v1.0/glip/events/{eventId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipEventInfo? {
         if (this.eventId == null) {
             throw NullPointerException("eventId");
@@ -57,6 +60,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      * Operation: Update Event
      * Http Put /restapi/v1.0/glip/events/{eventId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(glipEventCreate: com.ringcentral.definitions.GlipEventCreate): com.ringcentral.definitions.GlipEventInfo? {
         if (this.eventId == null) {
             throw NullPointerException("eventId");
@@ -73,6 +77,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val eventId: S
      * Operation: Delete Event
      * Http Delete /restapi/v1.0/glip/events/{eventId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.eventId == null) {
             throw NullPointerException("eventId");

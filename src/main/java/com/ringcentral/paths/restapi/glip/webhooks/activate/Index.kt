@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.webhooks.Index) {
      * Operation: Activate Webhook
      * Http Post /restapi/v1.0/glip/webhooks/{webhookId}/activate
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path())
 

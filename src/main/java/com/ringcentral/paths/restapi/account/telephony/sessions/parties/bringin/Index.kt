@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Operation: Bring-In Call Party
      * Http Post /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/bring-in
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(addPartyRequest: com.ringcentral.definitions.AddPartyRequest): com.ringcentral.definitions.CallParty? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), addPartyRequest)
 

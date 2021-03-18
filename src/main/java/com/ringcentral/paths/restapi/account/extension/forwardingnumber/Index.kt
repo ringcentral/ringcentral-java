@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Forwarding Number List
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListForwardingNumbersParameters? = null): com.ringcentral.definitions.GetExtensionForwardingNumberListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Create Forwarding Number
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createForwardingNumberRequest: com.ringcentral.definitions.CreateForwardingNumberRequest): com.ringcentral.definitions.ForwardingNumberInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createForwardingNumberRequest)
 
@@ -47,6 +49,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Forwarding Number
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.ForwardingNumberInfo? {
         if (this.forwardingNumberId == null) {
             throw NullPointerException("forwardingNumberId");
@@ -66,6 +69,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Update Forwarding Number
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(updateForwardingNumberRequest: com.ringcentral.definitions.UpdateForwardingNumberRequest): com.ringcentral.definitions.ForwardingNumberInfo? {
         if (this.forwardingNumberId == null) {
             throw NullPointerException("forwardingNumberId");
@@ -85,6 +89,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Delete Forwarding Number
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.forwardingNumberId == null) {
             throw NullPointerException("forwardingNumberId");

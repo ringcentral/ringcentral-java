@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Call Handling Rules
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListAnsweringRulesParameters? = null): com.ringcentral.definitions.UserAnsweringRuleList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Create Call Handling Rule
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createAnsweringRuleRequest: com.ringcentral.definitions.CreateAnsweringRuleRequest): com.ringcentral.definitions.CustomAnsweringRuleInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createAnsweringRuleRequest)
 
@@ -47,6 +49,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Call Handling Rule
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadAnsweringRuleParameters? = null): com.ringcentral.definitions.AnsweringRuleInfo? {
         if (this.ruleId == null) {
@@ -67,6 +70,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Update Call Handling Rule
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(updateAnsweringRuleRequest: com.ringcentral.definitions.UpdateAnsweringRuleRequest): com.ringcentral.definitions.AnsweringRuleInfo? {
         if (this.ruleId == null) {
             throw NullPointerException("ruleId");
@@ -86,6 +90,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Delete Call Handling Rule
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.ruleId == null) {
             throw NullPointerException("ruleId");

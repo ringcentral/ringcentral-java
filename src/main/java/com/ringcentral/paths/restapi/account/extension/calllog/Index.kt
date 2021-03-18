@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get User Call Log Records
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ReadUserCallLogParameters? = null): com.ringcentral.definitions.UserCallLogResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Delete User Call Log
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun delete(queryParams: com.ringcentral.definitions.DeleteUserCallLogParameters? = null): String? {
         val rb: okhttp3.ResponseBody = rc.delete(this.path(false), queryParams)
@@ -45,6 +47,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get User Call Record
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadUserCallRecordParameters? = null): com.ringcentral.definitions.UserCallLogRecord? {
         if (this.callRecordId == null) {

@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Sync Company Call Log
      * Http Get /restapi/v1.0/account/{accountId}/call-log-sync
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.SyncAccountCallLogParameters? = null): com.ringcentral.definitions.AccountCallLogSyncResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

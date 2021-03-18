@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.Index) {
      * Operation: Make CallOut
      * Http Post /restapi/v1.0/account/{accountId}/telephony/call-out
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(makeCallOutRequest: com.ringcentral.definitions.MakeCallOutRequest): com.ringcentral.definitions.CallSession? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), makeCallOutRequest)
 

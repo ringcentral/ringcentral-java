@@ -19,6 +19,7 @@ class Index(
      * Operation: Create Recording
      * Http Post /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false))
 
@@ -31,6 +32,7 @@ class Index(
      * Operation: Pause/Resume Recording
      * Http Patch /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings/{recordingId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun patch(
         callRecordingUpdate: com.ringcentral.definitions.CallRecordingUpdate,

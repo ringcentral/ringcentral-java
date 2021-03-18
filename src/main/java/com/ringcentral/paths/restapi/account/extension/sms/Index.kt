@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Send SMS
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/sms
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createSMSMessage: com.ringcentral.definitions.CreateSMSMessage): com.ringcentral.definitions.GetSMSMessageInfoResponse? {
         val rb: okhttp3.ResponseBody =
             rc.post(this.path(), createSMSMessage, null, com.ringcentral.ContentType.MULTIPART)

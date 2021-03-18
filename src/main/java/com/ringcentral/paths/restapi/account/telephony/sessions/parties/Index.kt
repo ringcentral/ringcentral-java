@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Operation: Get Call Party Status
      * Http Get /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CallParty? {
         if (this.partyId == null) {
             throw NullPointerException("partyId");
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Operation: Delete Call Party
      * Http Delete /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.partyId == null) {
             throw NullPointerException("partyId");
@@ -48,6 +50,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Operation: Update Call Party
      * Http Patch /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun patch(partyUpdateRequest: com.ringcentral.definitions.PartyUpdateRequest): com.ringcentral.definitions.CallParty? {
         if (this.partyId == null) {
             throw NullPointerException("partyId");

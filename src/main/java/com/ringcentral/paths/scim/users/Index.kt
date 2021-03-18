@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      * Operation: Search/List Users
      * Http Get /scim/v2/Users
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.SearchViaGet2Parameters? = null): com.ringcentral.definitions.UserSearchResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      * Operation: Create User
      * Http Post /scim/v2/Users
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createUser: com.ringcentral.definitions.CreateUser): com.ringcentral.definitions.UserResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createUser)
 
@@ -44,6 +46,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      * Operation: Get User
      * Http Get /scim/v2/Users/{id}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.UserResponse? {
         if (this.id == null) {
             throw NullPointerException("id");
@@ -60,6 +63,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      * Operation: Update/Replace User
      * Http Put /scim/v2/Users/{id}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(user: com.ringcentral.definitions.User): com.ringcentral.definitions.UserResponse? {
         if (this.id == null) {
             throw NullPointerException("id");
@@ -76,6 +80,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      * Operation: Delete User
      * Http Delete /scim/v2/Users/{id}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.id == null) {
             throw NullPointerException("id");
@@ -92,6 +97,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index, val id: String? = null
      * Operation: Update/Patch User
      * Http Patch /scim/v2/Users/{id}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun patch(userPatch: com.ringcentral.definitions.UserPatch): com.ringcentral.definitions.UserResponse? {
         if (this.id == null) {
             throw NullPointerException("id");

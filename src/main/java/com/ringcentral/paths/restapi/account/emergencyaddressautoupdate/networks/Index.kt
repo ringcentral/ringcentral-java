@@ -19,6 +19,7 @@ class Index(
      * Operation: Get Network Map
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun list(): com.ringcentral.definitions.NetworksList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -31,6 +32,7 @@ class Index(
      * Operation: Create Network
      * Http Post /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createNetworkRequest: com.ringcentral.definitions.CreateNetworkRequest): com.ringcentral.definitions.NetworkInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createNetworkRequest)
 
@@ -43,6 +45,7 @@ class Index(
      * Operation: Get Network
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.NetworkInfo? {
         if (this.networkId == null) {
             throw NullPointerException("networkId");
@@ -59,6 +62,7 @@ class Index(
      * Operation: Update Network
      * Http Put /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(updateNetworkRequest: com.ringcentral.definitions.UpdateNetworkRequest): String? {
         if (this.networkId == null) {
             throw NullPointerException("networkId");
@@ -75,6 +79,7 @@ class Index(
      * Operation: Delete Network
      * Http Delete /restapi/v1.0/account/{accountId}/emergency-address-auto-update/networks/{networkId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.networkId == null) {
             throw NullPointerException("networkId");

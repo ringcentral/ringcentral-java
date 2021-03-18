@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.meetings
      * Operation: Get Assistants
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-configuration/assistants
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.AssistantsResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

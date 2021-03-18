@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Get User Video Configuration
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/video-configuration
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.UserVideoConfiguration? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -27,6 +28,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Update User Video Configuration
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/video-configuration
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(userVideoConfiguration: com.ringcentral.definitions.UserVideoConfiguration): com.ringcentral.definitions.UserVideoConfiguration? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), userVideoConfiguration)
 

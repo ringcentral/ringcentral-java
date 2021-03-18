@@ -19,6 +19,7 @@ class Index(
      * Operation: Get Wireless Point List
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListWirelessPointsParameters? = null): com.ringcentral.definitions.WirelessPointsList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -35,6 +36,7 @@ class Index(
      * Operation: Create Wireless Point
      * Http Post /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createWirelessPoint: com.ringcentral.definitions.CreateWirelessPoint): com.ringcentral.definitions.WirelessPointInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createWirelessPoint)
 
@@ -50,6 +52,7 @@ class Index(
      * Operation: Get Wireless Point
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.WirelessPointInfo? {
         if (this.pointId == null) {
             throw NullPointerException("pointId");
@@ -69,6 +72,7 @@ class Index(
      * Operation: Update Wireless Point
      * Http Put /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(updateWirelessPoint: com.ringcentral.definitions.UpdateWirelessPoint): com.ringcentral.definitions.WirelessPointInfo? {
         if (this.pointId == null) {
             throw NullPointerException("pointId");
@@ -88,6 +92,7 @@ class Index(
      * Operation: Delete Wireless Point
      * Http Delete /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points/{pointId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.pointId == null) {
             throw NullPointerException("pointId");

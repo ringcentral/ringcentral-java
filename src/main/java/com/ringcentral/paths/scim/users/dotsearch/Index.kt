@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.scim.users.Index) {
      * Operation: Search/List Users
      * Http Post /scim/v2/Users/.search
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(searchRequest: com.ringcentral.definitions.SearchRequest): com.ringcentral.definitions.UserSearchResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), searchRequest)
 

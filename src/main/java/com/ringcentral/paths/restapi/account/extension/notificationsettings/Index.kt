@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Get Notification Settings
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.NotificationSettings? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -27,6 +28,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Update Notification Settings
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(notificationSettingsUpdateRequest: com.ringcentral.definitions.NotificationSettingsUpdateRequest): com.ringcentral.definitions.NotificationSettings? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), notificationSettingsUpdateRequest)
 

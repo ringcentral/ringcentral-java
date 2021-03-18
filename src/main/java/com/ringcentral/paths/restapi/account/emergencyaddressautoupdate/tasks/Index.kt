@@ -19,6 +19,7 @@ class Index(
      * Operation: Get Emergency Map Configuration Task
      * Http Get /restapi/v1.0/account/{accountId}/emergency-address-auto-update/tasks/{taskId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.AutomaticLocationUpdatesTaskInfo? {
         if (this.taskId == null) {
             throw NullPointerException("taskId");

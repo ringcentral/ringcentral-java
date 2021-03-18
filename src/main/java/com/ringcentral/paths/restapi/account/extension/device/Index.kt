@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Get Extension Device List
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/device
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListExtensionDevicesParameters? = null): com.ringcentral.definitions.GetExtensionDevicesResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

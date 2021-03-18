@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Operation: Pickup Call
      * Http Post /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/pickup
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(pickupTarget: com.ringcentral.definitions.PickupTarget): com.ringcentral.definitions.CallParty? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), pickupTarget)
 

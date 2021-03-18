@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.directory.Index) {
      * Operation: Get Account Federation
      * Http Get /restapi/v1.0/account/{accountId}/directory/federation
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.FederationResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

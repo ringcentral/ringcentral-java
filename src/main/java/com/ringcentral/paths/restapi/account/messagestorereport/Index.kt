@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val taskId:
      * Operation: Create Message Store Report
      * Http Post /restapi/v1.0/account/{accountId}/message-store-report
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createMessageStoreReportRequest: com.ringcentral.definitions.CreateMessageStoreReportRequest): com.ringcentral.definitions.MessageStoreReport? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createMessageStoreReportRequest)
 
@@ -31,6 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val taskId:
      * Operation: Get Message Store Report Task
      * Http Get /restapi/v1.0/account/{accountId}/message-store-report/{taskId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.MessageStoreReport? {
         if (this.taskId == null) {
             throw NullPointerException("taskId");

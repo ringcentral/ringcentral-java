@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Get User Emergency Location List
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/emergency-locations
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.UserEmergencyLocationList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

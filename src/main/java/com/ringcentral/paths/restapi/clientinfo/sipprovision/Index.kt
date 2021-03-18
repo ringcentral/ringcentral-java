@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.clientinfo.Index) {
      * Operation: Register Device
      * Http Post /restapi/v1.0/client-info/sip-provision
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createSipRegistrationRequest: com.ringcentral.definitions.CreateSipRegistrationRequest): com.ringcentral.definitions.CreateSipRegistrationResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), createSipRegistrationRequest)
 

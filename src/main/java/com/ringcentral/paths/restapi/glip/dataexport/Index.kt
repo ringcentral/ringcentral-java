@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
      * Operation: Get Data Export Task List
      * Http Get /restapi/v1.0/glip/data-export
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListDataExportTasksParameters? = null): com.ringcentral.definitions.DataExportTaskList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
      * Operation: Create Data Export Task
      * Http Post /restapi/v1.0/glip/data-export
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createDataExportTaskRequest: com.ringcentral.definitions.CreateDataExportTaskRequest): com.ringcentral.definitions.DataExportTask? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createDataExportTaskRequest)
 
@@ -44,6 +46,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val taskId: St
      * Operation: Get Data Export Task
      * Http Get /restapi/v1.0/glip/data-export/{taskId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.DataExportTask? {
         if (this.taskId == null) {
             throw NullPointerException("taskId");

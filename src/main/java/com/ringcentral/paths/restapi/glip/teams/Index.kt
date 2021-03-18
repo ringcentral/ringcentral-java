@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Get Teams
      * Http Get /restapi/v1.0/glip/teams
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListGlipTeamsParameters? = null): com.ringcentral.definitions.GlipTeamsList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -29,6 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Create Team
      * Http Post /restapi/v1.0/glip/teams
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipPostTeamBody: com.ringcentral.definitions.GlipPostTeamBody): com.ringcentral.definitions.GlipTeamInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), glipPostTeamBody)
 
@@ -41,6 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Get Team
      * Http Get /restapi/v1.0/glip/teams/{chatId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipTeamInfo? {
         if (this.chatId == null) {
             throw NullPointerException("chatId");
@@ -57,6 +60,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Delete Team
      * Http Delete /restapi/v1.0/glip/teams/{chatId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.chatId == null) {
             throw NullPointerException("chatId");
@@ -73,6 +77,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val chatId: St
      * Operation: Update Team
      * Http Patch /restapi/v1.0/glip/teams/{chatId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun patch(glipPatchTeamBody: com.ringcentral.definitions.GlipPatchTeamBody): com.ringcentral.definitions.GlipTeamInfo? {
         if (this.chatId == null) {
             throw NullPointerException("chatId");

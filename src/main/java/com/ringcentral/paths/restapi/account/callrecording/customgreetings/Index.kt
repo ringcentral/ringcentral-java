@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callrecording.Inde
      * Operation: Get Call Recording Custom Greeting List
      * Http Get /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListCallRecordingCustomGreetingsParameters? = null): com.ringcentral.definitions.CallRecordingCustomGreetings? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callrecording.Inde
      * Operation: Delete Call Recording Custom Greeting
      * Http Delete /restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.greetingId == null) {
             throw NullPointerException("greetingId");

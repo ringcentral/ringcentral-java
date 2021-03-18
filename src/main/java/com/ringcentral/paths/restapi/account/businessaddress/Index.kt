@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Get Account Business Address
      * Http Get /restapi/v1.0/account/{accountId}/business-address
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.AccountBusinessAddressResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -27,6 +28,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Update Company Business Address
      * Http Put /restapi/v1.0/account/{accountId}/business-address
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(modifyAccountBusinessAddressRequest: com.ringcentral.definitions.ModifyAccountBusinessAddressRequest): com.ringcentral.definitions.AccountBusinessAddressResource? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), modifyAccountBusinessAddressRequest)
 

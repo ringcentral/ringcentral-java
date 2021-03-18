@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callmonitoringgrou
      * Operation: Update Call Monitoring Group List
      * Http Post /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(callMonitoringBulkAssign: com.ringcentral.definitions.CallMonitoringBulkAssign): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), callMonitoringBulkAssign)
 

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.directory.Index, v
      * Operation: Get Company Directory Entries
      * Http Get /restapi/v1.0/account/{accountId}/directory/entries
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListDirectoryEntriesParameters? = null): com.ringcentral.definitions.DirectoryResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.directory.Index, v
      * Operation: Get Corporate Directory Entry
      * Http Get /restapi/v1.0/account/{accountId}/directory/entries/{entryId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.ContactResource? {
         if (this.entryId == null) {
             throw NullPointerException("entryId");

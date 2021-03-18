@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      * Operation: Update Multiple Wireless Points
      * Http Post /restapi/v1.0/account/{accountId}/emergency-address-auto-update/wireless-points-bulk-update
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(updateMultipleWirelessPointsRequest: com.ringcentral.definitions.UpdateMultipleWirelessPointsRequest): com.ringcentral.definitions.UpdateMultipleWirelessPointsResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), updateMultipleWirelessPointsRequest)
 

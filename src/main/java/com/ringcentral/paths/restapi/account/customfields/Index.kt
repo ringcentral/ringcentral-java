@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
      * Operation: Get Custom Field List
      * Http Get /restapi/v1.0/account/{accountId}/custom-fields
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CustomFieldsResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -31,6 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
      * Operation: Create Custom Field
      * Http Post /restapi/v1.0/account/{accountId}/custom-fields
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(customFieldCreateRequest: com.ringcentral.definitions.CustomFieldCreateRequest): com.ringcentral.definitions.CustomFieldResource? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), customFieldCreateRequest)
 
@@ -46,6 +48,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
      * Operation: Update Сustom Field
      * Http Put /restapi/v1.0/account/{accountId}/custom-fields/{fieldId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(customFieldUpdateRequest: com.ringcentral.definitions.CustomFieldUpdateRequest): com.ringcentral.definitions.CustomFieldResource? {
         if (this.fieldId == null) {
             throw NullPointerException("fieldId");
@@ -65,6 +68,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val fieldId
      * Operation: Delete Custom Field
      * Http Delete /restapi/v1.0/account/{accountId}/custom-fields/{fieldId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.fieldId == null) {
             throw NullPointerException("fieldId");

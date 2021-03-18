@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.Index) {
      * Operation: Start Conference Call Session
      * Http Post /restapi/v1.0/account/{accountId}/telephony/conference
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(): com.ringcentral.definitions.CallSessionObject? {
         val rb: okhttp3.ResponseBody = rc.post(this.path())
 

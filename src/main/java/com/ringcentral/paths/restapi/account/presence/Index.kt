@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Get User Presence Status List
      * Http Get /restapi/v1.0/account/{accountId}/presence
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadAccountPresenceParameters? = null): com.ringcentral.definitions.AccountPresenceInfo? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

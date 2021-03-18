@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.Index, v
      * Operation: Get Call Session Status
      * Http Get /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadCallSessionStatusParameters? = null): com.ringcentral.definitions.CallSession? {
         if (this.telephonySessionId == null) {
@@ -33,6 +34,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.Index, v
      * Operation: Drop Call Session
      * Http Delete /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.telephonySessionId == null) {
             throw NullPointerException("telephonySessionId");

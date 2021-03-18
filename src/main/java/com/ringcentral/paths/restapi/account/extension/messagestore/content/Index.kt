@@ -19,6 +19,7 @@ class Index(
      * Operation: Get Message Content
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadMessageContentParameters? = null): ByteArray? {
         if (this.attachmentId == null) {

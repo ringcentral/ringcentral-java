@@ -15,6 +15,7 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
      * Operation: Get API Versions
      * Http Get /restapi
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun list(): com.ringcentral.definitions.GetVersionsResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -30,6 +31,7 @@ class Index(val rc: com.ringcentral.RestClient, val apiVersion: String? = "v1.0"
      * Operation: Get Version Info
      * Http Get /restapi/{apiVersion}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetVersionResponse? {
         if (this.apiVersion == null) {
             throw NullPointerException("apiVersion");

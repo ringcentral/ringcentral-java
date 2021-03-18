@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.subscription.Index) {
      * Operation: Renew Subscription
      * Http Post /restapi/v1.0/subscription/{subscriptionId}/renew
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(): com.ringcentral.definitions.SubscriptionInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path())
 

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Make RingOut Call
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(makeRingOutRequest: com.ringcentral.definitions.MakeRingOutRequest): com.ringcentral.definitions.GetRingOutStatusResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), makeRingOutRequest)
 
@@ -31,6 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get RingOut Call Status
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetRingOutStatusResponse? {
         if (this.ringoutId == null) {
             throw NullPointerException("ringoutId");
@@ -50,6 +52,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Cancel RingOut Call
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.ringoutId == null) {
             throw NullPointerException("ringoutId");

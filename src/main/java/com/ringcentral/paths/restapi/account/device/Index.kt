@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val deviceI
      * Operation: Get Device
      * Http Get /restapi/v1.0/account/{accountId}/device/{deviceId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadDeviceParameters? = null): com.ringcentral.definitions.GetDeviceInfoResponse? {
         if (this.deviceId == null) {
@@ -36,6 +37,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val deviceI
      * Operation: Update Device
      * Http Put /restapi/v1.0/account/{accountId}/device/{deviceId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun put(
         accountDeviceUpdate: com.ringcentral.definitions.AccountDeviceUpdate,

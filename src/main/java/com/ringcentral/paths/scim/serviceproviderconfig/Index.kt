@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index) {
      * Operation: Get Service Provider Config
      * Http Get /scim/v2/ServiceProviderConfig
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.ServiceProviderConfig? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val lang
      * Operation: Get Language List
      * Http Get /restapi/v1.0/dictionary/language
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun list(): com.ringcentral.definitions.LanguageList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -28,6 +29,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val lang
      * Operation: Get Language
      * Http Get /restapi/v1.0/dictionary/language/{languageId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.LanguageInfo? {
         if (this.languageId == null) {
             throw NullPointerException("languageId");

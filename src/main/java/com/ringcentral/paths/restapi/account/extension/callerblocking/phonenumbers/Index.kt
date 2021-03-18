@@ -19,6 +19,7 @@ class Index(
      * Operation: Get Blocked/Allowed Phone Numbers
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListBlockedAllowedNumbersParameters? = null): com.ringcentral.definitions.BlockedAllowedPhoneNumbersList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -35,6 +36,7 @@ class Index(
      * Operation: Add Blocked/Allowed Number
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(addBlockedAllowedPhoneNumber: com.ringcentral.definitions.AddBlockedAllowedPhoneNumber): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), addBlockedAllowedPhoneNumber)
 
@@ -50,6 +52,7 @@ class Index(
      * Operation: Get Blocked/Allowed Number
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
         if (this.blockedNumberId == null) {
             throw NullPointerException("blockedNumberId");
@@ -69,6 +72,7 @@ class Index(
      * Operation: Update Blocked/Allowed Number
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(addBlockedAllowedPhoneNumber: com.ringcentral.definitions.AddBlockedAllowedPhoneNumber): com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo? {
         if (this.blockedNumberId == null) {
             throw NullPointerException("blockedNumberId");
@@ -88,6 +92,7 @@ class Index(
      * Operation: Delete Blocked/Allowed Number
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.blockedNumberId == null) {
             throw NullPointerException("blockedNumberId");

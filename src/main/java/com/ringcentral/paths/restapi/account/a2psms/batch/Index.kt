@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
      * Operation: Send A2P SMS
      * Http Post /restapi/v1.0/account/{accountId}/a2p-sms/batch
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createSMSMessageBatchRequest: com.ringcentral.definitions.CreateSMSMessageBatchRequest): com.ringcentral.definitions.CreateMessageBatchResponse? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createSMSMessageBatchRequest)
 
@@ -31,6 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
      * Operation: Get A2P SMS Batch
      * Http Get /restapi/v1.0/account/{accountId}/a2p-sms/batch/{batchId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.MessageBatchResponse? {
         if (this.batchId == null) {
             throw NullPointerException("batchId");

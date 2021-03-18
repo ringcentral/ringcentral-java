@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.meeting.
      * Operation: End Meeting
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path())
 

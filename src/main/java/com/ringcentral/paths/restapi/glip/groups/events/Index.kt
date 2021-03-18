@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.groups.Index) {
      * Operation: Get Group Events
      * Http Get /restapi/v1.0/glip/groups/{groupId}/events
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipEventInfo? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -24,6 +25,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.groups.Index) {
      * Operation: Create Event by Group ID
      * Http Post /restapi/v1.0/glip/groups/{groupId}/events
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipEventCreate: com.ringcentral.definitions.GlipEventCreate): com.ringcentral.definitions.GlipEventInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), glipEventCreate)
 

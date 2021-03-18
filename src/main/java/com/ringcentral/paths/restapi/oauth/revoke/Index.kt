@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.oauth.Index) {
      * Operation: Revoke Token
      * Http Post /restapi/oauth/revoke
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(revokeTokenRequest: com.ringcentral.definitions.RevokeTokenRequest): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), revokeTokenRequest, null, com.ringcentral.ContentType.FORM)
 

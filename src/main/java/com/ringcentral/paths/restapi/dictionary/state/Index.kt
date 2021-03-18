@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val stat
      * Operation: Get States List
      * Http Get /restapi/v1.0/dictionary/state
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListStatesParameters? = null): com.ringcentral.definitions.GetStateListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index, val stat
      * Operation: Get State
      * Http Get /restapi/v1.0/dictionary/state/{stateId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetStateInfoResponse? {
         if (this.stateId == null) {
             throw NullPointerException("stateId");

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.dataexport.Index, val
      * Operation: Get Data Export Task Dataset
      * Http Get /restapi/v1.0/glip/data-export/{taskId}/datasets/{datasetId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): ByteArray? {
         if (this.datasetId == null) {
             throw NullPointerException("datasetId");

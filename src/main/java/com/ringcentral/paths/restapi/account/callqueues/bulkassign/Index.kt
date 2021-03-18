@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callqueues.Index) 
      * Operation: Assign Multiple Call Queue Members
      * Http Post /restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(callQueueBulkAssignResource: com.ringcentral.definitions.CallQueueBulkAssignResource): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), callQueueBulkAssignResource)
 

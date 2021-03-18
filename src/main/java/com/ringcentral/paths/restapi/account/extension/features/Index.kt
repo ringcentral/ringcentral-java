@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Get User Features
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/features
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadUserFeaturesParameters? = null): com.ringcentral.definitions.FeatureList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

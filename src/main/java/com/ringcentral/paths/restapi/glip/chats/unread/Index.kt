@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
      * Operation: Mark Chat as Unread
      * Http Post /restapi/v1.0/glip/chats/{chatId}/unread
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path())
 

@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
      * Operation: Get Chat Notes
      * Http Get /restapi/v1.0/glip/chats/{chatId}/notes
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListChatNotesParameters? = null): com.ringcentral.definitions.GlipNotesInfo? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)
@@ -25,6 +26,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
      * Operation: Create Note
      * Http Post /restapi/v1.0/glip/chats/{chatId}/notes
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipNoteCreate: com.ringcentral.definitions.GlipNoteCreate): com.ringcentral.definitions.GlipNoteInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), glipNoteCreate)
 

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
      * Operation: Get A2P SMS List
      * Http Get /restapi/v1.0/account/{accountId}/a2p-sms/messages
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListA2PsmsParameters? = null): com.ringcentral.definitions.MessageListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
      * Operation: Get A2P SMS
      * Http Get /restapi/v1.0/account/{accountId}/a2p-sms/messages/{messageId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.MessageDetailsResponse? {
         if (this.messageId == null) {
             throw NullPointerException("messageId");

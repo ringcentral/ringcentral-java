@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Sync User Call Log
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.SyncUserCallLogParameters? = null): com.ringcentral.definitions.CallLogSync? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

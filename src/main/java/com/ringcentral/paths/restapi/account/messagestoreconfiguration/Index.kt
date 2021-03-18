@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Get Message Store Configuration
      * Http Get /restapi/v1.0/account/{accountId}/message-store-configuration
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.MessageStoreConfiguration? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -27,6 +28,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Update Message Store Configuration
      * Http Put /restapi/v1.0/account/{accountId}/message-store-configuration
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(messageStoreConfiguration: com.ringcentral.definitions.MessageStoreConfiguration): com.ringcentral.definitions.MessageStoreConfiguration? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), messageStoreConfiguration)
 

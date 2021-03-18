@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Get Company Active Calls
      * Http Get /restapi/v1.0/account/{accountId}/active-calls
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListCompanyActiveCallsParameters? = null): com.ringcentral.definitions.CompanyActiveCallsResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

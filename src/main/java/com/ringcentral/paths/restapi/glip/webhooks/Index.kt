@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val webhookId:
      * Operation: Get Webhooks
      * Http Get /restapi/v1.0/glip/webhooks
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun list(): com.ringcentral.definitions.GlipWebhookList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -28,6 +29,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val webhookId:
      * Operation: Get Webhook
      * Http Get /restapi/v1.0/glip/webhooks/{webhookId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipWebhookList? {
         if (this.webhookId == null) {
             throw NullPointerException("webhookId");
@@ -44,6 +46,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index, val webhookId:
      * Operation: Delete Webhook
      * Http Delete /restapi/v1.0/glip/webhooks/{webhookId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.webhookId == null) {
             throw NullPointerException("webhookId");

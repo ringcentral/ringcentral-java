@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extensionbulkupdat
      * Operation: Get Update Task Status
      * Http Get /restapi/v1.0/account/{accountId}/extension-bulk-update/tasks/{taskId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.ExtensionBulkUpdateTaskResource? {
         if (this.taskId == null) {
             throw NullPointerException("taskId");

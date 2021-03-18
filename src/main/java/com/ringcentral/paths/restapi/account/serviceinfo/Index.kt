@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Get Account Service Info
      * Http Get /restapi/v1.0/account/{accountId}/service-info
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GetServiceInfoResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.Index) {
      * Operation: Get Favorite Chats
      * Http Get /restapi/v1.0/glip/favorites
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListFavoriteChatsParameters? = null): com.ringcentral.definitions.GlipChatsListWithoutNavigation? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

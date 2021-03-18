@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Address Book Synchronization
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.SyncAddressBookParameters? = null): com.ringcentral.definitions.AddressBookSync? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

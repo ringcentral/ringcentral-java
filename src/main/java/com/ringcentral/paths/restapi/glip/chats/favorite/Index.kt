@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index) {
      * Operation: Add Chat to Favorites
      * Http Post /restapi/v1.0/glip/chats/{chatId}/favorite
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path())
 

@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Create Custom User Greeting
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun post(
         createCustomUserGreetingRequest: com.ringcentral.definitions.CreateCustomUserGreetingRequest,
@@ -40,6 +41,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Custom Greeting
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CustomUserGreetingInfo? {
         if (this.greetingId == null) {
             throw NullPointerException("greetingId");

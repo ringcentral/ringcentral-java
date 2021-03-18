@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.meeting.
      * Operation: Get Meeting Invitation
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/invitation
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.PublicMeetingInvitationResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

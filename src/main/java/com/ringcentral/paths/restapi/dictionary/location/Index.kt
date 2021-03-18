@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.dictionary.Index) {
      * Operation: Get Location List
      * Http Get /restapi/v1.0/dictionary/location
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ListLocationsParameters? = null): com.ringcentral.definitions.GetLocationListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

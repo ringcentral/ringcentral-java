@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.teams.Index) {
      * Operation: Add Team Members
      * Http Post /restapi/v1.0/glip/teams/{chatId}/add
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipPostMembersListBody: com.ringcentral.definitions.GlipPostMembersListBody): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), glipPostMembersListBody)
 

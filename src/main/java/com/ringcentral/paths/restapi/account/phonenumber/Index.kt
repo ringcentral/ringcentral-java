@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val phoneNu
      * Operation: Get Company Phone Number List
      * Http Get /restapi/v1.0/account/{accountId}/phone-number
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListAccountPhoneNumbersParameters? = null): com.ringcentral.definitions.AccountPhoneNumbers? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val phoneNu
      * Operation: Get Phone Number
      * Http Get /restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CompanyPhoneNumberInfo? {
         if (this.phoneNumberId == null) {
             throw NullPointerException("phoneNumberId");

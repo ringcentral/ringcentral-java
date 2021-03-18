@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.scim.Index) {
      * Operation: Check Health
      * Http Get /scim/v2/health
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): String? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 

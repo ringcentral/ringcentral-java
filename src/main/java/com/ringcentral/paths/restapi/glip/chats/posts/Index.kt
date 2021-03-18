@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      * Operation: Get Posts
      * Http Get /restapi/v1.0/glip/chats/{chatId}/posts
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ReadGlipPostsParameters? = null): com.ringcentral.definitions.GlipPostsList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -29,6 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      * Operation: Create Post
      * Http Post /restapi/v1.0/glip/chats/{chatId}/posts
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(glipPostPostBody: com.ringcentral.definitions.GlipPostPostBody): com.ringcentral.definitions.GlipPostInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), glipPostPostBody)
 
@@ -41,6 +43,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      * Operation: Get Post
      * Http Get /restapi/v1.0/glip/chats/{chatId}/posts/{postId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.GlipPostInfo? {
         if (this.postId == null) {
             throw NullPointerException("postId");
@@ -57,6 +60,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      * Operation: Delete Post
      * Http Delete /restapi/v1.0/glip/chats/{chatId}/posts/{postId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.postId == null) {
             throw NullPointerException("postId");
@@ -73,6 +77,7 @@ class Index(val parent: com.ringcentral.paths.restapi.glip.chats.Index, val post
      * Operation: Update Post
      * Http Patch /restapi/v1.0/glip/chats/{chatId}/posts/{postId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun patch(glipPatchPostBody: com.ringcentral.definitions.GlipPatchPostBody): com.ringcentral.definitions.GlipPostInfo? {
         if (this.postId == null) {
             throw NullPointerException("postId");

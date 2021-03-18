@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.numberparser.Index) {
      * Operation: Parse Phone Number
      * Http Post /restapi/v1.0/number-parser/parse
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun post(
         parsePhoneNumberRequest: com.ringcentral.definitions.ParsePhoneNumberRequest,

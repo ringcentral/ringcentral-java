@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      * Operation: Get Subscription List
      * Http Get /restapi/v1.0/subscription
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun list(): com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -31,6 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      * Operation: Create Subscription
      * Http Post /restapi/v1.0/subscription
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(createSubscriptionRequest: com.ringcentral.definitions.CreateSubscriptionRequest): com.ringcentral.definitions.SubscriptionInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), createSubscriptionRequest)
 
@@ -46,6 +48,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      * Operation: Get Subscription
      * Http Get /restapi/v1.0/subscription/{subscriptionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.SubscriptionInfo? {
         if (this.subscriptionId == null) {
             throw NullPointerException("subscriptionId");
@@ -65,6 +68,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      * Operation: Update Subscription
      * Http Put /restapi/v1.0/subscription/{subscriptionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(modifySubscriptionRequest: com.ringcentral.definitions.ModifySubscriptionRequest): com.ringcentral.definitions.SubscriptionInfo? {
         if (this.subscriptionId == null) {
             throw NullPointerException("subscriptionId");
@@ -84,6 +88,7 @@ class Index(val parent: com.ringcentral.paths.restapi.Index, val subscriptionId:
      * Operation: Cancel Subscription
      * Http Delete /restapi/v1.0/subscription/{subscriptionId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.subscriptionId == null) {
             throw NullPointerException("subscriptionId");

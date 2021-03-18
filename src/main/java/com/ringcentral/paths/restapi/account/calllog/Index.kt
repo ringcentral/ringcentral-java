@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val callRec
      * Operation: Get Company Call Log Records
      * Http Get /restapi/v1.0/account/{accountId}/call-log
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ReadCompanyCallLogParameters? = null): com.ringcentral.definitions.AccountCallLogResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val callRec
      * Operation: Get Company Call Log Record(s)
      * Http Get /restapi/v1.0/account/{accountId}/call-log/{callRecordId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.ReadCompanyCallRecordParameters? = null): com.ringcentral.definitions.CompanyCallLogRecord? {
         if (this.callRecordId == null) {

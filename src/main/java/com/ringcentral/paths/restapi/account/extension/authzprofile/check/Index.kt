@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.authzpro
      * Operation: Check User Permission
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun get(queryParams: com.ringcentral.definitions.CheckUserPermissionParameters? = null): com.ringcentral.definitions.AuthProfileCheckResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(), queryParams)

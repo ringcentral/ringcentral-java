@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Scheduled Meetings
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun list(): com.ringcentral.definitions.MeetingsResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false))
 
@@ -31,6 +32,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Create Meeting
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(meetingRequestResource: com.ringcentral.definitions.MeetingRequestResource): com.ringcentral.definitions.MeetingResponseResource? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), meetingRequestResource)
 
@@ -46,6 +48,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Get Meeting Info
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.MeetingResponseResource? {
         if (this.meetingId == null) {
             throw NullPointerException("meetingId");
@@ -65,6 +68,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Update Meeting
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(meetingRequestResource: com.ringcentral.definitions.MeetingRequestResource): com.ringcentral.definitions.MeetingResponseResource? {
         if (this.meetingId == null) {
             throw NullPointerException("meetingId");
@@ -84,6 +88,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index, v
      * Operation: Delete Meeting
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.meetingId == null) {
             throw NullPointerException("meetingId");

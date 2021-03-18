@@ -19,6 +19,7 @@ class Index(
      * Operation: Get Contact List
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListContactsParameters? = null): com.ringcentral.definitions.ContactList? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -32,6 +33,7 @@ class Index(
      * Operation: Create Contact
      * Http Post /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun post(
         personalContactRequest: com.ringcentral.definitions.PersonalContactRequest,
@@ -51,6 +53,7 @@ class Index(
      * Operation: Get Contact
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.PersonalContactResource? {
         if (this.contactId == null) {
             throw NullPointerException("contactId");
@@ -70,6 +73,7 @@ class Index(
      * Operation: Update Contact
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun put(
         personalContactRequest: com.ringcentral.definitions.PersonalContactRequest,
@@ -93,6 +97,7 @@ class Index(
      * Operation: Delete Contact
      * Http Delete /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun delete(): String? {
         if (this.contactId == null) {
             throw NullPointerException("contactId");

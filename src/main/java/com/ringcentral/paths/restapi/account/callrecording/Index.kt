@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Get Call Recording Settings
      * Http Get /restapi/v1.0/account/{accountId}/call-recording
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CallRecordingSettingsResource? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -27,6 +28,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index) {
      * Operation: Update Call Recording Settings
      * Http Put /restapi/v1.0/account/{accountId}/call-recording
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(callRecordingSettingsResource: com.ringcentral.definitions.CallRecordingSettingsResource): com.ringcentral.definitions.CallRecordingSettingsResource? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callRecordingSettingsResource)
 

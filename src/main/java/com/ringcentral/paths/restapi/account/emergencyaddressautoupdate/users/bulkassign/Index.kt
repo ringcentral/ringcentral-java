@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.emergencyaddressau
      * Operation: Enable Automatic Location Updates for Users
      * Http Post /restapi/v1.0/account/{accountId}/emergency-address-auto-update/users/bulk-assign
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(bulkAssignAutomaticLocationUpdatesUsers: com.ringcentral.definitions.BulkAssignAutomaticLocationUpdatesUsers): String? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), bulkAssignAutomaticLocationUpdatesUsers)
 

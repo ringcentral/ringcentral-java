@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callqueues.Index) 
      * Operation: Get Call Queue Presence
      * Http Get /restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CallQueuePresence? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -27,6 +28,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.callqueues.Index) 
      * Operation: Update Call Queue Presence
      * Http Put /restapi/v1.0/account/{accountId}/call-queues/{groupId}/presence
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(callQueueUpdatePresence: com.ringcentral.definitions.CallQueueUpdatePresence): com.ringcentral.definitions.CallQueuePresence? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callQueueUpdatePresence)
 

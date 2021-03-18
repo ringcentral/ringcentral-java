@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.telephony.sessions
      * Operation: Supervise Call Session
      * Http Post /restapi/v1.0/account/{accountId}/telephony/sessions/{telephonySessionId}/supervise
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(superviseCallSessionRequest: com.ringcentral.definitions.SuperviseCallSessionRequest): com.ringcentral.definitions.SuperviseCallSession? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(), superviseCallSessionRequest)
 

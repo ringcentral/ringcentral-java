@@ -12,6 +12,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Get Caller Blocking Settings
      * Http Get /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CallerBlockingSettings? {
         val rb: okhttp3.ResponseBody = rc.get(this.path())
 
@@ -27,6 +28,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.extension.Index) {
      * Operation: Update Caller Blocking Settings
      * Http Put /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(callerBlockingSettingsUpdate: com.ringcentral.definitions.CallerBlockingSettingsUpdate): com.ringcentral.definitions.CallerBlockingSettings? {
         val rb: okhttp3.ResponseBody = rc.put(this.path(), callerBlockingSettingsUpdate)
 

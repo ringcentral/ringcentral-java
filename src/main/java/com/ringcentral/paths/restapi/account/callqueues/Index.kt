@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      * Operation: Get Call Queue List
      * Http Get /restapi/v1.0/account/{accountId}/call-queues
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
     fun list(queryParams: com.ringcentral.definitions.ListCallQueuesParameters? = null): com.ringcentral.definitions.CallQueues? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
@@ -29,6 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      * Operation: Get Call Queue
      * Http Get /restapi/v1.0/account/{accountId}/call-queues/{groupId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.CallQueueDetails? {
         if (this.groupId == null) {
             throw NullPointerException("groupId");
@@ -48,6 +50,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val groupId
      * Operation: Update Call Queue
      * Http Put /restapi/v1.0/account/{accountId}/call-queues/{groupId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(callQueueUpdateDetails: com.ringcentral.definitions.CallQueueUpdateDetails): com.ringcentral.definitions.CallQueueDetails? {
         if (this.groupId == null) {
             throw NullPointerException("groupId");

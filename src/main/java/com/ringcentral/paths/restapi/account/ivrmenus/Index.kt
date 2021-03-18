@@ -16,6 +16,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
      * Operation: Create IVR Menu
      * Http Post /restapi/v1.0/account/{accountId}/ivr-menus
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun post(iVRMenuInfo: com.ringcentral.definitions.IVRMenuInfo): com.ringcentral.definitions.IVRMenuInfo? {
         val rb: okhttp3.ResponseBody = rc.post(this.path(false), iVRMenuInfo)
 
@@ -28,6 +29,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
      * Operation: Get IVR Menu
      * Http Get /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun get(): com.ringcentral.definitions.IVRMenuInfo? {
         if (this.ivrMenuId == null) {
             throw NullPointerException("ivrMenuId");
@@ -44,6 +46,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val ivrMenu
      * Operation: Update IVR Menu
      * Http Put /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
      */
+    @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     fun put(iVRMenuInfo: com.ringcentral.definitions.IVRMenuInfo): com.ringcentral.definitions.IVRMenuInfo? {
         if (this.ivrMenuId == null) {
             throw NullPointerException("ivrMenuId");

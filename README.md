@@ -17,7 +17,7 @@ __[Voice](https://developer.ringcentral.com/api-products/voice), [SMS/MMS](https
 
 ```groovy
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
 dependencies {
@@ -31,13 +31,6 @@ Don't forget to replace `[version]` with expected version.
 ### Maven
 
 ```xml
-<repositories>
-  <repository>
-    <id>jcenter</id>
-    <url>https://jcenter.bintray.com/</url>
-  </repository>
-</repositories>
-
 <dependency>
   <groupId>com.ringcentral</groupId>
   <artifactId>ringcentral</artifactId>

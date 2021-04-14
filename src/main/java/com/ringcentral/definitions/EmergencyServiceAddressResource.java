@@ -12,7 +12,7 @@ public class EmergencyServiceAddressResource
     this.street = street;
     return this;
   }
-  
+
 
         /**
          */
@@ -22,7 +22,7 @@ public class EmergencyServiceAddressResource
     this.street2 = street2;
     return this;
   }
-  
+
 
         /**
          */
@@ -32,7 +32,7 @@ public class EmergencyServiceAddressResource
     this.city = city;
     return this;
   }
-  
+
 
         /**
          */
@@ -42,7 +42,7 @@ public class EmergencyServiceAddressResource
     this.zip = zip;
     return this;
   }
-  
+
 
         /**
          */
@@ -52,7 +52,7 @@ public class EmergencyServiceAddressResource
     this.customerName = customerName;
     return this;
   }
-  
+
 
         /**
          * State/province name
@@ -63,7 +63,7 @@ public class EmergencyServiceAddressResource
     this.state = state;
     return this;
   }
-  
+
 
         /**
          * Internal identifier of a state
@@ -74,7 +74,7 @@ public class EmergencyServiceAddressResource
     this.stateId = stateId;
     return this;
   }
-  
+
 
         /**
          * ISO code of a state
@@ -85,7 +85,7 @@ public class EmergencyServiceAddressResource
     this.stateIsoCode = stateIsoCode;
     return this;
   }
-  
+
 
         /**
          * Full name of a state
@@ -96,7 +96,7 @@ public class EmergencyServiceAddressResource
     this.stateName = stateName;
     return this;
   }
-  
+
 
         /**
          * Internal identifier of a country
@@ -107,7 +107,7 @@ public class EmergencyServiceAddressResource
     this.countryId = countryId;
     return this;
   }
-  
+
 
         /**
          * ISO code of a country
@@ -118,7 +118,7 @@ public class EmergencyServiceAddressResource
     this.countryIsoCode = countryIsoCode;
     return this;
   }
-  
+
 
         /**
          * Country name
@@ -129,7 +129,7 @@ public class EmergencyServiceAddressResource
     this.country = country;
     return this;
   }
-  
+
 
         /**
          * Full name of a country
@@ -140,7 +140,7 @@ public class EmergencyServiceAddressResource
     this.countryName = countryName;
     return this;
   }
-  
+
 
         /**
          * Specifies if emergency address is out of country
@@ -151,7 +151,7 @@ public class EmergencyServiceAddressResource
     this.outOfCountry = outOfCountry;
     return this;
   }
-  
+
 
         /**
          * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to 'True'
@@ -163,7 +163,7 @@ public class EmergencyServiceAddressResource
     this.syncStatus = syncStatus;
     return this;
   }
-  
+
 
         /**
          * Name of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
@@ -174,7 +174,7 @@ public class EmergencyServiceAddressResource
     this.additionalCustomerName = additionalCustomerName;
     return this;
   }
-  
+
 
         /**
          * Email of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia.
@@ -185,7 +185,7 @@ public class EmergencyServiceAddressResource
     this.customerEmail = customerEmail;
     return this;
   }
-  
+
 
         /**
          * Email of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
@@ -196,7 +196,7 @@ public class EmergencyServiceAddressResource
     this.additionalCustomerEmail = additionalCustomerEmail;
     return this;
   }
-  
+
 
         /**
          * Phone number of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia
@@ -207,10 +207,10 @@ public class EmergencyServiceAddressResource
     this.customerPhone = customerPhone;
     return this;
   }
-  
+
 
         /**
-         * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK & Australia.
+         * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
          */
         public String additionalCustomerPhone;
   public EmergencyServiceAddressResource additionalCustomerPhone(String additionalCustomerPhone)
@@ -218,7 +218,7 @@ public class EmergencyServiceAddressResource
     this.additionalCustomerPhone = additionalCustomerPhone;
     return this;
   }
-  
+
 
         /**
          * Internal identifier of a tax
@@ -229,5 +229,5 @@ public class EmergencyServiceAddressResource
     this.taxId = taxId;
     return this;
   }
-  
+
 }

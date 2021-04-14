@@ -13,7 +13,7 @@ public class ShippingAddressInfo
     this.customerName = customerName;
     return this;
   }
-  
+
 
         /**
          * Name of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
@@ -24,7 +24,7 @@ public class ShippingAddressInfo
     this.additionalCustomerName = additionalCustomerName;
     return this;
   }
-  
+
 
         /**
          * Email of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia.
@@ -35,7 +35,7 @@ public class ShippingAddressInfo
     this.customerEmail = customerEmail;
     return this;
   }
-  
+
 
         /**
          * Email of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
@@ -46,7 +46,7 @@ public class ShippingAddressInfo
     this.additionalCustomerEmail = additionalCustomerEmail;
     return this;
   }
-  
+
 
         /**
          * Phone number of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia
@@ -57,10 +57,10 @@ public class ShippingAddressInfo
     this.customerPhone = customerPhone;
     return this;
   }
-  
+
 
         /**
-         * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK & Australia.
+         * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
          */
         public String additionalCustomerPhone;
   public ShippingAddressInfo additionalCustomerPhone(String additionalCustomerPhone)
@@ -68,7 +68,7 @@ public class ShippingAddressInfo
     this.additionalCustomerPhone = additionalCustomerPhone;
     return this;
   }
-  
+
 
         /**
          * Street address, line 1 - street address, P.O. box, company name, c/o
@@ -79,7 +79,7 @@ public class ShippingAddressInfo
     this.street = street;
     return this;
   }
-  
+
 
         /**
          * Street address, line 2 - apartment, suite, unit, building, floor, etc.
@@ -90,7 +90,7 @@ public class ShippingAddressInfo
     this.street2 = street2;
     return this;
   }
-  
+
 
         /**
          * City name
@@ -101,7 +101,7 @@ public class ShippingAddressInfo
     this.city = city;
     return this;
   }
-  
+
 
         /**
          * State/province name
@@ -112,7 +112,7 @@ public class ShippingAddressInfo
     this.state = state;
     return this;
   }
-  
+
 
         /**
          * Internal identifier of a state
@@ -123,7 +123,7 @@ public class ShippingAddressInfo
     this.stateId = stateId;
     return this;
   }
-  
+
 
         /**
          * ISO code of a state
@@ -134,7 +134,7 @@ public class ShippingAddressInfo
     this.stateIsoCode = stateIsoCode;
     return this;
   }
-  
+
 
         /**
          * Full name of a state
@@ -145,7 +145,7 @@ public class ShippingAddressInfo
     this.stateName = stateName;
     return this;
   }
-  
+
 
         /**
          * Internal identifier of a country
@@ -156,7 +156,7 @@ public class ShippingAddressInfo
     this.countryId = countryId;
     return this;
   }
-  
+
 
         /**
          * ISO code of a country
@@ -167,7 +167,7 @@ public class ShippingAddressInfo
     this.countryIsoCode = countryIsoCode;
     return this;
   }
-  
+
 
         /**
          * Country name
@@ -178,7 +178,7 @@ public class ShippingAddressInfo
     this.country = country;
     return this;
   }
-  
+
 
         /**
          * Full name of a country
@@ -189,7 +189,7 @@ public class ShippingAddressInfo
     this.countryName = countryName;
     return this;
   }
-  
+
 
         /**
          * Zip code
@@ -200,7 +200,7 @@ public class ShippingAddressInfo
     this.zip = zip;
     return this;
   }
-  
+
 
         /**
          * National taxpayer identification number. Should be specified for Brazil (CNPJ/CPF number) and Argentina (CUIT number).
@@ -211,5 +211,5 @@ public class ShippingAddressInfo
     this.taxId = taxId;
     return this;
   }
-  
+
 }

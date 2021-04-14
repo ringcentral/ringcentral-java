@@ -13,7 +13,7 @@ public class CallLogRecordLegInfo
     this.action = action;
     return this;
   }
-  
+
 
         /**
          * Call direction
@@ -25,7 +25,7 @@ public class CallLogRecordLegInfo
     this.direction = direction;
     return this;
   }
-  
+
 
         /**
          */
@@ -35,7 +35,7 @@ public class CallLogRecordLegInfo
     this.billing = billing;
     return this;
   }
-  
+
 
         /**
          */
@@ -45,7 +45,7 @@ public class CallLogRecordLegInfo
     this.delegate = delegate;
     return this;
   }
-  
+
 
         /**
          * Internal identifier of an extension
@@ -56,7 +56,7 @@ public class CallLogRecordLegInfo
     this.extensionId = extensionId;
     return this;
   }
-  
+
 
         /**
          * Call duration in seconds
@@ -67,7 +67,7 @@ public class CallLogRecordLegInfo
     this.duration = duration;
     return this;
   }
-  
+
 
         /**
          */
@@ -77,7 +77,7 @@ public class CallLogRecordLegInfo
     this.extension = extension;
     return this;
   }
-  
+
 
         /**
          * Leg type
@@ -89,7 +89,7 @@ public class CallLogRecordLegInfo
     this.legType = legType;
     return this;
   }
-  
+
 
         /**
          * The call start datetime in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
@@ -100,7 +100,7 @@ public class CallLogRecordLegInfo
     this.startTime = startTime;
     return this;
   }
-  
+
 
         /**
          * Call type
@@ -112,7 +112,7 @@ public class CallLogRecordLegInfo
     this.type = type;
     return this;
   }
-  
+
 
         /**
          * Status description of the call operation
@@ -124,7 +124,7 @@ public class CallLogRecordLegInfo
     this.result = result;
     return this;
   }
-  
+
 
         /**
          * Reason of a call result:
@@ -143,7 +143,7 @@ public class CallLogRecordLegInfo
  *  * `International Restricted` - The country and/or area you attempted to call has been prohibited by your administrator
  *  * `Bad Number` - An error occurred when making the call. Please check the number before trying again
  *  * `Info 411 Restricted` - Calling to 411 Information Services is restricted
- *  * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at <(888) 555-1212>
+ *  * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at (888) 555-1212
  *  * `No Digital Line` - This DigitalLine was either not plugged in or did not have an internet connection
  *  * `Failed Try Again` - Call failed. Please try again
  *  * `Max Call Limit` - The number of simultaneous calls to your account has reached its limit
@@ -169,7 +169,7 @@ public class CallLogRecordLegInfo
     this.reason = reason;
     return this;
   }
-  
+
 
         /**
          */
@@ -179,7 +179,7 @@ public class CallLogRecordLegInfo
     this.reasonDescription = reasonDescription;
     return this;
   }
-  
+
 
         /**
          */
@@ -189,7 +189,7 @@ public class CallLogRecordLegInfo
     this.from = from;
     return this;
   }
-  
+
 
         /**
          */
@@ -199,7 +199,7 @@ public class CallLogRecordLegInfo
     this.to = to;
     return this;
   }
-  
+
 
         /**
          * Call transport
@@ -211,7 +211,7 @@ public class CallLogRecordLegInfo
     this.transport = transport;
     return this;
   }
-  
+
 
         /**
          */
@@ -221,7 +221,7 @@ public class CallLogRecordLegInfo
     this.recording = recording;
     return this;
   }
-  
+
 
         /**
          * Indicates that the recording is too short and therefore wouldn't be returned. The flag is not returned if the value is false
@@ -232,7 +232,7 @@ public class CallLogRecordLegInfo
     this.shortRecording = shortRecording;
     return this;
   }
-  
+
 
         /**
          * Returned for 'Detailed' call log. Specifies if the leg is master-leg
@@ -243,7 +243,7 @@ public class CallLogRecordLegInfo
     this.master = master;
     return this;
   }
-  
+
 
         /**
          */
@@ -253,7 +253,7 @@ public class CallLogRecordLegInfo
     this.message = message;
     return this;
   }
-  
+
 
         /**
          * Telephony identifier of a call session
@@ -264,5 +264,5 @@ public class CallLogRecordLegInfo
     this.telephonySessionId = telephonySessionId;
     return this;
   }
-  
+
 }

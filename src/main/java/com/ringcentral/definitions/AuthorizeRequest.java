@@ -13,7 +13,7 @@ public class AuthorizeRequest
     this.response_type = response_type;
     return this;
   }
-  
+
 
         /**
          * This is a callback URI which determines where the response is sent. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration
@@ -24,7 +24,7 @@ public class AuthorizeRequest
     this.redirect_uri = redirect_uri;
     return this;
   }
-  
+
 
         /**
          * Identifier (key) of a client application
@@ -35,7 +35,7 @@ public class AuthorizeRequest
     this.client_id = client_id;
     return this;
   }
-  
+
 
         /**
          * Client state. Returned back to the client at the end of the flow
@@ -46,7 +46,7 @@ public class AuthorizeRequest
     this.state = state;
     return this;
   }
-  
+
 
         /**
          * Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is '1210' - RingCentral US
@@ -57,7 +57,7 @@ public class AuthorizeRequest
     this.brand_id = brand_id;
     return this;
   }
-  
+
 
         /**
          * Style of login form. The default value is 'page'. The 'popup' and 'touch' values are featured for mobile applications
@@ -69,10 +69,10 @@ public class AuthorizeRequest
     this.display = display;
     return this;
   }
-  
+
 
         /**
-         * Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. The default value is 'login&sso'
+         * Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. The default value is 'login and sso'
          * Enum: login, sso, consent
          */
         public String prompt;
@@ -81,7 +81,7 @@ public class AuthorizeRequest
     this.prompt = prompt;
     return this;
   }
-  
+
 
         /**
          * Localization code of a language. Overwrites 'Accept-Language' header value
@@ -92,7 +92,7 @@ public class AuthorizeRequest
     this.localeId = localeId;
     return this;
   }
-  
+
 
         /**
          * Localization code of a language. Overwrites 'localeId' parameter value
@@ -103,7 +103,7 @@ public class AuthorizeRequest
     this.ui_locales = ui_locales;
     return this;
   }
-  
+
 
         /**
          * User interface options data
@@ -115,7 +115,7 @@ public class AuthorizeRequest
     this.ui_options = ui_options;
     return this;
   }
-  
+
 
         /**
          */
@@ -125,7 +125,7 @@ public class AuthorizeRequest
     this.scope = scope;
     return this;
   }
-  
+
 
         /**
          */
@@ -135,7 +135,7 @@ public class AuthorizeRequest
     this.accept_language = accept_language;
     return this;
   }
-  
+
 
         /**
          */
@@ -145,7 +145,7 @@ public class AuthorizeRequest
     this.request = request;
     return this;
   }
-  
+
 
         /**
          */
@@ -155,7 +155,7 @@ public class AuthorizeRequest
     this.request_uri = request_uri;
     return this;
   }
-  
+
 
         /**
          */
@@ -165,7 +165,7 @@ public class AuthorizeRequest
     this.nonce = nonce;
     return this;
   }
-  
+
 
         /**
          */
@@ -175,7 +175,7 @@ public class AuthorizeRequest
     this.code_challenge = code_challenge;
     return this;
   }
-  
+
 
         /**
          * Enum: plain, S256
@@ -186,7 +186,7 @@ public class AuthorizeRequest
     this.code_challenge_method = code_challenge_method;
     return this;
   }
-  
+
 
         /**
          */
@@ -196,5 +196,5 @@ public class AuthorizeRequest
     this.discovery = discovery;
     return this;
   }
-  
+
 }

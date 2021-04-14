@@ -12,7 +12,7 @@ public class UserCallLogRecord
     this.id = id;
     return this;
   }
-  
+
 
         /**
          * Canonical URI of a call log record
@@ -23,7 +23,7 @@ public class UserCallLogRecord
     this.uri = uri;
     return this;
   }
-  
+
 
         /**
          * Internal identifier of a call session
@@ -34,7 +34,7 @@ public class UserCallLogRecord
     this.sessionId = sessionId;
     return this;
   }
-  
+
 
         /**
          * Telephony identifier of a call session
@@ -45,7 +45,7 @@ public class UserCallLogRecord
     this.telephonySessionId = telephonySessionId;
     return this;
   }
-  
+
 
         /**
          */
@@ -55,7 +55,7 @@ public class UserCallLogRecord
     this.from = from;
     return this;
   }
-  
+
 
         /**
          */
@@ -65,7 +65,7 @@ public class UserCallLogRecord
     this.to = to;
     return this;
   }
-  
+
 
         /**
          */
@@ -75,7 +75,7 @@ public class UserCallLogRecord
     this.extension = extension;
     return this;
   }
-  
+
 
         /**
          * Call type
@@ -87,7 +87,7 @@ public class UserCallLogRecord
     this.type = type;
     return this;
   }
-  
+
 
         /**
          * For 'Detailed' view only. Call transport
@@ -99,7 +99,7 @@ public class UserCallLogRecord
     this.transport = transport;
     return this;
   }
-  
+
 
         /**
          * For 'Detailed' view only. Leg description
@@ -110,7 +110,7 @@ public class UserCallLogRecord
     this.legs = legs;
     return this;
   }
-  
+
 
         /**
          */
@@ -120,7 +120,7 @@ public class UserCallLogRecord
     this.billing = billing;
     return this;
   }
-  
+
 
         /**
          * Call direction
@@ -132,7 +132,7 @@ public class UserCallLogRecord
     this.direction = direction;
     return this;
   }
-  
+
 
         /**
          */
@@ -142,7 +142,7 @@ public class UserCallLogRecord
     this.message = message;
     return this;
   }
-  
+
 
         /**
          * The call start datetime in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
@@ -153,7 +153,7 @@ public class UserCallLogRecord
     this.startTime = startTime;
     return this;
   }
-  
+
 
         /**
          */
@@ -163,7 +163,7 @@ public class UserCallLogRecord
     this.delegate = delegate;
     return this;
   }
-  
+
 
         /**
          * Indicates whether the record is deleted. Returned for deleted records, for ISync requests
@@ -174,7 +174,7 @@ public class UserCallLogRecord
     this.deleted = deleted;
     return this;
   }
-  
+
 
         /**
          * Call duration in seconds
@@ -185,7 +185,7 @@ public class UserCallLogRecord
     this.duration = duration;
     return this;
   }
-  
+
 
         /**
          * For 'Detailed' view only. The datetime when the call log record was modified in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
@@ -196,7 +196,7 @@ public class UserCallLogRecord
     this.lastModifiedTime = lastModifiedTime;
     return this;
   }
-  
+
 
         /**
          */
@@ -206,7 +206,7 @@ public class UserCallLogRecord
     this.recording = recording;
     return this;
   }
-  
+
 
         /**
          * Indicates that the recording is too short and therefore wouldn't be returned. The flag is not returned if the value is false
@@ -217,7 +217,7 @@ public class UserCallLogRecord
     this.shortRecording = shortRecording;
     return this;
   }
-  
+
 
         /**
          * Action description of the call operation
@@ -229,7 +229,7 @@ public class UserCallLogRecord
     this.action = action;
     return this;
   }
-  
+
 
         /**
          * Status description of the call operation
@@ -241,7 +241,7 @@ public class UserCallLogRecord
     this.result = result;
     return this;
   }
-  
+
 
         /**
          * Reason of a call result:
@@ -260,7 +260,7 @@ public class UserCallLogRecord
  *  * `International Restricted` - The country and/or area you attempted to call has been prohibited by your administrator
  *  * `Bad Number` - An error occurred when making the call. Please check the number before trying again
  *  * `Info 411 Restricted` - Calling to 411 Information Services is restricted
- *  * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at <(888) 555-1212>
+ *  * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at (888) 555-1212
  *  * `No Digital Line` - This DigitalLine was either not plugged in or did not have an internet connection
  *  * `Failed Try Again` - Call failed. Please try again
  *  * `Max Call Limit` - The number of simultaneous calls to your account has reached its limit
@@ -286,7 +286,7 @@ public class UserCallLogRecord
     this.reason = reason;
     return this;
   }
-  
+
 
         /**
          */
@@ -296,5 +296,5 @@ public class UserCallLogRecord
     this.reasonDescription = reasonDescription;
     return this;
   }
-  
+
 }

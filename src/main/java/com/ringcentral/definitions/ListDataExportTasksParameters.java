@@ -13,10 +13,10 @@ public class ListDataExportTasksParameters
     this.status = status;
     return this;
   }
-  
+
 
         /**
-         * Page number to be retrieved; value range is > 0
+         * Page number to be retrieved; value range is greater than 0
          * Default: 1
          */
         public Long page;
@@ -25,7 +25,7 @@ public class ListDataExportTasksParameters
     this.page = page;
     return this;
   }
-  
+
 
         /**
          * Number of records to be returned per page; value range is 1 - 250
@@ -37,5 +37,5 @@ public class ListDataExportTasksParameters
     this.perPage = perPage;
     return this;
   }
-  
+
 }

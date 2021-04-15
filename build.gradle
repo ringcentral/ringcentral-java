@@ -3,12 +3,11 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.4.31'
     id 'maven'
     id 'java-library'
-    id 'maven-publish'
     id 'signing'
 }
 
 group 'com.ringcentral'
-version '1.7.1'
+version '1.7.2'
 archivesBaseName = "ringcentral"
 
 repositories {
@@ -41,58 +40,6 @@ java {
     withJavadocJar()
     withSourcesJar()
 }
-
-publishing {
-    publications {
-        RingCentral(MavenPublication) {
-            groupId 'com.ringcentral'
-            artifactId 'ringcentral'
-            version '1.7.1'
-            from components.java
-            // versionMapping {
-            //     usage('java-api') {
-            //         fromResolutionOf('runtimeClasspath')
-            //     }
-            //     usage('java-runtime') {
-            //         fromResolutionResult()
-            //     }
-            // }
-            pom {
-                name = 'RingCentral'
-                description = 'RingCentral Java SDK'
-                url = 'https://github.com/ringcentral/ringcentral-java'
-                licenses {
-                    license {
-                        name = "MIT"
-                        url = "https://opensource.org/licenses/MIT"
-                    }
-                }
-                developers {
-                    developer {
-                        id = 'tylerliu'
-                        name = 'Tyler Liu'
-                        email = 'tyler.liu@ringcentral.com'
-                    }
-                }
-                scm {
-                    connection = 'scm:git:git://git@github.com:ringcentral/ringcentral-java.git'
-                    developerConnection = 'scm:git:ssh://git@github.com:ringcentral/ringcentral-java.git'
-                    url = 'https://github.com/ringcentral/ringcentral-java'
-                }
-            }
-        }
-    }
-    repositories {
-        maven {
-            // change URLs to point to your repos, e.g. http://my.org/repo
-            // def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
-            // def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
-            // url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-            url = 'https://repo1.maven.org/maven2'
-        }
-    }
-}
-
 
 uploadArchives {
   repositories {

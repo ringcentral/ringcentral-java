@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.4.31'
-
+    id 'maven'
     id 'java-library'
     id 'maven-publish'
     id 'signing'
@@ -9,6 +9,7 @@ plugins {
 
 group 'com.ringcentral'
 version '1.7.1'
+archivesBaseName = "ringcentral"
 
 repositories {
     mavenCentral()
@@ -21,14 +22,19 @@ dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+task sourcesJar(type: Jar) {
     classifier = 'sources'
     from sourceSets.main.allSource
 }
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
+artifacts {
+    archives javadocJar, sourcesJar
+}
+signing {
+    sign configurations.archives
 }
 
 java {
@@ -87,16 +93,56 @@ publishing {
     }
 }
 
-signing {
-    sign publishing.publications.RingCentral
-}
 
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-javadoc {
-    if(JavaVersion.current().isJava9Compatible()) {
-        options.addBooleanOption('html5', true)
+      repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+        authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+        authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      pom.project {
+        name 'RingCentral SDK'
+        packaging 'jar'
+        artifactId 'ringcentral'
+        description 'RingCentral Java SDK'
+        url 'https://github.com/ringcentral/ringcentral-java'
+        licenses {
+            license {
+                name "MIT"
+                url "https://opensource.org/licenses/MIT"
+            }
+        }
+        developers {
+            developer {
+                id 'tylerliu'
+                name 'Tyler Liu'
+                email 'tyler.liu@ringcentral.com'
+            }
+        }
+        scm {
+            connection 'scm:git:git://git@github.com:ringcentral/ringcentral-java.git'
+            developerConnection 'scm:git:ssh://git@github.com:ringcentral/ringcentral-java.git'
+            url 'https://github.com/ringcentral/ringcentral-java'
+        }
+      }
     }
+  }
 }
+
+
+
+// javadoc {
+//     if(JavaVersion.current().isJava9Compatible()) {
+//         options.addBooleanOption('html5', true)
+//     }
+// }
 
 
 

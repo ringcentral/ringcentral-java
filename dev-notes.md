@@ -30,4 +30,11 @@ The generated code is formatted by IntelliJ IDEA.
 
 Update version numbers in `build.gradle`.
 
-    ./gradlew -PbintrayUser=bintrayUser -PbintrayApiKey=bintrayApiKey bintrayUpload
+```
+./gradlew uploadArchives
+```
+
+Go to https://s01.oss.sonatype.org/#stagingRepositories
+
+Login, "Close" and "Release" the SDK.
+

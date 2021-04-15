@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/ringcentral/ringcentral-java.svg?branch=master)](https://travis-ci.org/ringcentral/ringcentral-java)
 [![Coverage Status](https://coveralls.io/repos/github/ringcentral/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/ringcentral/ringcentral-java?branch=master)
-[![Download](https://api.bintray.com/packages/tylerlong/maven/ringcentral/images/download.svg)](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion)
 [![Chat](https://img.shields.io/badge/chat-on%20glip-orange.svg)](https://glipped.herokuapp.com/)
 [![Twitter](https://img.shields.io/twitter/follow/ringcentraldevs.svg?style=social&label=follow)](https://twitter.com/RingCentralDevs)
 
@@ -43,13 +42,13 @@ Don't forget to replace `[version]` with expected version.
 
 ### Manually
 
-[Download jar here](https://bintray.com/tylerlong/maven/ringcentral/_latestVersion) and save it into your java classpath.
+[Download jar here](https://search.maven.org/classic/#search%7Cga%7C1%7Ca%3A%22ringcentral%22) and save it into your java classpath.
 
 
 ## Usage
 
 
-### Intialization & Authorization
+### Initialization & Authorization
 
 ```java
 RestClient rc = new RestClient(clientId, clientSecret, server);
@@ -86,7 +85,7 @@ There is also lots of useful code for your reference in our [test cases](./src/t
 
 
 
-## PubNub subscriptions & notificatioins
+## PubNub subscriptions & notifications
 
 
 Please refer to the [RingCentral PubNub SDK for Java](https://github.com/ringcentral/ringcentral-pubnub-java) project.

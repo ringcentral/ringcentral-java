@@ -7,8 +7,10 @@ plugins {
 }
 
 group 'com.ringcentral'
-version '1.7.2'
+version '1.7.3'
 archivesBaseName = "ringcentral"
+
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()

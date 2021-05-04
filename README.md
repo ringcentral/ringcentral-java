@@ -83,7 +83,7 @@ You can find [sample code for all the endpoints](./samples.md).
 
 There is also lots of useful code for your reference in our [test cases](./src/test/java/com/ringcentral).
 
-Auto-generated [JavaDocs](https://ringcentral.github.io/ringcentral-java/).
+Auto-generated [JavaDoc](https://ringcentral.github.io/ringcentral-java/).
 
 
 ## PubNub subscriptions & notifications

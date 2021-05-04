@@ -23,6 +23,10 @@ dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
 
+javadoc {
+    options.addBooleanOption('html5', true)
+}
+
 task javadocJar(type: Jar) {
     classifier = 'javadoc'
     from javadoc

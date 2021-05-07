@@ -7,14 +7,14 @@
   },
   "dependencies": {
     "change-case": "^4.1.2",
-    "js-yaml": "^4.0.0",
+    "js-yaml": "^4.1.0",
     "lower-case-first": "^2.0.2",
     "ramda": "^0.27.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
-    "@babel/register": "^7.13.8",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/register": "^7.13.16",
     "standard": "^16.0.3",
     "yarn-upgrade-all": "^0.5.4"
   }

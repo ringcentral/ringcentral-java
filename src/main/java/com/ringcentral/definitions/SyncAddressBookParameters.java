@@ -1,50 +1,43 @@
 package com.ringcentral.definitions;
 
 
-public class SyncAddressBookParameters
-{
+// Query parameters for operation syncAddressBook
+public class SyncAddressBookParameters {
     /**
-         * Type of synchronization
-         * Enum: FSync, ISync
-         */
-        public String syncType;
-  public SyncAddressBookParameters syncType(String syncType)
-  {
-    this.syncType = syncType;
-    return this;
-  }
-  
+     * Type of synchronization
+     * Enum: FSync, ISync
+     */
+    public String syncType;
+    /**
+     * Value of syncToken property of the last sync request response
+     */
+    public String syncToken;
+    /**
+     * Number of records per page to be returned. The max number of records is 250, which is also the default. For 'FSync' if the number of records exceeds the parameter value (either specified or default), all of the pages can be retrieved in several requests. For 'ISync' if the number of records exceeds the page size, the number of incoming changes to this number is limited
+     */
+    public Long perPage;
+    /**
+     * Internal identifier of a page. It can be obtained from the 'nextPageId' parameter passed in response body
+     */
+    public Long pageId;
 
-        /**
-         * Value of syncToken property of the last sync request response
-         */
-        public String syncToken;
-  public SyncAddressBookParameters syncToken(String syncToken)
-  {
-    this.syncToken = syncToken;
-    return this;
-  }
-  
+    public SyncAddressBookParameters syncType(String syncType) {
+        this.syncType = syncType;
+        return this;
+    }
 
-        /**
-         * Number of records per page to be returned. The max number of records is 250, which is also the default. For 'FSync' if the number of records exceeds the parameter value (either specified or default), all of the pages can be retrieved in several requests. For 'ISync' if the number of records exceeds the page size, the number of incoming changes to this number is limited
-         */
-        public Long perPage;
-  public SyncAddressBookParameters perPage(Long perPage)
-  {
-    this.perPage = perPage;
-    return this;
-  }
-  
+    public SyncAddressBookParameters syncToken(String syncToken) {
+        this.syncToken = syncToken;
+        return this;
+    }
 
-        /**
-         * Internal identifier of a page. It can be obtained from the 'nextPageId' parameter passed in response body
-         */
-        public Long pageId;
-  public SyncAddressBookParameters pageId(Long pageId)
-  {
-    this.pageId = pageId;
-    return this;
-  }
-  
+    public SyncAddressBookParameters perPage(Long perPage) {
+        this.perPage = perPage;
+        return this;
+    }
+
+    public SyncAddressBookParameters pageId(Long pageId) {
+        this.pageId = pageId;
+        return this;
+    }
 }

@@ -1,28 +1,24 @@
 package com.ringcentral.definitions;
 
 
-    // Account information
-public class GetExtensionAccountInfo
-{
+// Account information
+public class GetExtensionAccountInfo {
     /**
-         * Internal identifier of an account
-         */
-        public String id;
-  public GetExtensionAccountInfo id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+     * Internal identifier of an account
+     */
+    public String id;
+    /**
+     * Canonical URI of an account
+     */
+    public String uri;
 
-        /**
-         * Canonical URI of an account
-         */
-        public String uri;
-  public GetExtensionAccountInfo uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+    public GetExtensionAccountInfo id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public GetExtensionAccountInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 }

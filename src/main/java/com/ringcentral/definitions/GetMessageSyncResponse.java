@@ -1,39 +1,33 @@
 package com.ringcentral.definitions;
 
 
-public class GetMessageSyncResponse
-{
+public class GetMessageSyncResponse {
     /**
-         * Link to the message sync resource
-         */
-        public String uri;
-  public GetMessageSyncResponse uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to the message sync resource
+     */
+    public String uri;
+    /**
+     * List of message records with synchronization information
+     * Required
+     */
+    public GetMessageInfoResponse[] records;
+    /**
+     * Required
+     */
+    public SyncInfoMessages syncInfo;
 
-        /**
-         * List of message records with synchronization information
-         * Required
-         */
-        public GetMessageInfoResponse[] records;
-  public GetMessageSyncResponse records(GetMessageInfoResponse[] records)
-  {
-    this.records = records;
-    return this;
-  }
-  
+    public GetMessageSyncResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         * Required
-         */
-        public SyncInfoMessages syncInfo;
-  public GetMessageSyncResponse syncInfo(SyncInfoMessages syncInfo)
-  {
-    this.syncInfo = syncInfo;
-    return this;
-  }
-  
+    public GetMessageSyncResponse records(GetMessageInfoResponse[] records) {
+        this.records = records;
+        return this;
+    }
+
+    public GetMessageSyncResponse syncInfo(SyncInfoMessages syncInfo) {
+        this.syncInfo = syncInfo;
+        return this;
+    }
 }

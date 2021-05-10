@@ -1,59 +1,50 @@
 package com.ringcentral.definitions;
 
 
-public class GetTimezoneInfoResponse
-{
+public class GetTimezoneInfoResponse {
     /**
-         * Internal identifier of a timezone
-         */
-        public String id;
-  public GetTimezoneInfoResponse id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+     * Internal identifier of a timezone
+     */
+    public String id;
+    /**
+     * Canonical URI of a timezone
+     */
+    public String uri;
+    /**
+     * Short name of a timezone
+     */
+    public String name;
+    /**
+     * Description of a timezone
+     */
+    public String description;
+    /**
+     *
+     */
+    public String bias;
 
-        /**
-         * Canonical URI of a timezone
-         */
-        public String uri;
-  public GetTimezoneInfoResponse uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+    public GetTimezoneInfoResponse id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Short name of a timezone
-         */
-        public String name;
-  public GetTimezoneInfoResponse name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public GetTimezoneInfoResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         * Description of a timezone
-         */
-        public String description;
-  public GetTimezoneInfoResponse description(String description)
-  {
-    this.description = description;
-    return this;
-  }
-  
+    public GetTimezoneInfoResponse name(String name) {
+        this.name = name;
+        return this;
+    }
 
-        /**
-         */
-        public String bias;
-  public GetTimezoneInfoResponse bias(String bias)
-  {
-    this.bias = bias;
-    return this;
-  }
-  
+    public GetTimezoneInfoResponse description(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public GetTimezoneInfoResponse bias(String bias) {
+        this.bias = bias;
+        return this;
+    }
 }

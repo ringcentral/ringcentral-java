@@ -20,5 +20,4 @@ public class Name {
         this.givenName = givenName;
         return this;
     }
-
 }

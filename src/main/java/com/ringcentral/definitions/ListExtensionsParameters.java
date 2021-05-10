@@ -1,73 +1,66 @@
 package com.ringcentral.definitions;
 
 
-public class ListExtensionsParameters
-{
+// Query parameters for operation listExtensions
+public class ListExtensionsParameters {
     /**
-         * Number of extension to be retrieved
-         */
-        public String extensionNumber;
-  public ListExtensionsParameters extensionNumber(String extensionNumber)
-  {
-    this.extensionNumber = extensionNumber;
-    return this;
-  }
-  
+     * Number of extension to be retrieved
+     */
+    public String extensionNumber;
+    /**
+     * Extension email address
+     */
+    public String email;
+    /**
+     * Indicates the page number to retrieve. Only positive number values are allowed
+     * Format: int64
+     * Default: 1
+     */
+    public Long page;
+    /**
+     * Indicates the page size (number of items)
+     * Format: int64
+     * Default: 100
+     */
+    public Long perPage;
+    /**
+     * Extension current state. Multiple values are supported. If 'Unassigned' is specified, then extensions without `extensionNumber` attribute are returned. If not specified, then all extensions are returned.
+     * Enum: Enabled, Disabled, NotActivated, Unassigned
+     */
+    public String[] status;
+    /**
+     * Extension type. Multiple values are supported. Please note that legacy 'Department' extension type corresponds to 'Call Queue' extensions in modern RingCentral product terminology
+     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, ProxyAdmin, DelegatedLinesGroup
+     */
+    public String[] type;
 
-        /**
-         * Extension email address
-         */
-        public String email;
-  public ListExtensionsParameters email(String email)
-  {
-    this.email = email;
-    return this;
-  }
-  
+    public ListExtensionsParameters extensionNumber(String extensionNumber) {
+        this.extensionNumber = extensionNumber;
+        return this;
+    }
 
-        /**
-         * Indicates the page number to retrieve. Only positive number values are allowed
-         * Default: 1
-         */
-        public Long page;
-  public ListExtensionsParameters page(Long page)
-  {
-    this.page = page;
-    return this;
-  }
-  
+    public ListExtensionsParameters email(String email) {
+        this.email = email;
+        return this;
+    }
 
-        /**
-         * Indicates the page size (number of items)
-         * Default: 100
-         */
-        public Long perPage;
-  public ListExtensionsParameters perPage(Long perPage)
-  {
-    this.perPage = perPage;
-    return this;
-  }
-  
+    public ListExtensionsParameters page(Long page) {
+        this.page = page;
+        return this;
+    }
 
-        /**
-         * Extension current state. Multiple values are supported. If 'Unassigned' is specified, then extensions without `extensionNumber` attribute are returned. If not specified, then all extensions are returned.
-         */
-        public String[] status;
-  public ListExtensionsParameters status(String[] status)
-  {
-    this.status = status;
-    return this;
-  }
-  
+    public ListExtensionsParameters perPage(Long perPage) {
+        this.perPage = perPage;
+        return this;
+    }
 
-        /**
-         * Extension type. Multiple values are supported. Please note that legacy 'Department' extension type corresponds to 'Call Queue' extensions in modern RingCentral product terminology
-         */
-        public String[] type;
-  public ListExtensionsParameters type(String[] type)
-  {
-    this.type = type;
-    return this;
-  }
-  
+    public ListExtensionsParameters status(String[] status) {
+        this.status = status;
+        return this;
+    }
+
+    public ListExtensionsParameters type(String[] type) {
+        this.type = type;
+        return this;
+    }
 }

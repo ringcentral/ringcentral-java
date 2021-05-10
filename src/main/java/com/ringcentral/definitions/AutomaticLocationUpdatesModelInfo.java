@@ -1,39 +1,34 @@
 package com.ringcentral.definitions;
 
 
-    // HardPhone model information
-public class AutomaticLocationUpdatesModelInfo
-{
+// HardPhone model information
+public class AutomaticLocationUpdatesModelInfo {
     /**
-         * Device model identifier
-         */
-        public String id;
-  public AutomaticLocationUpdatesModelInfo id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+     * Device model identifier
+     */
+    public String id;
+    /**
+     * Device name
+     */
+    public String name;
+    /**
+     * Device feature or multiple features supported
+     * Enum: BLA, Intercom, Paging, HELD
+     */
+    public String[] features;
 
-        /**
-         * Device name
-         */
-        public String name;
-  public AutomaticLocationUpdatesModelInfo name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public AutomaticLocationUpdatesModelInfo id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Device feature or multiple features supported
-         */
-        public String[] features;
-  public AutomaticLocationUpdatesModelInfo features(String[] features)
-  {
-    this.features = features;
-    return this;
-  }
-  
+    public AutomaticLocationUpdatesModelInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public AutomaticLocationUpdatesModelInfo features(String[] features) {
+        this.features = features;
+        return this;
+    }
 }

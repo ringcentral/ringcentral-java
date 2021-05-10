@@ -1,25 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class UpdateUnifiedPresence
-{
+public class UpdateUnifiedPresence {
     /**
-         */
-        public UpdateUnifiedPresenceGlip glip;
-  public UpdateUnifiedPresence glip(UpdateUnifiedPresenceGlip glip)
-  {
-    this.glip = glip;
-    return this;
-  }
-  
+     *
+     */
+    public UpdateUnifiedPresenceGlip glip;
+    /**
+     *
+     */
+    public UpdateUnifiedPresenceTelephony telephony;
 
-        /**
-         */
-        public UpdateUnifiedPresenceTelephony telephony;
-  public UpdateUnifiedPresence telephony(UpdateUnifiedPresenceTelephony telephony)
-  {
-    this.telephony = telephony;
-    return this;
-  }
-  
+    public UpdateUnifiedPresence glip(UpdateUnifiedPresenceGlip glip) {
+        this.glip = glip;
+        return this;
+    }
+
+    public UpdateUnifiedPresence telephony(UpdateUnifiedPresenceTelephony telephony) {
+        this.telephony = telephony;
+        return this;
+    }
 }

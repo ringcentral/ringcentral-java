@@ -1,48 +1,43 @@
 package com.ringcentral.definitions;
 
 
-public class SearchRequest
-{
+public class SearchRequest {
     /**
-         * page size
-         */
-        public Long count;
-  public SearchRequest count(Long count)
-  {
-    this.count = count;
-    return this;
-  }
-  
+     * page size
+     * Format: int32
+     */
+    public Long count;
+    /**
+     * only support 'userName' or 'email' filter expressions for now
+     */
+    public String filter;
+    /**
+     * Enum: urn:ietf:params:scim:api:messages:2.0:SearchRequest
+     */
+    public String[] schemas;
+    /**
+     * start index (1-based)
+     * Format: int32
+     */
+    public Long startIndex;
 
-        /**
-         * only support 'userName' or 'email' filter expressions for now
-         */
-        public String filter;
-  public SearchRequest filter(String filter)
-  {
-    this.filter = filter;
-    return this;
-  }
-  
+    public SearchRequest count(Long count) {
+        this.count = count;
+        return this;
+    }
 
-        /**
-         */
-        public String[] schemas;
-  public SearchRequest schemas(String[] schemas)
-  {
-    this.schemas = schemas;
-    return this;
-  }
-  
+    public SearchRequest filter(String filter) {
+        this.filter = filter;
+        return this;
+    }
 
-        /**
-         * start index (1-based)
-         */
-        public Long startIndex;
-  public SearchRequest startIndex(Long startIndex)
-  {
-    this.startIndex = startIndex;
-    return this;
-  }
-  
+    public SearchRequest schemas(String[] schemas) {
+        this.schemas = schemas;
+        return this;
+    }
+
+    public SearchRequest startIndex(Long startIndex) {
+        this.startIndex = startIndex;
+        return this;
+    }
 }

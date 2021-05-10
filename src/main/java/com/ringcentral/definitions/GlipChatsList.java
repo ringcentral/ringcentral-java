@@ -1,27 +1,24 @@
 package com.ringcentral.definitions;
 
 
-public class GlipChatsList
-{
+public class GlipChatsList {
     /**
-         * List of chats
-         * Required
-         */
-        public GlipChatInfo[] records;
-  public GlipChatsList records(GlipChatInfo[] records)
-  {
-    this.records = records;
-    return this;
-  }
-  
+     * List of chats
+     * Required
+     */
+    public GlipChatInfo[] records;
+    /**
+     *
+     */
+    public GlipNavigationInfo navigation;
 
-        /**
-         */
-        public GlipNavigationInfo navigation;
-  public GlipChatsList navigation(GlipNavigationInfo navigation)
-  {
-    this.navigation = navigation;
-    return this;
-  }
-  
+    public GlipChatsList records(GlipChatInfo[] records) {
+        this.records = records;
+        return this;
+    }
+
+    public GlipChatsList navigation(GlipNavigationInfo navigation) {
+        this.navigation = navigation;
+        return this;
+    }
 }

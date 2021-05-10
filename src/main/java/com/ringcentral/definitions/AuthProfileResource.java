@@ -1,25 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class AuthProfileResource
-{
+public class AuthProfileResource {
     /**
-         */
-        public String uri;
-  public AuthProfileResource uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Format: uri
+     */
+    public String uri;
+    /**
+     *
+     */
+    public ActivePermissionResource[] permissions;
 
-        /**
-         */
-        public ActivePermissionResource[] permissions;
-  public AuthProfileResource permissions(ActivePermissionResource[] permissions)
-  {
-    this.permissions = permissions;
-    return this;
-  }
-  
+    public AuthProfileResource uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public AuthProfileResource permissions(ActivePermissionResource[] permissions) {
+        this.permissions = permissions;
+        return this;
+    }
 }

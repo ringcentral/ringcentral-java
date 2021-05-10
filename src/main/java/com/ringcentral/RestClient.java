@@ -226,7 +226,7 @@ public class RestClient {
                     multipartBodyBuilder.addPart(RequestBody.create(jsonMediaType, Utils.gson.toJson(fields)));
                 }
                 for (Attachment attachment : attachments) {
-                    multipartBodyBuilder.addFormDataPart(attachmentName, attachment.fileName, new RequestBody() {
+                    multipartBodyBuilder.addFormDataPart(attachmentName, attachment.filename, new RequestBody() {
                         @Override
                         public MediaType contentType() {
                             if (attachment.contentType == null) {
@@ -237,7 +237,7 @@ public class RestClient {
 
                         @Override
                         public void writeTo(BufferedSink sink) throws IOException {
-                            sink.write(attachment.bytes);
+                            sink.write(attachment.content);
                         }
                     });
                 }

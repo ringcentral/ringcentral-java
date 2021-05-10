@@ -1,28 +1,25 @@
 package com.ringcentral.definitions;
 
 
-    // Error response
-public class ASGErrorResponse
-{
+// Error response
+public class ASGErrorResponse {
     /**
-         * Error code
-         */
-        public String errorCode;
-  public ASGErrorResponse errorCode(String errorCode)
-  {
-    this.errorCode = errorCode;
-    return this;
-  }
-  
+     * Error code
+     */
+    public String errorCode;
+    /**
+     * Human-readable description of an error. Not suitable for end users
+     * Example: AccountId 1234 is invalid
+     */
+    public String description;
 
-        /**
-         * Human-readable description of an error. Not suitable for end users
-         */
-        public String description;
-  public ASGErrorResponse description(String description)
-  {
-    this.description = description;
-    return this;
-  }
-  
+    public ASGErrorResponse errorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    public ASGErrorResponse description(String description) {
+        this.description = description;
+        return this;
+    }
 }

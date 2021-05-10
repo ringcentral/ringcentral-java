@@ -1,232 +1,197 @@
 package com.ringcentral.definitions;
 
 
-public class MeetingResponseResource
-{
+public class MeetingResponseResource {
     /**
-         * Link to a meeting resource
-         */
-        public String uri;
-  public MeetingResponseResource uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to a meeting resource
+     * Format: uri
+     */
+    public String uri;
+    /**
+     * Universally unique identifier of a meeting"
+     */
+    public String uuid;
+    /**
+     * Internal identifier of a meeting
+     */
+    public String id;
+    /**
+     * Custom topic of a meeting
+     */
+    public String topic;
+    /**
+     * Enum: Instant, Scheduled, ScheduledRecurring, Recurring
+     */
+    public String meetingType;
+    /**
+     * Meeting password
+     */
+    public String password;
+    /**
+     *
+     */
+    public String h323Password;
+    /**
+     * Status of a meeting
+     */
+    public String status;
+    /**
+     *
+     */
+    public MeetingLinks links;
+    /**
+     *
+     */
+    public MeetingScheduleResource schedule;
+    /**
+     *
+     */
+    public HostInfoRequest host;
+    /**
+     * If true, then participants can join the meeting before host arrives
+     */
+    public Boolean allowJoinBeforeHost;
+    /**
+     * Starting meetings with host video on/off (true/false)
+     */
+    public Boolean startHostVideo;
+    /**
+     * Starting meetings with participant video on/off (true/false)
+     */
+    public Boolean startParticipantsVideo;
+    /**
+     * Enum: Phone, ComputerAudio
+     */
+    public String[] audioOptions;
+    /**
+     *
+     */
+    public RecurrenceInfo reccurence;
+    /**
+     * Automatic record type
+     * Default: none
+     * Enum: local, cloud, none
+     */
+    public String autoRecordType;
+    /**
+     * If true, then only signed-in users can join this meeting
+     */
+    public Boolean enforceLogin;
+    /**
+     * If true, then participants are muted on entry
+     */
+    public Boolean muteParticipantsOnEntry;
+    /**
+     * If true, then the waiting room for participants is enabled
+     */
+    public Boolean enableWaitingRoom;
+    /**
+     * List of global dial-in countries (eg. US, UK, AU, etc.)
+     */
+    public String[] globalDialInCountries;
 
-        /**
-         * Universally unique identifier of a meeting"
-         */
-        public String uuid;
-  public MeetingResponseResource uuid(String uuid)
-  {
-    this.uuid = uuid;
-    return this;
-  }
-  
+    public MeetingResponseResource uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         * Internal identifier of a meeting
-         */
-        public String id;
-  public MeetingResponseResource id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+    public MeetingResponseResource uuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
 
-        /**
-         * Custom topic of a meeting
-         */
-        public String topic;
-  public MeetingResponseResource topic(String topic)
-  {
-    this.topic = topic;
-    return this;
-  }
-  
+    public MeetingResponseResource id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Enum: Instant, Scheduled, ScheduledRecurring, Recurring
-         */
-        public String meetingType;
-  public MeetingResponseResource meetingType(String meetingType)
-  {
-    this.meetingType = meetingType;
-    return this;
-  }
-  
+    public MeetingResponseResource topic(String topic) {
+        this.topic = topic;
+        return this;
+    }
 
-        /**
-         * Meeting password
-         */
-        public String password;
-  public MeetingResponseResource password(String password)
-  {
-    this.password = password;
-    return this;
-  }
-  
+    public MeetingResponseResource meetingType(String meetingType) {
+        this.meetingType = meetingType;
+        return this;
+    }
 
-        /**
-         */
-        public String h323Password;
-  public MeetingResponseResource h323Password(String h323Password)
-  {
-    this.h323Password = h323Password;
-    return this;
-  }
-  
+    public MeetingResponseResource password(String password) {
+        this.password = password;
+        return this;
+    }
 
-        /**
-         * Status of a meeting
-         */
-        public String status;
-  public MeetingResponseResource status(String status)
-  {
-    this.status = status;
-    return this;
-  }
-  
+    public MeetingResponseResource h323Password(String h323Password) {
+        this.h323Password = h323Password;
+        return this;
+    }
 
-        /**
-         */
-        public MeetingLinks links;
-  public MeetingResponseResource links(MeetingLinks links)
-  {
-    this.links = links;
-    return this;
-  }
-  
+    public MeetingResponseResource status(String status) {
+        this.status = status;
+        return this;
+    }
 
-        /**
-         */
-        public MeetingScheduleResource schedule;
-  public MeetingResponseResource schedule(MeetingScheduleResource schedule)
-  {
-    this.schedule = schedule;
-    return this;
-  }
-  
+    public MeetingResponseResource links(MeetingLinks links) {
+        this.links = links;
+        return this;
+    }
 
-        /**
-         */
-        public HostInfoRequest host;
-  public MeetingResponseResource host(HostInfoRequest host)
-  {
-    this.host = host;
-    return this;
-  }
-  
+    public MeetingResponseResource schedule(MeetingScheduleResource schedule) {
+        this.schedule = schedule;
+        return this;
+    }
 
-        /**
-         * If true, then participants can join the meeting before host arrives
-         */
-        public Boolean allowJoinBeforeHost;
-  public MeetingResponseResource allowJoinBeforeHost(Boolean allowJoinBeforeHost)
-  {
-    this.allowJoinBeforeHost = allowJoinBeforeHost;
-    return this;
-  }
-  
+    public MeetingResponseResource host(HostInfoRequest host) {
+        this.host = host;
+        return this;
+    }
 
-        /**
-         * Starting meetings with host video on/off (true/false)
-         */
-        public Boolean startHostVideo;
-  public MeetingResponseResource startHostVideo(Boolean startHostVideo)
-  {
-    this.startHostVideo = startHostVideo;
-    return this;
-  }
-  
+    public MeetingResponseResource allowJoinBeforeHost(Boolean allowJoinBeforeHost) {
+        this.allowJoinBeforeHost = allowJoinBeforeHost;
+        return this;
+    }
 
-        /**
-         * Starting meetings with participant video on/off (true/false)
-         */
-        public Boolean startParticipantsVideo;
-  public MeetingResponseResource startParticipantsVideo(Boolean startParticipantsVideo)
-  {
-    this.startParticipantsVideo = startParticipantsVideo;
-    return this;
-  }
-  
+    public MeetingResponseResource startHostVideo(Boolean startHostVideo) {
+        this.startHostVideo = startHostVideo;
+        return this;
+    }
 
-        /**
-         */
-        public String[] audioOptions;
-  public MeetingResponseResource audioOptions(String[] audioOptions)
-  {
-    this.audioOptions = audioOptions;
-    return this;
-  }
-  
+    public MeetingResponseResource startParticipantsVideo(Boolean startParticipantsVideo) {
+        this.startParticipantsVideo = startParticipantsVideo;
+        return this;
+    }
 
-        /**
-         */
-        public RecurrenceInfo reccurence;
-  public MeetingResponseResource reccurence(RecurrenceInfo reccurence)
-  {
-    this.reccurence = reccurence;
-    return this;
-  }
-  
+    public MeetingResponseResource audioOptions(String[] audioOptions) {
+        this.audioOptions = audioOptions;
+        return this;
+    }
 
-        /**
-         * Automatic record type
-         * Default: none
-         * Enum: local, cloud, none
-         */
-        public String autoRecordType;
-  public MeetingResponseResource autoRecordType(String autoRecordType)
-  {
-    this.autoRecordType = autoRecordType;
-    return this;
-  }
-  
+    public MeetingResponseResource reccurence(RecurrenceInfo reccurence) {
+        this.reccurence = reccurence;
+        return this;
+    }
 
-        /**
-         * If true, then only signed-in users can join this meeting
-         */
-        public Boolean enforceLogin;
-  public MeetingResponseResource enforceLogin(Boolean enforceLogin)
-  {
-    this.enforceLogin = enforceLogin;
-    return this;
-  }
-  
+    public MeetingResponseResource autoRecordType(String autoRecordType) {
+        this.autoRecordType = autoRecordType;
+        return this;
+    }
 
-        /**
-         * If true, then participants are muted on entry
-         */
-        public Boolean muteParticipantsOnEntry;
-  public MeetingResponseResource muteParticipantsOnEntry(Boolean muteParticipantsOnEntry)
-  {
-    this.muteParticipantsOnEntry = muteParticipantsOnEntry;
-    return this;
-  }
-  
+    public MeetingResponseResource enforceLogin(Boolean enforceLogin) {
+        this.enforceLogin = enforceLogin;
+        return this;
+    }
 
-        /**
-         * If true, then the waiting room for participants is enabled
-         */
-        public Boolean enableWaitingRoom;
-  public MeetingResponseResource enableWaitingRoom(Boolean enableWaitingRoom)
-  {
-    this.enableWaitingRoom = enableWaitingRoom;
-    return this;
-  }
-  
+    public MeetingResponseResource muteParticipantsOnEntry(Boolean muteParticipantsOnEntry) {
+        this.muteParticipantsOnEntry = muteParticipantsOnEntry;
+        return this;
+    }
 
-        /**
-         * List of global dial-in countries (eg. US, UK, AU, etc.)
-         */
-        public String[] globalDialInCountries;
-  public MeetingResponseResource globalDialInCountries(String[] globalDialInCountries)
-  {
-    this.globalDialInCountries = globalDialInCountries;
-    return this;
-  }
-  
+    public MeetingResponseResource enableWaitingRoom(Boolean enableWaitingRoom) {
+        this.enableWaitingRoom = enableWaitingRoom;
+        return this;
+    }
+
+    public MeetingResponseResource globalDialInCountries(String[] globalDialInCountries) {
+        this.globalDialInCountries = globalDialInCountries;
+        return this;
+    }
 }

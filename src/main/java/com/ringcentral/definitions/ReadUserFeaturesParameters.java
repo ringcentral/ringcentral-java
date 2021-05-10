@@ -1,25 +1,24 @@
 package com.ringcentral.definitions;
 
 
-public class ReadUserFeaturesParameters
-{
+// Query parameters for operation readUserFeatures
+public class ReadUserFeaturesParameters {
     /**
-         */
-        public Boolean availableOnly;
-  public ReadUserFeaturesParameters availableOnly(Boolean availableOnly)
-  {
-    this.availableOnly = availableOnly;
-    return this;
-  }
-  
+     *
+     */
+    public Boolean availableOnly;
+    /**
+     *
+     */
+    public String[] featureId;
 
-        /**
-         */
-        public String[] featureId;
-  public ReadUserFeaturesParameters featureId(String[] featureId)
-  {
-    this.featureId = featureId;
-    return this;
-  }
-  
+    public ReadUserFeaturesParameters availableOnly(Boolean availableOnly) {
+        this.availableOnly = availableOnly;
+        return this;
+    }
+
+    public ReadUserFeaturesParameters featureId(String[] featureId) {
+        this.featureId = featureId;
+        return this;
+    }
 }

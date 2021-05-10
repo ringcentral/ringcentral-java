@@ -1,26 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class CompanyBusinessHours
-{
+public class CompanyBusinessHours {
     /**
-         * Canonical URI of a business-hours resource
-         */
-        public String uri;
-  public CompanyBusinessHours uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Canonical URI of a business-hours resource
+     */
+    public String uri;
+    /**
+     *
+     */
+    public CompanyBusinessHoursScheduleInfo schedule;
 
-        /**
-         */
-        public CompanyBusinessHoursScheduleInfo schedule;
-  public CompanyBusinessHours schedule(CompanyBusinessHoursScheduleInfo schedule)
-  {
-    this.schedule = schedule;
-    return this;
-  }
-  
+    public CompanyBusinessHours uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public CompanyBusinessHours schedule(CompanyBusinessHoursScheduleInfo schedule) {
+        this.schedule = schedule;
+        return this;
+    }
 }

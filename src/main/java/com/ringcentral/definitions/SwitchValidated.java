@@ -1,49 +1,42 @@
 package com.ringcentral.definitions;
 
 
-public class SwitchValidated
-{
+public class SwitchValidated {
     /**
-         * Internal identifier of a switch
-         */
-        public String id;
-  public SwitchValidated id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+     * Internal identifier of a switch
+     */
+    public String id;
+    /**
+     * Unique identifier of a network switch
+     */
+    public String chassisId;
+    /**
+     * Validation result status
+     * Enum: Valid, Invalid
+     */
+    public String status;
+    /**
+     *
+     */
+    public ValidationError[] errors;
 
-        /**
-         * Unique identifier of a network switch
-         */
-        public String chassisId;
-  public SwitchValidated chassisId(String chassisId)
-  {
-    this.chassisId = chassisId;
-    return this;
-  }
-  
+    public SwitchValidated id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Validation result status
-         * Enum: Valid, Invalid
-         */
-        public String status;
-  public SwitchValidated status(String status)
-  {
-    this.status = status;
-    return this;
-  }
-  
+    public SwitchValidated chassisId(String chassisId) {
+        this.chassisId = chassisId;
+        return this;
+    }
 
-        /**
-         */
-        public ValidationError[] errors;
-  public SwitchValidated errors(ValidationError[] errors)
-  {
-    this.errors = errors;
-    return this;
-  }
-  
+    public SwitchValidated status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public SwitchValidated errors(ValidationError[] errors) {
+        this.errors = errors;
+        return this;
+    }
 }

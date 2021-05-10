@@ -1,55 +1,50 @@
 package com.ringcentral.definitions;
 
 
-public class AuthenticationScheme
-{
+public class AuthenticationScheme {
     /**
-         */
-        public String description;
-  public AuthenticationScheme description(String description)
-  {
-    this.description = description;
-    return this;
-  }
-  
+     *
+     */
+    public String description;
+    /**
+     *
+     */
+    public String documentationUri;
+    /**
+     *
+     */
+    public String name;
+    /**
+     *
+     */
+    public String specUri;
+    /**
+     *
+     */
+    public Boolean primary;
 
-        /**
-         */
-        public String documentationUri;
-  public AuthenticationScheme documentationUri(String documentationUri)
-  {
-    this.documentationUri = documentationUri;
-    return this;
-  }
-  
+    public AuthenticationScheme description(String description) {
+        this.description = description;
+        return this;
+    }
 
-        /**
-         */
-        public String name;
-  public AuthenticationScheme name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public AuthenticationScheme documentationUri(String documentationUri) {
+        this.documentationUri = documentationUri;
+        return this;
+    }
 
-        /**
-         */
-        public String specUri;
-  public AuthenticationScheme specUri(String specUri)
-  {
-    this.specUri = specUri;
-    return this;
-  }
-  
+    public AuthenticationScheme name(String name) {
+        this.name = name;
+        return this;
+    }
 
-        /**
-         */
-        public Boolean primary;
-  public AuthenticationScheme primary(Boolean primary)
-  {
-    this.primary = primary;
-    return this;
-  }
-  
+    public AuthenticationScheme specUri(String specUri) {
+        this.specUri = specUri;
+        return this;
+    }
+
+    public AuthenticationScheme primary(Boolean primary) {
+        this.primary = primary;
+        return this;
+    }
 }

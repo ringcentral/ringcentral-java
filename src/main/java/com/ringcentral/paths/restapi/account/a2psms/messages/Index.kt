@@ -18,7 +18,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.a2psms.Index, val 
      */
     @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
     @JvmOverloads
-    fun list(queryParams: com.ringcentral.definitions.ListA2PsmsParameters? = null): com.ringcentral.definitions.MessageListResponse? {
+    fun list(queryParams: com.ringcentral.definitions.ListA2PSMSParameters? = null): com.ringcentral.definitions.MessageListResponse? {
         val rb: okhttp3.ResponseBody = rc.get(this.path(false), queryParams)
 
         return com.ringcentral.Utils.gson.fromJson(

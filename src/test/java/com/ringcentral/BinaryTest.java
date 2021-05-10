@@ -28,9 +28,9 @@ public class BinaryTest {
 
         String str = rc.restapi().account().extension().profileimage().post(new CreateUserProfileImageRequest()
             .image(new Attachment()
-                .fileName("test.png")
+                .filename("test.png")
                 .contentType("image/png")
-                .bytes(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
+                .content(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
             ));
 
         rc.revoke();

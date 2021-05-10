@@ -1,56 +1,50 @@
 package com.ringcentral.definitions;
 
 
-public class AccountDeviceUpdate
-{
+public class AccountDeviceUpdate {
     /**
-         */
-        public EmergencyServiceAddressResourceRequest emergencyServiceAddress;
-  public AccountDeviceUpdate emergencyServiceAddress(EmergencyServiceAddressResourceRequest emergencyServiceAddress)
-  {
-    this.emergencyServiceAddress = emergencyServiceAddress;
-    return this;
-  }
-  
+     *
+     */
+    public EmergencyServiceAddressResourceRequest emergencyServiceAddress;
+    /**
+     *
+     */
+    public DeviceEmergencyInfo emergency;
+    /**
+     *
+     */
+    public DeviceUpdateExtensionInfo extension;
+    /**
+     *
+     */
+    public DeviceUpdatePhoneLinesInfo phoneLines;
+    /**
+     * Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone.
+     */
+    public Boolean useAsCommonPhone;
 
-        /**
-         */
-        public DeviceEmergencyInfo emergency;
-  public AccountDeviceUpdate emergency(DeviceEmergencyInfo emergency)
-  {
-    this.emergency = emergency;
-    return this;
-  }
-  
+    public AccountDeviceUpdate emergencyServiceAddress(EmergencyServiceAddressResourceRequest emergencyServiceAddress) {
+        this.emergencyServiceAddress = emergencyServiceAddress;
+        return this;
+    }
 
-        /**
-         */
-        public DeviceUpdateExtensionInfo extension;
-  public AccountDeviceUpdate extension(DeviceUpdateExtensionInfo extension)
-  {
-    this.extension = extension;
-    return this;
-  }
-  
+    public AccountDeviceUpdate emergency(DeviceEmergencyInfo emergency) {
+        this.emergency = emergency;
+        return this;
+    }
 
-        /**
-         */
-        public DeviceUpdatePhoneLinesInfo phoneLines;
-  public AccountDeviceUpdate phoneLines(DeviceUpdatePhoneLinesInfo phoneLines)
-  {
-    this.phoneLines = phoneLines;
-    return this;
-  }
-  
+    public AccountDeviceUpdate extension(DeviceUpdateExtensionInfo extension) {
+        this.extension = extension;
+        return this;
+    }
 
-        /**
-         * Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone.
-         */
-        public Boolean useAsCommonPhone;
-  public AccountDeviceUpdate useAsCommonPhone(Boolean useAsCommonPhone)
-  {
-    this.useAsCommonPhone = useAsCommonPhone;
-    return this;
-  }
-  
+    public AccountDeviceUpdate phoneLines(DeviceUpdatePhoneLinesInfo phoneLines) {
+        this.phoneLines = phoneLines;
+        return this;
+    }
+
+    public AccountDeviceUpdate useAsCommonPhone(Boolean useAsCommonPhone) {
+        this.useAsCommonPhone = useAsCommonPhone;
+        return this;
+    }
 }

@@ -1,82 +1,72 @@
 package com.ringcentral.definitions;
 
 
-    // SIP flags data
-public class SIPFlagsResponse
-{
+// SIP flags data
+public class SIPFlagsResponse {
     /**
-         * If 'True' VoIP calling feature is enabled
-         * Enum: True, False
-         */
-        public String voipFeatureEnabled;
-  public SIPFlagsResponse voipFeatureEnabled(String voipFeatureEnabled)
-  {
-    this.voipFeatureEnabled = voipFeatureEnabled;
-    return this;
-  }
-  
+     * If 'True' VoIP calling feature is enabled
+     * Enum: True, False
+     */
+    public String voipFeatureEnabled;
+    /**
+     * If 'True' the request is sent from IP address of a country blocked for VoIP calling
+     * Enum: True, False
+     */
+    public String voipCountryBlocked;
+    /**
+     * If 'True' outbound calls are enabled
+     * Enum: True, False
+     */
+    public String outboundCallsEnabled;
+    /**
+     *
+     */
+    public Boolean dscpEnabled;
+    /**
+     *
+     */
+    public Long dscpSignaling;
+    /**
+     *
+     */
+    public Long dscpVoice;
+    /**
+     *
+     */
+    public Long dscpVideo;
 
-        /**
-         * If 'True' the request is sent from IP address of a country blocked for VoIP calling
-         * Enum: True, False
-         */
-        public String voipCountryBlocked;
-  public SIPFlagsResponse voipCountryBlocked(String voipCountryBlocked)
-  {
-    this.voipCountryBlocked = voipCountryBlocked;
-    return this;
-  }
-  
+    public SIPFlagsResponse voipFeatureEnabled(String voipFeatureEnabled) {
+        this.voipFeatureEnabled = voipFeatureEnabled;
+        return this;
+    }
 
-        /**
-         * If 'True' outbound calls are enabled
-         * Enum: True, False
-         */
-        public String outboundCallsEnabled;
-  public SIPFlagsResponse outboundCallsEnabled(String outboundCallsEnabled)
-  {
-    this.outboundCallsEnabled = outboundCallsEnabled;
-    return this;
-  }
-  
+    public SIPFlagsResponse voipCountryBlocked(String voipCountryBlocked) {
+        this.voipCountryBlocked = voipCountryBlocked;
+        return this;
+    }
 
-        /**
-         */
-        public Boolean dscpEnabled;
-  public SIPFlagsResponse dscpEnabled(Boolean dscpEnabled)
-  {
-    this.dscpEnabled = dscpEnabled;
-    return this;
-  }
-  
+    public SIPFlagsResponse outboundCallsEnabled(String outboundCallsEnabled) {
+        this.outboundCallsEnabled = outboundCallsEnabled;
+        return this;
+    }
 
-        /**
-         */
-        public Long dscpSignaling;
-  public SIPFlagsResponse dscpSignaling(Long dscpSignaling)
-  {
-    this.dscpSignaling = dscpSignaling;
-    return this;
-  }
-  
+    public SIPFlagsResponse dscpEnabled(Boolean dscpEnabled) {
+        this.dscpEnabled = dscpEnabled;
+        return this;
+    }
 
-        /**
-         */
-        public Long dscpVoice;
-  public SIPFlagsResponse dscpVoice(Long dscpVoice)
-  {
-    this.dscpVoice = dscpVoice;
-    return this;
-  }
-  
+    public SIPFlagsResponse dscpSignaling(Long dscpSignaling) {
+        this.dscpSignaling = dscpSignaling;
+        return this;
+    }
 
-        /**
-         */
-        public Long dscpVideo;
-  public SIPFlagsResponse dscpVideo(Long dscpVideo)
-  {
-    this.dscpVideo = dscpVideo;
-    return this;
-  }
-  
+    public SIPFlagsResponse dscpVoice(Long dscpVoice) {
+        this.dscpVoice = dscpVoice;
+        return this;
+    }
+
+    public SIPFlagsResponse dscpVideo(Long dscpVideo) {
+        this.dscpVideo = dscpVideo;
+        return this;
+    }
 }

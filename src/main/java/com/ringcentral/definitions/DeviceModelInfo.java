@@ -1,51 +1,44 @@
 package com.ringcentral.definitions;
 
 
-    // HardPhone model information
-public class DeviceModelInfo
-{
+// HardPhone model information
+public class DeviceModelInfo {
     /**
-         * Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier
-         */
-        public String id;
-  public DeviceModelInfo id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+     * Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier
+     */
+    public String id;
+    /**
+     * Device name
+     */
+    public String name;
+    /**
+     * Addons description
+     * Required
+     */
+    public DeviceAddonInfo[] addons;
+    /**
+     * Device feature or multiple features supported
+     * Enum: BLA, Intercom, Paging, HELD
+     */
+    public String[] features;
 
-        /**
-         * Device name
-         */
-        public String name;
-  public DeviceModelInfo name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public DeviceModelInfo id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Addons description
-         * Required
-         */
-        public DeviceAddonInfo[] addons;
-  public DeviceModelInfo addons(DeviceAddonInfo[] addons)
-  {
-    this.addons = addons;
-    return this;
-  }
-  
+    public DeviceModelInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 
-        /**
-         * Device feature or multiple features supported
-         */
-        public String[] features;
-  public DeviceModelInfo features(String[] features)
-  {
-    this.features = features;
-    return this;
-  }
-  
+    public DeviceModelInfo addons(DeviceAddonInfo[] addons) {
+        this.addons = addons;
+        return this;
+    }
+
+    public DeviceModelInfo features(String[] features) {
+        this.features = features;
+        return this;
+    }
 }

@@ -1,47 +1,41 @@
 package com.ringcentral.definitions;
 
 
-public class CompanyAnsweringRuleList
-{
+public class CompanyAnsweringRuleList {
     /**
-         * Link to an answering rule resource
-         */
-        public String uri;
-  public CompanyAnsweringRuleList uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to an answering rule resource
+     */
+    public String uri;
+    /**
+     * List of company answering rules
+     */
+    public ListCompanyAnsweringRuleInfo[] records;
+    /**
+     *
+     */
+    public CallHandlingPagingInfo paging;
+    /**
+     *
+     */
+    public CallHandlingNavigationInfo navigation;
 
-        /**
-         * List of company answering rules
-         */
-        public ListCompanyAnsweringRuleInfo[] records;
-  public CompanyAnsweringRuleList records(ListCompanyAnsweringRuleInfo[] records)
-  {
-    this.records = records;
-    return this;
-  }
-  
+    public CompanyAnsweringRuleList uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         */
-        public CallHandlingPagingInfo paging;
-  public CompanyAnsweringRuleList paging(CallHandlingPagingInfo paging)
-  {
-    this.paging = paging;
-    return this;
-  }
-  
+    public CompanyAnsweringRuleList records(ListCompanyAnsweringRuleInfo[] records) {
+        this.records = records;
+        return this;
+    }
 
-        /**
-         */
-        public CallHandlingNavigationInfo navigation;
-  public CompanyAnsweringRuleList navigation(CallHandlingNavigationInfo navigation)
-  {
-    this.navigation = navigation;
-    return this;
-  }
-  
+    public CompanyAnsweringRuleList paging(CallHandlingPagingInfo paging) {
+        this.paging = paging;
+        return this;
+    }
+
+    public CompanyAnsweringRuleList navigation(CallHandlingNavigationInfo navigation) {
+        this.navigation = navigation;
+        return this;
+    }
 }

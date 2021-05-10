@@ -1,49 +1,41 @@
 package com.ringcentral.definitions;
 
 
-public class GetLocationListResponse
-{
+public class GetLocationListResponse {
     /**
-         * Link to the location list resource
-         */
-        public String uri;
-  public GetLocationListResponse uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to the location list resource
+     */
+    public String uri;
+    /**
+     * List of locations
+     */
+    public LocationInfo[] records;
+    /**
+     * Required
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     * Required
+     */
+    public ProvisioningPagingInfo paging;
 
-        /**
-         * List of locations
-         */
-        public LocationInfo[] records;
-  public GetLocationListResponse records(LocationInfo[] records)
-  {
-    this.records = records;
-    return this;
-  }
-  
+    public GetLocationListResponse uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         * Required
-         */
-        public ProvisioningNavigationInfo navigation;
-  public GetLocationListResponse navigation(ProvisioningNavigationInfo navigation)
-  {
-    this.navigation = navigation;
-    return this;
-  }
-  
+    public GetLocationListResponse records(LocationInfo[] records) {
+        this.records = records;
+        return this;
+    }
 
-        /**
-         * Required
-         */
-        public ProvisioningPagingInfo paging;
-  public GetLocationListResponse paging(ProvisioningPagingInfo paging)
-  {
-    this.paging = paging;
-    return this;
-  }
-  
+    public GetLocationListResponse navigation(ProvisioningNavigationInfo navigation) {
+        this.navigation = navigation;
+        return this;
+    }
+
+    public GetLocationListResponse paging(ProvisioningPagingInfo paging) {
+        this.paging = paging;
+        return this;
+    }
 }

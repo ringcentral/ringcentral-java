@@ -38,9 +38,9 @@ public class MmsTest {
                 .attachments(
                     new Attachment[]{
                         new Attachment()
-                            .fileName("test.png")
+                            .filename("test.png")
                             .contentType("image/png")
-                            .bytes(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
+                            .content(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
                     })
         );
         assertNotNull(response);

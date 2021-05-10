@@ -1,35 +1,41 @@
 package com.ringcentral.definitions;
 
 
-public class EmergencyLocationList
-{
+public class EmergencyLocationList {
     /**
-         */
-        public EmergencyLocationInfo[] records;
-  public EmergencyLocationList records(EmergencyLocationInfo[] records)
-  {
-    this.records = records;
-    return this;
-  }
-  
+     * Link to the emergency location list resource
+     */
+    public String uri;
+    /**
+     *
+     */
+    public EmergencyLocationInfo[] records;
+    /**
+     *
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     *
+     */
+    public ProvisioningPagingInfo paging;
 
-        /**
-         */
-        public ProvisioningNavigationInfo navigation;
-  public EmergencyLocationList navigation(ProvisioningNavigationInfo navigation)
-  {
-    this.navigation = navigation;
-    return this;
-  }
-  
+    public EmergencyLocationList uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         */
-        public ProvisioningPagingInfo paging;
-  public EmergencyLocationList paging(ProvisioningPagingInfo paging)
-  {
-    this.paging = paging;
-    return this;
-  }
-  
+    public EmergencyLocationList records(EmergencyLocationInfo[] records) {
+        this.records = records;
+        return this;
+    }
+
+    public EmergencyLocationList navigation(ProvisioningNavigationInfo navigation) {
+        this.navigation = navigation;
+        return this;
+    }
+
+    public EmergencyLocationList paging(ProvisioningPagingInfo paging) {
+        this.paging = paging;
+        return this;
+    }
 }

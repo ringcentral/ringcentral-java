@@ -1,56 +1,50 @@
 package com.ringcentral.definitions;
 
 
-public class UserSearchResponse
-{
+public class UserSearchResponse {
     /**
-         * user list
-         */
-        public UserResponse[] Resources;
-  public UserSearchResponse Resources(UserResponse[] Resources)
-  {
-    this.Resources = Resources;
-    return this;
-  }
-  
+     * user list
+     */
+    public UserResponse[] Resources;
+    /**
+     * Format: int64
+     */
+    public Long itemsPerPage;
+    /**
+     * Enum: urn:ietf:params:scim:api:messages:2.0:ListResponse
+     */
+    public String[] schemas;
+    /**
+     * Format: int64
+     */
+    public Long startIndex;
+    /**
+     * Format: int64
+     */
+    public Long totalResults;
 
-        /**
-         */
-        public Long itemsPerPage;
-  public UserSearchResponse itemsPerPage(Long itemsPerPage)
-  {
-    this.itemsPerPage = itemsPerPage;
-    return this;
-  }
-  
+    public UserSearchResponse Resources(UserResponse[] Resources) {
+        this.Resources = Resources;
+        return this;
+    }
 
-        /**
-         */
-        public String[] schemas;
-  public UserSearchResponse schemas(String[] schemas)
-  {
-    this.schemas = schemas;
-    return this;
-  }
-  
+    public UserSearchResponse itemsPerPage(Long itemsPerPage) {
+        this.itemsPerPage = itemsPerPage;
+        return this;
+    }
 
-        /**
-         */
-        public Long startIndex;
-  public UserSearchResponse startIndex(Long startIndex)
-  {
-    this.startIndex = startIndex;
-    return this;
-  }
-  
+    public UserSearchResponse schemas(String[] schemas) {
+        this.schemas = schemas;
+        return this;
+    }
 
-        /**
-         */
-        public Long totalResults;
-  public UserSearchResponse totalResults(Long totalResults)
-  {
-    this.totalResults = totalResults;
-    return this;
-  }
-  
+    public UserSearchResponse startIndex(Long startIndex) {
+        this.startIndex = startIndex;
+        return this;
+    }
+
+    public UserSearchResponse totalResults(Long totalResults) {
+        this.totalResults = totalResults;
+        return this;
+    }
 }

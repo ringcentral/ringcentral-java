@@ -1,55 +1,50 @@
 package com.ringcentral.definitions;
 
 
-public class RegionalSettingsInfo
-{
+public class RegionalSettingsInfo {
     /**
-         */
-        public TimezoneResource timezone;
-  public RegionalSettingsInfo timezone(TimezoneResource timezone)
-  {
-    this.timezone = timezone;
-    return this;
-  }
-  
+     *
+     */
+    public DeviceTimezoneResource timezone;
+    /**
+     *
+     */
+    public DeviceCountryResource homeCountry;
+    /**
+     *
+     */
+    public LanguageResource language;
+    /**
+     *
+     */
+    public LanguageResource greetingLanguage;
+    /**
+     *
+     */
+    public LanguageResource formattingLocale;
 
-        /**
-         */
-        public CountryResource homeCountry;
-  public RegionalSettingsInfo homeCountry(CountryResource homeCountry)
-  {
-    this.homeCountry = homeCountry;
-    return this;
-  }
-  
+    public RegionalSettingsInfo timezone(DeviceTimezoneResource timezone) {
+        this.timezone = timezone;
+        return this;
+    }
 
-        /**
-         */
-        public LanguageResource language;
-  public RegionalSettingsInfo language(LanguageResource language)
-  {
-    this.language = language;
-    return this;
-  }
-  
+    public RegionalSettingsInfo homeCountry(DeviceCountryResource homeCountry) {
+        this.homeCountry = homeCountry;
+        return this;
+    }
 
-        /**
-         */
-        public LanguageResource greetingLanguage;
-  public RegionalSettingsInfo greetingLanguage(LanguageResource greetingLanguage)
-  {
-    this.greetingLanguage = greetingLanguage;
-    return this;
-  }
-  
+    public RegionalSettingsInfo language(LanguageResource language) {
+        this.language = language;
+        return this;
+    }
 
-        /**
-         */
-        public LanguageResource formattingLocale;
-  public RegionalSettingsInfo formattingLocale(LanguageResource formattingLocale)
-  {
-    this.formattingLocale = formattingLocale;
-    return this;
-  }
-  
+    public RegionalSettingsInfo greetingLanguage(LanguageResource greetingLanguage) {
+        this.greetingLanguage = greetingLanguage;
+        return this;
+    }
+
+    public RegionalSettingsInfo formattingLocale(LanguageResource formattingLocale) {
+        this.formattingLocale = formattingLocale;
+        return this;
+    }
 }

@@ -1,38 +1,32 @@
 package com.ringcentral.definitions;
 
 
-public class CallerIdDeviceInfo
-{
+public class CallerIdDeviceInfo {
     /**
-         * Internal identifier of a device
-         */
-        public String id;
-  public CallerIdDeviceInfo id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+     * Internal identifier of a device
+     */
+    public String id;
+    /**
+     * Link to a device resource
+     */
+    public String uri;
+    /**
+     * Name of a device
+     */
+    public String name;
 
-        /**
-         * Link to a device resource
-         */
-        public String uri;
-  public CallerIdDeviceInfo uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+    public CallerIdDeviceInfo id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Name of a device
-         */
-        public String name;
-  public CallerIdDeviceInfo name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public CallerIdDeviceInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public CallerIdDeviceInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 }

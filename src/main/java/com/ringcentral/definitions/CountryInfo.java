@@ -1,61 +1,51 @@
 package com.ringcentral.definitions;
 
 
-    // Country information
-public class CountryInfo
-{
+// Country information
+public class CountryInfo {
     /**
-         * Internal identifier of a home country
-         */
-        public String id;
-  public CountryInfo id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+     * Internal identifier of a home country
+     */
+    public String id;
+    /**
+     * Canonical URI of a home country
+     */
+    public String uri;
+    /**
+     * Official name of a home country
+     */
+    public String name;
+    /**
+     * ISO code of a country
+     */
+    public String isoCode;
+    /**
+     * Calling code of a country
+     */
+    public String callingCode;
 
-        /**
-         * Canonical URI of a home country
-         */
-        public String uri;
-  public CountryInfo uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+    public CountryInfo id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Official name of a home country
-         */
-        public String name;
-  public CountryInfo name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public CountryInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         * ISO code of a country
-         */
-        public String isoCode;
-  public CountryInfo isoCode(String isoCode)
-  {
-    this.isoCode = isoCode;
-    return this;
-  }
-  
+    public CountryInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 
-        /**
-         * Calling code of a country
-         */
-        public String callingCode;
-  public CountryInfo callingCode(String callingCode)
-  {
-    this.callingCode = callingCode;
-    return this;
-  }
-  
+    public CountryInfo isoCode(String isoCode) {
+        this.isoCode = isoCode;
+        return this;
+    }
+
+    public CountryInfo callingCode(String callingCode) {
+        this.callingCode = callingCode;
+        return this;
+    }
 }

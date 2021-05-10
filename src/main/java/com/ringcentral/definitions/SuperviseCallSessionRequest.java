@@ -1,52 +1,48 @@
 package com.ringcentral.definitions;
 
 
-public class SuperviseCallSessionRequest
-{
+public class SuperviseCallSessionRequest {
     /**
-         * Supervising mode
-         * Required
-         * Enum: Listen
-         */
-        public String mode;
-  public SuperviseCallSessionRequest mode(String mode)
-  {
-    this.mode = mode;
-    return this;
-  }
-  
+     * Supervising mode
+     * Required
+     * Example: Listen
+     * Enum: Listen
+     */
+    public String mode;
+    /**
+     * Internal identifier of a supervisor's device which will be used for call session monitoring
+     * Required
+     * Example: 191888004
+     */
+    public String supervisorDeviceId;
+    /**
+     * Extension identifier of the user that will be monitored
+     * Example: 400378008008
+     */
+    public String agentExtensionId;
+    /**
+     * Specifies if auto-answer SIP header should be sent. If auto-answer is set to 'True', the call is automatically answered by the supervising party, if set to 'False' - then the supervising party has to accept or decline the monitored call
+     * Default: true
+     */
+    public Boolean autoAnswer;
 
-        /**
-         * Internal identifier of a supervisor's device which will be used for call session monitoring
-         * Required
-         */
-        public String supervisorDeviceId;
-  public SuperviseCallSessionRequest supervisorDeviceId(String supervisorDeviceId)
-  {
-    this.supervisorDeviceId = supervisorDeviceId;
-    return this;
-  }
-  
+    public SuperviseCallSessionRequest mode(String mode) {
+        this.mode = mode;
+        return this;
+    }
 
-        /**
-         * Extension number of the user that will be monitored
-         */
-        public String agentExtensionNumber;
-  public SuperviseCallSessionRequest agentExtensionNumber(String agentExtensionNumber)
-  {
-    this.agentExtensionNumber = agentExtensionNumber;
-    return this;
-  }
-  
+    public SuperviseCallSessionRequest supervisorDeviceId(String supervisorDeviceId) {
+        this.supervisorDeviceId = supervisorDeviceId;
+        return this;
+    }
 
-        /**
-         * Extension identifier of the user that will be monitored
-         */
-        public String agentExtensionId;
-  public SuperviseCallSessionRequest agentExtensionId(String agentExtensionId)
-  {
-    this.agentExtensionId = agentExtensionId;
-    return this;
-  }
-  
+    public SuperviseCallSessionRequest agentExtensionId(String agentExtensionId) {
+        this.agentExtensionId = agentExtensionId;
+        return this;
+    }
+
+    public SuperviseCallSessionRequest autoAnswer(Boolean autoAnswer) {
+        this.autoAnswer = autoAnswer;
+        return this;
+    }
 }

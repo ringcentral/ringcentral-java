@@ -1,27 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class MakeCallOutRequest
-{
+public class MakeCallOutRequest {
     /**
-         * Required
-         */
-        public MakeCallOutCallerInfoRequestFrom from;
-  public MakeCallOutRequest from(MakeCallOutCallerInfoRequestFrom from)
-  {
-    this.from = from;
-    return this;
-  }
-  
+     * Required
+     */
+    public MakeCallOutCallerInfoRequestFrom from;
+    /**
+     * Required
+     */
+    public MakeCallOutCallerInfoRequestTo to;
 
-        /**
-         * Required
-         */
-        public MakeCallOutCallerInfoRequestTo to;
-  public MakeCallOutRequest to(MakeCallOutCallerInfoRequestTo to)
-  {
-    this.to = to;
-    return this;
-  }
-  
+    public MakeCallOutRequest from(MakeCallOutCallerInfoRequestFrom from) {
+        this.from = from;
+        return this;
+    }
+
+    public MakeCallOutRequest to(MakeCallOutCallerInfoRequestTo to) {
+        this.to = to;
+        return this;
+    }
 }

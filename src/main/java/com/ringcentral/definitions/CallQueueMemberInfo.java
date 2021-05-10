@@ -1,38 +1,32 @@
 package com.ringcentral.definitions;
 
 
-public class CallQueueMemberInfo
-{
+public class CallQueueMemberInfo {
     /**
-         * Link to a call queue member
-         */
-        public String uri;
-  public CallQueueMemberInfo uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to a call queue member
+     */
+    public String uri;
+    /**
+     * Internal identifier of a call queue member
+     */
+    public Long id;
+    /**
+     * Extension number of a call queue member
+     */
+    public String extensionNumber;
 
-        /**
-         * Internal identifier of a call queue member
-         */
-        public Long id;
-  public CallQueueMemberInfo id(Long id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+    public CallQueueMemberInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         * Extension number of a call queue member
-         */
-        public String extensionNumber;
-  public CallQueueMemberInfo extensionNumber(String extensionNumber)
-  {
-    this.extensionNumber = extensionNumber;
-    return this;
-  }
-  
+    public CallQueueMemberInfo id(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public CallQueueMemberInfo extensionNumber(String extensionNumber) {
+        this.extensionNumber = extensionNumber;
+        return this;
+    }
 }

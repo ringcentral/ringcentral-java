@@ -1,148 +1,135 @@
 package com.ringcentral.definitions;
 
 
-public class UserPhoneNumberInfo
-{
+public class UserPhoneNumberInfo {
     /**
-         * Link to the user's phone number resource
-         */
-        public String uri;
-  public UserPhoneNumberInfo uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to the user's phone number resource
+     */
+    public String uri;
+    /**
+     * Internal identifier of a phone number
+     */
+    public Long id;
+    /**
+     *
+     */
+    public CountryInfo country;
+    /**
+     *
+     */
+    public ContactCenterProvider contactCenterProvider;
+    /**
+     *
+     */
+    public UserPhoneNumberExtensionInfo extension;
+    /**
+     * Custom user name of a phone number, if any
+     */
+    public String label;
+    /**
+     * Location (City, State). Filled for local US numbers
+     */
+    public String location;
+    /**
+     * Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system
+     * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider
+     */
+    public String paymentType;
+    /**
+     * Phone number
+     */
+    public String phoneNumber;
+    /**
+     * Specifies if the number is primary, i.e. displayed as 'main number' and called by default
+     */
+    public Boolean primary;
+    /**
+     * Status of a phone number. If the value is 'Normal', the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     */
+    public String status;
+    /**
+     * Phone number type
+     * Enum: VoiceFax, FaxOnly, VoiceOnly
+     */
+    public String type;
+    /**
+     * Usage type of a phone number. Numbers of 'NumberPool' type will not be returned for phone number list requests
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber, ExternalMobileNumber
+     */
+    public String usageType;
+    /**
+     * List of features of a phone number
+     * Enum: CallerId, SmsSender, A2PSmsSender, MmsSender, InternationalSmsSender, Delegated
+     */
+    public String[] features;
 
-        /**
-         * Internal identifier of a phone number
-         */
-        public Long id;
-  public UserPhoneNumberInfo id(Long id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         */
-        public CountryInfo country;
-  public UserPhoneNumberInfo country(CountryInfo country)
-  {
-    this.country = country;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo id(Long id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         */
-        public ContactCenterProvider contactCenterProvider;
-  public UserPhoneNumberInfo contactCenterProvider(ContactCenterProvider contactCenterProvider)
-  {
-    this.contactCenterProvider = contactCenterProvider;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo country(CountryInfo country) {
+        this.country = country;
+        return this;
+    }
 
-        /**
-         */
-        public UserPhoneNumberExtensionInfo extension;
-  public UserPhoneNumberInfo extension(UserPhoneNumberExtensionInfo extension)
-  {
-    this.extension = extension;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo contactCenterProvider(ContactCenterProvider contactCenterProvider) {
+        this.contactCenterProvider = contactCenterProvider;
+        return this;
+    }
 
-        /**
-         * Custom user name of a phone number, if any
-         */
-        public String label;
-  public UserPhoneNumberInfo label(String label)
-  {
-    this.label = label;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo extension(UserPhoneNumberExtensionInfo extension) {
+        this.extension = extension;
+        return this;
+    }
 
-        /**
-         * Location (City, State). Filled for local US numbers
-         */
-        public String location;
-  public UserPhoneNumberInfo location(String location)
-  {
-    this.location = location;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo label(String label) {
+        this.label = label;
+        return this;
+    }
 
-        /**
-         * Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system
-         * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider
-         */
-        public String paymentType;
-  public UserPhoneNumberInfo paymentType(String paymentType)
-  {
-    this.paymentType = paymentType;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo location(String location) {
+        this.location = location;
+        return this;
+    }
 
-        /**
-         * Phone number
-         */
-        public String phoneNumber;
-  public UserPhoneNumberInfo phoneNumber(String phoneNumber)
-  {
-    this.phoneNumber = phoneNumber;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo paymentType(String paymentType) {
+        this.paymentType = paymentType;
+        return this;
+    }
 
-        /**
-         * Status of a phone number. If the value is 'Normal', the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
-         */
-        public String status;
-  public UserPhoneNumberInfo status(String status)
-  {
-    this.status = status;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo phoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
 
-        /**
-         * Phone number type
-         * Enum: VoiceFax, FaxOnly, VoiceOnly
-         */
-        public String type;
-  public UserPhoneNumberInfo type(String type)
-  {
-    this.type = type;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo primary(Boolean primary) {
+        this.primary = primary;
+        return this;
+    }
 
-        /**
-         * Usage type of a phone number. Numbers of 'NumberPool' type wont't be returned for phone number list requests
-         * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber, ExternalMobileNumber
-         */
-        public String usageType;
-  public UserPhoneNumberInfo usageType(String usageType)
-  {
-    this.usageType = usageType;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo status(String status) {
+        this.status = status;
+        return this;
+    }
 
-        /**
-         * List of features of a phone number
-         */
-        public String[] features;
-  public UserPhoneNumberInfo features(String[] features)
-  {
-    this.features = features;
-    return this;
-  }
-  
+    public UserPhoneNumberInfo type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public UserPhoneNumberInfo usageType(String usageType) {
+        this.usageType = usageType;
+        return this;
+    }
+
+    public UserPhoneNumberInfo features(String[] features) {
+        this.features = features;
+        return this;
+    }
 }

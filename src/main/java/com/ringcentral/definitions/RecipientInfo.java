@@ -1,28 +1,24 @@
 package com.ringcentral.definitions;
 
 
-    // Recipient data
-public class RecipientInfo
-{
+// Recipient data
+public class RecipientInfo {
     /**
-         * Link to a recipient extension resource
-         */
-        public String uri;
-  public RecipientInfo uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to a recipient extension resource
+     */
+    public String uri;
+    /**
+     * Internal identifier of a recipient extension
+     */
+    public Long id;
 
-        /**
-         * Internal identifier of a recipient extension
-         */
-        public Long id;
-  public RecipientInfo id(Long id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+    public RecipientInfo uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public RecipientInfo id(Long id) {
+        this.id = id;
+        return this;
+    }
 }

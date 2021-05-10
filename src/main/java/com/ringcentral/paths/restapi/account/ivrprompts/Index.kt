@@ -30,7 +30,7 @@ class Index(val parent: com.ringcentral.paths.restapi.account.Index, val promptI
      * Http Post /restapi/v1.0/account/{accountId}/ivr-prompts
      */
     @Throws(com.ringcentral.RestException::class, java.io.IOException::class)
-    fun post(createIVRPromptRequest: com.ringcentral.definitions.CreateIvrPromptRequest): com.ringcentral.definitions.PromptInfo? {
+    fun post(createIVRPromptRequest: com.ringcentral.definitions.CreateIVRPromptRequest): com.ringcentral.definitions.PromptInfo? {
         val rb: okhttp3.ResponseBody =
             rc.post(this.path(false), createIVRPromptRequest, null, com.ringcentral.ContentType.MULTIPART)
 

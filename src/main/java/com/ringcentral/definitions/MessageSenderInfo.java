@@ -1,36 +1,33 @@
 package com.ringcentral.definitions;
 
 
-    // Sender information
-public class MessageSenderInfo
-{
+// Sender information
+public class MessageSenderInfo {
     /**
-         */
-        public String extensionNumber;
-  public MessageSenderInfo extensionNumber(String extensionNumber)
-  {
-    this.extensionNumber = extensionNumber;
-    return this;
-  }
-  
+     *
+     */
+    public String extensionNumber;
+    /**
+     *
+     */
+    public String extensionId;
+    /**
+     *
+     */
+    public String name;
 
-        /**
-         */
-        public String extensionId;
-  public MessageSenderInfo extensionId(String extensionId)
-  {
-    this.extensionId = extensionId;
-    return this;
-  }
-  
+    public MessageSenderInfo extensionNumber(String extensionNumber) {
+        this.extensionNumber = extensionNumber;
+        return this;
+    }
 
-        /**
-         */
-        public String name;
-  public MessageSenderInfo name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public MessageSenderInfo extensionId(String extensionId) {
+        this.extensionId = extensionId;
+        return this;
+    }
+
+    public MessageSenderInfo name(String name) {
+        this.name = name;
+        return this;
+    }
 }

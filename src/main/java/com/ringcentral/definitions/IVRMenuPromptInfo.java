@@ -1,49 +1,43 @@
 package com.ringcentral.definitions;
 
 
-    // Prompt metadata
-public class IVRMenuPromptInfo
-{
+// Prompt metadata
+public class IVRMenuPromptInfo {
     /**
-         * Prompt mode: custom media or text
-         * Enum: Audio, TextToSpeech
-         */
-        public String mode;
-  public IVRMenuPromptInfo mode(String mode)
-  {
-    this.mode = mode;
-    return this;
-  }
-  
+     * Prompt mode: custom media or text
+     * Enum: Audio, TextToSpeech
+     */
+    public String mode;
+    /**
+     *
+     */
+    public AudioPromptInfo audio;
+    /**
+     * For 'TextToSpeech' mode only. Prompt text
+     */
+    public String text;
+    /**
+     *
+     */
+    public PromptLanguageInfo language;
 
-        /**
-         */
-        public AudioPromptInfo audio;
-  public IVRMenuPromptInfo audio(AudioPromptInfo audio)
-  {
-    this.audio = audio;
-    return this;
-  }
-  
+    public IVRMenuPromptInfo mode(String mode) {
+        this.mode = mode;
+        return this;
+    }
 
-        /**
-         * For 'TextToSpeech' mode only. Prompt text
-         */
-        public String text;
-  public IVRMenuPromptInfo text(String text)
-  {
-    this.text = text;
-    return this;
-  }
-  
+    public IVRMenuPromptInfo audio(AudioPromptInfo audio) {
+        this.audio = audio;
+        return this;
+    }
 
-        /**
-         */
-        public PromptLanguageInfo language;
-  public IVRMenuPromptInfo language(PromptLanguageInfo language)
-  {
-    this.language = language;
-    return this;
-  }
-  
+    public IVRMenuPromptInfo text(String text) {
+        this.text = text;
+        return this;
+    }
+
+    public IVRMenuPromptInfo language(PromptLanguageInfo language) {
+        this.language = language;
+        return this;
+    }
 }

@@ -1,37 +1,32 @@
 package com.ringcentral.definitions;
 
 
-public class CallQueueMemberPresence
-{
+public class CallQueueMemberPresence {
     /**
-         */
-        public CallQueueMember member;
-  public CallQueueMemberPresence member(CallQueueMember member)
-  {
-    this.member = member;
-    return this;
-  }
-  
+     *
+     */
+    public CallQueueMember member;
+    /**
+     * Private member telephony availability status applied to calls of all queues
+     */
+    public Boolean acceptQueueCalls;
+    /**
+     * Call queue member availability in this particular queue
+     */
+    public Boolean acceptCurrentQueueCalls;
 
-        /**
-         * Private member telephony availability status applied to calls of all queues
-         */
-        public Boolean acceptQueueCalls;
-  public CallQueueMemberPresence acceptQueueCalls(Boolean acceptQueueCalls)
-  {
-    this.acceptQueueCalls = acceptQueueCalls;
-    return this;
-  }
-  
+    public CallQueueMemberPresence member(CallQueueMember member) {
+        this.member = member;
+        return this;
+    }
 
-        /**
-         * Call queue member availability in this particular queue
-         */
-        public Boolean acceptCurrentQueueCalls;
-  public CallQueueMemberPresence acceptCurrentQueueCalls(Boolean acceptCurrentQueueCalls)
-  {
-    this.acceptCurrentQueueCalls = acceptCurrentQueueCalls;
-    return this;
-  }
-  
+    public CallQueueMemberPresence acceptQueueCalls(Boolean acceptQueueCalls) {
+        this.acceptQueueCalls = acceptQueueCalls;
+        return this;
+    }
+
+    public CallQueueMemberPresence acceptCurrentQueueCalls(Boolean acceptCurrentQueueCalls) {
+        this.acceptCurrentQueueCalls = acceptCurrentQueueCalls;
+        return this;
+    }
 }

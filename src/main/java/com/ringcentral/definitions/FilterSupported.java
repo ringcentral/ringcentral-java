@@ -1,25 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class FilterSupported
-{
+public class FilterSupported {
     /**
-         */
-        public Long maxResults;
-  public FilterSupported maxResults(Long maxResults)
-  {
-    this.maxResults = maxResults;
-    return this;
-  }
-  
+     * Format: int32
+     */
+    public Long maxResults;
+    /**
+     *
+     */
+    public Boolean supported;
 
-        /**
-         */
-        public Boolean supported;
-  public FilterSupported supported(Boolean supported)
-  {
-    this.supported = supported;
-    return this;
-  }
-  
+    public FilterSupported maxResults(Long maxResults) {
+        this.maxResults = maxResults;
+        return this;
+    }
+
+    public FilterSupported supported(Boolean supported) {
+        this.supported = supported;
+        return this;
+    }
 }

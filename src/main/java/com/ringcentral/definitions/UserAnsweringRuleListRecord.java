@@ -1,71 +1,62 @@
 package com.ringcentral.definitions;
 
 
-public class UserAnsweringRuleListRecord
-{
+public class UserAnsweringRuleListRecord {
     /**
-         * Canonical URI to an answering rule resource
-         */
-        public String uri;
-  public UserAnsweringRuleListRecord uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Canonical URI to an answering rule resource
+     * Example: https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule/business-hours-rule
+     */
+    public String uri;
+    /**
+     * Internal identifier of an answering rule
+     * Example: business-hours-rule
+     */
+    public String id;
+    /**
+     * Type of an answering rule
+     * Enum: BusinessHours, AfterHours, Custom
+     */
+    public String type;
+    /**
+     * Name of an answering rule specified by user
+     */
+    public String name;
+    /**
+     * Specifies if an answering rule is active or inactive
+     */
+    public Boolean enabled;
+    /**
+     *
+     */
+    public SharedLinesInfo sharedLines;
 
-        /**
-         * Internal identifier of an asnwering rule
-         */
-        public String id;
-  public UserAnsweringRuleListRecord id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+    public UserAnsweringRuleListRecord uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         * Type of an answering rule
-         * Enum: BusinessHours, AfterHours, Custom
-         */
-        public String type;
-  public UserAnsweringRuleListRecord type(String type)
-  {
-    this.type = type;
-    return this;
-  }
-  
+    public UserAnsweringRuleListRecord id(String id) {
+        this.id = id;
+        return this;
+    }
 
-        /**
-         * Name of an answering rule specified by user
-         */
-        public String name;
-  public UserAnsweringRuleListRecord name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+    public UserAnsweringRuleListRecord type(String type) {
+        this.type = type;
+        return this;
+    }
 
-        /**
-         * Specifies if an answering rule is active or inactive
-         */
-        public Boolean enabled;
-  public UserAnsweringRuleListRecord enabled(Boolean enabled)
-  {
-    this.enabled = enabled;
-    return this;
-  }
-  
+    public UserAnsweringRuleListRecord name(String name) {
+        this.name = name;
+        return this;
+    }
 
-        /**
-         */
-        public SharedLinesInfo sharedLines;
-  public UserAnsweringRuleListRecord sharedLines(SharedLinesInfo sharedLines)
-  {
-    this.sharedLines = sharedLines;
-    return this;
-  }
-  
+    public UserAnsweringRuleListRecord enabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    public UserAnsweringRuleListRecord sharedLines(SharedLinesInfo sharedLines) {
+        this.sharedLines = sharedLines;
+        return this;
+    }
 }

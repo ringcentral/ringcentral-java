@@ -1,46 +1,41 @@
 package com.ringcentral.definitions;
 
 
-public class CallRecordingExtensions
-{
+public class CallRecordingExtensions {
     /**
-         * Link to call recording extension list resource
-         */
-        public String uri;
-  public CallRecordingExtensions uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to call recording extension list resource
+     */
+    public String uri;
+    /**
+     *
+     */
+    public CallRecordingExtensionInfo[] records;
+    /**
+     *
+     */
+    public CallHandlingNavigationInfo navigation;
+    /**
+     *
+     */
+    public CallHandlingPagingInfo paging;
 
-        /**
-         */
-        public CallRecordingExtensionInfo[] records;
-  public CallRecordingExtensions records(CallRecordingExtensionInfo[] records)
-  {
-    this.records = records;
-    return this;
-  }
-  
+    public CallRecordingExtensions uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         */
-        public CallHandlingNavigationInfo navigation;
-  public CallRecordingExtensions navigation(CallHandlingNavigationInfo navigation)
-  {
-    this.navigation = navigation;
-    return this;
-  }
-  
+    public CallRecordingExtensions records(CallRecordingExtensionInfo[] records) {
+        this.records = records;
+        return this;
+    }
 
-        /**
-         */
-        public CallHandlingPagingInfo paging;
-  public CallRecordingExtensions paging(CallHandlingPagingInfo paging)
-  {
-    this.paging = paging;
-    return this;
-  }
-  
+    public CallRecordingExtensions navigation(CallHandlingNavigationInfo navigation) {
+        this.navigation = navigation;
+        return this;
+    }
+
+    public CallRecordingExtensions paging(CallHandlingPagingInfo paging) {
+        this.paging = paging;
+        return this;
+    }
 }

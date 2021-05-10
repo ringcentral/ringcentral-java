@@ -37,13 +37,13 @@ public class FaxTest {
                 .attachments(
                     new Attachment[]{
                         new Attachment()
-                            .fileName("test.txt")
+                            .filename("test.txt")
                             .contentType("text/plain")
-                            .bytes("hello world".getBytes(StandardCharsets.UTF_8)),
+                            .content("hello world".getBytes(StandardCharsets.UTF_8)),
                         new Attachment()
-                            .fileName("test.png")
+                            .filename("test.png")
                             .contentType("image/png")
-                            .bytes(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
+                            .content(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
                     })
         );
 

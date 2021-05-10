@@ -1,7 +1,7 @@
 package com.ringcentral;
 
 import com.ringcentral.definitions.Attachment;
-import com.ringcentral.definitions.CreateIvrPromptRequest;
+import com.ringcentral.definitions.CreateIVRPromptRequest;
 import com.ringcentral.definitions.IVRPrompts;
 import com.ringcentral.definitions.PromptInfo;
 import okhttp3.Request;
@@ -60,12 +60,12 @@ public class IVRContentTest {
             }
         });
 
-        PromptInfo promptInfo = rc.restapi().account().ivrprompts().post(new CreateIvrPromptRequest()
+        PromptInfo promptInfo = rc.restapi().account().ivrprompts().post(new CreateIVRPromptRequest()
             .name("Uploaded via API")
             .attachment(new Attachment()
                 .contentType("audio/mpeg")
-                .fileName("test.mp3")
-                .bytes(Files.readAllBytes(Paths.get("./src/test/resources/test.mp3")))
+                .filename("test.mp3")
+                .content(Files.readAllBytes(Paths.get("./src/test/resources/test.mp3")))
             ));
 
         rc.revoke();

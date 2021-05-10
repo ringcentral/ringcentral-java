@@ -1,27 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class ParamsInfo
-{
+public class ParamsInfo {
     /**
-         * Parameter name
-         */
-        public String name;
-  public ParamsInfo name(String name)
-  {
-    this.name = name;
-    return this;
-  }
-  
+     * Parameter name
+     */
+    public String name;
+    /**
+     * Parameter value
+     */
+    public String value;
 
-        /**
-         * Parameter value
-         */
-        public String value;
-  public ParamsInfo value(String value)
-  {
-    this.value = value;
-    return this;
-  }
-  
+    public ParamsInfo name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public ParamsInfo value(String value) {
+        this.value = value;
+        return this;
+    }
 }

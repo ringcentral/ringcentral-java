@@ -1,26 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class CreateSipRegistrationRequest
-{
+public class CreateSipRegistrationRequest {
     /**
-         */
-        public DeviceInfoRequest device;
-  public CreateSipRegistrationRequest device(DeviceInfoRequest device)
-  {
-    this.device = device;
-    return this;
-  }
-  
+     *
+     */
+    public DeviceInfoRequest device;
+    /**
+     * SIP settings for device
+     */
+    public SIPInfoRequest[] sipInfo;
 
-        /**
-         * SIP settings for device
-         */
-        public SIPInfoRequest[] sipInfo;
-  public CreateSipRegistrationRequest sipInfo(SIPInfoRequest[] sipInfo)
-  {
-    this.sipInfo = sipInfo;
-    return this;
-  }
-  
+    public CreateSipRegistrationRequest device(DeviceInfoRequest device) {
+        this.device = device;
+        return this;
+    }
+
+    public CreateSipRegistrationRequest sipInfo(SIPInfoRequest[] sipInfo) {
+        this.sipInfo = sipInfo;
+        return this;
+    }
 }

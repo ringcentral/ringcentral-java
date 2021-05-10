@@ -1,46 +1,41 @@
 package com.ringcentral.definitions;
 
 
-public class AutomaticLocationUpdatesUserList
-{
+public class AutomaticLocationUpdatesUserList {
     /**
-         * Link to the users list resource
-         */
-        public String uri;
-  public AutomaticLocationUpdatesUserList uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to the users list resource
+     */
+    public String uri;
+    /**
+     *
+     */
+    public AutomaticLocationUpdatesUserInfo[] records;
+    /**
+     *
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     *
+     */
+    public ProvisioningPagingInfo paging;
 
-        /**
-         */
-        public AutomaticLocationUpdatesUserInfo[] records;
-  public AutomaticLocationUpdatesUserList records(AutomaticLocationUpdatesUserInfo[] records)
-  {
-    this.records = records;
-    return this;
-  }
-  
+    public AutomaticLocationUpdatesUserList uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
-        /**
-         */
-        public ProvisioningNavigationInfo navigation;
-  public AutomaticLocationUpdatesUserList navigation(ProvisioningNavigationInfo navigation)
-  {
-    this.navigation = navigation;
-    return this;
-  }
-  
+    public AutomaticLocationUpdatesUserList records(AutomaticLocationUpdatesUserInfo[] records) {
+        this.records = records;
+        return this;
+    }
 
-        /**
-         */
-        public ProvisioningPagingInfo paging;
-  public AutomaticLocationUpdatesUserList paging(ProvisioningPagingInfo paging)
-  {
-    this.paging = paging;
-    return this;
-  }
-  
+    public AutomaticLocationUpdatesUserList navigation(ProvisioningNavigationInfo navigation) {
+        this.navigation = navigation;
+        return this;
+    }
+
+    public AutomaticLocationUpdatesUserList paging(ProvisioningPagingInfo paging) {
+        this.paging = paging;
+        return this;
+    }
 }

@@ -4,11 +4,11 @@ package com.ringcentral.definitions;
 // resource metadata
 public class Meta {
     /**
-     *
+     * Format: date-time
      */
     public String created;
     /**
-     *
+     * Format: date-time
      */
     public String lastModified;
     /**
@@ -39,5 +39,4 @@ public class Meta {
         this.resourceType = resourceType;
         return this;
     }
-
 }

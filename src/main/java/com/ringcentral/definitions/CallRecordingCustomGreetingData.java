@@ -1,28 +1,24 @@
 package com.ringcentral.definitions;
 
 
-    // Custom greeting data
-public class CallRecordingCustomGreetingData
-{
+// Custom greeting data
+public class CallRecordingCustomGreetingData {
     /**
-         * Link to a custom company greeting
-         */
-        public String uri;
-  public CallRecordingCustomGreetingData uri(String uri)
-  {
-    this.uri = uri;
-    return this;
-  }
-  
+     * Link to a custom company greeting
+     */
+    public String uri;
+    /**
+     * Internal identifier of a custom company greeting
+     */
+    public String id;
 
-        /**
-         * Internal identifier of a custom company greeting
-         */
-        public String id;
-  public CallRecordingCustomGreetingData id(String id)
-  {
-    this.id = id;
-    return this;
-  }
-  
+    public CallRecordingCustomGreetingData uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public CallRecordingCustomGreetingData id(String id) {
+        this.id = id;
+        return this;
+    }
 }

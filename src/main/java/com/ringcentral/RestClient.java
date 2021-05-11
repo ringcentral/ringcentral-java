@@ -177,9 +177,9 @@ public class RestClient {
         switch (contentType) {
             case JSON:
                 if (body != null && body.getClass().equals(String.class)) { // PUT text
-                    requestBody = RequestBody.create(textMediaType, (String) body);
+                    requestBody = RequestBody.create((String) body, textMediaType);
                 } else {
-                    requestBody = RequestBody.create(jsonMediaType, body == null ? "" : Utils.gson.toJson(body));
+                    requestBody = RequestBody.create(body == null ? "" : Utils.gson.toJson(body), jsonMediaType);
                 }
                 break;
             case FORM:
@@ -223,7 +223,7 @@ public class RestClient {
                     }
                 }
                 if (fields.size() > 0) {
-                    multipartBodyBuilder.addPart(RequestBody.create(jsonMediaType, Utils.gson.toJson(fields)));
+                    multipartBodyBuilder.addPart(RequestBody.create(Utils.gson.toJson(fields), jsonMediaType));
                 }
                 for (Attachment attachment : attachments) {
                     multipartBodyBuilder.addFormDataPart(attachmentName, attachment.filename, new RequestBody() {

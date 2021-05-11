@@ -28,8 +28,8 @@ public class IVRContentTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        IVRPrompts ivrPrompts = rc.restapi().account().ivrprompts().list();
-        PromptInfo promptInfo = rc.restapi().account().ivrprompts(ivrPrompts.records[0].id).get();
+        IVRPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
+        PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();
         Assert.assertNotNull(promptInfo.id);
         Assert.assertEquals(promptInfo.id, ivrPrompts.records[0].id);
 
@@ -60,7 +60,7 @@ public class IVRContentTest {
             }
         });
 
-        PromptInfo promptInfo = rc.restapi().account().ivrprompts().post(new CreateIVRPromptRequest()
+        PromptInfo promptInfo = rc.restapi().account().ivrPrompts().post(new CreateIVRPromptRequest()
             .name("Uploaded via API")
             .attachment(new Attachment()
                 .contentType("audio/mpeg")
@@ -92,8 +92,8 @@ public class IVRContentTest {
             }
         });
 
-        IVRPrompts ivrPrompts = rc.restapi().account().ivrprompts().list();
-        PromptInfo promptInfo = rc.restapi().account().ivrprompts(ivrPrompts.records[0].id).get();
+        IVRPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
+        PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();
         Assert.assertNotNull(promptInfo.id);
 
 //        PromptInfo promptInfo = rc.restapi().account().ivrprompts().put(new CreateIvrPromptRequest()

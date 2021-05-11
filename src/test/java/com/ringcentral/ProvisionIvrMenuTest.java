@@ -22,7 +22,7 @@ public class ProvisionIvrMenuTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        IVRMenuInfo iVRMenuInfo = rc.restapi().account().ivrmenus().post(new IVRMenuInfo().extensionNumber("2002").name("My IVR menu"));
+        IVRMenuInfo iVRMenuInfo = rc.restapi().account().ivrMenus().post(new IVRMenuInfo().extensionNumber("2002").name("My IVR menu"));
         assertNotNull(iVRMenuInfo);
 
         String str = rc.restapi().account().extension(iVRMenuInfo.id).delete();

@@ -27,7 +27,7 @@ public class CallLogTest {
 
         getParameters.type = new String[]{"Voice"};
 
-        UserCallLogResponse response = rc.restapi().account().extension().calllog().list(getParameters);
+        UserCallLogResponse response = rc.restapi().account().extension().callLog().list(getParameters);
 
         assertNotNull(response.records);
 

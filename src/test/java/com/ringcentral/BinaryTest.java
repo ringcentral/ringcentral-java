@@ -26,7 +26,7 @@ public class BinaryTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        String str = rc.restapi().account().extension().profileimage().post(new CreateUserProfileImageRequest()
+        String str = rc.restapi().account().extension().profileImage().post(new CreateUserProfileImageRequest()
             .image(new Attachment()
                 .filename("test.png")
                 .contentType("image/png")
@@ -50,10 +50,10 @@ public class BinaryTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        byte[] bytes = rc.restapi().account().extension().profileimage("90x90").get();
+        byte[] bytes = rc.restapi().account().extension().profileImage("90x90").get();
         assertNotNull(bytes);
 
-        byte[] bytes2 = rc.restapi().account().extension().profileimage().list();
+        byte[] bytes2 = rc.restapi().account().extension().profileImage().list();
         assertNotNull(bytes2);
         assertTrue(bytes2.length > 0);
 

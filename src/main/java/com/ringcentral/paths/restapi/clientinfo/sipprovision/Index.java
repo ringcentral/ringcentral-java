@@ -1,0 +1,31 @@
+package com.ringcentral.paths.restapi.clientinfo.sipprovision;
+
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
+
+public class Index
+{
+    public RestClient rc;
+public com.ringcentral.paths.restapi.clientinfo.Index parent;
+public Index(com.ringcentral.paths.restapi.clientinfo.Index parent)
+      {
+this.parent = parent;
+this.rc = parent.rc;
+    }
+    public String path()
+        {
+            return parent.path() + "/sip-provision";
+        }
+        /**
+         * Creates SIP registration of a device/application (WebPhone, Mobile, softphone).
+         * HTTP Method: post
+         * Endpoint: /restapi/{apiVersion}/client-info/sip-provision
+         * Rate Limit Group: Heavy
+         * App Permission: VoipCalling
+         */
+  public CreateSipRegistrationResponse post(CreateSipRegistrationRequest createSipRegistrationRequest) throws com.ringcentral.RestException, java.io.IOException
+  {
+    okhttp3.ResponseBody rb = this.rc.post(this.path(), createSipRegistrationRequest, null);
+    return com.ringcentral.Utils.gson.fromJson(rb.string(), CreateSipRegistrationResponse.class);
+    }
+}

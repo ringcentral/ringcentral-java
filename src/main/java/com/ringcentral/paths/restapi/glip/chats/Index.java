@@ -1,110 +1,101 @@
 package com.ringcentral.paths.restapi.glip.chats;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GlipChatInfo;
+import com.ringcentral.definitions.GlipChatsList;
+import com.ringcentral.definitions.ListGlipChatsParameters;
 
-public class Index
-{
+public class Index {
     public RestClient rc;
-public com.ringcentral.paths.restapi.glip.Index parent;
-public String chatId;
-public Index(com.ringcentral.paths.restapi.glip.Index parent, String chatId)
-      {
-this.parent = parent;
-this.rc = parent.rc;
-this.chatId = chatId;
+    public com.ringcentral.paths.restapi.glip.Index parent;
+    public String chatId;
+
+    public Index(com.ringcentral.paths.restapi.glip.Index parent, String chatId) {
+        this.parent = parent;
+        this.rc = parent.rc;
+        this.chatId = chatId;
     }
-    public String path(Boolean withParameter)
-        {
-            if (withParameter && chatId != null)
-            {
-                return parent.path() + "/chats/" + chatId;
-            }
-            return parent.path() + "/chats";
+
+    public String path(Boolean withParameter) {
+        if (withParameter && chatId != null) {
+            return parent.path() + "/chats/" + chatId;
         }
-        public String path()
-        {
-          return path(true);
+        return parent.path() + "/chats";
+    }
+
+    public String path() {
+        return path(true);
+    }
+
+    /**
+     * Returns the list of chats where the user is a member and also public teams that can be joined. All records in response are sorted by creation time of a chat in ascending order. **Note** {@literal '}Chat{@literal '} is a general name for all types of threads icluding *Personal* (user{@literal '}s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).
+     * HTTP Method: get
+     * Endpoint: /restapi/{apiVersion}/glip/chats
+     * Rate Limit Group: Medium
+     * App Permission: Glip
+     * User Permission: Glip
+     */
+    public GlipChatsList list(ListGlipChatsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), GlipChatsList.class);
+    }
+
+    public GlipChatsList list() throws com.ringcentral.RestException, java.io.IOException {
+        return this.list(null);
+    }
+
+    /**
+     * Returns information about a chat by ID. **Note** {@literal '}Chat{@literal '} is a general name for all types of threads icluding *Personal* (user{@literal '}s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).{@literal "}
+     * HTTP Method: get
+     * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}
+     * Rate Limit Group: Light
+     * App Permission: Glip
+     * User Permission: Glip
+     */
+    public GlipChatInfo get() throws com.ringcentral.RestException, java.io.IOException {
+        if (chatId == null) {
+            throw new IllegalArgumentException("Parameter chatId cannot be null");
         }
-        /**
-         * Returns the list of chats where the user is a member and also public teams that can be joined. All records in response are sorted by creation time of a chat in ascending order. **Note** {@literal '}Chat{@literal '} is a general name for all types of threads icluding *Personal* (user{@literal '}s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).
-         * HTTP Method: get
-         * Endpoint: /restapi/{apiVersion}/glip/chats
-         * Rate Limit Group: Medium
-         * App Permission: Glip
-         * User Permission: Glip
-         */
-  public GlipChatsList list(ListGlipChatsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException
-  {
-    okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
-    return com.ringcentral.Utils.gson.fromJson(rb.string(), GlipChatsList.class);
-    }
-    public GlipChatsList list() throws com.ringcentral.RestException, java.io.IOException
-    {
-      return this.list(null);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), GlipChatInfo.class);
     }
 
-        /**
-         * Returns information about a chat by ID. **Note** {@literal '}Chat{@literal '} is a general name for all types of threads icluding *Personal* (user{@literal '}s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).{@literal "}
-         * HTTP Method: get
-         * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}
-         * Rate Limit Group: Light
-         * App Permission: Glip
-         * User Permission: Glip
-         */
-  public GlipChatInfo get() throws com.ringcentral.RestException, java.io.IOException
-  {
-    if (chatId == null)
-    {
-        throw new IllegalArgumentException("Parameter chatId cannot be null");
-    }
-    okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-    return com.ringcentral.Utils.gson.fromJson(rb.string(), GlipChatInfo.class);
+    public com.ringcentral.paths.restapi.glip.chats.read.Index read() {
+        return new com.ringcentral.paths.restapi.glip.chats.read.Index(this);
     }
 
-    public com.ringcentral.paths.restapi.glip.chats.read.Index read()
-  {
-    return new com.ringcentral.paths.restapi.glip.chats.read.Index(this);
-  }
 
-
-  public com.ringcentral.paths.restapi.glip.chats.posts.Index posts()
-    {
-      return this.posts(null);
+    public com.ringcentral.paths.restapi.glip.chats.posts.Index posts() {
+        return this.posts(null);
     }
-  public com.ringcentral.paths.restapi.glip.chats.posts.Index posts(String postId)
-  {
-    return new com.ringcentral.paths.restapi.glip.chats.posts.Index(this, postId);
-  }
+
+    public com.ringcentral.paths.restapi.glip.chats.posts.Index posts(String postId) {
+        return new com.ringcentral.paths.restapi.glip.chats.posts.Index(this, postId);
+    }
 
 
-    public com.ringcentral.paths.restapi.glip.chats.notes.Index notes()
-  {
-    return new com.ringcentral.paths.restapi.glip.chats.notes.Index(this);
-  }
+    public com.ringcentral.paths.restapi.glip.chats.notes.Index notes() {
+        return new com.ringcentral.paths.restapi.glip.chats.notes.Index(this);
+    }
 
 
-    public com.ringcentral.paths.restapi.glip.chats.tasks.Index tasks()
-  {
-    return new com.ringcentral.paths.restapi.glip.chats.tasks.Index(this);
-  }
+    public com.ringcentral.paths.restapi.glip.chats.tasks.Index tasks() {
+        return new com.ringcentral.paths.restapi.glip.chats.tasks.Index(this);
+    }
 
 
-    public com.ringcentral.paths.restapi.glip.chats.unread.Index unread()
-  {
-    return new com.ringcentral.paths.restapi.glip.chats.unread.Index(this);
-  }
+    public com.ringcentral.paths.restapi.glip.chats.unread.Index unread() {
+        return new com.ringcentral.paths.restapi.glip.chats.unread.Index(this);
+    }
 
 
-    public com.ringcentral.paths.restapi.glip.chats.favorite.Index favorite()
-  {
-    return new com.ringcentral.paths.restapi.glip.chats.favorite.Index(this);
-  }
+    public com.ringcentral.paths.restapi.glip.chats.favorite.Index favorite() {
+        return new com.ringcentral.paths.restapi.glip.chats.favorite.Index(this);
+    }
 
 
-    public com.ringcentral.paths.restapi.glip.chats.unfavorite.Index unfavorite()
-  {
-    return new com.ringcentral.paths.restapi.glip.chats.unfavorite.Index(this);
-  }
+    public com.ringcentral.paths.restapi.glip.chats.unfavorite.Index unfavorite() {
+        return new com.ringcentral.paths.restapi.glip.chats.unfavorite.Index(this);
+    }
 
 }

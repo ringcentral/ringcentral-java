@@ -175,16 +175,22 @@ const generateOperationMethod = (
   )}) throws com.ringcentral.RestException, java.io.IOException
   {\n`;
   if (operation.withParameter) {
-    result += `if (${parameter} == null)
+    result += `    if (${parameter} == null)
     {
         throw new IllegalArgumentException("Parameter ${parameter} cannot be null");
-    }`;
+    }\n`;
   }
   result += `    okhttp3.ResponseBody rb = this.rc.${
     operation.method
   }(${requestParams.join(', ')});`;
-  result += `\n    return com.ringcentral.Utils.gson.fromJson(rb.string(),${responseType}.class);
-    }`;
+  if (responseType === 'String') {
+    result += '\n    return rb.string();';
+  } else if (responseType === 'byte[]') {
+    result += '\n    return rb.bytes();';
+  } else {
+    result += `\n    return com.ringcentral.Utils.gson.fromJson(rb.string(), ${responseType}.class);`;
+  }
+  result += '\n    }';
 
   // overloading
   if (operation.queryParameters) {

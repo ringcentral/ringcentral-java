@@ -1,11 +1,11 @@
 import {parsed} from 'ringcentral-open-api-parser';
 import fs from 'fs';
 import path from 'path';
-import {pascalCase, capitalCase} from 'change-case';
+import {pascalCase, capitalCase, camelCase} from 'change-case';
 import R from 'ramda';
 import {Operation} from 'ringcentral-open-api-parser/lib/types';
 
-import {capitalizeFirstLetter} from './utils';
+import {capitalizeFirstLetter, patchSrcFile} from './utils';
 
 const outputDir = '../src/main/java/com/ringcentral/paths';
 
@@ -20,10 +20,10 @@ const generatePathMethod = (
             if (withParameter && ${parameter} != null)
             {
                 return ${
-                  hasParent ? 'parent.Path()' : '""'
+                  hasParent ? 'parent.path()' : '""'
                 } + "/${token}/" + ${parameter};
             }
-            return ${hasParent ? 'parent.Path()' : '""'} + "/${token}";
+            return ${hasParent ? 'parent.path()' : '""'} + "/${token}";
         }
         public String path()
         {
@@ -39,32 +39,6 @@ const generatePathMethod = (
         }`;
   }
 };
-
-// const generateBridgeMethod = (
-//   parameter: string | undefined,
-//   defaultValue: string | undefined,
-//   itemPaths: string[]
-// ): string => {
-//   if (itemPaths.length > 1) {
-//     return `namespace RingCentral.Paths.${R.init(itemPaths).join('.')}
-// {
-//     public class Index
-//     {
-//         public ${itemPaths.join('.')}.Index ${R.last(itemPaths)}(${
-//       parameter
-//         ? `string ${parameter} = ${defaultValue ? `"${defaultValue}"` : null}`
-//         : ''
-//     })
-//         {
-//             return new ${itemPaths.join('.')}.Index(this${
-//       parameter ? `, ${parameter}` : ''
-//     });
-//         }
-//     }
-// }`;
-//   }
-//   return '';
-// };
 
 const generateConstructor = (
   parameter: string | undefined,
@@ -115,7 +89,7 @@ const generateConstructor = (
   if (parameter) {
     result.push(`this.${parameter} = ${parameter};`);
   }
-  result.push('}');
+  result.push('    }');
 
   return result.join('\n');
 };
@@ -183,12 +157,6 @@ const generateOperationMethod = (
   requestParams.push(
     `this.path(${!operation.withParameter && parameter ? 'false' : ''})`
   );
-  // if (operation.formUrlEncoded) {
-  //   requestParams.push('new FormUrlEncodedContent(dict)');
-  // } else
-  // if (operation.multipart) {
-  //   requestParams.push('multipartFormDataContent');
-  // } else
   if (operation.bodyParameters) {
     requestParams.push(operation.bodyParameters);
   }
@@ -199,7 +167,6 @@ const generateOperationMethod = (
   if (operation.multipart) {
     requestParams.push('com.ringcentral.ContentType.MULTIPART');
   }
-  // requestParams.push('restRequestConfig');
 
   // result
   result += `
@@ -213,18 +180,27 @@ const generateOperationMethod = (
         throw new IllegalArgumentException("Parameter ${parameter} cannot be null");
     }`;
   }
-  // if (operation.formUrlEncoded) {
-  //   result += `var dict = new System.Collections.Generic.Dictionary<string, string>();
-  //   Utils.GetPairs(${operation.bodyParameters}).ToList().ForEach(t => dict.Add(t.name, t.value.ToString()));\n`;
-  // } else
-  // if (operation.multipart) {
-  //   result += `var multipartFormDataContent = Utils.GetMultipartFormDataContent(${operation.bodyParameters});\n`;
-  // }
   result += `    okhttp3.ResponseBody rb = this.rc.${
     operation.method
   }(${requestParams.join(', ')});`;
   result += `\n    return com.ringcentral.Utils.gson.fromJson(rb.string(),${responseType}.class);
-}`;
+    }`;
+
+  // overloading
+  if (operation.queryParameters) {
+    methodParams.pop();
+    result += `
+    public ${responseType} ${operation.method2}(${methodParams.join(
+      ', '
+    )}) throws com.ringcentral.RestException, java.io.IOException
+    {
+      return this.${operation.method2}(${[
+      ...methodParams.map(mp => R.last(mp.split(' '))),
+      'null',
+    ].join(', ')});
+    }`;
+  }
+
   return result;
 };
 
@@ -259,4 +235,39 @@ ${item.operations
   const folder = path.join(outputDir, ...itemPaths).toLowerCase();
   fs.mkdirSync(folder, {recursive: true});
   fs.writeFileSync(path.join(folder, 'Index.java'), code.trim());
+
+  // bridge methods
+  if (item.paths.length > 1) {
+    let code = `  public com.ringcentral.paths.${itemPaths
+      .join('.')
+      .toLowerCase()}.Index ${camelCase(R.last(itemPaths)!)}(${
+      item.parameter ? `String ${item.parameter}` : ''
+    })
+  {
+    return new com.ringcentral.paths.${itemPaths
+      .join('.')
+      .toLowerCase()}.Index(this${item.parameter ? `, ${item.parameter}` : ''});
+  }
+`;
+    if (item.parameter) {
+      code = `public com.ringcentral.paths.${itemPaths
+        .join('.')
+        .toLowerCase()}.Index ${camelCase(R.last(itemPaths)!)}()
+    {
+      return this.${camelCase(R.last(itemPaths)!)}(${
+        item.defaultParameter ? `"${item.defaultParameter}"` : 'null'
+      });
+    }
+${code}`;
+    }
+    patchSrcFile(
+      [
+        'paths',
+        ...R.init(item.paths).map(item => camelCase(item).toLowerCase()),
+        'Index.java',
+      ],
+      [],
+      code
+    );
+  }
 }

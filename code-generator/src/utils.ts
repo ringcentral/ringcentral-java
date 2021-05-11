@@ -7,3 +7,7 @@ export const escapeJavaDoc = (str: string | undefined) => {
   }
   return str;
 };
+
+export const capitalizeFirstLetter = (s: string): string => {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};

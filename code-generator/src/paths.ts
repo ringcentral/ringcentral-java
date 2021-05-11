@@ -5,7 +5,7 @@ import {pascalCase, capitalCase, camelCase} from 'change-case';
 import R from 'ramda';
 import {Operation} from 'ringcentral-open-api-parser/lib/types';
 
-import {capitalizeFirstLetter, patchSrcFile} from './utils';
+import {capitalizeFirstLetter, escapeJavaDoc, patchSrcFile} from './utils';
 
 const outputDir = '../src/main/java/com/ringcentral/paths';
 
@@ -107,7 +107,7 @@ const generateOperationMethod = (
       capitalCase(operation.operationId)
     )
       .split('\n')
-      .map(l => ` * ${l}`)
+      .map(l => ` * ${escapeJavaDoc(l)}`)
       .join('\n')}`
   );
   comments.push(` * HTTP Method: ${operation.method}`);

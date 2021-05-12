@@ -42,23 +42,23 @@ function getHighlightedText(item) {
 }
 function getURLPrefix(ui) {
     var urlPrefix="";
-    if (useModuleDirectories) {
-        var slash = "/";
-        if (ui.item.category === catModules) {
-            return ui.item.l + slash;
-        } else if (ui.item.category === catPackages && ui.item.m) {
-            return ui.item.m + slash;
-        } else if ((ui.item.category === catTypes && ui.item.p) || ui.item.category === catMembers) {
-            $.each(packageSearchIndex, function(index, item) {
-                if (ui.item.p == item.l) {
-                    urlPrefix = item.m + slash;
-                }
-            });
-            return urlPrefix;
-        } else {
-            return urlPrefix;
-        }
-    }
+    // if (useModuleDirectories) {
+    //     var slash = "/";
+    //     if (ui.item.category === catModules) {
+    //         return ui.item.l + slash;
+    //     } else if (ui.item.category === catPackages && ui.item.m) {
+    //         return ui.item.m + slash;
+    //     } else if ((ui.item.category === catTypes && ui.item.p) || ui.item.category === catMembers) {
+    //         $.each(packageSearchIndex, function(index, item) {
+    //             if (ui.item.p == item.l) {
+    //                 urlPrefix = item.m + slash;
+    //             }
+    //         });
+    //         return urlPrefix;
+    //     } else {
+    //         return urlPrefix;
+    //     }
+    // }
     return urlPrefix;
 }
 var watermark = 'Search';

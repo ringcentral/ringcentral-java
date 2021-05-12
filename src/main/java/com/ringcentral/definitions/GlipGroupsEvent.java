@@ -7,20 +7,20 @@ public class GlipGroupsEvent {
      */
     public String id;
     /**
-     * Type of a group. 'PrivateChat' is a group of 2 members. 'Group' is a chat of 2 and more participants, the membership cannot be changed after group creation. 'Team' is a chat of 1 and more participants, the membership can be modified in future. 'PersonalChat' is a private chat thread of a user
+     * Type of a group. &#039;PrivateChat&#039; is a group of 2 members. &#039;Group&#039; is a chat of 2 and more participants, the membership cannot be changed after group creation. &#039;Team&#039; is a chat of 1 and more participants, the membership can be modified in future. &#039;PersonalChat&#039; is a private chat thread of a user
      * Enum: PrivateChat, Group, Team, PersonalChat
      */
     public String type;
     /**
-     * For 'Team' group type only. Team access level
+     * For &#039;Team&#039; group type only. Team access level
      */
     public Boolean isPublic;
     /**
-     * For 'Team' group type only. Team name
+     * For &#039;Team&#039; group type only. Team name
      */
     public String name;
     /**
-     * For 'Team' group type only. Team description
+     * For &#039;Team&#039; group type only. Team description
      */
     public String description;
     /**
@@ -38,7 +38,7 @@ public class GlipGroupsEvent {
      */
     public String lastModifiedTime;
     /**
-     * Type of a group event. Only the person who joined/was added to a group will receive 'GroupJoined' notification. Only the person who left/was removed from a group will receive 'GroupLeft' notification
+     * Type of a group event. Only the person who joined/was added to a group will receive &#039;GroupJoined&#039; notification. Only the person who left/was removed from a group will receive &#039;GroupLeft&#039; notification
      * Enum: GroupRenamed, GroupJoined, GroupLeft, GroupChanged
      */
     public String eventType;

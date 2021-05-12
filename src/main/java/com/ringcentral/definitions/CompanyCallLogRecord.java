@@ -89,11 +89,11 @@ public class CompanyCallLogRecord {
      */
     public CallLogRecordingInfo recording;
     /**
-     * Indicates that the recording is too short and therefore wouldn't be returned. The flag is not returned if the value is false
+     * Indicates that the recording is too short and therefore wouldn&#039;t be returned. The flag is not returned if the value is false
      */
     public Boolean shortRecording;
     /**
-     * For 'Detailed' view only. Leg description
+     * For &#039;Detailed&#039; view only. Leg description
      */
     public CallLogRecordLegInfo[] legs;
     /**
@@ -101,7 +101,7 @@ public class CompanyCallLogRecord {
      */
     public BillingInfo billing;
     /**
-     * For 'Detailed' view only. The datetime when the call log record was modified in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
+     * For &#039;Detailed&#039; view only. The datetime when the call log record was modified in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format including timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String lastModifiedTime;

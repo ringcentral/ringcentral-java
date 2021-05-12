@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Query parameters for operation listWirelessPoints
 public class ListWirelessPointsParameters {
     /**
-     * Internal identifier of a site. To filter Main Site (Company) 'main-site' must be specified. Supported only If multi-site feature is enabled for the account
+     * Internal identifier of a site. To filter Main Site (Company) &#039;main-site&#039; must be specified. Supported only If multi-site feature is enabled for the account
      */
     public String siteId;
     /**
@@ -12,7 +12,7 @@ public class ListWirelessPointsParameters {
      */
     public String searchString;
     /**
-     * Comma-separated list of fields to order results prefixed by '+' sign (ascending order) or '-' sign (descending order). The default sorting is by `name`
+     * Comma-separated list of fields to order results prefixed by &#039;+&#039; sign (ascending order) or &#039;-&#039; sign (descending order). The default sorting is by `name`
      */
     public String orderBy;
     /**

@@ -47,7 +47,7 @@ public class MessageListMessageResponse {
      */
     public Long segmentCount;
     /**
-     * Text of a message. Returned if the `view` parameter is set to 'Detailed'
+     * Text of a message. Returned if the `view` parameter is set to &#039;Detailed&#039;
      */
     public String text;
     /**

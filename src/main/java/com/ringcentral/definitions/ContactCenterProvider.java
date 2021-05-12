@@ -8,7 +8,7 @@ public class ContactCenterProvider {
      */
     public String id;
     /**
-     * Provider's name
+     * Provider&#039;s name
      */
     public String name;
 

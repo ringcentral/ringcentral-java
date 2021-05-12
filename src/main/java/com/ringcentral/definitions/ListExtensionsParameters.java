@@ -24,12 +24,12 @@ public class ListExtensionsParameters {
      */
     public Long perPage;
     /**
-     * Extension current state. Multiple values are supported. If 'Unassigned' is specified, then extensions without `extensionNumber` attribute are returned. If not specified, then all extensions are returned.
+     * Extension current state. Multiple values are supported. If &#039;Unassigned&#039; is specified, then extensions without `extensionNumber` attribute are returned. If not specified, then all extensions are returned.
      * Enum: Enabled, Disabled, NotActivated, Unassigned
      */
     public String[] status;
     /**
-     * Extension type. Multiple values are supported. Please note that legacy 'Department' extension type corresponds to 'Call Queue' extensions in modern RingCentral product terminology
+     * Extension type. Multiple values are supported. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
      * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, ProxyAdmin, DelegatedLinesGroup
      */
     public String[] type;

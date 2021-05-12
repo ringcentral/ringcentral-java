@@ -8,7 +8,7 @@ public class MakeRingOutCallerInfoRequestFrom {
      */
     public String phoneNumber;
     /**
-     * Internal identifier of a forwarding number; returned in response as an 'id' field value. Can be specified instead of the phoneNumber attribute
+     * Internal identifier of a forwarding number; returned in response as an &#039;id&#039; field value. Can be specified instead of the phoneNumber attribute
      */
     public String forwardingNumberId;
 

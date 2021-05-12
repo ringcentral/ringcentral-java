@@ -30,7 +30,7 @@ public class EmergencyLocationInfo {
      */
     public String usageStatus;
     /**
-     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to 'True'
+     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, ActivationProcess, Unsupported, Failed
      */
     public String syncStatus;

@@ -18,7 +18,7 @@ public class Index {
     }
 
     /**
-     * Returns the unified presence status of the requested user(s). The set of parameters returned by this method differs whether you return the requester{@literal '}s presence or any other user presence.
+     * Returns the unified presence status of the requested user(s). The set of parameters returned by this method differs whether you return the requester&#039;s presence or any other user presence.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/unified-presence
      * Rate Limit Group: Medium

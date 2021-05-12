@@ -57,7 +57,7 @@ public class Index {
     }
 
     /**
-     * Modifies a call party by ID. There is a known limitation for Mute scenario - mute via REST API doesn{@literal '}t work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and Ringcentral Desktop app you need to unmute both endpoints to bring the media back.
+     * Modifies a call party by ID. There is a known limitation for Mute scenario - mute via REST API doesn&#039;t work with mute placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and Ringcentral Desktop app you need to unmute both endpoints to bring the media back.
      * HTTP Method: patch
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}
      * Rate Limit Group: Light

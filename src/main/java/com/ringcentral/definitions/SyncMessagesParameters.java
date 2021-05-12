@@ -23,7 +23,7 @@ public class SyncMessagesParameters {
      */
     public String[] direction;
     /**
-     * If 'True', then the latest messages per every conversation ID are returned
+     * If &#039;True&#039;, then the latest messages per every conversation ID are returned
      */
     public Boolean distinctConversations;
     /**

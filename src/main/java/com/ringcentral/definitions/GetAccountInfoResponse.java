@@ -62,7 +62,7 @@ public class GetAccountInfoResponse {
      */
     public Long outboundCallPrefix;
     /**
-     * Customer facing identifier. Returned for accounts with the turned off PBX features. Equals to main company number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (without '+' sign)format
+     * Customer facing identifier. Returned for accounts with the turned off PBX features. Equals to main company number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (without &#039;+&#039; sign)format
      */
     public String cfid;
     /**

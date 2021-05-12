@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Primary call session information. Supported for Call Queues only
 public class PrimaryCQInfo {
     /**
-     * Call information to be displayed as 'Line 1' for a call queue call session
+     * Call information to be displayed as &#039;Line 1&#039; for a call queue call session
      * Enum: PhoneNumberLabel, PhoneNumber, QueueExtension, QueueName, CallerIdName, CallerIdNumber, None
      */
     public String type;

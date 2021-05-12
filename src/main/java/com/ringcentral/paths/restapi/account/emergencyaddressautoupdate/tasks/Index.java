@@ -26,7 +26,7 @@ public class Index {
     }
 
     /**
-     * Returns results of the task created within the frame of Automatic Location Updates feature. Currently four task types are supported: {@literal '}Wireless Points Bulk Create{@literal '}, {@literal '}Wireless Points Bulk Update{@literal '}, {@literal '}Switches Bulk Create{@literal '}, {@literal '}Switches Bulk Update{@literal '}.
+     * Returns results of the task created within the frame of Automatic Location Updates feature. Currently four task types are supported: &#039;Wireless Points Bulk Create&#039;, &#039;Wireless Points Bulk Update&#039;, &#039;Switches Bulk Create&#039;, &#039;Switches Bulk Update&#039;.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/emergency-address-auto-update/tasks/{taskId}
      * Rate Limit Group: Light

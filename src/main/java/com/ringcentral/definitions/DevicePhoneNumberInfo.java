@@ -12,7 +12,7 @@ public class DevicePhoneNumberInfo {
      */
     public DevicePhoneNumberCountryInfo country;
     /**
-     * Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system = ['External', 'TollFree', 'Local']
+     * Payment type. &#039;External&#039; is returned for forwarded numbers which are not terminated in the RingCentral phone system = [&#039;External&#039;, &#039;TollFree&#039;, &#039;Local&#039;]
      * Enum: External, TollFree, Local
      */
     public String paymentType;

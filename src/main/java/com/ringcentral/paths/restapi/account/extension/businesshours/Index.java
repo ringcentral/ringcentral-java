@@ -19,7 +19,7 @@ public class Index {
     }
 
     /**
-     * Returns the user business hours schedule. Business hours (and After hours - all the remaining time) schedules are commonly used for setting call handling rules - `business-hours-rule` and `after-hours-rule` correspondingly. **Please note:** If the user business hours are set to {@literal '}Custom hours{@literal '} then a particular schedule is returned; however if set to {@literal '}24 hours/7 days a week{@literal '} the schedule will be empty.
+     * Returns the user business hours schedule. Business hours (and After hours - all the remaining time) schedules are commonly used for setting call handling rules - `business-hours-rule` and `after-hours-rule` correspondingly. **Please note:** If the user business hours are set to &#039;Custom hours&#039; then a particular schedule is returned; however if set to &#039;24 hours/7 days a week&#039; the schedule will be empty.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/business-hours
      * Rate Limit Group: Light

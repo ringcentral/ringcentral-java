@@ -16,7 +16,7 @@ public class Index {
     }
 
     /**
-     * Changes the status of the specified team to {@literal '}Archived{@literal '}. A team is a chat between 2 and more participants assigned with specific name.
+     * Changes the status of the specified team to &#039;Archived&#039;. A team is a chat between 2 and more participants assigned with specific name.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/teams/{chatId}/archive
      * Rate Limit Group: Medium

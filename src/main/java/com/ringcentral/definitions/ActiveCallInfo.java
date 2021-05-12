@@ -15,7 +15,7 @@ public class ActiveCallInfo {
      */
     public Boolean queueCall;
     /**
-     * Phone number or extension number of a caller. For GCM transport type '_from' property should be used
+     * Phone number or extension number of a caller. For GCM transport type &#039;_from&#039; property should be used
      */
     public String from;
     /**

@@ -20,7 +20,7 @@ public class NotificationDeliveryMode {
      */
     public String secretKey;
     /**
-     * Encryption algorithm 'AES' (for PubNub transport type only)
+     * Encryption algorithm &#039;AES&#039; (for PubNub transport type only)
      */
     public String encryptionAlgorithm;
     /**
@@ -33,11 +33,11 @@ public class NotificationDeliveryMode {
      */
     public String transportType;
     /**
-     * Name of a certificate. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     * Name of a certificate. Supported for &#039;RC/APNS&#039; and &#039;RC/GCM&#039; transport types
      */
     public String certificateName;
     /**
-     * Identifier of a registration. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     * Identifier of a registration. Supported for &#039;RC/APNS&#039; and &#039;RC/GCM&#039; transport types
      */
     public String registrationId;
 

@@ -16,7 +16,7 @@ public class Index {
     }
 
     /**
-     * Rejects an inbound call in a {@literal "}Setup{@literal "} or {@literal "}Proceeding{@literal "} state
+     * Rejects an inbound call in a &quot;Setup&quot; or &quot;Proceeding&quot; state
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/reject
      * Rate Limit Group: Light

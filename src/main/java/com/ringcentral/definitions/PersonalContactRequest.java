@@ -63,62 +63,62 @@ public class PersonalContactRequest {
      */
     public String notes;
     /**
-     * Home phone number of the contact in e.164 (with "+") format
+     * Home phone number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String homePhone;
     /**
-     * 2nd home phone number of the contact in e.164 (with "+") format
+     * 2nd home phone number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String homePhone2;
     /**
-     * Business phone of the contact in e.164 (with "+") format
+     * Business phone of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String businessPhone;
     /**
-     * 2nd business phone of the contact in e.164 (with "+") format
+     * 2nd business phone of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String businessPhone2;
     /**
-     * Mobile phone of the contact in e.164 (with "+") format
+     * Mobile phone of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String mobilePhone;
     /**
-     * Business fax number of the contact in e.164 (with "+") format
+     * Business fax number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String businessFax;
     /**
-     * Company number of the contact in e.164 (with "+") format
+     * Company number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String companyPhone;
     /**
-     * Phone number of the contact assistant in e.164 (with "+") format
+     * Phone number of the contact assistant in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String assistantPhone;
     /**
-     * Car phone number of the contact in e.164 (with "+") format
+     * Car phone number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String carPhone;
     /**
-     * Other phone number of the contact in e.164 (with "+") format
+     * Other phone number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String otherPhone;
     /**
-     * Other fax number of the contact in e.164 (with "+") format
+     * Other fax number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String otherFax;
     /**
-     * Callback phone number of the contact in e.164 (with "+") format
+     * Callback phone number of the contact in e.164 (with &quot;+&quot;) format
      * Example: +15551234567
      */
     public String callbackPhone;

@@ -16,7 +16,7 @@ public class Index {
     }
 
     /**
-     * Sets the specified chat status to {@literal '}Unread{@literal '} for the current user. **Note** {@literal '}Chat{@literal '} is a general name for all types of threads icluding *Personal* (user{@literal '}s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).{@literal "}
+     * Sets the specified chat status to &#039;Unread&#039; for the current user. **Note** &#039;Chat&#039; is a general name for all types of threads icluding *Personal* (user&#039;s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).&quot;
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/unread
      * Rate Limit Group: Medium

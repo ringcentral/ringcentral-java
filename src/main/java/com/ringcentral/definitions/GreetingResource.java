@@ -7,7 +7,7 @@ public class GreetingResource {
      */
     public String type;
     /**
-     * 'Default' value specifies that all greetings of that type (in all languages) are default, if at least one greeting (in any language) of the specified type is custom, then 'Custom' value is returned.
+     * &#039;Default&#039; value specifies that all greetings of that type (in all languages) are default, if at least one greeting (in any language) of the specified type is custom, then &#039;Custom&#039; value is returned.
      * Enum: Default, Custom
      */
     public String mode;

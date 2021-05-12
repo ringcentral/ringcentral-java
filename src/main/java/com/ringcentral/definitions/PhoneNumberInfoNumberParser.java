@@ -31,11 +31,11 @@ public class PhoneNumberInfoNumberParser {
      */
     public String originalString;
     /**
-     * 'True' if the number is in a special format (for example N11 code)
+     * &#039;True&#039; if the number is in a special format (for example N11 code)
      */
     public Boolean special;
     /**
-     * Phone number [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format without plus sign ('+')
+     * Phone number [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format without plus sign (&#039;+&#039;)
      */
     public String normalized;
     /**

@@ -4,11 +4,11 @@ import fs from 'fs';
 export const escapeJavaDoc = (str: string | undefined) => {
   if (typeof str === 'string') {
     return str
-      .replace(/</g, '{@literal <}')
-      .replace(/>/g, '{@literal >}')
-      .replace(/"/g, '{@literal "}')
-      .replace(/'/g, "{@literal '}")
-      .replace(/&/g, '{@literal &}');
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
   return str;
 };

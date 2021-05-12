@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class GlipCompleteTask {
     /**
-     * Completeness status. 'Mandatory' if `completenessCondition` is set to `Simple`, otherwise 'Optional'
+     * Completeness status. &#039;Mandatory&#039; if `completenessCondition` is set to `Simple`, otherwise &#039;Optional&#039;
      * Enum: Incomplete, Complete
      */
     public String status;
@@ -12,7 +12,7 @@ public class GlipCompleteTask {
      */
     public AssigneeInfo[] assignees;
     /**
-     * Current completeness percentage of a task with the 'Percentage' completeness condition. 'Mandatory' if `completenessCondition` is set to `Percentage`, otherwise 'Optional'
+     * Current completeness percentage of a task with the &#039;Percentage&#039; completeness condition. &#039;Mandatory&#039; if `completenessCondition` is set to `Percentage`, otherwise &#039;Optional&#039;
      * Maximum: 100
      */
     public Long completenessPercentage;

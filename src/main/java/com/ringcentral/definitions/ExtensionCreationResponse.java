@@ -52,7 +52,7 @@ public class ExtensionCreationResponse {
      */
     public ExtensionServiceFeatureInfo[] serviceFeatures;
     /**
-     * Specifies extension configuration wizard state (web service setup). The default value is 'NotStarted'
+     * Specifies extension configuration wizard state (web service setup). The default value is &#039;NotStarted&#039;
      * Enum: NotStarted, Incomplete, Completed
      */
     public String setupWizardState;
@@ -61,7 +61,7 @@ public class ExtensionCreationResponse {
      */
     public AutomaticLocationUpdatesSiteInfo site;
     /**
-     * Extension current state. If 'Unassigned' is specified, then extensions without ‘extensionNumber’ are returned. If not specified, then all extensions are returned
+     * Extension current state. If &#039;Unassigned&#039; is specified, then extensions without ‘extensionNumber’ are returned. If not specified, then all extensions are returned
      * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;
@@ -70,7 +70,7 @@ public class ExtensionCreationResponse {
      */
     public ExtensionStatusInfo statusInfo;
     /**
-     * Extension type. Please note that legacy 'Department' extension type corresponds to 'Call Queue' extensions in modern RingCentral product terminology
+     * Extension type. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
      * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, Limited
      */
     public String type;

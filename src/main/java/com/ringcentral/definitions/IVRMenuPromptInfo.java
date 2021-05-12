@@ -13,7 +13,7 @@ public class IVRMenuPromptInfo {
      */
     public AudioPromptInfo audio;
     /**
-     * For 'TextToSpeech' mode only. Prompt text
+     * For &#039;TextToSpeech&#039; mode only. Prompt text
      */
     public String text;
     /**

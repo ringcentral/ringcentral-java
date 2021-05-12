@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class OrderBy {
     /**
-     * Sorting priority index, starting from '1'. Optional if only one element in `orderBy` array is specified
+     * Sorting priority index, starting from &#039;1&#039;. Optional if only one element in `orderBy` array is specified
      */
     public Long index;
     /**

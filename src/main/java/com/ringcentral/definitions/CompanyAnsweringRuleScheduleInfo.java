@@ -12,7 +12,7 @@ public class CompanyAnsweringRuleScheduleInfo {
      */
     public RangesInfo[] ranges;
     /**
-     * Reference to Business Hours or After Hours schedule = ['BusinessHours', 'AfterHours']
+     * Reference to Business Hours or After Hours schedule = [&#039;BusinessHours&#039;, &#039;AfterHours&#039;]
      * Enum: BusinessHours, AfterHours
      */
     public String ref;

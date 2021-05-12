@@ -16,7 +16,7 @@ public class SignupInfoResource {
      */
     public String verificationReason;
     /**
-     * Updates 'Send Marketing Information' flag on web interface
+     * Updates &#039;Send Marketing Information&#039; flag on web interface
      */
     public Boolean marketingAccepted;
 

@@ -96,7 +96,7 @@ public class Index {
     }
 
     /**
-     * Deletes message(s) by the given message ID(s). The first call of this method transfers the message to the {@literal '}Delete{@literal '} status. The second call transfers the deleted message to the {@literal '}Purged{@literal '} status. If it is required to make the message {@literal '}Purged{@literal '} immediately (from the first call), then set the query parameter purge to {@literal '}True{@literal '}.
+     * Deletes message(s) by the given message ID(s). The first call of this method transfers the message to the &#039;Delete&#039; status. The second call transfers the deleted message to the &#039;Purged&#039; status. If it is required to make the message &#039;Purged&#039; immediately (from the first call), then set the query parameter purge to &#039;True&#039;.
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/message-store/{messageId}
      * Rate Limit Group: Medium

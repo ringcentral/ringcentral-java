@@ -65,7 +65,7 @@ public class FaxMessageEventBody {
      */
     public String conversationId;
     /**
-     * Resolution of a fax message. ('High' for black and white image scanned at 200 dpi, 'Low' for black and white image scanned at 100 dpi)
+     * Resolution of a fax message. (&#039;High&#039; for black and white image scanned at 200 dpi, &#039;Low&#039; for black and white image scanned at 100 dpi)
      */
     public String faxResolution;
     /**

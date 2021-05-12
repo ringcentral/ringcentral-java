@@ -19,11 +19,11 @@ public class SyncUserCallLogParameters {
      */
     public String dateFrom;
     /**
-     * For 'FSync' the parameter is mandatory, it limits the number of records to be returned in response. For 'ISync' it specifies with how many records to extend sync Frame to the past, the maximum number of records is 250
+     * For &#039;FSync&#039; the parameter is mandatory, it limits the number of records to be returned in response. For &#039;ISync&#039; it specifies with how many records to extend sync Frame to the past, the maximum number of records is 250
      */
     public Long recordCount;
     /**
-     * Type of calls to be returned. The default value is 'All'
+     * Type of calls to be returned. The default value is &#039;All&#039;
      * Enum: Missed, All
      */
     public String[] statusGroup;
@@ -34,7 +34,7 @@ public class SyncUserCallLogParameters {
      */
     public String view;
     /**
-     * Supported for ISync. If 'True' then deleted call records are returned
+     * Supported for ISync. If &#039;True&#039; then deleted call records are returned
      */
     public Boolean showDeleted;
 

@@ -14,11 +14,11 @@ public class ListExtensionPhoneNumbersParameters {
      */
     public String[] usageType;
     /**
-     * Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'
+     * Indicates the page number to retrieve. Only positive number values are allowed. Default value is &#039;1&#039;
      */
     public Long page;
     /**
-     * Indicates the page size (number of items). If not specified, the value is '100' by default
+     * Indicates the page size (number of items). If not specified, the value is &#039;100&#039; by default
      */
     public Long perPage;
 

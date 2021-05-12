@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Query parameters for operation searchViaGet2
 public class SearchViaGet2Parameters {
     /**
-     * only support 'userName' or 'email' filter expressions for now
+     * only support &#039;userName&#039; or &#039;email&#039; filter expressions for now
      */
     public String filter;
     /**

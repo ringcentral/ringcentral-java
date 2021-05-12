@@ -15,7 +15,7 @@ public class MessageStoreCallerInfoResponseTo {
      */
     public String location;
     /**
-     * 'True' specifies that message is sent exactly to this recipient. Returned in to field for group MMS. Useful if one extension has several phone numbers
+     * &#039;True&#039; specifies that message is sent exactly to this recipient. Returned in to field for group MMS. Useful if one extension has several phone numbers
      */
     public Boolean target;
     /**
@@ -24,7 +24,7 @@ public class MessageStoreCallerInfoResponseTo {
      */
     public String messageStatus;
     /**
-     * Error code returned in case of fax sending failure. Returned if messageStatus value is 'SendingFailed'. Supported for fax messages only
+     * Error code returned in case of fax sending failure. Returned if messageStatus value is &#039;SendingFailed&#039;. Supported for fax messages only
      * Enum: AllLinesInUse, Undefined, NoFaxSendPermission, NoInternationalPermission, NoFaxMachine, NoAnswer, LineBusy, CallerHungUp, NotEnoughCredits, SentPartially, InternationalCallingDisabled, DestinationCountryDisabled, UnknownCountryCode, NotAccepted, InvalidNumber, CallDeclined, TooManyCallsPerLine, CallFailed, RenderingFailed, TooManyPages, ReturnToDBQueue, NoCallTime, WrongNumber, ProhibitedNumber, InternalError, FaxSendingProhibited, ThePhoneIsBlacklisted, UserNotFound, ConvertError, DBGeneralError, SkypeBillingFailed, AccountSuspended, ProhibitedDestination, InternationalDisabled
      */
     public String faxErrorCode;

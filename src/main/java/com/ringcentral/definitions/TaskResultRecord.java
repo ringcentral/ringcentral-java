@@ -7,11 +7,11 @@ public class TaskResultRecord {
      */
     public String id;
     /**
-     * Unique 48-bit identifier of the wireless access point complying with MAC address conventions. Returned only for 'Wireless Points Bulk Create' tasks
+     * Unique 48-bit identifier of the wireless access point complying with MAC address conventions. Returned only for &#039;Wireless Points Bulk Create&#039; tasks
      */
     public String bssid;
     /**
-     * Unique identifier of a network switch. Returned only for 'Switches Bulk Create' tasks
+     * Unique identifier of a network switch. Returned only for &#039;Switches Bulk Create&#039; tasks
      */
     public String chassisId;
     /**

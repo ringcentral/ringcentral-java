@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 // APS (Apple Push Service) information/ priority data
 public class APSInfo {
     /**
-     * If the value is '1' then notification is turned on even if the application is in background
+     * If the value is &#039;1&#039; then notification is turned on even if the application is in background
      */
     @SerializedName("content-available")
     public Long contentAvailable;

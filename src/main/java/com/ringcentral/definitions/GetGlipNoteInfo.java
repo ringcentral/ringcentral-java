@@ -35,7 +35,7 @@ public class GetGlipNoteInfo {
      */
     public LockedByInfo lockedBy;
     /**
-     * Note publishing status. Any note is created in 'Draft' status. After it is posted it becomes 'Active'
+     * Note publishing status. Any note is created in &#039;Draft&#039; status. After it is posted it becomes &#039;Active&#039;
      * Enum: Active, Draft
      */
     public String status;

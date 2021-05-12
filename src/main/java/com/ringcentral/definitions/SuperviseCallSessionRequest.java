@@ -10,7 +10,7 @@ public class SuperviseCallSessionRequest {
      */
     public String mode;
     /**
-     * Internal identifier of a supervisor's device which will be used for call session monitoring
+     * Internal identifier of a supervisor&#039;s device which will be used for call session monitoring
      * Required
      * Example: 191888004
      */
@@ -21,7 +21,7 @@ public class SuperviseCallSessionRequest {
      */
     public String agentExtensionId;
     /**
-     * Specifies if auto-answer SIP header should be sent. If auto-answer is set to 'True', the call is automatically answered by the supervising party, if set to 'False' - then the supervising party has to accept or decline the monitored call
+     * Specifies if auto-answer SIP header should be sent. If auto-answer is set to &#039;True&#039;, the call is automatically answered by the supervising party, if set to &#039;False&#039; - then the supervising party has to accept or decline the monitored call
      * Default: true
      */
     public Boolean autoAnswer;

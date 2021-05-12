@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class IVRMenuActionsInfo {
     /**
-     * Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput
+     * Key. The following values are supported: numeric: &#039;1&#039; to &#039;9&#039; Star Hash NoInput
      */
     public String input;
     /**
@@ -16,7 +16,7 @@ public class IVRMenuActionsInfo {
      */
     public IVRMenuExtensionInfo extension;
     /**
-     * For 'Transfer' action only. PSTN number in E.164 format
+     * For &#039;Transfer&#039; action only. PSTN number in E.164 format
      */
     public String phoneNumber;
 

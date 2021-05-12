@@ -16,7 +16,7 @@ public class Index {
     }
 
     /**
-     * Removes the specified chat from the users{@literal '}s list of favorites.
+     * Removes the specified chat from the users&#039;s list of favorites.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/unfavorite
      * Rate Limit Group: Medium

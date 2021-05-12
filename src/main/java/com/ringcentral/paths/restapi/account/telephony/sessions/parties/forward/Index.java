@@ -18,7 +18,7 @@ public class Index {
     }
 
     /**
-     * Forwards a non-answered incoming call to the specified call party. Applicable for a call session in {@literal "}Setup{@literal "} or {@literal "}Proceeding{@literal "} state.
+     * Forwards a non-answered incoming call to the specified call party. Applicable for a call session in &quot;Setup&quot; or &quot;Proceeding&quot; state.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/forward
      * Rate Limit Group: Light

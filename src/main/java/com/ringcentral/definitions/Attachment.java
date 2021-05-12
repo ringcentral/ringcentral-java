@@ -14,7 +14,7 @@ public class Attachment {
      */
     public byte[] content;
     /**
-     * Content type of the file, such as "image/png"
+     * Content type of the file, such as &quot;image/png&quot;
      */
     public String contentType;
 

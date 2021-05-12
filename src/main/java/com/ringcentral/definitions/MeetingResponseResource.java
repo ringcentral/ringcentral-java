@@ -8,7 +8,7 @@ public class MeetingResponseResource {
      */
     public String uri;
     /**
-     * Universally unique identifier of a meeting"
+     * Universally unique identifier of a meeting&quot;
      */
     public String uuid;
     /**

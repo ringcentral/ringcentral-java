@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class NotificationRecipientInfo {
     /**
-     * Phone number in E.164 (with '+' sign) format
+     * Phone number in E.164 (with &#039;+&#039; sign) format
      */
     public String phoneNumber;
     /**
@@ -11,7 +11,7 @@ public class NotificationRecipientInfo {
      */
     public String extensionNumber;
     /**
-     * 'True' specifies that message is sent exactly to this recipient. Returned in to field for group MMS. Useful if one extension has several phone numbers
+     * &#039;True&#039; specifies that message is sent exactly to this recipient. Returned in to field for group MMS. Useful if one extension has several phone numbers
      */
     public Boolean target;
     /**

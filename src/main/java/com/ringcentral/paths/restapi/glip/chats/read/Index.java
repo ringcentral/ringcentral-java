@@ -16,7 +16,7 @@ public class Index {
     }
 
     /**
-     * Sets the specified chat status to {@literal '}Read{@literal '} for the current user.
+     * Sets the specified chat status to &#039;Read&#039; for the current user.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/read
      * Rate Limit Group: Medium

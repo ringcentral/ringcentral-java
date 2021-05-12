@@ -20,7 +20,7 @@ public class ListCompanyActiveCallsParameters {
      */
     public String[] type;
     /**
-     * Call transport type. 'PSTN' specifies that a call leg is initiated from the PSTN network provider; 'VoIP' - from an RC phone. By default this filter is disabled
+     * Call transport type. &#039;PSTN&#039; specifies that a call leg is initiated from the PSTN network provider; &#039;VoIP&#039; - from an RC phone. By default this filter is disabled
      * Enum: PSTN, VoIP
      */
     public String[] transport;

@@ -22,7 +22,7 @@ public class CompanyAnsweringRuleInfo {
      */
     public String type;
     /**
-     * Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number
+     * Name of an answering rule specified by user. Max number of symbols is 30. The default value is &#039;My Rule N&#039; where &#039;N&#039; is the first free number
      */
     public String name;
     /**
@@ -38,7 +38,7 @@ public class CompanyAnsweringRuleInfo {
      */
     public CompanyAnsweringRuleScheduleInfo schedule;
     /**
-     * Specifies how incoming calls are forwarded. The default value is 'Operator' 'Operator' - play company greeting and forward to operator extension 'Disconnect' - play company greeting and disconnect 'Bypass' - bypass greeting to go to selected extension = ['Operator', 'Disconnect', 'Bypass']
+     * Specifies how incoming calls are forwarded. The default value is &#039;Operator&#039; &#039;Operator&#039; - play company greeting and forward to operator extension &#039;Disconnect&#039; - play company greeting and disconnect &#039;Bypass&#039; - bypass greeting to go to selected extension = [&#039;Operator&#039;, &#039;Disconnect&#039;, &#039;Bypass&#039;]
      * Enum: Operator, Disconnect, Bypass
      */
     public String callHandlingAction;

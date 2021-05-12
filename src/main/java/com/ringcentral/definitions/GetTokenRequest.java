@@ -4,11 +4,11 @@ package com.ringcentral.definitions;
 // Request body for operation getToken
 public class GetTokenRequest {
     /**
-     * Phone number linked to an account or extension in E.164 format with or without leading '+' sign
+     * Phone number linked to an account or extension in E.164 format with or without leading &#039;+&#039; sign
      */
     public String username;
     /**
-     * User's password
+     * User&#039;s password
      * Format: password
      */
     public String password;

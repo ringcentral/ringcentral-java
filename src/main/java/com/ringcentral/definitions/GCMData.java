@@ -22,7 +22,7 @@ public class GCMData {
      */
     public String extensionId;
     /**
-     * Calling action, for example 'StartRing'
+     * Calling action, for example &#039;StartRing&#039;
      */
     public String action;
     /**

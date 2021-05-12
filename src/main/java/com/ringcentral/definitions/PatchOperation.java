@@ -12,7 +12,7 @@ public class PatchOperation {
      */
     public String path;
     /**
-     * corresponding 'value' of that field specified by 'path'
+     * corresponding &#039;value&#039; of that field specified by &#039;path&#039;
      */
     public String value;
 

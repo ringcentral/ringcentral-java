@@ -3,11 +3,11 @@ package com.ringcentral.definitions;
 
 public class CreateAnsweringRuleRequest {
     /**
-     * Specifies if the rule is active or inactive. The default value is 'True'
+     * Specifies if the rule is active or inactive. The default value is &#039;True&#039;
      */
     public Boolean enabled;
     /**
-     * Type of an answering rule. The 'Custom' value should be specified
+     * Type of an answering rule. The &#039;Custom&#039; value should be specified
      */
     public String type;
     /**
@@ -56,7 +56,7 @@ public class CreateAnsweringRuleRequest {
      */
     public GreetingInfo[] greetings;
     /**
-     * Call screening status. 'Off' - no call screening; 'NoCallerId' - if caller ID is missing, then callers are asked to say their name before connecting; 'UnknownCallerId' - if caller ID is not in contact list, then callers are asked to say their name before connecting; 'Always' - the callers are always asked to say their name before connecting. The default value is 'Off'
+     * Call screening status. &#039;Off&#039; - no call screening; &#039;NoCallerId&#039; - if caller ID is missing, then callers are asked to say their name before connecting; &#039;UnknownCallerId&#039; - if caller ID is not in contact list, then callers are asked to say their name before connecting; &#039;Always&#039; - the callers are always asked to say their name before connecting. The default value is &#039;Off&#039;
      * Enum: Off, NoCallerId, UnknownCallerId, Always
      */
     public String screening;

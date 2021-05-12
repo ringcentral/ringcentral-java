@@ -12,7 +12,7 @@ public class CallSessionObject {
      */
     public OriginInfo origin;
     /**
-     * For calls of 'Conference' type only
+     * For calls of &#039;Conference&#039; type only
      */
     public String voiceCallToken;
     /**

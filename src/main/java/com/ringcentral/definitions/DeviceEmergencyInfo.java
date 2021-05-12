@@ -21,7 +21,7 @@ public class DeviceEmergencyInfo {
      */
     public String addressStatus;
     /**
-     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to 'True'
+     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;

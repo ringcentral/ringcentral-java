@@ -7,7 +7,7 @@ public class RuleInfoCreateRuleRequest {
      */
     public Long index;
     /**
-     * Number of rings for a forwarding number (or group). For inactive numbers the default value ('4') is returned
+     * Number of rings for a forwarding number (or group). For inactive numbers the default value (&#039;4&#039;) is returned
      */
     public Long ringCount;
     /**

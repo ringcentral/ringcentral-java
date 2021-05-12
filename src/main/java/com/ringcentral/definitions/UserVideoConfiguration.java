@@ -8,7 +8,7 @@ public class UserVideoConfiguration {
      */
     public String provider;
     /**
-     * Specifies if the user is 'paid' (has meeting license) or 'free' (w/o meeting license)
+     * Specifies if the user is &#039;paid&#039; (has meeting license) or &#039;free&#039; (w/o meeting license)
      * Enum: Paid, Free
      */
     public String userLicenseType;

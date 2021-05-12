@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Additional call session information. Supported for Call Queues only
 public class AdditionalCQInfo {
     /**
-     * Call information to be displayed as 'Line 2' for a call queue call session
+     * Call information to be displayed as &#039;Line 2&#039; for a call queue call session
      * Enum: PhoneNumberLabel, PhoneNumber, QueueExtension, QueueName, CallerIdName, CallerIdNumber, None
      */
     public String type;

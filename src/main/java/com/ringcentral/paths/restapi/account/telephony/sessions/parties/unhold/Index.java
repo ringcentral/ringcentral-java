@@ -17,7 +17,7 @@ public class Index {
     }
 
     /**
-     * Brings a party back into a call and stops to play Hold Music. There is a known limitation for Hold API - hold via REST API doesn{@literal '}t work with hold placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and RingCentral Desktop app, then you need to unhold both endpoints to remove Hold Music and bring media back.
+     * Brings a party back into a call and stops to play Hold Music. There is a known limitation for Hold API - hold via REST API doesn&#039;t work with hold placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and RingCentral Desktop app, then you need to unhold both endpoints to remove Hold Music and bring media back.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/unhold
      * Rate Limit Group: Light

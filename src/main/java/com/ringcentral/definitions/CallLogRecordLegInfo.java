@@ -55,7 +55,7 @@ public class CallLogRecordLegInfo {
     /**
      * Reason of a call result:
      * * `Accepted` - The call was connected to and accepted by this number
-     * * `Connected` - The call was answered, but there was no response on how to handle the call (for example, a voice mail system answered the call and did not push "1" to accept)
+     * * `Connected` - The call was answered, but there was no response on how to handle the call (for example, a voice mail system answered the call and did not push &quot;1&quot; to accept)
      * * `Line Busy` - The phone number you dialed was busy
      * * `Not Answered` - The phone number you dialed was not answered
      * * `No Answer` - You did not answer the call
@@ -69,7 +69,7 @@ public class CallLogRecordLegInfo {
      * * `International Restricted` - The country and/or area you attempted to call has been prohibited by your administrator
      * * `Bad Number` - An error occurred when making the call. Please check the number before trying again
      * * `Info 411 Restricted` - Calling to 411 Information Services is restricted
-     * * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at {@literal <}(888) 555-1212{@literal >}
+     * * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at &lt;(888) 555-1212&gt;
      * * `No Digital Line` - This DigitalLine was either not plugged in or did not have an internet connection
      * * `Failed Try Again` - Call failed. Please try again
      * * `Max Call Limit` - The number of simultaneous calls to your account has reached its limit
@@ -80,7 +80,7 @@ public class CallLogRecordLegInfo {
      * * `Number Disabled` - The phone number and/or area you attempted to call has been prohibited by your administrator
      * * `Resource Error` - An error occurred when making the call. Please try again
      * * `Call Loop` - A call loop occurred due to an incorrect call forwarding configuration. Please check that you are not forwarding calls back to your own account
-     * * `Fax Not Received` - An incoming fax could not be received because a proper connection with the sender's fax machine could not be established
+     * * `Fax Not Received` - An incoming fax could not be received because a proper connection with the sender&#039;s fax machine could not be established
      * * `Fax Partially Sent` - The fax was only partially sent. Possible explanations include phone line quality to poor to maintain the connection or the call was dropped
      * * `Fax Not Sent` - An attempt to send the fax was made, but could not connect with the receiving fax machine
      * * `Fax Poor Line` - An attempt to send the fax was made, but the phone line quality was too poor to send the fax
@@ -112,11 +112,11 @@ public class CallLogRecordLegInfo {
      */
     public CallLogRecordingInfo recording;
     /**
-     * Indicates that the recording is too short and therefore wouldn't be returned. The flag is not returned if the value is false
+     * Indicates that the recording is too short and therefore wouldn&#039;t be returned. The flag is not returned if the value is false
      */
     public Boolean shortRecording;
     /**
-     * Returned for 'Detailed' call log. Specifies if the leg is master-leg
+     * Returned for &#039;Detailed&#039; call log. Specifies if the leg is master-leg
      */
     public Boolean master;
     /**

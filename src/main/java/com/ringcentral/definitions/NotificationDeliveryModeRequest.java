@@ -9,23 +9,23 @@ public class NotificationDeliveryModeRequest {
      */
     public String transportType;
     /**
-     * Mandatory for 'WebHook' transport type, URL of a consumer service (cannot be changed during subscription update)
+     * Mandatory for &#039;WebHook&#039; transport type, URL of a consumer service (cannot be changed during subscription update)
      */
     public String address;
     /**
-     * Optional parameter. Specifies if the message will be encrypted or not. If request contains any presence event filter the value by default is 'True' (even if specified as 'false'). If request contains only message event filters the value by default is 'False'
+     * Optional parameter. Specifies if the message will be encrypted or not. If request contains any presence event filter the value by default is &#039;True&#039; (even if specified as &#039;false&#039;). If request contains only message event filters the value by default is &#039;False&#039;
      */
     public Boolean encryption;
     /**
-     * Name of a certificate. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     * Name of a certificate. Supported for &#039;RC/APNS&#039; and &#039;RC/GCM&#039; transport types
      */
     public String certificateName;
     /**
-     * Identifier of a registration. Supported for 'RC/APNS' and 'RC/GCM' transport types
+     * Identifier of a registration. Supported for &#039;RC/APNS&#039; and &#039;RC/GCM&#039; transport types
      */
     public String registrationId;
     /**
-     * Verification key of a subscription ensuring data security. Supported for 'Webhook' transport type
+     * Verification key of a subscription ensuring data security. Supported for &#039;Webhook&#039; transport type
      */
     public String verificationToken;
 

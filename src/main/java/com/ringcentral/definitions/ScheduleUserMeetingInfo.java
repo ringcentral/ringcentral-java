@@ -45,11 +45,11 @@ public class ScheduleUserMeetingInfo {
      */
     public String defaultPasswordForScheduledMeetings;
     /**
-     * A random password will be generated for an instant meeting, if set to 'True'. If you use PMI for your instant meetings, this option will be disabled
+     * A random password will be generated for an instant meeting, if set to &#039;True&#039;. If you use PMI for your instant meetings, this option will be disabled
      */
     public Boolean requirePasswordForInstantMeetings;
     /**
-     * Specifies whether to require a password for meetings using Personal Meeting ID (PMI). The supported values are: 'none', 'all' and 'jbhOnly' (joined before host only)
+     * Specifies whether to require a password for meetings using Personal Meeting ID (PMI). The supported values are: &#039;none&#039;, &#039;all&#039; and &#039;jbhOnly&#039; (joined before host only)
      * Enum: all, none, jbhOnly
      */
     public String requirePasswordForPmiMeetings;

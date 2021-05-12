@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // GCM data
 public class GCMInfo {
     /**
-     * Notification priority, if the value is 'high' then notification is turned on even if the application is in background
+     * Notification priority, if the value is &#039;high&#039; then notification is turned on even if the application is in background
      * Enum: high, normal
      */
     public String priority;

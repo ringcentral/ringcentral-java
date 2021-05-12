@@ -16,12 +16,12 @@ public class GlipPostEvent {
      */
     public String groupId;
     /**
-     * Type of a post. 'TextMessage' - an incoming text message; 'PersonJoined' - a message notifying that person has joined a conversation; 'PersonsAdded' - a message notifying that a person(s) were added to a conversation
+     * Type of a post. &#039;TextMessage&#039; - an incoming text message; &#039;PersonJoined&#039; - a message notifying that person has joined a conversation; &#039;PersonsAdded&#039; - a message notifying that a person(s) were added to a conversation
      * Enum: TextMessage, PersonJoined, PersonsAdded, Card
      */
     public String type;
     /**
-     * For 'TextMessage' post type only. Message text
+     * For &#039;TextMessage&#039; post type only. Message text
      */
     public String text;
     /**

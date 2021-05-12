@@ -7,11 +7,11 @@ public class GetPresenceInfo {
      */
     public String uri;
     /**
-     * If 'True' enables other extensions to see the extension presence status
+     * If &#039;True&#039; enables other extensions to see the extension presence status
      */
     public Boolean allowSeeMyPresence;
     /**
-     * Extended DnD (Do not Disturb) status. Cannot be set for Department/Announcement/Voicemail (Take Messages Only)/Fax User/Shared Lines Group/Paging Only Group/IVR Menu/Application Extension/Park Location extensions. The 'DoNotAcceptDepartmentCalls' and 'TakeDepartmentCallsOnly' values are applicable only for extensions - members of a Department; if these values are set for department outsiders, the 400 Bad Request error code is returned. The 'TakeDepartmentCallsOnly' status can be set through the old RingCentral user interface and is available for some migrated accounts only.
+     * Extended DnD (Do not Disturb) status. Cannot be set for Department/Announcement/Voicemail (Take Messages Only)/Fax User/Shared Lines Group/Paging Only Group/IVR Menu/Application Extension/Park Location extensions. The &#039;DoNotAcceptDepartmentCalls&#039; and &#039;TakeDepartmentCallsOnly&#039; values are applicable only for extensions - members of a Department; if these values are set for department outsiders, the 400 Bad Request error code is returned. The &#039;TakeDepartmentCallsOnly&#039; status can be set through the old RingCentral user interface and is available for some migrated accounts only.
      * Enum: TakeAllCalls, DoNotAcceptAnyCalls, DoNotAcceptDepartmentCalls, TakeDepartmentCallsOnly
      */
     public String dndStatus;
@@ -24,7 +24,7 @@ public class GetPresenceInfo {
      */
     public String message;
     /**
-     * If 'True' enables the extension user to pick up a monitored line on hold
+     * If &#039;True&#039; enables the extension user to pick up a monitored line on hold
      */
     public Boolean pickUpCallsOnHold;
     /**
@@ -33,7 +33,7 @@ public class GetPresenceInfo {
      */
     public String presenceStatus;
     /**
-     * If 'True' enables to ring extension phone, if any user monitored by this extension is ringing
+     * If &#039;True&#039; enables to ring extension phone, if any user monitored by this extension is ringing
      */
     public Boolean ringOnMonitoredCall;
     /**

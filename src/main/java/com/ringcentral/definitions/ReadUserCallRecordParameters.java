@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Query parameters for operation readUserCallRecord
 public class ReadUserCallRecordParameters {
     /**
-     * View of call records. The view value specified for 'FSync' will also be applied for 'ISync' by default, since it cannot be changed for ISync
+     * View of call records. The view value specified for &#039;FSync&#039; will also be applied for &#039;ISync&#039; by default, since it cannot be changed for ISync
      * Default: Simple
      * Enum: Simple, Detailed
      */

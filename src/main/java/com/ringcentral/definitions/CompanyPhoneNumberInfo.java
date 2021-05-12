@@ -27,7 +27,7 @@ public class CompanyPhoneNumberInfo {
      */
     public String location;
     /**
-     * Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system
+     * Payment type. &#039;External&#039; is returned for forwarded numbers which are not terminated in the RingCentral phone system
      * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider
      */
     public String paymentType;
@@ -36,7 +36,7 @@ public class CompanyPhoneNumberInfo {
      */
     public String phoneNumber;
     /**
-     * Status of a phone number. If the value is 'Normal', the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
      */
     public String status;
     /**
@@ -45,7 +45,7 @@ public class CompanyPhoneNumberInfo {
      */
     public String type;
     /**
-     * Usage type of a phone number. Usage type of a phone number. Numbers of 'NumberPool' type wont't be returned for phone number list requests
+     * Usage type of a phone number. Usage type of a phone number. Numbers of &#039;NumberPool&#039; type wont&#039;t be returned for phone number list requests
      * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool, BusinessMobileNumber, ExternalMobileNumber
      */
     public String usageType;

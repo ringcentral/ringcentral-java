@@ -15,7 +15,7 @@ public class GetSMSMessageInfoResponse {
      */
     public MessageAttachmentInfo[] attachments;
     /**
-     * Message availability status. Message in 'Deleted' state is still preserved with all its attachments and can be restored. 'Purged' means that all attachments are already deleted and the message itself is about to be physically deleted shortly
+     * Message availability status. Message in &#039;Deleted&#039; state is still preserved with all its attachments and can be restored. &#039;Purged&#039; means that all attachments are already deleted and the message itself is about to be physically deleted shortly
      * Enum: Alive, Deleted, Purged
      */
     public String availability;
@@ -51,7 +51,7 @@ public class GetSMSMessageInfoResponse {
      */
     public String lastModifiedTime;
     /**
-     * Message status. Different message types may have different allowed status values. For outbound faxes the aggregated message status is returned: If status for at least one recipient is 'Queued', then 'Queued' value is returned If status for at least one recipient is 'SendingFailed', then 'SendingFailed' value is returned In other cases Sent status is returned
+     * Message status. Different message types may have different allowed status values. For outbound faxes the aggregated message status is returned: If status for at least one recipient is &#039;Queued&#039;, then &#039;Queued&#039; value is returned If status for at least one recipient is &#039;SendingFailed&#039;, then &#039;SendingFailed&#039; value is returned In other cases Sent status is returned
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
@@ -66,7 +66,7 @@ public class GetSMSMessageInfoResponse {
      */
     public String readStatus;
     /**
-     * SMS only. The datetime when outbound SMS was delivered to recipient's handset in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. It is filled only if the carrier sends a delivery receipt to RingCentral
+     * SMS only. The datetime when outbound SMS was delivered to recipient&#039;s handset in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. It is filled only if the carrier sends a delivery receipt to RingCentral
      * Format: date-time
      */
     public String smsDeliveryTime;

@@ -28,7 +28,7 @@ public class ContactInfoCreationRequest {
      */
     public String businessPhone;
     /**
-     * Extension user mobile (**non** Toll Free) phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format
+     * Extension user mobile (**non** Toll Free) phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with &#039;+&#039; sign) format
      */
     public String mobilePhone;
     /**
@@ -36,7 +36,7 @@ public class ContactInfoCreationRequest {
      */
     public ContactBusinessAddressInfo businessAddress;
     /**
-     * If 'True' then contact email is enabled as login name for this user. Please note that email should be unique in this case. The default value is 'False'
+     * If &#039;True&#039; then contact email is enabled as login name for this user. Please note that email should be unique in this case. The default value is &#039;False&#039;
      */
     public Boolean emailAsLoginName;
     /**

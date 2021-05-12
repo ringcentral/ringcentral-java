@@ -4,11 +4,11 @@ package com.ringcentral.definitions;
 // Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded
 public class ForwardingInfo {
     /**
-     * Specifies if the user's softphone(s) are notified before forwarding the incoming call to desk phones and forwarding numbers
+     * Specifies if the user&#039;s softphone(s) are notified before forwarding the incoming call to desk phones and forwarding numbers
      */
     public Boolean notifyMySoftPhones;
     /**
-     * Specifies if the administrator's softphone is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is 'False'
+     * Specifies if the administrator&#039;s softphone is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is &#039;False&#039;
      */
     public Boolean notifyAdminSoftPhones;
     /**
@@ -16,7 +16,7 @@ public class ForwardingInfo {
      */
     public Long softPhonesRingCount;
     /**
-     * Specifies the order in which forwarding numbers ring. 'Sequentially' means that forwarding numbers are ringing one at a time, in order of priority. 'Simultaneously' means that forwarding numbers are ring all at the same time
+     * Specifies the order in which forwarding numbers ring. &#039;Sequentially&#039; means that forwarding numbers are ringing one at a time, in order of priority. &#039;Simultaneously&#039; means that forwarding numbers are ring all at the same time
      * Enum: Sequentially, Simultaneously
      */
     public String ringingMode;

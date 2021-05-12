@@ -9,12 +9,12 @@ public class PhoneNumberInfoConferencing {
      */
     public GetCountryInfoConferencing country;
     /**
-     * 'True' if the number is default for the conference. Default conference number is a domestic number that can be set by user (otherwise it is set by the system). Only one default number per country is allowed
+     * &#039;True&#039; if the number is default for the conference. Default conference number is a domestic number that can be set by user (otherwise it is set by the system). Only one default number per country is allowed
      */
     @SerializedName("default")
     public Boolean _default;
     /**
-     * 'True' if the greeting message is played on this number
+     * &#039;True&#039; if the greeting message is played on this number
      */
     public Boolean hasGreeting;
     /**
@@ -26,7 +26,7 @@ public class PhoneNumberInfoConferencing {
      */
     public String phoneNumber;
     /**
-     * Indicates if the number is 'premium' (account phone number with the `ConferencingNumber` usageType)
+     * Indicates if the number is &#039;premium&#039; (account phone number with the `ConferencingNumber` usageType)
      */
     public Boolean premium;
 

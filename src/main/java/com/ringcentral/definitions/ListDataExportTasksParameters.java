@@ -9,7 +9,7 @@ public class ListDataExportTasksParameters {
      */
     public String status;
     /**
-     * Page number to be retrieved; value range is {@literal >} 0
+     * Page number to be retrieved; value range is &gt; 0
      * Default: 1
      */
     public Long page;

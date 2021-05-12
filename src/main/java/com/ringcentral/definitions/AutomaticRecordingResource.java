@@ -7,15 +7,15 @@ public class AutomaticRecordingResource {
      */
     public Boolean enabled;
     /**
-     * Flag for controlling 'Play Call Recording Announcement for Outbound Calls' settings
+     * Flag for controlling &#039;Play Call Recording Announcement for Outbound Calls&#039; settings
      */
     public Boolean outboundCallTones;
     /**
-     * Flag for controlling 'Play periodic tones for outbound calls' settings
+     * Flag for controlling &#039;Play periodic tones for outbound calls&#039; settings
      */
     public Boolean outboundCallAnnouncement;
     /**
-     * Flag for controlling 'Allow mute in auto call recording' settings
+     * Flag for controlling &#039;Allow mute in auto call recording&#039; settings
      */
     public Boolean allowMute;
     /**

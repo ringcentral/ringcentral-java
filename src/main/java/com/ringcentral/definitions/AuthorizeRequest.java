@@ -24,25 +24,25 @@ public class AuthorizeRequest {
      */
     public String state;
     /**
-     * Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is '1210' - RingCentral US
+     * Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is &#039;1210&#039; - RingCentral US
      */
     public String brand_id;
     /**
-     * Style of login form. The default value is 'page'. The 'popup' and 'touch' values are featured for mobile applications
+     * Style of login form. The default value is &#039;page&#039;. The &#039;popup&#039; and &#039;touch&#039; values are featured for mobile applications
      * Enum: page, popup, touch, mobile
      */
     public String display;
     /**
-     * Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. The default value is 'login{@literal &}sso'
+     * Specifies which login form will be displayed. Space-separated set of the following values: &#039;login&#039; - official RingCentral login form, &#039;sso&#039; - Single Sign-On login form, &#039;consent&#039; - form to show the requested scope and prompt user for consent. Either &#039;login&#039; or &#039;sso&#039; (or both) must be specified. The default value is &#039;login&amp;sso&#039;
      * Enum: login, sso, consent
      */
     public String prompt;
     /**
-     * Localization code of a language. Overwrites 'Accept-Language' header value
+     * Localization code of a language. Overwrites &#039;Accept-Language&#039; header value
      */
     public String localeId;
     /**
-     * Localization code of a language. Overwrites 'localeId' parameter value
+     * Localization code of a language. Overwrites &#039;localeId&#039; parameter value
      */
     public String ui_locales;
     /**

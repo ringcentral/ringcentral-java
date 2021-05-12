@@ -12,7 +12,7 @@ public class CallQueueExtensionInfo {
      */
     public Long slaThresholdSeconds;
     /**
-     * If 'True' abandoned calls (hanged up prior to being served) are included into service level calculation
+     * If &#039;True&#039; abandoned calls (hanged up prior to being served) are included into service level calculation
      */
     public Boolean includeAbandonedCalls;
     /**

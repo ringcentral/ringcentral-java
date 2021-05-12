@@ -8,7 +8,7 @@ public class ReadUserCallLogParameters {
      */
     public String extensionNumber;
     /**
-     * If 'True' then calls from/to blocked numbers are returned
+     * If &#039;True&#039; then calls from/to blocked numbers are returned
      * Default: true
      */
     public Boolean showBlocked;
@@ -31,7 +31,7 @@ public class ReadUserCallLogParameters {
      */
     public String[] type;
     /**
-     * Call transport type. 'PSTN' specifies that a call leg is initiated from the PSTN network provider; 'VoIP' - from an RC phone. By default this filter is disabled
+     * Call transport type. &#039;PSTN&#039; specifies that a call leg is initiated from the PSTN network provider; &#039;VoIP&#039; - from an RC phone. By default this filter is disabled
      * Enum: PSTN, VoIP
      */
     public String[] transport;
@@ -71,7 +71,7 @@ public class ReadUserCallLogParameters {
      */
     public Long perPage;
     /**
-     * If 'True' then deleted calls are returned
+     * If &#039;True&#039; then deleted calls are returned
      */
     public Boolean showDeleted;
 

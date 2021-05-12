@@ -15,7 +15,7 @@ public class GetInternalTextMessageInfoResponse {
      */
     public MessageAttachmentInfo[] attachments;
     /**
-     * Message availability status. Message in 'Deleted' state is still preserved with all its attachments and can be restored. 'Purged' means that all attachments are already deleted and the message itself is about to be physically deleted shortly
+     * Message availability status. Message in &#039;Deleted&#039; state is still preserved with all its attachments and can be restored. &#039;Purged&#039; means that all attachments are already deleted and the message itself is about to be physically deleted shortly
      * Enum: Alive, Deleted, Purged
      */
     public String availability;
@@ -47,12 +47,12 @@ public class GetInternalTextMessageInfoResponse {
      */
     public String lastModifiedTime;
     /**
-     * Message status. Different message types may have different allowed status values. For outbound faxes the aggregated message status is returned: If status for at least one recipient is 'Queued', then 'Queued' value is returned If status for at least one recipient is 'SendingFailed', then 'SendingFailed' value is returned In other cases Sent status is returned
+     * Message status. Different message types may have different allowed status values. For outbound faxes the aggregated message status is returned: If status for at least one recipient is &#039;Queued&#039;, then &#039;Queued&#039; value is returned If status for at least one recipient is &#039;SendingFailed&#039;, then &#039;SendingFailed&#039; value is returned In other cases Sent status is returned
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
     /**
-     * 'Pager' only. 'True' if at least one of the message recipients is 'Department' extension
+     * &#039;Pager&#039; only. &#039;True&#039; if at least one of the message recipients is &#039;Department&#039; extension
      */
     public Boolean pgToDepartment;
     /**

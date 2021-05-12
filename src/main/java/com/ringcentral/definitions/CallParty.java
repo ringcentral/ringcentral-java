@@ -16,7 +16,7 @@ public class CallParty {
      */
     public Boolean muted;
     /**
-     * If 'True' then the party is not connected to a session voice conference, 'False' means the party is connected to other parties in a session
+     * If &#039;True&#039; then the party is not connected to a session voice conference, &#039;False&#039; means the party is connected to other parties in a session
      */
     public Boolean standAlone;
     /**
@@ -41,17 +41,17 @@ public class CallParty {
      */
     public String direction;
     /**
-     * A party's role in the conference scenarios. For calls of 'Conference' type only
+     * A party&#039;s role in the conference scenarios. For calls of &#039;Conference&#039; type only
      * Enum: Host, Participant
      */
     public String conferenceRole;
     /**
-     * A party's role in 'Ring Me'/'RingOut' scenarios. For calls of 'Ringout' type only
+     * A party&#039;s role in &#039;Ring Me&#039;/&#039;RingOut&#039; scenarios. For calls of &#039;Ringout&#039; type only
      * Enum: Initiator, Target
      */
     public String ringOutRole;
     /**
-     * A party's role in 'Ring Me'/'RingOut' scenarios. For calls of 'Ringme' type only
+     * A party&#039;s role in &#039;Ring Me&#039;/&#039;RingOut&#039; scenarios. For calls of &#039;Ringme&#039; type only
      * Enum: Initiator, Target
      */
     public String ringMeRole;

@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class GlipTaskRecurrenceInfo {
     /**
-     * Task recurrence settings. For non-periodic tasks the value is 'None'
+     * Task recurrence settings. For non-periodic tasks the value is &#039;None&#039;
      * Enum: None, Daily, Weekdays, Weekly, Monthly, Yearly
      */
     public String schedule;

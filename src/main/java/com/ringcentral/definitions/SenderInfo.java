@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Extension Type. For GCM transport type '_from' property should be used || Message sender information
 public class SenderInfo {
     /**
-     * Phone number in E.164 (with '+' sign) format
+     * Phone number in E.164 (with &#039;+&#039; sign) format
      */
     public String phoneNumber;
     /**

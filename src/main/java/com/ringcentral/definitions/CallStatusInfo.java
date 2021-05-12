@@ -13,7 +13,7 @@ public class CallStatusInfo {
      */
     public PeerInfo peerId;
     /**
-     * Reason for call termination. For 'Disconnected' code only
+     * Reason for call termination. For &#039;Disconnected&#039; code only
      * Enum: Pickup, Supervising, TakeOver, Timeout, BlindTransfer, RccTransfer, AttendedTransfer, CallerInputRedirect, CallFlip, ParkLocation, DtmfTransfer, AgentAnswered, AgentDropped, Rejected, Cancelled, InternalError, NoAnswer, TargetBusy, InvalidNumber, InternationalDisabled, DestinationBlocked, NotEnoughFunds, NoSuchUser, CallPark, CallRedirected, CallReplied, CallSwitch, CallFinished, CallDropped
      */
     public String reason;

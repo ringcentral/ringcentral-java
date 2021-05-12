@@ -13,7 +13,7 @@ public class CompanyDirectoryPhoneNumberInfo {
      */
     public String type;
     /**
-     * Specifies if a phone number should be hidden or not. Returned only if the value is 'True'
+     * Specifies if a phone number should be hidden or not. Returned only if the value is &#039;True&#039;
      */
     public Boolean hidden;
     /**

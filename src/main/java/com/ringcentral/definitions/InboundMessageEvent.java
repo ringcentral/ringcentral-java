@@ -15,7 +15,7 @@ public class InboundMessageEvent {
      */
     public String conversationId;
     /**
-     * Sender phone number. For GCM transport type '_from' property should be used
+     * Sender phone number. For GCM transport type &#039;_from&#039; property should be used
      */
     public String from;
     /**

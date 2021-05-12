@@ -19,7 +19,7 @@ public class NotificationSettings {
      */
     public String[] smsEmailAddresses;
     /**
-     * Specifies notifications settings mode. If 'True' then advanced mode is on, it allows using different emails and/or phone numbers for each notification type. If 'False' then basic mode is on. Advanced mode settings are returned in both modes, if specified once, but if basic mode is switched on, they are not applied
+     * Specifies notifications settings mode. If &#039;True&#039; then advanced mode is on, it allows using different emails and/or phone numbers for each notification type. If &#039;False&#039; then basic mode is on. Advanced mode settings are returned in both modes, if specified once, but if basic mode is switched on, they are not applied
      */
     public Boolean advancedMode;
     /**

@@ -33,15 +33,15 @@ public class ExtensionPresenceEventBody {
      */
     public String dndStatus;
     /**
-     * If 'True' enables other extensions to see the extension presence status
+     * If &#039;True&#039; enables other extensions to see the extension presence status
      */
     public Boolean allowSeeMyPresence;
     /**
-     * If 'True' enables to ring extension phone, if any user monitored by this extension is ringing
+     * If &#039;True&#039; enables to ring extension phone, if any user monitored by this extension is ringing
      */
     public Boolean ringOnMonitoredCall;
     /**
-     * If 'True' enables the extension user to pick up a monitored line on hold
+     * If &#039;True&#039; enables the extension user to pick up a monitored line on hold
      */
     public Boolean pickUpCallsOnHold;
     /**

@@ -28,7 +28,7 @@ public class Index {
     }
 
     /**
-     * Returns a list of user meetings scheduled for the future (meetings of {@literal '}Instant{@literal '} type are not included).
+     * Returns a list of user meetings scheduled for the future (meetings of &#039;Instant&#039; type are not included).
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/meeting
      * Rate Limit Group: Light

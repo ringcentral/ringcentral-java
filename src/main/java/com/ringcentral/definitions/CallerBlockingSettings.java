@@ -9,7 +9,7 @@ public class CallerBlockingSettings {
      */
     public String mode;
     /**
-     * Determines how to handle calls with no caller ID in 'Specific' mode
+     * Determines how to handle calls with no caller ID in &#039;Specific&#039; mode
      * Enum: BlockCallsAndFaxes, BlockFaxes, Allow
      */
     public String noCallerId;

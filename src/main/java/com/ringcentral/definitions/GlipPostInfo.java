@@ -16,7 +16,7 @@ public class GlipPostInfo {
      */
     public String type;
     /**
-     * For 'TextMessage' post type only. Text of a message
+     * For &#039;TextMessage&#039; post type only. Text of a message
      */
     public String text;
     /**
@@ -24,7 +24,7 @@ public class GlipPostInfo {
      */
     public String creatorId;
     /**
-     * For 'PersonsAdded' post type only. Identifiers of persons added to a group
+     * For &#039;PersonsAdded&#039; post type only. Identifiers of persons added to a group
      */
     public String[] addedPersonIds;
     /**
@@ -50,7 +50,7 @@ public class GlipPostInfo {
      */
     public String activity;
     /**
-     * Title of a message. (Can be set for bot's messages only)
+     * Title of a message. (Can be set for bot&#039;s messages only)
      */
     public String title;
     /**

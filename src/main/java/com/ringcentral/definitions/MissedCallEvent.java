@@ -29,7 +29,7 @@ public class MissedCallEvent {
      */
     public String extensionId;
     /**
-     * Calling action, for example 'StartRing'
+     * Calling action, for example &#039;StartRing&#039;
      */
     public String action;
     /**
@@ -41,7 +41,7 @@ public class MissedCallEvent {
      */
     public String serverId;
     /**
-     * Phone number of a caller. For GCM transport type '_from' property should be used
+     * Phone number of a caller. For GCM transport type &#039;_from&#039; property should be used
      */
     public String from;
     /**

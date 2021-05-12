@@ -60,7 +60,7 @@ public class EmergencyServiceAddressResource {
      */
     public Boolean outOfCountry;
     /**
-     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to 'True'
+     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;
@@ -81,7 +81,7 @@ public class EmergencyServiceAddressResource {
      */
     public String customerPhone;
     /**
-     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK {@literal &} Australia.
+     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK &amp; Australia.
      */
     public String additionalCustomerPhone;
     /**

@@ -13,7 +13,7 @@ public class ExtensionInfoEventBody {
      */
     public String eventType;
     /**
-     * Returned for 'Update' event type only
+     * Returned for &#039;Update&#039; event type only
      * Enum: AccountSettings, AccountStatus, AnsweringRules, CompanyNumbers, DialingPlan, ExtensionInfo, Features, Limits, Permissions, ProfileImage, VideoConfiguration
      */
     public String[] hints;

@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Site data
 public class SwitchSiteInfo {
     /**
-     * Internal identifier of a site. The company identifier value is 'main-site'
+     * Internal identifier of a site. The company identifier value is &#039;main-site&#039;
      */
     public String id;
     /**

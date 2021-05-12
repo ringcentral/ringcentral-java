@@ -16,7 +16,7 @@ public class InstantMessageEventBody {
      */
     public SenderInfo from;
     /**
-     * Type of a message. The default value is 'SMS'
+     * Type of a message. The default value is &#039;SMS&#039;
      */
     public String type;
     /**

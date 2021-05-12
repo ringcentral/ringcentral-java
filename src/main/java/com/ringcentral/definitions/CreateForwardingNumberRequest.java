@@ -15,7 +15,7 @@ public class CreateForwardingNumberRequest {
      */
     public String label;
     /**
-     * Forwarding/Call flip phone type. If specified, 'label' attribute value is ignored. The default value is 'Other'
+     * Forwarding/Call flip phone type. If specified, &#039;label&#039; attribute value is ignored. The default value is &#039;Other&#039;
      * Enum: PhoneLine, Home, Mobile, Work, Other
      */
     public String type;

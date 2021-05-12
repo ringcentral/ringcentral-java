@@ -92,7 +92,7 @@ public class Index {
     }
 
     /**
-     * Deletes extension(s) by ID(s). When an extension is being deleted the default API behaviour is as follows: ⋅⋅* user{@literal '}s direct numbers are preserved by becoming additional company numbers; ⋅⋅* user{@literal '}s digital lines (both device {@literal &} associated phone number) are deleted. You can change this behaviour using the filters: ..* create unassigned extensions for each digital line of the deleted extension by setting the query parameter `savePhoneLines` to `true` in request path; ..* remove direct numbers of the deleted extension by setting the query parameter `savePhoneNumbers` to `false` in request path
+     * Deletes extension(s) by ID(s). When an extension is being deleted the default API behaviour is as follows: ⋅⋅* user&#039;s direct numbers are preserved by becoming additional company numbers; ⋅⋅* user&#039;s digital lines (both device &amp; associated phone number) are deleted. You can change this behaviour using the filters: ..* create unassigned extensions for each digital line of the deleted extension by setting the query parameter `savePhoneLines` to `true` in request path; ..* remove direct numbers of the deleted extension by setting the query parameter `savePhoneNumbers` to `false` in request path
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}
      * Rate Limit Group: Medium

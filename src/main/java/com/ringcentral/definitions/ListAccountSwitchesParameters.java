@@ -12,7 +12,7 @@ public class ListAccountSwitchesParameters {
      */
     public String searchString;
     /**
-     * Comma-separated list of fields to order results prefixed by '+' sign (ascending order) or '-' sign (descending order). The default sorting is by `name`
+     * Comma-separated list of fields to order results prefixed by &#039;+&#039; sign (ascending order) or &#039;-&#039; sign (descending order). The default sorting is by `name`
      */
     public String orderBy;
     /**

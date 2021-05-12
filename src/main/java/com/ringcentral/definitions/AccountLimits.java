@@ -8,7 +8,7 @@ public class AccountLimits {
      */
     public Long freeSoftPhoneLinesPerExtension;
     /**
-     * Max number of participants in RingCentral meeting hosted by this account's user
+     * Max number of participants in RingCentral meeting hosted by this account&#039;s user
      */
     public Long meetingSize;
     /**

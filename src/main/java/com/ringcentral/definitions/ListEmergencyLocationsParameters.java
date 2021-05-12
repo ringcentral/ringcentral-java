@@ -24,7 +24,7 @@ public class ListEmergencyLocationsParameters {
      */
     public String domesticCountryId;
     /**
-     * Comma-separated list of fields to order results prefixed by plus sign '+' (ascending order) or minus sign '-' (descending order). Supported values: 'address'
+     * Comma-separated list of fields to order results prefixed by plus sign &#039;+&#039; (ascending order) or minus sign &#039;-&#039; (descending order). Supported values: &#039;address&#039;
      * Default: address
      */
     public String orderBy;

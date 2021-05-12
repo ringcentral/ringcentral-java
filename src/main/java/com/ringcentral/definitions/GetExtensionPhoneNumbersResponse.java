@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class GetExtensionPhoneNumbersResponse {
     /**
-     * Link to the user's phone number list resource
+     * Link to the user&#039;s phone number list resource
      */
     public String uri;
     /**

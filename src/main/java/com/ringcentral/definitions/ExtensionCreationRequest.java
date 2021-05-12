@@ -54,12 +54,12 @@ public class ExtensionCreationRequest {
      */
     public ExtensionStatusInfo statusInfo;
     /**
-     * Extension type. Please note that legacy 'Department' extension type corresponds to 'Call Queue' extensions in modern RingCentral product terminology
+     * Extension type. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
      * Enum: User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, Limited
      */
     public String type;
     /**
-     * Hides extension from showing in company directory. Supported for extensions of User type only. For unassigned extensions the value is set to 'True' by default. For assigned extensions the value is set to 'False' by default
+     * Hides extension from showing in company directory. Supported for extensions of User type only. For unassigned extensions the value is set to &#039;True&#039; by default. For assigned extensions the value is set to &#039;False&#039; by default
      */
     public Boolean hidden;
 

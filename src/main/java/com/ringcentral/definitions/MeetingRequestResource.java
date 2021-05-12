@@ -35,7 +35,7 @@ public class MeetingRequestResource {
      */
     public Boolean startParticipantsVideo;
     /**
-     * If true, then personal user's meeting ID is applied for creation of this meeting
+     * If true, then personal user&#039;s meeting ID is applied for creation of this meeting
      */
     public Boolean usePersonalMeetingId;
     /**

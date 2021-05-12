@@ -28,7 +28,7 @@ public class Index {
     }
 
     /**
-     * Returns the list of chats where the user is a member and also public teams that can be joined. All records in response are sorted by creation time of a chat in ascending order. **Note** {@literal '}Chat{@literal '} is a general name for all types of threads icluding *Personal* (user{@literal '}s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).
+     * Returns the list of chats where the user is a member and also public teams that can be joined. All records in response are sorted by creation time of a chat in ascending order. **Note** &#039;Chat&#039; is a general name for all types of threads icluding *Personal* (user&#039;s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/chats
      * Rate Limit Group: Medium
@@ -45,7 +45,7 @@ public class Index {
     }
 
     /**
-     * Returns information about a chat by ID. **Note** {@literal '}Chat{@literal '} is a general name for all types of threads icluding *Personal* (user{@literal '}s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).{@literal "}
+     * Returns information about a chat by ID. **Note** &#039;Chat&#039; is a general name for all types of threads icluding *Personal* (user&#039;s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).&quot;
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}
      * Rate Limit Group: Light

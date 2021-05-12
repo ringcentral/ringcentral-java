@@ -16,7 +16,7 @@ public class FaxMessageAttachment {
      */
     public String type;
     /**
-     * MIME type for a given attachment, for instance 'audio/wav'
+     * MIME type for a given attachment, for instance &#039;audio/wav&#039;
      */
     public String contentType;
     /**

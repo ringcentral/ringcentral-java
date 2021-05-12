@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Specifies whether to take a voicemail and who should do it
 public class VoicemailInfo {
     /**
-     * If 'True' then voicemails are allowed to be received
+     * If &#039;True&#039; then voicemails are allowed to be received
      */
     public Boolean enabled;
     /**

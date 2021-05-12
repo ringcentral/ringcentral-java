@@ -8,11 +8,11 @@ public class GlipMessageAttachmentAuthorInfo {
      */
     public String name;
     /**
-     * Link to an author's name
+     * Link to an author&#039;s name
      */
     public String uri;
     /**
-     * Link to an image displayed to the left of an author's name; sized 82x82px
+     * Link to an image displayed to the left of an author&#039;s name; sized 82x82px
      */
     public String iconUri;
 

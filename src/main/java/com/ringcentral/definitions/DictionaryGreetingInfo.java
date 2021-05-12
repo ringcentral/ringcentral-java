@@ -33,7 +33,7 @@ public class DictionaryGreetingInfo {
      */
     public String type;
     /**
-     * Category of a greeting, specifying data form. The category value 'None' specifies that greetings of a certain type ('Introductory', 'ConnectingAudio', etc.) are switched off for an extension = ['Music', 'Message', 'RingTones', 'None']
+     * Category of a greeting, specifying data form. The category value &#039;None&#039; specifies that greetings of a certain type (&#039;Introductory&#039;, &#039;ConnectingAudio&#039;, etc.) are switched off for an extension = [&#039;Music&#039;, &#039;Message&#039;, &#039;RingTones&#039;, &#039;None&#039;]
      * Enum: Music, Message, RingTones, None
      */
     public String category;

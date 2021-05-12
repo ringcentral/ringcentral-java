@@ -11,17 +11,17 @@ public class ListCompanyAnsweringRuleInfo {
      */
     public String uri;
     /**
-     * Specifies if the rule is active or inactive. The default value is 'True'
+     * Specifies if the rule is active or inactive. The default value is &#039;True&#039;
      * Default: true
      */
     public Boolean enabled;
     /**
-     * Type of an answering rule, the default value is 'Custom' = ['BusinessHours', 'AfterHours', 'Custom']
+     * Type of an answering rule, the default value is &#039;Custom&#039; = [&#039;BusinessHours&#039;, &#039;AfterHours&#039;, &#039;Custom&#039;]
      * Enum: BusinessHours, AfterHours, Custom
      */
     public String type;
     /**
-     * Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number
+     * Name of an answering rule specified by user. Max number of symbols is 30. The default value is &#039;My Rule N&#039; where &#039;N&#039; is the first free number
      */
     public String name;
     /**

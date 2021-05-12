@@ -16,7 +16,7 @@ public class ActiveCallInfoWithoutSIP {
      */
     public Boolean queueCall;
     /**
-     * Phone number or extension number of a caller. For GCM transport type '_from' property should be used
+     * Phone number or extension number of a caller. For GCM transport type &#039;_from&#039; property should be used
      */
     public String from;
     /**
@@ -53,7 +53,7 @@ public class ActiveCallInfoWithoutSIP {
      */
     public String telephonySessionId;
     /**
-     * Type of call termination. Supported for calls in 'NoCall' status. If the returned termination type is 'intermediate' it means the call is not actually ended, the connection is established on one of the devices
+     * Type of call termination. Supported for calls in &#039;NoCall&#039; status. If the returned termination type is &#039;intermediate&#039; it means the call is not actually ended, the connection is established on one of the devices
      * Enum: final, intermediate
      */
     public String terminationType;

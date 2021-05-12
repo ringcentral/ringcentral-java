@@ -21,7 +21,7 @@ public class SipRegistrationDeviceEmergencyInfo {
      */
     public String addressStatus;
     /**
-     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to 'True'
+     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;
@@ -31,11 +31,11 @@ public class SipRegistrationDeviceEmergencyInfo {
      */
     public String addressEditableStatus;
     /**
-     * 'True' if emergency address is required for the country of a phone line
+     * &#039;True&#039; if emergency address is required for the country of a phone line
      */
     public Boolean addressRequired;
     /**
-     * 'True' if out of country emergency address is not allowed for the country of a phone line
+     * &#039;True&#039; if out of country emergency address is not allowed for the country of a phone line
      */
     public Boolean addressLocationOnly;
 

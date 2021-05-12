@@ -31,7 +31,7 @@ public class MeetingExternalUserInfoResource {
      */
     public String personalMeetingId;
     /**
-     * Link to the user's personal meeting room, used as an alias for personal meeting URL (with personal meeting ID)
+     * Link to the user&#039;s personal meeting room, used as an alias for personal meeting URL (with personal meeting ID)
      * Example: https://meetings.ringcentral.com/my/jsmith
      */
     public String personalLink;

@@ -46,7 +46,7 @@ public class Index {
     }
 
     /**
-     * Creates a new conversation or opens the existing one. If the conversation already exists, then its ID will be returned in response. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description; it is a chat of {@literal '}Group{@literal '} type. If you add a person to the existing conversation (group), it creates a whole new conversation.
+     * Creates a new conversation or opens the existing one. If the conversation already exists, then its ID will be returned in response. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description; it is a chat of &#039;Group&#039; type. If you add a person to the existing conversation (group), it creates a whole new conversation.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/conversations
      * Rate Limit Group: Medium
@@ -59,7 +59,7 @@ public class Index {
     }
 
     /**
-     * Returns information about the specified conversation, including the list of conversation participants. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description; it is a chat of {@literal '}Group{@literal '} type. If you add a person to the existing conversation, it creates a whole new conversation.
+     * Returns information about the specified conversation, including the list of conversation participants. A conversation is an adhoc discussion between a particular set of users, not featuring any specific name or description; it is a chat of &#039;Group&#039; type. If you add a person to the existing conversation, it creates a whole new conversation.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/conversations/{chatId}
      * Rate Limit Group: Light

@@ -19,7 +19,7 @@ public class Index {
 
     /**
      * Returns notification settings for the current extension.
-     * {@literal <}p{@literal >}Knowledge Article: {@literal <}a href={@literal "}https://success.ringcentral.com/articles/RC_Knowledge_Article/9740{@literal "}{@literal >}User Settings - Set up Message Notifications{@literal <}/a{@literal >}{@literal <}/p{@literal >}
+     * &lt;p&gt;Knowledge Article: &lt;a href=&quot;https://success.ringcentral.com/articles/RC_Knowledge_Article/9740&quot;&gt;User Settings - Set up Message Notifications&lt;/a&gt;&lt;/p&gt;
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/notification-settings
      * Rate Limit Group: Light
@@ -33,7 +33,7 @@ public class Index {
 
     /**
      * Updates notification settings for the current extension.
-     * {@literal <}p{@literal >}Knowledge Article: {@literal <}a href={@literal "}https://success.ringcentral.com/articles/RC_Knowledge_Article/9740{@literal "}{@literal >}User Settings - Set up Message Notifications{@literal <}/a{@literal >}{@literal <}/p{@literal >}
+     * &lt;p&gt;Knowledge Article: &lt;a href=&quot;https://success.ringcentral.com/articles/RC_Knowledge_Article/9740&quot;&gt;User Settings - Set up Message Notifications&lt;/a&gt;&lt;/p&gt;
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/notification-settings
      * Rate Limit Group: Medium

@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class UserAnsweringRuleList {
     /**
      * Canonical URI of an answering rule list resource
-     * Example: https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1{@literal &}perPage=100
+     * Example: https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1&amp;perPage=100
      */
     public String uri;
     /**

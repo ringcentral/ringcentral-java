@@ -4,12 +4,12 @@ package com.ringcentral.definitions;
 // Query parameters for operation listDirectoryEntries
 public class ListDirectoryEntriesParameters {
     /**
-     * If 'True' then contacts of all accounts in federation are returned. If 'False' then only contacts of the current account are returned, and account section is eliminated in this case
+     * If &#039;True&#039; then contacts of all accounts in federation are returned. If &#039;False&#039; then only contacts of the current account are returned, and account section is eliminated in this case
      * Default: true
      */
     public Boolean showFederated;
     /**
-     * Type of an extension. Please note that legacy 'Department' extension type corresponds to 'Call Queue' extensions in modern RingCentral product terminology
+     * Type of an extension. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
      * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ParkLocation, Limited
      */
     public String type;

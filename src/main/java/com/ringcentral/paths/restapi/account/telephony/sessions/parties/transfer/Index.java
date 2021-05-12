@@ -18,7 +18,7 @@ public class Index {
     }
 
     /**
-     * Transfers an answered call to the specified call party. Applicable for a call session in {@literal "}Answered{@literal "} or {@literal "}Hold{@literal "} state.
+     * Transfers an answered call to the specified call party. Applicable for a call session in &quot;Answered&quot; or &quot;Hold&quot; state.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/transfer
      * Rate Limit Group: Light

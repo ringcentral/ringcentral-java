@@ -7,7 +7,7 @@ public class ListDevicesAutomaticLocationUpdates {
      */
     public String uri;
     /**
-     * List of users' devices with the current status of Emergency Address Auto Update Feature
+     * List of users&#039; devices with the current status of Emergency Address Auto Update Feature
      */
     public AutomaticLocationUpdatesDeviceInfo[] records;
     /**

@@ -14,20 +14,20 @@ public class GlipChatInfo {
      */
     public String type;
     /**
-     * For 'Team' chat type only. Team access level.
+     * For &#039;Team&#039; chat type only. Team access level.
      */
     @SerializedName("public")
     public Boolean _public;
     /**
-     * For 'Team','Everyone' chats types only. Chat name.
+     * For &#039;Team&#039;,&#039;Everyone&#039; chats types only. Chat name.
      */
     public String name;
     /**
-     * For 'Team','Everyone' chats types only. Chat description.
+     * For &#039;Team&#039;,&#039;Everyone&#039; chats types only. Chat description.
      */
     public String description;
     /**
-     * For 'Team' chat type only. Team status.
+     * For &#039;Team&#039; chat type only. Team status.
      * Enum: Active, Archived
      */
     public String status;

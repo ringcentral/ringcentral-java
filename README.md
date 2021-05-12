@@ -90,8 +90,3 @@ Auto-generated [JavaDoc](https://ringcentral.github.io/ringcentral-java/).
 
 
 Please refer to the [RingCentral PubNub SDK for Java](https://github.com/ringcentral/ringcentral-pubnub-java) project.
-
-
-## Todo
-
-- Use GitHub Actions as CI

@@ -1,4 +1,5 @@
 --ignore-dir=.idea
 --ignore-dir=build
 --ignore-dir=out
+--ignore-dir=docs
 --ignore-dir=.gradle

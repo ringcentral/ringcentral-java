@@ -45,3 +45,10 @@ Login, "Close" and "Release" the SDK.
 ./gradlew javadoc
 cp -r build/docs/javadoc/* ./docs/
 ```
+
+Issue: https://stackoverflow.com/questions/52326318/maven-javadoc-search-redirects-to-undefined-url
+Fixed in `build.gradle` by:
+
+```gradle
+options.addBooleanOption('-no-module-directories', true)
+```

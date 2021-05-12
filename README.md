@@ -1,6 +1,6 @@
 # RingCentral SDK for Java
 
-[![Build Status](https://github.com/ringcentral/ringcentral-java/workflows/gradle/badge.svg?branch=master)](https://github.com/ringcentral/ringcentral-java/actions)
+[![Build Status](https://github.com/ringcentral/ringcentral-java/actions/workflows/Gradle/badge.svg)](https://github.com/ringcentral/ringcentral-java/actions)
 [![Coverage Status](https://coveralls.io/repos/github/ringcentral/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/ringcentral/ringcentral-java?branch=master)
 [![Chat](https://img.shields.io/badge/chat-on%20glip-orange.svg)](https://glipped.herokuapp.com/)
 [![Twitter](https://img.shields.io/twitter/follow/ringcentraldevs.svg?style=social&label=follow)](https://twitter.com/RingCentralDevs)

@@ -45,4 +45,3 @@ Login, "Close" and "Release" the SDK.
 ./gradlew javadoc
 cp -r build/docs/javadoc/* ./docs/
 ```
-

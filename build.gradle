@@ -23,7 +23,6 @@ dependencies {
 
 javadoc {
     options.addBooleanOption('html5', true)
-    options.addBooleanOption('-no-module-directories', true)
 }
 
 task javadocJar(type: Jar) {

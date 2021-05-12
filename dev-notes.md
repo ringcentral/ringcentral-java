@@ -47,8 +47,5 @@ cp -r build/docs/javadoc/* ./docs/
 ```
 
 Issue: https://stackoverflow.com/questions/52326318/maven-javadoc-search-redirects-to-undefined-url
-Fixed in `build.gradle` by:
 
-```gradle
-options.addBooleanOption('-no-module-directories', true)
-```
+Fix by edit `search.js` and let method `getURLPrefix` return empty string.

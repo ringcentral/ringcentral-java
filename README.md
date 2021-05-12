@@ -86,7 +86,33 @@ There is also lots of useful code for your reference in our [test cases](./src/t
 Auto-generated [JavaDoc](https://ringcentral.github.io/ringcentral-java/).
 
 
-## PubNub subscriptions & notifications
+## Binary content downloading
 
+Some [sample code](./samples.md) for binary content downloading may not work.
+
+Because RingCentral is gradually migrating binary content to CDN such as `media.ringcentral.com`.
+
+For example, to download the attachment of a fax:
+
+```java
+// `message` is the fax message object
+byte[] content = rc.get<byte[]>(message.attachments[0].uri).bytes();
+```
+
+The following does **NOT** work:
+
+```java
+// `message` is the fax message object
+byte[] content = rc.restapi().account().extension().messageStore(message.id).content(message.attachments[0].id).get();
+```
+
+### Rule of thumb
+
+But not all binary content has been migrated to CDN.
+If the resource to download provides you with a CDN uri, use that CDN uri.
+If there is no CDN uri provided, construct the uri as the [sample code](./samples.md) shows.
+
+
+## PubNub subscriptions & notifications
 
 Please refer to the [RingCentral PubNub SDK for Java](https://github.com/ringcentral/ringcentral-pubnub-java) project.

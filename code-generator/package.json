@@ -3,7 +3,8 @@
   "scripts": {
     "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && ts-node ./src/definitions.ts",
     "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && ts-node ./src/paths.ts",
-    "generate": "yarn definitions && yarn paths"
+    "samples": "ts-node ./src/samples.ts",
+    "generate": "yarn definitions && yarn paths && yarn samples"
   },
   "dependencies": {
     "change-case": "^4.1.2",

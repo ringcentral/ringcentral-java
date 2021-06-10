@@ -8,6 +8,7 @@ public class UserPhoneNumberInfo {
     public String uri;
     /**
      * Internal identifier of a phone number
+     * Format: int64
      */
     public Long id;
     /**

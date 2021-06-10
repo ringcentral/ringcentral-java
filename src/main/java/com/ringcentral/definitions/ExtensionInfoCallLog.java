@@ -5,6 +5,7 @@ package com.ringcentral.definitions;
 public class ExtensionInfoCallLog {
     /**
      * Internal identifier of an extension
+     * Format: int64
      */
     public Long id;
     /**

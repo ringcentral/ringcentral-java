@@ -5,6 +5,7 @@ package com.ringcentral.definitions;
 public class SyncMessagesParameters {
     /**
      * Conversation identifier for the resulting messages. Meaningful for SMS and Pager messages only.
+     * Format: int64
      */
     public Long conversationId;
     /**

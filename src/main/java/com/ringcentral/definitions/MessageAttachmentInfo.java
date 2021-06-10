@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class MessageAttachmentInfo {
     /**
      * Internal identifier of a message attachment
+     * Format: int64
      */
     public Long id;
     /**

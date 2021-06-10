@@ -32,13 +32,17 @@ public class MessageStoreReport {
      */
     public String lastModifiedTime;
     /**
-     * Ending time for collecting messages
+     * Only messages created before the date will be collected. The default value is current time
      */
     public String dateTo;
     /**
-     * Starting time for collecting messages
+     * Only messages created after (or including) the date will be collected. The default value is current time minus 24 hours
      */
     public String dateFrom;
+    /**
+     * Enum: EMail, Fax, SMS, VoiceMail, Pager, Text
+     */
+    public String[] messageTypes;
 
     public MessageStoreReport id(String id) {
         this.id = id;
@@ -82,6 +86,11 @@ public class MessageStoreReport {
 
     public MessageStoreReport dateFrom(String dateFrom) {
         this.dateFrom = dateFrom;
+        return this;
+    }
+
+    public MessageStoreReport messageTypes(String[] messageTypes) {
+        this.messageTypes = messageTypes;
         return this;
     }
 }

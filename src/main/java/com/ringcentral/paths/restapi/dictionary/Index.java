@@ -16,6 +16,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.dictionary.brand.Index brand() {
+        return new com.ringcentral.paths.restapi.dictionary.brand.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.dictionary.state.Index state() {
         return this.state(null);
     }

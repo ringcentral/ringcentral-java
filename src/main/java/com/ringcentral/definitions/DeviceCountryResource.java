@@ -8,7 +8,7 @@ public class DeviceCountryResource {
      */
     public String uri;
     /**
-     *
+     * Format: int64
      */
     public String id;
     /**

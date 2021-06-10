@@ -19,6 +19,7 @@ public class PersonalContactResource {
     public String email;
     /**
      * Internal identifier of the contact
+     * Format: int64
      * Example: 623045004
      */
     public Long id;

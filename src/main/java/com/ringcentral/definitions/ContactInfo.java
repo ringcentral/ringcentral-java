@@ -12,6 +12,10 @@ public class ContactInfo {
      */
     public String lastName;
     /**
+     * Extension user name (first name and last name)
+     */
+    public String name;
+    /**
      * Extension user company name
      */
     public String company;
@@ -55,6 +59,11 @@ public class ContactInfo {
 
     public ContactInfo lastName(String lastName) {
         this.lastName = lastName;
+        return this;
+    }
+
+    public ContactInfo name(String name) {
+        this.name = name;
         return this;
     }
 

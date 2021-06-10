@@ -9,6 +9,7 @@ public class AccountOperatorInfo {
     public String uri;
     /**
      * Internal identifier of an operator extension
+     * Format: int64
      */
     public Long id;
     /**

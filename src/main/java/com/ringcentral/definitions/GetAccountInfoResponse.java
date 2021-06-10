@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class GetAccountInfoResponse {
     /**
      * Internal identifier of an account
+     * Format: int64
      */
     public Long id;
     /**

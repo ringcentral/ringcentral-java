@@ -73,6 +73,10 @@ public class AnsweringRuleInfo {
      *
      */
     public SharedLinesInfo sharedLines;
+    /**
+     *
+     */
+    public MissedCallInfo missedCall;
 
     public AnsweringRuleInfo uri(String uri) {
         this.uri = uri;
@@ -156,6 +160,11 @@ public class AnsweringRuleInfo {
 
     public AnsweringRuleInfo sharedLines(SharedLinesInfo sharedLines) {
         this.sharedLines = sharedLines;
+        return this;
+    }
+
+    public AnsweringRuleInfo missedCall(MissedCallInfo missedCall) {
+        this.missedCall = missedCall;
         return this;
     }
 }

@@ -9,6 +9,7 @@ public class RecipientInfo {
     public String uri;
     /**
      * Internal identifier of a recipient extension
+     * Format: int64
      */
     public Long id;
 

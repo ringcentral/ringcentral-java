@@ -5,8 +5,9 @@ package com.ringcentral.definitions;
 public class CurrencyInfo {
     /**
      * Internal identifier of a currency
+     * Format: int64
      */
-    public String id;
+    public Long id;
     /**
      * Official code of a currency
      */
@@ -24,7 +25,7 @@ public class CurrencyInfo {
      */
     public String minorSymbol;
 
-    public CurrencyInfo id(String id) {
+    public CurrencyInfo id(Long id) {
         this.id = id;
         return this;
     }

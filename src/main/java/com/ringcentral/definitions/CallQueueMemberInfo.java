@@ -8,6 +8,7 @@ public class CallQueueMemberInfo {
     public String uri;
     /**
      * Internal identifier of a call queue member
+     * Format: int64
      */
     public Long id;
     /**

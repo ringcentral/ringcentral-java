@@ -15,6 +15,10 @@ public class NotificationSettings {
      */
     public String[] emailAddresses;
     /**
+     * Specifies if managers&#039; emails are included in the list of emails to which notifications are sent
+     */
+    public Boolean includeManagers;
+    /**
      * List of notification recipient email addresses
      */
     public String[] smsEmailAddresses;
@@ -55,6 +59,11 @@ public class NotificationSettings {
 
     public NotificationSettings emailAddresses(String[] emailAddresses) {
         this.emailAddresses = emailAddresses;
+        return this;
+    }
+
+    public NotificationSettings includeManagers(Boolean includeManagers) {
+        this.includeManagers = includeManagers;
         return this;
     }
 

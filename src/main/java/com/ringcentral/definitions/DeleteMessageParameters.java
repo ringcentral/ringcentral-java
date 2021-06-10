@@ -9,6 +9,7 @@ public class DeleteMessageParameters {
     public Boolean purge;
     /**
      * Internal identifier of a message thread
+     * Format: int64
      */
     public Long conversationId;
 

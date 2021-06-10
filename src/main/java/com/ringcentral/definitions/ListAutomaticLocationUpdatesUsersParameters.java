@@ -25,7 +25,7 @@ public class ListAutomaticLocationUpdatesUsersParameters {
      */
     public Boolean featureEnabled;
     /**
-     * Comma-separated list of fields to order results prefixed by plus sign '+' (ascending order) or minus sign '-' (descending order). Supported values: 'name', 'modelName', 'siteName', 'featureEnabled'
+     * Comma-separated list of fields to order results prefixed by plus sign &#039;+&#039; (ascending order) or minus sign &#039;-&#039; (descending order). Supported values: &#039;name&#039;, &#039;modelName&#039;, &#039;siteName&#039;, &#039;featureEnabled&#039;
      * Default: name
      */
     public String orderBy;

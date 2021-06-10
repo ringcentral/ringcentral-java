@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class FavoriteContactResource {
     /**
-     *
+     * Format: int64
      */
     public Long id;
     /**

@@ -9,6 +9,7 @@ public class ListStatesParameters {
     public Boolean allCountries;
     /**
      * Internal identifier of a country
+     * Format: int64
      */
     public Long countryId;
     /**

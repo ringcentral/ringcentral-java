@@ -34,6 +34,10 @@ public class NotificationSettingsUpdateRequest {
      *
      */
     public MissedCallsInfo missedCalls;
+    /**
+     * Specifies if managers&#039; emails are included in the list of emails to which notifications are sent
+     */
+    public Boolean includeManagers;
 
     public NotificationSettingsUpdateRequest emailAddresses(String[] emailAddresses) {
         this.emailAddresses = emailAddresses;
@@ -72,6 +76,11 @@ public class NotificationSettingsUpdateRequest {
 
     public NotificationSettingsUpdateRequest missedCalls(MissedCallsInfo missedCalls) {
         this.missedCalls = missedCalls;
+        return this;
+    }
+
+    public NotificationSettingsUpdateRequest includeManagers(Boolean includeManagers) {
+        this.includeManagers = includeManagers;
         return this;
     }
 }

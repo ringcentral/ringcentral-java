@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class GetMessageInfoResponse {
     /**
      * Internal identifier of a message
+     * Format: int64
      */
     public Long id;
     /**
@@ -25,6 +26,7 @@ public class GetMessageInfoResponse {
     public String availability;
     /**
      * SMS and Pager only. Identifier of a conversation the message belongs to
+     * Format: int64
      */
     public Long conversationId;
     /**

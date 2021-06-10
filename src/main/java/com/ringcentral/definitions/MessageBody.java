@@ -21,6 +21,7 @@ public class MessageBody {
     public String availability;
     /**
      * SMS and Pager only. Identifier of a conversation the message belongs to
+     * Format: int64
      */
     public Long conversationId;
     /**

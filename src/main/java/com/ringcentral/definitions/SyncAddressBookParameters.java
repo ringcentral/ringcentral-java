@@ -18,6 +18,7 @@ public class SyncAddressBookParameters {
     public Long perPage;
     /**
      * Internal identifier of a page. It can be obtained from the &#039;nextPageId&#039; parameter passed in response body
+     * Format: int64
      */
     public Long pageId;
 

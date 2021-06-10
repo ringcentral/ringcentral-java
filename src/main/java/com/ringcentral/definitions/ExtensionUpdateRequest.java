@@ -65,7 +65,7 @@ public class ExtensionUpdateRequest {
     /**
      *
      */
-    public AutomaticLocationUpdatesSiteInfo site;
+    public AutomaticLocationUpdatesSiteInfoRequest site;
     /**
      * Extension type. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
      * Enum: User, Fax User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, DelegatedLinesGroup, GroupCallPickup
@@ -151,7 +151,7 @@ public class ExtensionUpdateRequest {
         return this;
     }
 
-    public ExtensionUpdateRequest site(AutomaticLocationUpdatesSiteInfo site) {
+    public ExtensionUpdateRequest site(AutomaticLocationUpdatesSiteInfoRequest site) {
         this.site = site;
         return this;
     }

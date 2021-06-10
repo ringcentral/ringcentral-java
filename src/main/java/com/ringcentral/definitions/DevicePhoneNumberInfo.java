@@ -5,6 +5,7 @@ package com.ringcentral.definitions;
 public class DevicePhoneNumberInfo {
     /**
      * Internal identifier of a phone number
+     * Format: int64
      */
     public Long id;
     /**

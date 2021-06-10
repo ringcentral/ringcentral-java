@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -156,14 +156,21 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dateFrom">dateFrom</a></span></code></th>
 <td class="colLast">
-<div class="block">Starting time for collecting messages.</div>
+<div class="block">Only messages created after (or including) the date will be collected.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dateTo">dateTo</a></span></code></th>
 <td class="colLast">
-<div class="block">Ending time for collecting messages.</div>
+<div class="block">Only messages created before the date will be collected.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#messageTypes">messageTypes</a></span></code></th>
+<td class="colLast">
+<div class="block">Enum: EMail, Fax, SMS, VoiceMail, Pager, Text</div>
 </td>
 </tr>
 </table>
@@ -215,6 +222,11 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dateTo(java.lang.String)">dateTo</a></span>&#8203;(java.lang.String&nbsp;dateTo)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="CreateMessageStoreReportRequest.html" title="class in com.ringcentral.definitions">CreateMessageStoreReportRequest</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#messageTypes(java.lang.String%5B%5D)">messageTypes</a></span>&#8203;(java.lang.String[]&nbsp;messageTypes)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -239,6 +251,16 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a id="dateTo">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dateTo</h4>
+<pre>public&nbsp;java.lang.String dateTo</pre>
+<div class="block">Only messages created before the date will be collected. The default value is current time</div>
+</li>
+</ul>
 <a id="dateFrom">
 <!--   -->
 </a>
@@ -246,17 +268,17 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>dateFrom</h4>
 <pre>public&nbsp;java.lang.String dateFrom</pre>
-<div class="block">Starting time for collecting messages. The default value equals to the current time minus 24 hours</div>
+<div class="block">Only messages created after (or including) the date will be collected. The default value is current time minus 24 hours</div>
 </li>
 </ul>
-<a id="dateTo">
+<a id="messageTypes">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>dateTo</h4>
-<pre>public&nbsp;java.lang.String dateTo</pre>
-<div class="block">Ending time for collecting messages. The default value is the current time</div>
+<h4>messageTypes</h4>
+<pre>public&nbsp;java.lang.String[] messageTypes</pre>
+<div class="block">Enum: EMail, Fax, SMS, VoiceMail, Pager, Text</div>
 </li>
 </ul>
 </li>
@@ -288,6 +310,15 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="dateTo(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dateTo</h4>
+<pre class="methodSignature">public&nbsp;<a href="CreateMessageStoreReportRequest.html" title="class in com.ringcentral.definitions">CreateMessageStoreReportRequest</a>&nbsp;dateTo&#8203;(java.lang.String&nbsp;dateTo)</pre>
+</li>
+</ul>
 <a id="dateFrom(java.lang.String)">
 <!--   -->
 </a>
@@ -297,13 +328,13 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="CreateMessageStoreReportRequest.html" title="class in com.ringcentral.definitions">CreateMessageStoreReportRequest</a>&nbsp;dateFrom&#8203;(java.lang.String&nbsp;dateFrom)</pre>
 </li>
 </ul>
-<a id="dateTo(java.lang.String)">
+<a id="messageTypes(java.lang.String[])">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>dateTo</h4>
-<pre class="methodSignature">public&nbsp;<a href="CreateMessageStoreReportRequest.html" title="class in com.ringcentral.definitions">CreateMessageStoreReportRequest</a>&nbsp;dateTo&#8203;(java.lang.String&nbsp;dateTo)</pre>
+<h4>messageTypes</h4>
+<pre class="methodSignature">public&nbsp;<a href="CreateMessageStoreReportRequest.html" title="class in com.ringcentral.definitions">CreateMessageStoreReportRequest</a>&nbsp;messageTypes&#8203;(java.lang.String[]&nbsp;messageTypes)</pre>
 </li>
 </ul>
 </li>

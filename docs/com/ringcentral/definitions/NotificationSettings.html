@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -184,30 +184,37 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>java.lang.Boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#includeManagers">includeManagers</a></span></code></th>
+<td class="colLast">
+<div class="block">Specifies if managers&#039; emails are included in the list of emails to which notifications are sent</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="MissedCallsInfo.html" title="class in com.ringcentral.definitions">MissedCallsInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#missedCalls">missedCalls</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="OutboundFaxesInfo.html" title="class in com.ringcentral.definitions">OutboundFaxesInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#outboundFaxes">outboundFaxes</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#smsEmailAddresses">smsEmailAddresses</a></span></code></th>
 <td class="colLast">
 <div class="block">List of notification recipient email addresses</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uri">uri</a></span></code></th>
 <td class="colLast">
 <div class="block">Canonical URI of notifications settings resource</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="VoicemailsInfo.html" title="class in com.ringcentral.definitions">VoicemailsInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#voicemails">voicemails</a></span></code></th>
 <td class="colLast">&nbsp;</td>
@@ -278,25 +285,30 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#missedCalls(com.ringcentral.definitions.MissedCallsInfo)">missedCalls</a></span>&#8203;(<a href="MissedCallsInfo.html" title="class in com.ringcentral.definitions">MissedCallsInfo</a>&nbsp;missedCalls)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#includeManagers(java.lang.Boolean)">includeManagers</a></span>&#8203;(java.lang.Boolean&nbsp;includeManagers)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#outboundFaxes(com.ringcentral.definitions.OutboundFaxesInfo)">outboundFaxes</a></span>&#8203;(<a href="OutboundFaxesInfo.html" title="class in com.ringcentral.definitions">OutboundFaxesInfo</a>&nbsp;outboundFaxes)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#missedCalls(com.ringcentral.definitions.MissedCallsInfo)">missedCalls</a></span>&#8203;(<a href="MissedCallsInfo.html" title="class in com.ringcentral.definitions">MissedCallsInfo</a>&nbsp;missedCalls)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#smsEmailAddresses(java.lang.String%5B%5D)">smsEmailAddresses</a></span>&#8203;(java.lang.String[]&nbsp;smsEmailAddresses)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#outboundFaxes(com.ringcentral.definitions.OutboundFaxesInfo)">outboundFaxes</a></span>&#8203;(<a href="OutboundFaxesInfo.html" title="class in com.ringcentral.definitions">OutboundFaxesInfo</a>&nbsp;outboundFaxes)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uri(java.lang.String)">uri</a></span>&#8203;(java.lang.String&nbsp;uri)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#smsEmailAddresses(java.lang.String%5B%5D)">smsEmailAddresses</a></span>&#8203;(java.lang.String[]&nbsp;smsEmailAddresses)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uri(java.lang.String)">uri</a></span>&#8203;(java.lang.String&nbsp;uri)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#voicemails(com.ringcentral.definitions.VoicemailsInfo)">voicemails</a></span>&#8203;(<a href="VoicemailsInfo.html" title="class in com.ringcentral.definitions">VoicemailsInfo</a>&nbsp;voicemails)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -353,6 +365,16 @@ extends java.lang.Object</pre>
 <h4>emailAddresses</h4>
 <pre>public&nbsp;java.lang.String[] emailAddresses</pre>
 <div class="block">List of notification recipient email addresses</div>
+</li>
+</ul>
+<a id="includeManagers">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>includeManagers</h4>
+<pre>public&nbsp;java.lang.Boolean includeManagers</pre>
+<div class="block">Specifies if managers&#039; emails are included in the list of emails to which notifications are sent</div>
 </li>
 </ul>
 <a id="smsEmailAddresses">
@@ -474,6 +496,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>emailAddresses</h4>
 <pre class="methodSignature">public&nbsp;<a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a>&nbsp;emailAddresses&#8203;(java.lang.String[]&nbsp;emailAddresses)</pre>
+</li>
+</ul>
+<a id="includeManagers(java.lang.Boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>includeManagers</h4>
+<pre class="methodSignature">public&nbsp;<a href="NotificationSettings.html" title="class in com.ringcentral.definitions">NotificationSettings</a>&nbsp;includeManagers&#8203;(java.lang.Boolean&nbsp;includeManagers)</pre>
 </li>
 </ul>
 <a id="smsEmailAddresses(java.lang.String[])">

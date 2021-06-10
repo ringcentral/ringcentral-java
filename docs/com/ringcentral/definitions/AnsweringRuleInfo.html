@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -201,40 +201,45 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="MissedCallInfo.html" title="class in com.ringcentral.definitions">MissedCallInfo</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#missedCall">missedCall</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#name">name</a></span></code></th>
 <td class="colLast">
 <div class="block">Name of an answering rule specified by user</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="QueueInfo.html" title="class in com.ringcentral.definitions">QueueInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queue">queue</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="ScheduleInfo.html" title="class in com.ringcentral.definitions">ScheduleInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#schedule">schedule</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#screening">screening</a></span></code></th>
 <td class="colLast">
 <div class="block">Call screening status.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="SharedLinesInfo.html" title="class in com.ringcentral.definitions">SharedLinesInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sharedLines">sharedLines</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="TransferredExtensionInfo.html" title="class in com.ringcentral.definitions">TransferredExtensionInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#transfer">transfer</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#type">type</a></span></code></th>
 <td class="colLast">
@@ -242,19 +247,19 @@ extends java.lang.Object</pre>
  Enum: BusinessHours, AfterHours, Custom</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="UnconditionalForwardingInfo.html" title="class in com.ringcentral.definitions">UnconditionalForwardingInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unconditionalForwarding">unconditionalForwarding</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uri">uri</a></span></code></th>
 <td class="colLast">
 <div class="block">Canonical URI to an answering rule resource</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="VoicemailInfo.html" title="class in com.ringcentral.definitions">VoicemailInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#voicemail">voicemail</a></span></code></th>
 <td class="colLast">&nbsp;</td>
@@ -335,50 +340,55 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#name(java.lang.String)">name</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#missedCall(com.ringcentral.definitions.MissedCallInfo)">missedCall</a></span>&#8203;(<a href="MissedCallInfo.html" title="class in com.ringcentral.definitions">MissedCallInfo</a>&nbsp;missedCall)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queue(com.ringcentral.definitions.QueueInfo)">queue</a></span>&#8203;(<a href="QueueInfo.html" title="class in com.ringcentral.definitions">QueueInfo</a>&nbsp;queue)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#name(java.lang.String)">name</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#schedule(com.ringcentral.definitions.ScheduleInfo)">schedule</a></span>&#8203;(<a href="ScheduleInfo.html" title="class in com.ringcentral.definitions">ScheduleInfo</a>&nbsp;schedule)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queue(com.ringcentral.definitions.QueueInfo)">queue</a></span>&#8203;(<a href="QueueInfo.html" title="class in com.ringcentral.definitions">QueueInfo</a>&nbsp;queue)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#screening(java.lang.String)">screening</a></span>&#8203;(java.lang.String&nbsp;screening)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#schedule(com.ringcentral.definitions.ScheduleInfo)">schedule</a></span>&#8203;(<a href="ScheduleInfo.html" title="class in com.ringcentral.definitions">ScheduleInfo</a>&nbsp;schedule)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sharedLines(com.ringcentral.definitions.SharedLinesInfo)">sharedLines</a></span>&#8203;(<a href="SharedLinesInfo.html" title="class in com.ringcentral.definitions">SharedLinesInfo</a>&nbsp;sharedLines)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#screening(java.lang.String)">screening</a></span>&#8203;(java.lang.String&nbsp;screening)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#transfer(com.ringcentral.definitions.TransferredExtensionInfo)">transfer</a></span>&#8203;(<a href="TransferredExtensionInfo.html" title="class in com.ringcentral.definitions">TransferredExtensionInfo</a>&nbsp;transfer)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sharedLines(com.ringcentral.definitions.SharedLinesInfo)">sharedLines</a></span>&#8203;(<a href="SharedLinesInfo.html" title="class in com.ringcentral.definitions">SharedLinesInfo</a>&nbsp;sharedLines)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#type(java.lang.String)">type</a></span>&#8203;(java.lang.String&nbsp;type)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#transfer(com.ringcentral.definitions.TransferredExtensionInfo)">transfer</a></span>&#8203;(<a href="TransferredExtensionInfo.html" title="class in com.ringcentral.definitions">TransferredExtensionInfo</a>&nbsp;transfer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unconditionalForwarding(com.ringcentral.definitions.UnconditionalForwardingInfo)">unconditionalForwarding</a></span>&#8203;(<a href="UnconditionalForwardingInfo.html" title="class in com.ringcentral.definitions">UnconditionalForwardingInfo</a>&nbsp;unconditionalForwarding)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#type(java.lang.String)">type</a></span>&#8203;(java.lang.String&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uri(java.lang.String)">uri</a></span>&#8203;(java.lang.String&nbsp;uri)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unconditionalForwarding(com.ringcentral.definitions.UnconditionalForwardingInfo)">unconditionalForwarding</a></span>&#8203;(<a href="UnconditionalForwardingInfo.html" title="class in com.ringcentral.definitions">UnconditionalForwardingInfo</a>&nbsp;unconditionalForwarding)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uri(java.lang.String)">uri</a></span>&#8203;(java.lang.String&nbsp;uri)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#voicemail(com.ringcentral.definitions.VoicemailInfo)">voicemail</a></span>&#8203;(<a href="VoicemailInfo.html" title="class in com.ringcentral.definitions">VoicemailInfo</a>&nbsp;voicemail)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -567,10 +577,19 @@ extends java.lang.Object</pre>
 <a id="sharedLines">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>sharedLines</h4>
 <pre>public&nbsp;<a href="SharedLinesInfo.html" title="class in com.ringcentral.definitions">SharedLinesInfo</a> sharedLines</pre>
+</li>
+</ul>
+<a id="missedCall">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>missedCall</h4>
+<pre>public&nbsp;<a href="MissedCallInfo.html" title="class in com.ringcentral.definitions">MissedCallInfo</a> missedCall</pre>
 </li>
 </ul>
 </li>
@@ -749,10 +768,19 @@ extends java.lang.Object</pre>
 <a id="sharedLines(com.ringcentral.definitions.SharedLinesInfo)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>sharedLines</h4>
 <pre class="methodSignature">public&nbsp;<a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a>&nbsp;sharedLines&#8203;(<a href="SharedLinesInfo.html" title="class in com.ringcentral.definitions">SharedLinesInfo</a>&nbsp;sharedLines)</pre>
+</li>
+</ul>
+<a id="missedCall(com.ringcentral.definitions.MissedCallInfo)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>missedCall</h4>
+<pre class="methodSignature">public&nbsp;<a href="AnsweringRuleInfo.html" title="class in com.ringcentral.definitions">AnsweringRuleInfo</a>&nbsp;missedCall&#8203;(<a href="MissedCallInfo.html" title="class in com.ringcentral.definitions">MissedCallInfo</a>&nbsp;missedCall)</pre>
 </li>
 </ul>
 </li>

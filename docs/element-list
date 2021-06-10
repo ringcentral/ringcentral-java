@@ -142,6 +142,8 @@ com.ringcentral.paths.restapi.account.templates
 com.ringcentral.paths.restapi.clientinfo
 com.ringcentral.paths.restapi.clientinfo.sipprovision
 com.ringcentral.paths.restapi.dictionary
+com.ringcentral.paths.restapi.dictionary.brand
+com.ringcentral.paths.restapi.dictionary.brand.contractedcountry
 com.ringcentral.paths.restapi.dictionary.country
 com.ringcentral.paths.restapi.dictionary.faxcoverpage
 com.ringcentral.paths.restapi.dictionary.greeting

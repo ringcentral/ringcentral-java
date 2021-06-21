@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.ringcentral:ringcentral:[version]'
+  implementation 'com.ringcentral:ringcentral:[version]'
 }
 ```
 

@@ -18,6 +18,10 @@ If you are having difficulty using this SDK, or working with the RingCentral API
 
 ## Installation
 
+### Java
+
+This SDK is tested against [JDK 11](https://adoptopenjdk.net) so we recommend using the same.
+
 ### Gradle
 
 ```groovy

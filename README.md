@@ -30,7 +30,7 @@ dependencies {
 }
 ```
 
-Don't forget to replace `[version]` with expected version.
+Don't forget to replace `[version]` with expected version. You can find the latest versions in the [project's release page](https://github.com/ringcentral/ringcentral-java/releases)
 
 
 ### Maven
@@ -43,7 +43,7 @@ Don't forget to replace `[version]` with expected version.
 </dependency>
 ```
 
-Don't forget to replace `[version]` with expected version.
+Don't forget to replace `[version]` with expected version. You can find the latest versions in the [project's release page](https://github.com/ringcentral/ringcentral-java/releases)
 
 
 ### Manually

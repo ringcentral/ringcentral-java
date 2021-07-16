@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/ringcentral/ringcentral-java/actions/workflows/gradle.yml/badge.svg)](https://github.com/ringcentral/ringcentral-java/actions)
 [![Coverage Status](https://coveralls.io/repos/github/ringcentral/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/ringcentral/ringcentral-java?branch=master)
-[![Reference](https://ringcentral.github.io/ringcentral-java/)](https://img.shields.io/badge/Javadoc-reference-blue?logo=java)
+[![Reference](https://img.shields.io/badge/Javadoc-reference-blue?logo=java)](https://ringcentral.github.io/ringcentral-java/)
 [![Chat](https://img.shields.io/badge/chat-on%20glip-orange.svg)](https://glipped.herokuapp.com/)
 [![Twitter](https://img.shields.io/twitter/follow/ringcentraldevs.svg?style=social&label=follow)](https://twitter.com/RingCentralDevs)
 

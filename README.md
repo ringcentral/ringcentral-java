@@ -20,7 +20,7 @@ If you are having difficulty using this SDK, or working with the RingCentral API
 
 ### Java
 
-This SDK is tested against [JDK 11](https://adoptopenjdk.net) so we recommend using the same.
+This SDK is tested against [JDK 11](https://adoptopenjdk.net) so we recommend using the same. Earlier versions such as Java 8 should work as well, please report issues if you encounter any.
 
 ### Gradle
 
@@ -34,7 +34,7 @@ dependencies {
 }
 ```
 
-Don't forget to replace `[version]` with expected version. You can find the latest versions in the [project's release page.](https://github.com/ringcentral/ringcentral-java/releases)
+Don't forget to replace `[version]` with expected version. You can find the latest versions in [Maven Central](https://search.maven.org/search?q=a:ringcentral)
 
 
 ### Maven

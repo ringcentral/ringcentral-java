@@ -2,7 +2,8 @@
 
 [![Build Status](https://github.com/ringcentral/ringcentral-java/actions/workflows/gradle.yml/badge.svg)](https://github.com/ringcentral/ringcentral-java/actions)
 [![Coverage Status](https://coveralls.io/repos/github/ringcentral/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/ringcentral/ringcentral-java?branch=master)
-[![Chat](https://img.shields.io/badge/chat-on%20glip-orange.svg)](https://glipped.herokuapp.com/)
+[![Reference](https://img.shields.io/badge/Javadoc-reference-blue?logo=java)](https://ringcentral.github.io/ringcentral-java/)
+[![Chat](https://img.shields.io/badge/chat-on%20glip-orange.svg)](https://ringcentral.github.io/join-ringcentral/)
 [![Twitter](https://img.shields.io/twitter/follow/ringcentraldevs.svg?style=social&label=follow)](https://twitter.com/RingCentralDevs)
 
 __[RingCentral Developers](https://developer.ringcentral.com/api-products)__ is a cloud communications platform which can be accessed via more than 70 APIs. The platform's main capabilities include technologies that enable:

@@ -255,6 +255,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.extension.assignedrole.Index assignedRole() {
+        return new com.ringcentral.paths.restapi.account.extension.assignedrole.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.account.extension.answeringrule.Index answeringRule() {
         return this.answeringRule(null);
     }
@@ -295,6 +300,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.extension.meetingrecordings.Index meetingRecordings() {
         return new com.ringcentral.paths.restapi.account.extension.meetingrecordings.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.extension.administeredsites.Index administeredSites() {
+        return new com.ringcentral.paths.restapi.account.extension.administeredsites.Index(this);
     }
 
 

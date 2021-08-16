@@ -8,11 +8,14 @@
   },
   "dependencies": {
     "change-case": "^4.1.2",
+    "js-yaml": "^4.1.0",
     "lower-case-first": "^2.0.2",
+    "openapi-types": "^9.1.0",
     "ramda": "^0.27.1",
     "ringcentral-open-api-parser": "^0.5.1"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.2",
     "@types/node": "^16.6.1",
     "@types/ramda": "^0.27.44",
     "gts": "^3.1.0",

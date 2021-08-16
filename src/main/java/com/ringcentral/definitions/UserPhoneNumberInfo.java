@@ -55,7 +55,7 @@ public class UserPhoneNumberInfo {
     public String type;
     /**
      * Usage type of a phone number. Numbers of &#039;NumberPool&#039; type will not be returned for phone number list requests
-     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber, ExternalMobileNumber
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber
      */
     public String usageType;
     /**

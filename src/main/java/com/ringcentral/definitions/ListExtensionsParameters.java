@@ -8,7 +8,8 @@ public class ListExtensionsParameters {
      */
     public String extensionNumber;
     /**
-     * Extension email address
+     * Extension email address. Multiple values are accepted
+     * Example: alice.smith@example.com&amp;email=bob.johnson@example.com
      */
     public String email;
     /**

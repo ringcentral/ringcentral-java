@@ -5,7 +5,7 @@ package com.ringcentral.definitions;
 public class MessageListMessageResponse {
     /**
      * Internal identifier of a message
-     * Format: int64
+     * Format: int32
      * Example: 1234
      */
     public Long id;
@@ -42,7 +42,7 @@ public class MessageListMessageResponse {
     public String messageStatus;
     /**
      * Number of segments of a message
-     * Format: int64
+     * Format: int32
      * Example: 1
      */
     public Long segmentCount;

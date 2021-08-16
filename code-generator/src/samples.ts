@@ -1,9 +1,10 @@
 import fs from 'fs';
 import path from 'path';
-import {parsed} from 'ringcentral-open-api-parser';
 import R from 'ramda';
 import {camelCase} from 'change-case';
+
 import {capitalizeFirstLetter} from './utils';
+import {parsed} from './parser';
 
 const markdown = ['# RingCentral Java SDK Code Samples'];
 

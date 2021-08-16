@@ -16,12 +16,12 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.a2psms.batch.Index batch() {
-        return this.batch(null);
+    public com.ringcentral.paths.restapi.account.a2psms.batches.Index batches() {
+        return this.batches(null);
     }
 
-    public com.ringcentral.paths.restapi.account.a2psms.batch.Index batch(String batchId) {
-        return new com.ringcentral.paths.restapi.account.a2psms.batch.Index(this, batchId);
+    public com.ringcentral.paths.restapi.account.a2psms.batches.Index batches(String batchId) {
+        return new com.ringcentral.paths.restapi.account.a2psms.batches.Index(this, batchId);
     }
 
 
@@ -36,6 +36,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.a2psms.optouts.Index optOuts() {
         return new com.ringcentral.paths.restapi.account.a2psms.optouts.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.a2psms.statuses.Index statuses() {
+        return new com.ringcentral.paths.restapi.account.a2psms.statuses.Index(this);
     }
 
 }

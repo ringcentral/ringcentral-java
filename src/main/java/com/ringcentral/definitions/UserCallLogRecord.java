@@ -138,6 +138,11 @@ public class UserCallLogRecord {
      *
      */
     public String reasonDescription;
+    /**
+     * Internal type of a call
+     * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
+     */
+    public String internalType;
 
     public UserCallLogRecord id(String id) {
         this.id = id;
@@ -256,6 +261,11 @@ public class UserCallLogRecord {
 
     public UserCallLogRecord reasonDescription(String reasonDescription) {
         this.reasonDescription = reasonDescription;
+        return this;
+    }
+
+    public UserCallLogRecord internalType(String internalType) {
+        this.internalType = internalType;
         return this;
     }
 }

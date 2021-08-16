@@ -127,6 +127,11 @@ public class CallLogRecordLegInfo {
      * Telephony identifier of a call session
      */
     public String telephonySessionId;
+    /**
+     * Internal type of a call
+     * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
+     */
+    public String internalType;
 
     public CallLogRecordLegInfo action(String action) {
         this.action = action;
@@ -230,6 +235,11 @@ public class CallLogRecordLegInfo {
 
     public CallLogRecordLegInfo telephonySessionId(String telephonySessionId) {
         this.telephonySessionId = telephonySessionId;
+        return this;
+    }
+
+    public CallLogRecordLegInfo internalType(String internalType) {
+        this.internalType = internalType;
         return this;
     }
 }

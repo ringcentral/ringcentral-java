@@ -1,8 +1,9 @@
-import {parsed} from 'ringcentral-open-api-parser';
 import fs from 'fs';
 import path from 'path';
 import {Field} from 'ringcentral-open-api-parser/lib/types';
+
 import {escapeJavaDoc} from './utils';
+import {parsed} from './parser';
 
 const outputDir = path.join(
   __dirname,

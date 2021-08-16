@@ -1,4 +1,3 @@
-import {parsed} from 'ringcentral-open-api-parser';
 import fs from 'fs';
 import path from 'path';
 import {pascalCase, capitalCase, camelCase} from 'change-case';
@@ -6,6 +5,7 @@ import R from 'ramda';
 import {Operation} from 'ringcentral-open-api-parser/lib/types';
 
 import {capitalizeFirstLetter, escapeJavaDoc, patchSrcFile} from './utils';
+import {parsed} from './parser';
 
 const outputDir = '../src/main/java/com/ringcentral/paths';
 

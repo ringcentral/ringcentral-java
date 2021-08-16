@@ -2,6 +2,7 @@ package com.ringcentral.paths.restapi.account.extension.callerid;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.ExtensionCallerIdInfo;
+import com.ringcentral.definitions.ExtensionCallerIdInfoRequest;
 
 public class Index {
     public RestClient rc;
@@ -37,8 +38,8 @@ public class Index {
      * App Permission: EditExtensions
      * User Permission: EditCallerIDSettings
      */
-    public ExtensionCallerIdInfo put(ExtensionCallerIdInfo extensionCallerIdInfo) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), extensionCallerIdInfo, null);
+    public ExtensionCallerIdInfo put(ExtensionCallerIdInfoRequest extensionCallerIdInfoRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), extensionCallerIdInfoRequest, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), ExtensionCallerIdInfo.class);
     }
 }

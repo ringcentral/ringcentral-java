@@ -19,6 +19,10 @@ public class CreateSMSMessageBatchRequest {
      * Required
      */
     public MessageCreateRequest[] messages;
+    /**
+     *
+     */
+    public String[] to;
 
     public CreateSMSMessageBatchRequest from(String from) {
         this.from = from;
@@ -32,6 +36,11 @@ public class CreateSMSMessageBatchRequest {
 
     public CreateSMSMessageBatchRequest messages(MessageCreateRequest[] messages) {
         this.messages = messages;
+        return this;
+    }
+
+    public CreateSMSMessageBatchRequest to(String[] to) {
+        this.to = to;
         return this;
     }
 }

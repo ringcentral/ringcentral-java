@@ -10,6 +10,7 @@ public class PagingResource {
     public String pageToken;
     /**
      * Number of records per page
+     * Format: int32
      * Example: 3
      */
     public Long perPage;

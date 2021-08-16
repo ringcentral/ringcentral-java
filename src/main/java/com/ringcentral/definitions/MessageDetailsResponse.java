@@ -41,7 +41,7 @@ public class MessageDetailsResponse {
     public String messageStatus;
     /**
      * Number of segments of a message
-     * Format: int64
+     * Format: int32
      * Example: 1
      */
     public Long segmentCount;

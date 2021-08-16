@@ -105,6 +105,11 @@ public class CompanyCallLogRecord {
      * Format: date-time
      */
     public String lastModifiedTime;
+    /**
+     * Internal type of a call
+     * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
+     */
+    public String internalType;
 
     public CompanyCallLogRecord id(String id) {
         this.id = id;
@@ -223,6 +228,11 @@ public class CompanyCallLogRecord {
 
     public CompanyCallLogRecord lastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
+        return this;
+    }
+
+    public CompanyCallLogRecord internalType(String internalType) {
+        this.internalType = internalType;
         return this;
     }
 }

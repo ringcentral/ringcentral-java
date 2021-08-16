@@ -21,8 +21,8 @@ public class Index {
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/call-queues
      * Rate Limit Group: Medium
-     * App Permission: Accounts
-     * User Permission: JoinLeaveCallQueue
+     * App Permission: EditAccounts
+     * User Permission: EditCallQueuePresence
      */
     public UserCallQueues put(UserCallQueues userCallQueues) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.put(this.path(), userCallQueues, null);

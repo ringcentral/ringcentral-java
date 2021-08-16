@@ -53,6 +53,10 @@ public class UpdateAnsweringRuleRequest {
      */
     public VoicemailInfo voicemail;
     /**
+     *
+     */
+    public MissedCallInfo missedCall;
+    /**
      * Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
      */
     public GreetingInfo[] greetings;
@@ -127,6 +131,11 @@ public class UpdateAnsweringRuleRequest {
 
     public UpdateAnsweringRuleRequest voicemail(VoicemailInfo voicemail) {
         this.voicemail = voicemail;
+        return this;
+    }
+
+    public UpdateAnsweringRuleRequest missedCall(MissedCallInfo missedCall) {
+        this.missedCall = missedCall;
         return this;
     }
 

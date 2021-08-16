@@ -23,7 +23,7 @@ public class CreateFaxMessageRequest {
      */
     public String isoCode;
     /**
-     * Cover page identifier. For the list of available cover page identifiers please call the method Fax Cover Pages. If not specified, the default cover page which is configured in &#039;Outbound Fax Settings&#039; is attached
+     * Cover page identifier. If coverIndex is set to &#039;0&#039; (zero) cover page is not attached. For the list of available cover page identifiers (1-13) please call the Fax Cover Pages method. If not specified, the default cover page is attached (which is configured in &#039;Outbound Fax Settings&#039;)
      * Format: int32
      */
     public Long coverIndex;

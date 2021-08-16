@@ -58,6 +58,10 @@ public class ContactResource {
      *
      */
     public String type;
+    /**
+     *
+     */
+    public UserCustomFieldResource[] customFields;
 
     public ContactResource account(AccountResource account) {
         this.account = account;
@@ -126,6 +130,11 @@ public class ContactResource {
 
     public ContactResource type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public ContactResource customFields(UserCustomFieldResource[] customFields) {
+        this.customFields = customFields;
         return this;
     }
 }

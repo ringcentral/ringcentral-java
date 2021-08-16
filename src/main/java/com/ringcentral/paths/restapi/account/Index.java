@@ -129,6 +129,15 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.userrole.Index userRole() {
+        return this.userRole(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.userrole.Index userRole(String roleId) {
+        return new com.ringcentral.paths.restapi.account.userrole.Index(this, roleId);
+    }
+
+
     public com.ringcentral.paths.restapi.account.ivrprompts.Index ivrPrompts() {
         return this.ivrPrompts(null);
     }
@@ -177,6 +186,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.calllogsync.Index callLogSync() {
         return new com.ringcentral.paths.restapi.account.calllogsync.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.assignedrole.Index assignedRole() {
+        return new com.ringcentral.paths.restapi.account.assignedrole.Index(this);
     }
 
 

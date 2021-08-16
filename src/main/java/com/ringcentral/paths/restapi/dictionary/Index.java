@@ -71,8 +71,35 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.dictionary.userrole.Index userRole() {
+        return this.userRole(null);
+    }
+
+    public com.ringcentral.paths.restapi.dictionary.userrole.Index userRole(String roleId) {
+        return new com.ringcentral.paths.restapi.dictionary.userrole.Index(this, roleId);
+    }
+
+
+    public com.ringcentral.paths.restapi.dictionary.permission.Index permission() {
+        return this.permission(null);
+    }
+
+    public com.ringcentral.paths.restapi.dictionary.permission.Index permission(String permissionId) {
+        return new com.ringcentral.paths.restapi.dictionary.permission.Index(this, permissionId);
+    }
+
+
     public com.ringcentral.paths.restapi.dictionary.faxcoverpage.Index faxCoverPage() {
         return new com.ringcentral.paths.restapi.dictionary.faxcoverpage.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.dictionary.permissioncategory.Index permissionCategory() {
+        return this.permissionCategory(null);
+    }
+
+    public com.ringcentral.paths.restapi.dictionary.permissioncategory.Index permissionCategory(String permissionCategoryId) {
+        return new com.ringcentral.paths.restapi.dictionary.permissioncategory.Index(this, permissionCategoryId);
     }
 
 }

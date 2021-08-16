@@ -67,4 +67,9 @@ public class Index {
     public GetDeviceInfoResponse put(AccountDeviceUpdate accountDeviceUpdate) throws com.ringcentral.RestException, java.io.IOException {
         return this.put(accountDeviceUpdate, null);
     }
+
+    public com.ringcentral.paths.restapi.account.device.sipinfo.Index sipInfo() {
+        return new com.ringcentral.paths.restapi.account.device.sipinfo.Index(this);
+    }
+
 }

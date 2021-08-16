@@ -5,6 +5,7 @@ package com.ringcentral.definitions;
 public class RejectedMessageInfo {
     /**
      * Index of the rejected message in the request
+     * Format: int32
      * Example: 2
      */
     public Long index;

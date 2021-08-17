@@ -11,11 +11,6 @@ public class Index {
     public com.ringcentral.paths.restapi.account.Index parent;
     public String roleId;
 
-    {
-        return new com.ringcentral.paths.restapi.account.userrole.
-        default.Index(this);
-    }
-
     public Index(com.ringcentral.paths.restapi.account.Index parent, String roleId) {
         this.parent = parent;
         this.rc = parent.rc;
@@ -111,11 +106,14 @@ public class Index {
         return rb.string();
     }
 
-    public com.ringcentral.paths.restapi.account.userrole .default.Index default()
-
     public String delete() throws com.ringcentral.RestException, java.io.IOException {
         return this.delete(null);
     }
+
+    public com.ringcentral.paths.restapi.account.userrole.default1.Index default1() {
+        return new com.ringcentral.paths.restapi.account.userrole.default1.Index(this);
+    }
+
 
     public com.ringcentral.paths.restapi.account.userrole.bulkassign.Index bulkAssign() {
         return new com.ringcentral.paths.restapi.account.userrole.bulkassign.Index(this);

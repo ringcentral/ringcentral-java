@@ -8,11 +8,6 @@ public class Index {
     public RestClient rc;
     public com.ringcentral.paths.restapi.account.extension.Index parent;
 
-    {
-        return new com.ringcentral.paths.restapi.account.extension.assignedrole.
-        default.Index(this);
-    }
-
     public Index(com.ringcentral.paths.restapi.account.extension.Index parent) {
         this.parent = parent;
         this.rc = parent.rc;
@@ -39,8 +34,6 @@ public class Index {
         return this.get(null);
     }
 
-    public com.ringcentral.paths.restapi.account.extension.assignedrole .default.Index default()
-
     /**
      * Updates the list of assigned roles for the current user.
      * HTTP Method: put
@@ -51,6 +44,10 @@ public class Index {
     public AssignedRolesResource put(AssignedRolesResource assignedRolesResource) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.put(this.path(), assignedRolesResource, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), AssignedRolesResource.class);
+    }
+
+    public com.ringcentral.paths.restapi.account.extension.assignedrole.default1.Index default1() {
+        return new com.ringcentral.paths.restapi.account.extension.assignedrole.default1.Index(this);
     }
 
 }

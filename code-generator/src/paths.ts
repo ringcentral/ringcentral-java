@@ -211,9 +211,16 @@ const generateOperationMethod = (
 };
 
 for (const item of parsed.paths) {
-  const itemPaths = item.paths.map(p => pascalCase(p));
+  const itemPaths = item.paths
+    .map(p => {
+      if (p === 'default') {
+        return 'default1';
+      }
+      return p;
+    })
+    .map(p => pascalCase(p));
   const code = `
-package com.ringcentral.paths.${item.paths
+package com.ringcentral.paths.${itemPaths
     .join('.')
     .replace(/-/g, '')
     .toLowerCase()};

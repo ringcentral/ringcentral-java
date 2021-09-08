@@ -32,8 +32,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/notes/{noteId}
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GetGlipNoteInfo get() throws com.ringcentral.RestException, java.io.IOException {
         if (noteId == null) {
@@ -48,8 +48,8 @@ public class Index {
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/glip/notes/{noteId}
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public String delete() throws com.ringcentral.RestException, java.io.IOException {
         if (noteId == null) {
@@ -64,8 +64,8 @@ public class Index {
      * HTTP Method: patch
      * Endpoint: /restapi/{apiVersion}/glip/notes/{noteId}
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipNoteInfo patch(GlipNoteCreate glipNoteCreate) throws com.ringcentral.RestException, java.io.IOException {
         if (noteId == null) {

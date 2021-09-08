@@ -12,7 +12,7 @@ public class SipRegistrationDeviceInfo {
     public String id;
     /**
      * Device type
-     * Enum: HardPhone, SoftPhone, OtherPhone, Paging, WebPhone
+     * Enum: HardPhone, SoftPhone, OtherPhone, Paging, WebPhone, Room
      */
     public String type;
     /**

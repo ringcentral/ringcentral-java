@@ -85,6 +85,11 @@ public class EmergencyServiceAddressResource {
      */
     public String additionalCustomerPhone;
     /**
+     * Status of digital line provisioning
+     * Enum: Provisioning, Valid, Invalid
+     */
+    public String lineProvisioningStatus;
+    /**
      * Internal identifier of a tax
      */
     public String taxId;
@@ -186,6 +191,11 @@ public class EmergencyServiceAddressResource {
 
     public EmergencyServiceAddressResource additionalCustomerPhone(String additionalCustomerPhone) {
         this.additionalCustomerPhone = additionalCustomerPhone;
+        return this;
+    }
+
+    public EmergencyServiceAddressResource lineProvisioningStatus(String lineProvisioningStatus) {
+        this.lineProvisioningStatus = lineProvisioningStatus;
         return this;
     }
 

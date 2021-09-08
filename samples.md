@@ -2769,8 +2769,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/chats`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2794,8 +2794,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2818,8 +2818,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/favorite`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2842,8 +2842,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/notes`
 Rate Limit Group|`Heavy`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2867,8 +2867,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/notes`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2892,8 +2892,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/posts`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2917,8 +2917,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/posts`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2942,8 +2942,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/posts/{postId}`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2966,8 +2966,8 @@ Name|Value
 HTTP Method|`DELETE`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/posts/{postId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -2990,8 +2990,8 @@ Name|Value
 HTTP Method|`PATCH`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/posts/{postId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3015,7 +3015,7 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/read`
 Rate Limit Group|`Medium`
-App Permission|`GlipInternal`
+App Permission|`TeamMessagingInternal`
 User Permission|`N/A`
 
 ```java
@@ -3089,8 +3089,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/unfavorite`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3113,7 +3113,7 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/chats/{chatId}/unread`
 Rate Limit Group|`Medium`
-App Permission|`GlipInternal`
+App Permission|`TeamMessagingInternal`
 User Permission|`N/A`
 
 ```java
@@ -3137,8 +3137,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/companies/{companyId}`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3161,8 +3161,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/conversations`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3186,8 +3186,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/conversations`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3211,8 +3211,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/conversations/{chatId}`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3337,8 +3337,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/everyone`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3361,8 +3361,8 @@ Name|Value
 HTTP Method|`PATCH`
 Endpoint|`/restapi/{apiVersion}/glip/everyone`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3386,8 +3386,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/favorites`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3411,8 +3411,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/groups/{groupId}/events`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3435,8 +3435,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/groups/{groupId}/events`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3460,8 +3460,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/groups/{groupId}/webhooks`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3484,8 +3484,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/groups/{groupId}/webhooks`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3508,8 +3508,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/notes/{noteId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3532,8 +3532,8 @@ Name|Value
 HTTP Method|`DELETE`
 Endpoint|`/restapi/{apiVersion}/glip/notes/{noteId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3556,8 +3556,8 @@ Name|Value
 HTTP Method|`PATCH`
 Endpoint|`/restapi/{apiVersion}/glip/notes/{noteId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3581,8 +3581,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/notes/{noteId}/publish`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3605,8 +3605,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/recent/chats`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3728,8 +3728,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/teams`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3753,8 +3753,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/teams`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3778,8 +3778,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3802,8 +3802,8 @@ Name|Value
 HTTP Method|`DELETE`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3826,8 +3826,8 @@ Name|Value
 HTTP Method|`PATCH`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3851,8 +3851,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/events`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3876,8 +3876,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/events`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3901,8 +3901,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/events/{eventId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3925,8 +3925,8 @@ Name|Value
 HTTP Method|`PUT`
 Endpoint|`/restapi/{apiVersion}/glip/events/{eventId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3950,8 +3950,8 @@ Name|Value
 HTTP Method|`DELETE`
 Endpoint|`/restapi/{apiVersion}/glip/events/{eventId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3974,8 +3974,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/notes/{noteId}/lock`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -3998,8 +3998,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/notes/{noteId}/unlock`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4022,8 +4022,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/persons/{personId}`
 Rate Limit Group|`Light`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4046,8 +4046,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}/add`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4071,8 +4071,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}/archive`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4095,8 +4095,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/webhooks`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4119,8 +4119,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/webhooks/{webhookId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4143,8 +4143,8 @@ Name|Value
 HTTP Method|`DELETE`
 Endpoint|`/restapi/{apiVersion}/glip/webhooks/{webhookId}`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4314,8 +4314,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}/join`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4338,8 +4338,8 @@ Name|Value
 HTTP Method|`GET`
 Endpoint|`/restapi/{apiVersion}/glip/preferences`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4362,8 +4362,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}/leave`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4386,8 +4386,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}/remove`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4411,8 +4411,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/teams/{chatId}/unarchive`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4435,8 +4435,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/webhooks/{webhookId}/activate`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -4459,8 +4459,8 @@ Name|Value
 HTTP Method|`POST`
 Endpoint|`/restapi/{apiVersion}/glip/webhooks/{webhookId}/suspend`
 Rate Limit Group|`Medium`
-App Permission|`Glip`
-User Permission|`Glip`
+App Permission|`TeamMessaging`
+User Permission|`UnifiedAppDesktop`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
@@ -7946,16 +7946,98 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(username, extension, password);
-UserEmergencyLocationList result = rc.restapi(apiVersion).account(accountId).extension(extensionId).emergencyLocations().get();
+EmergencyLocationsResource result = rc.restapi(apiVersion).account(accountId).extension(extensionId).emergencyLocations().get(getExtensionEmergencyLocationsParameters);
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
-- `result` is of type [UserEmergencyLocationList](./src/main/java/com/ringcentral/definitions/UserEmergencyLocationList.java)
+- `getExtensionEmergencyLocationsParameters` is of type [GetExtensionEmergencyLocationsParameters](./src/main/java/com/ringcentral/definitions/GetExtensionEmergencyLocationsParameters.java)
+- `result` is of type [EmergencyLocationsResource](./src/main/java/com/ringcentral/definitions/EmergencyLocationsResource.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-getExtensionEmergencyLocations) in API Explorer.
+
+
+## createExtensionEmergencyLocation
+Create User Emergency Location
+
+Name|Value
+-|-
+HTTP Method|`POST`
+Endpoint|`/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/emergency-locations`
+Rate Limit Group|`Heavy`
+App Permission|`ReadAccounts`
+User Permission|`EmergencyFramework`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+EmergencyLocationInfo result = rc.restapi(apiVersion).account(accountId).extension(extensionId).emergencyLocations().post(createUserEmergencyLocationRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `createUserEmergencyLocationRequest` is of type [CreateUserEmergencyLocationRequest](./src/main/java/com/ringcentral/definitions/CreateUserEmergencyLocationRequest.java)
+- `result` is of type [EmergencyLocationInfo](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-createExtensionEmergencyLocation) in API Explorer.
+
+
+## updateExtensionEmergencyLocation
+Updates a personal emergency response location by the current user or admin.
+
+Name|Value
+-|-
+HTTP Method|`PUT`
+Endpoint|`/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/emergency-locations/{locationId}`
+Rate Limit Group|`Light`
+App Permission|`EditExtensions`
+User Permission|`EmergencyFramework`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+EmergencyLocationInfo result = rc.restapi(apiVersion).account(accountId).extension(extensionId).emergencyLocations(locationId).put(emergencyLocationInfo);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `emergencyLocationInfo` is of type [EmergencyLocationInfo](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfo.java)
+- `result` is of type [EmergencyLocationInfo](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Update-a-personal-emergency-response-location-for-the-end-user-updateExtensionEmergencyLocation) in API Explorer.
+
+
+## deleteExtensionEmergencyLocation
+Delete User Emergency Location
+
+Name|Value
+-|-
+HTTP Method|`DELETE`
+Endpoint|`/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/emergency-locations/{locationId}`
+Rate Limit Group|`Heavy`
+App Permission|`EditExtensions`
+User Permission|`EmergencyFramework`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(username, extension, password);
+String result = rc.restapi(apiVersion).account(accountId).extension(extensionId).emergencyLocations(locationId).delete(deleteExtensionEmergencyLocationParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `deleteExtensionEmergencyLocationParameters` is of type [DeleteExtensionEmergencyLocationParameters](./src/main/java/com/ringcentral/definitions/DeleteExtensionEmergencyLocationParameters.java)
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-deleteExtensionEmergencyLocation) in API Explorer.
 
 
 ## readMeetingServiceInfo

@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class NotificationSettingsUpdateRequest {
     /**
-     * List of notification recipient email addresses
+     * List of notification recipient email addresses. Should not be empty if &#039;includeManagers&#039; parameter is set to false
      */
     public String[] emailAddresses;
     /**
@@ -35,7 +35,8 @@ public class NotificationSettingsUpdateRequest {
      */
     public MissedCallsInfo missedCalls;
     /**
-     * Specifies if managers&#039; emails are included in the list of emails to which notifications are sent
+     * Specifies if managers&#039; emails are included in the list of emails to which notifications are sent. If not specified, then the value is &#039;True&#039;
+     * Default: true
      */
     public Boolean includeManagers;
 

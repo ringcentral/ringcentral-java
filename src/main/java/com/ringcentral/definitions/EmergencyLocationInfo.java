@@ -21,7 +21,7 @@ public class EmergencyLocationInfo {
     public ShortSiteInfo site;
     /**
      * Emergency address status
-     * Enum: Valid, Invalid
+     * Enum: Valid, Invalid, Provisioning
      */
     public String addressStatus;
     /**
@@ -35,7 +35,7 @@ public class EmergencyLocationInfo {
      */
     public String syncStatus;
     /**
-     * Visibility of an emergency response location. If `Private` is set, then location is visible only for restricted number of users, specified in `owners` array
+     * Visibility of an emergency response location. If `Private` is set, then location is visible only for the restricted number of users, specified in `owners` array
      * Default: Public
      * Enum: Private, Public
      */

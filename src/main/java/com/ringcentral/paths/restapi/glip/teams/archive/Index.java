@@ -20,8 +20,8 @@ public class Index {
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/teams/{chatId}/archive
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public String post() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), null);

@@ -22,8 +22,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/groups/{groupId}/webhooks
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipWebhookList get() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
@@ -35,8 +35,8 @@ public class Index {
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/groups/{groupId}/webhooks
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipWebhookInfo post() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), null);

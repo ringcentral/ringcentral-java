@@ -38,6 +38,10 @@ public class GrantInfo {
      * Specifies whether the current extension is assigned as a Members-Only manager in the call queue referenced in extension object
      */
     public Boolean callQueueMembersSetup;
+    /**
+     * Specifies whether the current extension is assigned as a Messages Manager in the queue referenced in extension object
+     */
+    public Boolean callQueueMessages;
 
     public GrantInfo uri(String uri) {
         this.uri = uri;
@@ -81,6 +85,11 @@ public class GrantInfo {
 
     public GrantInfo callQueueMembersSetup(Boolean callQueueMembersSetup) {
         this.callQueueMembersSetup = callQueueMembersSetup;
+        return this;
+    }
+
+    public GrantInfo callQueueMessages(Boolean callQueueMessages) {
+        this.callQueueMessages = callQueueMessages;
         return this;
     }
 }

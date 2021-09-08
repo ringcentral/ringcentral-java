@@ -30,8 +30,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/companies/{companyId}
      * Rate Limit Group: Light
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipCompany get() throws com.ringcentral.RestException, java.io.IOException {
         if (companyId == null) {

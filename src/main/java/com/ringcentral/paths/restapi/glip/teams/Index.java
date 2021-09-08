@@ -30,8 +30,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/teams
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipTeamsList list(ListGlipTeamsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
@@ -47,8 +47,8 @@ public class Index {
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/teams
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipTeamInfo post(GlipPostTeamBody glipPostTeamBody) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(false), glipPostTeamBody, null);
@@ -60,8 +60,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/teams/{chatId}
      * Rate Limit Group: Light
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipTeamInfo get() throws com.ringcentral.RestException, java.io.IOException {
         if (chatId == null) {
@@ -76,8 +76,8 @@ public class Index {
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/glip/teams/{chatId}
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public String delete() throws com.ringcentral.RestException, java.io.IOException {
         if (chatId == null) {
@@ -92,8 +92,8 @@ public class Index {
      * HTTP Method: patch
      * Endpoint: /restapi/{apiVersion}/glip/teams/{chatId}
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipTeamInfo patch(GlipPatchTeamBody glipPatchTeamBody) throws com.ringcentral.RestException, java.io.IOException {
         if (chatId == null) {

@@ -31,13 +31,9 @@ public class EmergencyLocationInfoRequest {
     /**
      * Visibility of an emergency response location. If `Private` is set, then location is visible only for restricted number of users, specified in `owners` array
      * Default: Public
-     * Enum: Private, Public
+     * Enum: Public
      */
     public String visibility;
-    /**
-     * List of private location owners
-     */
-    public LocationOwnerInfo[] owners;
 
     public EmergencyLocationInfoRequest id(String id) {
         this.id = id;
@@ -71,11 +67,6 @@ public class EmergencyLocationInfoRequest {
 
     public EmergencyLocationInfoRequest visibility(String visibility) {
         this.visibility = visibility;
-        return this;
-    }
-
-    public EmergencyLocationInfoRequest owners(LocationOwnerInfo[] owners) {
-        this.owners = owners;
         return this;
     }
 }

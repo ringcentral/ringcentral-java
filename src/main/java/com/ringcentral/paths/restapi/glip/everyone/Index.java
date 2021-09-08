@@ -22,8 +22,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/everyone
      * Rate Limit Group: Light
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipEveryoneInfo get() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
@@ -35,8 +35,8 @@ public class Index {
      * HTTP Method: patch
      * Endpoint: /restapi/{apiVersion}/glip/everyone
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipEveryoneInfo patch(UpdateGlipEveryoneRequest updateGlipEveryoneRequest) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.patch(this.path(), updateGlipEveryoneRequest, null);

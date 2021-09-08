@@ -30,8 +30,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/posts
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipPostsList list(ReadGlipPostsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
@@ -47,8 +47,8 @@ public class Index {
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/posts
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipPostInfo post(GlipPostPostBody glipPostPostBody) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(false), glipPostPostBody, null);
@@ -60,8 +60,8 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/posts/{postId}
      * Rate Limit Group: Light
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipPostInfo get() throws com.ringcentral.RestException, java.io.IOException {
         if (postId == null) {
@@ -76,8 +76,8 @@ public class Index {
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/posts/{postId}
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public String delete() throws com.ringcentral.RestException, java.io.IOException {
         if (postId == null) {
@@ -92,8 +92,8 @@ public class Index {
      * HTTP Method: patch
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/posts/{postId}
      * Rate Limit Group: Medium
-     * App Permission: Glip
-     * User Permission: Glip
+     * App Permission: TeamMessaging
+     * User Permission: UnifiedAppDesktop
      */
     public GlipPostInfo patch(GlipPatchPostBody glipPatchPostBody) throws com.ringcentral.RestException, java.io.IOException {
         if (postId == null) {

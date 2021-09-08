@@ -308,13 +308,17 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.callqueuepresence.Index callQueuePresence() {
-        return new com.ringcentral.paths.restapi.account.extension.callqueuepresence.Index(this);
+    public com.ringcentral.paths.restapi.account.extension.emergencylocations.Index emergencyLocations() {
+        return this.emergencyLocations(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.extension.emergencylocations.Index emergencyLocations(String locationId) {
+        return new com.ringcentral.paths.restapi.account.extension.emergencylocations.Index(this, locationId);
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.emergencylocations.Index emergencyLocations() {
-        return new com.ringcentral.paths.restapi.account.extension.emergencylocations.Index(this);
+    public com.ringcentral.paths.restapi.account.extension.callqueuepresence.Index callQueuePresence() {
+        return new com.ringcentral.paths.restapi.account.extension.callqueuepresence.Index(this);
     }
 
 

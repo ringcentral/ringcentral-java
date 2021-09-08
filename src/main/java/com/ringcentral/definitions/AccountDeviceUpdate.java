@@ -22,6 +22,10 @@ public class AccountDeviceUpdate {
      * Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone.
      */
     public Boolean useAsCommonPhone;
+    /**
+     * Device label, maximum number of symbols is 64
+     */
+    public String name;
 
     public AccountDeviceUpdate emergencyServiceAddress(EmergencyServiceAddressResourceRequest emergencyServiceAddress) {
         this.emergencyServiceAddress = emergencyServiceAddress;
@@ -45,6 +49,11 @@ public class AccountDeviceUpdate {
 
     public AccountDeviceUpdate useAsCommonPhone(Boolean useAsCommonPhone) {
         this.useAsCommonPhone = useAsCommonPhone;
+        return this;
+    }
+
+    public AccountDeviceUpdate name(String name) {
+        this.name = name;
         return this;
     }
 }

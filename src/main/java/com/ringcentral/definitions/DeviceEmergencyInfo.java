@@ -17,9 +17,14 @@ public class DeviceEmergencyInfo {
     public Boolean outOfCountry;
     /**
      * Emergency address status
-     * Enum: Valid, Invalid
+     * Enum: Valid, Invalid, Provisioning
      */
     public String addressStatus;
+    /**
+     * Visibility of an emergency response location. If `Private` is set, then location is visible only for the restricted number of users, specified in `owners` array
+     * Enum: Private, Public
+     */
+    public String visibility;
     /**
      * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
@@ -48,6 +53,11 @@ public class DeviceEmergencyInfo {
 
     public DeviceEmergencyInfo addressStatus(String addressStatus) {
         this.addressStatus = addressStatus;
+        return this;
+    }
+
+    public DeviceEmergencyInfo visibility(String visibility) {
+        this.visibility = visibility;
         return this;
     }
 

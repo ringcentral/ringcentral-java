@@ -7987,7 +7987,7 @@ rc.revoke();
 
 
 ## updateExtensionEmergencyLocation
-Updates a personal emergency response location by the current user or admin.
+Update User Emergency Location
 
 Name|Value
 -|-
@@ -8010,7 +8010,7 @@ rc.revoke();
 - `emergencyLocationInfo` is of type [EmergencyLocationInfo](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfo.java)
 - `result` is of type [EmergencyLocationInfo](./src/main/java/com/ringcentral/definitions/EmergencyLocationInfo.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Update-a-personal-emergency-response-location-for-the-end-user-updateExtensionEmergencyLocation) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Automatic-Location-Updates-updateExtensionEmergencyLocation) in API Explorer.
 
 
 ## deleteExtensionEmergencyLocation

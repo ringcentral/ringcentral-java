@@ -17,9 +17,14 @@ public class SipRegistrationDeviceEmergencyInfo {
     public Boolean outOfCountry;
     /**
      * Emergency address status
-     * Enum: Valid, Invalid
+     * Enum: Valid, Invalid, Processing
      */
     public String addressStatus;
+    /**
+     * Specifies whether to return only private or only public (company) ERLs (Emergency Response Locations)
+     * Enum: Private, Public
+     */
+    public String visibility;
     /**
      * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
@@ -56,6 +61,11 @@ public class SipRegistrationDeviceEmergencyInfo {
 
     public SipRegistrationDeviceEmergencyInfo addressStatus(String addressStatus) {
         this.addressStatus = addressStatus;
+        return this;
+    }
+
+    public SipRegistrationDeviceEmergencyInfo visibility(String visibility) {
+        this.visibility = visibility;
         return this;
     }
 

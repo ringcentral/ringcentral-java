@@ -19,6 +19,8 @@ If you are having difficulty using this SDK, or working with the RingCentral API
 
 ## Installation
 
+This SDK is tested against JDK 11 so we recommend using the same. Earlier versions such as Java 8 should work as well, please report issues if you encounter any.
+
 ### Gradle
 
 ```groovy
@@ -31,7 +33,7 @@ dependencies {
 }
 ```
 
-Don't forget to replace `[version]` with expected version.
+Don't forget to replace `[version]` with expected version. You can find the latest versions in [Maven Central](https://search.maven.org/search?q=a:ringcentral).
 
 
 ### Maven
@@ -44,7 +46,7 @@ Don't forget to replace `[version]` with expected version.
 </dependency>
 ```
 
-Don't forget to replace `[version]` with expected version.
+Don't forget to replace `[version]` with expected version. You can find the latest versions in [Maven Central](https://search.maven.org/search?q=a:ringcentral).
 
 
 ### Manually

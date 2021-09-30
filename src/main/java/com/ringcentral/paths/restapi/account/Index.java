@@ -219,7 +219,11 @@ public class Index {
 
 
     public com.ringcentral.paths.restapi.account.pagingonlygroups.Index pagingOnlyGroups() {
-        return new com.ringcentral.paths.restapi.account.pagingonlygroups.Index(this);
+        return this.pagingOnlyGroups(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.pagingonlygroups.Index pagingOnlyGroups(String pagingOnlyGroupId) {
+        return new com.ringcentral.paths.restapi.account.pagingonlygroups.Index(this, pagingOnlyGroupId);
     }
 
 

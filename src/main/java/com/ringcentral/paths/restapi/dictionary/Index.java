@@ -17,7 +17,11 @@ public class Index {
 
 
     public com.ringcentral.paths.restapi.dictionary.brand.Index brand() {
-        return new com.ringcentral.paths.restapi.dictionary.brand.Index(this);
+        return this.brand(null);
+    }
+
+    public com.ringcentral.paths.restapi.dictionary.brand.Index brand(String brandId) {
+        return new com.ringcentral.paths.restapi.dictionary.brand.Index(this, brandId);
     }
 
 

@@ -53,7 +53,11 @@ public class Index {
 
 
     public com.ringcentral.paths.restapi.glip.groups.Index groups() {
-        return new com.ringcentral.paths.restapi.glip.groups.Index(this);
+        return this.groups(null);
+    }
+
+    public com.ringcentral.paths.restapi.glip.groups.Index groups(String groupId) {
+        return new com.ringcentral.paths.restapi.glip.groups.Index(this, groupId);
     }
 
 

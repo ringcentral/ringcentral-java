@@ -5,14 +5,23 @@ import com.ringcentral.RestClient;
 public class Index {
     public RestClient rc;
     public com.ringcentral.paths.restapi.glip.Index parent;
+    public String groupId;
 
-    public Index(com.ringcentral.paths.restapi.glip.Index parent) {
+    public Index(com.ringcentral.paths.restapi.glip.Index parent, String groupId) {
         this.parent = parent;
         this.rc = parent.rc;
+        this.groupId = groupId;
+    }
+
+    public String path(Boolean withParameter) {
+        if (withParameter && groupId != null) {
+            return parent.path() + "/groups/" + groupId;
+        }
+        return parent.path() + "/groups";
     }
 
     public String path() {
-        return parent.path() + "/groups";
+        return path(true);
     }
 
 

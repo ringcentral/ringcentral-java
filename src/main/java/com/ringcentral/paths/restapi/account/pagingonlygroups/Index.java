@@ -5,14 +5,23 @@ import com.ringcentral.RestClient;
 public class Index {
     public RestClient rc;
     public com.ringcentral.paths.restapi.account.Index parent;
+    public String pagingOnlyGroupId;
 
-    public Index(com.ringcentral.paths.restapi.account.Index parent) {
+    public Index(com.ringcentral.paths.restapi.account.Index parent, String pagingOnlyGroupId) {
         this.parent = parent;
         this.rc = parent.rc;
+        this.pagingOnlyGroupId = pagingOnlyGroupId;
+    }
+
+    public String path(Boolean withParameter) {
+        if (withParameter && pagingOnlyGroupId != null) {
+            return parent.path() + "/paging-only-groups/" + pagingOnlyGroupId;
+        }
+        return parent.path() + "/paging-only-groups";
     }
 
     public String path() {
-        return parent.path() + "/paging-only-groups";
+        return path(true);
     }
 
 

@@ -5,14 +5,23 @@ import com.ringcentral.RestClient;
 public class Index {
     public RestClient rc;
     public com.ringcentral.paths.restapi.dictionary.Index parent;
+    public String brandId;
 
-    public Index(com.ringcentral.paths.restapi.dictionary.Index parent) {
+    public Index(com.ringcentral.paths.restapi.dictionary.Index parent, String brandId) {
         this.parent = parent;
         this.rc = parent.rc;
+        this.brandId = brandId;
+    }
+
+    public String path(Boolean withParameter) {
+        if (withParameter && brandId != null) {
+            return parent.path() + "/brand/" + brandId;
+        }
+        return parent.path() + "/brand";
     }
 
     public String path() {
-        return parent.path() + "/brand";
+        return path(true);
     }
 
 

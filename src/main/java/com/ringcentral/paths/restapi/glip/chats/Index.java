@@ -98,4 +98,9 @@ public class Index {
         return new com.ringcentral.paths.restapi.glip.chats.unfavorite.Index(this);
     }
 
+
+    public com.ringcentral.paths.restapi.glip.chats.adaptivecards.Index adaptiveCards() {
+        return new com.ringcentral.paths.restapi.glip.chats.adaptivecards.Index(this);
+    }
+
 }

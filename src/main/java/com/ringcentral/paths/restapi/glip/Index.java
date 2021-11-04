@@ -134,4 +134,13 @@ public class Index {
         return new com.ringcentral.paths.restapi.glip.conversations.Index(this, chatId);
     }
 
+
+    public com.ringcentral.paths.restapi.glip.adaptivecards.Index adaptiveCards() {
+        return this.adaptiveCards(null);
+    }
+
+    public com.ringcentral.paths.restapi.glip.adaptivecards.Index adaptiveCards(String cardId) {
+        return new com.ringcentral.paths.restapi.glip.adaptivecards.Index(this, cardId);
+    }
+
 }

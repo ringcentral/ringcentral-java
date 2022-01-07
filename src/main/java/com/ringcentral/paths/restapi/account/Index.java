@@ -83,11 +83,6 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.analytics.Index analytics() {
-        return new com.ringcentral.paths.restapi.account.analytics.Index(this);
-    }
-
-
     public com.ringcentral.paths.restapi.account.directory.Index directory() {
         return new com.ringcentral.paths.restapi.account.directory.Index(this);
     }

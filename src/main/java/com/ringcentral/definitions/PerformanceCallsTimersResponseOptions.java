@@ -6,73 +6,82 @@ public class PerformanceCallsTimersResponseOptions {
     /**
      *
      */
-    public PerformanceCallsTimer totalCallLength;
+    public PerformanceCallsTimer allCallsDuration;
     /**
      *
      */
-    public PerformanceCallsTimer timeSpentByCallSegments;
+    public PerformanceCallsTimer callsSegmentsDuration;
     /**
      *
      */
-    public PerformanceCallsTimer callLengthByDirection;
+    public PerformanceCallsTimer callsDurationByDirection;
     /**
      *
      */
-    public PerformanceCallsTimer callLengthByOrigin;
+    public PerformanceCallsTimer callsDurationByOrigin;
     /**
      *
      */
-    public PerformanceCallsTimer callLengthByResponse;
+    public PerformanceCallsTimer callsDurationByResponse;
     /**
      *
      */
-    public PerformanceCallsTimer callLengthByResponseType;
+    public PerformanceCallsTimer callsDurationByResponseType;
     /**
      *
      */
-    public PerformanceCallsTimer callLengthByResult;
+    public PerformanceCallsTimer callsDurationByResult;
     /**
      *
      */
-    public PerformanceCallsTimer callsLengthByCompanyHours;
+    public PerformanceCallsTimer callsDurationByCompanyHours;
+    /**
+     *
+     */
+    public PerformanceCallsTimer callsDurationByQueueSla;
 
-    public PerformanceCallsTimersResponseOptions totalCallLength(PerformanceCallsTimer totalCallLength) {
-        this.totalCallLength = totalCallLength;
+    public PerformanceCallsTimersResponseOptions allCallsDuration(PerformanceCallsTimer allCallsDuration) {
+        this.allCallsDuration = allCallsDuration;
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions timeSpentByCallSegments(PerformanceCallsTimer timeSpentByCallSegments) {
-        this.timeSpentByCallSegments = timeSpentByCallSegments;
+    public PerformanceCallsTimersResponseOptions callsSegmentsDuration(PerformanceCallsTimer callsSegmentsDuration) {
+        this.callsSegmentsDuration = callsSegmentsDuration;
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions callLengthByDirection(PerformanceCallsTimer callLengthByDirection) {
-        this.callLengthByDirection = callLengthByDirection;
+    public PerformanceCallsTimersResponseOptions callsDurationByDirection(PerformanceCallsTimer callsDurationByDirection) {
+        this.callsDurationByDirection = callsDurationByDirection;
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions callLengthByOrigin(PerformanceCallsTimer callLengthByOrigin) {
-        this.callLengthByOrigin = callLengthByOrigin;
+    public PerformanceCallsTimersResponseOptions callsDurationByOrigin(PerformanceCallsTimer callsDurationByOrigin) {
+        this.callsDurationByOrigin = callsDurationByOrigin;
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions callLengthByResponse(PerformanceCallsTimer callLengthByResponse) {
-        this.callLengthByResponse = callLengthByResponse;
+    public PerformanceCallsTimersResponseOptions callsDurationByResponse(PerformanceCallsTimer callsDurationByResponse) {
+        this.callsDurationByResponse = callsDurationByResponse;
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions callLengthByResponseType(PerformanceCallsTimer callLengthByResponseType) {
-        this.callLengthByResponseType = callLengthByResponseType;
+    public PerformanceCallsTimersResponseOptions callsDurationByResponseType(PerformanceCallsTimer callsDurationByResponseType) {
+        this.callsDurationByResponseType = callsDurationByResponseType;
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions callLengthByResult(PerformanceCallsTimer callLengthByResult) {
-        this.callLengthByResult = callLengthByResult;
+    public PerformanceCallsTimersResponseOptions callsDurationByResult(PerformanceCallsTimer callsDurationByResult) {
+        this.callsDurationByResult = callsDurationByResult;
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions callsLengthByCompanyHours(PerformanceCallsTimer callsLengthByCompanyHours) {
-        this.callsLengthByCompanyHours = callsLengthByCompanyHours;
+    public PerformanceCallsTimersResponseOptions callsDurationByCompanyHours(PerformanceCallsTimer callsDurationByCompanyHours) {
+        this.callsDurationByCompanyHours = callsDurationByCompanyHours;
+        return this;
+    }
+
+    public PerformanceCallsTimersResponseOptions callsDurationByQueueSla(PerformanceCallsTimer callsDurationByQueueSla) {
+        this.callsDurationByQueueSla = callsDurationByQueueSla;
         return this;
     }
 }

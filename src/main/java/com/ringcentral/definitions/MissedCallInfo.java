@@ -5,7 +5,7 @@ package com.ringcentral.definitions;
 public class MissedCallInfo {
     /**
      * Specifies the action that should be executed on a missed call. It can either be playing greeting message and disconnection, or sending call to a calling group. If &#039;ConnectToExtension&#039; is set, then calling group extension should be specified
-     * Enum: PlayGreetingAndDisconnect, ConnectToExtension
+     * Enum: PlayGreetingAndDisconnect, ConnectToExtension, ConnectToExternalNumber
      */
     public String actionType;
     /**

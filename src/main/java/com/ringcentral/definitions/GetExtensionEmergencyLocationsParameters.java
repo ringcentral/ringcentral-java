@@ -16,7 +16,9 @@ public class GetExtensionEmergencyLocationsParameters {
      */
     public String domesticCountryId;
     /**
-     * Comma-separated list of fields to order results prefixed by &#039;+&#039; sign (ascending order) or &#039;-&#039; sign (descending order). The default sorting is by `name`
+     * Comma-separated list of fields to order results prefixed by plus sign &#039;+&#039; (ascending order) or minus sign &#039;-&#039; (descending order). The default value is `+visibility`, which means public ERLs will be returned first in the list, then - private ones
+     * Default: +visibility
+     * Enum: name, siteName, address, addressStatus, usageStatus, visibility
      */
     public String orderBy;
     /**

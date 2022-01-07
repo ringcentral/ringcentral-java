@@ -13,7 +13,8 @@ public class ReadUserCallLogParameters {
      */
     public Boolean showBlocked;
     /**
-     * Phone number of a caller/callee. If specified, returns all calls (both incoming and outcoming) with the phone number specified
+     * Phone number of a caller/callee in e.164 format without a plus sign &#039;+&#039;. If specified, all incoming and outcoming calls with this phone number are returned
+     * Example: 12053320032
      */
     public String phoneNumber;
     /**
@@ -66,7 +67,7 @@ public class ReadUserCallLogParameters {
      */
     public Long page;
     /**
-     * Indicates the page size (number of items)
+     * Indicates the page size (number of items). The default value is 100. The maximum value is 1000, for detailed call log - 250
      * Default: 100
      */
     public Long perPage;

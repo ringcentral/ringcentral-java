@@ -56,7 +56,7 @@ public class Index {
     }
 
     /**
-     * Returns an call handling rule by ID.
+     * Returns a call handling rule by ID.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
      * Rate Limit Group: Light

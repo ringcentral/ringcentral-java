@@ -33,6 +33,10 @@ public class PerformanceCallsFilters {
      */
     public CallSegmentFilter[] callSegments;
     /**
+     * Aggregation of calls by presence of specific action (joined via OR)
+     */
+    public CallPerformanceActionInfo[] callActions;
+    /**
      * Aggregation of calls by company business hours or after hours.
      * Enum: BusinessHours, AfterHours
      */
@@ -57,6 +61,11 @@ public class PerformanceCallsFilters {
      * Direct numbers the caller dialed. Multiple values can be joined via &#039;OR&#039;
      */
     public String[] calledNumbers;
+    /**
+     * This filter allows to get aggregation of calls that were either within or out of queue SLA. Only applicable to Queues grouping
+     * Enum: InSla, OutSla
+     */
+    public String callSla;
 
     public PerformanceCallsFilters direction(String direction) {
         this.direction = direction;
@@ -88,6 +97,11 @@ public class PerformanceCallsFilters {
         return this;
     }
 
+    public PerformanceCallsFilters callActions(CallPerformanceActionInfo[] callActions) {
+        this.callActions = callActions;
+        return this;
+    }
+
     public PerformanceCallsFilters companyHours(String companyHours) {
         this.companyHours = companyHours;
         return this;
@@ -115,6 +129,11 @@ public class PerformanceCallsFilters {
 
     public PerformanceCallsFilters calledNumbers(String[] calledNumbers) {
         this.calledNumbers = calledNumbers;
+        return this;
+    }
+
+    public PerformanceCallsFilters callSla(String callSla) {
+        this.callSla = callSla;
         return this;
     }
 }

@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 // Query parameters for operation readA2PSMSOptOuts
 public class ReadA2PSMSOptOutsParameters {
     /**
-     * The sender&#039;s phone number (`from` field) in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format for filtering messages
+     * The sender&#039;s phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format for filtering messages. The asterisk value &quot;*&quot; means any number in `from` field
      * Example: 15551234455
      */
     public String from;

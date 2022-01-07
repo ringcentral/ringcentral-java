@@ -14,7 +14,7 @@ public class RegionalSettings {
     /**
      *
      */
-    public LanguageInfo language;
+    public RegionalLanguageInfo language;
     /**
      *
      */
@@ -39,7 +39,7 @@ public class RegionalSettings {
         return this;
     }
 
-    public RegionalSettings language(LanguageInfo language) {
+    public RegionalSettings language(RegionalLanguageInfo language) {
         this.language = language;
         return this;
     }

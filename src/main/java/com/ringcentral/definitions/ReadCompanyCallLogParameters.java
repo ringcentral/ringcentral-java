@@ -8,7 +8,8 @@ public class ReadCompanyCallLogParameters {
      */
     public String extensionNumber;
     /**
-     * Phone number of a caller/call recipient. If specified, returns all calls (both incoming and outcoming) with the phone number specified. Cannot be specified together with the extensionNumber filter
+     * Phone number of a caller/callee in e.164 format without a plus sign &#039;+&#039;. If specified, all incoming and outcoming calls with this phone number are returned. Cannot be specified together with the `extensionNumber` filter
+     * Example: 12053320033
      */
     public String phoneNumber;
     /**

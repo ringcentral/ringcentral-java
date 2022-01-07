@@ -26,7 +26,7 @@ public class PerformanceCallsCountersResponseOptions {
     /**
      *
      */
-    public PerformanceCallsCounter callsBySegment;
+    public PerformanceCallsCounter callsBySegments;
     /**
      *
      */
@@ -39,6 +39,10 @@ public class PerformanceCallsCountersResponseOptions {
      *
      */
     public PerformanceCallsCounter callsByCompanyHours;
+    /**
+     *
+     */
+    public PerformanceCallsCounter callsByQueueSla;
 
     public PerformanceCallsCountersResponseOptions allCalls(PerformanceCallsCounter allCalls) {
         this.allCalls = allCalls;
@@ -65,8 +69,8 @@ public class PerformanceCallsCountersResponseOptions {
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsBySegment(PerformanceCallsCounter callsBySegment) {
-        this.callsBySegment = callsBySegment;
+    public PerformanceCallsCountersResponseOptions callsBySegments(PerformanceCallsCounter callsBySegments) {
+        this.callsBySegments = callsBySegments;
         return this;
     }
 
@@ -82,6 +86,11 @@ public class PerformanceCallsCountersResponseOptions {
 
     public PerformanceCallsCountersResponseOptions callsByCompanyHours(PerformanceCallsCounter callsByCompanyHours) {
         this.callsByCompanyHours = callsByCompanyHours;
+        return this;
+    }
+
+    public PerformanceCallsCountersResponseOptions callsByQueueSla(PerformanceCallsCounter callsByQueueSla) {
+        this.callsByQueueSla = callsByQueueSla;
         return this;
     }
 }

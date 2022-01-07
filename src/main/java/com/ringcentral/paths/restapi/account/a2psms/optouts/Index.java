@@ -32,4 +32,9 @@ public class Index {
     public OptOutListResponse get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
+
+    public com.ringcentral.paths.restapi.account.a2psms.optouts.bulkassign.Index bulkAssign() {
+        return new com.ringcentral.paths.restapi.account.a2psms.optouts.bulkassign.Index(this);
+    }
+
 }

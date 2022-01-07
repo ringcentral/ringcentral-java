@@ -46,7 +46,7 @@ public class Index {
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/emergency-locations
      * Rate Limit Group: Heavy
-     * App Permission: ReadAccounts
+     * App Permission: EditAccounts
      * User Permission: EmergencyFramework
      */
     public EmergencyLocationInfo post(CreateUserEmergencyLocationRequest createUserEmergencyLocationRequest) throws com.ringcentral.RestException, java.io.IOException {
@@ -74,7 +74,7 @@ public class Index {
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/emergency-locations/{locationId}
      * Rate Limit Group: Light
-     * App Permission: EditExtensions
+     * App Permission: EditAccounts
      * User Permission: EmergencyFramework
      */
     public EmergencyLocationInfo put(EmergencyLocationInfo emergencyLocationInfo) throws com.ringcentral.RestException, java.io.IOException {
@@ -90,7 +90,7 @@ public class Index {
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/emergency-locations/{locationId}
      * Rate Limit Group: Heavy
-     * App Permission: EditExtensions
+     * App Permission: EditAccounts
      * User Permission: EmergencyFramework
      */
     public String delete(DeleteExtensionEmergencyLocationParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {

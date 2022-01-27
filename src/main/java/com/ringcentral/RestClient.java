@@ -107,6 +107,13 @@ public class RestClient {
         return authorize(getTokenRequest);
     }
 
+    public TokenInfo authorize(String jwt) throws IOException, RestException {
+        GetTokenRequest getTokenRequest = new GetTokenRequest()
+            .grant_type("urn:ietf:params:oauth:grant-type:jwt-bearer")
+            .assertion(jwt);
+        return authorize(getTokenRequest);
+    }
+
     public TokenInfo authorize(GetTokenRequest getTokenRequest) throws IOException, RestException {
         token = this.restapi(null).oauth().token().post(getTokenRequest);
         return token;

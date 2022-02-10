@@ -374,4 +374,8 @@ public class RestClient {
     public com.ringcentral.paths.scim.Index scim() {
         return new com.ringcentral.paths.scim.Index(this, "v2");
     }
+
+    public com.ringcentral.paths.analytics.Index analytics() {
+        return new com.ringcentral.paths.analytics.Index(this);
+    }
 }

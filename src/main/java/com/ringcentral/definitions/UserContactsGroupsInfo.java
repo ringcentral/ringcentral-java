@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on address book groups
+/**
+ * Information on address book groups
+ */
 public class UserContactsGroupsInfo {
     /**
      * Link to the list of address book groups

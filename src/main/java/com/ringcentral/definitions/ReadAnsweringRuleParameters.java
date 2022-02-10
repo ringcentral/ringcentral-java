@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readAnsweringRule
+/**
+ * Query parameters for operation readAnsweringRule
+ */
 public class ReadAnsweringRuleParameters {
     /**
      * Indicates whether inactive numbers should be returned or not

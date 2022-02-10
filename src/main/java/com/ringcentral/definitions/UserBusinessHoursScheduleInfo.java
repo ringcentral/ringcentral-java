@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Schedule when an answering rule is applied
+/**
+ * Schedule when an answering rule is applied
+ */
 public class UserBusinessHoursScheduleInfo {
     /**
      *

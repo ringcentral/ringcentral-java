@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on account billing plan
+/**
+ * Information on account billing plan
+ */
 public class BillingPlanInfo {
     /**
      * Internal identifier of a billing plan

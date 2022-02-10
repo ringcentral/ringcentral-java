@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// User interface language data
+/**
+ * User interface language data
+ */
 public class LanguageInfo {
     /**
      * Internal identifier of a language

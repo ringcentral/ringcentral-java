@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Represents a failure of adding opt-out / opt-in. A pair of a recipient phone number and an error message
+/**
+ * Represents a failure of adding opt-out / opt-in. A pair of a recipient phone number and an error message
+ */
 public class OptOutBulkAssignFailedEntry {
     /**
      * A recipient phone number

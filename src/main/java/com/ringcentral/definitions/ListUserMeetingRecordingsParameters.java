@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listUserMeetingRecordings
+/**
+ * Query parameters for operation listUserMeetingRecordings
+ */
 public class ListUserMeetingRecordingsParameters {
     /**
      * Internal identifier of a meeting. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listAccountPhoneNumbers
+/**
+ * Query parameters for operation listAccountPhoneNumbers
+ */
 public class ListAccountPhoneNumbersParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

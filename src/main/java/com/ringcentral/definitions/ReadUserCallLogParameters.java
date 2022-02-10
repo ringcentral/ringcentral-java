@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readUserCallLog
+/**
+ * Query parameters for operation readUserCallLog
+ */
 public class ReadUserCallLogParameters {
     /**
      * Extension number of a user. If specified, returns call log for a particular extension only

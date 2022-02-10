@@ -4,21 +4,21 @@ package com.ringcentral.definitions;
 public class CallsByCompanyHours {
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long businessHours;
+    public Double businessHours;
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long afterHours;
+    public Double afterHours;
 
-    public CallsByCompanyHours businessHours(Long businessHours) {
+    public CallsByCompanyHours businessHours(Double businessHours) {
         this.businessHours = businessHours;
         return this;
     }
 
-    public CallsByCompanyHours afterHours(Long afterHours) {
+    public CallsByCompanyHours afterHours(Double afterHours) {
         this.afterHours = afterHours;
         return this;
     }

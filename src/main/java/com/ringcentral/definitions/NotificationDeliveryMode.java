@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Delivery mode data
+/**
+ * Delivery mode data
+ */
 public class NotificationDeliveryMode {
     /**
      * Optional parameter. Specifies if the message will be encrypted or not

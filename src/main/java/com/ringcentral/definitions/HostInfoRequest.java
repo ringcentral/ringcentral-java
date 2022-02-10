@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Meeting host information
+/**
+ * Meeting host information
+ */
 public class HostInfoRequest {
     /**
      * Link to the meeting host resource

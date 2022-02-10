@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Notification payload body
+/**
+ * Notification payload body
+ */
 public class VoicemailMessageEventBody {
     /**
      * Internal identifier of a message

@@ -1,78 +1,89 @@
 package com.ringcentral.definitions;
 
 
-// Call length data for the specified grouping.
+/**
+ * Call length data for the specified grouping.
+ */
 public class PerformanceCallsTimers {
     /**
-     * Format: int64
+     *
      */
-    public Long callsDurationSeconds;
+    public PerformanceCallsTotal allCalls;
     /**
      *
      */
-    public TimeSpentBySegments callSegmentLengthSeconds;
+    public PerformanceCallsByDirection callsByDirection;
     /**
      *
      */
-    public CallsDurationByDirection callsByDirection;
+    public PerformanceCallsByOrigin callsByOrigin;
     /**
      *
      */
-    public CallsDurationByOrigin callsByOrigin;
+    public PerformanceCallsByResponse callsByResponse;
     /**
      *
      */
-    public CallDurationByResponse callsByResponse;
+    public PerformanceCallsSegments callsSegments;
     /**
      *
      */
-    public CallDurationByResult callsByResult;
+    public PerformanceCallsByResult callsByResult;
     /**
      *
      */
-    public CallDurationByResponseType callsByResponseType;
+    public PerformanceCallsByCompanyHours callsByCompanyHours;
     /**
      *
      */
-    public CallDurationByCompanyHours callsByCompanyHours;
+    public PerformanceCallsByQueueSla callsByQueueSla;
+    /**
+     *
+     */
+    public PerformanceCallsByType callsByType;
 
-    public PerformanceCallsTimers callsDurationSeconds(Long callsDurationSeconds) {
-        this.callsDurationSeconds = callsDurationSeconds;
+    public PerformanceCallsTimers allCalls(PerformanceCallsTotal allCalls) {
+        this.allCalls = allCalls;
         return this;
     }
 
-    public PerformanceCallsTimers callSegmentLengthSeconds(TimeSpentBySegments callSegmentLengthSeconds) {
-        this.callSegmentLengthSeconds = callSegmentLengthSeconds;
-        return this;
-    }
-
-    public PerformanceCallsTimers callsByDirection(CallsDurationByDirection callsByDirection) {
+    public PerformanceCallsTimers callsByDirection(PerformanceCallsByDirection callsByDirection) {
         this.callsByDirection = callsByDirection;
         return this;
     }
 
-    public PerformanceCallsTimers callsByOrigin(CallsDurationByOrigin callsByOrigin) {
+    public PerformanceCallsTimers callsByOrigin(PerformanceCallsByOrigin callsByOrigin) {
         this.callsByOrigin = callsByOrigin;
         return this;
     }
 
-    public PerformanceCallsTimers callsByResponse(CallDurationByResponse callsByResponse) {
+    public PerformanceCallsTimers callsByResponse(PerformanceCallsByResponse callsByResponse) {
         this.callsByResponse = callsByResponse;
         return this;
     }
 
-    public PerformanceCallsTimers callsByResult(CallDurationByResult callsByResult) {
+    public PerformanceCallsTimers callsSegments(PerformanceCallsSegments callsSegments) {
+        this.callsSegments = callsSegments;
+        return this;
+    }
+
+    public PerformanceCallsTimers callsByResult(PerformanceCallsByResult callsByResult) {
         this.callsByResult = callsByResult;
         return this;
     }
 
-    public PerformanceCallsTimers callsByResponseType(CallDurationByResponseType callsByResponseType) {
-        this.callsByResponseType = callsByResponseType;
+    public PerformanceCallsTimers callsByCompanyHours(PerformanceCallsByCompanyHours callsByCompanyHours) {
+        this.callsByCompanyHours = callsByCompanyHours;
         return this;
     }
 
-    public PerformanceCallsTimers callsByCompanyHours(CallDurationByCompanyHours callsByCompanyHours) {
-        this.callsByCompanyHours = callsByCompanyHours;
+    public PerformanceCallsTimers callsByQueueSla(PerformanceCallsByQueueSla callsByQueueSla) {
+        this.callsByQueueSla = callsByQueueSla;
+        return this;
+    }
+
+    public PerformanceCallsTimers callsByType(PerformanceCallsByType callsByType) {
+        this.callsByType = callsByType;
         return this;
     }
 }

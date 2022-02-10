@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation syncUserCallLog
+/**
+ * Query parameters for operation syncUserCallLog
+ */
 public class SyncUserCallLogParameters {
     /**
      * Type of synchronization

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readMessageContent
+/**
+ * Query parameters for operation readMessageContent
+ */
 public class ReadMessageContentParameters {
     /**
      * Content disposition of a response

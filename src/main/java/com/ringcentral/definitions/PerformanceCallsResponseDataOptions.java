@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Provides mapping of possible breakdown options for call aggregation and aggregation formula
+/**
+ * Provides mapping of possible breakdown options for call aggregation and aggregation formula
+ */
 public class PerformanceCallsResponseDataOptions {
     /**
      *

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Apple notification data
+/**
+ * Apple notification data
+ */
 public class GlipAPNSInfo {
     /**
      *

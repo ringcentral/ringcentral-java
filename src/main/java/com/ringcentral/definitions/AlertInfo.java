@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Alert information
+/**
+ * Alert information
+ */
 public class AlertInfo {
     /**
      * Title of a message

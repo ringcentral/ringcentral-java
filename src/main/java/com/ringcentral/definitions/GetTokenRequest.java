@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation getToken
+/**
+ * Request body for operation getToken
+ */
 public class GetTokenRequest {
     /**
      * Phone number linked to an account or extension in E.164 format with or without leading &#039;+&#039; sign

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listChatTasks
+/**
+ * Query parameters for operation listChatTasks
+ */
 public class ListChatTasksParameters {
     /**
      * The end datetime for resulting records in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, e.g. 2019-03-10T18:23:45Z

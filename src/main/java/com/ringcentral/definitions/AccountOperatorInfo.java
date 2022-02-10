@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Operator's extension information. This extension will receive all calls and messages intended for the operator.
+/**
+ * Operator's extension information. This extension will receive all calls and messages intended for the operator.
+ */
 public class AccountOperatorInfo {
     /**
      * Link to an operator extension resource

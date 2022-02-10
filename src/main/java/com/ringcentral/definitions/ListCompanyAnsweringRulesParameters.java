@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listCompanyAnsweringRules
+/**
+ * Query parameters for operation listCompanyAnsweringRules
+ */
 public class ListCompanyAnsweringRulesParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Task detailed result. Returned for failed and completed tasks
+/**
+ * Task detailed result. Returned for failed and completed tasks
+ */
 public class TaskResultInfo {
     /**
      * Detailed task results by elements from initial request

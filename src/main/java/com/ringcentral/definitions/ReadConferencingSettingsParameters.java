@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readConferencingSettings
+/**
+ * Query parameters for operation readConferencingSettings
+ */
 public class ReadConferencingSettingsParameters {
     /**
      * Internal identifier of a country. If not specified, the response is returned for the brand country

@@ -9,11 +9,11 @@ public class PerformanceCallsAggregatesRequest {
     /**
      * Required
      */
-    public PerformanceCallsTimeRange timeRange;
+    public PerformanceCallsTimeSettings timeSettings;
     /**
      *
      */
-    public PerformanceCallsFilters additionalFilters;
+    public PerformanceCallsAdditionalFilters additionalFilters;
     /**
      * Required
      */
@@ -24,12 +24,12 @@ public class PerformanceCallsAggregatesRequest {
         return this;
     }
 
-    public PerformanceCallsAggregatesRequest timeRange(PerformanceCallsTimeRange timeRange) {
-        this.timeRange = timeRange;
+    public PerformanceCallsAggregatesRequest timeSettings(PerformanceCallsTimeSettings timeSettings) {
+        this.timeSettings = timeSettings;
         return this;
     }
 
-    public PerformanceCallsAggregatesRequest additionalFilters(PerformanceCallsFilters additionalFilters) {
+    public PerformanceCallsAggregatesRequest additionalFilters(PerformanceCallsAdditionalFilters additionalFilters) {
         this.additionalFilters = additionalFilters;
         return this;
     }

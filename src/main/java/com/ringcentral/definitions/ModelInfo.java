@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// HardPhone model information
+/**
+ * HardPhone model information
+ */
 public class ModelInfo {
     /**
      * Internal identifier of a HardPhone device model

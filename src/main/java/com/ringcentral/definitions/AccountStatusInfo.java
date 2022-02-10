@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Status information (reason, comment, lifetime). Returned for 'Disabled' status only
+/**
+ * Status information (reason, comment, lifetime). Returned for 'Disabled' status only
+ */
 public class AccountStatusInfo {
     /**
      * A free-form user comment, describing the status change reason

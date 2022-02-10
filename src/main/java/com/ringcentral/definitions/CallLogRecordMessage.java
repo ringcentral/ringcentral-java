@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Linked message (Fax/Voicemail)
+/**
+ * Linked message (Fax/Voicemail)
+ */
 public class CallLogRecordMessage {
     /**
      * Internal identifier of a message

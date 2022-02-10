@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listA2PBatches
+/**
+ * Query parameters for operation listA2PBatches
+ */
 public class ListA2PBatchesParameters {
     /**
      * The default is 24 hours before `dateTo`

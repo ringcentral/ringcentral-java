@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Sync information (type, token and time)
+/**
+ * Sync information (type, token and time)
+ */
 public class CompanyCallLogSyncInfo {
     /**
      * Type of synchronization

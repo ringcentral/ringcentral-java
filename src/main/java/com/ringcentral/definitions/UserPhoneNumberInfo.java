@@ -46,6 +46,7 @@ public class UserPhoneNumberInfo {
     public Boolean primary;
     /**
      * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     * Enum: Normal, Pending, PortedIn, Temporary
      */
     public String status;
     /**

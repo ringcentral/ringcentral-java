@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation checkUserPermission
+/**
+ * Query parameters for operation checkUserPermission
+ */
 public class CheckUserPermissionParameters {
     /**
      *

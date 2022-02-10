@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Sender of a pager message.
+/**
+ * Sender of a pager message.
+ */
 public class PagerCallerInfoRequest {
     /**
      * Extension identifier

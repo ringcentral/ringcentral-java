@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation performanceReportCallsTimeline
+/**
+ * Query parameters for operation performanceReportCallsTimeline
+ */
 public class PerformanceReportCallsTimelineParameters {
     /**
      * Aggregation interval

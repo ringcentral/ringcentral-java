@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a country the state belongs to
+/**
+ * Information on a country the state belongs to
+ */
 public class GetCountryInfoState {
     /**
      * Internal identifier of a state

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a calling/called party
+/**
+ * Information on a calling/called party
+ */
 public class PartyInfo {
     /**
      * Phone number of a party

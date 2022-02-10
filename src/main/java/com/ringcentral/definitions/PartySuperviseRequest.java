@@ -26,6 +26,11 @@ public class PartySuperviseRequest {
      * Default: true
      */
     public Boolean autoAnswer;
+    /**
+     * Specifies session description protocol setting
+     * Enum: sendOnly, sendRecv
+     */
+    public String mediaSDP;
 
     public PartySuperviseRequest mode(String mode) {
         this.mode = mode;
@@ -44,6 +49,11 @@ public class PartySuperviseRequest {
 
     public PartySuperviseRequest autoAnswer(Boolean autoAnswer) {
         this.autoAnswer = autoAnswer;
+        return this;
+    }
+
+    public PartySuperviseRequest mediaSDP(String mediaSDP) {
+        this.mediaSDP = mediaSDP;
         return this;
     }
 }

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Message footer information
+/**
+ * Message footer information
+ */
 public class GlipMessageAttachmentFootnoteInfo {
     /**
      * Text of a footer

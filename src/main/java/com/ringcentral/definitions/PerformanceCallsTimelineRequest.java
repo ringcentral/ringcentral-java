@@ -13,7 +13,7 @@ public class PerformanceCallsTimelineRequest {
     /**
      *
      */
-    public PerformanceCallsFilters additionalFilters;
+    public PerformanceCallsAdditionalFilters additionalFilters;
     /**
      * Required
      */
@@ -29,7 +29,7 @@ public class PerformanceCallsTimelineRequest {
         return this;
     }
 
-    public PerformanceCallsTimelineRequest additionalFilters(PerformanceCallsFilters additionalFilters) {
+    public PerformanceCallsTimelineRequest additionalFilters(PerformanceCallsAdditionalFilters additionalFilters) {
         this.additionalFilters = additionalFilters;
         return this;
     }

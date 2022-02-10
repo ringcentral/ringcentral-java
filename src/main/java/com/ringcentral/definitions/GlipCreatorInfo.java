@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Note creator information
+/**
+ * Note creator information
+ */
 public class GlipCreatorInfo {
     /**
      * Internal identifier of a user who created a note/task

@@ -86,7 +86,16 @@ const generateField = (f: Field, modelName: string) => {
 };
 
 parsed.models.forEach(model => {
-  let code = `${model.description ? '\n    // ' + model.description : ''}
+  let code = `${
+    model.description
+      ? '\n    /**\n' +
+        model.description
+          .split('\n')
+          .map(line => '* ' + line)
+          .join('\n') +
+        '\n*/'
+      : ''
+  }
 public class ${model.name}
 {
     ${model.fields.map(f => generateField(f, model.name)).join('\n\n    ')}

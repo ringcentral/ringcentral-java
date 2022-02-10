@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a task for updating multiple extensions
+/**
+ * Information on a task for updating multiple extensions
+ */
 public class ExtensionBulkUpdateTaskResource {
     /**
      * Link to a task resource

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Contact resource
+/**
+ * Contact resource
+ */
 public class AddressBookBulkContactResource {
     /**
      * Email of a contact

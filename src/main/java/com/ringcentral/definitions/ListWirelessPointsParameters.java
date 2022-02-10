@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listWirelessPoints
+/**
+ * Query parameters for operation listWirelessPoints
+ */
 public class ListWirelessPointsParameters {
     /**
      * Internal identifier of a site. To filter Main Site (Company) &#039;main-site&#039; must be specified. Supported only If multi-site feature is enabled for the account

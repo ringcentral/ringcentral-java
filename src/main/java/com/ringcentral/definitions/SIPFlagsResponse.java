@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// SIP flags data
+/**
+ * SIP flags data
+ */
 public class SIPFlagsResponse {
     /**
      * If &#039;True&#039; VoIP calling feature is enabled

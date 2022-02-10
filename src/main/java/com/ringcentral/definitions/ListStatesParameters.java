@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listStates
+/**
+ * Query parameters for operation listStates
+ */
 public class ListStatesParameters {
     /**
      * If set to &#039;True&#039; then states for all countries are returned and `countryId` is ignored, even if specified. If the value is empty then the parameter is ignored

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation createUserProfileImage
+/**
+ * Request body for operation createUserProfileImage
+ */
 public class CreateUserProfileImageRequest {
     /**
      * Required

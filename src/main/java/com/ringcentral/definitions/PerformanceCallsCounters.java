@@ -1,87 +1,98 @@
 package com.ringcentral.definitions;
 
 
-// Call volume data for the specified grouping.
+/**
+ * Call volume data for the specified grouping.
+ */
 public class PerformanceCallsCounters {
     /**
-     * Format: int64
+     *
      */
-    public Long totalCalls;
+    public PerformanceCallsTotal allCalls;
     /**
      *
      */
-    public CallsByDirection callsByDirection;
+    public PerformanceCallsByDirection callsByDirection;
     /**
      *
      */
-    public CallsByOrigin callsByOrigin;
+    public PerformanceCallsByOrigin callsByOrigin;
     /**
      *
      */
-    public CallsByResponse callsByResponse;
+    public PerformanceCallsByResponse callsByResponse;
     /**
      *
      */
-    public CallsByResponseType callsByResponseType;
+    public PerformanceCallsSegments callsSegments;
     /**
      *
      */
-    public CallsByResult callsByResult;
+    public PerformanceCallsByResult callsByResult;
     /**
      *
      */
-    public CallsActionsCount callsActionsCount;
+    public PerformanceCallsActions callsActions;
     /**
      *
      */
-    public CallsBySegments callsBySegments;
+    public PerformanceCallsByCompanyHours callsByCompanyHours;
     /**
      *
      */
-    public CallsByCompanyHours callsByCompanyHours;
+    public PerformanceCallsByQueueSla callsByQueueSla;
+    /**
+     *
+     */
+    public PerformanceCallsByType callsByType;
 
-    public PerformanceCallsCounters totalCalls(Long totalCalls) {
-        this.totalCalls = totalCalls;
+    public PerformanceCallsCounters allCalls(PerformanceCallsTotal allCalls) {
+        this.allCalls = allCalls;
         return this;
     }
 
-    public PerformanceCallsCounters callsByDirection(CallsByDirection callsByDirection) {
+    public PerformanceCallsCounters callsByDirection(PerformanceCallsByDirection callsByDirection) {
         this.callsByDirection = callsByDirection;
         return this;
     }
 
-    public PerformanceCallsCounters callsByOrigin(CallsByOrigin callsByOrigin) {
+    public PerformanceCallsCounters callsByOrigin(PerformanceCallsByOrigin callsByOrigin) {
         this.callsByOrigin = callsByOrigin;
         return this;
     }
 
-    public PerformanceCallsCounters callsByResponse(CallsByResponse callsByResponse) {
+    public PerformanceCallsCounters callsByResponse(PerformanceCallsByResponse callsByResponse) {
         this.callsByResponse = callsByResponse;
         return this;
     }
 
-    public PerformanceCallsCounters callsByResponseType(CallsByResponseType callsByResponseType) {
-        this.callsByResponseType = callsByResponseType;
+    public PerformanceCallsCounters callsSegments(PerformanceCallsSegments callsSegments) {
+        this.callsSegments = callsSegments;
         return this;
     }
 
-    public PerformanceCallsCounters callsByResult(CallsByResult callsByResult) {
+    public PerformanceCallsCounters callsByResult(PerformanceCallsByResult callsByResult) {
         this.callsByResult = callsByResult;
         return this;
     }
 
-    public PerformanceCallsCounters callsActionsCount(CallsActionsCount callsActionsCount) {
-        this.callsActionsCount = callsActionsCount;
+    public PerformanceCallsCounters callsActions(PerformanceCallsActions callsActions) {
+        this.callsActions = callsActions;
         return this;
     }
 
-    public PerformanceCallsCounters callsBySegments(CallsBySegments callsBySegments) {
-        this.callsBySegments = callsBySegments;
-        return this;
-    }
-
-    public PerformanceCallsCounters callsByCompanyHours(CallsByCompanyHours callsByCompanyHours) {
+    public PerformanceCallsCounters callsByCompanyHours(PerformanceCallsByCompanyHours callsByCompanyHours) {
         this.callsByCompanyHours = callsByCompanyHours;
+        return this;
+    }
+
+    public PerformanceCallsCounters callsByQueueSla(PerformanceCallsByQueueSla callsByQueueSla) {
+        this.callsByQueueSla = callsByQueueSla;
+        return this;
+    }
+
+    public PerformanceCallsCounters callsByType(PerformanceCallsByType callsByType) {
+        this.callsByType = callsByType;
         return this;
     }
 }

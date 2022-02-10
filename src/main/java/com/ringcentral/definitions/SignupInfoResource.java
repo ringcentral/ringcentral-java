@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Account sign up data
+/**
+ * Account sign up data
+ */
 public class SignupInfoResource {
     /**
      *

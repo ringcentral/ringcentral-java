@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Billing information related to the call. Returned for 'Detailed' view only
+/**
+ * Billing information related to the call. Returned for 'Detailed' view only
+ */
 public class BillingInfo {
     /**
      * Cost per minute, paid and already included in your RingCentral Plan. For example International Calls

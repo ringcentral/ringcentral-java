@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Extension phone number information
+/**
+ * Extension phone number information
+ */
 public class CompanyDirectoryPhoneNumberInfo {
     /**
      * Extension phone number in E.164 format

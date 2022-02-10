@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listDomesticCountries
+/**
+ * Query parameters for operation listDomesticCountries
+ */
 public class ListDomesticCountriesParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on extension that the device is assigned to
+/**
+ * Information on extension that the device is assigned to
+ */
 public class DeviceUpdateExtensionInfo {
     /**
      * Internal identifier of an extension

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// List of extensions to be updated
+/**
+ * List of extensions to be updated
+ */
 public class ExtensionBulkUpdateRequest {
     /**
      * Required

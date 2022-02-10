@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Device information
+/**
+ * Device information
+ */
 public class DeviceInfoRequest {
     /**
      * Device unique identifier, retrieved at previous session (if any)

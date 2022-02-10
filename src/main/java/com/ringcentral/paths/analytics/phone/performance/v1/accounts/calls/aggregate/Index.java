@@ -19,7 +19,7 @@ public class Index {
     }
 
     /**
-     * Returns a call performance report aggregated by parameters specified.
+     * Returns call performance data aggregated as per the specified parameters.
      * HTTP Method: post
      * Endpoint: /analytics/phone/performance/v1/accounts/{accountId}/calls/aggregate
      * Rate Limit Group: Light

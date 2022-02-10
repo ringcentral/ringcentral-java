@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a home country of a conference phone number
+/**
+ * Information on a home country of a conference phone number
+ */
 public class GetCountryInfoConferencing {
     /**
      * Internal identifier of a country

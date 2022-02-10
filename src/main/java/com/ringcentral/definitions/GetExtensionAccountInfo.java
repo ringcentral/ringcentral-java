@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Account information
+/**
+ * Account information
+ */
 public class GetExtensionAccountInfo {
     /**
      * Internal identifier of an account

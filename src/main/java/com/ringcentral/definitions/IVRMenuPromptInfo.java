@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Prompt metadata
+/**
+ * Prompt metadata
+ */
 public class IVRMenuPromptInfo {
     /**
      * Prompt mode: custom media or text

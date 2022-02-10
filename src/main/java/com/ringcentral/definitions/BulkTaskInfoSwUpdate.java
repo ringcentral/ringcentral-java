@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on the task for multiple switches update
+/**
+ * Information on the task for multiple switches update
+ */
 public class BulkTaskInfoSwUpdate {
     /**
      * Internal identifier of a task for multiple switches creation

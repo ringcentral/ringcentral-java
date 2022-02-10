@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Site Fax/SMS recipient (operator) reference. Multi-level IVR should be enabled
+/**
+ * Site Fax/SMS recipient (operator) reference. Multi-level IVR should be enabled
+ */
 public class OperatorInfo {
     /**
      * Internal identifier of an operator

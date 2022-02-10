@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation deleteMessageByFilter
+/**
+ * Query parameters for operation deleteMessageByFilter
+ */
 public class DeleteMessageByFilterParameters {
     /**
      *

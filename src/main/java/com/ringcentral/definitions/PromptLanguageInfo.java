@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// For 'TextToSpeech' mode only. Prompt language metadata
+/**
+ * For 'TextToSpeech' mode only. Prompt language metadata
+ */
 public class PromptLanguageInfo {
     /**
      * Link to a prompt language

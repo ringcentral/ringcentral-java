@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Phone number information
+/**
+ * Phone number information
+ */
 public class DevicePhoneNumberInfo {
     /**
      * Internal identifier of a phone number

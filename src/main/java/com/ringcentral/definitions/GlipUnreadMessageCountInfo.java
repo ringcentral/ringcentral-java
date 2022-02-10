@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Unread messages data
+/**
+ * Unread messages data
+ */
 public class GlipUnreadMessageCountInfo {
     /**
      * Count of glip unread messages

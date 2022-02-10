@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Caller ID settings by feature
+/**
+ * Caller ID settings by feature
+ */
 public class CallerIdByFeatureRequest {
     /**
      * Enum: RingOut, RingMe, CallFlip, FaxNumber, AdditionalSoftphone, Alternate, CommonPhone, MobileApp, Delegated

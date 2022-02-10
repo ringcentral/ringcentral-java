@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Emergency address assigned to the switch. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
+/**
+ * Emergency address assigned to the switch. Only one of a pair `emergencyAddress` or `emergencyLocationId` should be specified, otherwise the error is returned
+ */
 public class LocationUpdatesEmergencyAddressInfoRequest {
     /**
      * Country name

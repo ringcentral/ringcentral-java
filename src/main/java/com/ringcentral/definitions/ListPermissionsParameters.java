@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listPermissions
+/**
+ * Query parameters for operation listPermissions
+ */
 public class ListPermissionsParameters {
     /**
      * Default: 1

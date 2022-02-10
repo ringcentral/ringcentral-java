@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listCallMonitoringGroupMembers
+/**
+ * Query parameters for operation listCallMonitoringGroupMembers
+ */
 public class ListCallMonitoringGroupMembersParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are allowed

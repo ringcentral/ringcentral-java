@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Pagination details
+/**
+ * Pagination details
+ */
 public class PagingResource {
     /**
      * Page token of the current response list

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listPagingGroupUsers
+/**
+ * Query parameters for operation listPagingGroupUsers
+ */
 public class ListPagingGroupUsersParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

@@ -5,10 +5,19 @@ public class PerformanceCallsAggregatesResponse {
     /**
      * Required
      */
-    public java.util.Map<String, PerformanceCallsData> data;
+    public PerformanceCallsData[] data;
+    /**
+     *
+     */
+    public PerformanceCallsPaging paging;
 
-    public PerformanceCallsAggregatesResponse data(java.util.Map<String, PerformanceCallsData> data) {
+    public PerformanceCallsAggregatesResponse data(PerformanceCallsData[] data) {
         this.data = data;
+        return this;
+    }
+
+    public PerformanceCallsAggregatesResponse paging(PerformanceCallsPaging paging) {
+        this.paging = paging;
         return this;
     }
 }

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listExtensionDevices
+/**
+ * Query parameters for operation listExtensionDevices
+ */
 public class ListExtensionDevicesParameters {
     /**
      * Pooling type of a device

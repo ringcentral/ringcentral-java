@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on the task for multiple switches creation
+/**
+ * Information on the task for multiple switches creation
+ */
 public class CreateMultipleSwitchesResponse {
     /**
      *

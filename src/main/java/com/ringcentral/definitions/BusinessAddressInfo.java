@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Company business address
+/**
+ * Company business address
+ */
 public class BusinessAddressInfo {
     /**
      * Name of a country

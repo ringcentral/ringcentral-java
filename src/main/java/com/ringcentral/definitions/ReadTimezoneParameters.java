@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readTimezone
+/**
+ * Query parameters for operation readTimezone
+ */
 public class ReadTimezoneParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

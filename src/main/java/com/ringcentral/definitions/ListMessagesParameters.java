@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listMessages
+/**
+ * Query parameters for operation listMessages
+ */
 public class ListMessagesParameters {
     /**
      * Specifies the availability status for the resulting messages. Multiple values are accepted

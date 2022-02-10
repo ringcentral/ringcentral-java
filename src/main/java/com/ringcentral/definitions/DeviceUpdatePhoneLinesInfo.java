@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on phone lines added to a device
+/**
+ * Information on phone lines added to a device
+ */
 public class DeviceUpdatePhoneLinesInfo {
     /**
      * Information on phone lines added to a device

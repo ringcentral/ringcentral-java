@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Specifies a background image oa a card. Acceptable formats are PNG, JPEG, and GIF
+/**
+ * Specifies a background image oa a card. Acceptable formats are PNG, JPEG, and GIF
+ */
 public class BackgroundImage {
     /**
      * Must be `BackgroundImage`

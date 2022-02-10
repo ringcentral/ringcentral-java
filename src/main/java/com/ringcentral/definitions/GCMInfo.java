@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// GCM data
+/**
+ * GCM data
+ */
 public class GCMInfo {
     /**
      * Notification priority, if the value is &#039;high&#039; then notification is turned on even if the application is in background

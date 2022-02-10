@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation createCustomUserGreeting
+/**
+ * Request body for operation createCustomUserGreeting
+ */
 public class CreateCustomUserGreetingRequest {
     /**
      * Type of a greeting, specifying the case when the greeting is played.

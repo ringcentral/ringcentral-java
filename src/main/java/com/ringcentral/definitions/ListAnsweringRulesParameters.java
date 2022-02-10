@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listAnsweringRules
+/**
+ * Query parameters for operation listAnsweringRules
+ */
 public class ListAnsweringRulesParameters {
     /**
      * Filters custom call handling rules of the extension

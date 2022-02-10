@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Sync type, token and time
+/**
+ * Sync type, token and time
+ */
 public class SyncInfoMessages {
     /**
      * Type of synchronization

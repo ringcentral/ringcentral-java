@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Weekly schedule. If specified, ranges cannot be specified
+/**
+ * Weekly schedule. If specified, ranges cannot be specified
+ */
 public class CompanyAnsweringRuleWeeklyScheduleInfoRequest {
     /**
      * Time interval for a particular day

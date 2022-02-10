@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Notification delivery settings
+/**
+ * Notification delivery settings
+ */
 public class NotificationDeliveryModeRequest {
     /**
      * Notifications transportation provider name

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// resource metadata
+/**
+ * resource metadata
+ */
 public class Meta {
     /**
      * Format: date-time

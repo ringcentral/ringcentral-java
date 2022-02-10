@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Billing information. Returned for device update request if `prestatement` query parameter is set to 'true'
+/**
+ * Billing information. Returned for device update request if `prestatement` query parameter is set to 'true'
+ */
 public class BillingStatementInfo {
     /**
      * Currency code complying with [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) standard

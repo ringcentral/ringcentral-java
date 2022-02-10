@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Performance calls timers
+/**
+ * Performance calls timers. 'callsDurationByQueueSla' timer is only applicable to Queues grouping
+ */
 public class PerformanceCallsTimersResponseOptions {
     /**
      *
@@ -26,7 +28,7 @@ public class PerformanceCallsTimersResponseOptions {
     /**
      *
      */
-    public PerformanceCallsTimer callsDurationByResponseType;
+    public PerformanceCallsTimer callsDurationByType;
     /**
      *
      */
@@ -65,8 +67,8 @@ public class PerformanceCallsTimersResponseOptions {
         return this;
     }
 
-    public PerformanceCallsTimersResponseOptions callsDurationByResponseType(PerformanceCallsTimer callsDurationByResponseType) {
-        this.callsDurationByResponseType = callsDurationByResponseType;
+    public PerformanceCallsTimersResponseOptions callsDurationByType(PerformanceCallsTimer callsDurationByType) {
+        this.callsDurationByType = callsDurationByType;
         return this;
     }
 

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Sender information
+/**
+ * Sender information
+ */
 public class MessageSenderInfo {
     /**
      *

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// HardPhone model information
+/**
+ * HardPhone model information
+ */
 public class DeviceModelInfo {
     /**
      * Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier

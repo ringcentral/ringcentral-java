@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Conditional aggregation of calls based on the overall call length
+/**
+ * Conditional aggregation of calls based on the overall call length
+ */
 public class PerformanceCallsFilterByLength {
     /**
      * Format: int64

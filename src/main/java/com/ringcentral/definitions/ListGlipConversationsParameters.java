@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listGlipConversations
+/**
+ * Query parameters for operation listGlipConversations
+ */
 public class ListGlipConversationsParameters {
     /**
      * Number of conversations to be fetched by one request. The maximum value is 250, by default - 30

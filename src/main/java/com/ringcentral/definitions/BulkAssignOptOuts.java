@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Contains successfull and failed opt-outs
+/**
+ * Contains successfull and failed opt-outs
+ */
 public class BulkAssignOptOuts {
     /**
      * Recipients&#039; phone numbers which opt-outs were successfully added for.

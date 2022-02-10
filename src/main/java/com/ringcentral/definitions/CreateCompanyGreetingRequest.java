@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation createCompanyGreeting
+/**
+ * Request body for operation createCompanyGreeting
+ */
 public class CreateCompanyGreetingRequest {
     /**
      * Type of a greeting, specifying the case when the greeting is played.

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// International Calling permission
+/**
+ * International Calling permission
+ */
 public class PermissionInfoInt {
     /**
      * Specifies if a permission is enabled or not

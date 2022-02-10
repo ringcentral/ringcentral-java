@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a party of a call session
+/**
+ * Information on a party of a call session
+ */
 public class CallParty {
     /**
      * Internal identifier of a party

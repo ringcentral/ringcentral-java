@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded
+/**
+ * Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded
+ */
 public class ForwardingInfo {
     /**
      * Specifies if the user&#039;s softphone(s) are notified before forwarding the incoming call to desk phones and forwarding numbers

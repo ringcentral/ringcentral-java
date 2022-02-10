@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Specifies whether to take a voicemail and who should do it
+/**
+ * Specifies whether to take a voicemail and who should do it
+ */
 public class VoicemailInfo {
     /**
      * If &#039;True&#039; then voicemails are allowed to be received

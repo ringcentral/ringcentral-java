@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation createIVRPrompt
+/**
+ * Request body for operation createIVRPrompt
+ */
 public class CreateIVRPromptRequest {
     /**
      * Audio file that will be used as a prompt. Attachment cannot be empty, only audio files are supported

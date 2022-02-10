@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Device emergency settings
+/**
+ * Device emergency settings
+ */
 public class DeviceEmergencyInfo {
     /**
      *

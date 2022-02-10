@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a language set as regional
+/**
+ * Information on a language set as regional
+ */
 public class RegionalLanguageInfo {
     /**
      * Internal identifier of a language set as regional

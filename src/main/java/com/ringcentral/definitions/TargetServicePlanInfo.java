@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on account target service plan
+/**
+ * Information on account target service plan
+ */
 public class TargetServicePlanInfo {
     /**
      * Internal identifier of a target service plan

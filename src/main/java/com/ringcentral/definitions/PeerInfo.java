@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Peer session/party details. Valid in 'Gone' state of a call
+/**
+ * Peer session/party details. Valid in 'Gone' state of a call
+ */
 public class PeerInfo {
     /**
      *

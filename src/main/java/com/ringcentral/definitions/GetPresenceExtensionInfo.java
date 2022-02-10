@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on extension, for which this presence data is returned
+/**
+ * Information on extension, for which this presence data is returned
+ */
 public class GetPresenceExtensionInfo {
     /**
      * Internal identifier of an extension

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listDevicesAutomaticLocationUpdates
+/**
+ * Query parameters for operation listDevicesAutomaticLocationUpdates
+ */
 public class ListDevicesAutomaticLocationUpdatesParameters {
     /**
      * Internal identifier of a site. To filter devices of Main Site (Company) `main-site` must be specified. Supported only If Multi-Site feature is enabled for the account

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation authorize
+/**
+ * Request body for operation authorize
+ */
 public class AuthorizeRequest {
     /**
      * Determines authorization flow: **code** - Authorization Code, **token** - Implicit Grant

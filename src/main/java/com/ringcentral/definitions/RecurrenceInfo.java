@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Meeting recurrence information
+/**
+ * Meeting recurrence information
+ */
 public class RecurrenceInfo {
     /**
      * Recurrence time frame

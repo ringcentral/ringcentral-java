@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation updateDevice
+/**
+ * Query parameters for operation updateDevice
+ */
 public class UpdateDeviceParameters {
     /**
      *

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listLocations
+/**
+ * Query parameters for operation listLocations
+ */
 public class ListLocationsParameters {
     /**
      * Sorts results by the property specified

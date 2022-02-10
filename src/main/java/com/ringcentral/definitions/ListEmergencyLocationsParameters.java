@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listEmergencyLocations
+/**
+ * Query parameters for operation listEmergencyLocations
+ */
 public class ListEmergencyLocationsParameters {
     /**
      * Filters entries containing the specified substring in address and name fields. The characters range is 0-64; not case-sensitive. If empty then the filter is ignored

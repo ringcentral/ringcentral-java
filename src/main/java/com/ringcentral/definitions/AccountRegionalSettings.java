@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Account level region data (web service Auto-Receptionist settings)
+/**
+ * Account level region data (web service Auto-Receptionist settings)
+ */
 public class AccountRegionalSettings {
     /**
      *

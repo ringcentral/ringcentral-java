@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on navigation
+/**
+ * Information on navigation
+ */
 public class DeviceProvisioningNavigationInfo {
     /**
      *

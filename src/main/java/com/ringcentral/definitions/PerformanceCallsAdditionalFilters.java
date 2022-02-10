@@ -1,31 +1,33 @@
 package com.ringcentral.definitions;
 
 
-// Optional filters that limit the scope of calls to be aggregated. Multiple values can be joined via 'AND'
-public class PerformanceCallsFilters {
+/**
+ * Optional filters that limit the scope of calls to be aggregated. Multiple values can be joined via 'AND'
+ */
+public class PerformanceCallsAdditionalFilters {
     /**
-     * Specifies whether a call is inbound or outbound relative to the account. Not applicable to internal calls
+     * Specifies whether the call was inbound or outbound relative to the scope specified in grouping object. Not applicable to internal calls with company scope (when grouping is not specified)
      * Enum: Inbound, Outbound
      */
     public String direction;
     /**
-     * Specifies whether a call was originated within the account or outside of it
+     * Specifies whether an external party was present in the initial segment of the call
      * Enum: Internal, External
      */
     public String origin;
     /**
      * Aggregation of calls by the first response
-     * Enum: Answered, NotAnswered
+     * Enum: Answered, NotAnswered, Connected, NotConnected
      */
     public String callResponse;
     /**
-     * List of call response types. Multiple values can be joined via &#039;OR&#039;
-     * Enum: InboundDirect, ParkRetrievals, QueueCalls, Transferred, Missed, Accepted
+     * List of call response types. This filter allows to get aggregation of calls based on how the call started from the callee perspective. Multiple values can be joined via &#039;OR&#039;. If the call is outbound relative to the grouping scope, `callType` is Outbound
+     * Enum: Direct, Outbound, ParkRetrieval, FromQueue, Transferred
      */
-    public String[] callResponseType;
+    public String[] callType;
     /**
      * Aggregation of calls by the nature of call result. Multiple values can be joined via &#039;OR&#039;
-     * Enum: Completed, Abandoned, VoiceMail, Connected
+     * Enum: Completed, Abandoned, VoiceMail, Unknown, Missed, Accepted
      */
     public String[] callResult;
     /**
@@ -65,75 +67,75 @@ public class PerformanceCallsFilters {
      * This filter allows to get aggregation of calls that were either within or out of queue SLA. Only applicable to Queues grouping
      * Enum: InSla, OutSla
      */
-    public String callSla;
+    public String queueSla;
 
-    public PerformanceCallsFilters direction(String direction) {
+    public PerformanceCallsAdditionalFilters direction(String direction) {
         this.direction = direction;
         return this;
     }
 
-    public PerformanceCallsFilters origin(String origin) {
+    public PerformanceCallsAdditionalFilters origin(String origin) {
         this.origin = origin;
         return this;
     }
 
-    public PerformanceCallsFilters callResponse(String callResponse) {
+    public PerformanceCallsAdditionalFilters callResponse(String callResponse) {
         this.callResponse = callResponse;
         return this;
     }
 
-    public PerformanceCallsFilters callResponseType(String[] callResponseType) {
-        this.callResponseType = callResponseType;
+    public PerformanceCallsAdditionalFilters callType(String[] callType) {
+        this.callType = callType;
         return this;
     }
 
-    public PerformanceCallsFilters callResult(String[] callResult) {
+    public PerformanceCallsAdditionalFilters callResult(String[] callResult) {
         this.callResult = callResult;
         return this;
     }
 
-    public PerformanceCallsFilters callSegments(CallSegmentFilter[] callSegments) {
+    public PerformanceCallsAdditionalFilters callSegments(CallSegmentFilter[] callSegments) {
         this.callSegments = callSegments;
         return this;
     }
 
-    public PerformanceCallsFilters callActions(CallPerformanceActionInfo[] callActions) {
+    public PerformanceCallsAdditionalFilters callActions(CallPerformanceActionInfo[] callActions) {
         this.callActions = callActions;
         return this;
     }
 
-    public PerformanceCallsFilters companyHours(String companyHours) {
+    public PerformanceCallsAdditionalFilters companyHours(String companyHours) {
         this.companyHours = companyHours;
         return this;
     }
 
-    public PerformanceCallsFilters callDuration(PerformanceCallsFilterByLength callDuration) {
+    public PerformanceCallsAdditionalFilters callDuration(PerformanceCallsFilterByLength callDuration) {
         this.callDuration = callDuration;
         return this;
     }
 
-    public PerformanceCallsFilters timeSpent(PerformanceCallsFilterTimeSpentByMailbox timeSpent) {
+    public PerformanceCallsAdditionalFilters timeSpent(PerformanceCallsFilterTimeSpentByMailbox timeSpent) {
         this.timeSpent = timeSpent;
         return this;
     }
 
-    public PerformanceCallsFilters callerExtensionIds(String[] callerExtensionIds) {
+    public PerformanceCallsAdditionalFilters callerExtensionIds(String[] callerExtensionIds) {
         this.callerExtensionIds = callerExtensionIds;
         return this;
     }
 
-    public PerformanceCallsFilters calledExtensionIds(String[] calledExtensionIds) {
+    public PerformanceCallsAdditionalFilters calledExtensionIds(String[] calledExtensionIds) {
         this.calledExtensionIds = calledExtensionIds;
         return this;
     }
 
-    public PerformanceCallsFilters calledNumbers(String[] calledNumbers) {
+    public PerformanceCallsAdditionalFilters calledNumbers(String[] calledNumbers) {
         this.calledNumbers = calledNumbers;
         return this;
     }
 
-    public PerformanceCallsFilters callSla(String callSla) {
-        this.callSla = callSla;
+    public PerformanceCallsAdditionalFilters queueSla(String queueSla) {
+        this.queueSla = queueSla;
         return this;
     }
 }

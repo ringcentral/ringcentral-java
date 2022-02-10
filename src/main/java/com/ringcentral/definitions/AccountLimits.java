@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Limits which are effective for the account
+/**
+ * Limits which are effective for the account
+ */
 public class AccountLimits {
     /**
      * Max number of free softphone phone lines per user extension

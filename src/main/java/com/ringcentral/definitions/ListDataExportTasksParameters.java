@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listDataExportTasks
+/**
+ * Query parameters for operation listDataExportTasks
+ */
 public class ListDataExportTasksParameters {
     /**
      * Status of the task(s) to be returned. Multiple values are supported

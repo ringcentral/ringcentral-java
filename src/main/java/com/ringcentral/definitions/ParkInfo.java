@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Call park information
+/**
+ * Call park information
+ */
 public class ParkInfo {
     /**
      * Call park identifier

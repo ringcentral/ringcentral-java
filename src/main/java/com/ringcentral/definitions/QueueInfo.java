@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Queue settings applied for department (call queue) extension type, with the 'AgentQueue' value specified as a call handling action
+/**
+ * Queue settings applied for department (call queue) extension type, with the 'AgentQueue' value specified as a call handling action
+ */
 public class QueueInfo {
     /**
      * Specifies how calls are transferred to group members

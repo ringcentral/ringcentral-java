@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Attachment is a file to be uploaded
+/**
+ * Attachment is a file to be uploaded
+ */
 public class Attachment {
     /**
      * Filename with extension

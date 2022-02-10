@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// HardPhone model information
+/**
+ * HardPhone model information
+ */
 public class AutomaticLocationUpdatesModelInfo {
     /**
      * Device model identifier

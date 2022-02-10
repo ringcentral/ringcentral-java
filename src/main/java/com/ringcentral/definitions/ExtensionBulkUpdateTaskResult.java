@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Result record on multiple extension update task
+/**
+ * Result record on multiple extension update task
+ */
 public class ExtensionBulkUpdateTaskResult {
     /**
      *

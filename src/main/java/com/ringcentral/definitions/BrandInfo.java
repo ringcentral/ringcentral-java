@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on account brand
+/**
+ * Information on account brand
+ */
 public class BrandInfo {
     /**
      * Internal identifier of a brand

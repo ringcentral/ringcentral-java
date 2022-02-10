@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a greeting language. Supported for types 'StopRecording', 'StartRecording', 'AutomaticRecording'
+/**
+ * Information on a greeting language. Supported for types 'StopRecording', 'StartRecording', 'AutomaticRecording'
+ */
 public class CustomCompanyGreetingLanguageInfo {
     /**
      * Internal identifier of a greeting language

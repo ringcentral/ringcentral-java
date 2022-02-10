@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Recipient data
+/**
+ * Recipient data
+ */
 public class RecipientInfo {
     /**
      * Link to a recipient extension resource

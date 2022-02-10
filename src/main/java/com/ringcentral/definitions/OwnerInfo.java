@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Deprecated. Information on call owner
+/**
+ * Deprecated. Information on call owner
+ */
 public class OwnerInfo {
     /**
      * Internal identifier of an account that monitors a call

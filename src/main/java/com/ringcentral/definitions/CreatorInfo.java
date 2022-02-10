@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Task creator information
+/**
+ * Task creator information
+ */
 public class CreatorInfo {
     /**
      * Internal identifier of a user

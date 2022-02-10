@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Call queue information
+/**
+ * Call queue information
+ */
 public class CallQueueId {
     /**
      * Internal identifier of a call queue

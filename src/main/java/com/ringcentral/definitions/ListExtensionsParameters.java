@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listExtensions
+/**
+ * Query parameters for operation listExtensions
+ */
 public class ListExtensionsParameters {
     /**
      * Number of extension to be retrieved

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readGlipEvents
+/**
+ * Query parameters for operation readGlipEvents
+ */
 public class ReadGlipEventsParameters {
     /**
      * Number of groups to be fetched by one request. The maximum value is 250, by default - 30.

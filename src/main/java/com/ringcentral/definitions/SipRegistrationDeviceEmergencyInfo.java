@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Emergency response location settings of a device
+/**
+ * Emergency response location settings of a device
+ */
 public class SipRegistrationDeviceEmergencyInfo {
     /**
      *

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation updateUserProfileImage
+/**
+ * Request body for operation updateUserProfileImage
+ */
 public class UpdateUserProfileImageRequest {
     /**
      *

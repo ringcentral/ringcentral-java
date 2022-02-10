@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on profile image
+/**
+ * Information on profile image
+ */
 public class ProfileImageInfo {
     /**
      * Link to a profile image. If an image is not uploaded for an extension, only uri is returned

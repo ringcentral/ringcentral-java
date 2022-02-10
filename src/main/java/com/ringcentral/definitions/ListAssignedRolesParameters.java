@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listAssignedRoles
+/**
+ * Query parameters for operation listAssignedRoles
+ */
 public class ListAssignedRolesParameters {
     /**
      *

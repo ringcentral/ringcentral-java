@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Extension timezone information
+/**
+ * Extension timezone information
+ */
 public class TimezoneInfo {
     /**
      * Internal identifier of a timezone

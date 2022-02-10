@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listRecentChats
+/**
+ * Query parameters for operation listRecentChats
+ */
 public class ListRecentChatsParameters {
     /**
      * Type of chats to be fetched. By default all chat types are returned

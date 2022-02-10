@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Optional. Dialing plan country data. If not specified, then extension home country is applied by default
+/**
+ * Optional. Dialing plan country data. If not specified, then extension home country is applied by default
+ */
 public class MakeRingOutCoutryInfo {
     /**
      * Dialing plan country identifier

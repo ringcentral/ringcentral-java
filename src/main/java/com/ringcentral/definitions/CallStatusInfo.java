@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Status data of a call session
+/**
+ * Status data of a call session
+ */
 public class CallStatusInfo {
     /**
      * Status code of a call

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Call session information
+/**
+ * Call session information
+ */
 public class CallSessionObject {
     /**
      * Internal identifier of a call session

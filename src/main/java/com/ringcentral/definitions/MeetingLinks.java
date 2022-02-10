@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Meeting links
+/**
+ * Meeting links
+ */
 public class MeetingLinks {
     /**
      *

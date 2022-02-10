@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Site Data
+/**
+ * Site Data
+ */
 public class ContactDirectorySiteInfo {
     /**
      * Internal Identifier of a site

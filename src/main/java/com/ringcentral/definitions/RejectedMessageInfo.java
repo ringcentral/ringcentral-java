@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information about the message that failed to be sent
+/**
+ * Information about the message that failed to be sent
+ */
 public class RejectedMessageInfo {
     /**
      * Index of the rejected message in the request

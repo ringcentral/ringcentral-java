@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Primary/additional CQ information
+/**
+ * Primary/additional CQ information
+ */
 public class CallInfoCQ {
     /**
      *

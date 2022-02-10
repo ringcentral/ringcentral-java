@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Returned if *Meetings* feature is switched on
+/**
+ * Returned if *Meetings* feature is switched on
+ */
 public class UnifiedPresenceMeeting {
     /**
      * Meeting status calculated from all user`s meetings

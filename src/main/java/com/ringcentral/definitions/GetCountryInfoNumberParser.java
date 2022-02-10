@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a user home country || Information on a country the phone number belongs to
+/**
+ * Information on a user home country || Information on a country the phone number belongs to
+ */
 public class GetCountryInfoNumberParser {
     /**
      * Internal identifier of a country

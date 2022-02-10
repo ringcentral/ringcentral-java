@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Result record on adding multiple contacts to an extension. Returned for completed tasks
+/**
+ * Result record on adding multiple contacts to an extension. Returned for completed tasks
+ */
 public class AddressBookBulkUploadTaskResult {
     /**
      * Internal identifier of an extension

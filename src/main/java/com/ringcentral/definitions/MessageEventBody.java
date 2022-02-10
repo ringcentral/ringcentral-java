@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Notification payload body
+/**
+ * Notification payload body
+ */
 public class MessageEventBody {
     /**
      * Internal identifier of an extension

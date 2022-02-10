@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listExtensionGrants
+/**
+ * Query parameters for operation listExtensionGrants
+ */
 public class ListExtensionGrantsParameters {
     /**
      * Type of extension to be returned. Multiple values are supported. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology

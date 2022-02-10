@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on extension
+/**
+ * Information on extension
+ */
 public class ExtensionInfoCallLog {
     /**
      * Internal identifier of an extension

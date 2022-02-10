@@ -7176,7 +7176,7 @@ rc.revoke();
 
 
 ## aggregatePerformanceReportCalls
-Create Call Performance Report
+Access Call Performance Aggregates
 
 Name|Value
 -|-
@@ -7201,7 +7201,7 @@ rc.revoke();
 
 
 ## performanceReportCallsTimeline
-Create Timeline Call Performance Report
+Access Call Performance Timeline
 
 Name|Value
 -|-

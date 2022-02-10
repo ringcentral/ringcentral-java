@@ -25,6 +25,11 @@ public class SuperviseCallSessionRequest {
      * Default: true
      */
     public Boolean autoAnswer;
+    /**
+     * Specifies session description protocol setting
+     * Enum: sendOnly, sendRecv
+     */
+    public String mediaSDP;
 
     public SuperviseCallSessionRequest mode(String mode) {
         this.mode = mode;
@@ -43,6 +48,11 @@ public class SuperviseCallSessionRequest {
 
     public SuperviseCallSessionRequest autoAnswer(Boolean autoAnswer) {
         this.autoAnswer = autoAnswer;
+        return this;
+    }
+
+    public SuperviseCallSessionRequest mediaSDP(String mediaSDP) {
+        this.mediaSDP = mediaSDP;
         return this;
     }
 }

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information specified in request
+/**
+ * Information specified in request
+ */
 public class SpecificInfo {
     /**
      * Starting time for data collection

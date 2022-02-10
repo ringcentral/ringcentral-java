@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listStandardUserRole
+/**
+ * Query parameters for operation listStandardUserRole
+ */
 public class ListStandardUserRoleParameters {
     /**
      * Default: 1

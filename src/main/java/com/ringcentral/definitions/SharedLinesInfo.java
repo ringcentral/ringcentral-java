@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// SharedLines call handling action settings
+/**
+ * SharedLines call handling action settings
+ */
 public class SharedLinesInfo {
     /**
      * Number of seconds to wait before forwarding unanswered calls. The value range is 10 - 80

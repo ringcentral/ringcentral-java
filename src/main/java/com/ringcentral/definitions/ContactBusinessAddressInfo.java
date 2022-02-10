@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Extension user business address. The default is Company (Auto-Receptionist) settings
+/**
+ * Extension user business address. The default is Company (Auto-Receptionist) settings
+ */
 public class ContactBusinessAddressInfo {
     /**
      * Country name of an extension user company

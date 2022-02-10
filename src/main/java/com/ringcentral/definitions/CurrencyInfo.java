@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Currency information
+/**
+ * Currency information
+ */
 public class CurrencyInfo {
     /**
      * Internal identifier of a currency

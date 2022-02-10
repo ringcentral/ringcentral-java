@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Site data
+/**
+ * Site data
+ */
 public class DeviceSiteInfo {
     /**
      * Internal identifier of a site

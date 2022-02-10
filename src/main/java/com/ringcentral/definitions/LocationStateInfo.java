@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on the state this location belongs to
+/**
+ * Information on the state this location belongs to
+ */
 public class LocationStateInfo {
     /**
      * Internal identifier of a state

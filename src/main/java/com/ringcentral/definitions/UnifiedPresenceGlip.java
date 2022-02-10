@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Returned if *Glip* feature is switched on
+/**
+ * Returned if *Glip* feature is switched on
+ */
 public class UnifiedPresenceGlip {
     /**
      * Glip connection status calculated from all user&#039;s apps. Returned always for the requester&#039;s extension; returned for another users if their glip visibility is set to &#039;Visible&#039;

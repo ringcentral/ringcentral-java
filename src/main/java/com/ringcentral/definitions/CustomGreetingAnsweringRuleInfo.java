@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on an answering rule that the greeting is applied to
+/**
+ * Information on an answering rule that the greeting is applied to
+ */
 public class CustomGreetingAnsweringRuleInfo {
     /**
      * Canonical URI of an answering rule

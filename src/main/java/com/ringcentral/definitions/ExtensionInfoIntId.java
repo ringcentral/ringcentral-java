@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// This attribute can be omitted for unassigned devices
+/**
+ * This attribute can be omitted for unassigned devices
+ */
 public class ExtensionInfoIntId {
     /**
      * Internal identifier of an extension

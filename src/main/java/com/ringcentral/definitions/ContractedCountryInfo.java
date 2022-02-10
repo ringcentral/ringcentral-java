@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on the contracted country of account
+/**
+ * Information on the contracted country of account
+ */
 public class ContractedCountryInfo {
     /**
      * Identifier of a contracted country

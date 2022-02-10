@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation deleteExtensionEmergencyLocation
+/**
+ * Query parameters for operation deleteExtensionEmergencyLocation
+ */
 public class DeleteExtensionEmergencyLocationParameters {
     /**
      * Flag indicating that only validation of Emergency Response Locations to be deleted is required.

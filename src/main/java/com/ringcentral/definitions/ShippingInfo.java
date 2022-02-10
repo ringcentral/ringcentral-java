@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Shipping information, according to which devices (in case of  HardPhone ) or e911 stickers (in case of  SoftPhone  and  OtherPhone ) will be delivered to the customer
+/**
+ * Shipping information, according to which devices (in case of  HardPhone ) or e911 stickers (in case of  SoftPhone  and  OtherPhone ) will be delivered to the customer
+ */
 public class ShippingInfo {
     /**
      * Shipping status of the order item. It is set to &#039;Initial&#039; when the order is submitted. Then it is changed to &#039;Accepted&#039; when a distributor starts processing the order. Finally the status is changed to &#039;Shipped&#039; which means that distributor shipped the device.

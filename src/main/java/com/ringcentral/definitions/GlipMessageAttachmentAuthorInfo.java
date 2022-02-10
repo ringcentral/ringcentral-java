@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information about the author
+/**
+ * Information about the author
+ */
 public class GlipMessageAttachmentAuthorInfo {
     /**
      * Name of a message author

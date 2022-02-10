@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on the extension, to which the phone number is assigned. Returned only for the request of Account phone number list
+/**
+ * Information on the extension, to which the phone number is assigned. Returned only for the request of Account phone number list
+ */
 public class DeviceProvisioningExtensionInfo {
     /**
      * Internal identifier of an extension

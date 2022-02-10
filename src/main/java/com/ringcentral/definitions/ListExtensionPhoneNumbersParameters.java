@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listExtensionPhoneNumbers
+/**
+ * Query parameters for operation listExtensionPhoneNumbers
+ */
 public class ListExtensionPhoneNumbersParameters {
     /**
      * Status of a phone number. Multiple values are supported

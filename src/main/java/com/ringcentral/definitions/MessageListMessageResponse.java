@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Infomation on a message returned within the specified batch
+/**
+ * Infomation on a message returned within the specified batch
+ */
 public class MessageListMessageResponse {
     /**
      * Internal identifier of a message

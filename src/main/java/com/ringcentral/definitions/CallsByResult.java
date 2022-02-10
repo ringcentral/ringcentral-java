@@ -4,42 +4,62 @@ package com.ringcentral.definitions;
 public class CallsByResult {
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long completed;
+    public Double completed;
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long abandoned;
+    public Double abandoned;
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long voiceMail;
+    public Double voicemail;
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long connected;
+    public Double missed;
+    /**
+     * Required
+     * Format: double
+     */
+    public Double accepted;
+    /**
+     * Required
+     * Format: double
+     */
+    public Double unknown;
 
-    public CallsByResult completed(Long completed) {
+    public CallsByResult completed(Double completed) {
         this.completed = completed;
         return this;
     }
 
-    public CallsByResult abandoned(Long abandoned) {
+    public CallsByResult abandoned(Double abandoned) {
         this.abandoned = abandoned;
         return this;
     }
 
-    public CallsByResult voiceMail(Long voiceMail) {
-        this.voiceMail = voiceMail;
+    public CallsByResult voicemail(Double voicemail) {
+        this.voicemail = voicemail;
         return this;
     }
 
-    public CallsByResult connected(Long connected) {
-        this.connected = connected;
+    public CallsByResult missed(Double missed) {
+        this.missed = missed;
+        return this;
+    }
+
+    public CallsByResult accepted(Double accepted) {
+        this.accepted = accepted;
+        return this;
+    }
+
+    public CallsByResult unknown(Double unknown) {
+        this.unknown = unknown;
         return this;
     }
 }

@@ -37,7 +37,8 @@ public class CompanyPhoneNumberInfo {
      */
     public String phoneNumber;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. If the value is &#039;Pending&#039; it is an external number not yet ported to RingCentral.
+     * Enum: Normal, Pending, PortedIn, Temporary
      */
     public String status;
     /**

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listStandardGreetings
+/**
+ * Query parameters for operation listStandardGreetings
+ */
 public class ListStandardGreetingsParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted.

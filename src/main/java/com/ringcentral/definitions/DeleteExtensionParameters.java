@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation deleteExtension
+/**
+ * Query parameters for operation deleteExtension
+ */
 public class DeleteExtensionParameters {
     /**
      *

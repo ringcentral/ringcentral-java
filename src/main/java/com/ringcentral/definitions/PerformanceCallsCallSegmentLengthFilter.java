@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class CallSegmentLength {
+public class PerformanceCallsCallSegmentLengthFilter {
     /**
      * Format: int64
      */
@@ -11,12 +11,12 @@ public class CallSegmentLength {
      */
     public Long maxValueSeconds;
 
-    public CallSegmentLength minValueSeconds(Long minValueSeconds) {
+    public PerformanceCallsCallSegmentLengthFilter minValueSeconds(Long minValueSeconds) {
         this.minValueSeconds = minValueSeconds;
         return this;
     }
 
-    public CallSegmentLength maxValueSeconds(Long maxValueSeconds) {
+    public PerformanceCallsCallSegmentLengthFilter maxValueSeconds(Long maxValueSeconds) {
         this.maxValueSeconds = maxValueSeconds;
         return this;
     }

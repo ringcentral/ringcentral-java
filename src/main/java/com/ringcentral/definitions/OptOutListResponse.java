@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Opt-out phone numbers information
+/**
+ * Opt-out phone numbers information
+ */
 public class OptOutListResponse {
     /**
      * List of individual opt-out number records

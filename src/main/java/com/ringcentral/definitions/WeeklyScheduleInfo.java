@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Weekly schedule
+/**
+ * Weekly schedule
+ */
 public class WeeklyScheduleInfo {
     /**
      * Time intervals for a particular day

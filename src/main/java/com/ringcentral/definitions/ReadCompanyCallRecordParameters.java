@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readCompanyCallRecord
+/**
+ * Query parameters for operation readCompanyCallRecord
+ */
 public class ReadCompanyCallRecordParameters {
     /**
      * View of call records. The view value specified for &#039;FSync&#039; will also be applied for &#039;ISync&#039; by default, since it cannot be changed for ISync

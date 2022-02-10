@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// The results of adding opt-outs and opt-ins
+/**
+ * The results of adding opt-outs and opt-ins
+ */
 public class OptOutBulkAssignResponse {
     /**
      *

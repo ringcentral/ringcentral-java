@@ -3,7 +3,9 @@ package com.ringcentral.definitions;
 import com.google.gson.annotations.SerializedName;
 
 
-// Information on a notification
+/**
+ * Information on a notification
+ */
 public class NotificationInfo {
     /**
      *

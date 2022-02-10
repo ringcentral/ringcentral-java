@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Performance calls counters
+/**
+ * Performance calls counters
+ */
 public class PerformanceCallsCountersResponseOptions {
     /**
      *
@@ -22,7 +24,7 @@ public class PerformanceCallsCountersResponseOptions {
     /**
      *
      */
-    public PerformanceCallsCounter callsByResponseType;
+    public PerformanceCallsCounter callsByType;
     /**
      *
      */
@@ -64,8 +66,8 @@ public class PerformanceCallsCountersResponseOptions {
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsByResponseType(PerformanceCallsCounter callsByResponseType) {
-        this.callsByResponseType = callsByResponseType;
+    public PerformanceCallsCountersResponseOptions callsByType(PerformanceCallsCounter callsByType) {
+        this.callsByType = callsByType;
         return this;
     }
 

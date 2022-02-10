@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listGlipTeams
+/**
+ * Query parameters for operation listGlipTeams
+ */
 public class ListGlipTeamsParameters {
     /**
      * Number of teams to be fetched by one request. The maximum value is 250, by default - 30

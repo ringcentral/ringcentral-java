@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listCallQueues
+/**
+ * Query parameters for operation listCallQueues
+ */
 public class ListCallQueuesParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

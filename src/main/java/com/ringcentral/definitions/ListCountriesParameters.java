@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listCountries
+/**
+ * Query parameters for operation listCountries
+ */
 public class ListCountriesParameters {
     /**
      * Specifies whether login with the phone numbers of this country is enabled or not

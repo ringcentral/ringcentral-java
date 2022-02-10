@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readUserFeatures
+/**
+ * Query parameters for operation readUserFeatures
+ */
 public class ReadUserFeaturesParameters {
     /**
      *

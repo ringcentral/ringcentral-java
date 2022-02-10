@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a blocked/allowed phone number
+/**
+ * Information on a blocked/allowed phone number
+ */
 public class BlockedAllowedPhoneNumberInfo {
     /**
      * Link to a blocked/allowed phone number

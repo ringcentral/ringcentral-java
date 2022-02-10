@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Emergency response location information
+/**
+ * Emergency response location information
+ */
 public class ERLLocationInfo {
     /**
      * Internal identifier of an emergency response location

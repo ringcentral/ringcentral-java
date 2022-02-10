@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation aggregatePerformanceReportCalls
+/**
+ * Query parameters for operation aggregatePerformanceReportCalls
+ */
 public class AggregatePerformanceReportCallsParameters {
     /**
      * Page number

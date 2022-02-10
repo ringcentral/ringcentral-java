@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Call queue member information
+/**
+ * Call queue member information
+ */
 public class CallQueueMemberId {
     /**
      * Internal identifier of an extension - queue member

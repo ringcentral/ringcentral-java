@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listAutomaticLocationUpdatesUsers
+/**
+ * Query parameters for operation listAutomaticLocationUpdatesUsers
+ */
 public class ListAutomaticLocationUpdatesUsersParameters {
     /**
      * Extension type. Multiple values are supported

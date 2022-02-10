@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Canonical URI for the corresponding page of the list
+/**
+ * Canonical URI for the corresponding page of the list
+ */
 public class DeviceProvisioningNavigationInfoUri {
     /**
      *

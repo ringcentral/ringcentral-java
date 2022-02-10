@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// GCM data
+/**
+ * GCM data
+ */
 public class GCMData {
     /**
      * Event filter URI

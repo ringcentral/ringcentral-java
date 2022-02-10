@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listUserRoles
+/**
+ * Query parameters for operation listUserRoles
+ */
 public class ListUserRolesParameters {
     /**
      * Specifies whether to return custom or predefined only roles. If not specified, all roles are returned

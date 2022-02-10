@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information about a call party that is monitored
+/**
+ * Information about a call party that is monitored
+ */
 public class SupervisePartyTo {
     /**
      * Phone number of a party

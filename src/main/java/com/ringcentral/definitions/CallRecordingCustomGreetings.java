@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Returns data on call recording custom greetings.
+/**
+ * Returns data on call recording custom greetings.
+ */
 public class CallRecordingCustomGreetings {
     /**
      *

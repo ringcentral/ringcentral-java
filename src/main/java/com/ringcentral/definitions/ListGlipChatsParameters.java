@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listGlipChats
+/**
+ * Query parameters for operation listGlipChats
+ */
 public class ListGlipChatsParameters {
     /**
      * Type of chats to be fetched. By default all type of chats will be fetched

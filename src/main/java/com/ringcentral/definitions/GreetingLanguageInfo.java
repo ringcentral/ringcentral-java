@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on language used for telephony greetings
+/**
+ * Information on language used for telephony greetings
+ */
 public class GreetingLanguageInfo {
     /**
      * Internal identifier of a greeting language

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation parsePhoneNumber
+/**
+ * Query parameters for operation parsePhoneNumber
+ */
 public class ParsePhoneNumberParameters {
     /**
      * Internal identifier of a home country. The default value is ISO code (ISO 3166) of the user&#039;s home country or brand country, if the user is undefined

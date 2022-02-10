@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Session origin details
+/**
+ * Session origin details
+ */
 public class OriginInfo {
     /**
      * Session origin type

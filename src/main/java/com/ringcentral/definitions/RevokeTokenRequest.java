@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation revokeToken
+/**
+ * Request body for operation revokeToken
+ */
 public class RevokeTokenRequest {
     /**
      *

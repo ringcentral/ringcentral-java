@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listCallRecordingCustomGreetings
+/**
+ * Query parameters for operation listCallRecordingCustomGreetings
+ */
 public class ListCallRecordingCustomGreetingsParameters {
     /**
      * Enum: StartRecording, StopRecording, AutomaticRecording

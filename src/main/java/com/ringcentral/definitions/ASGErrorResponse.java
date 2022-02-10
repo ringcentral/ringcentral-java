@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Error response
+/**
+ * Error response
+ */
 public class ASGErrorResponse {
     /**
      * Error code

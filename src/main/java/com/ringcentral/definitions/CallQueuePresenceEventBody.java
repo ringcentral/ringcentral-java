@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Notification payload body
+/**
+ * Notification payload body
+ */
 public class CallQueuePresenceEventBody {
     /**
      * Agent extension ID

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation syncMessages
+/**
+ * Query parameters for operation syncMessages
+ */
 public class SyncMessagesParameters {
     /**
      * Conversation identifier for the resulting messages. Meaningful for SMS and Pager messages only.

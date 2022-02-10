@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Reason for the feature unavailability. Returned only if `available` is set to 'false'
+/**
+ * Reason for the feature unavailability. Returned only if `available` is set to 'false'
+ */
 public class ReasonInfo {
     /**
      * Reason code

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Account data of an extension
+/**
+ * Account data of an extension
+ */
 public class CompanyDirectoryAccountInfo {
     /**
      * Internal identifier of an account

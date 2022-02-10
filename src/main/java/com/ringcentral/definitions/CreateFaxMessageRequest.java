@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Request body for operation createFaxMessage
+/**
+ * Request body for operation createFaxMessage
+ */
 public class CreateFaxMessageRequest {
     /**
      * Resolution of Fax

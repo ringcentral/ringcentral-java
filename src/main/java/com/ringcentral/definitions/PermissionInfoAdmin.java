@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Admin permission
+/**
+ * Admin permission
+ */
 public class PermissionInfoAdmin {
     /**
      * Specifies if a permission is enabled or not

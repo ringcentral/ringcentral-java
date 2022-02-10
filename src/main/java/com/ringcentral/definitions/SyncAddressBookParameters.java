@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation syncAddressBook
+/**
+ * Query parameters for operation syncAddressBook
+ */
 public class SyncAddressBookParameters {
     /**
      * Type of synchronization

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listPagingGroupDevices
+/**
+ * Query parameters for operation listPagingGroupDevices
+ */
 public class ListPagingGroupDevicesParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// For 'Audio' mode only. Prompt media reference
+/**
+ * For 'Audio' mode only. Prompt media reference
+ */
 public class AudioPromptInfo {
     /**
      * Link to a prompt audio file

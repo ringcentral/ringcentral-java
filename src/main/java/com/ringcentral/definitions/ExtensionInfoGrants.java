@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Extension information
+/**
+ * Extension information
+ */
 public class ExtensionInfoGrants {
     /**
      * Internal identifier of an extension

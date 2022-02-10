@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Contains successfull and failed opt-ins
+/**
+ * Contains successfull and failed opt-ins
+ */
 public class BulkAssignOptIns {
     /**
      * Recipients&#039; phone numbers which opt-ins were successfully added for.

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation updateMessage
+/**
+ * Query parameters for operation updateMessage
+ */
 public class UpdateMessageParameters {
     /**
      *

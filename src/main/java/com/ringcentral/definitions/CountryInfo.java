@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Country information
+/**
+ * Country information
+ */
 public class CountryInfo {
     /**
      * Internal identifier of a home country

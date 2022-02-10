@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listFaxCoverPages
+/**
+ * Query parameters for operation listFaxCoverPages
+ */
 public class ListFaxCoverPagesParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

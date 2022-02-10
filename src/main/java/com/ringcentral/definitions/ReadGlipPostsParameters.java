@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readGlipPosts
+/**
+ * Query parameters for operation readGlipPosts
+ */
 public class ReadGlipPostsParameters {
     /**
      * Max number of posts to be fetched by one request (not more than 250)

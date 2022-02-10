@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Detailed information on a message
+/**
+ * Detailed information on a message
+ */
 public class MessageDetailsResponse {
     /**
      * Internal identifier of a message

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation deleteMessage
+/**
+ * Query parameters for operation deleteMessage
+ */
 public class DeleteMessageParameters {
     /**
      * If the value is &#039;True&#039;, then the message is purged immediately with all the attachments

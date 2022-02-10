@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Custom greeting data
+/**
+ * Custom greeting data
+ */
 public class CallRecordingCustomGreetingData {
     /**
      * Link to a custom company greeting

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readUserPresenceStatus
+/**
+ * Query parameters for operation readUserPresenceStatus
+ */
 public class ReadUserPresenceStatusParameters {
     /**
      * Whether to return detailed telephony state

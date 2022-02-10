@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listTimezones
+/**
+ * Query parameters for operation listTimezones
+ */
 public class ListTimezonesParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted

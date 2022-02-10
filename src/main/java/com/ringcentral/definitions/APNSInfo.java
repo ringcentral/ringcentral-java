@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// APNS (Apple Push Notification Service) information
+/**
+ * APNS (Apple Push Notification Service) information
+ */
 public class APNSInfo {
     /**
      *

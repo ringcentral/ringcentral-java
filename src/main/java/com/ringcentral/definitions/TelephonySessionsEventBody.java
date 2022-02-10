@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Notification payload body
+/**
+ * Notification payload body
+ */
 public class TelephonySessionsEventBody {
     /**
      * Order number of a notification to state the chronology

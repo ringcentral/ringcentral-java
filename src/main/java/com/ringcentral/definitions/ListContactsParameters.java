@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listContacts
+/**
+ * Query parameters for operation listContacts
+ */
 public class ListContactsParameters {
     /**
      * If specified, only contacts whose First name or Last name start with the mentioned substring are returned. Case-insensitive

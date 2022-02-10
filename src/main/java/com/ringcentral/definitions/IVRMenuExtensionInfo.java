@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// For 'Connect' or 'Voicemail' actions only. Extension reference
+/**
+ * For 'Connect' or 'Voicemail' actions only. Extension reference
+ */
 public class IVRMenuExtensionInfo {
     /**
      * Link to an extension resource

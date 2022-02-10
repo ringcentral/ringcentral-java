@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Account service information, including brand, service plan and billing plan
+/**
+ * Account service information, including brand, service plan and billing plan
+ */
 public class ServiceInfo {
     /**
      * Canonical URI of a service info resource

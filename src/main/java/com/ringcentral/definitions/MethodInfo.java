@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Shipping method information
+/**
+ * Shipping method information
+ */
 public class MethodInfo {
     /**
      * Method identifier. The default value is 1 (Ground)

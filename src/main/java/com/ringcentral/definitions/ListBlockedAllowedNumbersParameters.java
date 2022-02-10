@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listBlockedAllowedNumbers
+/**
+ * Query parameters for operation listBlockedAllowedNumbers
+ */
 public class ListBlockedAllowedNumbersParameters {
     /**
      *

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation readCallSessionStatus
+/**
+ * Query parameters for operation readCallSessionStatus
+ */
 public class ReadCallSessionStatusParameters {
     /**
      * The date and time of a call session latest change

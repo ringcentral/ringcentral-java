@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on a task for adding multiple contacts to multiple extensions
+/**
+ * Information on a task for adding multiple contacts to multiple extensions
+ */
 public class AddressBookBulkUploadResponse {
     /**
      * Internal identifier of a task

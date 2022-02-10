@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded
+/**
+ * Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded
+ */
 public class ForwardingInfoCreateRuleRequest {
     /**
      * Specifies if the first ring on desktop/mobile apps is enabled. The default value is &#039;True&#039;

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Scheduling meeting settings locked on account level || Settings defining how to schedule user meetingsxs
+/**
+ * Scheduling meeting settings locked on account level || Settings defining how to schedule user meetingsxs
+ */
 public class ScheduleUserMeetingInfo {
     /**
      * If true, then only signed-in users can join this meeting

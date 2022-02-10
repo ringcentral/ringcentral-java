@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listForwardingNumbers
+/**
+ * Query parameters for operation listForwardingNumbers
+ */
 public class ListForwardingNumbersParameters {
     /**
      * Indicates the page number to retrieve. Only positive number values are accepted.

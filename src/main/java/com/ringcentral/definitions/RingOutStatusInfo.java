@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// RingOut status information
+/**
+ * RingOut status information
+ */
 public class RingOutStatusInfo {
     /**
      * Status of a call

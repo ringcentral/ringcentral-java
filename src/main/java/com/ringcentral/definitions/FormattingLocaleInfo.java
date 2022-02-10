@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Formatting language preferences for numbers, dates and currencies
+/**
+ * Formatting language preferences for numbers, dates and currencies
+ */
 public class FormattingLocaleInfo {
     /**
      * Internal identifier of a formatting language

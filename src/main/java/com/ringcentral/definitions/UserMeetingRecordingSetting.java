@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Meeting recording settings locked on account level
+/**
+ * Meeting recording settings locked on account level
+ */
 public class UserMeetingRecordingSetting {
     /**
      * Allows hosts and participants to record a meeting to a local file

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Contact Information
+/**
+ * Contact Information
+ */
 public class ContactInfoCreationRequest {
     /**
      * For User extension type only. Extension user first name

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Caller ID settings by device
+/**
+ * Caller ID settings by device
+ */
 public class CallerIdByDeviceRequest {
     /**
      *

@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Brief information on a phone number country
+/**
+ * Brief information on a phone number country
+ */
 public class PhoneNumberCountryInfo {
     /**
      * Internal identifier of a home country

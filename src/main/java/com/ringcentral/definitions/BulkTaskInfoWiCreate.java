@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Information on the task for multiple wireless points creation
+/**
+ * Information on the task for multiple wireless points creation
+ */
 public class BulkTaskInfoWiCreate {
     /**
      * Internal identifier of a task for multiple switches creation

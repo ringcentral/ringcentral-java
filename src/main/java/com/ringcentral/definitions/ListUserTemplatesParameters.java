@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation listUserTemplates
+/**
+ * Query parameters for operation listUserTemplates
+ */
 public class ListUserTemplatesParameters {
     /**
      * Enum: UserSettings, CallHandling

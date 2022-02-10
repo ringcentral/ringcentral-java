@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Query parameters for operation aggregateA2PSMSStatuses
+/**
+ * Query parameters for operation aggregateA2PSMSStatuses
+ */
 public class AggregateA2PSMSStatusesParameters {
     /**
      * Date to filter message list result. Messages with `creationTime` later than or equal to `dateFrom` value are returned. The default value is 1 day before the current datetime

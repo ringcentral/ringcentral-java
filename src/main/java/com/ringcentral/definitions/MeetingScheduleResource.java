@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Timing of a meeting
+/**
+ * Timing of a meeting
+ */
 public class MeetingScheduleResource {
     /**
      *

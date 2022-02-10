@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Custom greeting language
+/**
+ * Custom greeting language
+ */
 public class CallRecordingCustomGreetingLanguage {
     /**
      * Link to a language

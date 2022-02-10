@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Extension profile image information. Not returned if profile images are absent for an extension
+/**
+ * Extension profile image information. Not returned if profile images are absent for an extension
+ */
 public class CompanyDirectoryProfileImageInfo {
     /**
      * Link to a profile image resource

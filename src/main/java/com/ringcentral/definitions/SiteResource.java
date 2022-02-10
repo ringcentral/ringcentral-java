@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Extension site
+/**
+ * Extension site
+ */
 public class SiteResource {
     /**
      * Site extension identifier

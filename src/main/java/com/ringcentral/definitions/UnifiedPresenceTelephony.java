@@ -1,7 +1,9 @@
 package com.ringcentral.definitions;
 
 
-// Returned if *BLF* feature is switched on
+/**
+ * Returned if *BLF* feature is switched on
+ */
 public class UnifiedPresenceTelephony {
     /**
      * Telephony status calculated from all user&#039;s phone numbers. Returned always for the requester&#039;s extension; returned for another users if their telephony visibility is set to &#039;Visible&#039;

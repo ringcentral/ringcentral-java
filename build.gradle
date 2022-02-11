@@ -25,16 +25,6 @@ java {
     withSourcesJar()
 }
 
-signing {
-    sign configurations.archives
-}
-
-javadoc {
-    if(JavaVersion.current().isJava9Compatible()) {
-        options.addBooleanOption('html5', true)
-    }
-}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -81,5 +71,15 @@ publishing {
                 password = ossrhPassword
             }
         }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
     }
 }

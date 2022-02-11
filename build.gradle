@@ -1,13 +1,12 @@
 plugins {
     id 'java'
-    id 'maven'
+    id 'maven-publish'
     id 'java-library'
     id 'signing'
 }
 
 group 'com.ringcentral'
-version '2.8.0'
-archivesBaseName = "ringcentral"
+version '2.8.1'
 
 sourceCompatibility = 1.8
 
@@ -21,72 +20,66 @@ dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
 
-javadoc {
-    options.addBooleanOption('html5', true)
-}
-
-task javadocJar(type: Jar) {
-    classifier = 'javadoc'
-    from javadoc
-}
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-artifacts {
-    archives javadocJar, sourcesJar
-}
-signing {
-    sign configurations.archives
-}
-
 java {
     withJavadocJar()
     withSourcesJar()
 }
 
-uploadArchives {
-  repositories {
-    mavenDeployer {
-      beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+signing {
+    sign configurations.archives
+}
 
-      repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
-        if (project.hasProperty('ossrhUsername')) {
-            authentication(userName: ossrhUsername, password: ossrhPassword)
-        }
-      }
-
-      snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
-        if (project.hasProperty('ossrhUsername')) {
-            authentication(userName: ossrhUsername, password: ossrhPassword)
-        }
-      }
-
-      pom.project {
-        name 'RingCentral SDK'
-        packaging 'jar'
-        artifactId 'ringcentral'
-        description 'RingCentral Java SDK'
-        url 'https://github.com/ringcentral/ringcentral-java'
-        licenses {
-            license {
-                name "MIT"
-                url "https://opensource.org/licenses/MIT"
-            }
-        }
-        developers {
-            developer {
-                id 'tylerliu'
-                name 'Tyler Liu'
-                email 'tyler.liu@ringcentral.com'
-            }
-        }
-        scm {
-            connection 'scm:git:git://git@github.com:ringcentral/ringcentral-java.git'
-            developerConnection 'scm:git:ssh://git@github.com:ringcentral/ringcentral-java.git'
-            url 'https://github.com/ringcentral/ringcentral-java'
-        }
-      }
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
     }
-  }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'ringcentral'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'RingCentral SDK'
+                description = 'RingCentral Java SDK'
+                url = 'https://github.com/ringcentral/ringcentral-java'
+                licenses {
+                    license {
+                        name = 'MIT'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'tylerliu'
+                        name = 'Tyler Liu'
+                        email = 'tyler.liu@ringcentral.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://git@github.com:ringcentral/ringcentral-java.git'
+                    developerConnection = 'scm:git:ssh://git@github.com:ringcentral/ringcentral-java.git'
+                    url = 'https://github.com/ringcentral/ringcentral-java'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
+        }
+    }
 }

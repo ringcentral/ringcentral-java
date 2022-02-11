@@ -31,7 +31,7 @@ The generated code is formatted by IntelliJ IDEA.
 Update version numbers in `build.gradle`.
 
 ```
-./gradlew uploadArchives
+./gradlew publish
 ```
 
 Go to https://s01.oss.sonatype.org/#stagingRepositories

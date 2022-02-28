@@ -1,22 +1,24 @@
 package com.ringcentral.definitions;
 
 
-public class CompanyAnsweringRuleCalledNumberInfoRequest {
+public class CompanyAnsweringRuleCalledNumberInfoRequest
+{
     /**
      * Internal identifier of an account phone number
      */
     public String id;
-    /**
-     * Phone number of a callee
-     */
-    public String phoneNumber;
-
-    public CompanyAnsweringRuleCalledNumberInfoRequest id(String id) {
+    public CompanyAnsweringRuleCalledNumberInfoRequest id(String id)
+    {
         this.id = id;
         return this;
     }
 
-    public CompanyAnsweringRuleCalledNumberInfoRequest phoneNumber(String phoneNumber) {
+    /**
+     * Phone number of a callee
+     */
+    public String phoneNumber;
+    public CompanyAnsweringRuleCalledNumberInfoRequest phoneNumber(String phoneNumber)
+    {
         this.phoneNumber = phoneNumber;
         return this;
     }

@@ -19,10 +19,11 @@ public class Index {
     }
 
     /**
-     * Returns call performance data aggregated for specified time intervals.
+     * Returns time-value data aggregations filtered by parameters specified.
      * HTTP Method: post
      * Endpoint: /analytics/phone/performance/v1/accounts/{accountId}/calls/timeline
      * Rate Limit Group: Light
+     * App Permission: Analytics
      */
     public PerformanceCallsTimelineResponse post(PerformanceCallsTimelineRequest performanceCallsTimelineRequest, PerformanceReportCallsTimelineParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), performanceCallsTimelineRequest, queryParams);

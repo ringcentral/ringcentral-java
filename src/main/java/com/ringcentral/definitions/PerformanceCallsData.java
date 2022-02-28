@@ -1,19 +1,16 @@
 package com.ringcentral.definitions;
 
 
-/**
- * A list of call aggregations as per the grouping and filtering options specified in the request.
- */
 public class PerformanceCallsData {
     /**
-     * Grouping key
+     * Grouping key.
      * Required
      */
     public String key;
     /**
      *
      */
-    public PerformanceCallsKeyInfo keyInfo;
+    public KeyInfo keyInfo;
     /**
      *
      */
@@ -28,7 +25,7 @@ public class PerformanceCallsData {
         return this;
     }
 
-    public PerformanceCallsData keyInfo(PerformanceCallsKeyInfo keyInfo) {
+    public PerformanceCallsData keyInfo(KeyInfo keyInfo) {
         this.keyInfo = keyInfo;
         return this;
     }

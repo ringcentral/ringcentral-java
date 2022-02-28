@@ -19,10 +19,11 @@ public class Index {
     }
 
     /**
-     * Returns call performance data aggregated as per the specified parameters.
+     * Returns call performance aggregations filtered by parameters specified.
      * HTTP Method: post
      * Endpoint: /analytics/phone/performance/v1/accounts/{accountId}/calls/aggregate
      * Rate Limit Group: Light
+     * App Permission: Analytics
      */
     public PerformanceCallsAggregatesResponse post(PerformanceCallsAggregatesRequest performanceCallsAggregatesRequest, AggregatePerformanceReportCallsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), performanceCallsAggregatesRequest, queryParams);

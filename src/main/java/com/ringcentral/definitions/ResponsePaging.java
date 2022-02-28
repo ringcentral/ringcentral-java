@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class PerformanceCallsPaging {
+public class ResponsePaging {
     /**
      * The current page number
      * Required
@@ -9,7 +9,7 @@ public class PerformanceCallsPaging {
      */
     public Long page;
     /**
-     * The number of items displayed per page
+     * How many items are displayed on the page
      * Required
      * Format: int64
      */
@@ -27,22 +27,22 @@ public class PerformanceCallsPaging {
      */
     public Long totalElements;
 
-    public PerformanceCallsPaging page(Long page) {
+    public ResponsePaging page(Long page) {
         this.page = page;
         return this;
     }
 
-    public PerformanceCallsPaging perPage(Long perPage) {
+    public ResponsePaging perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }
 
-    public PerformanceCallsPaging totalPages(Long totalPages) {
+    public ResponsePaging totalPages(Long totalPages) {
         this.totalPages = totalPages;
         return this;
     }
 
-    public PerformanceCallsPaging totalElements(Long totalElements) {
+    public ResponsePaging totalElements(Long totalElements) {
         this.totalElements = totalElements;
         return this;
     }

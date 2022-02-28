@@ -7176,14 +7176,14 @@ rc.revoke();
 
 
 ## aggregatePerformanceReportCalls
-Access Call Performance Aggregates
+Aggregate Call Performance Data
 
 Name|Value
 -|-
 HTTP Method|`POST`
 Endpoint|`/analytics/phone/performance/v1/accounts/{accountId}/calls/aggregate`
 Rate Limit Group|`Light`
-App Permission|`N/A`
+App Permission|`Analytics`
 User Permission|`N/A`
 
 ```java
@@ -7197,18 +7197,18 @@ rc.revoke();
 - `aggregatePerformanceReportCallsParameters` is of type [AggregatePerformanceReportCallsParameters](./src/main/java/com/ringcentral/definitions/AggregatePerformanceReportCallsParameters.java)
 - `result` is of type [PerformanceCallsAggregatesResponse](./src/main/java/com/ringcentral/definitions/PerformanceCallsAggregatesResponse.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Performance-Reports-aggregatePerformanceReportCalls) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Line-Of-Business-Analytics-aggregatePerformanceReportCalls) in API Explorer.
 
 
 ## performanceReportCallsTimeline
-Access Call Performance Timeline
+Timeline Call Performance Data
 
 Name|Value
 -|-
 HTTP Method|`POST`
 Endpoint|`/analytics/phone/performance/v1/accounts/{accountId}/calls/timeline`
 Rate Limit Group|`Light`
-App Permission|`N/A`
+App Permission|`Analytics`
 User Permission|`N/A`
 
 ```java
@@ -7222,7 +7222,7 @@ rc.revoke();
 - `performanceReportCallsTimelineParameters` is of type [PerformanceReportCallsTimelineParameters](./src/main/java/com/ringcentral/definitions/PerformanceReportCallsTimelineParameters.java)
 - `result` is of type [PerformanceCallsTimelineResponse](./src/main/java/com/ringcentral/definitions/PerformanceCallsTimelineResponse.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Performance-Reports-performanceReportCallsTimeline) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Line-Of-Business-Analytics-performanceReportCallsTimeline) in API Explorer.
 
 
 ## getAddressBookBulkUploadTask

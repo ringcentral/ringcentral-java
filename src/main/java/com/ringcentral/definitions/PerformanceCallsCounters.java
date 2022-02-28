@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Call volume data for the specified grouping.
+ * Call volume data for the specified grouping
  */
 public class PerformanceCallsCounters {
     /**

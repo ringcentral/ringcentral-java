@@ -9,10 +9,19 @@ public class TimelineData {
     /**
      *
      */
+    public KeyInfo keyInfo;
+    /**
+     *
+     */
     public TimelineDataPoint[] points;
 
     public TimelineData key(String key) {
         this.key = key;
+        return this;
+    }
+
+    public TimelineData keyInfo(KeyInfo keyInfo) {
+        this.keyInfo = keyInfo;
         return this;
     }
 

@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Call length data for the specified grouping.
+ * Call length data for the specified grouping
  */
 public class PerformanceCallsTimers {
     /**

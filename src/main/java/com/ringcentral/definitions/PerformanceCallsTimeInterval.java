@@ -3,13 +3,11 @@ package com.ringcentral.definitions;
 
 public class PerformanceCallsTimeInterval {
     /**
-     * Starting time in the fromat hh:mm
-     * Required
+     * Time in format hh:mm
      */
     public String from;
     /**
-     * Ending time in the format hh:mm
-     * Required
+     * Time in format hh:mm
      */
     public String to;
 

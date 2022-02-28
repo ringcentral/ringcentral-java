@@ -4,21 +4,21 @@ package com.ringcentral.definitions;
 public class CallsByOrigin {
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long internal;
+    public Double internal;
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long external;
+    public Double external;
 
-    public CallsByOrigin internal(Long internal) {
+    public CallsByOrigin internal(Double internal) {
         this.internal = internal;
         return this;
     }
 
-    public CallsByOrigin external(Long external) {
+    public CallsByOrigin external(Double external) {
         this.external = external;
         return this;
     }

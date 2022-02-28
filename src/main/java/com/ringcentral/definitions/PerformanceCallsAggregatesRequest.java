@@ -3,9 +3,9 @@ package com.ringcentral.definitions;
 
 public class PerformanceCallsAggregatesRequest {
     /**
-     *
+     * Required
      */
-    public PerformanceCallsGrouping grouping;
+    public AggregatePerformanceCallsGrouping grouping;
     /**
      * Required
      */
@@ -13,13 +13,13 @@ public class PerformanceCallsAggregatesRequest {
     /**
      *
      */
-    public PerformanceCallsAdditionalFilters additionalFilters;
+    public PerformanceCallsFilters additionalFilters;
     /**
      * Required
      */
     public PerformanceCallsResponseDataOptions responseOptions;
 
-    public PerformanceCallsAggregatesRequest grouping(PerformanceCallsGrouping grouping) {
+    public PerformanceCallsAggregatesRequest grouping(AggregatePerformanceCallsGrouping grouping) {
         this.grouping = grouping;
         return this;
     }
@@ -29,7 +29,7 @@ public class PerformanceCallsAggregatesRequest {
         return this;
     }
 
-    public PerformanceCallsAggregatesRequest additionalFilters(PerformanceCallsAdditionalFilters additionalFilters) {
+    public PerformanceCallsAggregatesRequest additionalFilters(PerformanceCallsFilters additionalFilters) {
         this.additionalFilters = additionalFilters;
         return this;
     }

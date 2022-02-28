@@ -3,38 +3,38 @@ package com.ringcentral.definitions;
 
 public class PerformanceCallsTimelineRequest {
     /**
-     *
+     * Required
      */
-    public PerformanceCallsGrouping grouping;
+    public TimelinePerformanceCallsGrouping grouping;
     /**
      * Required
      */
-    public PerformanceCallsTimeRange timeRange;
+    public PerformanceCallsTimeSettings timeSettings;
     /**
      *
      */
-    public PerformanceCallsAdditionalFilters additionalFilters;
+    public PerformanceCallsFilters additionalFilters;
     /**
      * Required
      */
-    public PerformanceCallsResponseDataOptions responseOptions;
+    public TimelineResponseDataOptions responseOptions;
 
-    public PerformanceCallsTimelineRequest grouping(PerformanceCallsGrouping grouping) {
+    public PerformanceCallsTimelineRequest grouping(TimelinePerformanceCallsGrouping grouping) {
         this.grouping = grouping;
         return this;
     }
 
-    public PerformanceCallsTimelineRequest timeRange(PerformanceCallsTimeRange timeRange) {
-        this.timeRange = timeRange;
+    public PerformanceCallsTimelineRequest timeSettings(PerformanceCallsTimeSettings timeSettings) {
+        this.timeSettings = timeSettings;
         return this;
     }
 
-    public PerformanceCallsTimelineRequest additionalFilters(PerformanceCallsAdditionalFilters additionalFilters) {
+    public PerformanceCallsTimelineRequest additionalFilters(PerformanceCallsFilters additionalFilters) {
         this.additionalFilters = additionalFilters;
         return this;
     }
 
-    public PerformanceCallsTimelineRequest responseOptions(PerformanceCallsResponseDataOptions responseOptions) {
+    public PerformanceCallsTimelineRequest responseOptions(TimelineResponseDataOptions responseOptions) {
         this.responseOptions = responseOptions;
         return this;
     }

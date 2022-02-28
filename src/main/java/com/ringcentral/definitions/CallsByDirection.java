@@ -4,21 +4,21 @@ package com.ringcentral.definitions;
 public class CallsByDirection {
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long inbound;
+    public Double inbound;
     /**
      * Required
-     * Format: int64
+     * Format: double
      */
-    public Long outbound;
+    public Double outbound;
 
-    public CallsByDirection inbound(Long inbound) {
+    public CallsByDirection inbound(Double inbound) {
         this.inbound = inbound;
         return this;
     }
 
-    public CallsByDirection outbound(Long outbound) {
+    public CallsByDirection outbound(Double outbound) {
         this.outbound = outbound;
         return this;
     }

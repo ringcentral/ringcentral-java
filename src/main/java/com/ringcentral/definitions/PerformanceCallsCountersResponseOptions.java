@@ -1,98 +1,99 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Performance calls counters
- */
-public class PerformanceCallsCountersResponseOptions {
     /**
-     *
-     */
-    public PerformanceCallsCounter allCalls;
+* The formula is defined by `aggregationType` and `aggregationInterval` for every counter individually. If `aggregationType` is `Sum` or `Percent`, `aggregationInterval` is not supported. If `aggregationType` is `Min`, `Max` or `Average`,`aggregationInterval` is required
+*/
+public class PerformanceCallsCountersResponseOptions
+{
     /**
-     *
      */
-    public PerformanceCallsCounter callsByDirection;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsByOrigin;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsByResponse;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsByType;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsBySegments;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsByResult;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsByActions;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsByCompanyHours;
-    /**
-     *
-     */
-    public PerformanceCallsCounter callsByQueueSla;
-
-    public PerformanceCallsCountersResponseOptions allCalls(PerformanceCallsCounter allCalls) {
+    public PerformanceCallsCountersResponseOptionsAllCalls allCalls;
+    public PerformanceCallsCountersResponseOptions allCalls(PerformanceCallsCountersResponseOptionsAllCalls allCalls)
+    {
         this.allCalls = allCalls;
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsByDirection(PerformanceCallsCounter callsByDirection) {
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByDirection callsByDirection;
+    public PerformanceCallsCountersResponseOptions callsByDirection(PerformanceCallsCountersResponseOptionsCallsByDirection callsByDirection)
+    {
         this.callsByDirection = callsByDirection;
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsByOrigin(PerformanceCallsCounter callsByOrigin) {
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByOrigin callsByOrigin;
+    public PerformanceCallsCountersResponseOptions callsByOrigin(PerformanceCallsCountersResponseOptionsCallsByOrigin callsByOrigin)
+    {
         this.callsByOrigin = callsByOrigin;
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsByResponse(PerformanceCallsCounter callsByResponse) {
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByResponse callsByResponse;
+    public PerformanceCallsCountersResponseOptions callsByResponse(PerformanceCallsCountersResponseOptionsCallsByResponse callsByResponse)
+    {
         this.callsByResponse = callsByResponse;
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsByType(PerformanceCallsCounter callsByType) {
-        this.callsByType = callsByType;
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsSegments callsSegments;
+    public PerformanceCallsCountersResponseOptions callsSegments(PerformanceCallsCountersResponseOptionsCallsSegments callsSegments)
+    {
+        this.callsSegments = callsSegments;
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsBySegments(PerformanceCallsCounter callsBySegments) {
-        this.callsBySegments = callsBySegments;
-        return this;
-    }
-
-    public PerformanceCallsCountersResponseOptions callsByResult(PerformanceCallsCounter callsByResult) {
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByResult callsByResult;
+    public PerformanceCallsCountersResponseOptions callsByResult(PerformanceCallsCountersResponseOptionsCallsByResult callsByResult)
+    {
         this.callsByResult = callsByResult;
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsByActions(PerformanceCallsCounter callsByActions) {
-        this.callsByActions = callsByActions;
-        return this;
-    }
-
-    public PerformanceCallsCountersResponseOptions callsByCompanyHours(PerformanceCallsCounter callsByCompanyHours) {
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByCompanyHours callsByCompanyHours;
+    public PerformanceCallsCountersResponseOptions callsByCompanyHours(PerformanceCallsCountersResponseOptionsCallsByCompanyHours callsByCompanyHours)
+    {
         this.callsByCompanyHours = callsByCompanyHours;
         return this;
     }
 
-    public PerformanceCallsCountersResponseOptions callsByQueueSla(PerformanceCallsCounter callsByQueueSla) {
+    /**
+     * This counter is only applicable to Queues grouping
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByQueueSla callsByQueueSla;
+    public PerformanceCallsCountersResponseOptions callsByQueueSla(PerformanceCallsCountersResponseOptionsCallsByQueueSla callsByQueueSla)
+    {
         this.callsByQueueSla = callsByQueueSla;
+        return this;
+    }
+
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByActions callsByActions;
+    public PerformanceCallsCountersResponseOptions callsByActions(PerformanceCallsCountersResponseOptionsCallsByActions callsByActions)
+    {
+        this.callsByActions = callsByActions;
+        return this;
+    }
+
+    /**
+     */
+    public PerformanceCallsCountersResponseOptionsCallsByType callsByType;
+    public PerformanceCallsCountersResponseOptions callsByType(PerformanceCallsCountersResponseOptionsCallsByType callsByType)
+    {
+        this.callsByType = callsByType;
         return this;
     }
 }

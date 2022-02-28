@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Date-time range for which the calls are aggregated. The call is considered to be within time range if it started within time range. Both borders are inclusive.
+ * Date-time range for which the calls are aggregated. The call is considered to be within time range if it started within time range. Both borders are inclusive
  */
 public class PerformanceCallsTimeSettings {
     /**

@@ -1,12 +1,8 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Filtering calls by segment
- */
 public class CallSegmentFilter {
     /**
-     * Required
      * Enum: Ringing, LiveTalk, Hold, Park, Transfer, IvrPrompt, Voicemail, VmGreeting
      */
     public String callSegment;

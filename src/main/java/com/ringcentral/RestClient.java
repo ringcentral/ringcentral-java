@@ -8,7 +8,10 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.text.MessageFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class RestClient {
     public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
@@ -320,10 +323,19 @@ public class RestClient {
         return response;
     }
 
+    public static Logger logger = Logger.getLogger("com.ringcentral");
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
     public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
         requestBody) throws IOException, RestException {
-        Response response = requestRaw(httpMethod, endpoint, queryParameters, requestBody);
-        return response.peekBody(Long.MAX_VALUE);
+        try {
+            Response response = requestRaw(httpMethod, endpoint, queryParameters, requestBody);
+            logger.info(String.format("[%s HTTP %s %s]%s %s", dtf.format(LocalDateTime.now()), httpMethod.toString(), response.code(), this.server, endpoint));
+            return response.peekBody(Long.MAX_VALUE);
+        }catch (RestException re) {
+            Response response = re.response;
+            logger.info(String.format("[%s HTTP %s %s]%s %s", dtf.format(LocalDateTime.now()), httpMethod.toString(), response.code(), this.server, endpoint));
+            throw re;
+        }
     }
 
     public String authorizeUri(AuthorizeRequest request) {

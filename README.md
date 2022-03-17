@@ -107,6 +107,8 @@ RestClient.logger.setLevel(Level.FINE);
 
 For more log output channels, please refer to [Handlers](https://docs.oracle.com/javase/10/core/java-logging-overview.htm#GUID-B83B652C-17EA-48D9-93D2-563AE1FF8EDA__HANDLERS-4D023767).
 
+[Demo project](https://github.com/tylerlong/rc-logging-demo-java).
+
 
 ## Binary content downloading
 

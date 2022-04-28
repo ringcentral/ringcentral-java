@@ -27,7 +27,7 @@ public class PartySuperviseRequest {
      */
     public Boolean autoAnswer;
     /**
-     * Specifies session description protocol setting
+     * Specifies session description protocol (SDP) setting. The possible values are &#039;sendOnly&#039; (only sending) meaning one-way audio streaming; and &#039;sendRecv&#039; (sending/receiving) meaning two-way audio streaming
      * Enum: sendOnly, sendRecv
      */
     public String mediaSDP;

@@ -42,6 +42,11 @@ public class CallsSegments {
      * Format: double
      */
     public Double vmGreetings;
+    /**
+     * Required
+     * Format: double
+     */
+    public Double setup;
 
     public CallsSegments ringing(Double ringing) {
         this.ringing = ringing;
@@ -80,6 +85,11 @@ public class CallsSegments {
 
     public CallsSegments vmGreetings(Double vmGreetings) {
         this.vmGreetings = vmGreetings;
+        return this;
+    }
+
+    public CallsSegments setup(Double setup) {
+        this.setup = setup;
         return this;
     }
 }

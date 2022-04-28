@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class LoginToExtensionRequiredErrorResponse
-{
+public class BadRequest {
     /**
+     *
      */
     public ErrorBody[] errors;
-    public LoginToExtensionRequiredErrorResponse errors(ErrorBody[] errors)
-    {
+
+    public BadRequest errors(ErrorBody[] errors) {
         this.errors = errors;
         return this;
     }

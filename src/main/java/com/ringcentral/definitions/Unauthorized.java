@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class InvalidRequestResponse {
+public class Unauthorized {
     /**
      *
      */
     public ErrorBody[] errors;
 
-    public InvalidRequestResponse errors(ErrorBody[] errors) {
+    public Unauthorized errors(ErrorBody[] errors) {
         this.errors = errors;
         return this;
     }

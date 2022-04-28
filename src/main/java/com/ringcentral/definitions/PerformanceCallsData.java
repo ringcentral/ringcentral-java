@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class PerformanceCallsData {
     /**
-     * Grouping key.
+     * Grouping key
      * Required
      */
     public String key;

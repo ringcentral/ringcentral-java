@@ -52,6 +52,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.glip.files.Index files() {
+        return new com.ringcentral.paths.restapi.glip.files.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.glip.groups.Index groups() {
         return this.groups(null);
     }

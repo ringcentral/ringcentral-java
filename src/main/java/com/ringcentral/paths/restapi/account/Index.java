@@ -138,6 +138,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.audittrail.Index auditTrail() {
+        return new com.ringcentral.paths.restapi.account.audittrail.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.account.ivrprompts.Index ivrPrompts() {
         return this.ivrPrompts(null);
     }

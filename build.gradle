@@ -83,3 +83,9 @@ javadoc {
         options.addBooleanOption('html5', true)
     }
 }
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}

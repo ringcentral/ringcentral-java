@@ -16,6 +16,7 @@ public class RestClient {
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
     private static final MediaType textMediaType = MediaType.parse("text/plain; charset=utf-8");
+    public static Logger logger = Logger.getLogger("com.ringcentral");
     public String clientId;
     public String clientSecret;
     public String server;
@@ -38,10 +39,10 @@ public class RestClient {
         this(clientId, clientSecret, server, null);
     }
 
+
     public RestClient(String clientId, String clientSecret, Boolean production, OkHttpClient okHttpClient) {
         this(clientId, clientSecret, production ? PRODUCTION_SERVER : SANDBOX_SERVER, okHttpClient);
     }
-
 
     public RestClient(String clientId, String clientSecret, Boolean production) {
         this(clientId, clientSecret, production, null);
@@ -321,14 +322,13 @@ public class RestClient {
         return response;
     }
 
-    public static Logger logger = Logger.getLogger("com.ringcentral");
     public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
         requestBody) throws IOException, RestException {
         try {
             Response response = requestRaw(httpMethod, endpoint, queryParameters, requestBody);
             logger.fine(String.format("[HTTP %s %s] %s %s", httpMethod.toString(), response.code(), this.server, endpoint));
             return response.peekBody(Long.MAX_VALUE);
-        }catch (RestException re) {
+        } catch (RestException re) {
             Response response = re.response;
             logger.fine(String.format("[HTTP %s %s] %s %s", httpMethod.toString(), response.code(), this.server, endpoint));
             throw re;

@@ -3,9 +3,9 @@ package com.ringcentral.definitions;
 
 public class PerformanceCallsTimelineRequest {
     /**
-     * Required
+     *
      */
-    public TimelinePerformanceCallsGrouping grouping;
+    public PerformanceCallsGrouping grouping;
     /**
      * Required
      */
@@ -19,7 +19,7 @@ public class PerformanceCallsTimelineRequest {
      */
     public TimelineResponseDataOptions responseOptions;
 
-    public PerformanceCallsTimelineRequest grouping(TimelinePerformanceCallsGrouping grouping) {
+    public PerformanceCallsTimelineRequest grouping(PerformanceCallsGrouping grouping) {
         this.grouping = grouping;
         return this;
     }

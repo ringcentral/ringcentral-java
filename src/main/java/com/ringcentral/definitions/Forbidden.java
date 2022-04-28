@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class InternalServerErrorResponse {
+public class Forbidden {
     /**
      *
      */
     public ErrorBody[] errors;
 
-    public InternalServerErrorResponse errors(ErrorBody[] errors) {
+    public Forbidden errors(ErrorBody[] errors) {
         this.errors = errors;
         return this;
     }

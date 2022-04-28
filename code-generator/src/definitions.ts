@@ -1,9 +1,17 @@
 import fs from 'fs';
 import path from 'path';
-import {Field} from 'ringcentral-open-api-parser/lib/types';
+import { Field, OneOf } from 'ringcentral-open-api-parser/lib/types';
 
-import {escapeJavaDoc} from './utils';
-import {parsed} from './parser';
+import { escapeJavaDoc } from './utils';
+import { parsed } from './parser';
+import { camelCase } from 'change-case';
+
+type Model = {
+  name: string;
+  description?: string;
+  fields: Field[];
+  implements?: string[] // extending base Model to store ancestors of model
+};
 
 const outputDir = path.join(
   __dirname,
@@ -25,6 +33,9 @@ const normalizeField = (f: Field): Field => {
     f.type = 'Boolean';
   } else if (f.type === 'string') {
     f.type = 'String';
+  } else if (f.oneOf) {
+    const interfaceName = f.oneOf.map(o => o.$ref).join("Or")
+    f.type = interfaceName
   }
   return f;
 };
@@ -85,18 +96,46 @@ const generateField = (f: Field, modelName: string) => {
   return p;
 };
 
-parsed.models.forEach(model => {
-  let code = `${
-    model.description
-      ? '\n    /**\n' +
-        model.description
-          .split('\n')
-          .map(line => '* ' + line)
-          .join('\n') +
-        '\n*/'
-      : ''
+const renderImplements = (model: Model) => {
+  if (model.implements?.length) {
+    return "implements " + model.implements.join(", ")
   }
-public class ${model.name}
+  return ""
+}
+
+const models: Model[] = parsed.models
+
+const oneOfFields = models
+  .flatMap(model => model.fields)
+  .filter(f => f.oneOf)
+  .map(f => normalizeField(f))
+
+oneOfFields.forEach(field => {
+  const shouldExtendModels =
+    models
+      .filter(m => field.oneOf?.find(o => o.$ref === m.name))
+      .filter(m => !m.implements?.find(o => o === field.type))
+
+  shouldExtendModels.forEach(m => {
+    if (m.implements) {
+      m.implements.push(field.type!)
+    } else {
+      m.implements = [field.type!]
+    }
+  })
+})
+
+const renderClass = (model: Model) => {
+  let code = `${model.description
+    ? '\n    /**\n' +
+    model.description
+      .split('\n')
+      .map(line => '* ' + line)
+      .join('\n') +
+    '\n*/'
+    : ''
+    }
+public class ${model.name} ${renderImplements(model)}
 {
     ${model.fields.map(f => generateField(f, model.name)).join('\n\n    ')}
 }`;
@@ -104,5 +143,37 @@ public class ${model.name}
     code = 'import com.google.gson.annotations.SerializedName;\n\n' + code;
   }
   code = 'package com.ringcentral.definitions;\n\n' + code;
+
+  return code;
+}
+
+const renderInterface = (field: Field) => {
+  const renderFactoryMethod = (oneOf: OneOf) => {
+    const type = oneOf.$ref
+    const methodName = camelCase(type)
+
+    return `
+      static ${type} ${methodName}() {
+        return new ${type}();
+      }
+    `
+  }
+
+  return `
+    package com.ringcentral.definitions;
+  
+    public interface ${field.type} {
+      ${field.oneOf?.map(o => renderFactoryMethod(o)).join("")}
+    }
+  `
+}
+
+models.forEach(model => {
+  const code = renderClass(model)
   fs.writeFileSync(path.join(outputDir, `${model.name}.java`), code);
 });
+
+oneOfFields.forEach(f => {
+  const code = renderInterface(f)
+  fs.writeFileSync(path.join(outputDir, `${f.type}.java`), code);
+})

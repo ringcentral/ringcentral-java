@@ -170,13 +170,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.activecalls.Index activeCalls() {
-        return new com.ringcentral.paths.restapi.account.activecalls.Index(this);
+    public com.ringcentral.paths.restapi.account.serviceinfo.Index serviceInfo() {
+        return new com.ringcentral.paths.restapi.account.serviceinfo.Index(this);
     }
 
 
-    public com.ringcentral.paths.restapi.account.serviceinfo.Index serviceInfo() {
-        return new com.ringcentral.paths.restapi.account.serviceinfo.Index(this);
+    public com.ringcentral.paths.restapi.account.activecalls.Index activeCalls() {
+        return new com.ringcentral.paths.restapi.account.activecalls.Index(this);
     }
 
 
@@ -220,6 +220,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.businessaddress.Index businessAddress() {
         return new com.ringcentral.paths.restapi.account.businessaddress.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.forwardallcalls.Index forwardAllCalls() {
+        return new com.ringcentral.paths.restapi.account.forwardallcalls.Index(this);
     }
 
 

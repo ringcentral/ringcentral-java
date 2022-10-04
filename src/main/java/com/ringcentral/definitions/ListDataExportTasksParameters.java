@@ -12,11 +12,13 @@ public class ListDataExportTasksParameters {
     public String status;
     /**
      * Page number to be retrieved; value range is &gt; 0
+     * Format: int32
      * Default: 1
      */
     public Long page;
     /**
      * Number of records to be returned per page; value range is 1 - 250
+     * Format: int32
      * Default: 30
      */
     public Long perPage;

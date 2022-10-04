@@ -11,7 +11,7 @@ public class MissedCallEvent {
      */
     public APNSInfo pn_apns;
     /**
-     * Event filter URI
+     * Event filter name
      */
     public String event;
     /**
@@ -19,7 +19,7 @@ public class MissedCallEvent {
      */
     public String subscriptionId;
     /**
-     * The datetime of a call action in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example 2016-03-10T18:07:52.534Z
+     * The timestamp of a call action in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String timestamp;
@@ -78,6 +78,7 @@ public class MissedCallEvent {
     public String recUrl;
     /**
      * Notification lifetime value in seconds, the default value is 30 seconds
+     * Format: int32
      */
     public Long pn_ttl;
     /**

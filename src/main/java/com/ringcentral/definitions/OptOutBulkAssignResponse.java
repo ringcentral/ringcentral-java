@@ -6,21 +6,21 @@ package com.ringcentral.definitions;
  */
 public class OptOutBulkAssignResponse {
     /**
-     *
+     * Contains successful and failed opt-ins
      */
-    public BulkAssignOptOuts optOuts;
+    public OptOutBulkAssignResponseOptIns optIns;
     /**
-     *
+     * Contains successful and failed opt-outs
      */
-    public BulkAssignOptIns optIns;
+    public OptOutBulkAssignResponseOptOuts optOuts;
 
-    public OptOutBulkAssignResponse optOuts(BulkAssignOptOuts optOuts) {
-        this.optOuts = optOuts;
+    public OptOutBulkAssignResponse optIns(OptOutBulkAssignResponseOptIns optIns) {
+        this.optIns = optIns;
         return this;
     }
 
-    public OptOutBulkAssignResponse optIns(BulkAssignOptIns optIns) {
-        this.optIns = optIns;
+    public OptOutBulkAssignResponse optOuts(OptOutBulkAssignResponseOptOuts optOuts) {
+        this.optOuts = optOuts;
         return this;
     }
 }

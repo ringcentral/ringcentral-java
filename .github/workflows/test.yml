@@ -1,38 +1,38 @@
 name: Test
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
 
 jobs:
-  build:
-    environment: sandbox
-    runs-on: ubuntu-latest
+    build:
+        environment: sandbox
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Restore gradle.properties
-      env:
-        GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
-      shell: bash
-      run: |
-        mkdir -p ~/.gradle/
-        echo "GRADLE_USER_HOME=${HOME}/.gradle" >> $GITHUB_ENV
-        echo "${GRADLE_PROPERTIES}" > ~/.gradle/gradle.properties
-    - uses: actions/setup-java@v2
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-    - run: chmod +x gradlew
-    - run: ./gradlew test
-      env:
-        RINGCENTRAL_SERVER_URL: ${{ secrets.RINGCENTRAL_SERVER_URL }}
-        RINGCENTRAL_CLIENT_ID: ${{ secrets.RINGCENTRAL_CLIENT_ID }}
-        RINGCENTRAL_CLIENT_SECRET: ${{ secrets.RINGCENTRAL_CLIENT_SECRET }}
-        RINGCENTRAL_USERNAME: ${{ secrets.RINGCENTRAL_USERNAME }}
-        RINGCENTRAL_EXTENSION: ${{ secrets.RINGCENTRAL_EXTENSION }}
-        RINGCENTRAL_PASSWORD: ${{ secrets.RINGCENTRAL_PASSWORD }}
-        RINGCENTRAL_RECEIVER: ${{ secrets.RINGCENTRAL_RECEIVER }}
-        RINGCENTRAL_CALLEE: ${{ secrets.RINGCENTRAL_CALLEE }}
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Restore gradle.properties
+                env:
+                    GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
+                shell: bash
+                run: |
+                    mkdir -p ~/.gradle/
+                    echo "GRADLE_USER_HOME=${HOME}/.gradle" >> $GITHUB_ENV
+                    echo "${GRADLE_PROPERTIES}" > ~/.gradle/gradle.properties
+            -   uses: actions/setup-java@v2
+                with:
+                    java-version: '17'
+                    distribution: 'temurin'
+            -   run: chmod +x gradlew
+            -   run: ./gradlew test
+                env:
+                    RINGCENTRAL_SERVER_URL: ${{ secrets.RINGCENTRAL_SERVER_URL }}
+                    RINGCENTRAL_CLIENT_ID: ${{ secrets.RINGCENTRAL_CLIENT_ID }}
+                    RINGCENTRAL_CLIENT_SECRET: ${{ secrets.RINGCENTRAL_CLIENT_SECRET }}
+                    RINGCENTRAL_USERNAME: ${{ secrets.RINGCENTRAL_USERNAME }}
+                    RINGCENTRAL_EXTENSION: ${{ secrets.RINGCENTRAL_EXTENSION }}
+                    RINGCENTRAL_PASSWORD: ${{ secrets.RINGCENTRAL_PASSWORD }}
+                    RINGCENTRAL_RECEIVER: ${{ secrets.RINGCENTRAL_RECEIVER }}
+                    RINGCENTRAL_CALLEE: ${{ secrets.RINGCENTRAL_CALLEE }}

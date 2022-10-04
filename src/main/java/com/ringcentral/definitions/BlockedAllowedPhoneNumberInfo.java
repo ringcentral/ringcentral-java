@@ -23,6 +23,7 @@ public class BlockedAllowedPhoneNumberInfo {
     public String label;
     /**
      * Status of a phone number
+     * Default: Blocked
      * Enum: Blocked, Allowed
      */
     public String status;

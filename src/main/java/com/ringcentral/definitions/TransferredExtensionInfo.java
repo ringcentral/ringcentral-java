@@ -2,7 +2,8 @@ package com.ringcentral.definitions;
 
 
 /**
- * Transfer settings applied for department (call queue) extension type, returned if CallHandlingAction is set to `TransferToExtension`
+ * Transfer settings applied for department (call queue) extension
+ * type, returned if CallHandlingAction is set to `TransferToExtension`
  */
 public class TransferredExtensionInfo {
     /**

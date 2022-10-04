@@ -38,9 +38,14 @@ public class GetExtensionListInfoResponse {
     public String status;
     /**
      * Extension type. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
-     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, Limited, Site, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup
+     * Enum: User, FaxUser, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, Limited, Site, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup
      */
     public String type;
+    /**
+     * Extension sub-type, if applicable. For any unsupported sub-types the &#039;Unknown&#039; value will be returned
+     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
+     */
+    public String subType;
     /**
      *
      */
@@ -96,6 +101,11 @@ public class GetExtensionListInfoResponse {
 
     public GetExtensionListInfoResponse type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public GetExtensionListInfoResponse subType(String subType) {
+        this.subType = subType;
         return this;
     }
 

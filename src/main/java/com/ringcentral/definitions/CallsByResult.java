@@ -1,65 +1,28 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Data for calls with breakdown by result (Completed, Abandoned, Voicemail, Unknown, Missed, Accepted)
+ */
 public class CallsByResult {
     /**
+     * Unit of the result value
      * Required
-     * Format: double
+     * Enum: Percent, Seconds, Instances
      */
-    public Double completed;
+    public String valueType;
     /**
      * Required
-     * Format: double
      */
-    public Double abandoned;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double voicemail;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double missed;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double accepted;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double unknown;
+    public CallsByResultBreakdown values;
 
-    public CallsByResult completed(Double completed) {
-        this.completed = completed;
+    public CallsByResult valueType(String valueType) {
+        this.valueType = valueType;
         return this;
     }
 
-    public CallsByResult abandoned(Double abandoned) {
-        this.abandoned = abandoned;
-        return this;
-    }
-
-    public CallsByResult voicemail(Double voicemail) {
-        this.voicemail = voicemail;
-        return this;
-    }
-
-    public CallsByResult missed(Double missed) {
-        this.missed = missed;
-        return this;
-    }
-
-    public CallsByResult accepted(Double accepted) {
-        this.accepted = accepted;
-        return this;
-    }
-
-    public CallsByResult unknown(Double unknown) {
-        this.unknown = unknown;
+    public CallsByResult values(CallsByResultBreakdown values) {
+        this.values = values;
         return this;
     }
 }

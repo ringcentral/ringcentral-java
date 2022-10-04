@@ -32,6 +32,7 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/tasks/{taskId}
      * Rate Limit Group: Medium
+     * App Permission: TeamMessaging
      */
     public GlipTaskInfo get() throws com.ringcentral.RestException, java.io.IOException {
         if (taskId == null) {
@@ -46,6 +47,7 @@ public class Index {
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/glip/tasks/{taskId}
      * Rate Limit Group: Medium
+     * App Permission: TeamMessaging
      */
     public String delete() throws com.ringcentral.RestException, java.io.IOException {
         if (taskId == null) {
@@ -60,6 +62,7 @@ public class Index {
      * HTTP Method: patch
      * Endpoint: /restapi/{apiVersion}/glip/tasks/{taskId}
      * Rate Limit Group: Medium
+     * App Permission: TeamMessaging
      */
     public GlipTaskList patch(GlipUpdateTask glipUpdateTask) throws com.ringcentral.RestException, java.io.IOException {
         if (taskId == null) {

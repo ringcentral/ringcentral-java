@@ -16,6 +16,15 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.glip.tasks.Index tasks() {
+        return this.tasks(null);
+    }
+
+    public com.ringcentral.paths.restapi.glip.tasks.Index tasks(String taskId) {
+        return new com.ringcentral.paths.restapi.glip.tasks.Index(this, taskId);
+    }
+
+
     public com.ringcentral.paths.restapi.glip.chats.Index chats() {
         return this.chats(null);
     }
@@ -40,15 +49,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.glip.notes.Index notes(String noteId) {
         return new com.ringcentral.paths.restapi.glip.notes.Index(this, noteId);
-    }
-
-
-    public com.ringcentral.paths.restapi.glip.tasks.Index tasks() {
-        return this.tasks(null);
-    }
-
-    public com.ringcentral.paths.restapi.glip.tasks.Index tasks(String taskId) {
-        return new com.ringcentral.paths.restapi.glip.tasks.Index(this, taskId);
     }
 
 

@@ -8,10 +8,12 @@ public class CreateAnsweringRuleRequest {
     public Boolean enabled;
     /**
      * Type of an answering rule. The &#039;Custom&#039; value should be specified
+     * Required
      */
     public String type;
     /**
      * Name of an answering rule specified by user
+     * Required
      */
     public String name;
     /**

@@ -43,21 +43,21 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.dictionary.greeting.Index greeting() {
-        return this.greeting(null);
-    }
-
-    public com.ringcentral.paths.restapi.dictionary.greeting.Index greeting(String greetingId) {
-        return new com.ringcentral.paths.restapi.dictionary.greeting.Index(this, greetingId);
-    }
-
-
     public com.ringcentral.paths.restapi.dictionary.language.Index language() {
         return this.language(null);
     }
 
     public com.ringcentral.paths.restapi.dictionary.language.Index language(String languageId) {
         return new com.ringcentral.paths.restapi.dictionary.language.Index(this, languageId);
+    }
+
+
+    public com.ringcentral.paths.restapi.dictionary.greeting.Index greeting() {
+        return this.greeting(null);
+    }
+
+    public com.ringcentral.paths.restapi.dictionary.greeting.Index greeting(String greetingId) {
+        return new com.ringcentral.paths.restapi.dictionary.greeting.Index(this, greetingId);
     }
 
 

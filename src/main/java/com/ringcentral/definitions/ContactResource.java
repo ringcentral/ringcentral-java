@@ -31,7 +31,7 @@ public class ContactResource {
      */
     public String name;
     /**
-     *
+     * Required
      */
     public String id;
     /**
@@ -61,7 +61,31 @@ public class ContactResource {
     /**
      *
      */
-    public UserCustomFieldResource[] customFields;
+    public Boolean hidden;
+    /**
+     *
+     */
+    public RoleResource role;
+    /**
+     *
+     */
+    public CallQueueResource[] callQueues;
+    /**
+     *
+     */
+    public CustomFieldResource[] customFields;
+    /**
+     *
+     */
+    public GroupResource[] groups;
+    /**
+     *
+     */
+    public CostCenterResource costCenter;
+    /**
+     *
+     */
+    public ExternalIntegrationResource integration;
 
     public ContactResource account(AccountResource account) {
         this.account = account;
@@ -133,8 +157,38 @@ public class ContactResource {
         return this;
     }
 
-    public ContactResource customFields(UserCustomFieldResource[] customFields) {
+    public ContactResource hidden(Boolean hidden) {
+        this.hidden = hidden;
+        return this;
+    }
+
+    public ContactResource role(RoleResource role) {
+        this.role = role;
+        return this;
+    }
+
+    public ContactResource callQueues(CallQueueResource[] callQueues) {
+        this.callQueues = callQueues;
+        return this;
+    }
+
+    public ContactResource customFields(CustomFieldResource[] customFields) {
         this.customFields = customFields;
+        return this;
+    }
+
+    public ContactResource groups(GroupResource[] groups) {
+        this.groups = groups;
+        return this;
+    }
+
+    public ContactResource costCenter(CostCenterResource costCenter) {
+        this.costCenter = costCenter;
+        return this;
+    }
+
+    public ContactResource integration(ExternalIntegrationResource integration) {
+        this.integration = integration;
         return this;
     }
 }

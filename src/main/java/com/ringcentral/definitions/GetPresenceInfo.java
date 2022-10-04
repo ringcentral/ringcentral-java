@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class GetPresenceInfo {
     /**
      * Canonical URI of a presence info resource
+     * Format: uri
      */
     public String uri;
     /**

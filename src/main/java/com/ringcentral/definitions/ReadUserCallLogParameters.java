@@ -15,7 +15,7 @@ public class ReadUserCallLogParameters {
      */
     public Boolean showBlocked;
     /**
-     * Phone number of a caller/callee in e.164 format without a plus sign &#039;+&#039;. If specified, all incoming and outcoming calls with this phone number are returned
+     * Phone number of a caller/callee in e.164 format without a plus sign &#039;+&#039;. If specified, all incoming and outgoing calls with this phone number are returned
      * Example: 12053320032
      */
     public String phoneNumber;

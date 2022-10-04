@@ -2,9 +2,9 @@ package com.ringcentral.paths.restapi.subscription;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CreateSubscriptionRequest;
-import com.ringcentral.definitions.ModifySubscriptionRequest;
-import com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse;
 import com.ringcentral.definitions.SubscriptionInfo;
+import com.ringcentral.definitions.SubscriptionListResource;
+import com.ringcentral.definitions.UpdateSubscriptionRequest;
 
 public class Index {
     public RestClient rc;
@@ -29,18 +29,19 @@ public class Index {
     }
 
     /**
-     * Returns the list of subscriptions created by the logged-in user for the currently authorized client application.
+     * Returns a list of subscriptions created by the user for the current authorized client application.
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/subscription
      * Rate Limit Group: Light
      */
-    public RecordsCollectionResourceSubscriptionResponse list() throws com.ringcentral.RestException, java.io.IOException {
+    public SubscriptionListResource list() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), RecordsCollectionResourceSubscriptionResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), SubscriptionListResource.class);
     }
 
     /**
-     * Creates a new subscription.
+     * Creates a new subscription for the current authorized user / client application.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/subscription
      * Rate Limit Group: Medium
@@ -51,7 +52,7 @@ public class Index {
     }
 
     /**
-     * Returns the requested subscription by ID.
+     * Returns the existing subscription by ID.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/subscription/{subscriptionId}
      * Rate Limit Group: Light
@@ -65,21 +66,28 @@ public class Index {
     }
 
     /**
-     * Updates the existent subscription. The client application can extend/narrow the events for which it receives notifications within the frame of one subscription. If event filters are specified, calling this method modifies them for the existing subscription. The method also allows to set the subscription expiration time.  If other than `events` and `expiresIn` parameters are passed in request they will be ignored. If the request body is empty then the specified subscription will be just renewed without any event filter change and with expiration time default.
+     * Updates the existing subscription. The client application can extend/narrow
+     * the list of events for which it receives notifications within this subscription.
+     * If event filters are specified, calling this method modifies them for the
+     * existing subscription. The method also allows to set the subscription expiration time.
+     * If other than `events` and `expiresIn` parameters are passed in the request they will be ignored.
+     * If the request body is empty then the specified subscription will be just renewed without any
+     * event filter modifications and with default expiration time.
+     * <p>
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/subscription/{subscriptionId}
      * Rate Limit Group: Medium
      */
-    public SubscriptionInfo put(ModifySubscriptionRequest modifySubscriptionRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public SubscriptionInfo put(UpdateSubscriptionRequest updateSubscriptionRequest) throws com.ringcentral.RestException, java.io.IOException {
         if (subscriptionId == null) {
             throw new IllegalArgumentException("Parameter subscriptionId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), modifySubscriptionRequest, null);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), updateSubscriptionRequest, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), SubscriptionInfo.class);
     }
 
     /**
-     * Cancels the existent subscription.
+     * Cancels the existing subscription.
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/subscription/{subscriptionId}
      * Rate Limit Group: Medium

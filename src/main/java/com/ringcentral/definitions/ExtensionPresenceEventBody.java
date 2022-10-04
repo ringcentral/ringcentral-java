@@ -1,9 +1,6 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Notification payload body
- */
 public class ExtensionPresenceEventBody {
     /**
      * Internal identifier of an extension. Optional parameter
@@ -17,6 +14,7 @@ public class ExtensionPresenceEventBody {
     public String telephonyStatus;
     /**
      * Order number of a notification to state the chronology
+     * Format: int32
      */
     public Long sequence;
     /**

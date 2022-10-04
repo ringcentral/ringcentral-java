@@ -2,6 +2,7 @@ package com.ringcentral.paths.restapi.account.directory.entries.search;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.DirectoryResource;
+import com.ringcentral.definitions.SearchDirectoryEntriesParameters;
 import com.ringcentral.definitions.SearchDirectoryEntriesRequest;
 
 public class Index {
@@ -25,8 +26,12 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadExtensions
      */
-    public DirectoryResource post(SearchDirectoryEntriesRequest searchDirectoryEntriesRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), searchDirectoryEntriesRequest, null);
+    public DirectoryResource post(SearchDirectoryEntriesRequest searchDirectoryEntriesRequest, SearchDirectoryEntriesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(), searchDirectoryEntriesRequest, queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), DirectoryResource.class);
+    }
+
+    public DirectoryResource post(SearchDirectoryEntriesRequest searchDirectoryEntriesRequest) throws com.ringcentral.RestException, java.io.IOException {
+        return this.post(searchDirectoryEntriesRequest, null);
     }
 }

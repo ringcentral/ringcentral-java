@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class Forbidden {
     /**
-     *
+     * List of errors
      */
     public ErrorBody[] errors;
 

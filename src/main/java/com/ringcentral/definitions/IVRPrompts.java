@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class IVRPrompts {
+public class IvrPrompts {
     /**
      * Link to prompts library resource
      */
@@ -13,28 +13,28 @@ public class IVRPrompts {
     /**
      *
      */
-    public CallHandlingNavigationInfo navigation;
+    public NavigationInfo navigation;
     /**
      *
      */
-    public CallHandlingPagingInfo paging;
+    public EnumeratedPaging paging;
 
-    public IVRPrompts uri(String uri) {
+    public IvrPrompts uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    public IVRPrompts records(PromptInfo[] records) {
+    public IvrPrompts records(PromptInfo[] records) {
         this.records = records;
         return this;
     }
 
-    public IVRPrompts navigation(CallHandlingNavigationInfo navigation) {
+    public IvrPrompts navigation(NavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public IVRPrompts paging(CallHandlingPagingInfo paging) {
+    public IvrPrompts paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }

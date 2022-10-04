@@ -10,15 +10,16 @@ public class DeviceInfoRequest {
      */
     public String id;
     /**
-     * Supported for iOS devices only. Certificate name (used by iOS applications for APNS subscription)
+     * Supported for iOS devices only. Certificate name (used by iOS
+     * applications for APNS subscription)
      */
     public String appExternalId;
     /**
-     * Supported for SoftPhone only. Computer name
+     * Computer name (for SoftPhone only).
      */
     public String computerName;
     /**
-     * Serial number for HardPhone; `endpoint_id` for softphone and mobile applications. Returned only when the phone is shipped and provisioned
+     * Endpoint/device instance identifier for Softphone and mobile applications.
      */
     public String serial;
 

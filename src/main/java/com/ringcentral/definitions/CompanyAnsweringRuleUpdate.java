@@ -35,9 +35,9 @@ public class CompanyAnsweringRuleUpdate {
      */
     public String type;
     /**
-     * Internal identifier of the extension the call is forwarded to. Supported for &#039;Bypass&#039; mode only (that should be specified in `callHandlingAction` field)
+     *
      */
-    public String extension;
+    public CompanyAnsweringRuleCallersInfoRequest extension;
     /**
      * Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
      */
@@ -78,7 +78,7 @@ public class CompanyAnsweringRuleUpdate {
         return this;
     }
 
-    public CompanyAnsweringRuleUpdate extension(String extension) {
+    public CompanyAnsweringRuleUpdate extension(CompanyAnsweringRuleCallersInfoRequest extension) {
         this.extension = extension;
         return this;
     }

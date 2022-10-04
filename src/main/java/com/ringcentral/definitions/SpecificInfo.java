@@ -7,10 +7,12 @@ package com.ringcentral.definitions;
 public class SpecificInfo {
     /**
      * Starting time for data collection
+     * Format: date-time
      */
     public String timeFrom;
     /**
      * Ending time for data collection
+     * Format: date-time
      */
     public String timeTo;
     /**

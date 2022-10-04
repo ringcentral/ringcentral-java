@@ -21,6 +21,7 @@ public class DetailedExtensionPresenceWithSIPEventBody {
     public ActiveCallInfo[] activeCalls;
     /**
      * Order number of a notification to state the chronology
+     * Format: int32
      */
     public Long sequence;
     /**
@@ -57,6 +58,7 @@ public class DetailedExtensionPresenceWithSIPEventBody {
     public Boolean pickUpCallsOnHold;
     /**
      * Total number of active calls on extension at the present moment
+     * Format: int32
      */
     public Long totalActiveCalls;
     /**

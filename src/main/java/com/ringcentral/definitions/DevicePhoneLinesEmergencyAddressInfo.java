@@ -3,11 +3,11 @@ package com.ringcentral.definitions;
 
 public class DevicePhoneLinesEmergencyAddressInfo {
     /**
-     * &#039;True&#039; if specifying of emergency address is required
+     * Indicates that emergency address is required
      */
     public Boolean required;
     /**
-     * &#039;True&#039; if only local emergency address can be specified
+     * Indicates that only local emergency address can be specified
      */
     public Boolean localOnly;
 

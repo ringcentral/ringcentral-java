@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class ParsePhoneNumberRequest {
     /**
-     * Phone numbers passed in a string. The maximum value of phone numbers is limited to 64. The maximum number of symbols in each phone number in a string is 64
+     * The list of phone numbers passed as an array of strings (not more than 64 items). The maximum size of each string is 64 characters
      */
     public String[] originalStrings;
 

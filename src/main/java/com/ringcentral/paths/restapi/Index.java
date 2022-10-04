@@ -1,8 +1,8 @@
 package com.ringcentral.paths.restapi;
 
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.GetVersionResponse;
-import com.ringcentral.definitions.GetVersionsResponse;
+import com.ringcentral.definitions.ApiVersionInfo;
+import com.ringcentral.definitions.ApiVersionsList;
 
 public class Index {
     public RestClient rc;
@@ -34,9 +34,9 @@ public class Index {
      * Endpoint: /restapi
      * Rate Limit Group: NoThrottling
      */
-    public GetVersionsResponse list() throws com.ringcentral.RestException, java.io.IOException {
+    public ApiVersionsList list() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetVersionsResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), ApiVersionsList.class);
     }
 
     /**
@@ -45,12 +45,12 @@ public class Index {
      * Endpoint: /restapi/{apiVersion}
      * Rate Limit Group: NoThrottling
      */
-    public GetVersionResponse get() throws com.ringcentral.RestException, java.io.IOException {
+    public ApiVersionInfo get() throws com.ringcentral.RestException, java.io.IOException {
         if (apiVersion == null) {
             throw new IllegalArgumentException("Parameter apiVersion cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetVersionResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), ApiVersionInfo.class);
     }
 
     public com.ringcentral.paths.restapi.glip.Index glip() {

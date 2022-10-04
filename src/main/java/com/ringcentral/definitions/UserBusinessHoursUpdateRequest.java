@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class UserBusinessHoursUpdateRequest {
     /**
-     *
+     * Required
      */
     public UserBusinessHoursScheduleInfo schedule;
 

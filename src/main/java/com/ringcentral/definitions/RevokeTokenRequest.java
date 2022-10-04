@@ -1,23 +1,25 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Request body for operation revokeToken
- */
 public class RevokeTokenRequest {
     /**
-     *
-     */
-    public String client_assertion_type;
-    /**
-     *
-     */
-    public String client_assertion;
-    /**
-     * Active access or refresh token to be revoked
+     * Access or refresh token to be revoked
      * Required
      */
     public String token;
+    /**
+     * Client assertion type
+     */
+    public String client_assertion_type;
+    /**
+     * Client assertion
+     */
+    public String client_assertion;
+
+    public RevokeTokenRequest token(String token) {
+        this.token = token;
+        return this;
+    }
 
     public RevokeTokenRequest client_assertion_type(String client_assertion_type) {
         this.client_assertion_type = client_assertion_type;
@@ -26,11 +28,6 @@ public class RevokeTokenRequest {
 
     public RevokeTokenRequest client_assertion(String client_assertion) {
         this.client_assertion = client_assertion;
-        return this;
-    }
-
-    public RevokeTokenRequest token(String token) {
-        this.token = token;
         return this;
     }
 }

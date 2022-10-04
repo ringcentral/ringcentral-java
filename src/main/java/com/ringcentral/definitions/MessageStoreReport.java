@@ -4,10 +4,12 @@ package com.ringcentral.definitions;
 public class MessageStoreReport {
     /**
      * Internal identifier of a message store report task
+     * Example: 400142200026-400142200026-bd162f24028442489385eb3f44c18354
      */
     public String id;
     /**
-     * Link to a task
+     * Canonical URI of a task
+     * Format: uri
      */
     public String uri;
     /**
@@ -24,22 +26,28 @@ public class MessageStoreReport {
      */
     public String extensionId;
     /**
-     * Task creation time
-     */
-    public String creationTime;
-    /**
-     * Time of the last task modification
-     */
-    public String lastModifiedTime;
-    /**
-     * Only messages created before the date will be collected. The default value is current time
+     * The end of the time range to collect message records in ISO 8601 format including timezone
+     * Format: date-time
      */
     public String dateTo;
     /**
-     * Only messages created after (or including) the date will be collected. The default value is current time minus 24 hours
+     * The beginning of the time range to collect call log records in ISO 8601 format including timezone
+     * Format: date-time
      */
     public String dateFrom;
     /**
+     * The time when this task was started
+     * Format: date-time
+     */
+    public String startTime;
+    /**
+     * The time when this task was finished
+     * Format: date-time
+     */
+    public String finishTime;
+    /**
+     * Type of messages to be collected.
+     * Example: Fax,VoiceMail
      * Enum: EMail, Fax, SMS, VoiceMail, Pager, Text
      */
     public String[] messageTypes;
@@ -69,16 +77,6 @@ public class MessageStoreReport {
         return this;
     }
 
-    public MessageStoreReport creationTime(String creationTime) {
-        this.creationTime = creationTime;
-        return this;
-    }
-
-    public MessageStoreReport lastModifiedTime(String lastModifiedTime) {
-        this.lastModifiedTime = lastModifiedTime;
-        return this;
-    }
-
     public MessageStoreReport dateTo(String dateTo) {
         this.dateTo = dateTo;
         return this;
@@ -86,6 +84,16 @@ public class MessageStoreReport {
 
     public MessageStoreReport dateFrom(String dateFrom) {
         this.dateFrom = dateFrom;
+        return this;
+    }
+
+    public MessageStoreReport startTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    public MessageStoreReport finishTime(String finishTime) {
+        this.finishTime = finishTime;
         return this;
     }
 

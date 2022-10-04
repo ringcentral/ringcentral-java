@@ -2,6 +2,7 @@ package com.ringcentral.paths.restapi.account.ivrmenus;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.IVRMenuInfo;
+import com.ringcentral.definitions.IVRMenuList;
 
 public class Index {
     public RestClient rc;
@@ -23,6 +24,18 @@ public class Index {
 
     public String path() {
         return path(true);
+    }
+
+    /**
+     * Returns a company IVR menus.
+     * HTTP Method: get
+     * Endpoint: /restapi/{apiVersion}/account/{accountId}/ivr-menus
+     * Rate Limit Group: Medium
+     * App Permission: ReadAccounts
+     */
+    public IVRMenuList list() throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), IVRMenuList.class);
     }
 
     /**

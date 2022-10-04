@@ -6,40 +6,30 @@ package com.ringcentral.definitions;
  */
 public class ListA2PBatchesParameters {
     /**
-     * The default is 24 hours before `dateTo`
-     * Format: date-time
-     */
-    public String dateFrom;
-    /**
-     * The default is current time
-     * Format: date-time
-     */
-    public String dateTo;
-    /**
-     * Current status of a message batch
-     * Enum: Processing, Sent, Completed
-     */
-    public String[] status;
-    /**
      * Phone number in E.164 format from which the messages are going to be sent
+     * Example: 15551234455
      */
     public String from;
     /**
-     * Token of the page to be retrieved
+     * A list of batch statuses to filter the results
+     * Example: Queued,Processing
+     * Enum: Queued, Processing, Sent, Completed
+     */
+    public String[] status;
+    /**
+     * The page token of the page to be retrieved
+     * Example: pgt1
      */
     public String pageToken;
     /**
-     * Number of records to be returned for the page
+     * The number of records to be returned per page
+     * Format: int64
+     * Example: 1
      */
-    public String perPage;
+    public Long perPage;
 
-    public ListA2PBatchesParameters dateFrom(String dateFrom) {
-        this.dateFrom = dateFrom;
-        return this;
-    }
-
-    public ListA2PBatchesParameters dateTo(String dateTo) {
-        this.dateTo = dateTo;
+    public ListA2PBatchesParameters from(String from) {
+        this.from = from;
         return this;
     }
 
@@ -48,17 +38,12 @@ public class ListA2PBatchesParameters {
         return this;
     }
 
-    public ListA2PBatchesParameters from(String from) {
-        this.from = from;
-        return this;
-    }
-
     public ListA2PBatchesParameters pageToken(String pageToken) {
         this.pageToken = pageToken;
         return this;
     }
 
-    public ListA2PBatchesParameters perPage(String perPage) {
+    public ListA2PBatchesParameters perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }

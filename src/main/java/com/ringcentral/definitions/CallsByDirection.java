@@ -1,25 +1,28 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Data for calls with breakdown by direction (Inbound, Outbound)
+ */
 public class CallsByDirection {
     /**
+     * Unit of the result value
      * Required
-     * Format: double
+     * Enum: Percent, Seconds, Instances
      */
-    public Double inbound;
+    public String valueType;
     /**
      * Required
-     * Format: double
      */
-    public Double outbound;
+    public CallsByDirectionBreakdown values;
 
-    public CallsByDirection inbound(Double inbound) {
-        this.inbound = inbound;
+    public CallsByDirection valueType(String valueType) {
+        this.valueType = valueType;
         return this;
     }
 
-    public CallsByDirection outbound(Double outbound) {
-        this.outbound = outbound;
+    public CallsByDirection values(CallsByDirectionBreakdown values) {
+        this.values = values;
         return this;
     }
 }

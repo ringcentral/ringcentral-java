@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class ParsePhoneNumberResponse {
     /**
      * Canonical URI of a resource
+     * Format: uri
      */
     public String uri;
     /**
@@ -11,7 +12,7 @@ public class ParsePhoneNumberResponse {
      */
     public GetCountryInfoNumberParser homeCountry;
     /**
-     * Parsed phone numbers data
+     * Parsed phone numbers information
      * Required
      */
     public PhoneNumberInfoNumberParser[] phoneNumbers;

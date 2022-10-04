@@ -1,6 +1,9 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Paging information
+ */
 public class ResponsePaging {
     /**
      * The current page number

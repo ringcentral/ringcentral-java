@@ -19,14 +19,6 @@ public class ListAnsweringRulesParameters {
      * If true, then only active call handling rules are returned
      */
     public Boolean enabledOnly;
-    /**
-     * Default: 1
-     */
-    public String page;
-    /**
-     * Default: 100
-     */
-    public String perPage;
 
     public ListAnsweringRulesParameters type(String type) {
         this.type = type;
@@ -40,16 +32,6 @@ public class ListAnsweringRulesParameters {
 
     public ListAnsweringRulesParameters enabledOnly(Boolean enabledOnly) {
         this.enabledOnly = enabledOnly;
-        return this;
-    }
-
-    public ListAnsweringRulesParameters page(String page) {
-        this.page = page;
-        return this;
-    }
-
-    public ListAnsweringRulesParameters perPage(String perPage) {
-        this.perPage = perPage;
         return this;
     }
 }

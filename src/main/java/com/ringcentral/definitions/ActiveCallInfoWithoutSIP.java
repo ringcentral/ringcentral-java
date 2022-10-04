@@ -44,14 +44,14 @@ public class ActiveCallInfoWithoutSIP {
      */
     public String sessionId;
     /**
+     * Telephony identifier of a call session
+     */
+    public String telephonySessionId;
+    /**
      * Telephony call status
      * Enum: NoCall, CallConnected, Ringing, OnHold, ParkedCall
      */
     public String telephonyStatus;
-    /**
-     * Telephony identifier of a call session
-     */
-    public String telephonySessionId;
     /**
      * Type of call termination. Supported for calls in &#039;NoCall&#039; status. If the returned termination type is &#039;intermediate&#039; it means the call is not actually ended, the connection is established on one of the devices
      * Enum: final, intermediate
@@ -112,13 +112,13 @@ public class ActiveCallInfoWithoutSIP {
         return this;
     }
 
-    public ActiveCallInfoWithoutSIP telephonyStatus(String telephonyStatus) {
-        this.telephonyStatus = telephonyStatus;
+    public ActiveCallInfoWithoutSIP telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
         return this;
     }
 
-    public ActiveCallInfoWithoutSIP telephonySessionId(String telephonySessionId) {
-        this.telephonySessionId = telephonySessionId;
+    public ActiveCallInfoWithoutSIP telephonyStatus(String telephonyStatus) {
+        this.telephonyStatus = telephonyStatus;
         return this;
     }
 

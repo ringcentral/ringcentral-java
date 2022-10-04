@@ -21,11 +21,11 @@ public class IVRMenuInfo {
     /**
      *
      */
-    public IVRMenuSiteInfo site;
+    public IvrMenuSiteInfo site;
     /**
      *
      */
-    public IVRMenuPromptInfo prompt;
+    public IvrMenuPromptInfo prompt;
     /**
      * Keys handling settings
      */
@@ -51,12 +51,12 @@ public class IVRMenuInfo {
         return this;
     }
 
-    public IVRMenuInfo site(IVRMenuSiteInfo site) {
+    public IVRMenuInfo site(IvrMenuSiteInfo site) {
         this.site = site;
         return this;
     }
 
-    public IVRMenuInfo prompt(IVRMenuPromptInfo prompt) {
+    public IVRMenuInfo prompt(IvrMenuPromptInfo prompt) {
         this.prompt = prompt;
         return this;
     }

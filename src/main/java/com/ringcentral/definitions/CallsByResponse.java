@@ -1,45 +1,28 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Data for calls with breakdown by response (Answered, NotAnswered, Connected, NotConnected)
+ */
 public class CallsByResponse {
     /**
+     * Unit of the result value
      * Required
-     * Format: double
+     * Enum: Percent, Seconds, Instances
      */
-    public Double answered;
+    public String valueType;
     /**
      * Required
-     * Format: double
      */
-    public Double notAnswered;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double connected;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double notConnected;
+    public CallsByResponseBreakdown values;
 
-    public CallsByResponse answered(Double answered) {
-        this.answered = answered;
+    public CallsByResponse valueType(String valueType) {
+        this.valueType = valueType;
         return this;
     }
 
-    public CallsByResponse notAnswered(Double notAnswered) {
-        this.notAnswered = notAnswered;
-        return this;
-    }
-
-    public CallsByResponse connected(Double connected) {
-        this.connected = connected;
-        return this;
-    }
-
-    public CallsByResponse notConnected(Double notConnected) {
-        this.notConnected = notConnected;
+    public CallsByResponse values(CallsByResponseBreakdown values) {
+        this.values = values;
         return this;
     }
 }

@@ -11,16 +11,24 @@ public class ReadA2PSMSOptOutsParameters {
      */
     public String from;
     /**
-     * The reciever&#039;s phone number (`to` field) in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format for filtering messages
+     * The receiver&#039;s phone number (`to` field) in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format for filtering messages
      * Example: 15551237755
      */
     public String to;
     /**
-     * Token of the page to be retrieved
+     * The status (opted out, opted in, or both) to be used as the filter
+     * Example: optout
+     * Default: optout
+     * Enum: optout, optin, all
+     */
+    public String status;
+    /**
+     * The page token of the page to be retrieved
+     * Example: pgt1
      */
     public String pageToken;
     /**
-     * Number of records to be returned for the page
+     * The number of records to be returned for the page
      * Format: int32
      * Example: 5
      * Default: 1000
@@ -34,6 +42,11 @@ public class ReadA2PSMSOptOutsParameters {
 
     public ReadA2PSMSOptOutsParameters to(String to) {
         this.to = to;
+        return this;
+    }
+
+    public ReadA2PSMSOptOutsParameters status(String status) {
+        this.status = status;
         return this;
     }
 

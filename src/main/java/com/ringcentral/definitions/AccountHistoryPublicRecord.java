@@ -22,12 +22,12 @@ public class AccountHistoryPublicRecord {
      */
     public String actionId;
     /**
-     * Operation: &quot;CREATE&quot;, &quot;UPDATE&quot;, or &quot;DELETE&quot;
+     * Operation: &quot;CREATE&quot;, &quot;UPDATE&quot;, &quot;DELETE&quot; or custom
      * Example: UPDATE
      */
     public String eventType;
     /**
-     * Account which is related with the particular record.
+     * Account identifier which is related with the particular record.
      * Example: 403858014008
      */
     public String accountId;
@@ -41,7 +41,7 @@ public class AccountHistoryPublicRecord {
      */
     public AccountHistoryRecordTarget target;
     /**
-     * IP-address of a client. If not specified RCClientIp header value is used
+     * IP-address of a client.
      * Example: 192.168.42.6
      */
     public String clientIp;

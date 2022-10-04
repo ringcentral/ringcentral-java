@@ -13,7 +13,7 @@ public class DeviceAddonInfo {
     /**
      * Format: int32
      */
-    public String count;
+    public Long count;
 
     public DeviceAddonInfo id(String id) {
         this.id = id;
@@ -25,7 +25,7 @@ public class DeviceAddonInfo {
         return this;
     }
 
-    public DeviceAddonInfo count(String count) {
+    public DeviceAddonInfo count(Long count) {
         this.count = count;
         return this;
     }

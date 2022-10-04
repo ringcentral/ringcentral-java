@@ -6,11 +6,11 @@ package com.ringcentral.definitions;
  */
 public class KeyInfo {
     /**
-     *
+     * Extension&#039;s number
      */
     public String extensionNumber;
     /**
-     *
+     * Extension&#039;s name
      */
     public String name;
 

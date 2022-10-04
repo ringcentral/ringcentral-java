@@ -1,10 +1,10 @@
 package com.ringcentral.paths.restapi.account.a2psms.batches;
 
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateSMSMessageBatchRequest;
+import com.ringcentral.definitions.BatchListResponse;
 import com.ringcentral.definitions.ListA2PBatchesParameters;
-import com.ringcentral.definitions.MessageBatchInfo;
-import com.ringcentral.definitions.MessageBatchListResponse;
+import com.ringcentral.definitions.MessageBatchCreateRequest;
+import com.ringcentral.definitions.MessageBatchResponse;
 
 public class Index {
     public RestClient rc;
@@ -35,25 +35,28 @@ public class Index {
      * Rate Limit Group: Light
      * App Permission: A2PSMS
      */
-    public MessageBatchListResponse list(ListA2PBatchesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public BatchListResponse list(ListA2PBatchesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), MessageBatchListResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), BatchListResponse.class);
     }
 
-    public MessageBatchListResponse list() throws com.ringcentral.RestException, java.io.IOException {
+    public BatchListResponse list() throws com.ringcentral.RestException, java.io.IOException {
         return this.list(null);
     }
 
     /**
-     * Allows to send high volume of A2P (Application-to-Person) SMS messages (in message batches). Only phone number with the `A2PSmsSender` feature can be used as a sender.
+     * Allows to send high volume of A2P (Application-to-Person) SMS messages
+     * (in message batches). Only phone number with the `A2PSmsSender` feature can
+     * be used as a sender.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/a2p-sms/batches
      * Rate Limit Group: Light
      * App Permission: A2PSMS
      */
-    public MessageBatchInfo post(CreateSMSMessageBatchRequest createSMSMessageBatchRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(false), createSMSMessageBatchRequest, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), MessageBatchInfo.class);
+    public MessageBatchResponse post(MessageBatchCreateRequest messageBatchCreateRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(false), messageBatchCreateRequest, null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), MessageBatchResponse.class);
     }
 
     /**
@@ -63,11 +66,11 @@ public class Index {
      * Rate Limit Group: Light
      * App Permission: A2PSMS
      */
-    public MessageBatchInfo get() throws com.ringcentral.RestException, java.io.IOException {
+    public MessageBatchResponse get() throws com.ringcentral.RestException, java.io.IOException {
         if (batchId == null) {
             throw new IllegalArgumentException("Parameter batchId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), MessageBatchInfo.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), MessageBatchResponse.class);
     }
 }

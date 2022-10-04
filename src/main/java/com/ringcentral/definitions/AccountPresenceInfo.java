@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class AccountPresenceInfo {
     /**
      * Canonical URI of account presence resource
+     * Format: uri
      */
     public String uri;
     /**

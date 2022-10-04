@@ -8,10 +8,12 @@ public class ExportTaskResultInfo {
     public String id;
     /**
      * Link for downloading a dataset
+     * Format: uri
      */
     public String uri;
     /**
      * Size of ta dataset in bytes
+     * Format: int64
      */
     public Long size;
 

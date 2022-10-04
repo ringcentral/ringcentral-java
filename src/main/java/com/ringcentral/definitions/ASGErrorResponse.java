@@ -7,21 +7,24 @@ package com.ringcentral.definitions;
 public class ASGErrorResponse {
     /**
      * Error code
+     * Required
+     * Example: CMN-101
      */
     public String errorCode;
     /**
-     * Human-readable description of an error. Not suitable for end users
+     * Human-readable description of the error. Not suitable for end users.
+     * Required
      * Example: AccountId 1234 is invalid
      */
-    public String description;
+    public String message;
 
     public ASGErrorResponse errorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    public ASGErrorResponse description(String description) {
-        this.description = description;
+    public ASGErrorResponse message(String message) {
+        this.message = message;
         return this;
     }
 }

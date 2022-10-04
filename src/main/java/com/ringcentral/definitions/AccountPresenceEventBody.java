@@ -17,6 +17,7 @@ public class AccountPresenceEventBody {
     public String telephonyStatus;
     /**
      * Order number of a notification to state the chronology
+     * Format: int32
      */
     public Long sequence;
     /**

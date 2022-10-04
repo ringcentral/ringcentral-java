@@ -25,6 +25,17 @@ public class ListExtensionDevicesParameters {
      * Default: 100
      */
     public String perPage;
+    /**
+     * Device type
+     * Default: HardPhone
+     * Enum: Room, SoftPhone, OtherPhone, HardPhone, Paging, WebRTC
+     */
+    public String line;
+    /**
+     * Type of phone line
+     * Enum: Standalone, StandaloneFree, BlaPrimary, BlaSecondary
+     */
+    public String lineType;
 
     public ListExtensionDevicesParameters linePooling(String linePooling) {
         this.linePooling = linePooling;
@@ -43,6 +54,16 @@ public class ListExtensionDevicesParameters {
 
     public ListExtensionDevicesParameters perPage(String perPage) {
         this.perPage = perPage;
+        return this;
+    }
+
+    public ListExtensionDevicesParameters line(String line) {
+        this.line = line;
+        return this;
+    }
+
+    public ListExtensionDevicesParameters lineType(String lineType) {
+        this.lineType = lineType;
         return this;
     }
 }

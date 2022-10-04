@@ -13,11 +13,11 @@ public class CallRecordingExtensions {
     /**
      *
      */
-    public CallHandlingNavigationInfo navigation;
+    public NavigationInfo navigation;
     /**
      *
      */
-    public CallHandlingPagingInfo paging;
+    public EnumeratedPaging paging;
 
     public CallRecordingExtensions uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class CallRecordingExtensions {
         return this;
     }
 
-    public CallRecordingExtensions navigation(CallHandlingNavigationInfo navigation) {
+    public CallRecordingExtensions navigation(NavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public CallRecordingExtensions paging(CallHandlingPagingInfo paging) {
+    public CallRecordingExtensions paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }

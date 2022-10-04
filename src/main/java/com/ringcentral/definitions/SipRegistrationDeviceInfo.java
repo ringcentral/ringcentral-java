@@ -3,11 +3,12 @@ package com.ringcentral.definitions;
 
 public class SipRegistrationDeviceInfo {
     /**
-     * Link to a device resource
+     * Canonical URI of the resource
+     * Format: uri
      */
     public String uri;
     /**
-     * Internal identifier of a Device
+     * Internal identifier of a device
      */
     public String id;
     /**
@@ -16,7 +17,10 @@ public class SipRegistrationDeviceInfo {
      */
     public String type;
     /**
-     * Device identification number (stock keeping unit) in the format TP-ID [-AT-AC], where TP is device type (HP for RC HardPhone, DV for all other devices including softphone); ID - device model ID; AT -addon type ID; AC - addon count (if any). For example &#039;HP-56-2-2&#039;
+     * Device identification number (stock keeping unit) in the format
+     * TP-ID [-AT-AC], where TP is device type (HP for RC HardPhone, DV for all
+     * other devices including softphone); ID - device model ID; AT -addon type
+     * ID; AC - addon count (if any). For example &#039;HP-56-2-2&#039;
      */
     public String sku;
     /**
@@ -24,15 +28,18 @@ public class SipRegistrationDeviceInfo {
      */
     public String status;
     /**
-     * Device name. Mandatory if ordering  SoftPhone or OtherPhone. Optional for  HardPhone. If not specified for HardPhone, then device  model  name is used as device  name
+     * Device name. Mandatory if ordering  SoftPhone or OtherPhone.
+     * Optional for  HardPhone. If not specified for HardPhone, then device  model  name
+     * is used as device  name
      */
     public String name;
     /**
-     * Serial number for HardPhone (is returned only when the phone is shipped and provisioned); endpoint_id for softphone and mobile applications
+     * Serial number for HardPhone (is returned only when the phone
+     * is shipped and provisioned); endpoint_id for Softphone and mobile applications
      */
     public String serial;
     /**
-     * PC name for softphone
+     * Computer name for Softphone devices
      */
     public String computerName;
     /**
@@ -54,13 +61,15 @@ public class SipRegistrationDeviceInfo {
     /**
      *
      */
-    public Shipping shipping;
+    public ShippingInfo shipping;
     /**
      * Phone lines information
      */
     public DevicePhoneLinesInfo[] phoneLines;
     /**
-     * Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. EitherT? model  structure, or  boxBillingId  must be specified forT?HardPhone
+     * Box billing identifier of a device. Applicable only for HardPhones.
+     * It is an alternative way to identify the device to be ordered. Either
+     * model  structure, or  boxBillingId  must be specified forT?HardPhone
      * Format: int64
      */
     public Long boxBillingId;
@@ -69,12 +78,18 @@ public class SipRegistrationDeviceInfo {
      */
     public Boolean useAsCommonPhone;
     /**
-     * Pooling type of a deviceHost - device with standalone paid phone line which can be linked to Glip/Softphone instanceGuest - device with a linked phone lineNone - device without a phone line or with specific line (free, BLA, etc.) = [&#039;Host&#039;, &#039;Guest&#039;, &#039;None&#039;]
+     * Pooling type of a deviceHost - device with standalone paid
+     * phone line which can be linked to Glip/Softphone instanceGuest - device
+     * with a linked phone lineNone - device without a phone line or with specific
+     * line (free, BLA, etc.) = [&#039;Host&#039;, &#039;Guest&#039;, &#039;None&#039;]
      * Enum: Host, Guest, None
      */
     public String linePooling;
     /**
-     * Network location status. &#039;True&#039; if the device is located in the configured corporate network (On-Net); &#039;False&#039; for Off-Net location. Parameter is not returned if `EmergencyAddressAutoUpdate` feature is not enabled for the account/user, or if device network location is not determined
+     * Network location status. &#039;True&#039; if the device is located in
+     * the configured corporate network (On-Net); &#039;False&#039; for Off-Net location.
+     * Parameter is not returned if `EmergencyAddressAutoUpdate` feature is not
+     * enabled for the account/user, or if device network location is not determined
      */
     public Boolean inCompanyNet;
     /**
@@ -82,7 +97,9 @@ public class SipRegistrationDeviceInfo {
      */
     public DeviceSiteInfo site;
     /**
-     * Datetime of receiving last location report in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z
+     * Timestamp of receiving last location report in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+     * format including timezone, for example *2016-03-10T18:07:52.534Z
+     * Format: date-time
      */
     public String lastLocationReportTime;
 
@@ -146,7 +163,7 @@ public class SipRegistrationDeviceInfo {
         return this;
     }
 
-    public SipRegistrationDeviceInfo shipping(Shipping shipping) {
+    public SipRegistrationDeviceInfo shipping(ShippingInfo shipping) {
         this.shipping = shipping;
         return this;
     }

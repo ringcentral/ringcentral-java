@@ -3,15 +3,15 @@ package com.ringcentral.definitions;
 
 public class DirectoryResource {
     /**
-     *
+     * Required
      */
-    public CompanyContactsPagingInfo paging;
+    public PagingInfo paging;
     /**
-     *
+     * Required
      */
     public ContactResource[] records;
 
-    public DirectoryResource paging(CompanyContactsPagingInfo paging) {
+    public DirectoryResource paging(PagingInfo paging) {
         this.paging = paging;
         return this;
     }

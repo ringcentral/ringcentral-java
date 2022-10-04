@@ -18,7 +18,9 @@ public class Index {
     }
 
     /**
-     * Returns the audit trail data applying specific filters. Audit trail searching is limited to the last 10,000 records or last 180 days, whichever comes first.
+     * Returns the audit trail data with specific filters applied.
+     * Audit trail searching is limited to the last 10,000 records or last 180 days, whichever comes first.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/audit-trail/search
      * Rate Limit Group: Heavy

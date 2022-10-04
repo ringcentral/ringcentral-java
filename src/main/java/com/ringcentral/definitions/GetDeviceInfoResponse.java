@@ -17,7 +17,7 @@ public class GetDeviceInfoResponse {
     /**
      * Device type
      * Default: HardPhone
-     * Enum: BLA, SoftPhone, OtherPhone, HardPhone, WebPhone, Paging, Room
+     * Enum: BLA, SoftPhone, OtherPhone, HardPhone, WebPhone, Paging, Room, WebRTC
      */
     public String type;
     /**

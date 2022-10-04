@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Specifies behaviour for the missed call scenario. Returned only if `enabled` parameter of a voicemail is set to 'false'
+ * Specifies behavior for the missed call scenario. Returned only if `enabled` parameter of a voicemail is set to 'false'
  */
 public class MissedCallInfo {
     /**

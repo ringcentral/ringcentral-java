@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 /**
  * Prompt metadata
  */
-public class IVRMenuPromptInfo {
+public class IvrMenuPromptInfo {
     /**
      * Prompt mode: custom media or text
      * Enum: Audio, TextToSpeech
@@ -23,22 +23,22 @@ public class IVRMenuPromptInfo {
      */
     public PromptLanguageInfo language;
 
-    public IVRMenuPromptInfo mode(String mode) {
+    public IvrMenuPromptInfo mode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    public IVRMenuPromptInfo audio(AudioPromptInfo audio) {
+    public IvrMenuPromptInfo audio(AudioPromptInfo audio) {
         this.audio = audio;
         return this;
     }
 
-    public IVRMenuPromptInfo text(String text) {
+    public IvrMenuPromptInfo text(String text) {
         this.text = text;
         return this;
     }
 
-    public IVRMenuPromptInfo language(PromptLanguageInfo language) {
+    public IvrMenuPromptInfo language(PromptLanguageInfo language) {
         this.language = language;
         return this;
     }

@@ -14,8 +14,8 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.analytics.phone.Index phone() {
-        return new com.ringcentral.paths.analytics.phone.Index(this);
+    public com.ringcentral.paths.analytics.calls.Index calls() {
+        return new com.ringcentral.paths.analytics.calls.Index(this);
     }
 
 }

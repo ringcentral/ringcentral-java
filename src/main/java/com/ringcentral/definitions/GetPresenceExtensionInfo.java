@@ -12,6 +12,7 @@ public class GetPresenceExtensionInfo {
     public Long id;
     /**
      * Canonical URI of an extension
+     * Format: uri
      */
     public String uri;
     /**

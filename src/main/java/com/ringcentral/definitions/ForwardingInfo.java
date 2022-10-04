@@ -15,6 +15,7 @@ public class ForwardingInfo {
     public Boolean notifyAdminSoftPhones;
     /**
      * Number of rings before forwarding starts
+     * Format: int32
      */
     public Long softPhonesRingCount;
     /**
@@ -30,9 +31,9 @@ public class ForwardingInfo {
     /**
      * Information on a call forwarding rule
      */
-    public RuleInfo[] rules;
+    public ForwardingRuleInfo[] rules;
     /**
-     * Specifies if desktop and mobile applications of the user are notified  before (true) or after (false) forwarding the incoming call to desk phones and forwarding numbers. Applicable only if `notifyMySoftPhones` parameter is set to `true`
+     * Specifies if desktop and mobile applications of the user are notified before (true) or after (false) forwarding the incoming call to desk phones and forwarding numbers. Applicable only if `notifyMySoftPhones` parameter is set to `true`
      */
     public Boolean softPhonesPositionTop;
     /**
@@ -65,7 +66,7 @@ public class ForwardingInfo {
         return this;
     }
 
-    public ForwardingInfo rules(RuleInfo[] rules) {
+    public ForwardingInfo rules(ForwardingRuleInfo[] rules) {
         this.rules = rules;
         return this;
     }

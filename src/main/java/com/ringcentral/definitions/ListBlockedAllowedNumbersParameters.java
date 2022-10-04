@@ -6,27 +6,11 @@ package com.ringcentral.definitions;
  */
 public class ListBlockedAllowedNumbersParameters {
     /**
-     *
-     */
-    public Long page;
-    /**
-     *
-     */
-    public Long perPage;
-    /**
+     * Status of a phone number
+     * Default: Blocked
      * Enum: Blocked, Allowed
      */
     public String status;
-
-    public ListBlockedAllowedNumbersParameters page(Long page) {
-        this.page = page;
-        return this;
-    }
-
-    public ListBlockedAllowedNumbersParameters perPage(Long perPage) {
-        this.perPage = perPage;
-        return this;
-    }
 
     public ListBlockedAllowedNumbersParameters status(String status) {
         this.status = status;

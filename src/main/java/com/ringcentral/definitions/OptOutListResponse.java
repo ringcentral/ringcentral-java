@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Opt-out phone numbers information
+ * The list of opt outs
  */
 public class OptOutListResponse {
     /**

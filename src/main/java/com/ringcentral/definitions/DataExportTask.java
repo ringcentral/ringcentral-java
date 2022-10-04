@@ -11,11 +11,13 @@ public class DataExportTask {
      */
     public String id;
     /**
-     * Task creation datetime
+     * Task creation timestamp
+     * Format: date-time
      */
     public String creationTime;
     /**
-     * Task last modification datetime
+     * Task last modification timestamp
+     * Format: date-time
      */
     public String lastModifiedTime;
     /**
@@ -32,7 +34,7 @@ public class DataExportTask {
      */
     public SpecificInfo specific;
     /**
-     * Data collection sets. Returned by task ID
+     * Data collection archives. Returned by task ID
      */
     public ExportTaskResultInfo[] datasets;
 

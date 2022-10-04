@@ -1,18 +1,19 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Request body for operation authorize
- */
 public class AuthorizeRequest {
     /**
-     * Determines authorization flow: **code** - Authorization Code, **token** - Implicit Grant
+     * Determines authorization flow:
+     * - **code** - Authorization Code,
+     * - **token** - Implicit
      * Required
      * Enum: code, token
      */
     public String response_type;
     /**
-     * This is a callback URI which determines where the response is sent. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration
+     * This is a callback URI which determines where the response
+     * is sent. The value of this parameter must exactly match one of
+     * the URIs you have provided for your app upon registration
      * Required
      */
     public String redirect_uri;
@@ -26,34 +27,49 @@ public class AuthorizeRequest {
      */
     public String state;
     /**
-     * Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is &#039;1210&#039; - RingCentral US
+     * Brand identifier. If it is not provided in request,
+     * server will try to determine brand from client app profile. The
+     * default value is `1210` - RingCentral US brand ID
+     * Default: 1210
      */
     public String brand_id;
     /**
-     * Style of login form. The default value is &#039;page&#039;. The &#039;popup&#039; and &#039;touch&#039; values are featured for mobile applications
+     * Style of login form. The default value is &#039;page&#039;. The
+     * &#039;popup&#039; and &#039;touch&#039; values are featured for mobile applications
+     * Default: page
      * Enum: page, popup, touch, mobile
      */
     public String display;
     /**
-     * Specifies which login form will be displayed. Space-separated set of the following values: &#039;login&#039; - official RingCentral login form, &#039;sso&#039; - Single Sign-On login form, &#039;consent&#039; - form to show the requested scope and prompt user for consent. Either &#039;login&#039; or &#039;sso&#039; (or both) must be specified. The default value is &#039;login&amp;sso&#039;
-     * Enum: login, sso, consent
+     * Specifies which login form will be displayed. Space-separated
+     * set of the following values:
+     * - **login** - RingCentral native login form,
+     * - **sso** - Single Sign-On login form,
+     * - **consent** - form to show the requested scope and prompt user for consent.
+     * <p>
+     * Either `login` or `sso` (or both) must be specified. The default
+     * value is `login sso`
+     * Default: login sso
      */
     public String prompt;
     /**
-     * Localization code of a language. Overwrites &#039;Accept-Language&#039; header value
+     * Locale code of a language. Overwrites &#039;Accept-Language&#039; header value.
+     * <p>
+     * DEPRECATED: `ui_locales` parameter should be used instead
+     * Example: en-US
      */
     public String localeId;
     /**
-     * Localization code of a language. Overwrites &#039;localeId&#039; parameter value
+     * Locale code of a language. Overwrites &#039;Accept-Language&#039; header value and &#039;localeId&#039; parameter value
+     * Example: en-US
      */
     public String ui_locales;
     /**
-     * User interface options data
-     * Enum: hide_logo, hide_tos, hide_remember_me, external_popup, old_ui
+     * User interface options (space-separated)
      */
     public String ui_options;
     /**
-     *
+     * OAuth scope
      */
     public String scope;
     /**

@@ -26,20 +26,19 @@ public class Index {
     }
 
     /**
-     * Returns the list of extension phone numbers used for call forwarding and call flip. The returned list contains all the extension phone numbers used for call forwarding and call flip.
+     * Returns the list of extension phone numbers used for call forwarding
+     * and call flip. The returned list contains all the extension phone numbers
+     * used for call forwarding and call flip.
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/forwarding-number
      * Rate Limit Group: Light
      * App Permission: ReadAccounts
      * User Permission: ReadUserForwardingFlipNumbers
      */
-    public GetExtensionForwardingNumberListResponse list(ListForwardingNumbersParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetExtensionForwardingNumberListResponse.class);
-    }
-
     public GetExtensionForwardingNumberListResponse list() throws com.ringcentral.RestException, java.io.IOException {
-        return this.list(null);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetExtensionForwardingNumberListResponse.class);
     }
 
     /**
@@ -56,6 +55,19 @@ public class Index {
     }
 
     /**
+     * Deletes multiple forwarding numbers from the forwarding number list by IDs.
+     * HTTP Method: delete
+     * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/forwarding-number
+     * Rate Limit Group: Medium
+     * App Permission: EditExtensions
+     * User Permission: EditUserForwardingFlipNumbers
+     */
+    public String deleteAll(DeleteForwardingNumbersRequest deleteForwardingNumbersRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.delete(this.path(false), deleteForwardingNumbersRequest, null);
+        return rb.string();
+    }
+
+    /**
      * Returns a specific forwarding number.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
@@ -63,12 +75,12 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadUserForwardingFlipNumbers
      */
-    public ForwardingNumberInfo get() throws com.ringcentral.RestException, java.io.IOException {
+    public ForwardingNumberResource get() throws com.ringcentral.RestException, java.io.IOException {
         if (forwardingNumberId == null) {
             throw new IllegalArgumentException("Parameter forwardingNumberId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), ForwardingNumberInfo.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), ForwardingNumberResource.class);
     }
 
     /**

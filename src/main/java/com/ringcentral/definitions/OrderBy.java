@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class OrderBy {
     /**
      * Sorting priority index, starting from &#039;1&#039;. Optional if only one element in `orderBy` array is specified
+     * Format: int32
      */
     public Long index;
     /**

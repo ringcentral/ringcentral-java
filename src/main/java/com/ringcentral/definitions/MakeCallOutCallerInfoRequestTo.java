@@ -7,7 +7,7 @@ package com.ringcentral.definitions;
 public class MakeCallOutCallerInfoRequestTo {
     /**
      * Phone number in E.164 format
-     * Example: 16502223366
+     * Example: +16502223366
      */
     public String phoneNumber;
     /**

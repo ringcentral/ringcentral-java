@@ -6,12 +6,12 @@ package com.ringcentral.definitions;
  */
 public class AccountHistoryRecordTarget {
     /**
-     * Extension identifier of the affected entity or 0 for Company level
+     * Extension identifier of the affected entity or &quot;0&quot; for Company level
      * Example: 404611540004
      */
     public String objectId;
     /**
-     * Type of the entity. Possible values include EXTENSION, ACCOUNT, COMPANY, and TEMPLATE.
+     * Type of the entity.
      * Example: Extension
      * Enum: Extension, Account, Company, Template
      */
@@ -22,7 +22,7 @@ public class AccountHistoryRecordTarget {
      */
     public String name;
     /**
-     * Target extension (short) number of the affected entity (if the objectType is EXTENSION).
+     * Target extension (short) number  of the affected entity (if the objectType is EXTENSION).
      * Example: 103
      */
     public String extensionNumber;

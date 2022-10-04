@@ -6,20 +6,28 @@
 [![Chat](https://img.shields.io/badge/chat-on%20glip-orange.svg)](https://ringcentral.github.io/join-ringcentral/)
 [![Twitter](https://img.shields.io/twitter/follow/ringcentraldevs.svg?style=social&label=follow)](https://twitter.com/RingCentralDevs)
 
-__[RingCentral Developers](https://developer.ringcentral.com/api-products)__ is a cloud communications platform which can be accessed via more than 70 APIs. The platform's main capabilities include technologies that enable:
-__[Voice](https://developer.ringcentral.com/api-products/voice), [SMS/MMS](https://developer.ringcentral.com/api-products/sms), [Fax](https://developer.ringcentral.com/api-products/fax), [Glip Team Messaging](https://developer.ringcentral.com/api-products/team-messaging), [Data and Configurations](https://developer.ringcentral.com/api-products/configuration)__.
+__[RingCentral Developers](https://developer.ringcentral.com/api-products)__ is a cloud communications platform which
+can be accessed via more than 70 APIs. The platform's main capabilities include technologies that enable:
+__[Voice](https://developer.ringcentral.com/api-products/voice)
+, [SMS/MMS](https://developer.ringcentral.com/api-products/sms)
+, [Fax](https://developer.ringcentral.com/api-products/fax)
+, [Glip Team Messaging](https://developer.ringcentral.com/api-products/team-messaging)
+, [Data and Configurations](https://developer.ringcentral.com/api-products/configuration)__.
 
-[API Reference](https://developer.ringcentral.com/api-docs/latest/index.html) and [APIs Explorer](https://developer.ringcentral.com/api-explorer/latest/index.html).
-
+[API Reference](https://developer.ringcentral.com/api-docs/latest/index.html)
+and [APIs Explorer](https://developer.ringcentral.com/api-explorer/latest/index.html).
 
 ## Getting help and support
 
-If you are having difficulty using this SDK, or working with the RingCentral API, please visit our [developer community forums](https://community.ringcentral.com/spaces/144/) for help and to get quick answers to your questions. If you wish to contact the RingCentral Developer Support team directly, please [submit a help ticket](https://developers.ringcentral.com/support/create-case) from our developer website.
-
+If you are having difficulty using this SDK, or working with the RingCentral API, please visit
+our [developer community forums](https://community.ringcentral.com/spaces/144/) for help and to get quick answers to
+your questions. If you wish to contact the RingCentral Developer Support team directly,
+please [submit a help ticket](https://developers.ringcentral.com/support/create-case) from our developer website.
 
 ## Installation
 
-This SDK is tested against JDK 11 so we recommend using the same. Earlier versions such as Java 8 should work as well, please report issues if you encounter any.
+This SDK is tested against JDK 11 so we recommend using the same. Earlier versions such as Java 8 should work as well,
+please report issues if you encounter any.
 
 ### Gradle
 
@@ -33,8 +41,8 @@ dependencies {
 }
 ```
 
-Don't forget to replace `[version]` with expected version. You can find the latest versions in [Maven Central](https://search.maven.org/search?q=a:ringcentral).
-
+Don't forget to replace `[version]` with expected version. You can find the latest versions
+in [Maven Central](https://search.maven.org/search?q=a:ringcentral).
 
 ### Maven
 
@@ -46,16 +54,15 @@ Don't forget to replace `[version]` with expected version. You can find the late
 </dependency>
 ```
 
-Don't forget to replace `[version]` with expected version. You can find the latest versions in [Maven Central](https://search.maven.org/search?q=a:ringcentral).
-
+Don't forget to replace `[version]` with expected version. You can find the latest versions
+in [Maven Central](https://search.maven.org/search?q=a:ringcentral).
 
 ### Manually
 
-[Download jar here](https://search.maven.org/classic/#search%7Cga%7C1%7Ca%3A%22ringcentral%22) and save it into your java classpath.
-
+[Download jar here](https://search.maven.org/classic/#search%7Cga%7C1%7Ca%3A%22ringcentral%22) and save it into your
+java classpath.
 
 ## Usage
-
 
 ### Initialization & Authorization
 
@@ -75,7 +82,6 @@ public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentra
 public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
 ```
 
-
 ### Token refresh
 
 Since 1.0 version, the SDK by default does NOT do auto token refresh.
@@ -85,7 +91,6 @@ For simple apps, token auto refresh could be beneficial. So we provide a sugar m
 This method will start a background timer to refresh token for you every 30 minutes.
 You can customize the refresh period, for example, change it to every 50 minutes: `rc.autoRefresh(1000 * 60 * 50)`.
 
-
 ## Code samples
 
 You can find [sample code for all the endpoints](./samples.md).
@@ -94,10 +99,10 @@ There is also lots of useful code for your reference in our [test cases](./src/t
 
 Auto-generated [JavaDoc](https://ringcentral.github.io/ringcentral-java/).
 
-
 ## Logging
 
-The logging is implemented according to [Java Logging Overview](https://docs.oracle.com/javase/10/core/java-logging-overview.htm)
+The logging is implemented according
+to [Java Logging Overview](https://docs.oracle.com/javase/10/core/java-logging-overview.htm)
 
 To enable printing log to console:
 
@@ -105,10 +110,11 @@ To enable printing log to console:
 RestClient.logger.setLevel(Level.FINE);
 ```
 
-For more log output channels, please refer to [Handlers](https://docs.oracle.com/javase/10/core/java-logging-overview.htm#GUID-B83B652C-17EA-48D9-93D2-563AE1FF8EDA__HANDLERS-4D023767).
+For more log output channels, please refer
+to [Handlers](https://docs.oracle.com/javase/10/core/java-logging-overview.htm#GUID-B83B652C-17EA-48D9-93D2-563AE1FF8EDA__HANDLERS-4D023767)
+.
 
 [Demo project](https://github.com/tylerlong/rc-logging-demo-java).
-
 
 ## Binary content downloading
 
@@ -135,7 +141,6 @@ byte[] content = rc.restapi().account().extension().messageStore(message.id).con
 But not all binary content has been migrated to CDN.
 If the resource to download provides you with a CDN uri, use that CDN uri.
 If there is no CDN uri provided, construct the uri as the [sample code](./samples.md) shows.
-
 
 ## PubNub subscriptions & notifications
 

@@ -8,10 +8,12 @@ public class AggregatePerformanceReportCallsParameters {
     /**
      * The current page number
      * Minimum: 1
+     * Format: int32
      */
     public Long page;
     /**
      * Number of records displayed on a page
+     * Format: int32
      */
     public Long perPage;
 

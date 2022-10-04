@@ -1,9 +1,6 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Internal identifier of an extension the device should be assigned to
- */
 public class DeviceExtensionInfo {
     /**
      * Internal identifier of an extension
@@ -11,11 +8,12 @@ public class DeviceExtensionInfo {
      */
     public Long id;
     /**
-     * Link to an extension resource
+     * Canonical URL of an extension resource
+     * Format: uri
      */
     public String uri;
     /**
-     * Number of extension
+     * Short extension number
      */
     public String extensionNumber;
 

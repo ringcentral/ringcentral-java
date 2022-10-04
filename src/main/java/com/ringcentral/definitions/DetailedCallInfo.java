@@ -15,11 +15,11 @@ public class DetailedCallInfo {
      */
     public String fromTag;
     /**
-     *
+     * Format: uri
      */
     public String remoteUri;
     /**
-     *
+     * Format: uri
      */
     public String localUri;
     /**

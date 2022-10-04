@@ -1,55 +1,28 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Data for calls with breakdown by type (Direct, FromQueue, ParkRetrieval, Transferred, Outbound)
+ */
 public class CallsByType {
     /**
+     * Unit of the result value
      * Required
-     * Format: double
+     * Enum: Percent, Seconds, Instances
      */
-    public Double direct;
+    public String valueType;
     /**
      * Required
-     * Format: double
      */
-    public Double fromQueue;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double parkRetrieval;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double transferred;
-    /**
-     * Required
-     * Format: double
-     */
-    public Double outbound;
+    public CallsByTypeBreakdown values;
 
-    public CallsByType direct(Double direct) {
-        this.direct = direct;
+    public CallsByType valueType(String valueType) {
+        this.valueType = valueType;
         return this;
     }
 
-    public CallsByType fromQueue(Double fromQueue) {
-        this.fromQueue = fromQueue;
-        return this;
-    }
-
-    public CallsByType parkRetrieval(Double parkRetrieval) {
-        this.parkRetrieval = parkRetrieval;
-        return this;
-    }
-
-    public CallsByType transferred(Double transferred) {
-        this.transferred = transferred;
-        return this;
-    }
-
-    public CallsByType outbound(Double outbound) {
-        this.outbound = outbound;
+    public CallsByType values(CallsByTypeBreakdown values) {
+        this.values = values;
         return this;
     }
 }

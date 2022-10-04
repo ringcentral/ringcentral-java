@@ -1,12 +1,10 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Canonical URI for the corresponding page of the list
- */
 public class GlipDataExportNavigationInfoUri {
     /**
-     *
+     * Canonical URI for the corresponding page of the list
+     * Format: uri
      */
     public String uri;
 

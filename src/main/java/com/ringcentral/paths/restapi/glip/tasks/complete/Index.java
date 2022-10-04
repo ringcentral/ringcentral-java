@@ -21,6 +21,7 @@ public class Index {
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/tasks/{taskId}/complete
      * Rate Limit Group: Medium
+     * App Permission: TeamMessaging
      */
     public String post(GlipCompleteTask glipCompleteTask) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), glipCompleteTask, null);

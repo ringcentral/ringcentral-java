@@ -40,11 +40,11 @@ public class DictionaryGreetingInfo {
     /**
      *
      */
-    public CallHandlingNavigationInfo navigation;
+    public NavigationInfo navigation;
     /**
      *
      */
-    public CallHandlingPagingInfo paging;
+    public EnumeratedPaging paging;
 
     public DictionaryGreetingInfo id(String id) {
         this.id = id;
@@ -86,12 +86,12 @@ public class DictionaryGreetingInfo {
         return this;
     }
 
-    public DictionaryGreetingInfo navigation(CallHandlingNavigationInfo navigation) {
+    public DictionaryGreetingInfo navigation(NavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public DictionaryGreetingInfo paging(CallHandlingPagingInfo paging) {
+    public DictionaryGreetingInfo paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }

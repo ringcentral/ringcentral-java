@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Detailed information on a message
+ * Complete details of the message
  */
 public class MessageDetailsResponse {
     /**
@@ -12,12 +12,12 @@ public class MessageDetailsResponse {
     public String id;
     /**
      * Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format from which the message was sent
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String from;
     /**
      * List of phone numbers in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format to which the message was sent
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String[] to;
     /**
@@ -59,13 +59,12 @@ public class MessageDetailsResponse {
      */
     public String batchId;
     /**
-     * Indicates whether the message is outbound or inbound
-     * Example: out
+     * Direction of the SMS message
      * Enum: Inbound, Outbound
      */
     public String direction;
     /**
-     * RC error code of the message sending failure reason
+     * The RC error code of the message sending failure reason
      * Example: SMS-RC-503
      */
     public String errorCode;

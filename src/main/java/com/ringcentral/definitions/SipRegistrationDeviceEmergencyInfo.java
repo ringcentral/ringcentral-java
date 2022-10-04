@@ -28,21 +28,23 @@ public class SipRegistrationDeviceEmergencyInfo {
      */
     public String visibility;
     /**
-     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
+     * Resulting status of emergency address synchronization. Returned
+     * if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;
     /**
-     * Ability to register new emergency address for a phone line using devices sharing this line or only main device (line owner)
+     * Ability to register new emergency address for a phone line
+     * using devices sharing this line or only main device (line owner)
      * Enum: MainDevice, AnyDevice
      */
     public String addressEditableStatus;
     /**
-     * &#039;True&#039; if emergency address is required for the country of a phone line
+     * Indicates if emergency address is required for the country of a phone line
      */
     public Boolean addressRequired;
     /**
-     * &#039;True&#039; if out of country emergency address is not allowed for the country of a phone line
+     * Indicates if out of country emergency address is not allowed for the country of a phone line
      */
     public Boolean addressLocationOnly;
 

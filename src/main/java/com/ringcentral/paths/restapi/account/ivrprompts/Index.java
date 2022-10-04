@@ -2,7 +2,7 @@ package com.ringcentral.paths.restapi.account.ivrprompts;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CreateIVRPromptRequest;
-import com.ringcentral.definitions.IVRPrompts;
+import com.ringcentral.definitions.IvrPrompts;
 import com.ringcentral.definitions.PromptInfo;
 import com.ringcentral.definitions.UpdateIVRPromptRequest;
 
@@ -36,9 +36,9 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadCompanyGreetings
      */
-    public IVRPrompts list() throws com.ringcentral.RestException, java.io.IOException {
+    public IvrPrompts list() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), IVRPrompts.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), IvrPrompts.class);
     }
 
     /**

@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class CreateForwardingNumberRequest {
     /**
      * Number assigned to the call flip phone number, corresponds to the shortcut dial number
+     * Format: int32
      */
     public Long flipNumber;
     /**

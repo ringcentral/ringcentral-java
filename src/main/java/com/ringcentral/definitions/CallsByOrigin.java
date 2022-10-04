@@ -1,25 +1,28 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Data for calls with breakdown by origin (Internal, External)
+ */
 public class CallsByOrigin {
     /**
+     * Unit of the result value
      * Required
-     * Format: double
+     * Enum: Percent, Seconds, Instances
      */
-    public Double internal;
+    public String valueType;
     /**
      * Required
-     * Format: double
      */
-    public Double external;
+    public CallsByOriginBreakdown values;
 
-    public CallsByOrigin internal(Double internal) {
-        this.internal = internal;
+    public CallsByOrigin valueType(String valueType) {
+        this.valueType = valueType;
         return this;
     }
 
-    public CallsByOrigin external(Double external) {
-        this.external = external;
+    public CallsByOrigin values(CallsByOriginBreakdown values) {
+        this.values = values;
         return this;
     }
 }

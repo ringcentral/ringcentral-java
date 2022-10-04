@@ -14,7 +14,7 @@ public class UserAnsweringRuleList {
     /**
      *
      */
-    public UserAnsweringRuleListPaging paging;
+    public EnumeratedPaging paging;
     /**
      *
      */
@@ -30,7 +30,7 @@ public class UserAnsweringRuleList {
         return this;
     }
 
-    public UserAnsweringRuleList paging(UserAnsweringRuleListPaging paging) {
+    public UserAnsweringRuleList paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }

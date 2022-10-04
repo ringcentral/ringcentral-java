@@ -34,13 +34,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.a2psms.optouts.Index optOuts() {
-        return new com.ringcentral.paths.restapi.account.a2psms.optouts.Index(this);
+    public com.ringcentral.paths.restapi.account.a2psms.statuses.Index statuses() {
+        return new com.ringcentral.paths.restapi.account.a2psms.statuses.Index(this);
     }
 
 
-    public com.ringcentral.paths.restapi.account.a2psms.statuses.Index statuses() {
-        return new com.ringcentral.paths.restapi.account.a2psms.statuses.Index(this);
+    public com.ringcentral.paths.restapi.account.a2psms.optouts.Index optOuts() {
+        return new com.ringcentral.paths.restapi.account.a2psms.optouts.Index(this);
     }
 
 }

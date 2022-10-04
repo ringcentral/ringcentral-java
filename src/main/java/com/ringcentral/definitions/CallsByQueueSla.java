@@ -1,25 +1,28 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Data for calls with breakdown by queue SLA (InSLA, OutSLA). This counter is only applicable to Queues grouping
+ */
 public class CallsByQueueSla {
     /**
+     * Unit of the result value
      * Required
-     * Format: double
+     * Enum: Percent, Seconds, Instances
      */
-    public Double inSla;
+    public String valueType;
     /**
      * Required
-     * Format: double
      */
-    public Double outOfSla;
+    public CallsByQueueSlaBreakdown values;
 
-    public CallsByQueueSla inSla(Double inSla) {
-        this.inSla = inSla;
+    public CallsByQueueSla valueType(String valueType) {
+        this.valueType = valueType;
         return this;
     }
 
-    public CallsByQueueSla outOfSla(Double outOfSla) {
-        this.outOfSla = outOfSla;
+    public CallsByQueueSla values(CallsByQueueSlaBreakdown values) {
+        this.values = values;
         return this;
     }
 }

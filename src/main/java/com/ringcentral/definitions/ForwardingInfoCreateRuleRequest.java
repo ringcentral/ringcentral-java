@@ -15,6 +15,7 @@ public class ForwardingInfoCreateRuleRequest {
     public Boolean notifyAdminSoftPhones;
     /**
      * Specifies delay between ring on apps and starting of a call forwarding. To activate this parameter use the value &gt; 0, and turn off the `softPhonesAlwaysRing` setting. If the value is 1 or 0, the `softPhonesAlwaysRing` setting cannot be turned off
+     * Format: int32
      */
     public Long softPhonesRingCount;
     /**
@@ -30,7 +31,7 @@ public class ForwardingInfoCreateRuleRequest {
     /**
      * Information on a call forwarding rule
      */
-    public RuleInfoCreateRuleRequest[] rules;
+    public ForwardingRuleCreateRequest[] rules;
     /**
      * Deprecated parameter. Specifies if mobile timeout is activated for the rule
      */
@@ -61,7 +62,7 @@ public class ForwardingInfoCreateRuleRequest {
         return this;
     }
 
-    public ForwardingInfoCreateRuleRequest rules(RuleInfoCreateRuleRequest[] rules) {
+    public ForwardingInfoCreateRuleRequest rules(ForwardingRuleCreateRequest[] rules) {
         this.rules = rules;
         return this;
     }

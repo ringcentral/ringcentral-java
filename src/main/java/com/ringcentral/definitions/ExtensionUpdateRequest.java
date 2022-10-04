@@ -59,18 +59,19 @@ public class ExtensionUpdateRequest {
      */
     public CustomFieldInfo[] customFields;
     /**
-     * Hides extension from showing in company directory. Supported for extensions of User type only
-     */
-    public Boolean hidden;
-    /**
      *
      */
     public AutomaticLocationUpdatesSiteInfoRequest site;
     /**
      * Extension type. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
-     * Enum: User, Fax User, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, DelegatedLinesGroup, GroupCallPickup
+     * Enum: User, Fax User, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, DelegatedLinesGroup, GroupCallPickup
      */
     public String type;
+    /**
+     * Extension sub-type, if applicable. For any unsupported sub-types the &#039;Unknown&#039; value will be returned
+     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
+     */
+    public String subType;
     /**
      * List of non-RC internal identifiers assigned to an extension
      */
@@ -146,11 +147,6 @@ public class ExtensionUpdateRequest {
         return this;
     }
 
-    public ExtensionUpdateRequest hidden(Boolean hidden) {
-        this.hidden = hidden;
-        return this;
-    }
-
     public ExtensionUpdateRequest site(AutomaticLocationUpdatesSiteInfoRequest site) {
         this.site = site;
         return this;
@@ -158,6 +154,11 @@ public class ExtensionUpdateRequest {
 
     public ExtensionUpdateRequest type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public ExtensionUpdateRequest subType(String subType) {
+        this.subType = subType;
         return this;
     }
 

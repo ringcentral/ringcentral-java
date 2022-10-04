@@ -23,7 +23,7 @@ public class Index {
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/business-hours
      * Rate Limit Group: Light
      * App Permission: ReadAccounts
-     * User Permission: ReadUserAnsweringRules
+     * User Permission: ReadCompanyAnsweringRules
      */
     public CompanyBusinessHours get() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);

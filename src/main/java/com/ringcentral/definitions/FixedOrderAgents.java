@@ -8,6 +8,7 @@ public class FixedOrderAgents {
     public FixedOrderAgentsExtensionInfo extension;
     /**
      * Ordinal of an agent (call queue member)
+     * Format: int32
      */
     public Long index;
 

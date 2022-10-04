@@ -7,7 +7,7 @@ public class EditPagingGroupRequest {
      */
     public String[] addedUserIds;
     /**
-     * List of users that will be unallowed to page a group specified
+     * List of users that will be disallowed to page a group specified
      */
     public String[] removedUserIds;
     /**

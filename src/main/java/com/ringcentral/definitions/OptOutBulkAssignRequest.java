@@ -8,17 +8,17 @@ public class OptOutBulkAssignRequest {
     /**
      * The phone number of a sender which the recipients should be opted out from or opted in to
      * Required
-     * Example: 15551234455
+     * Example: +15551234455
      */
     public String from;
     /**
      * The list of phone numbers to be opted out
-     * Example: [&quot;15551237755&quot;, &quot;15551237756&quot;]
+     * Example: +15551237755,+15551237756
      */
     public String[] optOuts;
     /**
      * The list of phone numbers to be opted in
-     * Example: [&quot;15551237799&quot;, &quot;15551237798&quot;]
+     * Example: +15551237799,+15551237798
      */
     public String[] optIns;
 

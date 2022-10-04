@@ -17,12 +17,24 @@ public class Index {
     }
 
     /**
-     * Returns a link to a login page location.
+     * Performs OAuth 2.0 authorization (GET version)
+     * HTTP Method: get
+     * Endpoint: /restapi/oauth/authorize
+     * Rate Limit Group: Auth
+     */
+    public String get() throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+        return rb.string();
+    }
+
+    /**
+     * Performs OAuth 2.0 authorization (POST version)
      * HTTP Method: post
      * Endpoint: /restapi/oauth/authorize
+     * Rate Limit Group: Auth
      */
-    public String post(AuthorizeRequest authorizeRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), authorizeRequest, null, com.ringcentral.ContentType.FORM);
+    public String post(AuthorizeRequest AuthorizeRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(), AuthorizeRequest, null, com.ringcentral.ContentType.FORM);
         return rb.string();
     }
 }

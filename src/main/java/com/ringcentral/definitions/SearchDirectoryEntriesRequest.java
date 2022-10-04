@@ -3,11 +3,12 @@ package com.ringcentral.definitions;
 
 public class SearchDirectoryEntriesRequest {
     /**
-     * String value to filter the contacts. The value specified is searched through the following fields: `firstName`, `lastName`, `extensionNumber`, `phoneNumber`, `email`, `jobTitle`, `department`
+     * String value to filter the contacts. The value specified is searched through the following fields: `firstName`, `lastName`, `extensionNumber`, `phoneNumber`, `email`, `jobTitle`, `department`, `customFieldValue`
      */
     public String searchString;
     /**
-     * Enum: firstName, lastName, extensionNumber, phoneNumber, email, jobTitle, department
+     * The list of field to be searched for
+     * Enum: firstName, lastName, extensionNumber, phoneNumber, email, jobTitle, department, customFieldValue
      */
     public String[] searchFields;
     /**
@@ -16,20 +17,46 @@ public class SearchDirectoryEntriesRequest {
      */
     public Boolean showFederated;
     /**
-     * Type of extension to filter the contacts. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
-     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, IvrMenu, Limited, ApplicationExtension, Site, Bot, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup, Room
+     * Type of extension to filter the contacts
+     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, IvrMenu, ApplicationExtension, ParkLocation, Limited, Site, DelegatedLinesGroup, FlexibleUser
      */
     public String extensionType;
+    /**
+     * Internal identifier of the business site to which extensions belong
+     */
+    public String siteId;
+    /**
+     * The list of Internal identifiers of an accounts
+     */
+    public String[] accountIds;
+    /**
+     * Department
+     */
+    public String department;
+    /**
+     * The list of Internal identifiers of the business sites to which extensions belong
+     */
+    public String[] siteIds;
+    /**
+     * Extension current state.
+     * Enum: Enabled, Disabled, NotActivated
+     */
+    public String[] extensionStatuses;
+    /**
+     * Types of extension to filter the contacts.
+     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, IvrMenu, ApplicationExtension, ParkLocation, Limited, Site, DelegatedLinesGroup, FlexibleUser
+     */
+    public String[] extensionTypes;
     /**
      * Sorting settings
      */
     public OrderBy[] orderBy;
     /**
-     *
+     * Format: int32
      */
     public Long page;
     /**
-     *
+     * Format: int32
      */
     public Long perPage;
 
@@ -50,6 +77,36 @@ public class SearchDirectoryEntriesRequest {
 
     public SearchDirectoryEntriesRequest extensionType(String extensionType) {
         this.extensionType = extensionType;
+        return this;
+    }
+
+    public SearchDirectoryEntriesRequest siteId(String siteId) {
+        this.siteId = siteId;
+        return this;
+    }
+
+    public SearchDirectoryEntriesRequest accountIds(String[] accountIds) {
+        this.accountIds = accountIds;
+        return this;
+    }
+
+    public SearchDirectoryEntriesRequest department(String department) {
+        this.department = department;
+        return this;
+    }
+
+    public SearchDirectoryEntriesRequest siteIds(String[] siteIds) {
+        this.siteIds = siteIds;
+        return this;
+    }
+
+    public SearchDirectoryEntriesRequest extensionStatuses(String[] extensionStatuses) {
+        this.extensionStatuses = extensionStatuses;
+        return this;
+    }
+
+    public SearchDirectoryEntriesRequest extensionTypes(String[] extensionTypes) {
+        this.extensionTypes = extensionTypes;
         return this;
     }
 

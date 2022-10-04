@@ -12,10 +12,6 @@ public class ForwardingNumberInfoRulesCreateRuleRequest {
      */
     public String type;
     /**
-     * Canonical URI of a forwarding/call flip phone number
-     */
-    public String uri;
-    /**
      * Forwarding/Call flip phone number
      */
     public String phoneNumber;
@@ -31,11 +27,6 @@ public class ForwardingNumberInfoRulesCreateRuleRequest {
 
     public ForwardingNumberInfoRulesCreateRuleRequest type(String type) {
         this.type = type;
-        return this;
-    }
-
-    public ForwardingNumberInfoRulesCreateRuleRequest uri(String uri) {
-        this.uri = uri;
         return this;
     }
 

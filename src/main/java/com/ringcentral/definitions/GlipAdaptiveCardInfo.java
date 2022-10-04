@@ -58,7 +58,7 @@ public class GlipAdaptiveCardInfo {
      */
     public BackgroundImage backgroundImage;
     /**
-     * Specifies the minimum height of the card in pxls
+     * Specifies the minimum height of the card in pixels
      * Example: 50px
      */
     public String minHeight;

@@ -4,10 +4,12 @@ package com.ringcentral.definitions;
 public class DisabledFilterInfo {
     /**
      * Event filter that is disabled for the user
+     * Required
      */
     public String filter;
     /**
      * Reason why the filter is disabled for the user
+     * Required
      */
     public String reason;
     /**

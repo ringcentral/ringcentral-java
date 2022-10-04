@@ -1,25 +1,28 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Data for calls with breakdown by company hours (BusinessHours, AfterHours)
+ */
 public class CallsByCompanyHours {
     /**
+     * Unit of the result value
      * Required
-     * Format: double
+     * Enum: Percent, Seconds, Instances
      */
-    public Double businessHours;
+    public String valueType;
     /**
      * Required
-     * Format: double
      */
-    public Double afterHours;
+    public CallsByCompanyHoursBreakdown values;
 
-    public CallsByCompanyHours businessHours(Double businessHours) {
-        this.businessHours = businessHours;
+    public CallsByCompanyHours valueType(String valueType) {
+        this.valueType = valueType;
         return this;
     }
 
-    public CallsByCompanyHours afterHours(Double afterHours) {
-        this.afterHours = afterHours;
+    public CallsByCompanyHours values(CallsByCompanyHoursBreakdown values) {
+        this.values = values;
         return this;
     }
 }

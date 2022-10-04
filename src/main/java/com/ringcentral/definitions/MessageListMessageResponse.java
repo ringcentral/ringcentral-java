@@ -2,12 +2,12 @@ package com.ringcentral.definitions;
 
 
 /**
- * Infomation on a message returned within the specified batch
+ * The short detail of the message in the get batch response
  */
 public class MessageListMessageResponse {
     /**
-     * Internal identifier of a message
-     * Format: int32
+     * The Id of the message
+     * Format: int64
      * Example: 1234
      */
     public Long id;
@@ -18,12 +18,12 @@ public class MessageListMessageResponse {
     public String batchId;
     /**
      * Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format from which the message is sent
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String from;
     /**
      * Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format to which a message is sent
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String[] to;
     /**
@@ -59,8 +59,7 @@ public class MessageListMessageResponse {
      */
     public Double cost;
     /**
-     * Indicates whether the message was outbound or inbound
-     * Example: out
+     * Direction of the SMS message
      * Enum: Inbound, Outbound
      */
     public String direction;

@@ -28,7 +28,20 @@ public class Index {
     }
 
     /**
-     * Returns the list of chats where the user is a member and also public teams that can be joined. All records in response are sorted by creation time of a chat in ascending order. **Note** &#039;Chat&#039; is a general name for all types of threads icluding *Personal* (user&#039;s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).
+     * Returns the list of chats where the user is a member and also public teams that can be joined.
+     * <p>
+     * All records in response are sorted by creation time of a chat in ascending order.
+     * <p>
+     * **Chat types**
+     * <p>
+     * There are multiple types of chats, including:
+     * <p>
+     * * **Personal** - each user is given a dedicated &quot;personal chat&quot; in which they are the only member.
+     * * **Direct** - a chat between two individuals.
+     * * **Group** - a chat between three or more named individuals. A &quot;group&quot; chat has no name.
+     * * **Team** - a chat related to a specific topic. Members can come and go freely from this chat type.
+     * * **Everyone** - a special chat containing every individual in a company.
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/chats
      * Rate Limit Group: Medium
@@ -45,7 +58,7 @@ public class Index {
     }
 
     /**
-     * Returns information about a chat by ID. **Note** &#039;Chat&#039; is a general name for all types of threads icluding *Personal* (user&#039;s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).&quot;
+     * Returns information about a chat by ID. **Note** &#039;Chat&#039; is a general name for all types of threads including *Personal* (user&#039;s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).&quot;
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}
      * Rate Limit Group: Light
@@ -74,13 +87,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.glip.chats.notes.Index notes() {
-        return new com.ringcentral.paths.restapi.glip.chats.notes.Index(this);
+    public com.ringcentral.paths.restapi.glip.chats.tasks.Index tasks() {
+        return new com.ringcentral.paths.restapi.glip.chats.tasks.Index(this);
     }
 
 
-    public com.ringcentral.paths.restapi.glip.chats.tasks.Index tasks() {
-        return new com.ringcentral.paths.restapi.glip.chats.tasks.Index(this);
+    public com.ringcentral.paths.restapi.glip.chats.notes.Index notes() {
+        return new com.ringcentral.paths.restapi.glip.chats.notes.Index(this);
     }
 
 

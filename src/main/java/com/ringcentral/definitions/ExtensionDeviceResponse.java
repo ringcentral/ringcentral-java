@@ -17,7 +17,7 @@ public class ExtensionDeviceResponse {
     /**
      * Device type
      * Default: HardPhone
-     * Enum: Room, SoftPhone, OtherPhone, HardPhone, Paging
+     * Enum: Room, SoftPhone, OtherPhone, HardPhone, Paging, WebRTC
      */
     public String type;
     /**

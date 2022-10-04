@@ -2,7 +2,7 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.Attachment;
 import com.ringcentral.definitions.CreateIVRPromptRequest;
-import com.ringcentral.definitions.IVRPrompts;
+import com.ringcentral.definitions.IvrPrompts;
 import com.ringcentral.definitions.PromptInfo;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -28,7 +28,7 @@ public class IVRContentTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        IVRPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
+        IvrPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
         PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();
         Assert.assertNotNull(promptInfo.id);
         Assert.assertEquals(promptInfo.id, ivrPrompts.records[0].id);
@@ -92,7 +92,7 @@ public class IVRContentTest {
             }
         });
 
-        IVRPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
+        IvrPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
         PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();
         Assert.assertNotNull(promptInfo.id);
 

@@ -6,11 +6,14 @@ package com.ringcentral.definitions;
  */
 public class ParsePhoneNumberParameters {
     /**
-     * Internal identifier of a home country. The default value is ISO code (ISO 3166) of the user&#039;s home country or brand country, if the user is undefined
+     * ISO 3166 alpha2 code of the home country to be used if it is impossible to determine country from the number itself.
+     * By default this parameter is preset to the current user&#039;s home country or brand country if the user is undefined
+     * Example: US
      */
     public String homeCountry;
     /**
-     * The default value is &#039;False&#039;. If &#039;True&#039;, the numbers that are closer to the home country are given higher priority
+     * The default value is `false`. If `true`, the numbers that are
+     * closer to the home country are given higher priority
      */
     public Boolean nationalAsPriority;
 

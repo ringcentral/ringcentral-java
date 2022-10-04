@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class PresenceNavigationInfoURI {
     /**
-     *
+     * Format: uri
      */
     public String uri;
 

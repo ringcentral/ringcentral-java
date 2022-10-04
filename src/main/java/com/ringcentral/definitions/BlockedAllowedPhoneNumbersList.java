@@ -16,11 +16,11 @@ public class BlockedAllowedPhoneNumbersList {
     /**
      *
      */
-    public CallHandlingNavigationInfo navigation;
+    public NavigationInfo navigation;
     /**
      *
      */
-    public CallHandlingPagingInfo paging;
+    public EnumeratedPaging paging;
 
     public BlockedAllowedPhoneNumbersList uri(String uri) {
         this.uri = uri;
@@ -32,12 +32,12 @@ public class BlockedAllowedPhoneNumbersList {
         return this;
     }
 
-    public BlockedAllowedPhoneNumbersList navigation(CallHandlingNavigationInfo navigation) {
+    public BlockedAllowedPhoneNumbersList navigation(NavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public BlockedAllowedPhoneNumbersList paging(CallHandlingPagingInfo paging) {
+    public BlockedAllowedPhoneNumbersList paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }

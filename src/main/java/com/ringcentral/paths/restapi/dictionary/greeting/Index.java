@@ -28,7 +28,10 @@ public class Index {
     }
 
     /**
-     * Returns the list of predefined standard greetings. Custom greetings recorded by user are not returned in response to this request. See Get Extension Custom Greetings.
+     * Returns the list of predefined standard greetings. Custom greetings
+     * recorded by user are not returned in response to this request. See Get Extension
+     * Custom Greetings.
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/dictionary/greeting
      * Rate Limit Group: Medium

@@ -3,68 +3,62 @@ package com.ringcentral.definitions;
 
 public class AccountHistorySearchPublicRequest {
     /**
-     * UTC formatted datetime (RFC3339)
-     * <p>
-     * 2019-10-12T07:20:50.52Z
-     * <p>
-     * Default: current time
+     * The beginning of the time range to return records in ISO 8601 format in UTC timezone, default is &quot;eventTimeFrom&quot;-24 hours
      * Format: date-time
      */
     public String eventTimeFrom;
     /**
-     * UTC formatted datetime (RFC3339)
-     * <p>
-     * 2019-10-12T07:20:50.52Z
-     * <p>
-     * Default: dateFrom + 24h
+     * The end of the time range to return records in ISO 8601 format in UTC timezone, default is the current time
      * Format: date-time
      */
     public String eventTimeTo;
     /**
-     * List of extension IDs who is the user of changes.
+     * List of extension IDs of change initiators.
      */
     public String[] initiatorIds;
     /**
-     * Page number of the page you want to jump to.
+     * Page number in the result set
+     * Format: int32
      * Example: 1
      */
     public Long page;
     /**
-     * Number of records returned per page.
+     * Number of records to be returned per page.
+     * Format: int32
      * Example: 25
      */
     public Long perPage;
     /**
-     * List of extension IDs (users) affected by this action.
+     * List of extension (user) IDs affected by this action.
      * Example: 404611540004
      */
     public String[] targetIds;
     /**
-     * A filter to apply by site ID
+     * Site ID to apply as a filter
      * Example: 871836004
      */
     public String siteId;
     /**
-     * List of action IDs (exact keys) to search for. Or you can use the excludeActionIds option.
-     * Example: CHANGE_SECRET_INFO
+     * List of action IDs (exact keys) to search for (alternatively &quot;excludeActionIds&quot; option can be used).
+     * Example: CHANGE_SECRET_INFO,CHANGE_USER_INFO
      * Enum: CHANGE_SECRET_INFO, CHANGE_USER_INFO
      */
     public String[] actionIds;
     /**
-     * List of fields to apply search on:
+     * The (sub)string to search, applied to the following fields:
      * <p>
-     * initiator.name
-     * initiator.role
-     * initiator.extensionNumber
-     * target.name
-     * target.extensionNumber
-     * details.parameters.value
+     * - initiator.name
+     * - initiator.role
+     * - initiator.extensionNumber
+     * - target.name
+     * - target.extensionNumber
+     * - details.parameters.value
      * Example: 542617
      */
     public String searchString;
     /**
-     * List of action IDs (exact keys) to exclude from your search. Or you can use the actionIds option.
-     * Example: CHANGE_SECRET_INFO
+     * List of action IDs (exact keys) to exclude from your search (alternatively &quot;actionIds&quot; option can be used).
+     * Example: CHANGE_SECRET_INFO,CHANGE_USER_INFO
      * Enum: CHANGE_SECRET_INFO, CHANGE_USER_INFO
      */
     public String[] excludeActionIds;

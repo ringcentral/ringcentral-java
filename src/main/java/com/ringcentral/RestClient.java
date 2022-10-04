@@ -137,6 +137,10 @@ public class RestClient {
         return request(HttpMethod.DELETE, endpoint, queryParameters, null);
     }
 
+    public ResponseBody delete(String endpoint, Object object, Object queryParameters) throws IOException, RestException {
+        return request(HttpMethod.DELETE, endpoint, queryParameters, object, ContentType.JSON);
+    }
+
     public ResponseBody post(String endpoint) throws IOException, RestException {
         return request(HttpMethod.POST, endpoint, null, null, ContentType.JSON);
     }

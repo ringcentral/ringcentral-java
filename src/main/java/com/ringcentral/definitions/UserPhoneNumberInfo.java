@@ -55,6 +55,11 @@ public class UserPhoneNumberInfo {
      */
     public String type;
     /**
+     * Extension sub-type, if applicable. For any unsupported sub-types the &#039;Unknown&#039; value will be returned
+     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
+     */
+    public String subType;
+    /**
      * Usage type of a phone number. Numbers of &#039;NumberPool&#039; type will not be returned for phone number list requests
      * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber, IntegrationNumber
      */
@@ -122,6 +127,11 @@ public class UserPhoneNumberInfo {
 
     public UserPhoneNumberInfo type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public UserPhoneNumberInfo subType(String subType) {
+        this.subType = subType;
         return this;
     }
 

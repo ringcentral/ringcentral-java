@@ -17,13 +17,18 @@ public class Index {
     }
 
     /**
-     * Revokes access/refresh token. Requests to this endpoint must be authenticated with HTTP Basic scheme using the application key and application secret as login and password, correspondingly.
+     * Revokes previously issued access and refresh token.
+     * <p>
+     * Depending on client application type
+     * requests to this endpoint may require authentication with HTTP Basic scheme
+     * using registered client ID and client secret as login and password, correspondingly.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/oauth/revoke
      * Rate Limit Group: Auth
      */
-    public String post(RevokeTokenRequest revokeTokenRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), revokeTokenRequest, null, com.ringcentral.ContentType.FORM);
+    public String post(RevokeTokenRequest RevokeTokenRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(), RevokeTokenRequest, null, com.ringcentral.ContentType.FORM);
         return rb.string();
     }
 }

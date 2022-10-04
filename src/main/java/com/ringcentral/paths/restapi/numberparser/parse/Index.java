@@ -19,7 +19,7 @@ public class Index {
     }
 
     /**
-     * Returns one or more parsed and/or formatted phone numbers that are passed as a string.
+     * Returns one or more parsed and/or formatted phone numbers that are passed as strings.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/number-parser/parse
      * Rate Limit Group: Light

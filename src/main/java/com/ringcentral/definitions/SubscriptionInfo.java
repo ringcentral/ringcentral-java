@@ -3,37 +3,44 @@ package com.ringcentral.definitions;
 
 public class SubscriptionInfo {
     /**
-     * Internal identifier of a subscription
-     */
-    public String id;
-    /**
-     * Canonical URI of a subscription
+     * Canonical URI of a subscription resource
+     * Required
      */
     public String uri;
     /**
-     * Collection of API resources (message-store/presence/detailed presence) corresponding to events the user is subscribed to
+     * Internal identifier of a subscription
+     * Required
+     */
+    public String id;
+    /**
+     * The list of event filter names corresponding to events the user is subscribed to
+     * Required
      */
     public String[] eventFilters;
     /**
-     * Collection of API resources (message-store/presence/detailed presence) corresponding to events the user is not subscribed to due to certain limitations
+     * The list of event filter names corresponding to events the user is not subscribed to due to certain limitations
      */
     public DisabledFilterInfo[] disabledFilters;
     /**
-     * Subscription expiration datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example 2016-03-10T18:07:52.534Z
+     * Subscription expiration datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z*
+     * Required
      * Format: date-time
      */
     public String expirationTime;
     /**
      * Subscription lifetime in seconds
+     * Format: int32
      */
     public Long expiresIn;
     /**
      * Subscription status
+     * Required
      * Enum: Active, Suspended, Blacklisted
      */
     public String status;
     /**
-     * Subscription creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example 2016-03-10T18:07:52.534Z
+     * Subscription creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534*
+     * Required
      * Format: date-time
      */
     public String creationTime;
@@ -42,30 +49,17 @@ public class SubscriptionInfo {
      */
     public NotificationDeliveryMode deliveryMode;
     /**
-     *
+     * Returned if a WebHook subscription is blacklisted
      */
-    public NotificationBlacklistedData blacklistedData;
-    /**
-     * Notifications transportation provider name
-     * Enum: PubNub, WebHook, RC/APNS, RC/GCM
-     */
-    public String transportType;
-    /**
-     * Name of a certificate. Supported for &#039;RC/APNS&#039; and &#039;RC/GCM&#039; transport types
-     */
-    public String certificateName;
-    /**
-     * Identifier of a registration. Supported for &#039;RC/APNS&#039; and &#039;RC/GCM&#039; transport types
-     */
-    public String registrationId;
-
-    public SubscriptionInfo id(String id) {
-        this.id = id;
-        return this;
-    }
+    public SubscriptionInfoBlacklistedData blacklistedData;
 
     public SubscriptionInfo uri(String uri) {
         this.uri = uri;
+        return this;
+    }
+
+    public SubscriptionInfo id(String id) {
+        this.id = id;
         return this;
     }
 
@@ -104,23 +98,8 @@ public class SubscriptionInfo {
         return this;
     }
 
-    public SubscriptionInfo blacklistedData(NotificationBlacklistedData blacklistedData) {
+    public SubscriptionInfo blacklistedData(SubscriptionInfoBlacklistedData blacklistedData) {
         this.blacklistedData = blacklistedData;
-        return this;
-    }
-
-    public SubscriptionInfo transportType(String transportType) {
-        this.transportType = transportType;
-        return this;
-    }
-
-    public SubscriptionInfo certificateName(String certificateName) {
-        this.certificateName = certificateName;
-        return this;
-    }
-
-    public SubscriptionInfo registrationId(String registrationId) {
-        this.registrationId = registrationId;
         return this;
     }
 }

@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Extension site
+ * Site extension information
  */
 public class SiteResource {
     /**

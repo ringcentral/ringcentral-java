@@ -8,6 +8,7 @@ public class OnDemandResource {
     public Boolean enabled;
     /**
      * Retention period of a call recording, the default value is 90 days
+     * Format: int32
      */
     public Long retentionPeriod;
 

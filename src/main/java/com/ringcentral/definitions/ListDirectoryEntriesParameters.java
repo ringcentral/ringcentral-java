@@ -12,17 +12,19 @@ public class ListDirectoryEntriesParameters {
     public Boolean showFederated;
     /**
      * Type of an extension. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
-     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ParkLocation, Limited
+     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ParkLocation, Limited, External
      */
     public String type;
     /**
      * Page number
+     * Format: int32
      * Default: 1
      */
-    public String page;
+    public Long page;
     /**
      * Records count to be returned per one page. The default value is 1000. Specific keyword values: `all` - all records are returned in one page; `max` - maximum count of records that can be returned in one page
      * Maximum: 2000
+     * Format: int32
      * Default: 1000
      */
     public Long perPage;
@@ -41,7 +43,7 @@ public class ListDirectoryEntriesParameters {
         return this;
     }
 
-    public ListDirectoryEntriesParameters page(String page) {
+    public ListDirectoryEntriesParameters page(Long page) {
         this.page = page;
         return this;
     }

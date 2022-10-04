@@ -15,7 +15,7 @@ public class FederatedAccountResource {
      */
     public String federatedName;
     /**
-     *
+     * Required
      */
     public String id;
     /**

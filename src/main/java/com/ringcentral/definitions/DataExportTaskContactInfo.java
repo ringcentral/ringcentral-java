@@ -11,6 +11,7 @@ public class DataExportTaskContactInfo {
     public String id;
     /**
      * Email address of a contact
+     * Format: email
      */
     public String email;
 

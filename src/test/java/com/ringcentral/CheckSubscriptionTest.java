@@ -1,7 +1,7 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.RecordsCollectionResourceSubscriptionResponse;
 import com.ringcentral.definitions.SubscriptionInfo;
+import com.ringcentral.definitions.SubscriptionListResource;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ public class CheckSubscriptionTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        RecordsCollectionResourceSubscriptionResponse resp = rc.restapi().subscription().list();
+        SubscriptionListResource resp = rc.restapi().subscription().list();
         for (SubscriptionInfo r : resp.records) {
             assertNotNull(r.status);
         }

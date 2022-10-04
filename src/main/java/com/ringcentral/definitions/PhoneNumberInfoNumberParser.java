@@ -3,43 +3,51 @@ package com.ringcentral.definitions;
 
 public class PhoneNumberInfoNumberParser {
     /**
-     * Area code of location. The portion of the [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) number that identifies a specific geographic region/numbering area of the national numbering plan (NANP); that can be summarized as `NPA-NXX-xxxx` and covers Canada, the United States, parts of the Caribbean Sea, and some Atlantic and Pacific islands. See [North American Numbering Plan] (https://en.wikipedia.org/wiki/North_American_Numbering_Plan) for details
+     * Original phone number string as it was passed in the request
+     * Example: (650) 722-1621
      */
-    public String areaCode;
+    public String originalString;
     /**
      *
      */
     public GetCountryInfoNumberParser country;
     /**
+     * Area code of location. The portion of the [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
+     * number that identifies a specific geographic region/numbering area of
+     * the national numbering plan (NANP); that can be summarized as `NPA-NXX-xxxx`
+     * and covers Canada, the United States, parts of the Caribbean Sea, and
+     * some Atlantic and Pacific islands.
+     * See [North American Numbering Plan](https://en.wikipedia.org/wiki/North_American_Numbering_Plan)
+     * for details
+     * Example: 650
+     */
+    public String areaCode;
+    /**
      * Dialing format of a phone number
      */
     public String dialable;
     /**
-     * Phone number [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format
+     * Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format
      */
     public String e164;
     /**
-     * International format of a phone number
+     * The formatted phone number string in international format
      */
     public String formattedInternational;
     /**
-     * Domestic format of a phone number
+     * The formatted phone number string in domestic format
      */
     public String formattedNational;
     /**
-     * One of the numbers to be parsed, passed as a string in response
-     */
-    public String originalString;
-    /**
-     * &#039;True&#039; if the number is in a special format (for example N11 code)
+     * Indicates if the number is in a special format (for example N11 code)&#039;
      */
     public Boolean special;
     /**
-     * Phone number [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format without plus sign (&#039;+&#039;)
+     * Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format without plus sign (&#039;+&#039;)
      */
     public String normalized;
     /**
-     * Specifies if a phone number is toll free or not
+     * Indicates if the number is toll free
      */
     public Boolean tollFree;
     /**
@@ -55,13 +63,18 @@ public class PhoneNumberInfoNumberParser {
      */
     public String dtmfPostfix;
 
-    public PhoneNumberInfoNumberParser areaCode(String areaCode) {
-        this.areaCode = areaCode;
+    public PhoneNumberInfoNumberParser originalString(String originalString) {
+        this.originalString = originalString;
         return this;
     }
 
     public PhoneNumberInfoNumberParser country(GetCountryInfoNumberParser country) {
         this.country = country;
+        return this;
+    }
+
+    public PhoneNumberInfoNumberParser areaCode(String areaCode) {
+        this.areaCode = areaCode;
         return this;
     }
 
@@ -82,11 +95,6 @@ public class PhoneNumberInfoNumberParser {
 
     public PhoneNumberInfoNumberParser formattedNational(String formattedNational) {
         this.formattedNational = formattedNational;
-        return this;
-    }
-
-    public PhoneNumberInfoNumberParser originalString(String originalString) {
-        this.originalString = originalString;
         return this;
     }
 

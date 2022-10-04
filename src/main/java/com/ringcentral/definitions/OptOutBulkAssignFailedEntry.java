@@ -7,7 +7,7 @@ package com.ringcentral.definitions;
 public class OptOutBulkAssignFailedEntry {
     /**
      * A recipient phone number
-     * Example: 15551237756
+     * Example: +15551237756
      */
     public String to;
     /**

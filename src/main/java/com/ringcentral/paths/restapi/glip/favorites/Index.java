@@ -18,7 +18,7 @@ public class Index {
     }
 
     /**
-     * Returns a list of the current user&#039;s favorite chats. **Note** &#039;Chat&#039; is a general name for all types of threads icluding *Personal* (user&#039;s own me-chat), *Direct* (one on one chat), *Group* (chat of 3-15 participants without specific name), *Team* (chat of 2 and more participants, with a specific name), *Everyone* (company chat including all employees, with a specific name).&quot;
+     * Returns a list of the current user&#039;s favorite chats.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/favorites
      * Rate Limit Group: Light

@@ -26,9 +26,14 @@ public class ListEmergencyLocationsParameters {
      */
     public String domesticCountryId;
     /**
-     * Comma-separated list of fields to order results prefixed by plus sign &#039;+&#039; (ascending order) or minus sign &#039;-&#039; (descending order). The default value is `+address`
+     * Comma-separated list of fields to order results prefixed by plus sign &#039;+&#039; (ascending order) or minus sign &#039;-&#039; (descending order).
+     * Possible field entries are:
+     * - `name`;
+     * - `siteName`;
+     * - `address`;
+     * - `addressStatus`;
+     * - `usageStatus`.
      * Default: +address
-     * Enum: name, siteName, address, addressStatus, usageStatus
      */
     public String orderBy;
     /**

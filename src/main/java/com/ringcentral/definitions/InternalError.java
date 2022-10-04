@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class InternalError {
     /**
-     *
+     * List of errors
      */
     public ErrorBody[] errors;
 

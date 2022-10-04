@@ -1,62 +1,68 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Request body for operation getToken
- */
 public class GetTokenRequest {
     /**
-     * Phone number linked to an account or extension in E.164 format with or without leading &#039;+&#039; sign
+     * For `password` grant type only. User login name: email or phone number in E.164 format
      */
     public String username;
     /**
-     * User&#039;s password
+     * For `password` grant type only. User&#039;s password
      * Format: password
      */
     public String password;
     /**
-     * Optional. Extension short number. If company number is specified as a username, and extension is not specified, the server will attempt to authenticate client as main company administrator
+     * For `password` grant type only. Optional. Extension short number. If company number
+     * is specified as a username, and extension is not specified, the
+     * server will attempt to authenticate client as main company administrator
+     * <p>
+     * DEPRECATED: use extension number embedded into username string like `+16501234567*101`
      */
     public String extension;
     /**
      * Grant type
-     * Default: password
-     * Enum: authorization_code, password, refresh_token, client_credentials, urn:ietf:params:oauth:grant-type:jwt-bearer, partner_jwt
+     * Required
+     * Enum: authorization_code, password, refresh_token, client_credentials, urn:ietf:params:oauth:grant-type:jwt-bearer, urn:ietf:params:oauth:grant-type:device_code, partner_jwt
      */
     public String grant_type;
     /**
-     * Authorization code
+     * For `authorization_code` grant type only. User&#039;s authorization code
      */
     public String code;
     /**
-     * This is a callback URI which determines where the response is sent. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration
+     * For `authorization_code` grant type only. This is a callback URI which determines where the response
+     * is sent. The value of this parameter must exactly match one of
+     * the URIs you have provided for your app upon registration
      */
     public String redirect_uri;
     /**
      * Access token lifetime in seconds
      * Maximum: 3600
      * Minimum: 600
-     * Format: int64
+     * Format: int32
      * Default: 3600
      */
     public Long access_token_ttl;
     /**
      * Refresh token lifetime in seconds
      * Maximum: 604800
-     * Format: int64
+     * Format: int32
      * Default: 604800
      */
     public Long refresh_token_ttl;
     /**
-     * List of API permissions to be used with access token. Can be omitted when requesting all permissions defined during the application registration phase
+     * List of application permissions to be used with access token.
+     * By default the scope includes all permissions configured during
+     * the application registration phase
      */
     public String scope;
     /**
-     * Previously issued refresh token. This is the only formData field used for the Refresh Token Flow.
+     * For `refresh_token` grant type only. Previously issued refresh token.
      */
     public String refresh_token;
     /**
-     * The unique identifier of a client application. If not specified, the previously specified or auto generated value is used by default
+     * The unique identifier of a client application instance. If not
+     * specified, the derived or auto generated value will be used
      */
     public String endpoint_id;
     /**
@@ -64,7 +70,7 @@ public class GetTokenRequest {
      */
     public String pin;
     /**
-     *
+     * OAuth client identifier (if not specified via `Authorization` header)
      */
     public String client_id;
     /**
@@ -76,15 +82,15 @@ public class GetTokenRequest {
      */
     public String partner_account_id;
     /**
-     *
+     * Client assertion type
      */
     public String client_assertion_type;
     /**
-     *
+     * Client assertion
      */
     public String client_assertion;
     /**
-     *
+     * For `jwt_bearer` grant type only. Assertion
      */
     public String assertion;
     /**
@@ -92,9 +98,13 @@ public class GetTokenRequest {
      */
     public String brand_id;
     /**
-     *
+     * PKCE code verifier
      */
     public String code_verifier;
+    /**
+     *
+     */
+    public String device_code;
 
     public GetTokenRequest username(String username) {
         this.username = username;
@@ -193,6 +203,11 @@ public class GetTokenRequest {
 
     public GetTokenRequest code_verifier(String code_verifier) {
         this.code_verifier = code_verifier;
+        return this;
+    }
+
+    public GetTokenRequest device_code(String device_code) {
+        this.device_code = device_code;
         return this;
     }
 }

@@ -17,7 +17,7 @@ public class Index {
     }
 
     /**
-     * Renews an existent subscription by posting request with an empty body.
+     * Renews the existing subscription (this request comes with empty body).
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/subscription/{subscriptionId}/renew
      * Rate Limit Group: Light

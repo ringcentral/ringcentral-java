@@ -8,11 +8,12 @@ public class CreateCustomUserGreetingRequest {
     /**
      * Type of a greeting, specifying the case when the greeting is played.
      * Required
-     * Enum: Introductory, Announcement, ConnectingMessage, ConnectingAudio, Voicemail, Unavailable, HoldMusic
+     * Enum: Introductory, Announcement, ConnectingMessage, ConnectingAudio, Voicemail, Unavailable, HoldMusic, TemplateGreeting
      */
     public String type;
     /**
      * Internal identifier of an answering rule
+     * Required
      */
     public String answeringRuleId;
     /**

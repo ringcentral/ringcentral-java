@@ -13,11 +13,11 @@ public class GetExtensionForwardingNumberListResponse {
     /**
      *
      */
-    public CallHandlingNavigationInfo navigation;
+    public NavigationInfo navigation;
     /**
      *
      */
-    public CallHandlingPagingInfo paging;
+    public EnumeratedPaging paging;
 
     public GetExtensionForwardingNumberListResponse uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class GetExtensionForwardingNumberListResponse {
         return this;
     }
 
-    public GetExtensionForwardingNumberListResponse navigation(CallHandlingNavigationInfo navigation) {
+    public GetExtensionForwardingNumberListResponse navigation(NavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public GetExtensionForwardingNumberListResponse paging(CallHandlingPagingInfo paging) {
+    public GetExtensionForwardingNumberListResponse paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }

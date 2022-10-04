@@ -24,6 +24,7 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/tasks
      * Rate Limit Group: Heavy
+     * App Permission: TeamMessaging
      */
     public GlipTaskList get(ListChatTasksParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
@@ -39,6 +40,7 @@ public class Index {
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/glip/chats/{chatId}/tasks
      * Rate Limit Group: Medium
+     * App Permission: TeamMessaging
      */
     public GlipTaskInfo post(GlipCreateTask glipCreateTask) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), glipCreateTask, null);

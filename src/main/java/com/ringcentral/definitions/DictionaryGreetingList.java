@@ -13,11 +13,11 @@ public class DictionaryGreetingList {
     /**
      *
      */
-    public CallHandlingNavigationInfo navigation;
+    public NavigationInfo navigation;
     /**
      *
      */
-    public CallHandlingPagingInfo paging;
+    public EnumeratedPaging paging;
 
     public DictionaryGreetingList uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class DictionaryGreetingList {
         return this;
     }
 
-    public DictionaryGreetingList navigation(CallHandlingNavigationInfo navigation) {
+    public DictionaryGreetingList navigation(NavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public DictionaryGreetingList paging(CallHandlingPagingInfo paging) {
+    public DictionaryGreetingList paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }

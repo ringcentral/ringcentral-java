@@ -13,11 +13,11 @@ public class CompanyAnsweringRuleList {
     /**
      *
      */
-    public CallHandlingPagingInfo paging;
+    public EnumeratedPaging paging;
     /**
      *
      */
-    public CallHandlingNavigationInfo navigation;
+    public NavigationInfo navigation;
 
     public CompanyAnsweringRuleList uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class CompanyAnsweringRuleList {
         return this;
     }
 
-    public CompanyAnsweringRuleList paging(CallHandlingPagingInfo paging) {
+    public CompanyAnsweringRuleList paging(EnumeratedPaging paging) {
         this.paging = paging;
         return this;
     }
 
-    public CompanyAnsweringRuleList navigation(CallHandlingNavigationInfo navigation) {
+    public CompanyAnsweringRuleList navigation(NavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }

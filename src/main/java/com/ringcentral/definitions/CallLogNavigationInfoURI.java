@@ -1,16 +1,14 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Canonical URI for the corresponding page of the list
- */
-public class CallLogNavigationInfoURI {
+public class CallLogNavigationInfoURI
+{
     /**
-     *
+     * Format: uri
      */
     public String uri;
-
-    public CallLogNavigationInfoURI uri(String uri) {
+    public CallLogNavigationInfoURI uri(String uri)
+    {
         this.uri = uri;
         return this;
     }

@@ -1,40 +1,40 @@
 package com.ringcentral.definitions;
 
 
-public class NavigationInfo {
+public class NavigationInfo
+{
     /**
-     *
      */
     public NavigationUri firstPage;
-    /**
-     *
-     */
-    public NavigationUri nextPage;
-    /**
-     *
-     */
-    public NavigationUri previousPage;
-    /**
-     *
-     */
-    public NavigationUri lastPage;
-
-    public NavigationInfo firstPage(NavigationUri firstPage) {
+    public NavigationInfo firstPage(NavigationUri firstPage)
+    {
         this.firstPage = firstPage;
         return this;
     }
 
-    public NavigationInfo nextPage(NavigationUri nextPage) {
+    /**
+     */
+    public NavigationUri nextPage;
+    public NavigationInfo nextPage(NavigationUri nextPage)
+    {
         this.nextPage = nextPage;
         return this;
     }
 
-    public NavigationInfo previousPage(NavigationUri previousPage) {
+    /**
+     */
+    public NavigationUri previousPage;
+    public NavigationInfo previousPage(NavigationUri previousPage)
+    {
         this.previousPage = previousPage;
         return this;
     }
 
-    public NavigationInfo lastPage(NavigationUri lastPage) {
+    /**
+     */
+    public NavigationUri lastPage;
+    public NavigationInfo lastPage(NavigationUri lastPage)
+    {
         this.lastPage = lastPage;
         return this;
     }

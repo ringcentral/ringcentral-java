@@ -1,22 +1,24 @@
 package com.ringcentral.definitions;
 
 
-public class DirectoryResource {
+public class DirectoryResource
+{
     /**
      * Required
      */
     public PagingInfo paging;
-    /**
-     * Required
-     */
-    public ContactResource[] records;
-
-    public DirectoryResource paging(PagingInfo paging) {
+    public DirectoryResource paging(PagingInfo paging)
+    {
         this.paging = paging;
         return this;
     }
 
-    public DirectoryResource records(ContactResource[] records) {
+    /**
+     * Required
+     */
+    public ContactResource[] records;
+    public DirectoryResource records(ContactResource[] records)
+    {
         this.records = records;
         return this;
     }

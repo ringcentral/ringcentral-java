@@ -1,40 +1,40 @@
 package com.ringcentral.definitions;
 
 
-public class ListFaxCoverPagesResponse {
+public class ListFaxCoverPagesResponse
+{
     /**
-     *
      */
     public String uri;
-    /**
-     *
-     */
-    public FaxCoverPageInfo[] records;
-    /**
-     *
-     */
-    public MessagingNavigationInfo navigation;
-    /**
-     *
-     */
-    public MessagingPagingInfo paging;
-
-    public ListFaxCoverPagesResponse uri(String uri) {
+    public ListFaxCoverPagesResponse uri(String uri)
+    {
         this.uri = uri;
         return this;
     }
 
-    public ListFaxCoverPagesResponse records(FaxCoverPageInfo[] records) {
+    /**
+     */
+    public FaxCoverPageInfo[] records;
+    public ListFaxCoverPagesResponse records(FaxCoverPageInfo[] records)
+    {
         this.records = records;
         return this;
     }
 
-    public ListFaxCoverPagesResponse navigation(MessagingNavigationInfo navigation) {
+    /**
+     */
+    public MessagingNavigationInfo navigation;
+    public ListFaxCoverPagesResponse navigation(MessagingNavigationInfo navigation)
+    {
         this.navigation = navigation;
         return this;
     }
 
-    public ListFaxCoverPagesResponse paging(MessagingPagingInfo paging) {
+    /**
+     */
+    public MessagingPagingInfo paging;
+    public ListFaxCoverPagesResponse paging(MessagingPagingInfo paging)
+    {
         this.paging = paging;
         return this;
     }

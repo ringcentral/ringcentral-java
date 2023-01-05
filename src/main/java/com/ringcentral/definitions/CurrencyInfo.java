@@ -1,53 +1,58 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Currency information
- */
-public class CurrencyInfo {
+    /**
+* Currency information
+*/
+public class CurrencyInfo
+{
     /**
      * Internal identifier of a currency
      * Format: int64
      */
     public Long id;
-    /**
-     * Official code of a currency
-     */
-    public String code;
-    /**
-     * Official name of a currency
-     */
-    public String name;
-    /**
-     * Graphic symbol of a currency
-     */
-    public String symbol;
-    /**
-     * Minor graphic symbol of a currency
-     */
-    public String minorSymbol;
-
-    public CurrencyInfo id(Long id) {
+    public CurrencyInfo id(Long id)
+    {
         this.id = id;
         return this;
     }
 
-    public CurrencyInfo code(String code) {
+    /**
+     * Official code of a currency
+     */
+    public String code;
+    public CurrencyInfo code(String code)
+    {
         this.code = code;
         return this;
     }
 
-    public CurrencyInfo name(String name) {
+    /**
+     * Official name of a currency
+     */
+    public String name;
+    public CurrencyInfo name(String name)
+    {
         this.name = name;
         return this;
     }
 
-    public CurrencyInfo symbol(String symbol) {
+    /**
+     * Graphic symbol of a currency
+     */
+    public String symbol;
+    public CurrencyInfo symbol(String symbol)
+    {
         this.symbol = symbol;
         return this;
     }
 
-    public CurrencyInfo minorSymbol(String minorSymbol) {
+    /**
+     * Minor graphic symbol of a currency
+     */
+    public String minorSymbol;
+    public CurrencyInfo minorSymbol(String minorSymbol)
+    {
         this.minorSymbol = minorSymbol;
         return this;
     }

@@ -1,31 +1,34 @@
 package com.ringcentral.definitions;
 
 
-public class UnifiedPresenceListEntry {
+public class UnifiedPresenceListEntry
+{
     /**
      * Internal identifier of the resource
      */
     public String resourceId;
-    /**
-     * Status code of resource retrieval
-     */
-    public Long status;
-    /**
-     *
-     */
-    public UnifiedPresence body;
-
-    public UnifiedPresenceListEntry resourceId(String resourceId) {
+    public UnifiedPresenceListEntry resourceId(String resourceId)
+    {
         this.resourceId = resourceId;
         return this;
     }
 
-    public UnifiedPresenceListEntry status(Long status) {
+    /**
+     * Status code of resource retrieval
+     * Format: int32
+     */
+    public Long status;
+    public UnifiedPresenceListEntry status(Long status)
+    {
         this.status = status;
         return this;
     }
 
-    public UnifiedPresenceListEntry body(UnifiedPresence body) {
+    /**
+     */
+    public UnifiedPresence body;
+    public UnifiedPresenceListEntry body(UnifiedPresence body)
+    {
         this.body = body;
         return this;
     }

@@ -1,53 +1,69 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Query parameters for operation listAccountSwitches
- */
-public class ListAccountSwitchesParameters {
     /**
-     * Internal identifier of a site. To filter Main Site (Company) main-site must be specified. Supported only If multi-site feature is enabled for the account
-     */
-    public String siteId;
+* Query parameters for operation listAccountSwitches
+*/
+public class ListAccountSwitchesParameters
+{
     /**
-     * Filters entries by the specified substring (search by chassis ID, switch name or address) The characters range is 0-64 (if empty the filter is ignored)
+     * Internal identifier of a site for filtering. To indicate company main
+    * site `main-site` value should be specified. Supported only if multi-site feature
+    * is enabled for the account. Multiple values are supported.
      */
-    public String searchString;
-    /**
-     * Comma-separated list of fields to order results prefixed by &#039;+&#039; sign (ascending order) or &#039;-&#039; sign (descending order). The default sorting is by `name`
-     */
-    public String orderBy;
-    /**
-     * Indicates the page size (number of items). The values supported: `Max` or numeric value. If not specified, 100 records are returned per one page
-     */
-    public Long perPage;
-    /**
-     * Indicates the page number to retrieve. Only positive number values are supported
-     * Default: 1
-     */
-    public Long page;
-
-    public ListAccountSwitchesParameters siteId(String siteId) {
+    public String[] siteId;
+    public ListAccountSwitchesParameters siteId(String[] siteId)
+    {
         this.siteId = siteId;
         return this;
     }
 
-    public ListAccountSwitchesParameters searchString(String searchString) {
+    /**
+     * Filters entries by the specified substring (search by chassis
+    * ID, switch name or address) The characters range is 0-64 (if empty the filter
+    * is ignored)
+     */
+    public String searchString;
+    public ListAccountSwitchesParameters searchString(String searchString)
+    {
         this.searchString = searchString;
         return this;
     }
 
-    public ListAccountSwitchesParameters orderBy(String orderBy) {
+    /**
+     * Comma-separated list of fields to order results prefixed by &#039;+&#039;
+    * sign (ascending order) or &#039;-&#039; sign (descending order). The default
+    * sorting is by `name`
+     */
+    public String orderBy;
+    public ListAccountSwitchesParameters orderBy(String orderBy)
+    {
         this.orderBy = orderBy;
         return this;
     }
 
-    public ListAccountSwitchesParameters perPage(Long perPage) {
+    /**
+     * Indicates a page size (number of items). The values supported:
+    * `Max` or numeric value. If not specified, 100 records are returned per one
+    * page&#039;
+     * Format: int32
+     */
+    public Long perPage;
+    public ListAccountSwitchesParameters perPage(Long perPage)
+    {
         this.perPage = perPage;
         return this;
     }
 
-    public ListAccountSwitchesParameters page(Long page) {
+    /**
+     * Indicates a page number to retrieve. Only positive number values
+    * are supported
+     * Format: int32
+     * Default: 1
+     */
+    public Long page;
+    public ListAccountSwitchesParameters page(Long page)
+    {
         this.page = page;
         return this;
     }

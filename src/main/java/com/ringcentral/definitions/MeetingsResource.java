@@ -1,40 +1,41 @@
 package com.ringcentral.definitions;
 
 
-public class MeetingsResource {
+public class MeetingsResource
+{
     /**
      * Format: uri
      */
     public String uri;
-    /**
-     *
-     */
-    public MeetingResponseResource[] records;
-    /**
-     *
-     */
-    public MeetingsPagingInfo paging;
-    /**
-     *
-     */
-    public MeetingsNavigationInfo navigation;
-
-    public MeetingsResource uri(String uri) {
+    public MeetingsResource uri(String uri)
+    {
         this.uri = uri;
         return this;
     }
 
-    public MeetingsResource records(MeetingResponseResource[] records) {
+    /**
+     */
+    public MeetingResponseResource[] records;
+    public MeetingsResource records(MeetingResponseResource[] records)
+    {
         this.records = records;
         return this;
     }
 
-    public MeetingsResource paging(MeetingsPagingInfo paging) {
+    /**
+     */
+    public MeetingsPagingInfo paging;
+    public MeetingsResource paging(MeetingsPagingInfo paging)
+    {
         this.paging = paging;
         return this;
     }
 
-    public MeetingsResource navigation(MeetingsNavigationInfo navigation) {
+    /**
+     */
+    public MeetingsNavigationInfo navigation;
+    public MeetingsResource navigation(MeetingsNavigationInfo navigation)
+    {
         this.navigation = navigation;
         return this;
     }

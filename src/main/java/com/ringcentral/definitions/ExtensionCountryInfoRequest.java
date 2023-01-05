@@ -1,13 +1,14 @@
 package com.ringcentral.definitions;
 
 
-public class ExtensionCountryInfoRequest {
+public class ExtensionCountryInfoRequest
+{
     /**
-     * internal Identifier of a country
+     * Internal identifier of a country
      */
     public String id;
-
-    public ExtensionCountryInfoRequest id(String id) {
+    public ExtensionCountryInfoRequest id(String id)
+    {
         this.id = id;
         return this;
     }

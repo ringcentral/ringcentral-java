@@ -1,22 +1,24 @@
 package com.ringcentral.definitions;
 
 
-public class AccountDirectoryProfileImageResource {
+public class AccountDirectoryProfileImageResource
+{
     /**
-     *
+     * Example: tag
      */
     public String etag;
-    /**
-     *
-     */
-    public String uri;
-
-    public AccountDirectoryProfileImageResource etag(String etag) {
+    public AccountDirectoryProfileImageResource etag(String etag)
+    {
         this.etag = etag;
         return this;
     }
 
-    public AccountDirectoryProfileImageResource uri(String uri) {
+    /**
+     * Format: uri
+     */
+    public String uri;
+    public AccountDirectoryProfileImageResource uri(String uri)
+    {
         this.uri = uri;
         return this;
     }

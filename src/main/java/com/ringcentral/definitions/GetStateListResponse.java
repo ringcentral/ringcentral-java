@@ -1,40 +1,43 @@
 package com.ringcentral.definitions;
 
 
-public class GetStateListResponse {
+public class GetStateListResponse
+{
     /**
-     * Link to the states list resource
+     * Link to a states list resource
+     * Format: uri
      */
     public String uri;
-    /**
-     * List of states
-     */
-    public GetStateInfoResponse[] records;
-    /**
-     *
-     */
-    public ProvisioningNavigationInfo navigation;
-    /**
-     *
-     */
-    public ProvisioningPagingInfo paging;
-
-    public GetStateListResponse uri(String uri) {
+    public GetStateListResponse uri(String uri)
+    {
         this.uri = uri;
         return this;
     }
 
-    public GetStateListResponse records(GetStateInfoResponse[] records) {
+    /**
+     * List of states
+     */
+    public GetStateInfoResponse[] records;
+    public GetStateListResponse records(GetStateInfoResponse[] records)
+    {
         this.records = records;
         return this;
     }
 
-    public GetStateListResponse navigation(ProvisioningNavigationInfo navigation) {
+    /**
+     */
+    public ProvisioningNavigationInfo navigation;
+    public GetStateListResponse navigation(ProvisioningNavigationInfo navigation)
+    {
         this.navigation = navigation;
         return this;
     }
 
-    public GetStateListResponse paging(ProvisioningPagingInfo paging) {
+    /**
+     */
+    public ProvisioningPagingInfo paging;
+    public GetStateListResponse paging(ProvisioningPagingInfo paging)
+    {
         this.paging = paging;
         return this;
     }

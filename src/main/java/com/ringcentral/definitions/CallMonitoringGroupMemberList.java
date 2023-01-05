@@ -1,42 +1,47 @@
 package com.ringcentral.definitions;
 
 
-public class CallMonitoringGroupMemberList {
+public class CallMonitoringGroupMemberList
+{
     /**
      * Link to a call monitoring group members resource
      * Required
+     * Format: uri
      */
     public String uri;
+    public CallMonitoringGroupMemberList uri(String uri)
+    {
+        this.uri = uri;
+        return this;
+    }
+
     /**
      * List of a call monitoring group members
      * Required
      */
     public CallMonitoringGroupMemberInfo[] records;
-    /**
-     * Required
-     */
-    public ProvisioningNavigationInfo navigation;
-    /**
-     * Required
-     */
-    public ProvisioningPagingInfo paging;
-
-    public CallMonitoringGroupMemberList uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
-
-    public CallMonitoringGroupMemberList records(CallMonitoringGroupMemberInfo[] records) {
+    public CallMonitoringGroupMemberList records(CallMonitoringGroupMemberInfo[] records)
+    {
         this.records = records;
         return this;
     }
 
-    public CallMonitoringGroupMemberList navigation(ProvisioningNavigationInfo navigation) {
+    /**
+     * Required
+     */
+    public ProvisioningNavigationInfo navigation;
+    public CallMonitoringGroupMemberList navigation(ProvisioningNavigationInfo navigation)
+    {
         this.navigation = navigation;
         return this;
     }
 
-    public CallMonitoringGroupMemberList paging(ProvisioningPagingInfo paging) {
+    /**
+     * Required
+     */
+    public ProvisioningPagingInfo paging;
+    public CallMonitoringGroupMemberList paging(ProvisioningPagingInfo paging)
+    {
         this.paging = paging;
         return this;
     }

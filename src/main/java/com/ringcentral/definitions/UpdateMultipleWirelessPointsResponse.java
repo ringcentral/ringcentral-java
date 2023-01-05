@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class UpdateMultipleWirelessPointsResponse {
+public class UpdateMultipleWirelessPointsResponse
+{
     /**
-     *
      */
-    public BulkTaskInfoWiUpdate task;
-
-    public UpdateMultipleWirelessPointsResponse task(BulkTaskInfoWiUpdate task) {
+    public BulkTaskInfo task;
+    public UpdateMultipleWirelessPointsResponse task(BulkTaskInfo task)
+    {
         this.task = task;
         return this;
     }

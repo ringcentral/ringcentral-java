@@ -1,25 +1,27 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Company emergency response location details
- */
-public class SipRegistrationDeviceLocationInfo {
+    /**
+* Company emergency response location details
+*/
+public class SipRegistrationDeviceLocationInfo
+{
     /**
      * Internal identifier of an emergency response location
      */
     public String id;
-    /**
-     * Emergency response location name
-     */
-    public String name;
-
-    public SipRegistrationDeviceLocationInfo id(String id) {
+    public SipRegistrationDeviceLocationInfo id(String id)
+    {
         this.id = id;
         return this;
     }
 
-    public SipRegistrationDeviceLocationInfo name(String name) {
+    /**
+     * Emergency response location name
+     */
+    public String name;
+    public SipRegistrationDeviceLocationInfo name(String name)
+    {
         this.name = name;
         return this;
     }

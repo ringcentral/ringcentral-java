@@ -1,61 +1,65 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Account service information, including brand, service plan and billing plan
- */
-public class ServiceInfo {
+    /**
+* Account service information, including brand, service plan and
+* billing plan
+* 
+*/
+public class ServiceInfo
+{
     /**
      * Canonical URI of a service info resource
+     * Format: uri
      */
     public String uri;
-    /**
-     *
-     */
-    public BillingPlanInfo billingPlan;
-    /**
-     *
-     */
-    public BrandInfo brand;
-    /**
-     *
-     */
-    public ServicePlanInfo servicePlan;
-    /**
-     *
-     */
-    public TargetServicePlanInfo targetServicePlan;
-    /**
-     *
-     */
-    public ContractedCountryInfo contractedCountry;
-
-    public ServiceInfo uri(String uri) {
+    public ServiceInfo uri(String uri)
+    {
         this.uri = uri;
         return this;
     }
 
-    public ServiceInfo billingPlan(BillingPlanInfo billingPlan) {
+    /**
+     */
+    public BillingPlanInfo billingPlan;
+    public ServiceInfo billingPlan(BillingPlanInfo billingPlan)
+    {
         this.billingPlan = billingPlan;
         return this;
     }
 
-    public ServiceInfo brand(BrandInfo brand) {
+    /**
+     */
+    public BrandInfo brand;
+    public ServiceInfo brand(BrandInfo brand)
+    {
         this.brand = brand;
         return this;
     }
 
-    public ServiceInfo servicePlan(ServicePlanInfo servicePlan) {
+    /**
+     */
+    public ServicePlanInfo servicePlan;
+    public ServiceInfo servicePlan(ServicePlanInfo servicePlan)
+    {
         this.servicePlan = servicePlan;
         return this;
     }
 
-    public ServiceInfo targetServicePlan(TargetServicePlanInfo targetServicePlan) {
+    /**
+     */
+    public TargetServicePlanInfo targetServicePlan;
+    public ServiceInfo targetServicePlan(TargetServicePlanInfo targetServicePlan)
+    {
         this.targetServicePlan = targetServicePlan;
         return this;
     }
 
-    public ServiceInfo contractedCountry(ContractedCountryInfo contractedCountry) {
+    /**
+     */
+    public CountryInfoShortModel contractedCountry;
+    public ServiceInfo contractedCountry(CountryInfoShortModel contractedCountry)
+    {
         this.contractedCountry = contractedCountry;
         return this;
     }

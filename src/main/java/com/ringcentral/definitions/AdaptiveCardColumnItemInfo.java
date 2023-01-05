@@ -1,76 +1,77 @@
 package com.ringcentral.definitions;
 
 
-public class AdaptiveCardColumnItemInfo {
+public class AdaptiveCardColumnItemInfo
+{
     /**
-     *
      */
     public String type;
-    /**
-     *
-     */
-    public String url;
-    /**
-     *
-     */
-    public String size;
-    /**
-     *
-     */
-    public String style;
-    /**
-     *
-     */
-    public Boolean wrap;
-    /**
-     *
-     */
-    public String spacing;
-    /**
-     *
-     */
-    public String text;
-    /**
-     *
-     */
-    public Boolean isSubtle;
-
-    public AdaptiveCardColumnItemInfo type(String type) {
+    public AdaptiveCardColumnItemInfo type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public AdaptiveCardColumnItemInfo url(String url) {
+    /**
+     * Format: uri
+     */
+    public String url;
+    public AdaptiveCardColumnItemInfo url(String url)
+    {
         this.url = url;
         return this;
     }
 
-    public AdaptiveCardColumnItemInfo size(String size) {
+    /**
+     */
+    public String size;
+    public AdaptiveCardColumnItemInfo size(String size)
+    {
         this.size = size;
         return this;
     }
 
-    public AdaptiveCardColumnItemInfo style(String style) {
+    /**
+     */
+    public String style;
+    public AdaptiveCardColumnItemInfo style(String style)
+    {
         this.style = style;
         return this;
     }
 
-    public AdaptiveCardColumnItemInfo wrap(Boolean wrap) {
+    /**
+     */
+    public Boolean wrap;
+    public AdaptiveCardColumnItemInfo wrap(Boolean wrap)
+    {
         this.wrap = wrap;
         return this;
     }
 
-    public AdaptiveCardColumnItemInfo spacing(String spacing) {
+    /**
+     */
+    public String spacing;
+    public AdaptiveCardColumnItemInfo spacing(String spacing)
+    {
         this.spacing = spacing;
         return this;
     }
 
-    public AdaptiveCardColumnItemInfo text(String text) {
+    /**
+     */
+    public String text;
+    public AdaptiveCardColumnItemInfo text(String text)
+    {
         this.text = text;
         return this;
     }
 
-    public AdaptiveCardColumnItemInfo isSubtle(Boolean isSubtle) {
+    /**
+     */
+    public Boolean isSubtle;
+    public AdaptiveCardColumnItemInfo isSubtle(Boolean isSubtle)
+    {
         this.isSubtle = isSubtle;
         return this;
     }

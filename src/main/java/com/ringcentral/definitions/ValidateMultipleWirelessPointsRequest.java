@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class ValidateMultipleWirelessPointsRequest {
+public class ValidateMultipleWirelessPointsRequest
+{
     /**
-     *
      */
-    public WirelessPointInfoRequest[] records;
-
-    public ValidateMultipleWirelessPointsRequest records(WirelessPointInfoRequest[] records) {
+    public WirelessPointInfo[] records;
+    public ValidateMultipleWirelessPointsRequest records(WirelessPointInfo[] records)
+    {
         this.records = records;
         return this;
     }

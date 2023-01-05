@@ -1,40 +1,42 @@
 package com.ringcentral.paths.restapi.oauth.authorize;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AuthorizeRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-public class Index {
+public class Index
+{
     public RestClient rc;
-    public com.ringcentral.paths.restapi.oauth.Index parent;
-
-    public Index(com.ringcentral.paths.restapi.oauth.Index parent) {
-        this.parent = parent;
-        this.rc = parent.rc;
+public com.ringcentral.paths.restapi.oauth.Index parent;
+public Index(com.ringcentral.paths.restapi.oauth.Index parent)
+      {
+this.parent = parent;
+this.rc = parent.rc;
+    }
+    public String path()
+        {
+            return parent.path() + "/authorize";
+        }
+        /**
+         * Performs OAuth 2.0 authorization (GET version)
+         * HTTP Method: get
+         * Endpoint: /restapi/oauth/authorize
+         * Rate Limit Group: Auth
+         */
+  public String get() throws com.ringcentral.RestException, java.io.IOException
+  {
+    okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+    return rb.string();
     }
 
-    public String path() {
-        return parent.path() + "/authorize";
-    }
-
-    /**
-     * Performs OAuth 2.0 authorization (GET version)
-     * HTTP Method: get
-     * Endpoint: /restapi/oauth/authorize
-     * Rate Limit Group: Auth
-     */
-    public String get() throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return rb.string();
-    }
-
-    /**
-     * Performs OAuth 2.0 authorization (POST version)
-     * HTTP Method: post
-     * Endpoint: /restapi/oauth/authorize
-     * Rate Limit Group: Auth
-     */
-    public String post(AuthorizeRequest AuthorizeRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), AuthorizeRequest, null, com.ringcentral.ContentType.FORM);
-        return rb.string();
+        /**
+         * Performs OAuth 2.0 authorization (POST version)
+         * HTTP Method: post
+         * Endpoint: /restapi/oauth/authorize
+         * Rate Limit Group: Auth
+         */
+  public String post(AuthorizeRequest AuthorizeRequest) throws com.ringcentral.RestException, java.io.IOException
+  {
+    okhttp3.ResponseBody rb = this.rc.post(this.path(), AuthorizeRequest, null, com.ringcentral.ContentType.FORM);
+    return rb.string();
     }
 }

@@ -391,4 +391,12 @@ public class RestClient {
     public com.ringcentral.paths.analytics.Index analytics() {
         return new com.ringcentral.paths.analytics.Index(this);
     }
+
+    public com.ringcentral.paths.teammessaging.Index teamMessaging(String apiVersion) {
+        return new com.ringcentral.paths.teammessaging.Index(this, apiVersion);
+    }
+
+    public com.ringcentral.paths.teammessaging.Index teamMessaging() {
+        return new com.ringcentral.paths.teammessaging.Index(this, "v1");
+    }
 }

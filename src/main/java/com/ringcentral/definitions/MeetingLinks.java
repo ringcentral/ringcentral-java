@@ -1,25 +1,27 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Meeting links
- */
-public class MeetingLinks {
     /**
-     *
+* Meeting links
+*/
+public class MeetingLinks
+{
+    /**
+     * Format: uri
      */
     public String startUri;
-    /**
-     *
-     */
-    public String joinUri;
-
-    public MeetingLinks startUri(String startUri) {
+    public MeetingLinks startUri(String startUri)
+    {
         this.startUri = startUri;
         return this;
     }
 
-    public MeetingLinks joinUri(String joinUri) {
+    /**
+     * Format: uri
+     */
+    public String joinUri;
+    public MeetingLinks joinUri(String joinUri)
+    {
         this.joinUri = joinUri;
         return this;
     }

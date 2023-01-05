@@ -1,98 +1,107 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Call volume data for the specified grouping
- */
-public class CallsCounters {
     /**
-     *
+* Call volume data for the specified grouping
+*/
+public class CallsCounters
+{
+    /**
      */
     public AllCalls allCalls;
-    /**
-     *
-     */
-    public CallsByDirection callsByDirection;
-    /**
-     *
-     */
-    public CallsByOrigin callsByOrigin;
-    /**
-     *
-     */
-    public CallsByResponse callsByResponse;
-    /**
-     *
-     */
-    public CallsBySegments callsSegments;
-    /**
-     *
-     */
-    public CallsByResult callsByResult;
-    /**
-     *
-     */
-    public CallsByActions callsActions;
-    /**
-     *
-     */
-    public CallsByCompanyHours callsByCompanyHours;
-    /**
-     *
-     */
-    public CallsByQueueSla callsByQueueSla;
-    /**
-     *
-     */
-    public CallsByType callsByType;
-
-    public CallsCounters allCalls(AllCalls allCalls) {
+    public CallsCounters allCalls(AllCalls allCalls)
+    {
         this.allCalls = allCalls;
         return this;
     }
 
-    public CallsCounters callsByDirection(CallsByDirection callsByDirection) {
+    /**
+     */
+    public CallsByDirection callsByDirection;
+    public CallsCounters callsByDirection(CallsByDirection callsByDirection)
+    {
         this.callsByDirection = callsByDirection;
         return this;
     }
 
-    public CallsCounters callsByOrigin(CallsByOrigin callsByOrigin) {
+    /**
+     */
+    public CallsByOrigin callsByOrigin;
+    public CallsCounters callsByOrigin(CallsByOrigin callsByOrigin)
+    {
         this.callsByOrigin = callsByOrigin;
         return this;
     }
 
-    public CallsCounters callsByResponse(CallsByResponse callsByResponse) {
+    /**
+     */
+    public CallsByResponse callsByResponse;
+    public CallsCounters callsByResponse(CallsByResponse callsByResponse)
+    {
         this.callsByResponse = callsByResponse;
         return this;
     }
 
-    public CallsCounters callsSegments(CallsBySegments callsSegments) {
+    /**
+     */
+    public CallsBySegments callsSegments;
+    public CallsCounters callsSegments(CallsBySegments callsSegments)
+    {
         this.callsSegments = callsSegments;
         return this;
     }
 
-    public CallsCounters callsByResult(CallsByResult callsByResult) {
+    /**
+     */
+    public CallsByResult callsByResult;
+    public CallsCounters callsByResult(CallsByResult callsByResult)
+    {
         this.callsByResult = callsByResult;
         return this;
     }
 
-    public CallsCounters callsActions(CallsByActions callsActions) {
+    /**
+     */
+    public CallsByActions callsActions;
+    public CallsCounters callsActions(CallsByActions callsActions)
+    {
         this.callsActions = callsActions;
         return this;
     }
 
-    public CallsCounters callsByCompanyHours(CallsByCompanyHours callsByCompanyHours) {
+    /**
+     */
+    public CallsByCompanyHours callsByCompanyHours;
+    public CallsCounters callsByCompanyHours(CallsByCompanyHours callsByCompanyHours)
+    {
         this.callsByCompanyHours = callsByCompanyHours;
         return this;
     }
 
-    public CallsCounters callsByQueueSla(CallsByQueueSla callsByQueueSla) {
+    /**
+     */
+    public CallsByQueueSla callsByQueueSla;
+    public CallsCounters callsByQueueSla(CallsByQueueSla callsByQueueSla)
+    {
         this.callsByQueueSla = callsByQueueSla;
         return this;
     }
 
-    public CallsCounters callsByType(CallsByType callsByType) {
+    /**
+     */
+    public CallsByType callsByType;
+    public CallsCounters callsByType(CallsByType callsByType)
+    {
         this.callsByType = callsByType;
+        return this;
+    }
+
+    /**
+     */
+    public QueueOpportunities queueOpportunities;
+    public CallsCounters queueOpportunities(QueueOpportunities queueOpportunities)
+    {
+        this.queueOpportunities = queueOpportunities;
         return this;
     }
 }

@@ -1,40 +1,40 @@
 package com.ringcentral.definitions;
 
 
-public class GlipDataExportNavigationInfo {
+public class GlipDataExportNavigationInfo
+{
     /**
-     *
      */
     public GlipDataExportNavigationInfoUri firstPage;
-    /**
-     *
-     */
-    public GlipDataExportNavigationInfoUri nextPage;
-    /**
-     *
-     */
-    public GlipDataExportNavigationInfoUri previousPage;
-    /**
-     *
-     */
-    public GlipDataExportNavigationInfoUri lastPage;
-
-    public GlipDataExportNavigationInfo firstPage(GlipDataExportNavigationInfoUri firstPage) {
+    public GlipDataExportNavigationInfo firstPage(GlipDataExportNavigationInfoUri firstPage)
+    {
         this.firstPage = firstPage;
         return this;
     }
 
-    public GlipDataExportNavigationInfo nextPage(GlipDataExportNavigationInfoUri nextPage) {
+    /**
+     */
+    public GlipDataExportNavigationInfoUri nextPage;
+    public GlipDataExportNavigationInfo nextPage(GlipDataExportNavigationInfoUri nextPage)
+    {
         this.nextPage = nextPage;
         return this;
     }
 
-    public GlipDataExportNavigationInfo previousPage(GlipDataExportNavigationInfoUri previousPage) {
+    /**
+     */
+    public GlipDataExportNavigationInfoUri previousPage;
+    public GlipDataExportNavigationInfo previousPage(GlipDataExportNavigationInfoUri previousPage)
+    {
         this.previousPage = previousPage;
         return this;
     }
 
-    public GlipDataExportNavigationInfo lastPage(GlipDataExportNavigationInfoUri lastPage) {
+    /**
+     */
+    public GlipDataExportNavigationInfoUri lastPage;
+    public GlipDataExportNavigationInfo lastPage(GlipDataExportNavigationInfoUri lastPage)
+    {
         this.lastPage = lastPage;
         return this;
     }

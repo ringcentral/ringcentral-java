@@ -1,7 +1,7 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.GetCountryInfoDictionaryResponse;
-import com.ringcentral.definitions.GetCountryListResponse;
+import com.ringcentral.definitions.CountryInfoDictionaryModel;
+import com.ringcentral.definitions.CountryListDictionaryModel;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ public class DictionaryTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        GetCountryInfoDictionaryResponse c = rc.restapi().dictionary().country("46").get();
+        CountryInfoDictionaryModel c = rc.restapi().dictionary().country("46").get();
         Assert.assertEquals("China", c.name);
 
         rc.revoke();
@@ -42,7 +42,7 @@ public class DictionaryTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        GetCountryListResponse r = rc.restapi().dictionary().country().list();
+        CountryListDictionaryModel r = rc.restapi().dictionary().country().list();
         Assert.assertTrue(r.records.length > 0);
 
         rc.revoke();

@@ -6,7 +6,9 @@ package com.ringcentral.definitions;
  */
 public class SyncInfoMessages {
     /**
-     * Type of synchronization
+     * Type of message synchronization request:
+     * - FSync -- full sync
+     * - ISync -- incremental sync
      * Enum: FSync, ISync
      */
     public String syncType;
@@ -15,7 +17,8 @@ public class SyncInfoMessages {
      */
     public String syncToken;
     /**
-     * Last synchronization datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
+     * Last synchronization datetime in ISO 8601 format including
+     * timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String syncTime;

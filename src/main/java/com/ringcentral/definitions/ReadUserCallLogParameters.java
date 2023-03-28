@@ -75,6 +75,10 @@ public class ReadUserCallLogParameters {
      */
     public String dateFrom;
     /**
+     * Internal identifier of a telephony session
+     */
+    public String telephonySessionId;
+    /**
      * Indicates the page number to retrieve. Only positive number values are allowed
      * Minimum: 1
      * Format: int32
@@ -151,6 +155,11 @@ public class ReadUserCallLogParameters {
 
     public ReadUserCallLogParameters dateFrom(String dateFrom) {
         this.dateFrom = dateFrom;
+        return this;
+    }
+
+    public ReadUserCallLogParameters telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
         return this;
     }
 

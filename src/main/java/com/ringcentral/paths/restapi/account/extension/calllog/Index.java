@@ -1,10 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.calllog;
 
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.DeleteUserCallLogParameters;
-import com.ringcentral.definitions.ReadUserCallLogParameters;
-import com.ringcentral.definitions.UserCallLogRecord;
-import com.ringcentral.definitions.UserCallLogResponse;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -70,11 +67,15 @@ public class Index {
      * App Permission: ReadCallLog
      * User Permission: ReadCallLog
      */
-    public UserCallLogRecord get() throws com.ringcentral.RestException, java.io.IOException {
+    public UserCallLogRecord get(ReadUserCallRecordParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (callRecordId == null) {
             throw new IllegalArgumentException("Parameter callRecordId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), UserCallLogRecord.class);
+    }
+
+    public UserCallLogRecord get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
     }
 }

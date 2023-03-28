@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class BlockedAllowedPhoneNumbersList {
     /**
      * Link to a list of blocked/allowed phone numbers resource
+     * Format: uri
      */
     public String uri;
     /**
@@ -16,11 +17,11 @@ public class BlockedAllowedPhoneNumbersList {
     /**
      *
      */
-    public NavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
 
     public BlockedAllowedPhoneNumbersList uri(String uri) {
         this.uri = uri;
@@ -32,12 +33,12 @@ public class BlockedAllowedPhoneNumbersList {
         return this;
     }
 
-    public BlockedAllowedPhoneNumbersList navigation(NavigationInfo navigation) {
+    public BlockedAllowedPhoneNumbersList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public BlockedAllowedPhoneNumbersList paging(EnumeratedPaging paging) {
+    public BlockedAllowedPhoneNumbersList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

@@ -23,21 +23,25 @@ public class VoicemailMessageEventBody {
      */
     public String type;
     /**
-     * Message creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2019-03-10T18:07:52.534Z*
+     * Message creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+     * format including timezone, for example *2019-03-10T18:07:52.534Z*
+     * Format: date-time
      */
     public String creationTime;
     /**
-     * Datetime when the message was modified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2019-03-10T18:07:52.534Z*
+     * Datetime when a message was modified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+     * format including timezone, for example *2019-03-10T18:07:52.534Z*
+     * Format: date-time
      */
     public String lastModifiedTime;
     /**
-     * Status of a message
-     * Default: Unread
+     * Message read status
+     * Enum: Read, Unread
      */
     public String readStatus;
     /**
      * Message priority
-     * Default: Normal
+     * Enum: Normal, High
      */
     public String priority;
     /**
@@ -45,14 +49,18 @@ public class VoicemailMessageEventBody {
      */
     public MessageAttachmentInfo[] attachments;
     /**
-     * Message direction
-     * Default: Inbound
+     * Text message direction. Note that for some message types not all
+     * directions are allowed. For example voicemail messages can
+     * be only inbound
      * Enum: Inbound, Outbound
      */
     public String direction;
     /**
-     * Message availability status
-     * Default: Alive
+     * Message availability status. Message in &#039;Deleted&#039; state is still
+     * preserved with all its attachments and can be restored. &#039;Purged&#039; means
+     * that all attachments are already deleted and the message itself is about
+     * to be physically deleted shortly
+     * Enum: Alive, Deleted, Purged
      */
     public String availability;
     /**
@@ -60,8 +68,13 @@ public class VoicemailMessageEventBody {
      */
     public String subject;
     /**
-     * Status of a message
-     * Default: Received
+     * Message status. Different message types may have different
+     * allowed status values. For outbound faxes the aggregated message status
+     * is returned. If, for outbound message, a status for at least one recipient is &#039;Queued&#039;, then
+     * the &#039;Queued&#039; value is returned. If a status for at least one recipient is
+     * &#039;SendingFailed&#039;, then the &#039;SendingFailed&#039; value is returned. In other cases
+     * the &#039;Sent&#039; status is returned
+     * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
     /**

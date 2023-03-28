@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListAssignedRolesParameters {
     /**
-     *
+     * Specifies if hidden roles are shown or not
      */
     public Boolean showHidden;
 

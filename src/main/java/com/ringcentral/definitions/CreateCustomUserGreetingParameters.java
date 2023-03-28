@@ -12,18 +12,9 @@ public class CreateCustomUserGreetingParameters {
      * Default: true
      */
     public Boolean apply;
-    /**
-     *
-     */
-    public CustomGreetingAnsweringRuleInfoRequest answeringRule;
 
     public CreateCustomUserGreetingParameters apply(Boolean apply) {
         this.apply = apply;
-        return this;
-    }
-
-    public CreateCustomUserGreetingParameters answeringRule(CustomGreetingAnsweringRuleInfoRequest answeringRule) {
-        this.answeringRule = answeringRule;
         return this;
     }
 }

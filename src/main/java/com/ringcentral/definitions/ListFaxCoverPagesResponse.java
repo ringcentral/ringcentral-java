@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class ListFaxCoverPagesResponse {
     /**
-     *
+     * Format: uri
      */
     public String uri;
     /**
@@ -13,11 +13,11 @@ public class ListFaxCoverPagesResponse {
     /**
      *
      */
-    public MessagingNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public MessagingPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public ListFaxCoverPagesResponse uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class ListFaxCoverPagesResponse {
         return this;
     }
 
-    public ListFaxCoverPagesResponse navigation(MessagingNavigationInfo navigation) {
+    public ListFaxCoverPagesResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public ListFaxCoverPagesResponse paging(MessagingPagingInfo paging) {
+    public ListFaxCoverPagesResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

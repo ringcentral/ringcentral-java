@@ -11,6 +11,8 @@ public class SubscriptionInfo {
     /**
      * Internal identifier of a subscription
      * Required
+     * Format: uuid
+     * Example: 95fecfc9-9cdc-4e94-a78a-89fd65889d37
      */
     public String id;
     /**
@@ -19,17 +21,20 @@ public class SubscriptionInfo {
      */
     public String[] eventFilters;
     /**
-     * The list of event filter names corresponding to events the user is not subscribed to due to certain limitations
+     * The list of event filter names corresponding to events the user is not subscribed to due to
+     * certain limitations
      */
     public DisabledFilterInfo[] disabledFilters;
     /**
-     * Subscription expiration datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z*
+     * Subscription expiration time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+     * format including timezone, for example *2016-03-10T18:07:52.534Z*
      * Required
      * Format: date-time
      */
     public String expirationTime;
     /**
      * Subscription lifetime in seconds
+     * Minimum: 1
      * Format: int32
      */
     public Long expiresIn;
@@ -40,7 +45,8 @@ public class SubscriptionInfo {
      */
     public String status;
     /**
-     * Subscription creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534*
+     * Subscription creation time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+     * format including timezone, for example *2016-03-10T18:07:52.534*
      * Required
      * Format: date-time
      */

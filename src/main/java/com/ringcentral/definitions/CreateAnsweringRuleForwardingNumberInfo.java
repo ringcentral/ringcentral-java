@@ -8,6 +8,7 @@ public class CreateAnsweringRuleForwardingNumberInfo {
     public String id;
     /**
      * Canonical URI of a forwarding/call flip phone number
+     * Format: uri
      */
     public String uri;
     /**

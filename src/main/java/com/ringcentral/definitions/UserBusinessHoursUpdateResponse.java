@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class UserBusinessHoursUpdateResponse {
     /**
      * Canonical URI of a business-hours resource
+     * Format: uri
      */
     public String uri;
     /**

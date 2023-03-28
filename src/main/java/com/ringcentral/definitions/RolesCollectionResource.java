@@ -13,11 +13,11 @@ public class RolesCollectionResource {
     /**
      *
      */
-    public RNPPagingInfo paging;
+    public EnumeratedPagingModel paging;
     /**
      *
      */
-    public RNPNavigationInfo navigation;
+    public PageNavigationModel navigation;
 
     public RolesCollectionResource uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class RolesCollectionResource {
         return this;
     }
 
-    public RolesCollectionResource paging(RNPPagingInfo paging) {
+    public RolesCollectionResource paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }
 
-    public RolesCollectionResource navigation(RNPNavigationInfo navigation) {
+    public RolesCollectionResource navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }

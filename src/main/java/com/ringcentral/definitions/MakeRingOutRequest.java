@@ -15,13 +15,14 @@ public class MakeRingOutRequest {
      */
     public MakeRingOutCallerIdInfo callerId;
     /**
-     * The audio prompt that the calling party hears when the call is connected
+     * Audio prompt that a calling party hears when a call
+     * is connected
      */
     public Boolean playPrompt;
     /**
      *
      */
-    public MakeRingOutCoutryInfo country;
+    public MakeRingOutCountryInfo country;
 
     public MakeRingOutRequest from(MakeRingOutCallerInfoRequestFrom from) {
         this.from = from;
@@ -43,7 +44,7 @@ public class MakeRingOutRequest {
         return this;
     }
 
-    public MakeRingOutRequest country(MakeRingOutCoutryInfo country) {
+    public MakeRingOutRequest country(MakeRingOutCountryInfo country) {
         this.country = country;
         return this;
     }

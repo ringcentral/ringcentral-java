@@ -18,7 +18,7 @@ public class CallQueueInfoRequest {
      */
     public Long slaThresholdSeconds;
     /**
-     * Format: int32
+     *
      */
     public Boolean includeAbandonedCalls;
     /**

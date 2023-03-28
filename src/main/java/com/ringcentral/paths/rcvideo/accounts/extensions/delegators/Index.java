@@ -1,0 +1,35 @@
+package com.ringcentral.paths.rcvideo.accounts.extensions.delegators;
+
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.DelegatorsListResult;
+import com.ringcentral.definitions.RcvListDelegatorsParameters;
+
+public class Index {
+    public RestClient rc;
+    public com.ringcentral.paths.rcvideo.accounts.extensions.Index parent;
+
+    public Index(com.ringcentral.paths.rcvideo.accounts.extensions.Index parent) {
+        this.parent = parent;
+        this.rc = parent.rc;
+    }
+
+    public String path() {
+        return parent.path() + "/delegators";
+    }
+
+    /**
+     * Returns the list of users who can delegate bridge/meeting creation to the given user.
+     * HTTP Method: get
+     * Endpoint: /rcvideo/{version}/accounts/{accountId}/extensions/{extensionId}/delegators
+     * Rate Limit Group: Medium
+     * App Permission: Video
+     */
+    public DelegatorsListResult get(RcvListDelegatorsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), DelegatorsListResult.class);
+    }
+
+    public DelegatorsListResult get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
+    }
+}

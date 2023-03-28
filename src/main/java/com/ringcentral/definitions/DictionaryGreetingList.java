@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class DictionaryGreetingList {
     /**
      * Canonical URI of greetings list resource
+     * Format: uri
      */
     public String uri;
     /**
@@ -13,11 +14,11 @@ public class DictionaryGreetingList {
     /**
      *
      */
-    public NavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
 
     public DictionaryGreetingList uri(String uri) {
         this.uri = uri;
@@ -29,12 +30,12 @@ public class DictionaryGreetingList {
         return this;
     }
 
-    public DictionaryGreetingList navigation(NavigationInfo navigation) {
+    public DictionaryGreetingList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public DictionaryGreetingList paging(EnumeratedPaging paging) {
+    public DictionaryGreetingList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

@@ -6,17 +6,20 @@ package com.ringcentral.definitions;
  */
 public class CreateFaxMessageRequest {
     /**
-     * Resolution of Fax
+     * Fax only. Resolution of a fax message. &#039;High&#039; for black and
+     * white image scanned at 200 dpi, &#039;Low&#039; for black and white image scanned
+     * at 100 dpi
      * Enum: High, Low
      */
     public String faxResolution;
     /**
-     * To Phone Number
+     * Recipient&#039;s phone number
      * Required
      */
-    public MessageStoreCalleeInfoRequest[] to;
+    public FaxReceiver[] to;
     /**
-     * Timestamp to send fax at. If not specified (current or the past), the fax is sent immediately
+     * Timestamp to send a fax at. If not specified, current or the past
+     * a fax message is sent immediately
      * Format: date-time
      */
     public String sendTime;
@@ -25,18 +28,20 @@ public class CreateFaxMessageRequest {
      */
     public String isoCode;
     /**
-     * Cover page identifier. If coverIndex is set to &#039;0&#039; (zero) cover page is not attached. For the list of available cover page identifiers (1-13) please call the Fax Cover Pages method. If not specified, the default cover page is attached (which is configured in &#039;Outbound Fax Settings&#039;)
+     * Cover page identifier. If `coverIndex` is set to &#039;0&#039; (zero) a cover page
+     * is not attached. For a list of available cover page identifiers (1-13)
+     * please call the Fax Cover Pages method. If not specified, the default cover
+     * page is attached (which is configured in &#039;Outbound Fax Settings&#039;)
      * Format: int32
      */
     public Long coverIndex;
     /**
-     * Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols
+     * Cover page text, entered by a fax sender and printed
+     * on a cover page. Maximum length is limited to 1024 symbols
      */
     public String coverPageText;
     /**
-     * File to upload
      * Required
-     * Format: binary
      */
     public Attachment[] attachments;
 
@@ -45,7 +50,7 @@ public class CreateFaxMessageRequest {
         return this;
     }
 
-    public CreateFaxMessageRequest to(MessageStoreCalleeInfoRequest[] to) {
+    public CreateFaxMessageRequest to(FaxReceiver[] to) {
         this.to = to;
         return this;
     }

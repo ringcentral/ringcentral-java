@@ -6,17 +6,15 @@ package com.ringcentral.definitions;
  */
 public class CreateCompanyGreetingRequest {
     /**
-     * Type of a greeting, specifying the case when the greeting is played.
+     * Type of a greeting, specifying the case when the greeting
+     * is played.
      * Required
      * Enum: Company, StartRecording, StopRecording, AutomaticRecording, TemplateGreeting
      */
     public String type;
     /**
-     * Internal identifier of an answering rule
-     */
-    public String answeringRuleId;
-    /**
-     * Internal identifier of a language. See Get Language List
+     * Internal identifier of a language. See Get Language
+     * List
      */
     public String languageId;
     /**
@@ -24,14 +22,13 @@ public class CreateCompanyGreetingRequest {
      * Required
      */
     public Attachment binary;
+    /**
+     *
+     */
+    public GreetingAnsweringRuleId answeringRule;
 
     public CreateCompanyGreetingRequest type(String type) {
         this.type = type;
-        return this;
-    }
-
-    public CreateCompanyGreetingRequest answeringRuleId(String answeringRuleId) {
-        this.answeringRuleId = answeringRuleId;
         return this;
     }
 
@@ -42,6 +39,11 @@ public class CreateCompanyGreetingRequest {
 
     public CreateCompanyGreetingRequest binary(Attachment binary) {
         this.binary = binary;
+        return this;
+    }
+
+    public CreateCompanyGreetingRequest answeringRule(GreetingAnsweringRuleId answeringRule) {
+        this.answeringRule = answeringRule;
         return this;
     }
 }

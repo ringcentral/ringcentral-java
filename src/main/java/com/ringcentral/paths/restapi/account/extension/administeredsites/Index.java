@@ -18,20 +18,22 @@ public class Index {
     }
 
     /**
-     * Returns the list of sites administered by the current user.
+     * Returns a list of sites administered by the current user.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/administered-sites
      * Rate Limit Group: Medium
      * App Permission: ReadAccounts
      * User Permission: ReadExtensions
      */
-    public String get() throws com.ringcentral.RestException, java.io.IOException {
+    public BusinessSiteCollectionResource get() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return rb.string();
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), BusinessSiteCollectionResource.class);
     }
 
     /**
-     * Updates user administered sites. Note: only IDs of records are used for update.
+     * Updates the sites administered by the current user.
+     * Please note: Only IDs of records are used for update.
+     * <p>
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/administered-sites
      * Rate Limit Group: Medium

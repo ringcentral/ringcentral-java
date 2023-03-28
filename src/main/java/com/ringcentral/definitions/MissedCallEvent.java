@@ -25,6 +25,7 @@ public class MissedCallEvent {
     public String timestamp;
     /**
      * Internal identifier of an extension
+     * Default: ~
      */
     public String extensionId;
     /**

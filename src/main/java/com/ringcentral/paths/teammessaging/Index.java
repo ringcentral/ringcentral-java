@@ -137,11 +137,6 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.teammessaging.preferences.Index preferences() {
-        return new com.ringcentral.paths.teammessaging.preferences.Index(this);
-    }
-
-
     public com.ringcentral.paths.teammessaging.conversations.Index conversations() {
         return this.conversations(null);
     }

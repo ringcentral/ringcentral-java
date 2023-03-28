@@ -47,6 +47,15 @@ public class Index {
         return com.ringcentral.Utils.gson.fromJson(rb.string(), GetAccountInfoResponse.class);
     }
 
+    public com.ringcentral.paths.restapi.account.sites.Index sites() {
+        return this.sites(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.sites.Index sites(String siteId) {
+        return new com.ringcentral.paths.restapi.account.sites.Index(this, siteId);
+    }
+
+
     public com.ringcentral.paths.restapi.account.device.Index device() {
         return this.device(null);
     }
@@ -58,15 +67,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.a2psms.Index a2pSms() {
         return new com.ringcentral.paths.restapi.account.a2psms.Index(this);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.meeting.Index meeting() {
-        return this.meeting(null);
-    }
-
-    public com.ringcentral.paths.restapi.account.meeting.Index meeting(String meetingId) {
-        return new com.ringcentral.paths.restapi.account.meeting.Index(this, meetingId);
     }
 
 
@@ -240,11 +240,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.pagingonlygroups.Index pagingOnlyGroups(String pagingOnlyGroupId) {
         return new com.ringcentral.paths.restapi.account.pagingonlygroups.Index(this, pagingOnlyGroupId);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.meetingrecordings.Index meetingRecordings() {
-        return new com.ringcentral.paths.restapi.account.meetingrecordings.Index(this);
     }
 
 

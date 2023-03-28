@@ -18,7 +18,7 @@ public class Index {
     }
 
     /**
-     * Creates and sends an internal text message.
+     * Creates and sends an internal text message (company pager message).
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/company-pager
      * Rate Limit Group: Medium

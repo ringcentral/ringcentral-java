@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class MessagingNavigationInfoURI {
     /**
-     *
+     * Format: uri
      */
     public String uri;
 

@@ -12,28 +12,27 @@ public class CreateCustomUserGreetingRequest {
      */
     public String type;
     /**
-     * Internal identifier of an answering rule
-     * Required
-     */
-    public String answeringRuleId;
-    /**
      * Media file to upload
      * Required
      */
     public Attachment binary;
+    /**
+     *
+     */
+    public GreetingAnsweringRuleId answeringRule;
 
     public CreateCustomUserGreetingRequest type(String type) {
         this.type = type;
         return this;
     }
 
-    public CreateCustomUserGreetingRequest answeringRuleId(String answeringRuleId) {
-        this.answeringRuleId = answeringRuleId;
+    public CreateCustomUserGreetingRequest binary(Attachment binary) {
+        this.binary = binary;
         return this;
     }
 
-    public CreateCustomUserGreetingRequest binary(Attachment binary) {
-        this.binary = binary;
+    public CreateCustomUserGreetingRequest answeringRule(GreetingAnsweringRuleId answeringRule) {
+        this.answeringRule = answeringRule;
         return this;
     }
 }

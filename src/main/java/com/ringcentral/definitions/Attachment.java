@@ -6,8 +6,7 @@ package com.ringcentral.definitions;
  */
 public class Attachment {
     /**
-     * Filename with extension
-     * Example: example.png
+     * Filename with extension, such as &quot;image.png&quot;
      */
     public String filename;
     /**

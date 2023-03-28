@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class GetExtensionForwardingNumberListResponse {
     /**
      * Link to the forwarding number list resource
+     * Format: uri
      */
     public String uri;
     /**
@@ -13,11 +14,11 @@ public class GetExtensionForwardingNumberListResponse {
     /**
      *
      */
-    public NavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
 
     public GetExtensionForwardingNumberListResponse uri(String uri) {
         this.uri = uri;
@@ -29,12 +30,12 @@ public class GetExtensionForwardingNumberListResponse {
         return this;
     }
 
-    public GetExtensionForwardingNumberListResponse navigation(NavigationInfo navigation) {
+    public GetExtensionForwardingNumberListResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public GetExtensionForwardingNumberListResponse paging(EnumeratedPaging paging) {
+    public GetExtensionForwardingNumberListResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

@@ -24,6 +24,22 @@ public class CompanyCallLogRecord {
      */
     public String telephonySessionId;
     /**
+     * Call session identifier, required for Telephony REST API
+     */
+    public String sipUuidInfo;
+    /**
+     *
+     */
+    public CompanyCallLogRecordTransferTarget transferTarget;
+    /**
+     *
+     */
+    public CompanyCallLogRecordTransferee transferee;
+    /**
+     * Internal Identifier of Participant
+     */
+    public String partyId;
+    /**
      * The type of a call transport. &#039;PSTN&#039; indicates that a call leg was initiated
      * from the PSTN network provider; &#039;VoIP&#039; - from an RC phone.
      * Enum: PSTN, VoIP
@@ -134,6 +150,26 @@ public class CompanyCallLogRecord {
 
     public CompanyCallLogRecord telephonySessionId(String telephonySessionId) {
         this.telephonySessionId = telephonySessionId;
+        return this;
+    }
+
+    public CompanyCallLogRecord sipUuidInfo(String sipUuidInfo) {
+        this.sipUuidInfo = sipUuidInfo;
+        return this;
+    }
+
+    public CompanyCallLogRecord transferTarget(CompanyCallLogRecordTransferTarget transferTarget) {
+        this.transferTarget = transferTarget;
+        return this;
+    }
+
+    public CompanyCallLogRecord transferee(CompanyCallLogRecordTransferee transferee) {
+        this.transferee = transferee;
+        return this;
+    }
+
+    public CompanyCallLogRecord partyId(String partyId) {
+        this.partyId = partyId;
         return this;
     }
 

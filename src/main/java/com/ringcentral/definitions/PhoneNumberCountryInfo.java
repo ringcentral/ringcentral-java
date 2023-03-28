@@ -11,6 +11,7 @@ public class PhoneNumberCountryInfo {
     public String id;
     /**
      * Canonical URI of a home country
+     * Format: uri
      */
     public String uri;
     /**

@@ -9,6 +9,7 @@ public class MessageAttachmentInfo {
     public Long id;
     /**
      * Canonical URI of a message attachment
+     * Format: uri
      */
     public String uri;
     /**
@@ -21,7 +22,9 @@ public class MessageAttachmentInfo {
      */
     public String contentType;
     /**
-     * Supported for `Voicemail` only. Duration of a voicemail in seconds
+     * Supported for `Voicemail` only. Duration of a voicemail in
+     * seconds
+     * Format: int32
      */
     public Long vmDuration;
     /**
@@ -30,14 +33,17 @@ public class MessageAttachmentInfo {
     public String fileName;
     /**
      * Size of attachment in bytes
+     * Format: int32
      */
     public Long size;
     /**
      * Attachment height in pixels if available
+     * Format: int32
      */
     public Long height;
     /**
      * Attachment width in pixels if available
+     * Format: int32
      */
     public Long width;
 

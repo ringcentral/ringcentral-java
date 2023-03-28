@@ -3,16 +3,19 @@ package com.ringcentral.definitions;
 
 public class CompanyAnsweringRuleUpdate {
     /**
-     * Specifies if the rule is active or inactive. The default value is &#039;True&#039;
+     * Specifies if a rule is active or inactive. The default value is &#039;True&#039;
      * Default: true
      */
     public Boolean enabled;
     /**
-     * Name of an answering rule specified by user. Max number of symbols is 30. The default value is &#039;My Rule N&#039; where &#039;N&#039; is the first free number
+     * Name of an answering rule specified by user. Max number of
+     * symbols is 30. The default value is &#039;My Rule N&#039; where &#039;N&#039; is the first
+     * free number
      */
     public String name;
     /**
-     * Answering rule will be applied when calls are received from the specified caller(s)
+     * Answering rule will be applied when calls are received from
+     * the specified caller(s)
      */
     public CompanyAnsweringRuleCallersInfoRequest[] callers;
     /**
@@ -39,7 +42,8 @@ public class CompanyAnsweringRuleUpdate {
      */
     public CompanyAnsweringRuleCallersInfoRequest extension;
     /**
-     * Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
+     * Greetings applied for an answering rule; only predefined greetings
+     * can be applied, see Dictionary Greeting List
      */
     public GreetingInfo[] greetings;
 

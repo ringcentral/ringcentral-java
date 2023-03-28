@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class CallRecordingExtensions {
     /**
      * Link to call recording extension list resource
+     * Format: uri
      */
     public String uri;
     /**
@@ -13,11 +14,11 @@ public class CallRecordingExtensions {
     /**
      *
      */
-    public NavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
 
     public CallRecordingExtensions uri(String uri) {
         this.uri = uri;
@@ -29,12 +30,12 @@ public class CallRecordingExtensions {
         return this;
     }
 
-    public CallRecordingExtensions navigation(NavigationInfo navigation) {
+    public CallRecordingExtensions navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public CallRecordingExtensions paging(EnumeratedPaging paging) {
+    public CallRecordingExtensions paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

@@ -8,6 +8,7 @@ public class CompanyAnsweringRuleInfo {
     public String id;
     /**
      * Canonical URI of an answering rule
+     * Format: uri
      */
     public String uri;
     /**

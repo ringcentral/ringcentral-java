@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class CustomUserGreetingInfo {
     /**
      * Link to a custom user greeting
+     * Format: uri
      */
     public String uri;
     /**
@@ -22,6 +23,7 @@ public class CustomUserGreetingInfo {
     public String contentType;
     /**
      * Link to a greeting content (audio file)
+     * Format: uri
      */
     public String contentUri;
     /**

@@ -42,6 +42,8 @@ public class Index {
 
     /**
      * Creates a new subscription for the current authorized user / client application.
+     * The number of subscriptions per user extension is limited to 20.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/subscription
      * Rate Limit Group: Medium

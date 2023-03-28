@@ -97,10 +97,6 @@ public class AuthorizeRequest {
      * Enum: plain, S256
      */
     public String code_challenge_method;
-    /**
-     *
-     */
-    public Boolean discovery;
 
     public AuthorizeRequest response_type(String response_type) {
         this.response_type = response_type;
@@ -184,11 +180,6 @@ public class AuthorizeRequest {
 
     public AuthorizeRequest code_challenge_method(String code_challenge_method) {
         this.code_challenge_method = code_challenge_method;
-        return this;
-    }
-
-    public AuthorizeRequest discovery(Boolean discovery) {
-        this.discovery = discovery;
         return this;
     }
 }

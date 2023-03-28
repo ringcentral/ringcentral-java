@@ -92,6 +92,22 @@ public class CallLogRecordLegInfo {
      */
     public String telephonySessionId;
     /**
+     * Call session identifier, required for Telephony REST API
+     */
+    public String sipUuidInfo;
+    /**
+     *
+     */
+    public CallLogRecordLegInfoTransferTarget transferTarget;
+    /**
+     *
+     */
+    public CallLogRecordLegInfoTransferee transferee;
+    /**
+     * Internal Identifier of Participant
+     */
+    public String partyId;
+    /**
      * The internal type of the call
      * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
      */
@@ -194,6 +210,26 @@ public class CallLogRecordLegInfo {
 
     public CallLogRecordLegInfo telephonySessionId(String telephonySessionId) {
         this.telephonySessionId = telephonySessionId;
+        return this;
+    }
+
+    public CallLogRecordLegInfo sipUuidInfo(String sipUuidInfo) {
+        this.sipUuidInfo = sipUuidInfo;
+        return this;
+    }
+
+    public CallLogRecordLegInfo transferTarget(CallLogRecordLegInfoTransferTarget transferTarget) {
+        this.transferTarget = transferTarget;
+        return this;
+    }
+
+    public CallLogRecordLegInfo transferee(CallLogRecordLegInfoTransferee transferee) {
+        this.transferee = transferee;
+        return this;
+    }
+
+    public CallLogRecordLegInfo partyId(String partyId) {
+        this.partyId = partyId;
         return this;
     }
 

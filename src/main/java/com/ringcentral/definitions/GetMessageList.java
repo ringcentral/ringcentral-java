@@ -3,7 +3,8 @@ package com.ringcentral.definitions;
 
 public class GetMessageList {
     /**
-     * Link to the list of user messages
+     * Link to a list of user messages
+     * Format: uri
      */
     public String uri;
     /**

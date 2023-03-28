@@ -68,7 +68,8 @@ public class UpdateAnsweringRuleRequest {
      * callers are asked to say their name before connecting; &#039;Always&#039; - the
      * callers are always asked to say their name before connecting. The default
      * value is &#039;Off&#039;
-     * Enum: false, NoCallerId, UnknownCallerId, Always
+     * Default: Off
+     * Enum: Off, NoCallerId, UnknownCallerId, Always
      */
     public String screening;
     /**

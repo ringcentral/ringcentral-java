@@ -16,11 +16,6 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.directory.devices.Index devices() {
-        return new com.ringcentral.paths.restapi.account.directory.devices.Index(this);
-    }
-
-
     public com.ringcentral.paths.restapi.account.directory.entries.Index entries() {
         return this.entries(null);
     }
@@ -32,11 +27,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.directory.federation.Index federation() {
         return new com.ringcentral.paths.restapi.account.directory.federation.Index(this);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.directory.devicetypes.Index deviceTypes() {
-        return new com.ringcentral.paths.restapi.account.directory.devicetypes.Index(this);
     }
 
 }

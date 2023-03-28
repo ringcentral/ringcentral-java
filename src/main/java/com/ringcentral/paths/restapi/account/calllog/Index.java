@@ -4,6 +4,7 @@ import com.ringcentral.RestClient;
 import com.ringcentral.definitions.AccountCallLogResponse;
 import com.ringcentral.definitions.CompanyCallLogRecord;
 import com.ringcentral.definitions.ReadCompanyCallLogParameters;
+import com.ringcentral.definitions.ReadCompanyCallRecordParameters;
 
 public class Index {
     public RestClient rc;
@@ -52,11 +53,15 @@ public class Index {
      * App Permission: ReadCallLog
      * User Permission: FullCompanyCallLog
      */
-    public CompanyCallLogRecord get() throws com.ringcentral.RestException, java.io.IOException {
+    public CompanyCallLogRecord get(ReadCompanyCallRecordParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (callRecordId == null) {
             throw new IllegalArgumentException("Parameter callRecordId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CompanyCallLogRecord.class);
+    }
+
+    public CompanyCallLogRecord get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
     }
 }

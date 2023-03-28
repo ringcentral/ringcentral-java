@@ -18,7 +18,9 @@ public class Index {
     }
 
     /**
-     * Returns devices of the extension(s) by their ID(s). Batch request is supported
+     * Returns devices of an extension or multiple extensions by their ID(s). Batch request
+     * is supported.
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/device
      * Rate Limit Group: Light

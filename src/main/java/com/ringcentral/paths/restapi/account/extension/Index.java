@@ -96,36 +96,6 @@ public class Index {
         return com.ringcentral.Utils.gson.fromJson(rb.string(), GetExtensionInfoResponse.class);
     }
 
-    /**
-     * Deletes extension(s) by ID(s). When an extension is being deleted
-     * the default API behavior is as follows:
-     * - user&#039;s direct numbers are preserved by becoming additional company numbers;
-     * - user&#039;s digital lines (both device &amp; associated phone number) are deleted.
-     * <p>
-     * You can change this behavior using the filters:
-     * - create unassigned extensions for each digital line of the deleted extension by
-     * setting the query parameter `savePhoneLines` to `true` in request path;
-     * - remove direct numbers of the deleted extension by setting the `savePhoneNumbers`
-     * query parameter to `false` in request path
-     * <p>
-     * HTTP Method: delete
-     * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}
-     * Rate Limit Group: Medium
-     * App Permission: EditAccounts
-     * User Permission: AddRemoveUsers
-     */
-    public String delete(DeleteExtensionParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
-        if (extensionId == null) {
-            throw new IllegalArgumentException("Parameter extensionId cannot be null");
-        }
-        okhttp3.ResponseBody rb = this.rc.delete(this.path(), queryParams);
-        return rb.string();
-    }
-
-    public String delete() throws com.ringcentral.RestException, java.io.IOException {
-        return this.delete(null);
-    }
-
     public com.ringcentral.paths.restapi.account.extension.fax.Index fax() {
         return new com.ringcentral.paths.restapi.account.extension.fax.Index(this);
     }
@@ -148,15 +118,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.extension.device.Index device() {
         return new com.ringcentral.paths.restapi.account.extension.device.Index(this);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.extension.meeting.Index meeting() {
-        return this.meeting(null);
-    }
-
-    public com.ringcentral.paths.restapi.account.extension.meeting.Index meeting(String meetingId) {
-        return new com.ringcentral.paths.restapi.account.extension.meeting.Index(this, meetingId);
     }
 
 
@@ -323,11 +284,6 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.meetingrecordings.Index meetingRecordings() {
-        return new com.ringcentral.paths.restapi.account.extension.meetingrecordings.Index(this);
-    }
-
-
     public com.ringcentral.paths.restapi.account.extension.emergencylocations.Index emergencyLocations() {
         return this.emergencyLocations(null);
     }
@@ -347,18 +303,8 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.meetingconfiguration.Index meetingConfiguration() {
-        return new com.ringcentral.paths.restapi.account.extension.meetingconfiguration.Index(this);
-    }
-
-
     public com.ringcentral.paths.restapi.account.extension.notificationsettings.Index notificationSettings() {
         return new com.ringcentral.paths.restapi.account.extension.notificationsettings.Index(this);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.extension.meetingsconfiguration.Index meetingsConfiguration() {
-        return new com.ringcentral.paths.restapi.account.extension.meetingsconfiguration.Index(this);
     }
 
 }

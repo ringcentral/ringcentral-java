@@ -1,6 +1,13 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Automatically determined emergency address. If `emergencyAddressState`
+ * value is 'Assigned', then this address is assigned to the current device.
+ * If `emergencyAddressState` value is 'Unconfirmed', then the specified address
+ * must be confirmed by the user before being registered as emergency address
+ * for the current device. In all other cases the value is null
+ */
 public class DeviceEmergencyAddress {
     /**
      * Name of a customer
@@ -54,6 +61,13 @@ public class DeviceEmergencyAddress {
      * Full name of a country
      */
     public String countryName;
+    /**
+     * Resulting status of emergency address synchronization. Returned
+     * for &#039;Get Device Info&#039; request if `syncEmergencyAddress` parameter is set
+     * to &#039;True&#039;
+     * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
+     */
+    public String syncStatus;
 
     public DeviceEmergencyAddress customerName(String customerName) {
         this.customerName = customerName;
@@ -117,6 +131,11 @@ public class DeviceEmergencyAddress {
 
     public DeviceEmergencyAddress countryName(String countryName) {
         this.countryName = countryName;
+        return this;
+    }
+
+    public DeviceEmergencyAddress syncStatus(String syncStatus) {
+        this.syncStatus = syncStatus;
         return this;
     }
 }

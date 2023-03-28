@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class RecipientInfo {
     /**
      * Link to a recipient extension resource
+     * Format: uri
      */
     public String uri;
     /**

@@ -68,62 +68,62 @@ public class PersonalContactRequest {
     public String notes;
     /**
      * Home phone number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String homePhone;
     /**
      * Second home phone number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String homePhone2;
     /**
      * Business phone of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String businessPhone;
     /**
      * Second business phone of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String businessPhone2;
     /**
      * Mobile phone of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String mobilePhone;
     /**
      * Business fax number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String businessFax;
     /**
      * Company number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String companyPhone;
     /**
      * Phone number of a contact assistant in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String assistantPhone;
     /**
      * Car phone number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String carPhone;
     /**
      * Other phone number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String otherPhone;
     /**
      * Other fax number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String otherFax;
     /**
      * Callback phone number of a contact in e.164 (with &quot;+&quot;) format
-     * Example: 15551234567
+     * Example: +15551234567
      */
     public String callbackPhone;
     /**

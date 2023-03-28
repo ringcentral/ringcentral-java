@@ -65,6 +65,10 @@ public class ReadCompanyCallLogParameters {
      */
     public String sessionId;
     /**
+     * Internal identifier of a telephony session
+     */
+    public String telephonySessionId;
+    /**
      * Indicates the page number to retrieve. Only positive number values are accepted
      * Minimum: 1
      * Format: int32
@@ -126,6 +130,11 @@ public class ReadCompanyCallLogParameters {
 
     public ReadCompanyCallLogParameters sessionId(String sessionId) {
         this.sessionId = sessionId;
+        return this;
+    }
+
+    public ReadCompanyCallLogParameters telephonySessionId(String telephonySessionId) {
+        this.telephonySessionId = telephonySessionId;
         return this;
     }
 

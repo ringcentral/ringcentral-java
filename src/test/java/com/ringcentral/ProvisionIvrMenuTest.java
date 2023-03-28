@@ -25,7 +25,9 @@ public class ProvisionIvrMenuTest {
         IVRMenuInfo iVRMenuInfo = rc.restapi().account().ivrMenus().post(new IVRMenuInfo().extensionNumber("2002").name("My IVR menu"));
         assertNotNull(iVRMenuInfo);
 
-        String str = rc.restapi().account().extension(iVRMenuInfo.id).delete();
+        // delete endpoint deprecated, we have to use string endpoint instead.
+        String str = rc.delete("/restapi/v1.0/account/~/extension/" + iVRMenuInfo.id).string();
+        assertNotNull(str);
 
         rc.revoke();
     }

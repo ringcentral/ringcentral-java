@@ -2,7 +2,8 @@ package com.ringcentral.definitions;
 
 
 /**
- * Message sender information. The `phoneNumber` value should be one the account phone numbers allowed to send the current type of messages
+ * Message sender information. The `phoneNumber` value should be one
+ * the account phone numbers allowed to send the current type of messages
  */
 public class MessageStoreCallerInfoRequest {
     /**

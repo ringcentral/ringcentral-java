@@ -9,22 +9,25 @@ public class FaxResponse {
     public Long id;
     /**
      * Canonical URI of a message
+     * Format: uri
      */
     public String uri;
     /**
      * Message type - &#039;Fax&#039;
+     * Enum: Fax
      */
     public String type;
     /**
      *
      */
-    public CallerInfoFrom from;
+    public MessageStoreCallerInfoResponseFrom from;
     /**
      * Recipient information
      */
-    public CallerInfoTo[] to;
+    public MessageStoreCallerInfoResponseTo[] to;
     /**
-     * Message creation datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
+     * Message creation datetime in ISO 8601 format including timezone,
+     * for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String creationTime;
@@ -39,44 +42,64 @@ public class FaxResponse {
      */
     public String priority;
     /**
-     * The list of message attachments
+     * List of message attachments
      */
     public MessageAttachmentInfoIntId[] attachments;
     /**
-     * Message direction
+     * Text message direction. Note that for some message types not all
+     * directions are allowed. For example voicemail messages can
+     * be only inbound
      * Enum: Inbound, Outbound
      */
     public String direction;
     /**
-     * Message availability status. Message in &#039;Deleted&#039; state is still preserved with all its attachments and can be restored. &#039;Purged&#039; means that all attachments are already deleted and the message itself is about to be physically deleted shortly
+     * Message availability status. Message in &#039;Deleted&#039; state is still
+     * preserved with all its attachments and can be restored. &#039;Purged&#039; means
+     * that all attachments are already deleted and the message itself is about
+     * to be physically deleted shortly
      * Enum: Alive, Deleted, Purged
      */
     public String availability;
     /**
-     * Message status. &#039;Queued&#039; - the message is queued for sending; &#039;Sent&#039; - a message is successfully sent; &#039;SendingFailed&#039; - a message sending attempt has failed; &#039;Received&#039; - a message is received (inbound messages have this status by default)
-     * Enum: Queued, Sent, SendingFailed, Received
+     * Message status. Different message types may have different
+     * allowed status values. For outbound faxes the aggregated message status
+     * is returned. If, for outbound message, a status for at least one recipient is &#039;Queued&#039;, then
+     * the &#039;Queued&#039; value is returned. If a status for at least one recipient is
+     * &#039;SendingFailed&#039;, then the &#039;SendingFailed&#039; value is returned. In other cases
+     * the &#039;Sent&#039; status is returned
+     * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
     /**
-     * Resolution of a fax message. (&#039;High&#039; for black and white image scanned at 200 dpi, &#039;Low&#039; for black and white image scanned at 100 dpi)
+     * Fax only. Resolution of a fax message. &#039;High&#039; for black and
+     * white image scanned at 200 dpi, &#039;Low&#039; for black and white image scanned
+     * at 100 dpi
      * Enum: High, Low
      */
     public String faxResolution;
     /**
      * Page count in a fax message
+     * Format: int32
      */
     public Long faxPageCount;
     /**
-     * Datetime when the message was modified on server in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
+     * Datetime when the message was modified on server in ISO 8601
+     * format including timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String lastModifiedTime;
     /**
-     * Cover page identifier. If coverIndex is set to &#039;0&#039; (zero) cover page is not attached. For the list of available cover page identifiers (1-13) please call the Fax Cover Pages method. If not specified, the default cover page is attached (which is configured in &#039;Outbound Fax Settings&#039;)
+     * Cover page identifier. If `coverIndex` is set to &#039;0&#039; (zero), a cover
+     * page is not attached. For a list of available cover page identifiers
+     * (1-13) please call the Fax Cover Pages method. If not specified,
+     * the default cover page is attached (which is configured in
+     * &#039;Outbound Fax Settings&#039;)
+     * Format: int32
      */
     public Long coverIndex;
     /**
-     * Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols
+     * Cover page text, entered by a fax sender and printed on a
+     * cover page. Maximum length is limited to 1024 symbols
      */
     public String coverPageText;
 
@@ -95,12 +118,12 @@ public class FaxResponse {
         return this;
     }
 
-    public FaxResponse from(CallerInfoFrom from) {
+    public FaxResponse from(MessageStoreCallerInfoResponseFrom from) {
         this.from = from;
         return this;
     }
 
-    public FaxResponse to(CallerInfoTo[] to) {
+    public FaxResponse to(MessageStoreCallerInfoResponseTo[] to) {
         this.to = to;
         return this;
     }

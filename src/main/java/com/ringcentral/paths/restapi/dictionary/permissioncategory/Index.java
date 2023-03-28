@@ -28,7 +28,7 @@ public class Index {
     }
 
     /**
-     * Returns the list of permission categories.
+     * Returns a list of permission categories.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/dictionary/permission-category
      * Rate Limit Group: Light
@@ -43,7 +43,7 @@ public class Index {
     }
 
     /**
-     * Returns permission category by ID.
+     * Returns a permission category by ID.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/dictionary/permission-category/{permissionCategoryId}
      * Rate Limit Group: Light

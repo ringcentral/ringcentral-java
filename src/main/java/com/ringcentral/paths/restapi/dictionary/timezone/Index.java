@@ -4,7 +4,6 @@ import com.ringcentral.RestClient;
 import com.ringcentral.definitions.GetTimezoneInfoResponse;
 import com.ringcentral.definitions.GetTimezoneListResponse;
 import com.ringcentral.definitions.ListTimezonesParameters;
-import com.ringcentral.definitions.ReadTimezoneParameters;
 
 public class Index {
     public RestClient rc;
@@ -51,15 +50,11 @@ public class Index {
      * Endpoint: /restapi/{apiVersion}/dictionary/timezone/{timezoneId}
      * Rate Limit Group: Light
      */
-    public GetTimezoneInfoResponse get(ReadTimezoneParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public GetTimezoneInfoResponse get() throws com.ringcentral.RestException, java.io.IOException {
         if (timezoneId == null) {
             throw new IllegalArgumentException("Parameter timezoneId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), GetTimezoneInfoResponse.class);
-    }
-
-    public GetTimezoneInfoResponse get() throws com.ringcentral.RestException, java.io.IOException {
-        return this.get(null);
     }
 }

@@ -10,7 +10,8 @@ public class DeleteMessageByFilterParameters {
      */
     public String[] conversationId;
     /**
-     * Messages received earlier then the date specified will be deleted. The default value is current datetime
+     * Messages received earlier then the date specified will be deleted.
+     * The default value is current datetime
      * Format: date-time
      */
     public String dateTo;

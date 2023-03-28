@@ -2,7 +2,10 @@ package com.ringcentral.definitions;
 
 
 /**
- * Shipping address for the order. If it coincides with the Emergency Service Address, then can be omitted. By default the same value as the emergencyServiceAddress. Multiple addresses can be specified; in case the order contains several devices, they can be delivered to different addresses
+ * Shipping address for the order. If it coincides with the Emergency
+ * Service Address, then can be omitted. By default the same value as the
+ * emergencyServiceAddress. Multiple addresses can be specified; in case
+ * an order contains several devices, they can be delivered to different addresses
  */
 public class ShippingAddressInfo {
     /**
@@ -10,31 +13,40 @@ public class ShippingAddressInfo {
      */
     public String customerName;
     /**
-     * Name of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     * Name of an additional contact person. Should be specified for
+     * countries except the US, Canada, the UK and Australia.
      */
     public String additionalCustomerName;
     /**
-     * Email of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia.
+     * Email of a primary contact person (receiver). Should be specified
+     * for countries except the US, Canada, the UK and Australia.
+     * Format: email
      */
     public String customerEmail;
     /**
-     * Email of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     * Email of an additional contact person. Should be specified
+     * for countries except the US, Canada, the UK and Australia.
+     * Format: email
      */
     public String additionalCustomerEmail;
     /**
-     * Phone number of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia
+     * Phone number of a primary contact person (receiver). Should
+     * be specified for countries except the US, Canada, the UK and Australia
      */
     public String customerPhone;
     /**
-     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK &amp; Australia.
+     * Phone number of an additional contact person. Should be specified
+     * for countries except the US, Canada, the UK &amp; Australia.
      */
     public String additionalCustomerPhone;
     /**
-     * Street address, line 1 - street address, P.O. box, company name, c/o
+     * Street address, line 1 - street address, P.O. box, company
+     * name, c/o
      */
     public String street;
     /**
-     * Street address, line 2 - apartment, suite, unit, building, floor, etc.
+     * Street address, line 2 - apartment, suite, unit, building,
+     * floor, etc.
      */
     public String street2;
     /**
@@ -78,7 +90,8 @@ public class ShippingAddressInfo {
      */
     public String zip;
     /**
-     * National taxpayer identification number. Should be specified for Brazil (CNPJ/CPF number) and Argentina (CUIT number).
+     * National taxpayer identification number. Should be specified
+     * for Brazil (CNPJ/CPF number) and Argentina (CUIT number).
      */
     public String taxId;
 

@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class IvrPrompts {
     /**
      * Link to prompts library resource
+     * Format: uri
      */
     public String uri;
     /**
@@ -13,11 +14,11 @@ public class IvrPrompts {
     /**
      *
      */
-    public NavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
 
     public IvrPrompts uri(String uri) {
         this.uri = uri;
@@ -29,12 +30,12 @@ public class IvrPrompts {
         return this;
     }
 
-    public IvrPrompts navigation(NavigationInfo navigation) {
+    public IvrPrompts navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public IvrPrompts paging(EnumeratedPaging paging) {
+    public IvrPrompts paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

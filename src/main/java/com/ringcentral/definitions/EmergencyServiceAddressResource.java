@@ -2,7 +2,8 @@ package com.ringcentral.definitions;
 
 
 /**
- * Address for emergency cases. The same emergency address is assigned to all the numbers of one device
+ * Address for emergency cases. The same emergency address is assigned
+ * to all the numbers of one device
  */
 public class EmergencyServiceAddressResource {
     /**
@@ -62,28 +63,36 @@ public class EmergencyServiceAddressResource {
      */
     public Boolean outOfCountry;
     /**
-     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
+     * Resulting status of emergency address synchronization. Returned
+     * if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;
     /**
-     * Name of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     * Name of an additional contact person. Should be specified for
+     * countries except the US, Canada, the UK and Australia.
      */
     public String additionalCustomerName;
     /**
-     * Email of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia.
+     * Email of a primary contact person (receiver). Should be specified
+     * for countries except the US, Canada, the UK and Australia.
+     * Format: email
      */
     public String customerEmail;
     /**
-     * Email of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
+     * Email of an additional contact person. Should be specified
+     * for countries except the US, Canada, the UK and Australia.
+     * Format: email
      */
     public String additionalCustomerEmail;
     /**
-     * Phone number of a primary contact person (receiver). Should be specified for countries except the US, Canada, the UK and Australia
+     * Phone number of a primary contact person (receiver). Should
+     * be specified for countries except the US, Canada, the UK and Australia
      */
     public String customerPhone;
     /**
-     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK &amp; Australia.
+     * Phone number of an additional contact person. Should be specified
+     * for countries except the US, Canada, the UK &amp; Australia.
      */
     public String additionalCustomerPhone;
     /**

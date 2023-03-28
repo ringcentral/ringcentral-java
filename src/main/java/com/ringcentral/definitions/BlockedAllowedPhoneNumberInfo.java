@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class BlockedAllowedPhoneNumberInfo {
     /**
      * Link to a blocked/allowed phone number
+     * Format: uri
      */
     public String uri;
     /**

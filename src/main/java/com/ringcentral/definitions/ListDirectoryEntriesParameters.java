@@ -16,6 +16,11 @@ public class ListDirectoryEntriesParameters {
      */
     public String type;
     /**
+     * Type of extension group
+     * Enum: User, NonUser
+     */
+    public String typeGroup;
+    /**
      * Page number
      * Format: int32
      * Default: 1
@@ -40,6 +45,11 @@ public class ListDirectoryEntriesParameters {
 
     public ListDirectoryEntriesParameters type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public ListDirectoryEntriesParameters typeGroup(String typeGroup) {
+        this.typeGroup = typeGroup;
         return this;
     }
 

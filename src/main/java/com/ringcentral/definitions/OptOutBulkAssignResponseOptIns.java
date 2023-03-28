@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class OptOutBulkAssignResponseOptIns {
     /**
      * Recipients&#039; phone numbers which opt-ins were successfully added for.
-     * Example: 15551237799
+     * Example: +15551237799
      */
     public String[] successful;
     /**

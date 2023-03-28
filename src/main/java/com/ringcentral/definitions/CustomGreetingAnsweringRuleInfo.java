@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class CustomGreetingAnsweringRuleInfo {
     /**
      * Canonical URI of an answering rule
+     * Format: uri
      */
     public String uri;
     /**

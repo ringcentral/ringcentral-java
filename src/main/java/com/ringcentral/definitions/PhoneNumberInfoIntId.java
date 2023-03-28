@@ -27,7 +27,8 @@ public class PhoneNumberInfoIntId {
      */
     public String location;
     /**
-     * Payment type. &#039;External&#039; is returned for forwarded numbers which are not terminated in the RingCentral phone system
+     * Payment type. &#039;External&#039; is returned for forwarded numbers
+     * which are not terminated in the RingCentral phone system
      * Enum: External, TollFree, Local
      */
     public String paymentType;
@@ -36,7 +37,9 @@ public class PhoneNumberInfoIntId {
      */
     public String phoneNumber;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is &#039;Normal&#039;, the phone
+     * number is ready to be used. Otherwise it is an external number not yet
+     * ported to RingCentral
      */
     public String status;
     /**

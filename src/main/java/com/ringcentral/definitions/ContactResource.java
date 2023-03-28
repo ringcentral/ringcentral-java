@@ -96,6 +96,10 @@ public class ContactResource {
      *
      */
     public ExternalIntegrationResource integration;
+    /**
+     * Example: 3
+     */
+    public String subType;
 
     public ContactResource id(String id) {
         this.id = id;
@@ -199,6 +203,11 @@ public class ContactResource {
 
     public ContactResource integration(ExternalIntegrationResource integration) {
         this.integration = integration;
+        return this;
+    }
+
+    public ContactResource subType(String subType) {
+        this.subType = subType;
         return this;
     }
 }

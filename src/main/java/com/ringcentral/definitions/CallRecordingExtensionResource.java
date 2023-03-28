@@ -7,7 +7,7 @@ public class CallRecordingExtensionResource {
      */
     public String id;
     /**
-     *
+     * Format: uri
      */
     public String uri;
     /**

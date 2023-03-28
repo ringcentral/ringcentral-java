@@ -11,7 +11,7 @@ public class AddonInfo {
      */
     public String name;
     /**
-     *
+     * Format: int32
      */
     public Long count;
 

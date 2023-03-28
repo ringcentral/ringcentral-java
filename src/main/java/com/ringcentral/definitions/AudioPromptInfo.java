@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class AudioPromptInfo {
     /**
      * Link to a prompt audio file
+     * Format: uri
      */
     public String uri;
     /**

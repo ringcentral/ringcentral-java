@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class PromptInfo {
     /**
      * Internal identifier of a prompt
+     * Format: uri
      */
     public String uri;
     /**
@@ -16,6 +17,7 @@ public class PromptInfo {
     public String contentType;
     /**
      * Link to a prompt media content
+     * Format: uri
      */
     public String contentUri;
     /**

@@ -7,11 +7,11 @@ public class BillingStatementFees {
      */
     public String description;
     /**
-     *
+     * Format: double
      */
     public Double amount;
     /**
-     *
+     * Format: double
      */
     public Double freeServiceCredit;
 

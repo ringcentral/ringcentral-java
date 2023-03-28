@@ -3,7 +3,8 @@ package com.ringcentral.definitions;
 
 public class CreateAnsweringRuleRequest {
     /**
-     * Specifies if the rule is active or inactive. The default value is &#039;True&#039;
+     * Specifies if the rule is active or inactive. The default value
+     * is &#039;True&#039;
      */
     public Boolean enabled;
     /**
@@ -58,11 +59,18 @@ public class CreateAnsweringRuleRequest {
      */
     public MissedCallInfo missedCall;
     /**
-     * Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
+     * Greetings applied for an answering rule; only predefined greetings
+     * can be applied, see Dictionary Greeting List
      */
     public GreetingInfo[] greetings;
     /**
-     * Call screening status. &#039;Off&#039; - no call screening; &#039;NoCallerId&#039; - if caller ID is missing, then callers are asked to say their name before connecting; &#039;UnknownCallerId&#039; - if caller ID is not in contact list, then callers are asked to say their name before connecting; &#039;Always&#039; - the callers are always asked to say their name before connecting. The default value is &#039;Off&#039;
+     * Call screening status. &#039;Off&#039; - no call screening; &#039;NoCallerId&#039;
+     * - if caller ID is missing, then callers are asked to say their name before
+     * connecting; &#039;UnknownCallerId&#039; - if caller ID is not in contact list, then
+     * callers are asked to say their name before connecting; &#039;Always&#039; - the
+     * callers are always asked to say their name before connecting. The default
+     * value is &#039;Off&#039;
+     * Default: Off
      * Enum: Off, NoCallerId, UnknownCallerId, Always
      */
     public String screening;

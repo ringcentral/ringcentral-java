@@ -6,36 +6,46 @@ package com.ringcentral.definitions;
  */
 public class SyncMessagesParameters {
     /**
-     * Conversation identifier for the resulting messages. Meaningful for SMS and Pager messages only.
+     * Conversation identifier for the resulting messages. Meaningful
+     * for SMS and Pager messages only.
      * Format: int64
      */
     public Long conversationId;
     /**
-     * The start datetime for resulting messages in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours
+     * The start datetime for resulting messages in ISO 8601 format
+     * including timezone, for example 2016-03-10T18:07:52.534Z. The default value
+     * is dateTo minus 24 hours
      * Format: date-time
      */
     public String dateFrom;
     /**
-     * The end datetime for resulting messages in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time
+     * The end datetime for resulting messages in ISO 8601 format including
+     * timezone, for example 2016-03-10T18:07:52.534Z. The default value is current
+     * time
      * Format: date-time
      */
     public String dateTo;
     /**
-     * Direction for the resulting messages. If not specified, both inbound and outbound messages are returned. Multiple values are accepted
+     * Direction for the resulting messages. If not specified, both
+     * inbound and outbound messages are returned. Multiple values are accepted
      * Enum: Inbound, Outbound
      */
     public String[] direction;
     /**
-     * If &#039;True&#039;, then the latest messages per every conversation ID are returned
+     * If &#039;True&#039;, then the latest messages per every conversation ID
+     * are returned
      */
     public Boolean distinctConversations;
     /**
-     * Type for the resulting messages. If not specified, all types of messages are returned. Multiple values are accepted
-     * Enum: Fax, SMS, VoiceMail, Pager, Text
+     * Type for the resulting messages. If not specified, all types
+     * of messages are returned. Multiple values are accepted
+     * Enum: EMail, Fax, SMS, VoiceMail, Pager, Text
      */
     public String[] messageType;
     /**
-     * Limits the number of records to be returned (works in combination with dateFrom and dateTo if specified)
+     * Limits the number of records to be returned (works in combination
+     * with dateFrom and dateTo if specified)
+     * Format: int32
      */
     public Long recordCount;
     /**
@@ -43,10 +53,18 @@ public class SyncMessagesParameters {
      */
     public String syncToken;
     /**
-     * Type of message synchronization
+     * Type of message synchronization request:
+     * - FSync -- full sync
+     * - ISync -- incremental sync
      * Enum: FSync, ISync
      */
     public String syncType;
+    /**
+     * This query parameter will filter voicemail messages based on its owner.
+     * This parameter should be controlled by the &#039;SharedVoicemail&#039; feature.
+     * If the feature is disabled this filter shouldn&#039;t be applied.
+     */
+    public String[] voicemailOwner;
 
     public SyncMessagesParameters conversationId(Long conversationId) {
         this.conversationId = conversationId;
@@ -90,6 +108,11 @@ public class SyncMessagesParameters {
 
     public SyncMessagesParameters syncType(String syncType) {
         this.syncType = syncType;
+        return this;
+    }
+
+    public SyncMessagesParameters voicemailOwner(String[] voicemailOwner) {
+        this.voicemailOwner = voicemailOwner;
         return this;
     }
 }

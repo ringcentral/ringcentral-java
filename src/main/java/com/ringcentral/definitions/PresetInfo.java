@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class PresetInfo {
     /**
      * Link to a greeting resource
+     * Format: uri
      */
     public String uri;
     /**

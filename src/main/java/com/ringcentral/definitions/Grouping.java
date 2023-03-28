@@ -1,9 +1,13 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * This grouping allows to specify the `groupByMembers` option. The response data will be grouped by users and will only include users that belong to the scope selected in `groupByMembers` field
+ */
 public class Grouping {
     /**
      * The selected grouping option
+     * Required
      * Enum: Company, CompanyNumbers, Users, Queues, IVRs, SharedLines, UserGroups, Sites, Departments
      */
     public String groupBy;
@@ -13,6 +17,7 @@ public class Grouping {
     public String[] keys;
     /**
      * The selected data scope
+     * Required
      * Enum: Department, UserGroup, Queue, Site
      */
     public String groupByMembers;

@@ -7,7 +7,7 @@ public class PhoneNumberResource {
      */
     public String formattedPhoneNumber;
     /**
-     * Example: 12056812029
+     * Example: +12056812029
      */
     public String phoneNumber;
     /**

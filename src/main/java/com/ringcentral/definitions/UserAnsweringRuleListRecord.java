@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class UserAnsweringRuleListRecord {
     /**
      * Canonical URI to an answering rule resource
+     * Format: uri
      * Example: https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule/business-hours-rule
      */
     public String uri;

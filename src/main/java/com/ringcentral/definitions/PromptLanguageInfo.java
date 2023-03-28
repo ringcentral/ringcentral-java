@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class PromptLanguageInfo {
     /**
      * Link to a prompt language
+     * Format: uri
      */
     public String uri;
     /**

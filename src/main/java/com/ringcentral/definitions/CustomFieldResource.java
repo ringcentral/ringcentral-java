@@ -3,31 +3,30 @@ package com.ringcentral.definitions;
 
 public class CustomFieldResource {
     /**
-     * Custom field identifier
+     * Example: 1032854
      */
     public String id;
     /**
-     * Object category to attach custom fields
-     * Enum: User
+     * Example: Rank
      */
-    public String category;
+    public String name;
     /**
-     * Custom field display name
+     * Example: 5
      */
-    public String displayName;
+    public String value;
 
     public CustomFieldResource id(String id) {
         this.id = id;
         return this;
     }
 
-    public CustomFieldResource category(String category) {
-        this.category = category;
+    public CustomFieldResource name(String name) {
+        this.name = name;
         return this;
     }
 
-    public CustomFieldResource displayName(String displayName) {
-        this.displayName = displayName;
+    public CustomFieldResource value(String value) {
+        this.value = value;
         return this;
     }
 }

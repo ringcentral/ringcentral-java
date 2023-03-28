@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * The number which will be displayed to the called party
+ * Phone number which will be displayed to the called party
  */
 public class MakeRingOutCallerIdInfo {
     /**

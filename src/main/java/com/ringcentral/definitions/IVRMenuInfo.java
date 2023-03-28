@@ -8,6 +8,7 @@ public class IVRMenuInfo {
     public String id;
     /**
      * Link to an IVR Menu extension resource
+     * Format: uri
      */
     public String uri;
     /**

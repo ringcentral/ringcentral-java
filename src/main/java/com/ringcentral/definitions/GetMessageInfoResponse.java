@@ -5,10 +5,12 @@ public class GetMessageInfoResponse {
     /**
      * Internal identifier of a message
      * Format: int64
+     * Example: 1724099032020
      */
     public Long id;
     /**
      * Canonical URI of a message
+     * Format: uri
      */
     public String uri;
     /**
@@ -16,16 +18,20 @@ public class GetMessageInfoResponse {
      */
     public String extensionId;
     /**
-     * The list of message attachments
+     * List of message attachments
      */
     public MessageAttachmentInfo[] attachments;
     /**
-     * Message availability status. Message in &#039;Deleted&#039; state is still preserved with all its attachments and can be restored. &#039;Purged&#039; means that all attachments are already deleted and the message itself is about to be physically deleted shortly
+     * Message availability status. Message in &#039;Deleted&#039; state is still
+     * preserved with all its attachments and can be restored. &#039;Purged&#039; means
+     * that all attachments are already deleted and the message itself is about
+     * to be physically deleted shortly
      * Enum: Alive, Deleted, Purged
      */
     public String availability;
     /**
-     * SMS and Pager only. Identifier of a conversation the message belongs to
+     * SMS and Pager only. Identifier of a conversation the message
+     * belongs to
      * Format: int64
      */
     public Long conversationId;
@@ -34,7 +40,8 @@ public class GetMessageInfoResponse {
      */
     public ConversationInfo conversation;
     /**
-     * Message creation datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
+     * Message creation datetime in ISO 8601 format including timezone,
+     * for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String creationTime;
@@ -43,16 +50,21 @@ public class GetMessageInfoResponse {
      */
     public String deliveryErrorCode;
     /**
-     * Message direction. Note that for some message types not all directions are allowed. For example voicemail messages can be only inbound
+     * Text message direction. Note that for some message types not all
+     * directions are allowed. For example voicemail messages can
+     * be only inbound
      * Enum: Inbound, Outbound
      */
     public String direction;
     /**
      * Fax only. Page count in a fax message
+     * Format: int32
      */
     public Long faxPageCount;
     /**
-     * Fax only. Resolution of a fax message. &#039;High&#039; for black and white image scanned at 200 dpi, &#039;Low&#039; for black and white image scanned at 100 dpi
+     * Fax only. Resolution of a fax message. &#039;High&#039; for black and
+     * white image scanned at 200 dpi, &#039;Low&#039; for black and white image scanned
+     * at 100 dpi
      * Enum: High, Low
      */
     public String faxResolution;
@@ -61,17 +73,24 @@ public class GetMessageInfoResponse {
      */
     public MessageStoreCallerInfoResponseFrom from;
     /**
-     * The datetime when the message was modified on server in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
+     * The datetime when the message was modified on server in ISO
+     * 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String lastModifiedTime;
     /**
-     * Message status. Different message types may have different allowed status values. For outbound faxes the aggregated message status is returned: If status for at least one recipient is &#039;Queued&#039;, then &#039;Queued&#039; value is returned If status for at least one recipient is &#039;SendingFailed&#039;, then &#039;SendingFailed&#039; value is returned In other cases Sent status is returned
+     * Message status. Different message types may have different
+     * allowed status values. For outbound faxes the aggregated message status
+     * is returned. If, for outbound message, a status for at least one recipient is &#039;Queued&#039;, then
+     * the &#039;Queued&#039; value is returned. If a status for at least one recipient is
+     * &#039;SendingFailed&#039;, then the &#039;SendingFailed&#039; value is returned. In other cases
+     * the &#039;Sent&#039; status is returned
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
     /**
-     * &#039;Pager&#039; only. &#039;True&#039; if at least one of the message recipients is &#039;Department&#039; extension
+     * Pager only. &#039;True&#039; if at least one of the message recipients is
+     * &#039;Department&#039; extension
      */
     public Boolean pgToDepartment;
     /**
@@ -85,16 +104,22 @@ public class GetMessageInfoResponse {
      */
     public String readStatus;
     /**
-     * SMS only. The datetime when outbound SMS was delivered to recipient&#039;s handset in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. It is filled only if the carrier sends a delivery receipt to RingCentral
+     * SMS only. Datetime when outbound SMS was delivered to recipient&#039;s
+     * handset in ISO 8601 format including timezone, for example
+     * 2016-03-10T18:07:52.534Z. It is filled only if a carrier sends a delivery
+     * receipt to RingCentral
      * Format: date-time
      */
     public String smsDeliveryTime;
     /**
-     * SMS only. Number of attempts made to send an outbound SMS to the gateway (if gateway is temporary unavailable)
+     * SMS only. Number of attempts made to send an outbound SMS to
+     * the Gateway (if Gateway is temporary unavailable)
+     * Format: int32
      */
     public Long smsSendingAttemptsCount;
     /**
-     * Message subject. For SMS and Pager messages it replicates message text which is also returned as an attachment
+     * Message subject. For SMS and Pager messages it replicates message
+     * text which is also returned as an attachment
      */
     public String subject;
     /**
@@ -107,16 +132,24 @@ public class GetMessageInfoResponse {
      */
     public String type;
     /**
-     * Voicemail only. Status of voicemail to text transcription. If VoicemailToText feature is not activated for account, the &#039;NotAvailable&#039; value is returned
+     * Voicemail only. Status of a voicemail to text transcription.
+     * If &#039;VoicemailToText&#039; feature is not activated for account,
+     * the &#039;NotAvailable&#039; value is returned
      * Enum: NotAvailable, InProgress, TimedOut, Completed, CompletedPartially, Failed, Unknown
      */
     public String vmTranscriptionStatus;
     /**
-     * Cover page identifier. If coverIndex is set to &#039;0&#039; (zero) cover page is not attached. For the list of available cover page identifiers (1-13) please call the Fax Cover Pages method. If not specified, the default cover page is attached (which is configured in &#039;Outbound Fax Settings&#039;)
+     * Cover page identifier. If coverIndex is set to &#039;0&#039; (zero) cover
+     * page is not attached. For the list of available cover page identifiers
+     * (1-13) please call the Fax Cover Pages method. If not specified,
+     * the default cover page is attached (which is configured in &#039;Outbound
+     * Fax Settings&#039;)
+     * Format: int32
      */
     public Long coverIndex;
     /**
-     * Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols
+     * Cover page text, entered by the fax sender and printed on the
+     * cover page. Maximum length is limited to 1024 symbols
      */
     public String coverPageText;
 

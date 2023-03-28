@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class GetMessageSyncResponse {
     /**
      * Link to the message sync resource
+     * Format: uri
      */
     public String uri;
     /**

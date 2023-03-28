@@ -2,7 +2,7 @@ package com.ringcentral.paths.restapi.account.device;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.AccountDeviceUpdate;
-import com.ringcentral.definitions.GetDeviceInfoResponse;
+import com.ringcentral.definitions.DeviceResource;
 import com.ringcentral.definitions.ReadDeviceParameters;
 import com.ringcentral.definitions.UpdateDeviceParameters;
 
@@ -36,15 +36,15 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadCompanyDevices
      */
-    public GetDeviceInfoResponse get(ReadDeviceParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public DeviceResource get(ReadDeviceParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (deviceId == null) {
             throw new IllegalArgumentException("Parameter deviceId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetDeviceInfoResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), DeviceResource.class);
     }
 
-    public GetDeviceInfoResponse get() throws com.ringcentral.RestException, java.io.IOException {
+    public DeviceResource get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
 
@@ -56,20 +56,25 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: EditCompanyDevices
      */
-    public GetDeviceInfoResponse put(AccountDeviceUpdate accountDeviceUpdate, UpdateDeviceParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public DeviceResource put(AccountDeviceUpdate accountDeviceUpdate, UpdateDeviceParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (deviceId == null) {
             throw new IllegalArgumentException("Parameter deviceId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.put(this.path(), accountDeviceUpdate, queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetDeviceInfoResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), DeviceResource.class);
     }
 
-    public GetDeviceInfoResponse put(AccountDeviceUpdate accountDeviceUpdate) throws com.ringcentral.RestException, java.io.IOException {
+    public DeviceResource put(AccountDeviceUpdate accountDeviceUpdate) throws com.ringcentral.RestException, java.io.IOException {
         return this.put(accountDeviceUpdate, null);
     }
 
     public com.ringcentral.paths.restapi.account.device.sipinfo.Index sipInfo() {
         return new com.ringcentral.paths.restapi.account.device.sipinfo.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.device.emergency.Index emergency() {
+        return new com.ringcentral.paths.restapi.account.device.emergency.Index(this);
     }
 
 }

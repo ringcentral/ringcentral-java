@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class DeleteForwardingNumbersRequest {
     /**
-     * List of forwarding number ids
+     * List of forwarding number IDs
      */
     public ForwardingNumberId[] records;
 

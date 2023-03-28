@@ -36,7 +36,8 @@ public class ProvisionExtensionsTest {
         );
         assertNotNull(extensionCreationResponse);
 
-        String str = rc.restapi().account().extension(extensionCreationResponse.id.toString()).delete();
+        // delete endpoint is deprecated, so we have to type string endpoint instead
+        String str = rc.delete("/restapi/v1.0/account/~/extension/" + extensionCreationResponse.id.toString()).string();
         assertNotNull(str);
 
         rc.revoke();

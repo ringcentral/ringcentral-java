@@ -22,7 +22,7 @@ public class Index {
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/video-configuration
      * Rate Limit Group: Light
-     * App Permission: Meetings
+     * App Permission: VideoInternal
      * User Permission: Meetings
      */
     public UserVideoConfiguration get() throws com.ringcentral.RestException, java.io.IOException {
@@ -36,7 +36,7 @@ public class Index {
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/video-configuration
      * Rate Limit Group: Light
-     * App Permission: Meetings
+     * App Permission: VideoInternal
      */
     public UserVideoConfiguration put(UserVideoConfiguration userVideoConfiguration) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.put(this.path(), userVideoConfiguration, null);

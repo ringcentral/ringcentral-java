@@ -13,11 +13,11 @@ public class PermissionCategoryCollectionResource {
     /**
      *
      */
-    public RNPPagingInfo paging;
+    public EnumeratedPagingModel paging;
     /**
      *
      */
-    public RNPNavigationInfo navigation;
+    public PageNavigationModel navigation;
 
     public PermissionCategoryCollectionResource uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class PermissionCategoryCollectionResource {
         return this;
     }
 
-    public PermissionCategoryCollectionResource paging(RNPPagingInfo paging) {
+    public PermissionCategoryCollectionResource paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }
 
-    public PermissionCategoryCollectionResource navigation(RNPNavigationInfo navigation) {
+    public PermissionCategoryCollectionResource navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }

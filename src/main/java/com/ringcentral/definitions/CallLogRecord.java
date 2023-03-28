@@ -20,6 +20,22 @@ public class CallLogRecord {
      */
     public String telephonySessionId;
     /**
+     * Call session identifier, required for Telephony REST API
+     */
+    public String sipUuidInfo;
+    /**
+     *
+     */
+    public CallLogRecordTransferTarget transferTarget;
+    /**
+     *
+     */
+    public CallLogRecordTransferee transferee;
+    /**
+     * Internal Identifier of Participant
+     */
+    public String partyId;
+    /**
      *
      */
     public CallLogCallerInfo from;
@@ -155,6 +171,26 @@ public class CallLogRecord {
 
     public CallLogRecord telephonySessionId(String telephonySessionId) {
         this.telephonySessionId = telephonySessionId;
+        return this;
+    }
+
+    public CallLogRecord sipUuidInfo(String sipUuidInfo) {
+        this.sipUuidInfo = sipUuidInfo;
+        return this;
+    }
+
+    public CallLogRecord transferTarget(CallLogRecordTransferTarget transferTarget) {
+        this.transferTarget = transferTarget;
+        return this;
+    }
+
+    public CallLogRecord transferee(CallLogRecordTransferee transferee) {
+        this.transferee = transferee;
+        return this;
+    }
+
+    public CallLogRecord partyId(String partyId) {
+        this.partyId = partyId;
         return this;
     }
 

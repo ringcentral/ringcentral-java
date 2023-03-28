@@ -2,9 +2,9 @@ package com.ringcentral.paths.restapi.account.customfields;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CustomFieldCreateRequest;
-import com.ringcentral.definitions.CustomFieldResource;
+import com.ringcentral.definitions.CustomFieldList;
+import com.ringcentral.definitions.CustomFieldModel;
 import com.ringcentral.definitions.CustomFieldUpdateRequest;
-import com.ringcentral.definitions.CustomFieldsResource;
 
 public class Index {
     public RestClient rc;
@@ -36,9 +36,9 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadUserInfo
      */
-    public CustomFieldsResource get() throws com.ringcentral.RestException, java.io.IOException {
+    public CustomFieldList get() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomFieldsResource.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomFieldList.class);
     }
 
     /**
@@ -49,9 +49,9 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: Users
      */
-    public CustomFieldResource post(CustomFieldCreateRequest customFieldCreateRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public CustomFieldModel post(CustomFieldCreateRequest customFieldCreateRequest) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(false), customFieldCreateRequest, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomFieldResource.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomFieldModel.class);
     }
 
     /**
@@ -62,12 +62,12 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: Users
      */
-    public CustomFieldResource put(CustomFieldUpdateRequest customFieldUpdateRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public CustomFieldModel put(CustomFieldUpdateRequest customFieldUpdateRequest) throws com.ringcentral.RestException, java.io.IOException {
         if (fieldId == null) {
             throw new IllegalArgumentException("Parameter fieldId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.put(this.path(), customFieldUpdateRequest, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomFieldResource.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomFieldModel.class);
     }
 
     /**

@@ -9,10 +9,11 @@ public class MessageAttachmentInfoIntId {
     public Long id;
     /**
      * Canonical URI of a message attachment
+     * Format: uri
      */
     public String uri;
     /**
-     * Type of message attachment
+     * Type of a message attachment
      * Enum: AudioRecording, AudioTranscription, Text, SourceDocument, RenderedDocument, MmsAttachment
      */
     public String type;
@@ -21,15 +22,12 @@ public class MessageAttachmentInfoIntId {
      */
     public String contentType;
     /**
-     * Voicemail only Duration of the voicemail in seconds
-     */
-    public Long vmDuration;
-    /**
      * Name of a file attached
      */
     public String filename;
     /**
-     * Size of attachment in bytes
+     * Size of an attachment in bytes
+     * Format: int32
      */
     public Long size;
 
@@ -50,11 +48,6 @@ public class MessageAttachmentInfoIntId {
 
     public MessageAttachmentInfoIntId contentType(String contentType) {
         this.contentType = contentType;
-        return this;
-    }
-
-    public MessageAttachmentInfoIntId vmDuration(Long vmDuration) {
-        this.vmDuration = vmDuration;
         return this;
     }
 

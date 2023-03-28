@@ -28,8 +28,8 @@ public class Index {
      * Endpoint: /restapi/oauth/token
      * Rate Limit Group: Auth
      */
-    public TokenInfo post(GetTokenRequest GetTokenRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), GetTokenRequest, null, com.ringcentral.ContentType.FORM);
+    public TokenInfo post(GetTokenRequest getTokenRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(), getTokenRequest, null, com.ringcentral.ContentType.FORM);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), TokenInfo.class);
     }
 }

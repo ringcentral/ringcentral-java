@@ -8,6 +8,7 @@ public class MessageCountryInfo {
     public String id;
     /**
      * Canonical URI of a country
+     * Format: uri
      */
     public String uri;
     /**

@@ -70,7 +70,7 @@ public class ExtensionBulkUpdateInfo {
     /**
      *
      */
-    public AutomaticLocationUpdatesSiteInfo site;
+    public ProvisioningSiteInfo site;
     /**
      * Extension type. Please note that legacy &#039;Department&#039; extension
      * type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral
@@ -163,7 +163,7 @@ public class ExtensionBulkUpdateInfo {
         return this;
     }
 
-    public ExtensionBulkUpdateInfo site(AutomaticLocationUpdatesSiteInfo site) {
+    public ExtensionBulkUpdateInfo site(ProvisioningSiteInfo site) {
         this.site = site;
         return this;
     }

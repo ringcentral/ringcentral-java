@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class IVRMenuList {
     /**
      * Link to an IVR Menu list
+     * Format: uri
      */
     public String uri;
     /**

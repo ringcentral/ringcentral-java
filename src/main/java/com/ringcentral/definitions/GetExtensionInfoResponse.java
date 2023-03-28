@@ -125,7 +125,7 @@ public class GetExtensionInfoResponse {
     /**
      *
      */
-    public AutomaticLocationUpdatesSiteInfo site;
+    public ProvisioningSiteInfo site;
 
     public GetExtensionInfoResponse id(Long id) {
         this.id = id;
@@ -242,7 +242,7 @@ public class GetExtensionInfoResponse {
         return this;
     }
 
-    public GetExtensionInfoResponse site(AutomaticLocationUpdatesSiteInfo site) {
+    public GetExtensionInfoResponse site(ProvisioningSiteInfo site) {
         this.site = site;
         return this;
     }

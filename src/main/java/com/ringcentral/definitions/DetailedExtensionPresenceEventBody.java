@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class DetailedExtensionPresenceEventBody {
     /**
      * Internal identifier of an extension
+     * Default: ~
      */
     public String extensionId;
     /**

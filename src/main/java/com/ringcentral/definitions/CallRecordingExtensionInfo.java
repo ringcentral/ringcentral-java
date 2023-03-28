@@ -8,6 +8,7 @@ public class CallRecordingExtensionInfo {
     public String id;
     /**
      * Link to an extension resource
+     * Format: uri
      */
     public String uri;
     /**

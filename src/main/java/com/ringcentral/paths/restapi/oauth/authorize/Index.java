@@ -33,8 +33,8 @@ public class Index {
      * Endpoint: /restapi/oauth/authorize
      * Rate Limit Group: Auth
      */
-    public String post(AuthorizeRequest AuthorizeRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), AuthorizeRequest, null, com.ringcentral.ContentType.FORM);
+    public String post(AuthorizeRequest authorizeRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(), authorizeRequest, null, com.ringcentral.ContentType.FORM);
         return rb.string();
     }
 }

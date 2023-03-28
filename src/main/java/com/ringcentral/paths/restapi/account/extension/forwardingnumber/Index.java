@@ -36,9 +36,13 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadUserForwardingFlipNumbers
      */
-    public GetExtensionForwardingNumberListResponse list() throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
+    public GetExtensionForwardingNumberListResponse list(ListForwardingNumbersParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), GetExtensionForwardingNumberListResponse.class);
+    }
+
+    public GetExtensionForwardingNumberListResponse list() throws com.ringcentral.RestException, java.io.IOException {
+        return this.list(null);
     }
 
     /**

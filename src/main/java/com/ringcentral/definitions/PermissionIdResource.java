@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class PermissionIdResource {
     /**
-     *
+     * Format: uri
      */
     public String uri;
     /**

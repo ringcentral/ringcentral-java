@@ -23,17 +23,21 @@ public class DeviceEmergencyInfo {
      */
     public String addressStatus;
     /**
-     * Visibility of an emergency response location. If `Private` is set, then location is visible only for the restricted number of users, specified in `owners` array
+     * Visibility of an emergency response location. If `Private`
+     * is set, then location is visible only for the restricted number of users,
+     * specified in `owners` array
      * Enum: Private, Public
      */
     public String visibility;
     /**
-     * Resulting status of emergency address synchronization. Returned if `syncEmergencyAddress` parameter is set to &#039;True&#039;
+     * Resulting status of the emergency address synchronization. Returned
+     * if `syncEmergencyAddress` parameter is set to &#039;True&#039;
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;
     /**
-     * Ability to register new emergency address for a phone line using devices sharing this line or only main device (line owner)
+     * Ability to register new emergency address for a phone line
+     * using devices sharing this line or only main device (line owner)
      * Enum: MainDevice, AnyDevice
      */
     public String addressEditableStatus;

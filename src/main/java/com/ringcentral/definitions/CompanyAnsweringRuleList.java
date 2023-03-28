@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class CompanyAnsweringRuleList {
     /**
      * Link to an answering rule resource
+     * Format: uri
      */
     public String uri;
     /**
@@ -13,11 +14,11 @@ public class CompanyAnsweringRuleList {
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
     /**
      *
      */
-    public NavigationInfo navigation;
+    public PageNavigationModel navigation;
 
     public CompanyAnsweringRuleList uri(String uri) {
         this.uri = uri;
@@ -29,12 +30,12 @@ public class CompanyAnsweringRuleList {
         return this;
     }
 
-    public CompanyAnsweringRuleList paging(EnumeratedPaging paging) {
+    public CompanyAnsweringRuleList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }
 
-    public CompanyAnsweringRuleList navigation(NavigationInfo navigation) {
+    public CompanyAnsweringRuleList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }

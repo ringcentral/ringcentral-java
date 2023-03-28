@@ -18,7 +18,7 @@ public class Index {
     }
 
     /**
-     * Returns the list of roles assigned to the current extension.
+     * Returns a list of roles assigned to the current extension.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/assigned-role
      * Rate Limit Group: Light
@@ -35,11 +35,12 @@ public class Index {
     }
 
     /**
-     * Updates the list of assigned roles for the current user.
+     * Updates a list of roles assigned to the current user.
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/assigned-role
      * Rate Limit Group: Medium
      * App Permission: RoleManagement
+     * User Permission: EditAssignedRoles
      */
     public AssignedRolesResource put(AssignedRolesResource assignedRolesResource) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.put(this.path(), assignedRolesResource, null);

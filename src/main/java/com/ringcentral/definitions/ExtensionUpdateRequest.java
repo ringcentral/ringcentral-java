@@ -62,7 +62,7 @@ public class ExtensionUpdateRequest {
     /**
      *
      */
-    public AutomaticLocationUpdatesSiteInfoRequest site;
+    public SiteReference site;
     /**
      * Extension type. Please note that legacy &#039;Department&#039; extension
      * type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral
@@ -151,7 +151,7 @@ public class ExtensionUpdateRequest {
         return this;
     }
 
-    public ExtensionUpdateRequest site(AutomaticLocationUpdatesSiteInfoRequest site) {
+    public ExtensionUpdateRequest site(SiteReference site) {
         this.site = site;
         return this;
     }

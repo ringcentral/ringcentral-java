@@ -27,7 +27,7 @@ public class Index {
     }
 
     /**
-     * Makes a 2-leg RingOut call.
+     * Makes a 2-legged RingOut call.
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/ring-out
      * Rate Limit Group: Heavy
@@ -39,7 +39,7 @@ public class Index {
     }
 
     /**
-     * Returns the status of a 2-leg RingOut call.
+     * Returns a status of a 2-legged RingOut call.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
      * Rate Limit Group: Light
@@ -54,7 +54,7 @@ public class Index {
     }
 
     /**
-     * Cancels a 2-leg RingOut call.
+     * Cancels a 2-legged RingOut call.
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
      * Rate Limit Group: Heavy

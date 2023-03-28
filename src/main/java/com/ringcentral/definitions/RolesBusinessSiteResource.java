@@ -7,7 +7,7 @@ public class RolesBusinessSiteResource {
      */
     public String id;
     /**
-     *
+     * Format: email
      */
     public String email;
     /**

@@ -140,11 +140,19 @@ const generateOperationMethod = (
   // methodParams
   const methodParams: string[] = [];
   if (operation.bodyParameters) {
-    methodParams.push(
-      `${capitalizeFirstLetter(operation.bodyParameters)} ${
-        operation.bodyParameters
-      }`
-    );
+    if (operation.bodyType) {
+      methodParams.push(
+        `${capitalizeFirstLetter(operation.bodyType)} ${
+          operation.bodyParameters
+        }`
+      );
+    } else {
+      methodParams.push(
+        `${capitalizeFirstLetter(operation.bodyParameters)} ${
+          operation.bodyParameters
+        }`
+      );
+    }
   }
   if (operation.queryParameters) {
     methodParams.push(

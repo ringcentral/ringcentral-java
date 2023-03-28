@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class UserAnsweringRuleList {
     /**
      * Canonical URI of an answering rule list resource
+     * Format: uri
      * Example: https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1&amp;perPage=100
      */
     public String uri;
@@ -14,11 +15,11 @@ public class UserAnsweringRuleList {
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
     /**
      *
      */
-    public UserAnsweringRuleListNavigation navigation;
+    public PageNavigationModel navigation;
 
     public UserAnsweringRuleList uri(String uri) {
         this.uri = uri;
@@ -30,12 +31,12 @@ public class UserAnsweringRuleList {
         return this;
     }
 
-    public UserAnsweringRuleList paging(EnumeratedPaging paging) {
+    public UserAnsweringRuleList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }
 
-    public UserAnsweringRuleList navigation(UserAnsweringRuleListNavigation navigation) {
+    public UserAnsweringRuleList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }

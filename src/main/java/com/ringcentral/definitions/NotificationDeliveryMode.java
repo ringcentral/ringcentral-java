@@ -3,49 +3,56 @@ package com.ringcentral.definitions;
 
 public class NotificationDeliveryMode {
     /**
-     * Notifications transport name, e.g. &quot;WebHook&quot;
+     * Notifications transport type
      * Required
-     * Enum: PubNub, RC/APNS, RC/GCM, WebHook, WebSocket
+     * Enum: WebHook, RC/APNS, RC/GCM, PubNub
      */
     public String transportType;
     /**
-     * For a &quot;WebHook&quot; transport - URL of a consumer service (cannot be changed during subscription update)
-     * Example: https://acme.com/myservice/webhook
+     * PubNub channel name
+     * Required
+     * Format: uri
+     * Example: 54770517599294_6dda849e
      */
     public String address;
     /**
-     * Optional parameter. Specifies if the message will be encrypted
-     * or not. If request contains any presence event filter the value by default
-     * is &#039;true&#039; (even if specified as &#039;false&#039;). If request contains only message
-     * event filters the value by default is &#039;false&#039;
+     * Optional. Specifies if notification messages will be encrypted
+     * or not. Please note that for some event filters (e.g. presence) encryption is mandatory and
+     * `false` value provided by caller will be ignored.
+     * Required
+     * Enum: false
      */
     public Boolean encryption;
     /**
-     * Certificate name (for &quot;RC/APNS&quot; and &quot;RC/GCM&quot; transport types only)
+     * Certificate name for mobile notification transports
+     * Required
      */
     public String certificateName;
     /**
-     * Registration identifier (for &quot;RC/APNS&quot; and &quot;RC/GCM&quot; transport types only)
+     * Device instance ID for mobile notification transports
+     * Required
+     * Example: 38b062ae-85f8-4dcc-8734-04d3f7393d42
      */
     public String registrationId;
     /**
-     * Subscription verification token ensuring data security (For &quot;Webhook&quot; transport type only)
-     */
-    public String verificationToken;
-    /**
-     * PubNub subscriber credentials required to subscribe to the channel (for &quot;PubNub&quot; transport type only)
+     * PubNub credential required to subscribe to the channel
+     * Required
      */
     public String subscriberKey;
     /**
-     * PubNub subscriber credentials required to subscribe to the channel (for &quot;PubNub&quot; transport type only)
+     * PubNub credential required to subscribe to the channel
+     * Required
      */
     public String secretKey;
     /**
-     * Encryption algorithm &quot;AES&quot; (for &quot;PubNub&quot; transport type only)
+     * (Only for a &quot;PubNub&quot; transport, returned only if `encryption` is `true`)
+     * Encryption algorithm used
+     * Enum: AES
      */
     public String encryptionAlgorithm;
     /**
-     * Key for notification message decryption (for &quot;PubNub&quot; transport type only)
+     * (Only for a &quot;PubNub&quot; transport, returned only if `encryption` is `true`)
+     * Cryptographic key to decrypt PubNub notification messages
      */
     public String encryptionKey;
 
@@ -71,11 +78,6 @@ public class NotificationDeliveryMode {
 
     public NotificationDeliveryMode registrationId(String registrationId) {
         this.registrationId = registrationId;
-        return this;
-    }
-
-    public NotificationDeliveryMode verificationToken(String verificationToken) {
-        this.verificationToken = verificationToken;
         return this;
     }
 

@@ -8,6 +8,7 @@ public class DictionaryGreetingInfo {
     public String id;
     /**
      * Link to a greeting
+     * Format: uri
      */
     public String uri;
     /**
@@ -25,6 +26,7 @@ public class DictionaryGreetingInfo {
     public String text;
     /**
      * Link to a greeting content (audio file), if any
+     * Format: uri
      */
     public String contentUri;
     /**
@@ -40,11 +42,11 @@ public class DictionaryGreetingInfo {
     /**
      *
      */
-    public NavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public EnumeratedPaging paging;
+    public EnumeratedPagingModel paging;
 
     public DictionaryGreetingInfo id(String id) {
         this.id = id;
@@ -86,12 +88,12 @@ public class DictionaryGreetingInfo {
         return this;
     }
 
-    public DictionaryGreetingInfo navigation(NavigationInfo navigation) {
+    public DictionaryGreetingInfo navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public DictionaryGreetingInfo paging(EnumeratedPaging paging) {
+    public DictionaryGreetingInfo paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

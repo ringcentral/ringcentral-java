@@ -28,6 +28,7 @@ public class ModelInfo {
     public String[] features;
     /**
      * Max supported count of phone lines
+     * Format: int32
      */
     public Long lineCount;
 

@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class IVRMenuExtensionInfo {
     /**
      * Link to an extension resource
+     * Format: uri
      */
     public String uri;
     /**

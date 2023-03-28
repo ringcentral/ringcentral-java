@@ -6,23 +6,25 @@ package com.ringcentral.definitions;
  */
 public class ListTimezonesParameters {
     /**
-     * Indicates the page number to retrieve. Only positive number values
-     * are accepted
+     * Indicates a page number to retrieve. Only positive number values
+     * are allowed. Default value is &#039;1&#039;
+     * Format: int32
      * Default: 1
      */
-    public String page;
+    public Long page;
     /**
-     * Indicates the page size (number of items)
+     * Indicates a page size (number of items). If not specified, the value is &#039;100&#039; by default
+     * Format: int32
      * Default: 100
      */
-    public String perPage;
+    public Long perPage;
 
-    public ListTimezonesParameters page(String page) {
+    public ListTimezonesParameters page(Long page) {
         this.page = page;
         return this;
     }
 
-    public ListTimezonesParameters perPage(String perPage) {
+    public ListTimezonesParameters perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }

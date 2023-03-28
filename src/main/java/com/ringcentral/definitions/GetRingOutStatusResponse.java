@@ -7,7 +7,8 @@ public class GetRingOutStatusResponse {
      */
     public String id;
     /**
-     *
+     * Link to a RingOut call resource
+     * Format: uri
      */
     public String uri;
     /**

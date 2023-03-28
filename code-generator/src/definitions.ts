@@ -25,6 +25,8 @@ const normalizeField = (f: Field): Field => {
     f.type = 'Boolean';
   } else if (f.type === 'string') {
     f.type = 'String';
+  } else if (f.type === 'object') {
+    f.type = 'Object';
   }
   return f;
 };

@@ -11,6 +11,7 @@ public class ConversationInfo {
     public String id;
     /**
      * Deprecated. Link to a conversation resource
+     * Format: uri
      */
     public String uri;
 

@@ -19,6 +19,10 @@ public class ExternalIntegrationResource {
      */
     public String displayName;
     /**
+     * Example: Account
+     */
+    public String routingType;
+    /**
      * Example: 1726
      */
     public String outboundEdgeId;
@@ -40,6 +44,11 @@ public class ExternalIntegrationResource {
 
     public ExternalIntegrationResource displayName(String displayName) {
         this.displayName = displayName;
+        return this;
+    }
+
+    public ExternalIntegrationResource routingType(String routingType) {
+        this.routingType = routingType;
         return this;
     }
 

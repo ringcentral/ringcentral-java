@@ -1,10 +1,7 @@
 package com.ringcentral.paths.restapi.account.answeringrule;
 
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CompanyAnsweringRuleInfo;
-import com.ringcentral.definitions.CompanyAnsweringRuleList;
-import com.ringcentral.definitions.CompanyAnsweringRuleRequest;
-import com.ringcentral.definitions.CompanyAnsweringRuleUpdate;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -36,9 +33,13 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadCompanyAnsweringRules
      */
-    public CompanyAnsweringRuleList list() throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(false), null);
+    public CompanyAnsweringRuleList list(ListCompanyAnsweringRulesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CompanyAnsweringRuleList.class);
+    }
+
+    public CompanyAnsweringRuleList list() throws com.ringcentral.RestException, java.io.IOException {
+        return this.list(null);
     }
 
     /**

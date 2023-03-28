@@ -19,7 +19,8 @@ public class AccountDeviceUpdate {
      */
     public DeviceUpdatePhoneLinesInfo phoneLines;
     /**
-     * Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone.
+     * Supported only for devices assigned to Limited extensions.
+     * If true, enables users to log in to this phone as a common phone
      */
     public Boolean useAsCommonPhone;
     /**

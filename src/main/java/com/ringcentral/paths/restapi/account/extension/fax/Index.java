@@ -18,7 +18,10 @@ public class Index {
     }
 
     /**
-     * Creates and sends/resends a fax message. Resend can be implemented if sending has failed. Fax attachment size (both single and total) is limited to 50Mb.
+     * Creates and sends/resends a fax message. Resend can be implemented
+     * if sending has failed. Fax attachment size (both single and total) is
+     * limited to 50Mb.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/fax
      * Rate Limit Group: Heavy

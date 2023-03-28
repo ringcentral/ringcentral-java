@@ -8,6 +8,7 @@ public class CallHandlingExtensionInfo {
     public String id;
     /**
      * Canonical URI of an extension
+     * Format: uri
      */
     public String uri;
     /**

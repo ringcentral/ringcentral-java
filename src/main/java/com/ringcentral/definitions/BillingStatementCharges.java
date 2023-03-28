@@ -7,7 +7,7 @@ public class BillingStatementCharges {
      */
     public String description;
     /**
-     *
+     * Format: double
      */
     public Double amount;
     /**
@@ -15,7 +15,7 @@ public class BillingStatementCharges {
      */
     public String feature;
     /**
-     *
+     * Format: double
      */
     public Double freeServiceCredit;
 

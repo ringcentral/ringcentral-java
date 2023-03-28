@@ -11,6 +11,7 @@ public class CustomCompanyGreetingLanguageInfo {
     public String id;
     /**
      * Link to a greeting language
+     * Format: uri
      */
     public String uri;
     /**

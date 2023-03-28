@@ -11,26 +11,30 @@ public class ListUserTemplatesParameters {
      */
     public String type;
     /**
-     * Indicates the page number to retrieve. Only positive number values
-     * are allowed
+     * Indicates a page number to retrieve. Only positive number values
+     * are allowed. Default value is &#039;1&#039;
+     * Format: int32
+     * Default: 1
      */
-    public String page;
+    public Long page;
     /**
-     * Indicates the page size (number of items)
+     * Indicates a page size (number of items). If not specified, the value is &#039;100&#039; by default
+     * Format: int32
+     * Default: 100
      */
-    public String perPage;
+    public Long perPage;
 
     public ListUserTemplatesParameters type(String type) {
         this.type = type;
         return this;
     }
 
-    public ListUserTemplatesParameters page(String page) {
+    public ListUserTemplatesParameters page(Long page) {
         this.page = page;
         return this;
     }
 
-    public ListUserTemplatesParameters perPage(String perPage) {
+    public ListUserTemplatesParameters perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }

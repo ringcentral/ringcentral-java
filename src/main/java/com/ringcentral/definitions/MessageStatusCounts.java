@@ -12,16 +12,16 @@ public class MessageStatusCounts {
      */
     public Long count;
     /**
-     * Format: int64
+     *
      */
-    public Long errorCodeCounts;
+    public Object errorCodeCounts;
 
     public MessageStatusCounts count(Long count) {
         this.count = count;
         return this;
     }
 
-    public MessageStatusCounts errorCodeCounts(Long errorCodeCounts) {
+    public MessageStatusCounts errorCodeCounts(Object errorCodeCounts) {
         this.errorCodeCounts = errorCodeCounts;
         return this;
     }

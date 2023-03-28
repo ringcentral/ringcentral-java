@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class CallRecordingCustomGreetingData {
     /**
      * Link to a custom company greeting
+     * Format: uri
      */
     public String uri;
     /**

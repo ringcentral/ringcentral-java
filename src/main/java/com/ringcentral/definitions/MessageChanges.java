@@ -3,16 +3,19 @@ package com.ringcentral.definitions;
 
 public class MessageChanges {
     /**
-     * Message type
-     * Enum: Voicemail, SMS, Fax, Pager
+     * Type of messages to be collected
+     * Example: Fax
+     * Enum: EMail, Fax, SMS, VoiceMail, Pager, Text
      */
     public String type;
     /**
-     * The number of new messages. Can be omitted if the value is zero
+     * Number of new messages. Can be omitted if the value is zero
+     * Format: int32
      */
     public Long newCount;
     /**
-     * The number of updated messages. Can be omitted if the value is zero
+     * Number of updated messages. Can be omitted if the value is zero
+     * Format: int32
      */
     public Long updatedCount;
 

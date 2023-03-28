@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class CallRecordingCustomGreetingLanguage {
     /**
      * Link to a language
+     * Format: uri
      */
     public String uri;
     /**

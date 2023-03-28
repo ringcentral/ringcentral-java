@@ -71,7 +71,7 @@ public class ExtensionCreationResponse {
     /**
      *
      */
-    public AutomaticLocationUpdatesSiteInfo site;
+    public ProvisioningSiteInfo site;
     /**
      * Extension current state. If &#039;Unassigned&#039; is specified, then
      * extensions without ‘extensionNumber’ are returned. If not specified, then
@@ -160,7 +160,7 @@ public class ExtensionCreationResponse {
         return this;
     }
 
-    public ExtensionCreationResponse site(AutomaticLocationUpdatesSiteInfo site) {
+    public ExtensionCreationResponse site(ProvisioningSiteInfo site) {
         this.site = site;
         return this;
     }

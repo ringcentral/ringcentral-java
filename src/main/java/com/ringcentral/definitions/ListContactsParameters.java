@@ -16,7 +16,7 @@ public class ListContactsParameters {
      */
     public String[] sortBy;
     /**
-     * The number of the result set page to display
+     * The result set page number (1-indexed) to return
      * Maximum: 1000
      * Minimum: 1
      * Format: int32

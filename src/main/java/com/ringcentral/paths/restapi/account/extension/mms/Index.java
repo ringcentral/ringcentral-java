@@ -18,15 +18,18 @@ public class Index {
     }
 
     /**
-     * Creates and sends media messages. Sending MMS messages simultaneously to different recipients is limited up to 50 requests per minute; relevant for all client applications.
+     * Creates and sends a new media message or multiple messages. Sending MMS
+     * messages simultaneously to different recipients is limited up to 50
+     * requests per minute; relevant for all client applications.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/mms
      * Rate Limit Group: Medium
      * App Permission: SMS
      * User Permission: OutboundSMS
      */
-    public GetSMSMessageInfoResponse post(CreateMMSMessage CreateMMSMessage) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), CreateMMSMessage, null, com.ringcentral.ContentType.MULTIPART);
+    public GetSMSMessageInfoResponse post(CreateMMSMessage createMMSMessage) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(), createMMSMessage, null, com.ringcentral.ContentType.MULTIPART);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), GetSMSMessageInfoResponse.class);
     }
 }

@@ -1,24 +1,23 @@
 package com.ringcentral.definitions;
 
 
-public class TMTeamList
-{
+public class TMTeamList {
     /**
      * List of teams
      * Required
      */
     public TMTeamInfo[] records;
-    public TMTeamList records(TMTeamInfo[] records)
-    {
+    /**
+     *
+     */
+    public TMNavigationInfo navigation;
+
+    public TMTeamList records(TMTeamInfo[] records) {
         this.records = records;
         return this;
     }
 
-    /**
-     */
-    public TMNavigationInfo navigation;
-    public TMTeamList navigation(TMNavigationInfo navigation)
-    {
+    public TMTeamList navigation(TMNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }

@@ -1,40 +1,40 @@
 package com.ringcentral.definitions;
 
 
-public class MeetingUserSettingsResponse
-{
+public class MeetingUserSettingsResponse {
     /**
+     *
      */
     public UserMeetingRecordingSetting recording;
-    public MeetingUserSettingsResponse recording(UserMeetingRecordingSetting recording)
-    {
+    /**
+     *
+     */
+    public ScheduleUserMeetingInfo scheduleMeeting;
+    /**
+     *
+     */
+    public TelephonyUserMeetingSettings telephony;
+    /**
+     *
+     */
+    public UserInMeetingResponse inMeetings;
+
+    public MeetingUserSettingsResponse recording(UserMeetingRecordingSetting recording) {
         this.recording = recording;
         return this;
     }
 
-    /**
-     */
-    public ScheduleUserMeetingInfo scheduleMeeting;
-    public MeetingUserSettingsResponse scheduleMeeting(ScheduleUserMeetingInfo scheduleMeeting)
-    {
+    public MeetingUserSettingsResponse scheduleMeeting(ScheduleUserMeetingInfo scheduleMeeting) {
         this.scheduleMeeting = scheduleMeeting;
         return this;
     }
 
-    /**
-     */
-    public TelephonyUserMeetingSettings telephony;
-    public MeetingUserSettingsResponse telephony(TelephonyUserMeetingSettings telephony)
-    {
+    public MeetingUserSettingsResponse telephony(TelephonyUserMeetingSettings telephony) {
         this.telephony = telephony;
         return this;
     }
 
-    /**
-     */
-    public UserInMeetingResponse inMeetings;
-    public MeetingUserSettingsResponse inMeetings(UserInMeetingResponse inMeetings)
-    {
+    public MeetingUserSettingsResponse inMeetings(UserInMeetingResponse inMeetings) {
         this.inMeetings = inMeetings;
         return this;
     }

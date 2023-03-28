@@ -1,11 +1,6 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.Attachment;
-import com.ringcentral.definitions.CreateIVRPromptRequest;
-import com.ringcentral.definitions.IvrPrompts;
-import com.ringcentral.definitions.PromptInfo;
-import com.ringcentral.definitions.UpdateIVRPromptRequest;
-
+import com.ringcentral.definitions.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -81,8 +76,8 @@ public class IVRContentTest {
         PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();
         Assert.assertNotNull(promptInfo.id);
 
-       rc.restapi().account().ivrPrompts(promptInfo.id).put(new UpdateIVRPromptRequest()
-           .filename("test.mp3"));
+        rc.restapi().account().ivrPrompts(promptInfo.id).put(new UpdateIVRPromptRequest()
+            .filename("test.mp3"));
 
         rc.revoke();
     }

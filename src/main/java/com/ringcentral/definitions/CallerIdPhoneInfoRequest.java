@@ -1,14 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class CallerIdPhoneInfoRequest
-{
+public class CallerIdPhoneInfoRequest {
     /**
      * Internal identifier of a phone number
      */
     public String id;
-    public CallerIdPhoneInfoRequest id(String id)
-    {
+
+    public CallerIdPhoneInfoRequest id(String id) {
         this.id = id;
         return this;
     }

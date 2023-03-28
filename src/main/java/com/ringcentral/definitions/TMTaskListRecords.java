@@ -1,7 +1,6 @@
 package com.ringcentral.definitions;
 
 
-public class TMTaskListRecords
-{
-    
+public class TMTaskListRecords {
+
 }

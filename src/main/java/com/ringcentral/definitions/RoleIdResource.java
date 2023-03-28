@@ -1,23 +1,22 @@
 package com.ringcentral.definitions;
 
 
-public class RoleIdResource
-{
+public class RoleIdResource {
     /**
      * Format: uri
      */
     public String uri;
-    public RoleIdResource uri(String uri)
-    {
+    /**
+     *
+     */
+    public String id;
+
+    public RoleIdResource uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     */
-    public String id;
-    public RoleIdResource id(String id)
-    {
+    public RoleIdResource id(String id) {
         this.id = id;
         return this;
     }

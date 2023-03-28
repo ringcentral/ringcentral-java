@@ -1,26 +1,25 @@
 package com.ringcentral.definitions;
 
 
-    /**
-* List of messages retrieved for an account and other filter criteria such as `batchId` and `fromPhoneNumber` specified in the request
-*/
-public class MessageListResponse
-{
+/**
+ * List of messages retrieved for an account and other filter criteria such as `batchId` and `fromPhoneNumber` specified in the request
+ */
+public class MessageListResponse {
     /**
      * An array containing individual messages
      */
     public MessageListMessageResponse[] records;
-    public MessageListResponse records(MessageListMessageResponse[] records)
-    {
+    /**
+     *
+     */
+    public PagingResource paging;
+
+    public MessageListResponse records(MessageListMessageResponse[] records) {
         this.records = records;
         return this;
     }
 
-    /**
-     */
-    public PagingResource paging;
-    public MessageListResponse paging(PagingResource paging)
-    {
+    public MessageListResponse paging(PagingResource paging) {
         this.paging = paging;
         return this;
     }

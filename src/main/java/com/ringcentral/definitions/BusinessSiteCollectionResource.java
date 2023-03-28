@@ -1,23 +1,22 @@
 package com.ringcentral.definitions;
 
 
-public class BusinessSiteCollectionResource
-{
+public class BusinessSiteCollectionResource {
     /**
      * Format: uri
      */
     public String uri;
-    public BusinessSiteCollectionResource uri(String uri)
-    {
+    /**
+     *
+     */
+    public RolesBusinessSiteResource[] records;
+
+    public BusinessSiteCollectionResource uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     */
-    public RolesBusinessSiteResource[] records;
-    public BusinessSiteCollectionResource records(RolesBusinessSiteResource[] records)
-    {
+    public BusinessSiteCollectionResource records(RolesBusinessSiteResource[] records) {
         this.records = records;
         return this;
     }

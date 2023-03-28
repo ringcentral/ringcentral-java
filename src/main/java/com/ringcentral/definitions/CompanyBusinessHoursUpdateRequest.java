@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class CompanyBusinessHoursUpdateRequest
-{
+public class CompanyBusinessHoursUpdateRequest {
     /**
+     *
      */
     public CompanyBusinessHoursScheduleInfo schedule;
-    public CompanyBusinessHoursUpdateRequest schedule(CompanyBusinessHoursScheduleInfo schedule)
-    {
+
+    public CompanyBusinessHoursUpdateRequest schedule(CompanyBusinessHoursScheduleInfo schedule) {
         this.schedule = schedule;
         return this;
     }

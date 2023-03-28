@@ -1,24 +1,22 @@
 package com.ringcentral.definitions;
 
 
-public class AnalyticsLegacyPerformanceCallsCountersResponseOptionsAllCalls
-{
+public class AnalyticsLegacyPerformanceCallsCountersResponseOptionsAllCalls {
     /**
      * Enum: Sum, Average, Max, Min, Percent
      */
     public String aggregationType;
-    public AnalyticsLegacyPerformanceCallsCountersResponseOptionsAllCalls aggregationType(String aggregationType)
-    {
-        this.aggregationType = aggregationType;
-        return this;
-    }
-
     /**
      * Enum: Hour, Day, Week, Month
      */
     public String aggregationInterval;
-    public AnalyticsLegacyPerformanceCallsCountersResponseOptionsAllCalls aggregationInterval(String aggregationInterval)
-    {
+
+    public AnalyticsLegacyPerformanceCallsCountersResponseOptionsAllCalls aggregationType(String aggregationType) {
+        this.aggregationType = aggregationType;
+        return this;
+    }
+
+    public AnalyticsLegacyPerformanceCallsCountersResponseOptionsAllCalls aggregationInterval(String aggregationInterval) {
         this.aggregationInterval = aggregationInterval;
         return this;
     }

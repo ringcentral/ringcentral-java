@@ -1,43 +1,41 @@
 package com.ringcentral.definitions;
 
 
-public class LanguageList
-{
+public class LanguageList {
     /**
      * Canonical URI of the language list resource
      * Format: uri
      */
     public String uri;
-    public LanguageList uri(String uri)
-    {
-        this.uri = uri;
-        return this;
-    }
-
     /**
      * Language data
      */
     public LanguageInfo[] records;
-    public LanguageList records(LanguageInfo[] records)
-    {
+    /**
+     *
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     *
+     */
+    public ProvisioningPagingInfo paging;
+
+    public LanguageList uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public LanguageList records(LanguageInfo[] records) {
         this.records = records;
         return this;
     }
 
-    /**
-     */
-    public ProvisioningNavigationInfo navigation;
-    public LanguageList navigation(ProvisioningNavigationInfo navigation)
-    {
+    public LanguageList navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    /**
-     */
-    public ProvisioningPagingInfo paging;
-    public LanguageList paging(ProvisioningPagingInfo paging)
-    {
+    public LanguageList paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }

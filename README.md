@@ -146,7 +146,6 @@ If there is no CDN uri provided, construct the uri as the [sample code](./sample
 
 Please refer to the [RingCentral PubNub SDK for Java](https://github.com/ringcentral/ringcentral-pubnub-java) project.
 
-
 ## Release Notes
 
 ### 3.0.0
@@ -156,6 +155,7 @@ We have renamed all "glip" to "team-messaging". For example:
 ```java
 rc.restapi().glip()...
 ```
+
 becomes
 
 ```java

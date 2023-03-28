@@ -1,32 +1,31 @@
 package com.ringcentral.definitions;
 
 
-public class SwitchesList
-{
+public class SwitchesList {
     /**
      * Switches map
      */
     public SwitchInfo[] records;
-    public SwitchesList records(SwitchInfo[] records)
-    {
+    /**
+     *
+     */
+    public ProvisioningNavigationInfo navigation;
+    /**
+     *
+     */
+    public ProvisioningPagingInfo paging;
+
+    public SwitchesList records(SwitchInfo[] records) {
         this.records = records;
         return this;
     }
 
-    /**
-     */
-    public ProvisioningNavigationInfo navigation;
-    public SwitchesList navigation(ProvisioningNavigationInfo navigation)
-    {
+    public SwitchesList navigation(ProvisioningNavigationInfo navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    /**
-     */
-    public ProvisioningPagingInfo paging;
-    public SwitchesList paging(ProvisioningPagingInfo paging)
-    {
+    public SwitchesList paging(ProvisioningPagingInfo paging) {
         this.paging = paging;
         return this;
     }

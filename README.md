@@ -97,14 +97,12 @@ You can find [sample code for all the endpoints](./samples.md).
 
 There is also lots of useful code for your reference in our [test cases](./src/test/java/com/ringcentral).
 
-Auto-generated [JavaDoc](https://ringcentral.github.io/ringcentral-java/).
-
 ## Logging
 
 The logging is implemented according
 to [Java Logging Overview](https://docs.oracle.com/javase/10/core/java-logging-overview.htm)
 
-To enable printing log to console:
+To enable printing log to the console:
 
 ```java
 RestClient.logger.setLevel(Level.FINE);

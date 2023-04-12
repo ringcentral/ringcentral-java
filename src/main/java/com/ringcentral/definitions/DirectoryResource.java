@@ -5,13 +5,13 @@ public class DirectoryResource {
     /**
      * Required
      */
-    public PagingInfo paging;
+    public EnumeratedPagingModel paging;
     /**
      * Required
      */
     public ContactResource[] records;
 
-    public DirectoryResource paging(PagingInfo paging) {
+    public DirectoryResource paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

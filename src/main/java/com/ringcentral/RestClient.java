@@ -392,11 +392,19 @@ public class RestClient {
         return new com.ringcentral.paths.analytics.Index(this);
     }
 
-    public com.ringcentral.paths.teammessaging.Index teamMessaging(String apiVersion) {
-        return new com.ringcentral.paths.teammessaging.Index(this, apiVersion);
+    public com.ringcentral.paths.teammessaging.Index teamMessaging() {
+        return new com.ringcentral.paths.teammessaging.Index(this);
     }
 
-    public com.ringcentral.paths.teammessaging.Index teamMessaging() {
-        return new com.ringcentral.paths.teammessaging.Index(this, "v1");
+    public com.ringcentral.paths.ai.Index ai() {
+        return new com.ringcentral.paths.ai.Index(this);
+    }
+
+    public com.ringcentral.paths.rcvideo.Index rcvideo() {
+        return new com.ringcentral.paths.rcvideo.Index(this);
+    }
+
+    public com.ringcentral.paths.webinar.Index webinar() {
+        return new com.ringcentral.paths.webinar.Index(this);
     }
 }

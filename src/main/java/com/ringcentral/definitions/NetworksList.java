@@ -14,11 +14,11 @@ public class NetworksList {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public NetworksList uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class NetworksList {
         return this;
     }
 
-    public NetworksList navigation(ProvisioningNavigationInfo navigation) {
+    public NetworksList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public NetworksList paging(ProvisioningPagingInfo paging) {
+    public NetworksList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

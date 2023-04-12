@@ -15,11 +15,11 @@ public class ListDevicesAutomaticLocationUpdates {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public ListDevicesAutomaticLocationUpdates uri(String uri) {
         this.uri = uri;
@@ -31,12 +31,12 @@ public class ListDevicesAutomaticLocationUpdates {
         return this;
     }
 
-    public ListDevicesAutomaticLocationUpdates navigation(ProvisioningNavigationInfo navigation) {
+    public ListDevicesAutomaticLocationUpdates navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public ListDevicesAutomaticLocationUpdates paging(ProvisioningPagingInfo paging) {
+    public ListDevicesAutomaticLocationUpdates paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

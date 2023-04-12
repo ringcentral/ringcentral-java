@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class CallLogDelegateInfo {
     /**
      * Internal identifier of a Secretary extension
+     * Required
      */
     public String id;
     /**

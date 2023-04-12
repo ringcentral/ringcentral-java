@@ -15,11 +15,11 @@ public class UserTemplates {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public UserTemplates uri(String uri) {
         this.uri = uri;
@@ -31,12 +31,12 @@ public class UserTemplates {
         return this;
     }
 
-    public UserTemplates navigation(ProvisioningNavigationInfo navigation) {
+    public UserTemplates navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public UserTemplates paging(ProvisioningPagingInfo paging) {
+    public UserTemplates paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

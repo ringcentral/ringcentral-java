@@ -39,7 +39,7 @@ public class ReadCompanyCallLogParameters {
      * Deprecated, replaced with `recordingType` filter, still supported for compatibility reasons.
      * Indicates if only recorded calls should be returned.
      * <p>
-     * If both `withRecording` and `recordingType` parameters are specified, then `withRecording` is ignored&#039;
+     * If both `withRecording` and `recordingType` parameters are specified, then `withRecording` is ignored
      */
     public Boolean withRecording;
     /**

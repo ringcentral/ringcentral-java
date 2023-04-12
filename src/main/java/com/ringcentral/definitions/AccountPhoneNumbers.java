@@ -14,11 +14,11 @@ public class AccountPhoneNumbers {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public AccountPhoneNumbers uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class AccountPhoneNumbers {
         return this;
     }
 
-    public AccountPhoneNumbers navigation(ProvisioningNavigationInfo navigation) {
+    public AccountPhoneNumbers navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public AccountPhoneNumbers paging(ProvisioningPagingInfo paging) {
+    public AccountPhoneNumbers paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

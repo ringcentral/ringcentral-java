@@ -15,11 +15,11 @@ public class CountryListDictionaryModel {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public CountryListDictionaryModel uri(String uri) {
         this.uri = uri;
@@ -31,12 +31,12 @@ public class CountryListDictionaryModel {
         return this;
     }
 
-    public CountryListDictionaryModel navigation(ProvisioningNavigationInfo navigation) {
+    public CountryListDictionaryModel navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public CountryListDictionaryModel paging(ProvisioningPagingInfo paging) {
+    public CountryListDictionaryModel paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

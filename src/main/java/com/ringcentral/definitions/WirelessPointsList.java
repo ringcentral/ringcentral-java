@@ -14,11 +14,11 @@ public class WirelessPointsList {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public WirelessPointsList uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class WirelessPointsList {
         return this;
     }
 
-    public WirelessPointsList navigation(ProvisioningNavigationInfo navigation) {
+    public WirelessPointsList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public WirelessPointsList paging(ProvisioningPagingInfo paging) {
+    public WirelessPointsList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

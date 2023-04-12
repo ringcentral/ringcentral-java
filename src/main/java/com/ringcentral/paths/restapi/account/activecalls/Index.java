@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.activecalls;
 
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CompanyActiveCallsResponse;
+import com.ringcentral.definitions.CallLogResponse;
 import com.ringcentral.definitions.ListCompanyActiveCallsParameters;
 
 public class Index {
@@ -25,12 +25,12 @@ public class Index {
      * App Permission: ReadCallLog
      * User Permission: ReadCallLog
      */
-    public CompanyActiveCallsResponse get(ListCompanyActiveCallsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogResponse get(ListCompanyActiveCallsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CompanyActiveCallsResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallLogResponse.class);
     }
 
-    public CompanyActiveCallsResponse get() throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogResponse get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
 }

@@ -14,22 +14,13 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.rcvideo.v1.Index v1() {
+        return new com.ringcentral.paths.rcvideo.v1.Index(this);
+    }
+
+
     public com.ringcentral.paths.rcvideo.v2.Index v2() {
         return new com.ringcentral.paths.rcvideo.v2.Index(this);
-    }
-
-
-    public com.ringcentral.paths.rcvideo.history.Index history() {
-        return new com.ringcentral.paths.rcvideo.history.Index(this);
-    }
-
-
-    public com.ringcentral.paths.rcvideo.accounts.Index accounts() {
-        return this.accounts(null);
-    }
-
-    public com.ringcentral.paths.rcvideo.accounts.Index accounts(String accountId) {
-        return new com.ringcentral.paths.rcvideo.accounts.Index(this, accountId);
     }
 
 }

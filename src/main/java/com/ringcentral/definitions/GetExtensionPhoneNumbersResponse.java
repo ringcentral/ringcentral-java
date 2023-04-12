@@ -15,11 +15,11 @@ public class GetExtensionPhoneNumbersResponse {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public GetExtensionPhoneNumbersResponse uri(String uri) {
         this.uri = uri;
@@ -31,12 +31,12 @@ public class GetExtensionPhoneNumbersResponse {
         return this;
     }
 
-    public GetExtensionPhoneNumbersResponse navigation(ProvisioningNavigationInfo navigation) {
+    public GetExtensionPhoneNumbersResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public GetExtensionPhoneNumbersResponse paging(ProvisioningPagingInfo paging) {
+    public GetExtensionPhoneNumbersResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

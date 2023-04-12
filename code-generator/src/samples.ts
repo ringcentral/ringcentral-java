@@ -53,7 +53,7 @@ for (const path of paths.filter(item => item.operations.length > 0)) {
     markdown.push('\n```java');
     markdown.push(
       `RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(username, extension, password);`
+rc.authorize(jwtToken);`
     );
     let responseType = 'String';
     if (operation.responseSchema?.$ref) {

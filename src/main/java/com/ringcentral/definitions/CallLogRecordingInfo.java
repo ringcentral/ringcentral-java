@@ -7,21 +7,25 @@ package com.ringcentral.definitions;
 public class CallLogRecordingInfo {
     /**
      * Internal identifier of the call recording
+     * Required
      */
     public String id;
     /**
      * Link to the call recording metadata resource
+     * Required
      * Format: uri
      */
     public String uri;
     /**
      * Indicates recording mode used
+     * Required
      * Enum: Automatic, OnDemand
      */
     public String type;
     /**
      * Link to a call recording binary content. Has to be retrieved with proper authorization
      * (access token must be passed via `Authorization` header or query parameter)
+     * Required
      * Format: uri
      */
     public String contentUri;

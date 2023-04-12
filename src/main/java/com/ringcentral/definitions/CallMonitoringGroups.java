@@ -16,11 +16,11 @@ public class CallMonitoringGroups {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public CallMonitoringGroups uri(String uri) {
         this.uri = uri;
@@ -32,12 +32,12 @@ public class CallMonitoringGroups {
         return this;
     }
 
-    public CallMonitoringGroups navigation(ProvisioningNavigationInfo navigation) {
+    public CallMonitoringGroups navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public CallMonitoringGroups paging(ProvisioningPagingInfo paging) {
+    public CallMonitoringGroups paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

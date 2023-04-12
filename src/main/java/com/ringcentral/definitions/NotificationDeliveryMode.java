@@ -1,6 +1,9 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Notification delivery transport information
+ */
 public class NotificationDeliveryMode {
     /**
      * Notifications transport type

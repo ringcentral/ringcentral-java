@@ -1,20 +1,45 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Base schema for CallLogRecord and CallLogRecordLegInfo
+ */
 public class CallLogRecord {
     /**
-     * Internal identifier of a cal log record
+     * Internal identifier of a call log record
+     * Required
      */
     public String id;
     /**
      * Canonical URI of a call log record
+     * Required
      * Format: uri
      */
     public String uri;
     /**
      * Internal identifier of a call session
+     * Required
      */
     public String sessionId;
+    /**
+     * Indicates whether the record is deleted. Returned for deleted records, for ISync requests
+     */
+    public Boolean deleted;
+    /**
+     * For &#039;Detailed&#039; view only. Leg description
+     */
+    public CallLogRecordLegInfo[] legs;
+    /**
+     * For &#039;Detailed&#039; view only. The datetime when the call log record
+     * was modified in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format
+     * including timezone, for example *2016-03-10T18:07:52.534Z*
+     * Format: date-time
+     */
+    public String lastModifiedTime;
+    /**
+     *
+     */
+    public ExtensionInfoCallLog extension;
     /**
      * Telephony identifier of a call session
      */
@@ -36,31 +61,49 @@ public class CallLogRecord {
      */
     public String partyId;
     /**
-     *
+     * The type of a call transport. &#039;PSTN&#039; indicates that a call leg was initiated
+     * from the PSTN network provider; &#039;VoIP&#039; - from an RC phone.
+     * Required
+     * Enum: PSTN, VoIP
      */
-    public CallLogCallerInfo from;
+    public String transport;
     /**
      *
      */
-    public CallLogCallerInfo to;
+    public CallLogFromParty from;
+    /**
+     *
+     */
+    public CallLogToParty to;
     /**
      * The type of a call
+     * Required
      * Enum: Voice, Fax
      */
     public String type;
     /**
      * The direction of a call
+     * Required
      * Enum: Inbound, Outbound
      */
     public String direction;
     /**
+     *
+     */
+    public CallLogRecordMessage message;
+    /**
+     *
+     */
+    public CallLogDelegateInfo delegate;
+    /**
      * The internal action corresponding to the call operation
-     * Enum: Unknown, Phone Call, Phone Login, Calling Card, VoIP Call, Paging, Hunting, Call Park, Monitoring, Text Relay, External Application, Park Location, CallOut-CallMe, Conference Call, Move, RC Meetings, Accept Call, FindMe, FollowMe, RingMe, Transfer, Call Return, Ring Directly, RingOut Web, RingOut PC, RingOut Mobile, 411 Info, Emergency, E911 Update, Support, Incoming Fax, Outgoing Fax
+     * Required
+     * Enum: Accept Call, Barge In Call, Call Park, Call Return, CallOut-CallMe, Calling Card, Conference Call, E911 Update, Emergency, External Application, FindMe, FollowMe, FreeSPDL, Hunting, Incoming Fax, Monitoring, Move, Outgoing Fax, Paging, Park Location, Phone Call, Phone Login, Pickup, RC Meetings, Ring Directly, RingMe, RingOut Mobile, RingOut PC, RingOut Web, Sip Forwarding, Support, Text Relay, Transfer, Unknown, VoIP Call
      */
     public String action;
     /**
      * The result of the call operation
-     * Enum: Unknown, Accepted, Call connected, In Progress, Voicemail, Reply, Missed, Busy, Rejected, No Answer, Hang Up, Blocked, ResultEmpty, Suspended account, Call Failed, Call Failure, Internal Error, IP Phone Offline, No Calling Credit, Not Allowed, Restricted Number, Wrong Number, Answered Not Accepted, Stopped, Poor Line Quality, International Disabled, International Restricted, Abandoned, Declined, Received, Fax on Demand, Partial Receive, Receive Error, Fax Receipt Error, Fax Partially Sent, No fax machine, Send Error, Sent, Fax Not Sent, Fax Poor Line
+     * Enum: 911, 933, Abandoned, Accepted, Answered Not Accepted, Blocked, Busy, Call Failed, Call Failure, Call connected, Carrier is not active, Declined, EDGE trunk misconfigured, Fax Not Sent, Fax Partially Sent, Fax Poor Line, Fax Receipt Error, Fax on Demand, Hang Up, IP Phone Offline, In Progress, Internal Error, International Disabled, International Restricted, Missed, No Answer, No Calling Credit, Not Allowed, Partial Receive, Phone Login, Receive Error, Received, Rejected, Reply, Restricted Number, Send Error, Sent, Sent to Voicemail, Stopped, Suspended account, Unknown, Voicemail, Wrong Number
      */
     public String result;
     /**
@@ -98,56 +141,48 @@ public class CallLogRecord {
      * * `Fax Prepare Error` - An internal error occurred when preparing the fax. Please try again
      * * `Fax Save Error` - An internal error occurred when saving the fax. Please try again
      * * `Fax Send Error` - An error occurred when sending the fax. Please try again
-     * * `DescNoE911Address` - The call was rejected due to no E911 address
-     * Enum: Accepted, Connected, line Busy, Not Answered, No Answer, Hang Up, Stopped, Internal Error, No Credit, Restricted Number, Wrong Number, International Disabled, International Restricted, Bad Number, Info 411 Restricted, Customer 611 Restricted, No Digital Line, Failed Try Again, Max Call Limit, Too Many Calls, Calls Not Accepted, Number Not Allowed, Number Blocked, Number Disabled, Resource Error, Call Loop, Fax Not Received, Fax Partially Sent, Fax Not Sent, Fax Poor Line, Fax Prepare Error, Fax Save Error, Fax Send Error, DescNoE911Address
+     * * `Emergency Address not defined` - The call was rejected due to no E911 address
+     * * `Carrier is not active` - The call was rejected due to carrier inactivity
+     * * `EDGE trunk misconfigured` - The call was rejected due to error in EDGE trunk configuration
+     * * `Internal Call Error` - An internal error occurred when making the call. Please try again
+     * * `Receive Error` - Fax receive error
+     * Enum: Accepted, Bad Number, Call Loop, Calls Not Accepted, Carrier is not active, Connected, Customer 611 Restricted, EDGE trunk misconfigured, Emergency Address not defined, Failed Try Again, Fax Not Received, Fax Not Sent, Fax Partially Sent, Fax Poor Line, Fax Prepare Error, Fax Save Error, Fax Send Error, Hang Up, Info 411 Restricted, Internal Call Error, Internal Error, International Disabled, International Restricted, Line Busy, Max Call Limit, No Answer, No Credit, No Digital Line, Not Answered, Number Blocked, Number Disabled, Number Not Allowed, Receive Error, Resource Error, Restricted Number, Stopped, Too Many Calls, Unknown, Wrong Number
      */
     public String reason;
     /**
+     * The detailed reason description of the call result
+     */
+    public String reasonDescription;
+    /**
      * The call start datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
+     * Required
      * Format: date-time
      */
     public String startTime;
     /**
      * Call duration in seconds
+     * Required
      * Format: int32
      */
     public Long duration;
+    /**
+     * Call duration in milliseconds
+     * Required
+     * Format: int32
+     */
+    public Long durationMs;
     /**
      *
      */
     public CallLogRecordingInfo recording;
     /**
-     * For &#039;Detailed&#039; view only. The datetime when the call log record was modified in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
-     * Format: date-time
+     * Indicates that the recording is too short and therefore wouldn&#039;t be returned. The flag is not returned if the value is false
      */
-    public String lastModifiedTime;
-    /**
-     * The type of a call transport. &#039;PSTN&#039; indicates that a call leg was initiated
-     * from the PSTN network provider; &#039;VoIP&#039; - from an RC phone.
-     * Enum: PSTN, VoIP
-     */
-    public String transport;
+    public Boolean shortRecording;
     /**
      *
      */
-    public ActiveCallsRecordExtensionInfo extension;
-    /**
-     *
-     */
-    public CallLogDelegateInfo delegate;
-    /**
-     * For &#039;Detailed&#039; view only. Leg description
-     * Required
-     */
-    public CallLogRecordLegInfo[] legs;
-    /**
-     *
-     */
-    public CallLogRecordMessage message;
-    /**
-     * Returned only if this call was deleted. Value is set to &#039;True&#039; in this case
-     */
-    public Boolean deleted;
+    public BillingInfo billing;
     /**
      * The internal type of the call
      * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
@@ -166,6 +201,26 @@ public class CallLogRecord {
 
     public CallLogRecord sessionId(String sessionId) {
         this.sessionId = sessionId;
+        return this;
+    }
+
+    public CallLogRecord deleted(Boolean deleted) {
+        this.deleted = deleted;
+        return this;
+    }
+
+    public CallLogRecord legs(CallLogRecordLegInfo[] legs) {
+        this.legs = legs;
+        return this;
+    }
+
+    public CallLogRecord lastModifiedTime(String lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+        return this;
+    }
+
+    public CallLogRecord extension(ExtensionInfoCallLog extension) {
+        this.extension = extension;
         return this;
     }
 
@@ -194,12 +249,17 @@ public class CallLogRecord {
         return this;
     }
 
-    public CallLogRecord from(CallLogCallerInfo from) {
+    public CallLogRecord transport(String transport) {
+        this.transport = transport;
+        return this;
+    }
+
+    public CallLogRecord from(CallLogFromParty from) {
         this.from = from;
         return this;
     }
 
-    public CallLogRecord to(CallLogCallerInfo to) {
+    public CallLogRecord to(CallLogToParty to) {
         this.to = to;
         return this;
     }
@@ -211,6 +271,16 @@ public class CallLogRecord {
 
     public CallLogRecord direction(String direction) {
         this.direction = direction;
+        return this;
+    }
+
+    public CallLogRecord message(CallLogRecordMessage message) {
+        this.message = message;
+        return this;
+    }
+
+    public CallLogRecord delegate(CallLogDelegateInfo delegate) {
+        this.delegate = delegate;
         return this;
     }
 
@@ -229,6 +299,11 @@ public class CallLogRecord {
         return this;
     }
 
+    public CallLogRecord reasonDescription(String reasonDescription) {
+        this.reasonDescription = reasonDescription;
+        return this;
+    }
+
     public CallLogRecord startTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -239,43 +314,23 @@ public class CallLogRecord {
         return this;
     }
 
+    public CallLogRecord durationMs(Long durationMs) {
+        this.durationMs = durationMs;
+        return this;
+    }
+
     public CallLogRecord recording(CallLogRecordingInfo recording) {
         this.recording = recording;
         return this;
     }
 
-    public CallLogRecord lastModifiedTime(String lastModifiedTime) {
-        this.lastModifiedTime = lastModifiedTime;
+    public CallLogRecord shortRecording(Boolean shortRecording) {
+        this.shortRecording = shortRecording;
         return this;
     }
 
-    public CallLogRecord transport(String transport) {
-        this.transport = transport;
-        return this;
-    }
-
-    public CallLogRecord extension(ActiveCallsRecordExtensionInfo extension) {
-        this.extension = extension;
-        return this;
-    }
-
-    public CallLogRecord delegate(CallLogDelegateInfo delegate) {
-        this.delegate = delegate;
-        return this;
-    }
-
-    public CallLogRecord legs(CallLogRecordLegInfo[] legs) {
-        this.legs = legs;
-        return this;
-    }
-
-    public CallLogRecord message(CallLogRecordMessage message) {
-        this.message = message;
-        return this;
-    }
-
-    public CallLogRecord deleted(Boolean deleted) {
-        this.deleted = deleted;
+    public CallLogRecord billing(BillingInfo billing) {
+        this.billing = billing;
         return this;
     }
 

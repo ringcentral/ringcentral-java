@@ -16,11 +16,11 @@ public class CallQueueMembers {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public CallQueueMembers uri(String uri) {
         this.uri = uri;
@@ -32,12 +32,12 @@ public class CallQueueMembers {
         return this;
     }
 
-    public CallQueueMembers navigation(ProvisioningNavigationInfo navigation) {
+    public CallQueueMembers navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public CallQueueMembers paging(ProvisioningPagingInfo paging) {
+    public CallQueueMembers paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

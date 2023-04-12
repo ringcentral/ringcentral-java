@@ -33,12 +33,12 @@ public class Index {
      * App Permission: ReadCallLog
      * User Permission: ReadCallLog
      */
-    public UserCallLogResponse list(ReadUserCallLogParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogResponse list(ReadUserCallLogParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), UserCallLogResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallLogResponse.class);
     }
 
-    public UserCallLogResponse list() throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogResponse list() throws com.ringcentral.RestException, java.io.IOException {
         return this.list(null);
     }
 
@@ -67,15 +67,15 @@ public class Index {
      * App Permission: ReadCallLog
      * User Permission: ReadCallLog
      */
-    public UserCallLogRecord get(ReadUserCallRecordParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogRecord get(ReadUserCallRecordParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (callRecordId == null) {
             throw new IllegalArgumentException("Parameter callRecordId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), UserCallLogRecord.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallLogRecord.class);
     }
 
-    public UserCallLogRecord get() throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogRecord get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
 }

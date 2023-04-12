@@ -14,11 +14,11 @@ public class PagingOnlyGroupDevices {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public PagingOnlyGroupDevices uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class PagingOnlyGroupDevices {
         return this;
     }
 
-    public PagingOnlyGroupDevices navigation(ProvisioningNavigationInfo navigation) {
+    public PagingOnlyGroupDevices navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public PagingOnlyGroupDevices paging(ProvisioningPagingInfo paging) {
+    public PagingOnlyGroupDevices paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

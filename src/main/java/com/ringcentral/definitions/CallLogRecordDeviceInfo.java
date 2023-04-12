@@ -4,10 +4,12 @@ package com.ringcentral.definitions;
 public class CallLogRecordDeviceInfo {
     /**
      * Internal identifier of a device
+     * Required
      */
     public String id;
     /**
      * Canonical URI of a device resource
+     * Required
      * Format: uri
      */
     public String uri;

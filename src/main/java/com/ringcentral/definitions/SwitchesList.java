@@ -9,23 +9,23 @@ public class SwitchesList {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public SwitchesList records(SwitchInfo[] records) {
         this.records = records;
         return this;
     }
 
-    public SwitchesList navigation(ProvisioningNavigationInfo navigation) {
+    public SwitchesList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public SwitchesList paging(ProvisioningPagingInfo paging) {
+    public SwitchesList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

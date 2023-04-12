@@ -16,11 +16,11 @@ public class CallMonitoringGroupMemberList {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public CallMonitoringGroupMemberList uri(String uri) {
         this.uri = uri;
@@ -32,12 +32,12 @@ public class CallMonitoringGroupMemberList {
         return this;
     }
 
-    public CallMonitoringGroupMemberList navigation(ProvisioningNavigationInfo navigation) {
+    public CallMonitoringGroupMemberList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public CallMonitoringGroupMemberList paging(ProvisioningPagingInfo paging) {
+    public CallMonitoringGroupMemberList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

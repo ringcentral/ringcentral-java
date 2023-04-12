@@ -75,7 +75,7 @@ public class ContactResource {
     /**
      *
      */
-    public RoleResource role;
+    public DirectoryRoleResource role;
     /**
      *
      */
@@ -176,7 +176,7 @@ public class ContactResource {
         return this;
     }
 
-    public ContactResource role(RoleResource role) {
+    public ContactResource role(DirectoryRoleResource role) {
         this.role = role;
         return this;
     }

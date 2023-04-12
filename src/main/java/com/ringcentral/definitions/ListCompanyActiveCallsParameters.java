@@ -29,6 +29,11 @@ public class ListCompanyActiveCallsParameters {
      */
     public String[] transport;
     /**
+     * Conference call type: RCC or RC Meetings. If not specified, no conference call filter applied
+     * Enum: AudioConferencing, Meetings
+     */
+    public String[] conferenceType;
+    /**
      * Indicates the page number to retrieve. Only positive number values are accepted
      * Minimum: 1
      * Format: int32
@@ -60,6 +65,11 @@ public class ListCompanyActiveCallsParameters {
 
     public ListCompanyActiveCallsParameters transport(String[] transport) {
         this.transport = transport;
+        return this;
+    }
+
+    public ListCompanyActiveCallsParameters conferenceType(String[] conferenceType) {
+        this.conferenceType = conferenceType;
         return this;
     }
 

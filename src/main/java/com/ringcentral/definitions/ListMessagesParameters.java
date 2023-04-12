@@ -13,9 +13,8 @@ public class ListMessagesParameters {
     public String[] availability;
     /**
      * Specifies a conversation identifier for the resulting messages
-     * Format: int64
      */
-    public Long conversationId;
+    public String conversationId;
     /**
      * Start datetime for resulting messages in ISO 8601 format
      * including timezone, for example 2016-03-10T18:07:52.534Z. The default value
@@ -77,7 +76,7 @@ public class ListMessagesParameters {
         return this;
     }
 
-    public ListMessagesParameters conversationId(Long conversationId) {
+    public ListMessagesParameters conversationId(String conversationId) {
         this.conversationId = conversationId;
         return this;
     }

@@ -15,11 +15,7 @@ public class Index {
 
 
     public com.ringcentral.paths.analytics.calls.Index calls() {
-        return this.calls("v1");
-    }
-
-    public com.ringcentral.paths.analytics.calls.Index calls(String version) {
-        return new com.ringcentral.paths.analytics.calls.Index(this, version);
+        return new com.ringcentral.paths.analytics.calls.Index(this);
     }
 
 }

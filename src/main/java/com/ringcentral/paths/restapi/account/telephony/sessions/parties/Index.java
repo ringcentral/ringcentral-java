@@ -95,6 +95,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.move.Index move() {
+        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.move.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.account.telephony.sessions.parties.reply.Index reply() {
         return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.reply.Index(this);
     }
@@ -156,6 +161,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings.Index recordings(String recordingId) {
         return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings.Index(this, recordingId);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.promotetorcv.Index promoteToRcv() {
+        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.promotetorcv.Index(this);
     }
 
 }

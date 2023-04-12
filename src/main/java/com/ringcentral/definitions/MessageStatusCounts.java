@@ -2,11 +2,16 @@ package com.ringcentral.definitions;
 
 
 /**
- * The count of the status
+ * Message status parameters
  */
 public class MessageStatusCounts {
     /**
-     * The count of the status
+     * Total cost of all messages with this status code
+     * Format: float
+     */
+    public Double cost;
+    /**
+     * Count of messages with this status code
      * Format: int64
      * Example: 7
      */
@@ -15,6 +20,11 @@ public class MessageStatusCounts {
      *
      */
     public Object errorCodeCounts;
+
+    public MessageStatusCounts cost(Double cost) {
+        this.cost = cost;
+        return this;
+    }
 
     public MessageStatusCounts count(Long count) {
         this.count = count;

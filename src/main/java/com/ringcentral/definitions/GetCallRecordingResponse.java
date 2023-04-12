@@ -4,20 +4,24 @@ package com.ringcentral.definitions;
 public class GetCallRecordingResponse {
     /**
      * Internal identifier of a call recording
+     * Required
      */
     public String id;
     /**
      * Link to a call recording binary content. Has to be retrieved with proper authorization
      * (access token must be passed via `Authorization` header or query parameter)
+     * Required
      * Format: uri
      */
     public String contentUri;
     /**
      * Call recording file format. Supported format is audio/x-wav
+     * Required
      */
     public String contentType;
     /**
      * Recorded call duration
+     * Required
      * Format: int32
      */
     public Long duration;

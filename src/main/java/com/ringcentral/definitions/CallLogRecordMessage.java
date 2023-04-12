@@ -7,14 +7,17 @@ package com.ringcentral.definitions;
 public class CallLogRecordMessage {
     /**
      * Internal identifier of a message
+     * Required
      */
     public String id;
     /**
      * Type of a message
+     * Required
      */
     public String type;
     /**
      * Link to a message resource
+     * Required
      * Format: uri
      */
     public String uri;

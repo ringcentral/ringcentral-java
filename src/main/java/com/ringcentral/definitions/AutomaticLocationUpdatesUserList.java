@@ -14,11 +14,11 @@ public class AutomaticLocationUpdatesUserList {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public AutomaticLocationUpdatesUserList uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class AutomaticLocationUpdatesUserList {
         return this;
     }
 
-    public AutomaticLocationUpdatesUserList navigation(ProvisioningNavigationInfo navigation) {
+    public AutomaticLocationUpdatesUserList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public AutomaticLocationUpdatesUserList paging(ProvisioningPagingInfo paging) {
+    public AutomaticLocationUpdatesUserList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

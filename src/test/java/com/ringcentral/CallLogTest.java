@@ -1,7 +1,7 @@
 package com.ringcentral;
 
+import com.ringcentral.definitions.CallLogResponse;
 import com.ringcentral.definitions.ReadUserCallLogParameters;
-import com.ringcentral.definitions.UserCallLogResponse;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class CallLogTest {
 
         getParameters.type = new String[]{"Voice"};
 
-        UserCallLogResponse response = rc.restapi().account().extension().callLog().list(getParameters);
+        CallLogResponse response = rc.restapi().account().extension().callLog().list(getParameters);
 
         assertNotNull(response.records);
 

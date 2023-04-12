@@ -24,6 +24,16 @@ public class ListExtensionActiveCallsParameters {
      */
     public String[] type;
     /**
+     * The type of call transport. Multiple values are supported. By default this filter is disabled
+     * Enum: PSTN, VoIP
+     */
+    public String[] transport;
+    /**
+     * Conference call type: RCC or RC Meetings. If not specified, no conference call filter applied
+     * Enum: AudioConferencing, Meetings
+     */
+    public String[] conferenceType;
+    /**
      * Indicates the page number to retrieve. Only positive number values are allowed
      * Format: int32
      * Default: 1
@@ -48,6 +58,16 @@ public class ListExtensionActiveCallsParameters {
 
     public ListExtensionActiveCallsParameters type(String[] type) {
         this.type = type;
+        return this;
+    }
+
+    public ListExtensionActiveCallsParameters transport(String[] transport) {
+        this.transport = transport;
+        return this;
+    }
+
+    public ListExtensionActiveCallsParameters conferenceType(String[] conferenceType) {
+        this.conferenceType = conferenceType;
         return this;
     }
 

@@ -19,8 +19,8 @@ public class ConsumeTextTest {
             System.getenv("RINGCENTRAL_PASSWORD")
         );
 
-        String groupId = rc.teamMessaging().chats().list().records[0].id;
-        String postId = rc.teamMessaging().chats(groupId).posts().list().records[0].id;
+        String groupId = rc.teamMessaging().v1().chats().list().records[0].id;
+        String postId = rc.teamMessaging().v1().chats(groupId).posts().list().records[0].id;
 
         // below is for experiment only
 //        String newText = UUID.randomUUID().toString();

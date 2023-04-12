@@ -15,11 +15,11 @@ public class GetTimezoneListResponse {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public GetTimezoneListResponse uri(String uri) {
         this.uri = uri;
@@ -31,12 +31,12 @@ public class GetTimezoneListResponse {
         return this;
     }
 
-    public GetTimezoneListResponse navigation(ProvisioningNavigationInfo navigation) {
+    public GetTimezoneListResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public GetTimezoneListResponse paging(ProvisioningPagingInfo paging) {
+    public GetTimezoneListResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

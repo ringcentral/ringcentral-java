@@ -23,24 +23,28 @@ public class EnumeratedPagingModel {
      */
     public Long page;
     /**
-     * The zero-based number of the first element on the current page. Omitted if the page is omitted or result is empty
+     * The zero-based number of the first element on the current page.
+     * Omitted if the page is omitted or result is empty
      * Format: int32
      */
     public Long pageStart;
     /**
-     * The zero-based index of the last element on the current page. Omitted if the page is omitted or result is empty
+     * The zero-based index of the last element on the current page.
+     * Omitted if the page is omitted or result is empty
      * Format: int32
      * Example: 5
      */
     public Long pageEnd;
     /**
-     * The total number of pages in a dataset. May be omitted for some resources due to performance reasons
+     * The total number of pages in a dataset. May be omitted for
+     * some resources due to performance reasons
      * Format: int32
      * Example: 25
      */
     public Long totalPages;
     /**
-     * The total number of elements in a dataset. May be omitted for some resource due to performance reasons
+     * The total number of elements in a dataset. May be omitted for
+     * some resource due to performance reasons
      * Format: int32
      * Example: 25
      */

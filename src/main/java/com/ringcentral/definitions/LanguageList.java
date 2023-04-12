@@ -14,11 +14,11 @@ public class LanguageList {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public LanguageList uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class LanguageList {
         return this;
     }
 
-    public LanguageList navigation(ProvisioningNavigationInfo navigation) {
+    public LanguageList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public LanguageList paging(ProvisioningPagingInfo paging) {
+    public LanguageList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

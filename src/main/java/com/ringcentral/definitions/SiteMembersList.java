@@ -14,11 +14,11 @@ public class SiteMembersList {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public SiteMembersList uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class SiteMembersList {
         return this;
     }
 
-    public SiteMembersList navigation(ProvisioningNavigationInfo navigation) {
+    public SiteMembersList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public SiteMembersList paging(ProvisioningPagingInfo paging) {
+    public SiteMembersList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

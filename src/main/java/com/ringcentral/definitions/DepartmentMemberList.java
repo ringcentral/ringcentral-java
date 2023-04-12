@@ -18,11 +18,11 @@ public class DepartmentMemberList {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public DepartmentMemberList uri(String uri) {
         this.uri = uri;
@@ -34,12 +34,12 @@ public class DepartmentMemberList {
         return this;
     }
 
-    public DepartmentMemberList navigation(ProvisioningNavigationInfo navigation) {
+    public DepartmentMemberList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public DepartmentMemberList paging(ProvisioningPagingInfo paging) {
+    public DepartmentMemberList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

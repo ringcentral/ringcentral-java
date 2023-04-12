@@ -14,11 +14,11 @@ public class GetStateListResponse {
     /**
      *
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      *
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public GetStateListResponse uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class GetStateListResponse {
         return this;
     }
 
-    public GetStateListResponse navigation(ProvisioningNavigationInfo navigation) {
+    public GetStateListResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public GetStateListResponse paging(ProvisioningPagingInfo paging) {
+    public GetStateListResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

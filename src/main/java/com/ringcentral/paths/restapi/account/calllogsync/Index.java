@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.calllogsync;
 
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AccountCallLogSyncResponse;
+import com.ringcentral.definitions.CallLogSyncResponse;
 import com.ringcentral.definitions.SyncAccountCallLogParameters;
 
 public class Index {
@@ -25,12 +25,12 @@ public class Index {
      * App Permission: ReadCallLog
      * User Permission: ReadCallLog
      */
-    public AccountCallLogSyncResponse get(SyncAccountCallLogParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogSyncResponse get(SyncAccountCallLogParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), AccountCallLogSyncResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallLogSyncResponse.class);
     }
 
-    public AccountCallLogSyncResponse get() throws com.ringcentral.RestException, java.io.IOException {
+    public CallLogSyncResponse get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
 }

@@ -15,11 +15,11 @@ public class GetExtensionGrantListResponse {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public GetExtensionGrantListResponse uri(String uri) {
         this.uri = uri;
@@ -31,12 +31,12 @@ public class GetExtensionGrantListResponse {
         return this;
     }
 
-    public GetExtensionGrantListResponse navigation(ProvisioningNavigationInfo navigation) {
+    public GetExtensionGrantListResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public GetExtensionGrantListResponse paging(ProvisioningPagingInfo paging) {
+    public GetExtensionGrantListResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

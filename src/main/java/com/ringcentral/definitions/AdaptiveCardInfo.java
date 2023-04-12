@@ -54,7 +54,7 @@ public class AdaptiveCardInfo {
      */
     public String fallbackText;
     /**
-     * Specifies the background image of a card
+     * Specifies a background image oa a card. Acceptable formats are PNG, JPEG, and GIF
      */
     public BackgroundImage backgroundImage;
     /**

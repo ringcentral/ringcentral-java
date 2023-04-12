@@ -14,11 +14,11 @@ public class GetLocationListResponse {
     /**
      * Required
      */
-    public ProvisioningNavigationInfo navigation;
+    public PageNavigationModel navigation;
     /**
      * Required
      */
-    public ProvisioningPagingInfo paging;
+    public EnumeratedPagingModel paging;
 
     public GetLocationListResponse uri(String uri) {
         this.uri = uri;
@@ -30,12 +30,12 @@ public class GetLocationListResponse {
         return this;
     }
 
-    public GetLocationListResponse navigation(ProvisioningNavigationInfo navigation) {
+    public GetLocationListResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public GetLocationListResponse paging(ProvisioningPagingInfo paging) {
+    public GetLocationListResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

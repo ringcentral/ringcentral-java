@@ -148,7 +148,7 @@ Please refer to the [RingCentral PubNub SDK for Java](https://github.com/ringcen
 
 ### 3.0.0
 
-We have renamed all "glip" to "team-messaging". For example:
+We have renamed all "glip" to "team-messaging/v1". For example:
 
 ```java
 rc.restapi().glip()...
@@ -157,5 +157,5 @@ rc.restapi().glip()...
 becomes
 
 ```java
-rc.teamMessaging()...
+rc.teamMessaging().v1()...
 ```

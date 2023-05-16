@@ -35,14 +35,3 @@ Update version numbers in `build.gradle`.
 Go to https://s01.oss.sonatype.org/#stagingRepositories
 
 Login, "Close" and "Release" the SDK.
-
-## Publish java doc
-
-```
-./gradlew javadoc
-cp -r build/docs/javadoc/* ./docs/
-```
-
-Issue: https://stackoverflow.com/questions/52326318/maven-javadoc-search-redirects-to-undefined-url
-
-Fix by edit `search.js` and let method `getURLPrefix` return empty string.

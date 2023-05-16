@@ -9,6 +9,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.text.MessageFormat;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class RestClient {
@@ -29,7 +30,11 @@ public class RestClient {
         this.clientSecret = clientSecret;
         this.server = server;
         if (okHttpClient == null) {
-            this.httpClient = new OkHttpClient();
+            this.httpClient = new OkHttpClient.Builder()
+                .connectTimeout(5, TimeUnit.MINUTES)
+                .writeTimeout(5, TimeUnit.MINUTES)
+                .readTimeout(5, TimeUnit.MINUTES)
+                .build();
         } else {
             this.httpClient = okHttpClient;
         }

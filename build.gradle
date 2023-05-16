@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'com.ringcentral'
-version '3.0.0-beta4'
+version '3.0.0'
 
 sourceCompatibility = 1.8
 
@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.10.0'
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.11.0'
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
 

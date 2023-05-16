@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/presence";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns presence status of all extensions of an account. Please note: The presenceStatus is returned as Offline (the parameters telephonyStatus, message, userStatus and dndStatus are not returned at all) for the following extension types: Department, Announcement Only, Voicemail (Take Messages Only), Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.
      * HTTP Method: get

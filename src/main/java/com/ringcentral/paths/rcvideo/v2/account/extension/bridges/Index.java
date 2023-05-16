@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/bridges";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates a new bridge for the user specified by **accountId** and **extensionId** identifiers. The request body
      * should contain JSON object which describes properties of the new bridge.

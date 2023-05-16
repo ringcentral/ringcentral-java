@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/speaker-identify";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns Speaker Identification to the provided webhook uri.
      * HTTP Method: post

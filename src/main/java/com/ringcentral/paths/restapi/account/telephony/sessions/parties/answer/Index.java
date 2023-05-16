@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/answer";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Answers a call on a certain device by passing the corresponding device ID in request body. Supported for call forwarding, call transfer, call flip and call queues.
      * HTTP Method: post

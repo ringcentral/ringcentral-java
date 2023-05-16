@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/members";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of members for a call monitoring group specified in path.
      * <p>

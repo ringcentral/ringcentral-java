@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/overflow-settings";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns overflow settings for a call queue specified in path.
      * <p>

@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/bulk-assign";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Assigns multiple call queue members to call queue group.
      * <p>

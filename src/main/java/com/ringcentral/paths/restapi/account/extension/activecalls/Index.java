@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/active-calls";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns records of all extension calls that are in progress, ordered
      * by start time in descending order.

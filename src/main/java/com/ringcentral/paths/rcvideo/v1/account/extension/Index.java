@@ -26,11 +26,7 @@ public class Index {
 
 
     public com.ringcentral.paths.rcvideo.v1.account.extension.recordings.Index recordings() {
-        return this.recordings(null);
-    }
-
-    public com.ringcentral.paths.rcvideo.v1.account.extension.recordings.Index recordings(String recordingId) {
-        return new com.ringcentral.paths.rcvideo.v1.account.extension.recordings.Index(this, recordingId);
+        return new com.ringcentral.paths.rcvideo.v1.account.extension.recordings.Index(this);
     }
 
 }

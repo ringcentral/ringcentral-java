@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/location";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns all available locations for a certain state.
      * <p>

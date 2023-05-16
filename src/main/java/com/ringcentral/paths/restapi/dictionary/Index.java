@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/dictionary";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.dictionary.brand.Index brand() {
         return this.brand(null);

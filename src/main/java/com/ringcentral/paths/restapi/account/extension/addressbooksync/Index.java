@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/address-book-sync";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Synchronizes user contacts.
      * <p>

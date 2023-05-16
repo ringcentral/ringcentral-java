@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/call-log-sync";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Synchronizes call log records
      * HTTP Method: get

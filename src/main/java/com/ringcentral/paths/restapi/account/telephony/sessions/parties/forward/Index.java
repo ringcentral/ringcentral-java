@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/forward";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Forwards a non-answered incoming call to the specified call party. Applicable for a call session in &quot;Setup&quot; or &quot;Proceeding&quot; state.
      * HTTP Method: post

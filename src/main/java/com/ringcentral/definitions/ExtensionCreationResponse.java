@@ -17,6 +17,10 @@ public class ExtensionCreationResponse {
      */
     public ContactInfo contact;
     /**
+     * Cost center information
+     */
+    public ExtensionCreationResponseCostCenter costCenter;
+    /**
      *
      */
     public CustomFieldInfo[] customFields;
@@ -107,6 +111,11 @@ public class ExtensionCreationResponse {
 
     public ExtensionCreationResponse contact(ContactInfo contact) {
         this.contact = contact;
+        return this;
+    }
+
+    public ExtensionCreationResponse costCenter(ExtensionCreationResponseCostCenter costCenter) {
+        this.costCenter = costCenter;
         return this;
     }
 

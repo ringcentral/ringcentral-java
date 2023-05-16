@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/grant";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of extensions with information on grants
      * given to the current extension regarding them. Currently the list of grants

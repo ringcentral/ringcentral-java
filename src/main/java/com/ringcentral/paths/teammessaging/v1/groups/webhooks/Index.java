@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/webhooks";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns webhooks which are available for the current user by group ID.
      * HTTP Method: get

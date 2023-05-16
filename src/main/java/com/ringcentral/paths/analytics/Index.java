@@ -13,6 +13,10 @@ public class Index {
         return "" + "/analytics";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.analytics.calls.Index calls() {
         return new com.ringcentral.paths.analytics.calls.Index(this);

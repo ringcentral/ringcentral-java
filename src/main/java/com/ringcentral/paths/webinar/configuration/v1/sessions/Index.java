@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/sessions";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of Webinar Sessions hosted by a current authorized user sorted by
      * &#039;scheduledStartTime&#039; or &#039;creationTime&#039; (if &#039;scheduledStartTime&#039; is not set) in the ascending order

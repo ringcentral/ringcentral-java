@@ -18,8 +18,14 @@ public class Index {
         return parent.path() + "/speaker-diarize";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
-     * Returns Speaker Diarization to the provided webhook uri.
+     * Identifies who said what. Speaker diarization will identify the speaker for each segment
+     * so you can tell who spoke the sentence, paragraph, or phrase.
+     * <p>
      * HTTP Method: post
      * Endpoint: /ai/audio/v1/async/speaker-diarize
      * Rate Limit Group: Heavy

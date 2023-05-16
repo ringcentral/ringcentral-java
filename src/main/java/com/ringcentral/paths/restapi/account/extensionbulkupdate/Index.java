@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/extension-bulk-update";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Updates multiple extensions at once. Maximum 500 extensions can be updated per request.
      * <p>

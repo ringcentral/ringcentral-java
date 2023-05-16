@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/conference";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Initiates a conference call session.
      * HTTP Method: post

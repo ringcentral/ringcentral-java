@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/emergency";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Updates account device emergency information.
      * HTTP Method: put

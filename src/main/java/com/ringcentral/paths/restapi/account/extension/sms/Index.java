@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/sms";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates and sends a new text message or multiple messages. You can send SMS
      * messages simultaneously to different recipients up to 40 requests per minute;

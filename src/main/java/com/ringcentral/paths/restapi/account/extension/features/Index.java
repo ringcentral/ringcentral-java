@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/features";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of supported features and information on their
      * availability for the current extension. Specific feature(s) might

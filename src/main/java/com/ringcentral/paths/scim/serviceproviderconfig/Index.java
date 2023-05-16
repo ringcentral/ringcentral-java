@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/ServiceProviderConfig";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns SCIM service provider configuration
      * HTTP Method: get

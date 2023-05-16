@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/call-recording";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns call recording settings.
      * HTTP Method: get

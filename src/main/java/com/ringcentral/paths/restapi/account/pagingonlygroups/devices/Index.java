@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/devices";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of paging devices assigned to this group.
      * <p>

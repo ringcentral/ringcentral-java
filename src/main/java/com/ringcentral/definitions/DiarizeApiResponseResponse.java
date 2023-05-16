@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class DiarizeApiResponseResponse {
     /**
      * Format: int32
-     * Example: 3
+     * Example: 2
      */
     public Long speakerCount;
     /**

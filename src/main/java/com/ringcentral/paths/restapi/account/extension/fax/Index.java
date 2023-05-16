@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/fax";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates and sends/resends a fax message. Resend can be implemented
      * if sending has failed. Fax attachment size (both single and total) is

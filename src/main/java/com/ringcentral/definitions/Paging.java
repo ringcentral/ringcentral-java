@@ -2,11 +2,11 @@ package com.ringcentral.definitions;
 
 
 /**
- * Paging
+ * Paging information
  */
 public class Paging {
     /**
-     * Current page offset token
+     * Current offset token
      */
     public String currentPageToken;
     /**

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/everyone";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns information about &quot;Everyone&quot; chat (a company level chat which includes all employees).
      * HTTP Method: get

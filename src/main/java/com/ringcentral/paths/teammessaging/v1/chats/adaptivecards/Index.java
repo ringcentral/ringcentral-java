@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/adaptive-cards";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates a new adaptive card in the chat specified in path.
      * HTTP Method: post

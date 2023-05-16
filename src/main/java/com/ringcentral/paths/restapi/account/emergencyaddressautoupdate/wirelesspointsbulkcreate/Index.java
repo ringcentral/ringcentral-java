@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/wireless-points-bulk-create";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates multiple wireless points in a corporate map. The maximum
      * number of wireless points per request is 10 000; limitation for account is

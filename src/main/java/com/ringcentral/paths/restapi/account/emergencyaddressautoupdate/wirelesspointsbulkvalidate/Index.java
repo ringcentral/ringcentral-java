@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/wireless-points-bulk-validate";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Validates wireless points before creation or update. The maximum
      * number of wireless points per request is 10 000.

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/chats";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns recent chats where the user is a member. All records in response are sorted by the `lastModifiedTime` in descending order (the latest changed chat is displayed first on page)
      * HTTP Method: get

@@ -117,7 +117,8 @@ public class Index {
     }
 
     /**
-     * Updates particular values of a personal contact attributes specified in request (partial resource update).
+     * Updates particular values of a personal contact attributes specified in request (partial resource update). Omitted attributes will remain unchanged.
+     * If any attribute is passed in request body with the null value, then this attribute value will be removed.
      * <p>
      * HTTP Method: patch
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}

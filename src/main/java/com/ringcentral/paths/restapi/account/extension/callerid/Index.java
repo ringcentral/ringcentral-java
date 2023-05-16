@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/caller-id";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns information on an outbound caller ID of an extension.
      * <p>

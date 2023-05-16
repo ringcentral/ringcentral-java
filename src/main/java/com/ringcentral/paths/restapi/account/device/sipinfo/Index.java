@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/sip-info";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns device SIP information.
      * HTTP Method: get

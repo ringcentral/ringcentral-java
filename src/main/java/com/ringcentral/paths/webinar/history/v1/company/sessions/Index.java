@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/sessions";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of historical Webinar Sessions hosted by particular user(s) or all company users
      * sorted by &#039;endTime&#039; in the descending order. Depending on a session status &#039;endTime&#039; can

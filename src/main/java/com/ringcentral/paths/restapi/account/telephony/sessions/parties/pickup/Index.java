@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/pickup";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Picks up a call parked to the specified park location.
      * HTTP Method: post

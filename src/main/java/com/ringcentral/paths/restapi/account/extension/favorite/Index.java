@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/favorite";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of favorite contacts of the current extension.
      * Favorite contacts include both company contacts (extensions) and personal

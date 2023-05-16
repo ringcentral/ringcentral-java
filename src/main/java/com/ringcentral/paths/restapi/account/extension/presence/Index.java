@@ -19,6 +19,10 @@ public class Index {
         return parent.path() + "/presence";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns presence status of an extension or several extensions by their ID(s). Batch request is supported. The &#039;presenceStatus&#039; is returned as Offline (the parameters &#039;telephonyStatus&#039;, &#039;message&#039;, &#039;userStatus&#039; and &#039;dndStatus&#039; are not returned at all) for the following extension types: Department/Announcement Only/Take Messages Only (Voicemail)/Fax User/Paging Only Group/Shared Lines Group/IVR Menu/Application Extension/Park Location.If the user requests his/her own presence status, the response contains actual presence status even if the status publication is turned off. Batch request is supported. For batch requests the number of extensions in one request is limited to 30. If more extensions are included in the request, the error code 400 Bad Request is returned with the logical error code InvalidMultipartRequest and the corresponding message &#039;Extension Presence Info multipart request is limited to 30 extensions&#039;.
      * HTTP Method: get

@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/archive";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Changes the status of the specified team to &#039;Archived&#039;.
      * HTTP Method: post

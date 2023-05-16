@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/speech-to-text";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns Speech to Text Conversion to the provided webhook uri.
      * HTTP Method: post

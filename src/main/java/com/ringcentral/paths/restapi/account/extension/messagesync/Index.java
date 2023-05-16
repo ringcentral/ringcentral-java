@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/message-sync";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Synchronizes messages.
      * HTTP Method: get

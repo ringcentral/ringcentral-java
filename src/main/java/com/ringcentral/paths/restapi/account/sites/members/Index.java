@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/members";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns members of a site specified in path.
      * <p>

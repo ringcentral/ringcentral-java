@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/events";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of calendar events available for the current user within the specified group. Users can only see their personal tasks and public tasks.
      * HTTP Method: get

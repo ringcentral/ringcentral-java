@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/summarize";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns Conversational Summarization to webhook uri.
      * HTTP Method: post

@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/default";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the default user role of the current account.
      * HTTP Method: get

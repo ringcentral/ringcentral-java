@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/bulk-assign";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates or updates the list of extensions to be recorded.
      * HTTP Method: post

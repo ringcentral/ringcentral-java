@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/wireless-points-bulk-update";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Updates wireless points in corporate map. The maximum number of
      * wireless points per request is 10 000; limitation for account is 70 000.

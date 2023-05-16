@@ -80,7 +80,7 @@ public class Index {
     }
 
     /**
-     * Deletes a Webinar by ID. All child objects (Sessions, Participants) will be also deleted.
+     * Deletes a Webinar by ID. All child objects (Sessions, Invitees) will be also deleted.
      * It is disallowed to delete a Webinar which has at least one Session in &#039;Active&#039; or &#039;Finished&#039; state.
      * <p>
      * HTTP Method: delete

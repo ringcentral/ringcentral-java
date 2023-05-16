@@ -21,9 +21,11 @@ public class RecordingBaseModel {
      */
     public Long duration;
     /**
-     *
+     * Indicates if Host or Admin has shared a recording.
+     * Can be set to true only then recording status is &#039;Available&#039;.
+     * Example: true
      */
-    public RecordingSharedStatusModel shared;
+    public Boolean shared;
     /**
      * Time after which recording shared link cannot be accessed by recipients.
      * Format: date-time
@@ -46,7 +48,7 @@ public class RecordingBaseModel {
         return this;
     }
 
-    public RecordingBaseModel shared(RecordingSharedStatusModel shared) {
+    public RecordingBaseModel shared(Boolean shared) {
         this.shared = shared;
         return this;
     }

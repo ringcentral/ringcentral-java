@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/call-queue-presence";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of agent&#039;s call queues with the agent presence status (per queue).
      * HTTP Method: get

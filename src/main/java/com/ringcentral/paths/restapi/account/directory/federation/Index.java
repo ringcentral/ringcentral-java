@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/federation";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns information on a federation and associated accounts.
      * HTTP Method: get

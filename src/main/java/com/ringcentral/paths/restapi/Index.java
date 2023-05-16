@@ -53,6 +53,11 @@ public class Index {
         return com.ringcentral.Utils.gson.fromJson(rb.string(), ApiVersionInfo.class);
     }
 
+    public com.ringcentral.paths.restapi.v2.Index v2() {
+        return new com.ringcentral.paths.restapi.v2.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.oauth.Index oauth() {
         return new com.ringcentral.paths.restapi.oauth.Index(this);
     }

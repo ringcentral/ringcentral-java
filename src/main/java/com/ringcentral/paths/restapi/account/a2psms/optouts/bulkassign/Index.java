@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/bulk-assign";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Adds multiple opt-outs and/or opt-ins for the specified sender number and a set of recipient numbers.
      * <p>

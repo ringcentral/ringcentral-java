@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/caller-blocking";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the current caller blocking settings of a user.
      * HTTP Method: get

@@ -12,7 +12,8 @@ const outputDir = '../src/main/java/com/ringcentral/paths';
 const generatePathMethod = (
   parameter: string | undefined,
   token: string,
-  hasParent: boolean
+  hasParent: boolean,
+  noParentParameter?: boolean
 ): string => {
   if (parameter) {
     return `public String path(Boolean withParameter)
@@ -30,13 +31,23 @@ const generatePathMethod = (
           return path(true);
         }`;
   } else {
+    let parentPath = '""';
+    if (hasParent) {
+      if (noParentParameter) {
+        parentPath = 'parent.path(false)';
+      } else {
+        parentPath = 'parent.path()';
+      }
+    }
     return `public String path()
         {
-            return ${hasParent ? 'parent.path()' : '""'} + "/${token.replace(
-      'dotSearch',
-      '.search'
-    )}";
-        }`;
+            return ${parentPath} + "/${token.replace('dotSearch', '.search')}";
+        }
+        public String path(Boolean withParameter)
+        {
+            return path();
+        }
+        `;
   }
 };
 
@@ -246,7 +257,8 @@ public class Index
     ${generatePathMethod(
       item.parameter,
       R.last(item.paths)!,
-      itemPaths.length > 1
+      itemPaths.length > 1,
+      item.noParentParameter
     )}
 ${item.operations
   .map(operation => generateOperationMethod(operation, item.parameter))

@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/number-parser";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.numberparser.parse.Index parse() {
         return new com.ringcentral.paths.restapi.numberparser.parse.Index(this);

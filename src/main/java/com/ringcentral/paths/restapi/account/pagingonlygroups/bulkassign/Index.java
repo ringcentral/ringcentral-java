@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/bulk-assign";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Adds and/or removes paging group users and devices.
      * <p>

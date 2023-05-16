@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/emergency-address-auto-update";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.tasks.Index tasks() {
         return this.tasks(null);

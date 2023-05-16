@@ -26,7 +26,7 @@ public class ShippingInfo {
     /**
      *
      */
-    public MethodInfo method;
+    public ShippingMethodInfo method;
     /**
      *
      */
@@ -47,7 +47,7 @@ public class ShippingInfo {
         return this;
     }
 
-    public ShippingInfo method(MethodInfo method) {
+    public ShippingInfo method(ShippingMethodInfo method) {
         this.method = method;
         return this;
     }

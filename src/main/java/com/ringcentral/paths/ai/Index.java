@@ -13,6 +13,10 @@ public class Index {
         return "" + "/ai";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.ai.text.Index text() {
         return new com.ringcentral.paths.ai.text.Index(this);

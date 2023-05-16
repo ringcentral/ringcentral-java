@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/participants";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of participants of a given Webinar Session.
      * <p>

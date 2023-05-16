@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/complete";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Completes a task in the specified chat.
      * HTTP Method: post

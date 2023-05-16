@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/telephony";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.account.telephony.sessions.Index sessions() {
         return this.sessions(null);

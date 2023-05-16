@@ -29,7 +29,7 @@ public class Index {
     }
 
     /**
-     * Returns call queues list.
+     * Returns a call queue list.
      * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/call-queues

@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/files";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Posts a file.
      * HTTP Method: post

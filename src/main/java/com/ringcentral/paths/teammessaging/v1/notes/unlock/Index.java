@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/unlock";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Unlocks a note letting other users edit this note. Once the note is locked (by another user) it cannot be unlocked during 5 hours since the lock datetime.
      * HTTP Method: post

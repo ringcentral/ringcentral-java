@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/extensions";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of extensions to be recorded.
      * HTTP Method: get

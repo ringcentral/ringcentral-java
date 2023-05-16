@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/statuses";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Retrieves a set of message counts by message status and error codes filtered by dates, batchId and message direction.
      * HTTP Method: get

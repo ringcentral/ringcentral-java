@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/mms";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates and sends a new media message or multiple messages. Sending MMS
      * messages simultaneously to different recipients is limited up to 50

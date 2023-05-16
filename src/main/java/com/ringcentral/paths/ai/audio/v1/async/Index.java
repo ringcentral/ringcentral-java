@@ -12,7 +12,11 @@ public class Index {
     }
 
     public String path() {
-        return parent.path() + "/async";
+        return parent.path(false) + "/async";
+    }
+
+    public String path(Boolean withParameter) {
+        return path();
     }
 
 

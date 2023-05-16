@@ -3,9 +3,8 @@ package com.ringcentral.definitions;
 
 public class MessageChanges {
     /**
-     * Type of messages to be collected
-     * Example: Fax
-     * Enum: EMail, Fax, SMS, VoiceMail, Pager, Text
+     * Type of the message
+     * Enum: Fax, SMS, VoiceMail, Pager
      */
     public String type;
     /**

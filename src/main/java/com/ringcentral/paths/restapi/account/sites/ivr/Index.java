@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/ivr";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns IVR settings for a site specified in path.
      * <p>

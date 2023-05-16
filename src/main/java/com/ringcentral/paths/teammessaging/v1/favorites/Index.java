@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/favorites";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of the current user&#039;s favorite chats.
      * HTTP Method: get

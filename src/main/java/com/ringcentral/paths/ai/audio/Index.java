@@ -12,7 +12,11 @@ public class Index {
     }
 
     public String path() {
-        return parent.path() + "/audio";
+        return parent.path(false) + "/audio";
+    }
+
+    public String path(Boolean withParameter) {
+        return path();
     }
 
 

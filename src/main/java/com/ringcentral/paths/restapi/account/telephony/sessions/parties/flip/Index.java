@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/flip";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Performs call flip procedure by holding opposite party and calling to the specified target
      * HTTP Method: post

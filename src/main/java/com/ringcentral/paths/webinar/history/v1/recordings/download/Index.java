@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/download";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the webinar recording download link (both Webinar host&#039;s and admin interface).
      * <p>

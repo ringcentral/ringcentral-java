@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/switches-bulk-update";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Updates multiple switches in corporate map. The maximum number
      * of switches per request is 10 000; limitation for account is 10 000.

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/switches-bulk-validate";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Validates switches before creation or update. The maximum number
      * of switches per request is 10 000.

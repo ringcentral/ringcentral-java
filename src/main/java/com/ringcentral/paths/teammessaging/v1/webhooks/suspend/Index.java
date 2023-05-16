@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/suspend";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Suspends a webhook by ID.
      * HTTP Method: post

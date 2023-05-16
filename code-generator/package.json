@@ -12,12 +12,12 @@
     "lower-case-first": "^2.0.2",
     "openapi-types": "^12.1.0",
     "ramda": "^0.29.0",
-    "ringcentral-open-api-parser": "^0.10.0"
+    "ringcentral-open-api-parser": "^0.11.5"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",
-    "@types/node": "^18.15.11",
-    "@types/ramda": "^0.28.24",
+    "@types/node": "^20.1.7",
+    "@types/ramda": "^0.29.1",
     "dotenv-override-true": "^6.2.2",
     "gts": "^3.1.1",
     "ts-node": "^10.9.1",

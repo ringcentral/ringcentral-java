@@ -13,6 +13,10 @@ public class Index {
         return "" + "/webinar";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.webinar.history.Index history() {
         return new com.ringcentral.paths.webinar.history.Index(this);

@@ -55,13 +55,13 @@ public class WcsWebinarSettingsModel {
     public Boolean panelistMuteControlEnabled;
     /**
      * Indicates if Panelists have to be authenticated users
-     * Default: AuthenticatedCoworker
+     * Default: Guest
      * Enum: Guest, AuthenticatedUser, AuthenticatedCoworker
      */
     public String panelistAuthentication;
     /**
      * Indicates if attendees have to be authenticated users
-     * Default: AuthenticatedCoworker
+     * Default: Guest
      * Enum: Guest, AuthenticatedUser, AuthenticatedCoworker
      */
     public String attendeeAuthentication;
@@ -116,6 +116,11 @@ public class WcsWebinarSettingsModel {
      * Default: true
      */
     public Boolean externalLivestreamEnabled;
+    /**
+     * Indicate if the moderated Q&amp;A enabled for webinar
+     * Default: true
+     */
+    public Boolean moderatedQnAEnabled;
 
     public WcsWebinarSettingsModel recordingEnabled(Boolean recordingEnabled) {
         this.recordingEnabled = recordingEnabled;
@@ -224,6 +229,11 @@ public class WcsWebinarSettingsModel {
 
     public WcsWebinarSettingsModel externalLivestreamEnabled(Boolean externalLivestreamEnabled) {
         this.externalLivestreamEnabled = externalLivestreamEnabled;
+        return this;
+    }
+
+    public WcsWebinarSettingsModel moderatedQnAEnabled(Boolean moderatedQnAEnabled) {
+        this.moderatedQnAEnabled = moderatedQnAEnabled;
         return this;
     }
 }

@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/punctuate";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns Smart Punctuation to the provided webhook uri.
      * HTTP Method: post

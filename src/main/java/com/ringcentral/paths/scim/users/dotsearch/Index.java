@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/.search";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of users satisfying search criteria
      * HTTP Method: post

@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/message-store-configuration";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns message store settings.
      * HTTP Method: get

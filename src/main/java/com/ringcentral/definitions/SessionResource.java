@@ -62,6 +62,12 @@ public class SessionResource {
      */
     public String timeZone;
     /**
+     * Session locale code. Can&#039;t be blank or null.
+     * Example: en-US
+     * Default: en-US
+     */
+    public String localeCode;
+    /**
      * The time offset (positive, in seconds) indicating how much in advance
      * (comparing to &quot;scheduledStartTime&quot;) panel members should join for the pre-webinar team sync
      * Format: int32
@@ -79,7 +85,7 @@ public class SessionResource {
      */
     public String broadcastingEndTime;
     /**
-     * Session status from Configuration service
+     * Webinar session status
      * Example: Finished
      * Enum: Scheduled, Active, Finished
      */
@@ -180,6 +186,11 @@ public class SessionResource {
 
     public SessionResource timeZone(String timeZone) {
         this.timeZone = timeZone;
+        return this;
+    }
+
+    public SessionResource localeCode(String localeCode) {
+        this.localeCode = localeCode;
         return this;
     }
 

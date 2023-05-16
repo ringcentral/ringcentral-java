@@ -48,7 +48,7 @@ public class MessageStoreReport {
     /**
      * Type of messages to be collected.
      * Example: Fax,VoiceMail
-     * Enum: EMail, Fax, SMS, VoiceMail, Pager, Text
+     * Enum: Fax, SMS, VoiceMail, Pager
      */
     public String[] messageTypes;
 

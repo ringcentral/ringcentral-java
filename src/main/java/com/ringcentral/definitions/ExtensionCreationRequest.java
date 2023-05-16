@@ -11,6 +11,10 @@ public class ExtensionCreationRequest {
      */
     public String extensionNumber;
     /**
+     * Cost center information
+     */
+    public ExtensionCreationRequestCostCenter costCenter;
+    /**
      *
      */
     public CustomFieldInfo[] customFields;
@@ -79,6 +83,11 @@ public class ExtensionCreationRequest {
 
     public ExtensionCreationRequest extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
+        return this;
+    }
+
+    public ExtensionCreationRequest costCenter(ExtensionCreationRequestCostCenter costCenter) {
+        this.costCenter = costCenter;
         return this;
     }
 

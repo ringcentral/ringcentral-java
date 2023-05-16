@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/notification-settings";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns notification settings for the current extension.
      * <p>

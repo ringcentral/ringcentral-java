@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/phone-number";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of phone numbers that are used by a particular extension,
      * can be filtered by the phone number type. The returned list contains all

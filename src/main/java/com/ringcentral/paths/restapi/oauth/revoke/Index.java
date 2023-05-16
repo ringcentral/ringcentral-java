@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/revoke";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Revokes previously issued access and refresh token.
      * <p>

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/opt-outs";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of numbers opted out from the account. The list can be filtered by `to`/`from` phone number query parameters. Specifying `text/csv` in the Accept header downloads the data in CSV format.
      * HTTP Method: get

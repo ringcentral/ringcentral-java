@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/address-book";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.account.extension.addressbook.contact.Index contact() {
         return this.contact(null);

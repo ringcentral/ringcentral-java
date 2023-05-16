@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/delegators";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of users who can delegate bridge/meeting creation to the given user.
      * HTTP Method: get

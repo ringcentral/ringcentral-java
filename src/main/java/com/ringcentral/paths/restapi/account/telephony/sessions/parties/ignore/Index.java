@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/ignore";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Ignores a call to a call queue agent in `Setup` or `Proceeding` state.
      * HTTP Method: post

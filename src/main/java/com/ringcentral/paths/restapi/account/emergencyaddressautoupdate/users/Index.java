@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/users";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of users with their status of Automatic Location
      * Updates feature.

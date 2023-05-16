@@ -18,8 +18,13 @@ public class Index {
         return parent.path() + "/analyze-interaction";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
-     * Returns Interaction Analytics to the provided webhook uri.
+     * Returns multiple insights including summaries, emotion, key phrases, questions asked, and more in a single API call.
+     * <p>
      * HTTP Method: post
      * Endpoint: /ai/insights/v1/async/analyze-interaction
      * Rate Limit Group: Heavy

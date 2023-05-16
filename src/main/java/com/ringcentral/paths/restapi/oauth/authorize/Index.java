@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/authorize";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Performs OAuth 2.0 authorization (GET version)
      * HTTP Method: get

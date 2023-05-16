@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/directory";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.account.directory.entries.Index entries() {
         return this.entries(null);

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/token";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns access (and potentially refresh) tokens for making API requests.
      * <p>

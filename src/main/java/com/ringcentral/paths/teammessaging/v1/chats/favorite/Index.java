@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/favorite";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Adds the specified chat to the users&#039;s list of favorite chats.
      * HTTP Method: post

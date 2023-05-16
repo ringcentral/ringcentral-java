@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/bulk-assign";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Updates a list of call monitoring groups.
      * <p>

@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/call-queues";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Updates a list of call queues where the user is an agent. This
      * is a full update request, which means that if any call queue where the user is

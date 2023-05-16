@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/search";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the audit trail data with specific filters applied.
      * Audit trail searching is limited to the last 10,000 records or last 180 days, whichever comes first.

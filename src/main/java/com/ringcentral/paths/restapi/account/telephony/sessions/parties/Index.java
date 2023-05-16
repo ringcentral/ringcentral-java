@@ -71,15 +71,6 @@ public class Index {
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CallParty.class);
     }
 
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.play.Index play() {
-        return this.play(null);
-    }
-
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.play.Index play(String playId) {
-        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.play.Index(this, playId);
-    }
-
-
     public com.ringcentral.paths.restapi.account.telephony.sessions.parties.park.Index park() {
         return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.park.Index(this);
     }
@@ -92,11 +83,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index hold() {
         return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index(this);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.move.Index move() {
-        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.move.Index(this);
     }
 
 
@@ -161,11 +147,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings.Index recordings(String recordingId) {
         return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings.Index(this, recordingId);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.promotetorcv.Index promoteToRcv() {
-        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.promotetorcv.Index(this);
     }
 
 }

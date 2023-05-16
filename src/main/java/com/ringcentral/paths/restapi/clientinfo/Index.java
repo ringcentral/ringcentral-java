@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/client-info";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.clientinfo.sipprovision.Index sipProvision() {
         return new com.ringcentral.paths.restapi.clientinfo.sipprovision.Index(this);

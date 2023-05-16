@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/publish";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Publishes a note making it visible to other users.
      * HTTP Method: post

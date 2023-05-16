@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/content";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns media content of an IVR prompt by ID.
      * HTTP Method: get

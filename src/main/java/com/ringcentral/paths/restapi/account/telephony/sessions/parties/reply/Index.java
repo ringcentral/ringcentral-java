@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/reply";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Replies with text/pattern without picking up a call.
      * HTTP Method: post

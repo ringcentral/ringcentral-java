@@ -38,9 +38,11 @@ public class RecordingAdminExtendedItemModel {
      */
     public Long duration;
     /**
-     *
+     * Indicates if Host or Admin has shared a recording.
+     * Can be set to true only then recording status is &#039;Available&#039;.
+     * Example: true
      */
-    public RecordingSharedStatusModel shared;
+    public Boolean shared;
     /**
      * Time after which recording shared link cannot be accessed by recipients.
      * Format: date-time
@@ -89,7 +91,7 @@ public class RecordingAdminExtendedItemModel {
         return this;
     }
 
-    public RecordingAdminExtendedItemModel shared(RecordingSharedStatusModel shared) {
+    public RecordingAdminExtendedItemModel shared(Boolean shared) {
         this.shared = shared;
         return this;
     }

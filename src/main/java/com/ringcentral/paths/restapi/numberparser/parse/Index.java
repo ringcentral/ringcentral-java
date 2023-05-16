@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/parse";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns one or more parsed and/or formatted phone numbers that are passed as strings.
      * HTTP Method: post

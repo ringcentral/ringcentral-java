@@ -12,7 +12,11 @@ public class Index {
     }
 
     public String path() {
-        return parent.path() + "/oauth";
+        return parent.path(false) + "/oauth";
+    }
+
+    public String path(Boolean withParameter) {
+        return path();
     }
 
 

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/switches-bulk-create";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates multiple switches in corporate map. The maximum number
      * of switches per request is 10 000; limitation for account is 10 000.

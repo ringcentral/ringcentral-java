@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/bridge";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Allows the user to connect multiple call session participants over a conference call bridge. The current active call session ID and party ID of the user within this session should be specified in path; the bridged call session ID and party ID of the user within that session should be specified in request body. Thus the user connects participants of two sessions into one conference call using his/her own party IDs from both sessions.
      * HTTP Method: post

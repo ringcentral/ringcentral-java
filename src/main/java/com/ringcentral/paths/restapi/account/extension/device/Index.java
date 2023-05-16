@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/device";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns devices of an extension or multiple extensions by their ID(s). Batch request
      * is supported.

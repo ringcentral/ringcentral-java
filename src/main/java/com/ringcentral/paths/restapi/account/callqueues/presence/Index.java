@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/presence";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns presence status of the call queue members.
      * HTTP Method: get

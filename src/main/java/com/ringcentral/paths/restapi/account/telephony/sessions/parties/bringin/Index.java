@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/bring-in";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Adds a new party to the call session by bringing-in an established SIP call connection. The maximum number of parties to bring-in is 10; only 1 call party can be added per request. Currently the method is supported for sessions of &#039;Conference&#039; origin only.
      * HTTP Method: post

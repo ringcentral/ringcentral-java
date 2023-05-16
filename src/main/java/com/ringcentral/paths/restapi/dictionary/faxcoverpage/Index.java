@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/fax-cover-page";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns fax cover pages available for the current extension.
      * HTTP Method: get

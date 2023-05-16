@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/administered-sites";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of sites administered by the current user.
      * HTTP Method: get

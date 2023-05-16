@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/default";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Assigns the default role to the currently logged-in user extension.
      * HTTP Method: put

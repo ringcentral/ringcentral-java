@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/assigned-role";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of roles assigned to the current extension.
      * HTTP Method: get

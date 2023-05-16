@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/service-info";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the information about service plan, available features
      * and limitations for a particular RingCentral customer account.

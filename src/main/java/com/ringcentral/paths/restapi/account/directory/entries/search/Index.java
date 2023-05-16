@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/search";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns contact information on corporate users of federated accounts according to the specified filtering and ordering.
      * HTTP Method: post

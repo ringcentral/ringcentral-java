@@ -24,7 +24,7 @@ public class FaxResponse {
     /**
      * Recipient information
      */
-    public MessageStoreCallerInfoResponseTo[] to;
+    public FaxResponseTo[] to;
     /**
      * Message creation datetime in ISO 8601 format including timezone,
      * for example 2016-03-10T18:07:52.534Z
@@ -123,7 +123,7 @@ public class FaxResponse {
         return this;
     }
 
-    public FaxResponse to(MessageStoreCallerInfoResponseTo[] to) {
+    public FaxResponse to(FaxResponseTo[] to) {
         this.to = to;
         return this;
     }

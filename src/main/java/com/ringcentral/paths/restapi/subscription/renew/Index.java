@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/renew";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Renews the existing subscription (this request comes with empty body).
      * HTTP Method: post

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/devices";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of common devices with their status of Automatic
      * Location Updates feature.

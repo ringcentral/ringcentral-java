@@ -13,7 +13,7 @@ public class CreateFaxMessageRequest {
      */
     public String faxResolution;
     /**
-     * Recipient&#039;s phone number
+     * Recipient&#039;s phone number(s)
      * Required
      */
     public FaxReceiver[] to;

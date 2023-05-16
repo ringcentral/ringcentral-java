@@ -11,8 +11,8 @@ public class RcwConfigListAllSessionsParameters {
      */
     public String nameFragment;
     /**
-     * Session status from Configuration service
-     * Example: Finished
+     * Session status (for the purposes of Configuration service)
+     * Example: Scheduled
      * Enum: Scheduled, Active, Finished
      */
     public String status;

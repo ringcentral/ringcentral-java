@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/activate";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Activates a webhook by ID.
      * HTTP Method: post

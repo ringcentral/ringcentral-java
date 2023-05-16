@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/aggregation";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.analytics.calls.v1.accounts.aggregation.fetch.Index fetch() {
         return new com.ringcentral.paths.analytics.calls.v1.accounts.aggregation.fetch.Index(this);

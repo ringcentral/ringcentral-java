@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/forward-all-calls";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns information about *Forward All Company Calls* feature setting.
      * HTTP Method: get

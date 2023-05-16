@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/business-address";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns business address of a company.
      * <p>

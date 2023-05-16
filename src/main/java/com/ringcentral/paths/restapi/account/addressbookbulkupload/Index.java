@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/address-book-bulk-upload";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Uploads multiple contacts for multiple extensions at once.
      * Maximum 500 extensions can be uploaded per request. Max amount

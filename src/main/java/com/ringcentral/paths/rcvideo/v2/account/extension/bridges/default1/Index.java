@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/default";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a default bridge (PMI) for the user specified by **accountId**
      * and **extensionId** identifiers.

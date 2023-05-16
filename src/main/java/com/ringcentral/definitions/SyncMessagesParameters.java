@@ -39,7 +39,7 @@ public class SyncMessagesParameters {
     /**
      * Type for the resulting messages. If not specified, all types
      * of messages are returned. Multiple values are accepted
-     * Enum: EMail, Fax, SMS, VoiceMail, Pager, Text
+     * Enum: Fax, SMS, VoiceMail, Pager
      */
     public String[] messageType;
     /**

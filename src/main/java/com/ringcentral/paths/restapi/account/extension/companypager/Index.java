@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/company-pager";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates and sends an internal text message (company pager message).
      * HTTP Method: post

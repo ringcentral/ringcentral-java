@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/conferencing";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns information on Free Conference Calling (FCC) feature
      * for a given extension.

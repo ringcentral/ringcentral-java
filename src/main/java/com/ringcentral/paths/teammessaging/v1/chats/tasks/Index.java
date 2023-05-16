@@ -19,6 +19,10 @@ public class Index {
         return parent.path() + "/tasks";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of tasks of the specified chat.
      * HTTP Method: get

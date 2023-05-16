@@ -13,6 +13,10 @@ public class Index {
         return "" + "/rcvideo";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.rcvideo.v1.Index v1() {
         return new com.ringcentral.paths.rcvideo.v1.Index(this);

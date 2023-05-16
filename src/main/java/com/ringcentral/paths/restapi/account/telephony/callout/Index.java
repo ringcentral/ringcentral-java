@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/call-out";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates a new outbound call out session. Currently this method is supported for Softphone/Hardphone only, since device IDs for WebRTC/Mobile apps cannot be obtained.
      * HTTP Method: post

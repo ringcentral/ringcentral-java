@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/lock";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Locks a note providing the user with the unique write access for 5 hours.
      * HTTP Method: post

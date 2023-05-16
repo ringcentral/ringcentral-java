@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/remove";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Removes members from the specified team.
      * HTTP Method: post

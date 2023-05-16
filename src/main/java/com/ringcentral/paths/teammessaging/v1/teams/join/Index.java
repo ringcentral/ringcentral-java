@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/join";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Adds the current user to the specified team.
      * HTTP Method: post

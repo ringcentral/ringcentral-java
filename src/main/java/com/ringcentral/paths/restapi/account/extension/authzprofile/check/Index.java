@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/check";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Checks if a certain user permission is activated for a particular extension.
      * HTTP Method: get

@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/leave";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Removes the current user from the specified team.
      * HTTP Method: post

@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/sip-provision";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates SIP registration of a device/application (WebPhone, Mobile, Softphone).
      * <p>

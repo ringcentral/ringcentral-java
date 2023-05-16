@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/renew";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Renews the existing webinar subscription.
      * HTTP Method: post

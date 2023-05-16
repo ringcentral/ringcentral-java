@@ -19,6 +19,10 @@ public class Index {
         return parent.path() + "/notes";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns the list of chat notes.
      * HTTP Method: get

@@ -24,6 +24,14 @@ public class SessionLivestreamMinimalModel {
      */
     public String livestreamStatus;
     /**
+     * Last known state of the livestream as notified by Webinar Livestreaming Controller Service (WLCS).
+     * Value may not be consistent with latest state, especially for livestream associated with OAuth2.0 based service providers.
+     * Thus, state must be obtained directly from WLCS
+     * Example: Initialized
+     * Enum: Initialized, Authorized, Configured, PublishSetup, Publishing, Paused, Error, Break, Deleted, Completed
+     */
+    public String previousLivestreamStatus;
+    /**
      *
      */
     public ApiError error;
@@ -40,6 +48,11 @@ public class SessionLivestreamMinimalModel {
 
     public SessionLivestreamMinimalModel livestreamStatus(String livestreamStatus) {
         this.livestreamStatus = livestreamStatus;
+        return this;
+    }
+
+    public SessionLivestreamMinimalModel previousLivestreamStatus(String previousLivestreamStatus) {
+        this.previousLivestreamStatus = previousLivestreamStatus;
         return this;
     }
 

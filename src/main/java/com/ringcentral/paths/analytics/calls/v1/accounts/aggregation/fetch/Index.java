@@ -18,6 +18,10 @@ public class Index {
         return parent.path() + "/fetch";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns call aggregations filtered by parameters specified
      * HTTP Method: post

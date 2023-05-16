@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/unfavorite";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Removes the specified chat from the users&#039;s list of favorite chats.
      * HTTP Method: post

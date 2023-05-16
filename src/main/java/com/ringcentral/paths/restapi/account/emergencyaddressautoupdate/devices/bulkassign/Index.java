@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/bulk-assign";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Enables or disables Automatic Location Updates feature for the
      * specified common phones.

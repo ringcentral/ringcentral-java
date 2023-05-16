@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/a2p-sms";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.account.a2psms.batches.Index batches() {
         return this.batches(null);

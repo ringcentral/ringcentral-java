@@ -25,7 +25,7 @@ public class ListExtensionDevicesParameters {
      */
     public Long perPage;
     /**
-     * Pooling type of a device
+     * Pooling type of a device - Host - a device with standalone paid phone line which can be linked to a soft client instance - Guest - a device with a linked phone line - None - a device without a phone line or with specific line (free, BLA, etc.)
      * Enum: Host, Guest, None
      */
     public String linePooling;
@@ -37,7 +37,7 @@ public class ListExtensionDevicesParameters {
     /**
      * Device type
      * Default: HardPhone
-     * Enum: HardPhone, SoftPhone, OtherPhone, MobileDevice, BLA, Paging, WebPhone, Room
+     * Enum: HardPhone, SoftPhone, OtherPhone, MobileDevice, BLA, Paging, WebPhone, WebRTC, Room
      */
     public String type;
     /**

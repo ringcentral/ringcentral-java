@@ -10,7 +10,7 @@ public class AsrInput {
     /**
      * The encoding of the original audio
      * Required
-     * Example: Mpeg
+     * Example: Wav
      * Enum: Mpeg, Mp4, Wav, Webm, Webp, Aac, Avi, Ogg
      */
     public String encoding;
@@ -27,7 +27,7 @@ public class AsrInput {
     public String source;
     /**
      * Type of the audio
-     * Example: Meeting
+     * Example: CallCenter
      * Enum: CallCenter, Meeting, EarningsCalls, Interview, PressConference, Voicemail
      */
     public String audioType;
@@ -38,7 +38,7 @@ public class AsrInput {
     /**
      * Number of speakers in the file, omit parameter if unknown
      * Format: int32
-     * Example: 3
+     * Example: 2
      */
     public Long speakerCount;
     /**

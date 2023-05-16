@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/hold";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Puts the party to stand-alone mode and starts to play Hold Music according to configuration &amp; state to peers. There is a known limitation for Hold API - hold via REST API doesn&#039;t work with hold placed via RingCentral apps or HardPhone. It means that if you muted participant via Call Control API and RingCentral Desktop app, then you need to unhold both endpoints to remove Hold Music and bring media back.
      * HTTP Method: post

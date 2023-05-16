@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/reject";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Rejects an inbound call in a &quot;Setup&quot; or &quot;Proceeding&quot; state
      * HTTP Method: post

@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/add";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Adds members to the specified team.
      * HTTP Method: post

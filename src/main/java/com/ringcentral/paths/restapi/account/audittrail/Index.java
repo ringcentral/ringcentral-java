@@ -15,6 +15,10 @@ public class Index {
         return parent.path() + "/audit-trail";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
 
     public com.ringcentral.paths.restapi.account.audittrail.search.Index search() {
         return new com.ringcentral.paths.restapi.account.audittrail.search.Index(this);

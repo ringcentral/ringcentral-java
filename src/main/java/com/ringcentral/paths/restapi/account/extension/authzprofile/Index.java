@@ -16,6 +16,10 @@ public class Index {
         return parent.path() + "/authz-profile";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Returns a list of user permissions granted at authorization procedure.
      * Please note: Some permissions may be restricted by extension type.

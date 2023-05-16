@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/greeting";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Creates a custom company greeting.
      * HTTP Method: post

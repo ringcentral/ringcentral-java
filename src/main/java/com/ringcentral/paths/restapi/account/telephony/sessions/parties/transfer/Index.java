@@ -17,6 +17,10 @@ public class Index {
         return parent.path() + "/transfer";
     }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
     /**
      * Transfers an answered call to the specified call party. Applicable for a call session in &quot;Answered&quot; or &quot;Hold&quot; state.
      * HTTP Method: post

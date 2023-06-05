@@ -140,7 +140,13 @@ But not all binary content has been migrated to CDN.
 If the resource to download provides you with a CDN uri, use that CDN uri.
 If there is no CDN uri provided, construct the uri as the [sample code](./samples.md) shows.
 
-## PubNub subscriptions & notifications
+## Subscriptions & notifications
+
+### WebSocket
+
+Please refer to the [RingCentral WebSocket SDK for Java](https://github.com/ringcentral/ringcentral-websocket-java) project.
+
+### (Deprecated) PubNub
 
 Please refer to the [RingCentral PubNub SDK for Java](https://github.com/ringcentral/ringcentral-pubnub-java) project.
 

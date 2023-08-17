@@ -97,6 +97,12 @@ public class RestClient {
         token = null;
     }
 
+    /**
+     * Authorize or authenticate using the ROPC or password grant flow. 
+     *
+     * @deprecated Password auth is deprecated. Use {@link #authorize(String)} or {@link #authorize(String, String)} instead. 
+     */
+    @Deprecated
     public TokenInfo authorize(String username, String extension, String password) throws IOException, RestException {
         GetTokenRequest getTokenRequest = new GetTokenRequest()
             .grant_type("password")

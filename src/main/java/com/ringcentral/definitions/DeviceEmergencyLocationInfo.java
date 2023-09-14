@@ -13,6 +13,10 @@ public class DeviceEmergencyLocationInfo {
      * Location name
      */
     public String name;
+    /**
+     * Address format id
+     */
+    public String addressFormatId;
 
     public DeviceEmergencyLocationInfo id(String id) {
         this.id = id;
@@ -21,6 +25,11 @@ public class DeviceEmergencyLocationInfo {
 
     public DeviceEmergencyLocationInfo name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public DeviceEmergencyLocationInfo addressFormatId(String addressFormatId) {
+        this.addressFormatId = addressFormatId;
         return this;
     }
 }

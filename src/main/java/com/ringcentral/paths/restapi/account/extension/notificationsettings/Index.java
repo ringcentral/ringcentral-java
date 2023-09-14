@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.notificationsettings;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.NotificationSettings;
-import com.ringcentral.definitions.NotificationSettingsUpdateRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

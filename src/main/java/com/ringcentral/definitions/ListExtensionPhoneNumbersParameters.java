@@ -12,7 +12,7 @@ public class ListExtensionPhoneNumbersParameters {
     public String status;
     /**
      * Usage type of a phone number
-     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, BusinessMobileNumber, IntegrationNumber
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
     public String[] usageType;
     /**

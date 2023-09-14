@@ -53,7 +53,7 @@ public class SipRegistrationDeviceInfo {
     /**
      *
      */
-    public DeviceEmergencyServiceAddressResource emergencyServiceAddress;
+    public DeviceEmergencyServiceAddressResourceDefault emergencyServiceAddress;
     /**
      *
      */
@@ -153,7 +153,7 @@ public class SipRegistrationDeviceInfo {
         return this;
     }
 
-    public SipRegistrationDeviceInfo emergencyServiceAddress(DeviceEmergencyServiceAddressResource emergencyServiceAddress) {
+    public SipRegistrationDeviceInfo emergencyServiceAddress(DeviceEmergencyServiceAddressResourceDefault emergencyServiceAddress) {
         this.emergencyServiceAddress = emergencyServiceAddress;
         return this;
     }

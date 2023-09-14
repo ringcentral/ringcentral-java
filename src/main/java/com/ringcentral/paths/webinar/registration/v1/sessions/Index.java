@@ -1,7 +1,7 @@
 package com.ringcentral.paths.webinar.registration.v1.sessions;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.RegSessionModel;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

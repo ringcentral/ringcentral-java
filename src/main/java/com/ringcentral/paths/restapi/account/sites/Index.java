@@ -1,10 +1,7 @@
 package com.ringcentral.paths.restapi.account.sites;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateSiteRequest;
-import com.ringcentral.definitions.SiteInfo;
-import com.ringcentral.definitions.SiteUpdateRequest;
-import com.ringcentral.definitions.SitesList;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

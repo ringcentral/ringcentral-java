@@ -34,9 +34,13 @@ public class ForwardingNumberInfo {
     public CreateForwardingNumberDeviceInfo device;
     /**
      * Forwarding phone number type
-     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier
+     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier, ExtensionApps
      */
     public String type;
+    /**
+     * Extension information. Returned only if extension type is &#039;ExtensionApps&#039;
+     */
+    public ForwardingNumberInfoExtension extension;
 
     public ForwardingNumberInfo id(String id) {
         this.id = id;
@@ -75,6 +79,11 @@ public class ForwardingNumberInfo {
 
     public ForwardingNumberInfo type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public ForwardingNumberInfo extension(ForwardingNumberInfoExtension extension) {
+        this.extension = extension;
         return this;
     }
 }

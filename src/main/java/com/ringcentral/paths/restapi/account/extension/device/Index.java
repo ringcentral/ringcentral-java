@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.device;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.GetExtensionDevicesResponse;
-import com.ringcentral.definitions.ListExtensionDevicesParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

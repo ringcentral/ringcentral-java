@@ -10,10 +10,11 @@ public class AddPhoneNumberRequestItem {
      */
     public String phoneNumber;
     /**
-     * Only &quot;Inventory&quot; is supported now.
-     * Later we may support other values like &quot;ForwardedNumber&quot; etc.
+     * Usage type of a phone number. Currently we support the following three enum values: &#039;Inventory&#039;, &#039;InventoryPartnerBusinessMobileNumber&#039; and &#039;PartnerBusinessMobileNumber&#039;.
+     * Later we may support other values like &#039;ForwardedNumber&#039; etc.
      * Required
-     * Enum: Inventory
+     * Default: Inventory
+     * Enum: Inventory, InventoryPartnerBusinessMobileNumber, PartnerBusinessMobileNumber
      */
     public String usageType;
 

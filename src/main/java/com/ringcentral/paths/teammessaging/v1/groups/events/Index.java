@@ -1,8 +1,7 @@
 package com.ringcentral.paths.teammessaging.v1.groups.events;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.TMCreateEventRequest;
-import com.ringcentral.definitions.TMEventInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

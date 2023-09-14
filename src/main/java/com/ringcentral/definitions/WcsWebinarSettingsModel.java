@@ -118,9 +118,8 @@ public class WcsWebinarSettingsModel {
     public Boolean externalLivestreamEnabled;
     /**
      * Indicate if the moderated Q&amp;A enabled for webinar
-     * Default: true
      */
-    public Boolean moderatedQnAEnabled;
+    public Boolean moderatedQnaEnabled;
 
     public WcsWebinarSettingsModel recordingEnabled(Boolean recordingEnabled) {
         this.recordingEnabled = recordingEnabled;
@@ -232,8 +231,8 @@ public class WcsWebinarSettingsModel {
         return this;
     }
 
-    public WcsWebinarSettingsModel moderatedQnAEnabled(Boolean moderatedQnAEnabled) {
-        this.moderatedQnAEnabled = moderatedQnAEnabled;
+    public WcsWebinarSettingsModel moderatedQnaEnabled(Boolean moderatedQnaEnabled) {
+        this.moderatedQnaEnabled = moderatedQnaEnabled;
         return this;
     }
 }

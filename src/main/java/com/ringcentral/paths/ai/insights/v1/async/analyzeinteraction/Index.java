@@ -1,9 +1,7 @@
 package com.ringcentral.paths.ai.insights.v1.async.analyzeinteraction;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CaiAnalyzeInteractionParameters;
-import com.ringcentral.definitions.CaiAsyncApiResponse;
-import com.ringcentral.definitions.InteractionInput;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

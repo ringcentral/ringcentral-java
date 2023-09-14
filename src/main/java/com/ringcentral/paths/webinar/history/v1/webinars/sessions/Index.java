@@ -1,7 +1,7 @@
 package com.ringcentral.paths.webinar.history.v1.webinars.sessions;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.SessionResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -26,7 +26,7 @@ public class Index {
     }
 
     /**
-     * Returns a historical webinar Session by ID. Access allowed to participants with original role as CoHost.
+     * Returns a historical webinar Session by ID. Access allowed to participants with original role as Host or CoHost.
      * HTTP Method: get
      * Endpoint: /webinar/history/v1/webinars/{webinarId}/sessions/{sessionId}
      * Rate Limit Group: Heavy

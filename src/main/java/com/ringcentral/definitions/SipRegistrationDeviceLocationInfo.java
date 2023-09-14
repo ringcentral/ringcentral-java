@@ -13,6 +13,10 @@ public class SipRegistrationDeviceLocationInfo {
      * Emergency response location name
      */
     public String name;
+    /**
+     * Address format id
+     */
+    public String addressFormatId;
 
     public SipRegistrationDeviceLocationInfo id(String id) {
         this.id = id;
@@ -21,6 +25,11 @@ public class SipRegistrationDeviceLocationInfo {
 
     public SipRegistrationDeviceLocationInfo name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public SipRegistrationDeviceLocationInfo addressFormatId(String addressFormatId) {
+        this.addressFormatId = addressFormatId;
         return this;
     }
 }

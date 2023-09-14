@@ -1,9 +1,7 @@
 package com.ringcentral.paths.ai.audio.v1.async.speechtotext;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AsrInput;
-import com.ringcentral.definitions.CaiAsyncApiResponse;
-import com.ringcentral.definitions.CaiSpeechToTextParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

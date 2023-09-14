@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.devices.bulkadd;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.BulkAddDevicesRequest;
-import com.ringcentral.definitions.BulkAddDevicesResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -22,7 +21,7 @@ public class Index {
     }
 
     /**
-     * Adds BYOD devices to an account in bulk
+     * Adds multiple BYOD (customer provided) devices to an account.
      * HTTP Method: post
      * Endpoint: /restapi/v2/accounts/{accountId}/devices/bulk-add
      * Rate Limit Group: Heavy

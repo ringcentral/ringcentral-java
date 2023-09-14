@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.batchprovisioning.users;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.BatchProvisionUsersRequest;
-import com.ringcentral.definitions.BatchProvisionUsersResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -22,7 +21,7 @@ public class Index {
     }
 
     /**
-     * Creates user extensions with BYOD devices in bulk.
+     * Creates multiple user extensions with BYOD (customer provided) devices.
      * If &quot;extensionNumber&quot; is not specified, the next available extension number will be assigned.
      * <p>
      * HTTP Method: post

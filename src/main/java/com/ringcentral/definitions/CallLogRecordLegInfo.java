@@ -2,19 +2,9 @@ package com.ringcentral.definitions;
 
 
 /**
- * Base schema for CallLogRecord and CallLogRecordLegInfo
+ * Call leg record
  */
 public class CallLogRecordLegInfo {
-    /**
-     * Leg type
-     * Required
-     * Enum: SipForwarding, ServiceMinus2, ServiceMinus3, PstnToSip, Accept, FindMe, FollowMe, TestCall, FaxSent, CallBack, CallingCard, RingDirectly, RingOutWebToSubscriber, RingOutWebToCaller, SipToPstnMetered, RingOutClientToSubscriber, RingOutClientToCaller, RingMe, TransferCall, SipToPstnUnmetered, RingOutDeviceToSubscriber, RingOutDeviceToCaller, RingOutOneLegToCaller, ExtensionToExtension, CallPark, PagingServer, Hunting, OutgoingFreeSpDl, ParkLocation, ConferenceCall, MobileApp, MoveToConference, Unknown, MeetingsCall, SilentMonitoring, Monitoring, Pickup, ImsCall, JoinCall, TextRelay
-     */
-    public String legType;
-    /**
-     * Returned for &#039;Detailed&#039; call log. Specifies if the leg is master-leg
-     */
-    public Boolean master;
     /**
      *
      */
@@ -167,16 +157,16 @@ public class CallLogRecordLegInfo {
      * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
      */
     public String internalType;
-
-    public CallLogRecordLegInfo legType(String legType) {
-        this.legType = legType;
-        return this;
-    }
-
-    public CallLogRecordLegInfo master(Boolean master) {
-        this.master = master;
-        return this;
-    }
+    /**
+     * Leg type
+     * Required
+     * Enum: SipForwarding, ServiceMinus2, ServiceMinus3, PstnToSip, Accept, FindMe, FollowMe, TestCall, FaxSent, CallBack, CallingCard, RingDirectly, RingOutWebToSubscriber, RingOutWebToCaller, SipToPstnMetered, RingOutClientToSubscriber, RingOutClientToCaller, RingMe, TransferCall, SipToPstnUnmetered, RingOutDeviceToSubscriber, RingOutDeviceToCaller, RingOutOneLegToCaller, ExtensionToExtension, CallPark, PagingServer, Hunting, OutgoingFreeSpDl, ParkLocation, ConferenceCall, MobileApp, MoveToConference, Unknown, MeetingsCall, SilentMonitoring, Monitoring, Pickup, ImsCall, JoinCall, TextRelay
+     */
+    public String legType;
+    /**
+     * Returned for &#039;Detailed&#039; call log. Specifies if the leg is master-leg
+     */
+    public Boolean master;
 
     public CallLogRecordLegInfo extension(ExtensionInfoCallLog extension) {
         this.extension = extension;
@@ -295,6 +285,16 @@ public class CallLogRecordLegInfo {
 
     public CallLogRecordLegInfo internalType(String internalType) {
         this.internalType = internalType;
+        return this;
+    }
+
+    public CallLogRecordLegInfo legType(String legType) {
+        this.legType = legType;
+        return this;
+    }
+
+    public CallLogRecordLegInfo master(Boolean master) {
+        this.master = master;
         return this;
     }
 }

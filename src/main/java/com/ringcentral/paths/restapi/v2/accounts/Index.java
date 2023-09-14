@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AccountInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -71,11 +71,6 @@ public class Index {
 
     public com.ringcentral.paths.restapi.v2.accounts.deviceinventory.Index deviceInventory() {
         return new com.ringcentral.paths.restapi.v2.accounts.deviceinventory.Index(this);
-    }
-
-
-    public com.ringcentral.paths.restapi.v2.accounts.forwardednumbers.Index forwardedNumbers() {
-        return new com.ringcentral.paths.restapi.v2.accounts.forwardednumbers.Index(this);
     }
 
 

@@ -1,7 +1,7 @@
 package com.ringcentral.paths.webinar.notifications.v1.subscriptions.renew;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.SubscriptionInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

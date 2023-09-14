@@ -26,6 +26,12 @@ public class PresenceInfoRequest {
      *
      */
     public Boolean pickUpCallsOnHold;
+    /**
+     * Configures the user presence visibility. When the `allowSeeMyPresence` parameter is set to &#039;True&#039;,
+     * the following visibility options are supported via this parameter - All, None, PermittedUsers
+     * Enum: All, None, PermittedUsers
+     */
+    public String callerIdVisibility;
 
     public PresenceInfoRequest userStatus(String userStatus) {
         this.userStatus = userStatus;
@@ -54,6 +60,11 @@ public class PresenceInfoRequest {
 
     public PresenceInfoRequest pickUpCallsOnHold(Boolean pickUpCallsOnHold) {
         this.pickUpCallsOnHold = pickUpCallsOnHold;
+        return this;
+    }
+
+    public PresenceInfoRequest callerIdVisibility(String callerIdVisibility) {
+        this.callerIdVisibility = callerIdVisibility;
         return this;
     }
 }

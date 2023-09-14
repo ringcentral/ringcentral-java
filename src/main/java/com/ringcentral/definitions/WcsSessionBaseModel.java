@@ -24,11 +24,6 @@ public class WcsSessionBaseModel {
      */
     public String timeZone;
     /**
-     * Session locale code. Can&#039;t be blank or null
-     * Example: en-US
-     */
-    public String localeCode;
-    /**
      * The time offset (positive, in seconds) indicating how much in advance
      * (comparing to &quot;scheduledStartTime&quot;) panel members should join for the pre-webinar team sync
      * Format: int32
@@ -70,11 +65,6 @@ public class WcsSessionBaseModel {
 
     public WcsSessionBaseModel timeZone(String timeZone) {
         this.timeZone = timeZone;
-        return this;
-    }
-
-    public WcsSessionBaseModel localeCode(String localeCode) {
-        this.localeCode = localeCode;
         return this;
     }
 

@@ -83,8 +83,7 @@ public class GetExtensionInfoResponse {
      */
     public ExtensionServiceFeatureInfo[] serviceFeatures;
     /**
-     * Specifies extension configuration wizard state (web service
-     * setup).
+     * Specifies extension configuration wizard state (web service setup)
      * Default: NotStarted
      * Enum: NotStarted, Incomplete, Completed
      */
@@ -126,6 +125,10 @@ public class GetExtensionInfoResponse {
      *
      */
     public ProvisioningSiteInfo site;
+    /**
+     *
+     */
+    public AssignedCountryInfo assignedCountry;
 
     public GetExtensionInfoResponse id(Long id) {
         this.id = id;
@@ -244,6 +247,11 @@ public class GetExtensionInfoResponse {
 
     public GetExtensionInfoResponse site(ProvisioningSiteInfo site) {
         this.site = site;
+        return this;
+    }
+
+    public GetExtensionInfoResponse assignedCountry(AssignedCountryInfo assignedCountry) {
+        this.assignedCountry = assignedCountry;
         return this;
     }
 }

@@ -1,6 +1,6 @@
 package com.ringcentral.paths.webinar.configuration.v1.webinars.sessions.invitees;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index {
@@ -48,9 +48,9 @@ public class Index {
      * Adds, updates and deletes Webinar Session invitees in bulk (co-hosts and panelists in phase 1
      * and also invited attendees in subsequent phases).
      * The payload may contain multiple added, updated or deleted invitees.
-     * For each added record either &#039;firstName&#039;/&#039;lastName&#039;/&#039;email&#039; (for non-authenticated users)
+     * For each added record &#039;role&#039; and either &#039;firstName&#039;/&#039;lastName&#039;/&#039;email&#039; (for non-authenticated users)
      * or &#039;linkedUser.*&#039; (for authenticated users) must be specified, but not both.
-     * For updated invitees &#039;id&#039; must be specified, &#039;linkedUser&#039; change is not supported.
+     * For updated invitees &#039;id&#039;  and &#039;role&#039; must be specified, &#039;linkedUser&#039; change is not supported.
      * For deleted invitees only there ids should be specified.
      * The response contains added/updated records (full) and deleted records (ids only).
      * <p>

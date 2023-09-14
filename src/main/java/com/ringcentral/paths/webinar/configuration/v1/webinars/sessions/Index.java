@@ -1,8 +1,7 @@
 package com.ringcentral.paths.webinar.configuration.v1.webinars.sessions;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.WcsSessionBaseModel;
-import com.ringcentral.definitions.WcsSessionResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -33,8 +32,8 @@ public class Index {
      * Rate Limit Group: Heavy
      * App Permission: EditWebinars
      */
-    public WcsSessionResource post(WcsSessionBaseModel wcsSessionBaseModel) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(false), wcsSessionBaseModel, null);
+    public WcsSessionResource post(WcsSessionWithLocaleCodeModel wcsSessionWithLocaleCodeModel) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(false), wcsSessionWithLocaleCodeModel, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), WcsSessionResource.class);
     }
 
@@ -81,11 +80,11 @@ public class Index {
      * Rate Limit Group: Heavy
      * App Permission: EditWebinars
      */
-    public WcsSessionResource patch(WcsSessionBaseModel wcsSessionBaseModel) throws com.ringcentral.RestException, java.io.IOException {
+    public WcsSessionResource patch(WcsSessionWithLocaleCodeModel wcsSessionWithLocaleCodeModel) throws com.ringcentral.RestException, java.io.IOException {
         if (sessionId == null) {
             throw new IllegalArgumentException("Parameter sessionId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.patch(this.path(), wcsSessionBaseModel, null);
+        okhttp3.ResponseBody rb = this.rc.patch(this.path(), wcsSessionWithLocaleCodeModel, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), WcsSessionResource.class);
     }
 

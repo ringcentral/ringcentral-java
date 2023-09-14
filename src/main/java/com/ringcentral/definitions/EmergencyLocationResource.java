@@ -12,7 +12,7 @@ public class EmergencyLocationResource {
     /**
      *
      */
-    public EmergencyLocationAddressInfo address;
+    public EmergencyLocationResourceAddress address;
     /**
      * Emergency response location name
      */
@@ -53,13 +53,17 @@ public class EmergencyLocationResource {
      * List of private location owners
      */
     public LocationOwnerInfo[] owners;
+    /**
+     * Address format id
+     */
+    public String addressFormatId;
 
     public EmergencyLocationResource id(String id) {
         this.id = id;
         return this;
     }
 
-    public EmergencyLocationResource address(EmergencyLocationAddressInfo address) {
+    public EmergencyLocationResource address(EmergencyLocationResourceAddress address) {
         this.address = address;
         return this;
     }
@@ -101,6 +105,11 @@ public class EmergencyLocationResource {
 
     public EmergencyLocationResource owners(LocationOwnerInfo[] owners) {
         this.owners = owners;
+        return this;
+    }
+
+    public EmergencyLocationResource addressFormatId(String addressFormatId) {
+        this.addressFormatId = addressFormatId;
         return this;
     }
 }

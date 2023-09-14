@@ -6,14 +6,22 @@ package com.ringcentral.definitions;
  */
 public class ReadMessageContentParameters {
     /**
-     * Content disposition of a response
-     * Default: Inline
+     * Whether the content is expected to be displayed in the browser, or downloaded and saved locally
      * Enum: Inline, Attachment
      */
     public String contentDisposition;
+    /**
+     * The default filename of the file to be downloaded
+     */
+    public String contentDispositionFilename;
 
     public ReadMessageContentParameters contentDisposition(String contentDisposition) {
         this.contentDisposition = contentDisposition;
+        return this;
+    }
+
+    public ReadMessageContentParameters contentDispositionFilename(String contentDispositionFilename) {
+        this.contentDispositionFilename = contentDispositionFilename;
         return this;
     }
 }

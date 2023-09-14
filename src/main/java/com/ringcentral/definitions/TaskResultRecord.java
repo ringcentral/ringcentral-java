@@ -15,6 +15,10 @@ public class TaskResultRecord {
      */
     public String chassisId;
     /**
+     * Switch entity extension for better diversity. Should be used together with chassisId.
+     */
+    public String port;
+    /**
      * Operation status
      */
     public String status;
@@ -35,6 +39,11 @@ public class TaskResultRecord {
 
     public TaskResultRecord chassisId(String chassisId) {
         this.chassisId = chassisId;
+        return this;
+    }
+
+    public TaskResultRecord port(String port) {
+        this.port = port;
         return this;
     }
 

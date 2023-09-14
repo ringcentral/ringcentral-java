@@ -42,7 +42,7 @@ public class UserPhoneNumberInfo {
      */
     public String phoneNumber;
     /**
-     * Specifies if the number is primary, i.e. displayed as &#039;main number&#039; and called by default
+     * Specifies if a phone number is primary, i.e. displayed as &#039;main number&#039; and called by default
      */
     public Boolean primary;
     /**
@@ -62,7 +62,7 @@ public class UserPhoneNumberInfo {
     public String subType;
     /**
      * Usage type of a phone number. Numbers of &#039;NumberPool&#039; type will not be returned for phone number list requests
-     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber, IntegrationNumber
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
     public String usageType;
     /**

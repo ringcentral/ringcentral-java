@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.messagestore.content;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ReadMessageContentParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -26,12 +26,16 @@ public class Index {
     }
 
     /**
-     * Returns a specific message attachment data as media stream.
+     * Returns media content of a message attachment.
+     * The content is typically an audio file (`audio/mpeg` or `audio/wav`) for voicemails,
+     * TIFF or PDF for faxes and image/audio/video for MMS.
+     * <p>
+     * **This API must be called via media API entry point, e.g. https://media.ringcentral.com**
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}
      * Rate Limit Group: Medium
      * App Permission: ReadMessages
-     * User Permission: ReadMessageContent
      */
     public byte[] get(ReadMessageContentParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (attachmentId == null) {

@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.extensions;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.BulkDeleteUsersRequest;
-import com.ringcentral.definitions.BulkDeleteUsersResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

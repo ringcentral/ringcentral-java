@@ -1,9 +1,7 @@
 package com.ringcentral.paths.ai.audio.v1.async.speakeridentify;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CaiAsyncApiResponse;
-import com.ringcentral.definitions.CaiSpeakerIdentifyParameters;
-import com.ringcentral.definitions.IdentifyInput;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

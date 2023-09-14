@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.extensionbulkupdate.tasks;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ExtensionBulkUpdateTaskResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

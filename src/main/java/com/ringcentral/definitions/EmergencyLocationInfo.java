@@ -14,6 +14,10 @@ public class EmergencyLocationInfo {
      * Emergency response location name
      */
     public String name;
+    /**
+     * Address format id
+     */
+    public String addressFormatId;
 
     public EmergencyLocationInfo id(String id) {
         this.id = id;
@@ -22,6 +26,11 @@ public class EmergencyLocationInfo {
 
     public EmergencyLocationInfo name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public EmergencyLocationInfo addressFormatId(String addressFormatId) {
+        this.addressFormatId = addressFormatId;
         return this;
     }
 }

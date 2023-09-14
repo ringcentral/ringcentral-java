@@ -6,9 +6,9 @@ package com.ringcentral.definitions;
  */
 public class SipRegistrationDeviceEmergencyInfo {
     /**
-     *
+     * Address for emergency cases. The same emergency address is assigned to all the numbers of one device
      */
-    public DeviceEmergencyServiceAddressResource address;
+    public SipRegistrationDeviceEmergencyInfoAddress address;
     /**
      *
      */
@@ -48,7 +48,7 @@ public class SipRegistrationDeviceEmergencyInfo {
      */
     public Boolean addressLocationOnly;
 
-    public SipRegistrationDeviceEmergencyInfo address(DeviceEmergencyServiceAddressResource address) {
+    public SipRegistrationDeviceEmergencyInfo address(SipRegistrationDeviceEmergencyInfoAddress address) {
         this.address = address;
         return this;
     }

@@ -1,7 +1,7 @@
 package com.ringcentral.paths.teammessaging.v1.webhooks;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.TMWebhookList;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

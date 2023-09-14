@@ -1,6 +1,7 @@
 package com.ringcentral.paths.restapi.dictionary;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

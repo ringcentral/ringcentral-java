@@ -2,11 +2,11 @@ package com.ringcentral.definitions;
 
 
 /**
- * Sender/initiator caller info
+ * Sender/initiator caller information
  */
 public class BaseCallLogFromParty {
     /**
-     * The dialer phone number without modifications. Returned for inbound calls and Overlay accounts
+     * Dialer phone number without any format modifications. Returned for inbound calls
      */
     public String dialerPhoneNumber;
 

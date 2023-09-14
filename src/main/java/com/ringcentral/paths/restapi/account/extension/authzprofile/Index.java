@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.authzprofile;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AuthProfileResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -28,9 +28,13 @@ public class Index {
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/authz-profile
      * Rate Limit Group: Medium
      */
-    public AuthProfileResource get() throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+    public AuthProfileResource get(ReadAuthorizationProfileParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), AuthProfileResource.class);
+    }
+
+    public AuthProfileResource get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
     }
 
     public com.ringcentral.paths.restapi.account.extension.authzprofile.check.Index check() {

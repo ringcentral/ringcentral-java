@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class ForwardAllCompanyCallsInfo {
     /**
-     * Indicates whether the Forward All Company Calls feature is enabled or disabled for account
+     * Indicates whether the *Forward All Company Calls* feature is enabled or disabled for an account
      */
     public Boolean enabled;
     /**

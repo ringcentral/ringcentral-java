@@ -2,40 +2,9 @@ package com.ringcentral.definitions;
 
 
 /**
- * Base schema for CallLogRecord and CallLogRecordLegInfo
+ * Call log record
  */
 public class CallLogRecord {
-    /**
-     * Internal identifier of a call log record
-     * Required
-     */
-    public String id;
-    /**
-     * Canonical URI of a call log record
-     * Required
-     * Format: uri
-     */
-    public String uri;
-    /**
-     * Internal identifier of a call session
-     * Required
-     */
-    public String sessionId;
-    /**
-     * Indicates whether the record is deleted. Returned for deleted records, for ISync requests
-     */
-    public Boolean deleted;
-    /**
-     * For &#039;Detailed&#039; view only. Leg description
-     */
-    public CallLogRecordLegInfo[] legs;
-    /**
-     * For &#039;Detailed&#039; view only. The datetime when the call log record
-     * was modified in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format
-     * including timezone, for example *2016-03-10T18:07:52.534Z*
-     * Format: date-time
-     */
-    public String lastModifiedTime;
     /**
      *
      */
@@ -188,36 +157,37 @@ public class CallLogRecord {
      * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
      */
     public String internalType;
-
-    public CallLogRecord id(String id) {
-        this.id = id;
-        return this;
-    }
-
-    public CallLogRecord uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
-
-    public CallLogRecord sessionId(String sessionId) {
-        this.sessionId = sessionId;
-        return this;
-    }
-
-    public CallLogRecord deleted(Boolean deleted) {
-        this.deleted = deleted;
-        return this;
-    }
-
-    public CallLogRecord legs(CallLogRecordLegInfo[] legs) {
-        this.legs = legs;
-        return this;
-    }
-
-    public CallLogRecord lastModifiedTime(String lastModifiedTime) {
-        this.lastModifiedTime = lastModifiedTime;
-        return this;
-    }
+    /**
+     * Internal identifier of a call log record
+     * Required
+     */
+    public String id;
+    /**
+     * Canonical URI of a call log record
+     * Required
+     * Format: uri
+     */
+    public String uri;
+    /**
+     * Internal identifier of a call session
+     * Required
+     */
+    public String sessionId;
+    /**
+     * Indicates whether the record is deleted. Returned for deleted records, for ISync requests
+     */
+    public Boolean deleted;
+    /**
+     * For &#039;Detailed&#039; view only. Leg description
+     */
+    public CallLogRecordLegInfo[] legs;
+    /**
+     * For &#039;Detailed&#039; view only. The datetime when the call log record
+     * was modified in (ISO 8601)[https://en.wikipedia.org/wiki/ISO_8601] format
+     * including timezone, for example *2016-03-10T18:07:52.534Z*
+     * Format: date-time
+     */
+    public String lastModifiedTime;
 
     public CallLogRecord extension(ExtensionInfoCallLog extension) {
         this.extension = extension;
@@ -336,6 +306,36 @@ public class CallLogRecord {
 
     public CallLogRecord internalType(String internalType) {
         this.internalType = internalType;
+        return this;
+    }
+
+    public CallLogRecord id(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public CallLogRecord uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public CallLogRecord sessionId(String sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    }
+
+    public CallLogRecord deleted(Boolean deleted) {
+        this.deleted = deleted;
+        return this;
+    }
+
+    public CallLogRecord legs(CallLogRecordLegInfo[] legs) {
+        this.legs = legs;
+        return this;
+    }
+
+    public CallLogRecord lastModifiedTime(String lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
         return this;
     }
 }

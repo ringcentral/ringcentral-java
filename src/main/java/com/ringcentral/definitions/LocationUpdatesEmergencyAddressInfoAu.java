@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  * wireless point - in case of using them). Only one of a pair `emergencyAddress`
  * or `emergencyLocationId` should be specified, otherwise an error is returned
  */
-public class LocationUpdatesEmergencyAddressInfo {
+public class LocationUpdatesEmergencyAddressInfoAu {
     /**
      * Country name
      */
@@ -59,69 +59,96 @@ public class LocationUpdatesEmergencyAddressInfo {
      * Postal (Zip) code
      */
     public String zip;
+    /**
+     * (Optional) Building name
+     */
+    public String buildingName;
+    /**
+     * Street type
+     */
+    public String streetType;
+    /**
+     * Building/street number
+     */
+    public String buildingNumber;
 
-    public LocationUpdatesEmergencyAddressInfo country(String country) {
+    public LocationUpdatesEmergencyAddressInfoAu country(String country) {
         this.country = country;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo countryId(String countryId) {
+    public LocationUpdatesEmergencyAddressInfoAu countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo countryIsoCode(String countryIsoCode) {
+    public LocationUpdatesEmergencyAddressInfoAu countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo countryName(String countryName) {
+    public LocationUpdatesEmergencyAddressInfoAu countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo customerName(String customerName) {
+    public LocationUpdatesEmergencyAddressInfoAu customerName(String customerName) {
         this.customerName = customerName;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo state(String state) {
+    public LocationUpdatesEmergencyAddressInfoAu state(String state) {
         this.state = state;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo stateId(String stateId) {
+    public LocationUpdatesEmergencyAddressInfoAu stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo stateIsoCode(String stateIsoCode) {
+    public LocationUpdatesEmergencyAddressInfoAu stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo stateName(String stateName) {
+    public LocationUpdatesEmergencyAddressInfoAu stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo city(String city) {
+    public LocationUpdatesEmergencyAddressInfoAu city(String city) {
         this.city = city;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo street(String street) {
+    public LocationUpdatesEmergencyAddressInfoAu street(String street) {
         this.street = street;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo street2(String street2) {
+    public LocationUpdatesEmergencyAddressInfoAu street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfo zip(String zip) {
+    public LocationUpdatesEmergencyAddressInfoAu zip(String zip) {
         this.zip = zip;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoAu buildingName(String buildingName) {
+        this.buildingName = buildingName;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoAu streetType(String streetType) {
+        this.streetType = streetType;
+        return this;
+    }
+
+    public LocationUpdatesEmergencyAddressInfoAu buildingNumber(String buildingNumber) {
+        this.buildingNumber = buildingNumber;
         return this;
     }
 }

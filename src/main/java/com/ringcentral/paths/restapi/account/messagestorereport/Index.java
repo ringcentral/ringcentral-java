@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.messagestorereport;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateMessageStoreReportRequest;
-import com.ringcentral.definitions.MessageStoreReport;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -58,11 +57,7 @@ public class Index {
     }
 
     public com.ringcentral.paths.restapi.account.messagestorereport.archive.Index archive() {
-        return this.archive(null);
-    }
-
-    public com.ringcentral.paths.restapi.account.messagestorereport.archive.Index archive(String archiveId) {
-        return new com.ringcentral.paths.restapi.account.messagestorereport.archive.Index(this, archiveId);
+        return new com.ringcentral.paths.restapi.account.messagestorereport.archive.Index(this);
     }
 
 }

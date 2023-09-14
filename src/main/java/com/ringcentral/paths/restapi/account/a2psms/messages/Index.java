@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.account.a2psms.messages;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ListA2PSMSParameters;
-import com.ringcentral.definitions.MessageDetailsResponse;
-import com.ringcentral.definitions.MessageListResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

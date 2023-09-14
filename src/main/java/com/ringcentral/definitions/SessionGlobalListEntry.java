@@ -45,11 +45,6 @@ public class SessionGlobalListEntry {
      */
     public String timeZone;
     /**
-     * Session locale code. Can&#039;t be blank or null
-     * Example: en-US
-     */
-    public String localeCode;
-    /**
      * The time offset (positive, in seconds) indicating how much in advance
      * (comparing to &quot;scheduledStartTime&quot;) panel members should join for the pre-webinar team sync
      * Format: int32
@@ -78,6 +73,11 @@ public class SessionGlobalListEntry {
      * Example: https://v.ringcentral.com/w/join/de7yd8ew7yfsdfjh899843rgj
      */
     public String hostJoinUri;
+    /**
+     * Session locale code. Can&#039;t be blank or null
+     * Example: en-US
+     */
+    public String localeCode;
 
     public SessionGlobalListEntry id(String id) {
         this.id = id;
@@ -114,11 +114,6 @@ public class SessionGlobalListEntry {
         return this;
     }
 
-    public SessionGlobalListEntry localeCode(String localeCode) {
-        this.localeCode = localeCode;
-        return this;
-    }
-
     public SessionGlobalListEntry panelJoinTimeOffset(Long panelJoinTimeOffset) {
         this.panelJoinTimeOffset = panelJoinTimeOffset;
         return this;
@@ -141,6 +136,11 @@ public class SessionGlobalListEntry {
 
     public SessionGlobalListEntry hostJoinUri(String hostJoinUri) {
         this.hostJoinUri = hostJoinUri;
+        return this;
+    }
+
+    public SessionGlobalListEntry localeCode(String localeCode) {
+        this.localeCode = localeCode;
         return this;
     }
 }

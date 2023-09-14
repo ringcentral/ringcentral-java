@@ -1,6 +1,6 @@
 package com.ringcentral.paths.scim.users;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index {

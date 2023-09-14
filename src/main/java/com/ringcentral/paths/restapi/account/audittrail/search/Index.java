@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.audittrail.search;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AccountHistorySearchPublicRequest;
-import com.ringcentral.definitions.AccountHistorySearchPublicResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

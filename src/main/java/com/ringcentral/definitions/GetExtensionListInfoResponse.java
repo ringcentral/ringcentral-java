@@ -66,6 +66,10 @@ public class GetExtensionListInfoResponse {
      *
      */
     public ProvisioningSiteInfo site;
+    /**
+     *
+     */
+    public AssignedCountryInfo assignedCountry;
 
     public GetExtensionListInfoResponse id(Long id) {
         this.id = id;
@@ -129,6 +133,11 @@ public class GetExtensionListInfoResponse {
 
     public GetExtensionListInfoResponse site(ProvisioningSiteInfo site) {
         this.site = site;
+        return this;
+    }
+
+    public GetExtensionListInfoResponse assignedCountry(AssignedCountryInfo assignedCountry) {
+        this.assignedCountry = assignedCountry;
         return this;
     }
 }

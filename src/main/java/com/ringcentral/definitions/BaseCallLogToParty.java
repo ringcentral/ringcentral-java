@@ -2,11 +2,11 @@ package com.ringcentral.definitions;
 
 
 /**
- * Target caller info
+ * Target caller information
  */
 public class BaseCallLogToParty {
     /**
-     * The dialed phone number without modifications. Returned for outbound calls and Overlay accounts
+     * Dialed phone number without any format modifications. Returned for outbound calls
      */
     public String dialedPhoneNumber;
 

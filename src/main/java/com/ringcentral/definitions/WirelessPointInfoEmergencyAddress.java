@@ -1,13 +1,7 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Emergency address information (or information assigned to the
- * switch or wireless point - in case of using them). Only one of a pair
- * `emergencyAddress` or `emergencyLocationId` should be specified,
- * otherwise an error is returned
- */
-public class EmergencyAddressInfo {
+public class WirelessPointInfoEmergencyAddress {
     /**
      * Name of a customer
      */
@@ -69,74 +63,101 @@ public class EmergencyAddressInfo {
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;
+    /**
+     * (Optional) Building name
+     */
+    public String buildingName;
+    /**
+     * Street type
+     */
+    public String streetType;
+    /**
+     * Building/street number
+     */
+    public String buildingNumber;
 
-    public EmergencyAddressInfo customerName(String customerName) {
+    public WirelessPointInfoEmergencyAddress customerName(String customerName) {
         this.customerName = customerName;
         return this;
     }
 
-    public EmergencyAddressInfo street(String street) {
+    public WirelessPointInfoEmergencyAddress street(String street) {
         this.street = street;
         return this;
     }
 
-    public EmergencyAddressInfo street2(String street2) {
+    public WirelessPointInfoEmergencyAddress street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public EmergencyAddressInfo city(String city) {
+    public WirelessPointInfoEmergencyAddress city(String city) {
         this.city = city;
         return this;
     }
 
-    public EmergencyAddressInfo zip(String zip) {
+    public WirelessPointInfoEmergencyAddress zip(String zip) {
         this.zip = zip;
         return this;
     }
 
-    public EmergencyAddressInfo state(String state) {
+    public WirelessPointInfoEmergencyAddress state(String state) {
         this.state = state;
         return this;
     }
 
-    public EmergencyAddressInfo stateId(String stateId) {
+    public WirelessPointInfoEmergencyAddress stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public EmergencyAddressInfo stateIsoCode(String stateIsoCode) {
+    public WirelessPointInfoEmergencyAddress stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public EmergencyAddressInfo stateName(String stateName) {
+    public WirelessPointInfoEmergencyAddress stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public EmergencyAddressInfo countryId(String countryId) {
+    public WirelessPointInfoEmergencyAddress countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public EmergencyAddressInfo countryIsoCode(String countryIsoCode) {
+    public WirelessPointInfoEmergencyAddress countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public EmergencyAddressInfo country(String country) {
+    public WirelessPointInfoEmergencyAddress country(String country) {
         this.country = country;
         return this;
     }
 
-    public EmergencyAddressInfo countryName(String countryName) {
+    public WirelessPointInfoEmergencyAddress countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public EmergencyAddressInfo syncStatus(String syncStatus) {
+    public WirelessPointInfoEmergencyAddress syncStatus(String syncStatus) {
         this.syncStatus = syncStatus;
+        return this;
+    }
+
+    public WirelessPointInfoEmergencyAddress buildingName(String buildingName) {
+        this.buildingName = buildingName;
+        return this;
+    }
+
+    public WirelessPointInfoEmergencyAddress streetType(String streetType) {
+        this.streetType = streetType;
+        return this;
+    }
+
+    public WirelessPointInfoEmergencyAddress buildingNumber(String buildingNumber) {
+        this.buildingNumber = buildingNumber;
         return this;
     }
 }

@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.a2psms.statuses;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AggregateA2PSMSStatusesParameters;
-import com.ringcentral.definitions.MessageStatusesResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

@@ -29,8 +29,7 @@ public class LanguageInfo {
      */
     public String localeCode;
     /**
-     * Country code according to the ISO standard, see
-     * [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)
+     * Country code according to the ISO standard, see [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)
      */
     public String isoCode;
     /**
@@ -41,6 +40,14 @@ public class LanguageInfo {
      * Indicates whether a language is available as UI language
      */
     public Boolean ui;
+    /**
+     * Time format
+     */
+    public String timeFormat;
+    /**
+     * Date format
+     */
+    public String dateFormat;
 
     public LanguageInfo id(String id) {
         this.id = id;
@@ -79,6 +86,16 @@ public class LanguageInfo {
 
     public LanguageInfo ui(Boolean ui) {
         this.ui = ui;
+        return this;
+    }
+
+    public LanguageInfo timeFormat(String timeFormat) {
+        this.timeFormat = timeFormat;
+        return this;
+    }
+
+    public LanguageInfo dateFormat(String dateFormat) {
+        this.dateFormat = dateFormat;
         return this;
     }
 }

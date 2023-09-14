@@ -1,6 +1,6 @@
 package com.ringcentral.paths.restapi.v2.accounts.phonenumbers;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index {
@@ -46,7 +46,11 @@ public class Index {
     }
 
     /**
-     * Method can only delete numbers that have `&quot;usageType&quot;: &quot;Inventory&quot;`.
+     * This method can only delete numbers that meet one of the following requirements:
+     * - numbers that have `&quot;usageType&quot;: &quot;Inventory&quot;`
+     * - `&quot;Forwarded&quot;` numbers
+     * - `&quot;Forwarded Company&quot;` numbers
+     * <p>
      * In other words, this method will not delete numbers which are in use on the account - extension direct numbers,
      * main number, etc. It is possible to indicate phone numbers to be deleted using their IDs or exact string values
      * in e.164 format. However the same lookup method (by ID or by value) must be used for all numbers within the same API call.
@@ -66,13 +70,13 @@ public class Index {
      * Assigns or reassigns a phone number as a company or extension number.
      * <p>
      * Assign scenarios supported:
-     * - from Inventory to company number
-     * - from Inventory to extension number.
+     * - from Inventory to a company number;
+     * - from Inventory to an extension number.
      * <p>
      * Reassign scenarios supported:
-     * - from extension to another extension
-     * - from extension to company number
-     * - from company number to extension.
+     * - from an extension to another extension;
+     * - from an extension to a company number;
+     * - from a company number to an extension.
      * <p>
      * HTTP Method: patch
      * Endpoint: /restapi/v2/accounts/{accountId}/phone-numbers/{phoneNumberId}

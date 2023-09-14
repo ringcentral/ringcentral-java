@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.calllogsync;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallLogSyncResponse;
-import com.ringcentral.definitions.SyncUserCallLogParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -22,7 +21,7 @@ public class Index {
     }
 
     /**
-     * Synchronizes call log records
+     * Synchronizes the user call log records.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/call-log-sync
      * Rate Limit Group: Heavy

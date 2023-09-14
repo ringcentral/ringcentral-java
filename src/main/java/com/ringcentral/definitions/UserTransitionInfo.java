@@ -11,9 +11,8 @@ public class UserTransitionInfo {
      */
     public Boolean sendWelcomeEmailsToUsers;
     /**
-     * Specifies if a welcome/activation email is sent to
-     * the new users (within extension status changing from
-     * &#039;Unassigned&#039; to &#039;NotActivated/Disabled&#039;)&quot;
+     * Specifies if a welcome/activation email is sent to the new users (within extension status changing from
+     * &#039;Unassigned&#039; to &#039;NotActivated/Disabled&#039;)
      */
     public Boolean sendWelcomeEmail;
 

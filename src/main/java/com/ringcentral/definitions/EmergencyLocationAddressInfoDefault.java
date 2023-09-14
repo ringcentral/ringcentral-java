@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class EmergencyLocationAddressInfo {
+public class EmergencyLocationAddressInfoDefault {
     /**
      * Country name
      */
@@ -56,67 +56,67 @@ public class EmergencyLocationAddressInfo {
      */
     public String customerName;
 
-    public EmergencyLocationAddressInfo country(String country) {
+    public EmergencyLocationAddressInfoDefault country(String country) {
         this.country = country;
         return this;
     }
 
-    public EmergencyLocationAddressInfo countryId(String countryId) {
+    public EmergencyLocationAddressInfoDefault countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public EmergencyLocationAddressInfo countryIsoCode(String countryIsoCode) {
+    public EmergencyLocationAddressInfoDefault countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public EmergencyLocationAddressInfo countryName(String countryName) {
+    public EmergencyLocationAddressInfoDefault countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public EmergencyLocationAddressInfo state(String state) {
+    public EmergencyLocationAddressInfoDefault state(String state) {
         this.state = state;
         return this;
     }
 
-    public EmergencyLocationAddressInfo stateId(String stateId) {
+    public EmergencyLocationAddressInfoDefault stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public EmergencyLocationAddressInfo stateIsoCode(String stateIsoCode) {
+    public EmergencyLocationAddressInfoDefault stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public EmergencyLocationAddressInfo stateName(String stateName) {
+    public EmergencyLocationAddressInfoDefault stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public EmergencyLocationAddressInfo city(String city) {
+    public EmergencyLocationAddressInfoDefault city(String city) {
         this.city = city;
         return this;
     }
 
-    public EmergencyLocationAddressInfo street(String street) {
+    public EmergencyLocationAddressInfoDefault street(String street) {
         this.street = street;
         return this;
     }
 
-    public EmergencyLocationAddressInfo street2(String street2) {
+    public EmergencyLocationAddressInfoDefault street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public EmergencyLocationAddressInfo zip(String zip) {
+    public EmergencyLocationAddressInfoDefault zip(String zip) {
         this.zip = zip;
         return this;
     }
 
-    public EmergencyLocationAddressInfo customerName(String customerName) {
+    public EmergencyLocationAddressInfoDefault customerName(String customerName) {
         this.customerName = customerName;
         return this;
     }

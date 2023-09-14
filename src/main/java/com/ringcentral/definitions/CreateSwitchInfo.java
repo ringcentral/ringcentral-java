@@ -8,6 +8,10 @@ public class CreateSwitchInfo {
      */
     public String chassisId;
     /**
+     * Switch entity extension for better diversity. Should be used together with chassisId.
+     */
+    public String port;
+    /**
      * Name of a network switch
      */
     public String name;
@@ -18,7 +22,7 @@ public class CreateSwitchInfo {
     /**
      *
      */
-    public EmergencyAddressInfo emergencyAddress;
+    public EmergencyAddressInfoDefault emergencyAddress;
     /**
      *
      */
@@ -26,6 +30,11 @@ public class CreateSwitchInfo {
 
     public CreateSwitchInfo chassisId(String chassisId) {
         this.chassisId = chassisId;
+        return this;
+    }
+
+    public CreateSwitchInfo port(String port) {
+        this.port = port;
         return this;
     }
 
@@ -39,7 +48,7 @@ public class CreateSwitchInfo {
         return this;
     }
 
-    public CreateSwitchInfo emergencyAddress(EmergencyAddressInfo emergencyAddress) {
+    public CreateSwitchInfo emergencyAddress(EmergencyAddressInfoDefault emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

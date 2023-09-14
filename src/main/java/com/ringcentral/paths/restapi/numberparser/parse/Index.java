@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.numberparser.parse;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ParsePhoneNumberParameters;
-import com.ringcentral.definitions.ParsePhoneNumberRequest;
-import com.ringcentral.definitions.ParsePhoneNumberResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

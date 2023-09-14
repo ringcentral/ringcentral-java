@@ -144,7 +144,8 @@ If there is no CDN uri provided, construct the uri as the [sample code](./sample
 
 ### WebSocket
 
-Please refer to the [RingCentral WebSocket SDK for Java](https://github.com/ringcentral/ringcentral-websocket-java) project.
+Please refer to the [RingCentral WebSocket SDK for Java](https://github.com/ringcentral/ringcentral-websocket-java)
+project.
 
 ### (Deprecated) PubNub
 

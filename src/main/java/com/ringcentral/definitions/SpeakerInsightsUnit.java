@@ -5,7 +5,7 @@ public class SpeakerInsightsUnit {
     /**
      * Required
      * Example: TalkToListenRatio
-     * Enum: Energy, Pace, TalkToListenRatio
+     * Enum: Energy, Pace, TalkToListenRatio, Patience, LongestMonologue, FillerWordRate, TalkingSpeed, TalkTime, QuestionsAsked, Tone, Interruptions
      */
     public String name;
     /**

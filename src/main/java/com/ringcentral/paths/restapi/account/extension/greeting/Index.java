@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.greeting;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateCustomUserGreetingParameters;
-import com.ringcentral.definitions.CreateCustomUserGreetingRequest;
-import com.ringcentral.definitions.CustomUserGreetingInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -59,4 +57,9 @@ public class Index {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomUserGreetingInfo.class);
     }
+
+    public com.ringcentral.paths.restapi.account.extension.greeting.content.Index content() {
+        return new com.ringcentral.paths.restapi.account.extension.greeting.content.Index(this);
+    }
+
 }

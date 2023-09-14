@@ -8,7 +8,7 @@ public class ForwardingNumberInfoRulesCreateRuleRequest {
     public String id;
     /**
      * Forwarding phone number type
-     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier
+     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier, ExtensionApps
      */
     public String type;
     /**

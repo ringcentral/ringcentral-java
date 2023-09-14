@@ -1,9 +1,7 @@
 package com.ringcentral.paths.ai.audio.v1.async.speakerdiarize;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CaiAsyncApiResponse;
-import com.ringcentral.definitions.CaiSpeakerDiarizeParameters;
-import com.ringcentral.definitions.DiarizeInput;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

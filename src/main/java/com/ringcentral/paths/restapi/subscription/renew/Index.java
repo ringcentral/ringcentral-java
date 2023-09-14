@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.subscription.renew;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.SubscriptionInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -22,6 +22,9 @@ public class Index {
 
     /**
      * Renews the existing subscription (this request comes with empty body).
+     * <p>
+     * Please note that `WebSocket` subscriptions are renewed automatically while websocket session is alive.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/subscription/{subscriptionId}/renew
      * Rate Limit Group: Light

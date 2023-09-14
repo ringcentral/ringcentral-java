@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Account service information, including brand, service plan and
+ * Account service information, including brand, sub-brand, service plan and
  * billing plan
  */
 public class ServiceInfo {
@@ -31,6 +31,10 @@ public class ServiceInfo {
      *
      */
     public CountryInfoShortModel contractedCountry;
+    /**
+     *
+     */
+    public UBrandInfo uBrand;
 
     public ServiceInfo uri(String uri) {
         this.uri = uri;
@@ -59,6 +63,11 @@ public class ServiceInfo {
 
     public ServiceInfo contractedCountry(CountryInfoShortModel contractedCountry) {
         this.contractedCountry = contractedCountry;
+        return this;
+    }
+
+    public ServiceInfo uBrand(UBrandInfo uBrand) {
+        this.uBrand = uBrand;
         return this;
     }
 }

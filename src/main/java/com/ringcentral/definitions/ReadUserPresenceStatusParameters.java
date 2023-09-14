@@ -6,11 +6,11 @@ package com.ringcentral.definitions;
  */
 public class ReadUserPresenceStatusParameters {
     /**
-     * Whether to return detailed telephony state
+     * Specifies whether to return a detailed telephony state or not
      */
     public Boolean detailedTelephonyState;
     /**
-     * Whether to return SIP data
+     * Specifies whether to return SIP data or not
      */
     public Boolean sipData;
 

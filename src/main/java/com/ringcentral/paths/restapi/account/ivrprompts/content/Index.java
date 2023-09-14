@@ -1,6 +1,7 @@
 package com.ringcentral.paths.restapi.account.ivrprompts.content;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -23,12 +24,15 @@ public class Index {
      * Returns media content of an IVR prompt by ID.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/ivr-prompts/{promptId}/content
-     * Rate Limit Group: Medium
+     * Rate Limit Group: Heavy
      * App Permission: ReadAccounts
-     * User Permission: ReadCompanyGreetings
      */
-    public byte[] get() throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+    public byte[] get(ReadIVRPromptContentParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
         return rb.bytes();
+    }
+
+    public byte[] get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
     }
 }

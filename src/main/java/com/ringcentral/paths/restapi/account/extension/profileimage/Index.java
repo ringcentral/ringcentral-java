@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.profileimage;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateUserProfileImageRequest;
-import com.ringcentral.definitions.UpdateUserProfileImageRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -85,17 +84,22 @@ public class Index {
     /**
      * Returns the scaled profile image of an extension.
      * <p>
+     * **This API must be called via media API entry point, e.g. https://media.ringcentral.com**
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}
-     * Rate Limit Group: Light
+     * Rate Limit Group: Medium
      * App Permission: ReadAccounts
-     * User Permission: ReadExtensions
      */
-    public byte[] get() throws com.ringcentral.RestException, java.io.IOException {
+    public byte[] get(ReadScaledProfileImageParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (scaleSize == null) {
             throw new IllegalArgumentException("Parameter scaleSize cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
         return rb.bytes();
+    }
+
+    public byte[] get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
     }
 }

@@ -2,17 +2,9 @@ package com.ringcentral.definitions;
 
 
 /**
- * Target caller info
+ * Target caller information
  */
 public class CallLogToParty {
-    /**
-     * Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)
-     */
-    public String location;
-    /**
-     *
-     */
-    public CallLogRecordDeviceInfo device;
     /**
      * Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS
      */
@@ -30,19 +22,17 @@ public class CallLogToParty {
      */
     public String name;
     /**
-     * The dialed phone number without modifications. Returned for outbound calls and Overlay accounts
+     * Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)
+     */
+    public String location;
+    /**
+     *
+     */
+    public CallLogRecordDeviceInfo device;
+    /**
+     * Dialed phone number without any format modifications. Returned for outbound calls
      */
     public String dialedPhoneNumber;
-
-    public CallLogToParty location(String location) {
-        this.location = location;
-        return this;
-    }
-
-    public CallLogToParty device(CallLogRecordDeviceInfo device) {
-        this.device = device;
-        return this;
-    }
 
     public CallLogToParty phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -61,6 +51,16 @@ public class CallLogToParty {
 
     public CallLogToParty name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public CallLogToParty location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public CallLogToParty device(CallLogRecordDeviceInfo device) {
+        this.device = device;
         return this;
     }
 

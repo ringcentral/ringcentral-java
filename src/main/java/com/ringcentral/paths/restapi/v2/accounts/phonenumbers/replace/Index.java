@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.phonenumbers.replace;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AccountPhoneNumberInfo;
-import com.ringcentral.definitions.ReplacePhoneNumberRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -22,8 +21,8 @@ public class Index {
     }
 
     /**
-     * Replaces (swaps) phone numbers from inventory to main, company, direct or company fax numbers.
-     * Used to replace temporary numbers when porting process is complete.
+     * Replaces (swaps) phone numbers from Inventory with the main, company, direct or company fax numbers.
+     * This method is used to replace temporary numbers when the porting process is complete.
      * <p>
      * HTTP Method: post
      * Endpoint: /restapi/v2/accounts/{accountId}/phone-numbers/{phoneNumberId}/replace

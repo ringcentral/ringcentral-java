@@ -1,9 +1,7 @@
 package com.ringcentral.paths.webinar.history.v1.webinars.sessions.invitees;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.InviteeListResource;
-import com.ringcentral.definitions.InviteeModel;
-import com.ringcentral.definitions.RcwHistoryListInviteesParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -28,7 +26,7 @@ public class Index {
     }
 
     /**
-     * Returns the list of Invitees (co-hosts and panelists) of a given Webinar Session.
+     * Returns the list of Invitees (co-hosts and panelists) of a given Webinar Session (host interface).
      * An implicit record created for a Webinar &#039;Host&#039; is always returned.
      * <p>
      * HTTP Method: get
@@ -46,7 +44,7 @@ public class Index {
     }
 
     /**
-     * Returns a historical session invitee information by ID
+     * Returns a historical session invitee information by ID (host interface).
      * HTTP Method: get
      * Endpoint: /webinar/history/v1/webinars/{webinarId}/sessions/{sessionId}/invitees/{inviteeId}
      * Rate Limit Group: Heavy

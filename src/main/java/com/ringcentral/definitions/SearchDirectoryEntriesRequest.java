@@ -20,9 +20,9 @@ public class SearchDirectoryEntriesRequest {
      */
     public Boolean showAdminOnlyContacts;
     /**
-     * Type of extension to filter the contacts
-     * Example: FaxUser
-     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, IvrMenu, ApplicationExtension, ParkLocation, Limited, Site, DelegatedLinesGroup, FlexibleUser
+     * Type of directory contact to filter
+     * Example: User
+     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, IvrMenu, Limited, ApplicationExtension, Site, Bot, Room, DelegatedLinesGroup, GroupCallPickup, External
      */
     public String extensionType;
     /**
@@ -55,7 +55,7 @@ public class SearchDirectoryEntriesRequest {
     public String[] extensionStatuses;
     /**
      * Types of extension to filter the contacts
-     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, IvrMenu, ApplicationExtension, ParkLocation, Limited, Site, DelegatedLinesGroup, FlexibleUser
+     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, Site, Room, ProxyAdmin, DelegatedLinesGroup, FlexibleUser, GroupCallPickup, RoomConnector
      */
     public String[] extensionTypes;
     /**

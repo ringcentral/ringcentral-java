@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.greeting;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateCompanyGreetingRequest;
-import com.ringcentral.definitions.CustomCompanyGreetingInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -33,4 +32,9 @@ public class Index {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), createCompanyGreetingRequest, null, com.ringcentral.ContentType.MULTIPART);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CustomCompanyGreetingInfo.class);
     }
+
+    public com.ringcentral.paths.restapi.account.greeting.content.Index content() {
+        return new com.ringcentral.paths.restapi.account.greeting.content.Index(this);
+    }
+
 }

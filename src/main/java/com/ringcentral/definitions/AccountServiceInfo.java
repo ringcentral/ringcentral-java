@@ -49,6 +49,10 @@ public class AccountServiceInfo {
      */
     @SerializedName("package")
     public PackageInfo _package;
+    /**
+     *
+     */
+    public UBrandInfo uBrand;
 
     public AccountServiceInfo uri(String uri) {
         this.uri = uri;
@@ -97,6 +101,11 @@ public class AccountServiceInfo {
 
     public AccountServiceInfo _package(PackageInfo _package) {
         this._package = _package;
+        return this;
+    }
+
+    public AccountServiceInfo uBrand(UBrandInfo uBrand) {
+        this.uBrand = uBrand;
         return this;
     }
 }

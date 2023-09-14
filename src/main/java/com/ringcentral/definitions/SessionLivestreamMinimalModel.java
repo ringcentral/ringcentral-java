@@ -32,6 +32,11 @@ public class SessionLivestreamMinimalModel {
      */
     public String previousLivestreamStatus;
     /**
+     * Time at which the session started to publish media to livestream service provider.
+     * Format: date-time
+     */
+    public String livestreamStartTime;
+    /**
      *
      */
     public ApiError error;
@@ -53,6 +58,11 @@ public class SessionLivestreamMinimalModel {
 
     public SessionLivestreamMinimalModel previousLivestreamStatus(String previousLivestreamStatus) {
         this.previousLivestreamStatus = previousLivestreamStatus;
+        return this;
+    }
+
+    public SessionLivestreamMinimalModel livestreamStartTime(String livestreamStartTime) {
+        this.livestreamStartTime = livestreamStartTime;
         return this;
     }
 

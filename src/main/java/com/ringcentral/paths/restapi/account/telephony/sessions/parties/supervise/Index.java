@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.supervise;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.PartySuperviseRequest;
-import com.ringcentral.definitions.PartySuperviseResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

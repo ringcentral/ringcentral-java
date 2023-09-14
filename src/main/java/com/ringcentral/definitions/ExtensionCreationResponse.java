@@ -98,6 +98,10 @@ public class ExtensionCreationResponse {
      * for extensions of &#039;User&#039; type only
      */
     public Boolean hidden;
+    /**
+     *
+     */
+    public AssignedCountryInfo assignedCountry;
 
     public ExtensionCreationResponse id(Long id) {
         this.id = id;
@@ -191,6 +195,11 @@ public class ExtensionCreationResponse {
 
     public ExtensionCreationResponse hidden(Boolean hidden) {
         this.hidden = hidden;
+        return this;
+    }
+
+    public ExtensionCreationResponse assignedCountry(AssignedCountryInfo assignedCountry) {
+        this.assignedCountry = assignedCountry;
         return this;
     }
 }

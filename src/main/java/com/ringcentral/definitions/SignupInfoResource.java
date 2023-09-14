@@ -21,6 +21,12 @@ public class SignupInfoResource {
      * Updates &#039;Send Marketing Information&#039; flag on web interface
      */
     public Boolean marketingAccepted;
+    /**
+     * The timestamp of account creation
+     * Format: date-time
+     * Example: 2023-03-10T18:07:52.534Z
+     */
+    public String creationTime;
 
     public SignupInfoResource tosAccepted(Boolean tosAccepted) {
         this.tosAccepted = tosAccepted;
@@ -39,6 +45,11 @@ public class SignupInfoResource {
 
     public SignupInfoResource marketingAccepted(Boolean marketingAccepted) {
         this.marketingAccepted = marketingAccepted;
+        return this;
+    }
+
+    public SignupInfoResource creationTime(String creationTime) {
+        this.creationTime = creationTime;
         return this;
     }
 }

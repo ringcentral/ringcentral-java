@@ -1,10 +1,7 @@
 package com.ringcentral.paths.restapi.account.ivrprompts;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateIVRPromptRequest;
-import com.ringcentral.definitions.IvrPrompts;
-import com.ringcentral.definitions.PromptInfo;
-import com.ringcentral.definitions.UpdateIVRPromptRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

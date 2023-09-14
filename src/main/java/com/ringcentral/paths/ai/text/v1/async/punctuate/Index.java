@@ -1,9 +1,7 @@
 package com.ringcentral.paths.ai.text.v1.async.punctuate;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CaiAsyncApiResponse;
-import com.ringcentral.definitions.CaiPunctuateParameters;
-import com.ringcentral.definitions.PunctuateInput;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

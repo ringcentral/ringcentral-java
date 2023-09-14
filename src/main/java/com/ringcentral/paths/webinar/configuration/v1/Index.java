@@ -1,6 +1,7 @@
 package com.ringcentral.paths.webinar.configuration.v1;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -17,6 +18,11 @@ public class Index {
 
     public String path(Boolean withParameter) {
         return path();
+    }
+
+
+    public com.ringcentral.paths.webinar.configuration.v1.company.Index company() {
+        return new com.ringcentral.paths.webinar.configuration.v1.company.Index(this);
     }
 
 

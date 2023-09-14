@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.licenses;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.LicensesStatisticsResponse;
-import com.ringcentral.definitions.ListLicensesV2Parameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

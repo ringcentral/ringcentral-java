@@ -9,7 +9,7 @@ public class EmergencyLocationInfoRequest {
     /**
      *
      */
-    public EmergencyLocationAddressInfo address;
+    public EmergencyLocationInfoRequestAddress address;
     /**
      * Emergency response location name
      */
@@ -29,6 +29,10 @@ public class EmergencyLocationInfoRequest {
      */
     public String usageStatus;
     /**
+     * Address format id
+     */
+    public String addressFormatId;
+    /**
      * Visibility of an emergency response location. If `Private`
      * is set, then a location is visible only for restricted number of users,
      * specified in `owners` array
@@ -42,7 +46,7 @@ public class EmergencyLocationInfoRequest {
         return this;
     }
 
-    public EmergencyLocationInfoRequest address(EmergencyLocationAddressInfo address) {
+    public EmergencyLocationInfoRequest address(EmergencyLocationInfoRequestAddress address) {
         this.address = address;
         return this;
     }
@@ -64,6 +68,11 @@ public class EmergencyLocationInfoRequest {
 
     public EmergencyLocationInfoRequest usageStatus(String usageStatus) {
         this.usageStatus = usageStatus;
+        return this;
+    }
+
+    public EmergencyLocationInfoRequest addressFormatId(String addressFormatId) {
+        this.addressFormatId = addressFormatId;
         return this;
     }
 

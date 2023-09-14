@@ -1,8 +1,7 @@
 package com.ringcentral.paths.rcvideo.v2.bridges.pin.web;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.BridgeResponse;
-import com.ringcentral.definitions.GetBridgeByWebPinParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

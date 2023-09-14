@@ -54,7 +54,7 @@ public class CompanyPhoneNumberInfo {
      * Usage type of a phone number. Usage type of a phone number.
      * Numbers of &#039;NumberPool&#039; type wont&#039;t be returned for phone number list
      * requests
-     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool, BusinessMobileNumber, IntegrationNumber
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
     public String usageType;
     /**
@@ -69,6 +69,10 @@ public class CompanyPhoneNumberInfo {
      * Vanity pattern for this number. Returned only when vanity search option is requested. Vanity pattern corresponds to request parameters nxx plus line or numberPattern
      */
     public String vanityPattern;
+    /**
+     * Specifies if a phone number is primary, i.e. displayed as &#039;main number&#039; and called by default
+     */
+    public Boolean primary;
 
     public CompanyPhoneNumberInfo uri(String uri) {
         this.uri = uri;
@@ -137,6 +141,11 @@ public class CompanyPhoneNumberInfo {
 
     public CompanyPhoneNumberInfo vanityPattern(String vanityPattern) {
         this.vanityPattern = vanityPattern;
+        return this;
+    }
+
+    public CompanyPhoneNumberInfo primary(Boolean primary) {
+        this.primary = primary;
         return this;
     }
 }

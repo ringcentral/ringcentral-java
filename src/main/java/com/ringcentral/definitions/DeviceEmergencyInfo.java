@@ -6,9 +6,13 @@ package com.ringcentral.definitions;
  */
 public class DeviceEmergencyInfo {
     /**
-     *
+     * Automatically determined emergency address. If `emergencyAddressState`
+     * value is &#039;Assigned&#039;, then this address is assigned to the current device.
+     * If `emergencyAddressState` value is &#039;Unconfirmed&#039;, then the specified address
+     * must be confirmed by the user before being registered as emergency address
+     * for the current device. In all other cases the value is null
      */
-    public DeviceEmergencyAddress address;
+    public DeviceEmergencyInfoAddress address;
     /**
      *
      */
@@ -42,7 +46,7 @@ public class DeviceEmergencyInfo {
      */
     public String addressEditableStatus;
 
-    public DeviceEmergencyInfo address(DeviceEmergencyAddress address) {
+    public DeviceEmergencyInfo address(DeviceEmergencyInfoAddress address) {
         this.address = address;
         return this;
     }

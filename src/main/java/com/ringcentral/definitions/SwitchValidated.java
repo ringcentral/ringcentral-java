@@ -11,6 +11,10 @@ public class SwitchValidated {
      */
     public String chassisId;
     /**
+     * Switch entity extension for better diversity. Should be used together with chassisId.
+     */
+    public String port;
+    /**
      * Validation result status
      * Enum: Valid, Invalid
      */
@@ -27,6 +31,11 @@ public class SwitchValidated {
 
     public SwitchValidated chassisId(String chassisId) {
         this.chassisId = chassisId;
+        return this;
+    }
+
+    public SwitchValidated port(String port) {
+        this.port = port;
         return this;
     }
 

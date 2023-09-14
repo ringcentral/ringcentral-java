@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.callmonitoringgroups.bulkassign;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallMonitoringBulkAssign;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

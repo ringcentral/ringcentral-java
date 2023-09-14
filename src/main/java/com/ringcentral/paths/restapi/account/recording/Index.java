@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.recording;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.GetCallRecordingResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -40,4 +40,9 @@ public class Index {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), GetCallRecordingResponse.class);
     }
+
+    public com.ringcentral.paths.restapi.account.recording.content.Index content() {
+        return new com.ringcentral.paths.restapi.account.recording.content.Index(this);
+    }
+
 }

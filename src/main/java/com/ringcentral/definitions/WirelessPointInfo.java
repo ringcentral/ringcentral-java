@@ -26,9 +26,13 @@ public class WirelessPointInfo {
      */
     public EmergencyAddressAutoUpdateSiteInfo site;
     /**
+     * Emergency address information (or information assigned to the
+     * switch or wireless point - in case of using them). Only one of a pair
+     * `emergencyAddress` or `emergencyLocationId` should be specified,
+     * otherwise an error is returned
      * Required
      */
-    public EmergencyAddressInfo emergencyAddress;
+    public WirelessPointInfoEmergencyAddress emergencyAddress;
     /**
      *
      */
@@ -63,7 +67,7 @@ public class WirelessPointInfo {
         return this;
     }
 
-    public WirelessPointInfo emergencyAddress(EmergencyAddressInfo emergencyAddress) {
+    public WirelessPointInfo emergencyAddress(WirelessPointInfoEmergencyAddress emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

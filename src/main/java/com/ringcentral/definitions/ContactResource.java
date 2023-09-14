@@ -11,7 +11,7 @@ public class ContactResource {
     /**
      * Contact type
      * Example: User
-     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, IvrMenu, Limited, ApplicationExtension, Site, Bot, Room, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup, External, Unknown
+     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, ParkLocation, IvrMenu, Limited, ApplicationExtension, Site, Bot, Room, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup, External, RoomConnector, Unknown
      */
     public String type;
     /**

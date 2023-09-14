@@ -1,8 +1,7 @@
 package com.ringcentral.paths.rcvideo.v1.accounts.extensions.delegators;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.DelegatorsListResult;
-import com.ringcentral.definitions.RcvListDelegatorsParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

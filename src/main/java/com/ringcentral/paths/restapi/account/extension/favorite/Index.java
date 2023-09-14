@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.favorite;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.FavoriteCollection;
-import com.ringcentral.definitions.FavoriteContactList;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

@@ -1,9 +1,7 @@
 package com.ringcentral.paths.teammessaging.v1.chats;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ListGlipChatsNewParameters;
-import com.ringcentral.definitions.TMChatInfo;
-import com.ringcentral.definitions.TMChatList;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

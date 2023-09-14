@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.pickup;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallParty;
-import com.ringcentral.definitions.PickupTarget;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

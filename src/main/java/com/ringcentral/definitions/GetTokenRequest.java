@@ -22,7 +22,7 @@ public class GetTokenRequest {
     /**
      * Grant type
      * Required
-     * Enum: authorization_code, password, refresh_token, client_credentials, urn:ietf:params:oauth:grant-type:jwt-bearer, urn:ietf:params:oauth:grant-type:device_code, device_certificate, partner_jwt, guest, personal_jwt, otp
+     * Enum: authorization_code, password, refresh_token, client_credentials, urn:ietf:params:oauth:grant-type:jwt-bearer, urn:ietf:params:oauth:grant-type:device_code, device_certificate, partner_jwt, guest, personal_jwt, otp, ivr_pin
      */
     public String grant_type;
     /**
@@ -106,6 +106,10 @@ public class GetTokenRequest {
      *
      */
     public String device_code;
+    /**
+     * For `ivr_pin` grant type only. IVR pin.
+     */
+    public String ivr_pin;
 
     public GetTokenRequest username(String username) {
         this.username = username;
@@ -209,6 +213,11 @@ public class GetTokenRequest {
 
     public GetTokenRequest device_code(String device_code) {
         this.device_code = device_code;
+        return this;
+    }
+
+    public GetTokenRequest ivr_pin(String ivr_pin) {
+        this.ivr_pin = ivr_pin;
         return this;
     }
 }

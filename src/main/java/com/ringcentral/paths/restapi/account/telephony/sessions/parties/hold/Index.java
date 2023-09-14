@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallParty;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -27,8 +27,8 @@ public class Index {
      * Rate Limit Group: Light
      * App Permission: CallControl
      */
-    public CallParty post() throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), null);
+    public CallParty post(HoldCallPartyRequest holdCallPartyRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(), holdCallPartyRequest, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CallParty.class);
     }
 }

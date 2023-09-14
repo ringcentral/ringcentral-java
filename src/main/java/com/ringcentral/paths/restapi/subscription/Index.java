@@ -1,10 +1,7 @@
 package com.ringcentral.paths.restapi.subscription;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateSubscriptionRequest;
-import com.ringcentral.definitions.SubscriptionInfo;
-import com.ringcentral.definitions.SubscriptionListResource;
-import com.ringcentral.definitions.UpdateSubscriptionRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -41,8 +38,39 @@ public class Index {
     }
 
     /**
-     * Creates a new subscription for the current authorized user / client application.
-     * The number of subscriptions per user extension is limited to 20.
+     * This API allows client applications to register a new subscription so that it
+     * can be notified of events when they occur on the platform.
+     * <p>
+     * A subscription relates to a set of events that a client application would like
+     * to be informed of and the delivery channel by which they will be notified of
+     * those events. How subscriptions are established depends upon the notification
+     * channel the client application would like to use to receive the event
+     * notification. For example, to create a webhook a developer would create a
+     * subscription via a REST API call, while specifying a list of events or &quot;event
+     * filters&quot; to be notified of, a transport type of `WebHook`, and the address or
+     * URL to which they would like the webhook delivered.
+     * <p>
+     * However, developers wishing to subscribe to a set of events via a WebSocket
+     * channel, would first connect to the WebSocket gateway, and then issue their
+     * subscription request over the WebSocket itself, as opposed to making a REST
+     * API call to this endpoint.
+     * <p>
+     * While the protocol for establishing a subscription may vary depending upon
+     * the delivery channel for that subscription, the schemas used for representing
+     * a subscription are the same across all delivery modes.
+     * <p>
+     * Subscriptions are currently limited to 20 subscriptions per user/extension (for particular application).
+     * <p>
+     * RingCentral currently supports the following delivery modes for event subscriptions:
+     * <p>
+     * * [WebHook](https://developers.ringcentral.com/guide/notifications/webhooks/quick-start) - to receive event notifications as an HTTP POST to a given URL
+     * * [WebSocket](https://developers.ringcentral.com/guide/notifications/websockets/quick-start) - to receive real-time events over a persistent WebSocket connection
+     * * [PubNub](https://developers.ringcentral.com/guide/notifications/push-notifications/quick-start) (deprecated) - to receive a push notification sent directly to a client application
+     * <p>
+     * Developers should be aware that the PubNub delivery mode is currently
+     * deprecated and will be removed in 2024. Developers are encouraged to
+     * [migrate their client applications to use WebSockets](https://developers.ringcentral.com/guide/notifications/websockets/migration/)
+     * instead.
      * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/subscription
@@ -68,13 +96,17 @@ public class Index {
     }
 
     /**
-     * Updates the existing subscription. The client application can extend/narrow
-     * the list of events for which it receives notifications within this subscription.
+     * Updates the existing subscription. The client application can extend or narrow
+     * the list of events for which it receives notifications within the current subscription.
      * If event filters are specified, calling this method modifies them for the
-     * existing subscription. The method also allows to set the subscription expiration time.
-     * If other than `events` and `expiresIn` parameters are passed in the request they will be ignored.
-     * If the request body is empty then the specified subscription will be just renewed without any
-     * event filter modifications and with default expiration time.
+     * existing subscription. The method also allows one to set an expiration time for the
+     * subscription itself.
+     * <p>
+     * If parameters other than `events` and `expiresIn` are specified in the request they will be ignored.
+     * If the request body is empty then the specified subscription will be renewed without any
+     * event filter modifications and using the default expiration time.
+     * <p>
+     * Please note that `WebSocket` subscriptions cannot be updated via HTTP interface.
      * <p>
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/subscription/{subscriptionId}

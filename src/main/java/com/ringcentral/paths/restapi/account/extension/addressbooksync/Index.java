@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.addressbooksync;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AddressBookSync;
-import com.ringcentral.definitions.SyncAddressBookParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

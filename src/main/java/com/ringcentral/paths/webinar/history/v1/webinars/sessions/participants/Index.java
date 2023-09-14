@@ -1,8 +1,7 @@
 package com.ringcentral.paths.webinar.history.v1.webinars.sessions.participants;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ParticipantListResource;
-import com.ringcentral.definitions.RcwHistoryListParticipantsParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -22,7 +21,7 @@ public class Index {
     }
 
     /**
-     * Returns the list of participants of a given Webinar Session.
+     * Returns the list of participants of a given Webinar Session (host interface).
      * <p>
      * HTTP Method: get
      * Endpoint: /webinar/history/v1/webinars/{webinarId}/sessions/{sessionId}/participants
@@ -37,4 +36,9 @@ public class Index {
     public ParticipantListResource get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
+
+    public com.ringcentral.paths.webinar.history.v1.webinars.sessions.participants.self.Index self() {
+        return new com.ringcentral.paths.webinar.history.v1.webinars.sessions.participants.self.Index(this);
+    }
+
 }

@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.wirelesspointsbulkupdate;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.UpdateMultipleWirelessPointsRequest;
-import com.ringcentral.definitions.UpdateMultipleWirelessPointsResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

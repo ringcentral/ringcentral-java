@@ -1,6 +1,6 @@
 package com.ringcentral.paths.restapi.account.extension;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index {
@@ -81,7 +81,6 @@ public class Index {
 
     /**
      * Updates the user settings.
-     * <p>
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}
      * Rate Limit Group: Medium

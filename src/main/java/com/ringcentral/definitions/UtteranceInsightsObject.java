@@ -31,6 +31,10 @@ public class UtteranceInsightsObject {
     /**
      *
      */
+    public WordTimingsUnit[] wordTimings;
+    /**
+     *
+     */
     public UtteranceInsightsUnit[] insights;
 
     public UtteranceInsightsObject start(Double start) {
@@ -55,6 +59,11 @@ public class UtteranceInsightsObject {
 
     public UtteranceInsightsObject speakerId(String speakerId) {
         this.speakerId = speakerId;
+        return this;
+    }
+
+    public UtteranceInsightsObject wordTimings(WordTimingsUnit[] wordTimings) {
+        this.wordTimings = wordTimings;
         return this;
     }
 

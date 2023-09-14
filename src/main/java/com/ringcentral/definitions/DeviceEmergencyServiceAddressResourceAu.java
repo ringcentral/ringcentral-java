@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 /**
  * Address for emergency cases. The same emergency address is assigned to all the numbers of one device
  */
-public class DeviceEmergencyServiceAddressResource {
+public class DeviceEmergencyServiceAddressResourceAu {
     /**
      *
      */
@@ -61,74 +61,101 @@ public class DeviceEmergencyServiceAddressResource {
      * Specifies if emergency address is out of country
      */
     public Boolean outOfCountry;
+    /**
+     * (Optional) Building name
+     */
+    public String buildingName;
+    /**
+     * Street type
+     */
+    public String streetType;
+    /**
+     * Building/street number
+     */
+    public String buildingNumber;
 
-    public DeviceEmergencyServiceAddressResource street(String street) {
+    public DeviceEmergencyServiceAddressResourceAu street(String street) {
         this.street = street;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource street2(String street2) {
+    public DeviceEmergencyServiceAddressResourceAu street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource city(String city) {
+    public DeviceEmergencyServiceAddressResourceAu city(String city) {
         this.city = city;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource zip(String zip) {
+    public DeviceEmergencyServiceAddressResourceAu zip(String zip) {
         this.zip = zip;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource customerName(String customerName) {
+    public DeviceEmergencyServiceAddressResourceAu customerName(String customerName) {
         this.customerName = customerName;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource state(String state) {
+    public DeviceEmergencyServiceAddressResourceAu state(String state) {
         this.state = state;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource stateId(String stateId) {
+    public DeviceEmergencyServiceAddressResourceAu stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource stateIsoCode(String stateIsoCode) {
+    public DeviceEmergencyServiceAddressResourceAu stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource stateName(String stateName) {
+    public DeviceEmergencyServiceAddressResourceAu stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource countryId(String countryId) {
+    public DeviceEmergencyServiceAddressResourceAu countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource countryIsoCode(String countryIsoCode) {
+    public DeviceEmergencyServiceAddressResourceAu countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource country(String country) {
+    public DeviceEmergencyServiceAddressResourceAu country(String country) {
         this.country = country;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource countryName(String countryName) {
+    public DeviceEmergencyServiceAddressResourceAu countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public DeviceEmergencyServiceAddressResource outOfCountry(Boolean outOfCountry) {
+    public DeviceEmergencyServiceAddressResourceAu outOfCountry(Boolean outOfCountry) {
         this.outOfCountry = outOfCountry;
+        return this;
+    }
+
+    public DeviceEmergencyServiceAddressResourceAu buildingName(String buildingName) {
+        this.buildingName = buildingName;
+        return this;
+    }
+
+    public DeviceEmergencyServiceAddressResourceAu streetType(String streetType) {
+        this.streetType = streetType;
+        return this;
+    }
+
+    public DeviceEmergencyServiceAddressResourceAu buildingNumber(String buildingNumber) {
+        this.buildingNumber = buildingNumber;
         return this;
     }
 }

@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class MobileDeliveryModeRequest {
     /**
-     * Notifications transport type
+     * The transport type for this subscription, or the channel by which an app should be notified of an event
      * Required
      * Enum: RC/APNS, RC/GCM
      */

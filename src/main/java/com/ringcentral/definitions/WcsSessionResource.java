@@ -41,11 +41,6 @@ public class WcsSessionResource {
      */
     public String timeZone;
     /**
-     * Session locale code. Can&#039;t be blank or null
-     * Example: en-US
-     */
-    public String localeCode;
-    /**
      * The time offset (positive, in seconds) indicating how much in advance
      * (comparing to &quot;scheduledStartTime&quot;) panel members should join for the pre-webinar team sync
      * Format: int32
@@ -74,6 +69,11 @@ public class WcsSessionResource {
      * Example: https://v.ringcentral.com/w/join/de7yd8ew7yfsdfjh899843rgj
      */
     public String hostJoinUri;
+    /**
+     * Session locale code. Can&#039;t be blank or null
+     * Example: en-US
+     */
+    public String localeCode;
     /**
      * The RCV bridge id
      * Example: 839874770
@@ -132,11 +132,6 @@ public class WcsSessionResource {
         return this;
     }
 
-    public WcsSessionResource localeCode(String localeCode) {
-        this.localeCode = localeCode;
-        return this;
-    }
-
     public WcsSessionResource panelJoinTimeOffset(Long panelJoinTimeOffset) {
         this.panelJoinTimeOffset = panelJoinTimeOffset;
         return this;
@@ -159,6 +154,11 @@ public class WcsSessionResource {
 
     public WcsSessionResource hostJoinUri(String hostJoinUri) {
         this.hostJoinUri = hostJoinUri;
+        return this;
+    }
+
+    public WcsSessionResource localeCode(String localeCode) {
+        this.localeCode = localeCode;
         return this;
     }
 

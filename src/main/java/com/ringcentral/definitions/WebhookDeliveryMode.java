@@ -3,13 +3,13 @@ package com.ringcentral.definitions;
 
 public class WebhookDeliveryMode {
     /**
-     * Notifications transport type
+     * The transport type for this subscription, or the channel by which an app should be notified of an event
      * Required
      * Enum: WebHook
      */
     public String transportType;
     /**
-     * (Only for a &quot;WebHook&quot; transport, required) URL of a subscriber&#039;s web service
+     * The URL to which notifications should be delivered. This is only applicable for the `WebHook` transport type, for which it is a required field.
      * Required
      * Format: uri
      * Example: https://acme.com/myservice/webhook

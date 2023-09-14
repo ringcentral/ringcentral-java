@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.phonenumbers.bulkadd;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AddPhoneNumbersRequest;
-import com.ringcentral.definitions.AddPhoneNumbersResponse;
-import com.ringcentral.definitions.GetBulkAddTaskResultsV2Response;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -28,8 +26,8 @@ public class Index {
     }
 
     /**
-     * Adds phone numbers to the account inventory as unassigned.
-     * Only &quot;Inventory&quot; usageType is supported. Later we may support other values like &quot;ForwardedNumber&quot; etc.
+     * Adds phone numbers to the account Inventory as unassigned. Currently we support the following three enum values: &#039;Inventory&#039;,
+     * &#039;InventoryPartnerBusinessMobileNumber&#039; and &#039;PartnerBusinessMobileNumber&#039;. Later we may support some other values like &#039;ForwardedNumber&#039;, etc.
      * <p>
      * HTTP Method: post
      * Endpoint: /restapi/v2/accounts/{accountId}/phone-numbers/bulk-add
@@ -43,7 +41,7 @@ public class Index {
     }
 
     /**
-     * Returns the result of asynchronous operation which added phone numbers to account inventory.
+     * Returns the result of asynchronous operation which adds phone numbers to the account Inventory.
      * <p>
      * HTTP Method: get
      * Endpoint: /restapi/v2/accounts/{accountId}/phone-numbers/bulk-add/{taskId}

@@ -1,8 +1,7 @@
 package com.ringcentral.paths.webinar.history.v1.recordings.download;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.RcwHistoryGetRecordingDownloadParameters;
-import com.ringcentral.definitions.RecordingDownloadModel;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

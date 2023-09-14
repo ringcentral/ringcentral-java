@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.directory.federation;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.FederationResource;
-import com.ringcentral.definitions.ReadDirectoryFederationParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

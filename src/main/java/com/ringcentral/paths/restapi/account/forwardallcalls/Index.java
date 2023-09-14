@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.forwardallcalls;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ForwardAllCompanyCallsInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -41,8 +41,8 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: EditCompanyAnsweringRules
      */
-    public ForwardAllCompanyCallsInfo patch(ForwardAllCompanyCallsInfo forwardAllCompanyCallsInfo) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.patch(this.path(), forwardAllCompanyCallsInfo, null);
+    public ForwardAllCompanyCallsInfo patch(ForwardAllCompanyCallsRequest forwardAllCompanyCallsRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.patch(this.path(), forwardAllCompanyCallsRequest, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), ForwardAllCompanyCallsInfo.class);
     }
 }

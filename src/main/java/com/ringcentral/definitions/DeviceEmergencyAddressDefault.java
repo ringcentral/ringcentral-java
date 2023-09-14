@@ -8,7 +8,7 @@ package com.ringcentral.definitions;
  * must be confirmed by the user before being registered as emergency address
  * for the current device. In all other cases the value is null
  */
-public class DeviceEmergencyAddress {
+public class DeviceEmergencyAddressDefault {
     /**
      * Name of a customer
      */
@@ -69,72 +69,72 @@ public class DeviceEmergencyAddress {
      */
     public String syncStatus;
 
-    public DeviceEmergencyAddress customerName(String customerName) {
+    public DeviceEmergencyAddressDefault customerName(String customerName) {
         this.customerName = customerName;
         return this;
     }
 
-    public DeviceEmergencyAddress street(String street) {
+    public DeviceEmergencyAddressDefault street(String street) {
         this.street = street;
         return this;
     }
 
-    public DeviceEmergencyAddress street2(String street2) {
+    public DeviceEmergencyAddressDefault street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public DeviceEmergencyAddress city(String city) {
+    public DeviceEmergencyAddressDefault city(String city) {
         this.city = city;
         return this;
     }
 
-    public DeviceEmergencyAddress zip(String zip) {
+    public DeviceEmergencyAddressDefault zip(String zip) {
         this.zip = zip;
         return this;
     }
 
-    public DeviceEmergencyAddress state(String state) {
+    public DeviceEmergencyAddressDefault state(String state) {
         this.state = state;
         return this;
     }
 
-    public DeviceEmergencyAddress stateId(String stateId) {
+    public DeviceEmergencyAddressDefault stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public DeviceEmergencyAddress stateIsoCode(String stateIsoCode) {
+    public DeviceEmergencyAddressDefault stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public DeviceEmergencyAddress stateName(String stateName) {
+    public DeviceEmergencyAddressDefault stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public DeviceEmergencyAddress countryId(String countryId) {
+    public DeviceEmergencyAddressDefault countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public DeviceEmergencyAddress countryIsoCode(String countryIsoCode) {
+    public DeviceEmergencyAddressDefault countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public DeviceEmergencyAddress country(String country) {
+    public DeviceEmergencyAddressDefault country(String country) {
         this.country = country;
         return this;
     }
 
-    public DeviceEmergencyAddress countryName(String countryName) {
+    public DeviceEmergencyAddressDefault countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public DeviceEmergencyAddress syncStatus(String syncStatus) {
+    public DeviceEmergencyAddressDefault syncStatus(String syncStatus) {
         this.syncStatus = syncStatus;
         return this;
     }

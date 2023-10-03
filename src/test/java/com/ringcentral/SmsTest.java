@@ -19,11 +19,7 @@ public class SmsTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         GetSMSMessageInfoResponse response = rc.restapi().account().extension().sms().post(
             new CreateSMSMessage()
@@ -48,11 +44,7 @@ public class SmsTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         CreateSMSMessage requestBody = new CreateSMSMessage();
         requestBody.text = "hello world";

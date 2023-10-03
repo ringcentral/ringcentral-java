@@ -17,11 +17,7 @@ public class CheckSubscriptionTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         SubscriptionListResource resp = rc.restapi().subscription().list();
         for (SubscriptionInfo r : resp.records) {

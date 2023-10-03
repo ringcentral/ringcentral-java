@@ -16,11 +16,7 @@ public class DictionaryTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         CountryInfoDictionaryModel c = rc.restapi().dictionary().country("46").get();
         Assert.assertEquals("China", c.name);
@@ -36,11 +32,7 @@ public class DictionaryTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         CountryListDictionaryModel r = rc.restapi().dictionary().country().list();
         Assert.assertTrue(r.records.length > 0);

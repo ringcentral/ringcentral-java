@@ -17,11 +17,7 @@ public class IVRContentTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         IvrPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
         PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();
@@ -41,11 +37,7 @@ public class IVRContentTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         rc.restapi().account().ivrPrompts().post(new CreateIVRPromptRequest()
             .name("Uploaded via API")
@@ -66,11 +58,7 @@ public class IVRContentTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         IvrPrompts ivrPrompts = rc.restapi().account().ivrPrompts().list();
         PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();

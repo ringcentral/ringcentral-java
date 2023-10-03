@@ -16,11 +16,7 @@ public class ProvisionIvrMenuTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         IVRMenuInfo iVRMenuInfo = rc.restapi().account().ivrMenus().post(new IVRMenuInfo().extensionNumber("2002").name("My IVR menu"));
         assertNotNull(iVRMenuInfo);

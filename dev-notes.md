@@ -1,10 +1,3 @@
-## Setup
-
-```
-cp src/test/resources/.env.sample src/test/resources/.env
-edit src/test/resources/.env
-```
-
 ## Test
 
 ```

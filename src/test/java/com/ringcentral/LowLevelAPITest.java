@@ -17,11 +17,7 @@ public class LowLevelAPITest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
         ResponseBody responseBody = rc.get("/restapi/v1.0/account/~/extension/~", null);
         String responseString = responseBody.string();
         GetExtensionInfoResponse extensionInfo = Utils.gson.fromJson(responseString, GetExtensionInfoResponse.class);

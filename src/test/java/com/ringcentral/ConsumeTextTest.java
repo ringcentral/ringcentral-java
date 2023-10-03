@@ -13,19 +13,10 @@ public class ConsumeTextTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         String groupId = rc.teamMessaging().v1().chats().list().records[0].id;
-        String postId = rc.teamMessaging().v1().chats(groupId).posts().list().records[0].id;
-
-        // below is for experiment only
-//        String newText = UUID.randomUUID().toString();
-//        String updatedText = rc.restapi().glip().groups(groupId).posts(postId).text().put(newText);
-//        assertEquals(updatedText, newText);
+        rc.teamMessaging().v1().chats(groupId).posts().list();
 
         rc.revoke();
     }

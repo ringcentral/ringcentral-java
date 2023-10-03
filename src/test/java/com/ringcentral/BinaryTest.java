@@ -17,12 +17,9 @@ public class BinaryTest {
             System.getenv("RINGCENTRAL_CLIENT_SECRET"),
             System.getenv("RINGCENTRAL_SERVER_URL"));
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD"));
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
-        String str = rc.restapi().account().extension().profileImage().post(new
+        rc.restapi().account().extension().profileImage().post(new
             CreateUserProfileImageRequest()
             .image(new Attachment()
                 .filename("test.png")
@@ -40,10 +37,7 @@ public class BinaryTest {
             System.getenv("RINGCENTRAL_CLIENT_SECRET"),
             System.getenv("RINGCENTRAL_SERVER_URL"));
 
-        rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD"));
+        rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
         byte[] bytes =
             rc.restapi().account().extension().profileImage("90x90").get();

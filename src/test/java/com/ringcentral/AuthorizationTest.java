@@ -17,11 +17,7 @@ public class AuthorizationTest {
             System.getenv("RINGCENTRAL_SERVER_URL")
         );
 
-        TokenInfo token = rc.authorize(
-            System.getenv("RINGCENTRAL_USERNAME"),
-            System.getenv("RINGCENTRAL_EXTENSION"),
-            System.getenv("RINGCENTRAL_PASSWORD")
-        );
+        TokenInfo token = rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
         assertNotNull(token.access_token);
         assertNotNull(rc.token);
         rc.revoke();

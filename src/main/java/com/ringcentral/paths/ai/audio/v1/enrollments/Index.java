@@ -1,22 +1,22 @@
 package com.ringcentral.paths.ai.audio.v1.enrollments;
 
-import com.ringcentral.*;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
     public com.ringcentral.paths.ai.audio.v1.Index parent;
-    public String enrollmentId;
+    public String speakerId;
 
-    public Index(com.ringcentral.paths.ai.audio.v1.Index parent, String enrollmentId) {
+    public Index(com.ringcentral.paths.ai.audio.v1.Index parent, String speakerId) {
         this.parent = parent;
         this.rc = parent.rc;
-        this.enrollmentId = enrollmentId;
+        this.speakerId = speakerId;
     }
 
     public String path(Boolean withParameter) {
-        if (withParameter && enrollmentId != null) {
-            return parent.path() + "/enrollments/" + enrollmentId;
+        if (withParameter && speakerId != null) {
+            return parent.path() + "/enrollments/" + speakerId;
         }
         return parent.path() + "/enrollments";
     }
@@ -56,13 +56,13 @@ public class Index {
     /**
      * Get The Status of Enrollment for the provided Speaker.
      * HTTP Method: get
-     * Endpoint: /ai/audio/v1/enrollments/{enrollmentId}
+     * Endpoint: /ai/audio/v1/enrollments/{speakerId}
      * Rate Limit Group: Heavy
      * App Permission: AI
      */
     public EnrollmentStatus get() throws com.ringcentral.RestException, java.io.IOException {
-        if (enrollmentId == null) {
-            throw new IllegalArgumentException("Parameter enrollmentId cannot be null");
+        if (speakerId == null) {
+            throw new IllegalArgumentException("Parameter speakerId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), EnrollmentStatus.class);
@@ -71,13 +71,13 @@ public class Index {
     /**
      * Delete The Enrollment for the provided Speaker.
      * HTTP Method: delete
-     * Endpoint: /ai/audio/v1/enrollments/{enrollmentId}
+     * Endpoint: /ai/audio/v1/enrollments/{speakerId}
      * Rate Limit Group: Heavy
      * App Permission: AI
      */
     public String delete() throws com.ringcentral.RestException, java.io.IOException {
-        if (enrollmentId == null) {
-            throw new IllegalArgumentException("Parameter enrollmentId cannot be null");
+        if (speakerId == null) {
+            throw new IllegalArgumentException("Parameter speakerId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.delete(this.path(), null);
         return rb.string();
@@ -86,13 +86,13 @@ public class Index {
     /**
      * Add newer audio data to improve an existing speaker enrollment
      * HTTP Method: patch
-     * Endpoint: /ai/audio/v1/enrollments/{enrollmentId}
+     * Endpoint: /ai/audio/v1/enrollments/{speakerId}
      * Rate Limit Group: Heavy
      * App Permission: AI
      */
     public EnrollmentStatus patch(EnrollmentPatchInput enrollmentPatchInput) throws com.ringcentral.RestException, java.io.IOException {
-        if (enrollmentId == null) {
-            throw new IllegalArgumentException("Parameter enrollmentId cannot be null");
+        if (speakerId == null) {
+            throw new IllegalArgumentException("Parameter speakerId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.patch(this.path(), enrollmentPatchInput, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), EnrollmentStatus.class);

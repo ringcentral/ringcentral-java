@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListExtensionsParameters {
     /**
-     * Number of extension to be retrieved
+     * Extension short number to filter records
      */
     public String extensionNumber;
     /**

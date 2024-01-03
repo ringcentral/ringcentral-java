@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.forward;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ForwardCallPartyResponse;
+import com.ringcentral.definitions.ForwardTarget;
 
 public class Index {
     public RestClient rc;
@@ -27,8 +28,8 @@ public class Index {
      * Rate Limit Group: Light
      * App Permission: CallControl
      */
-    public CallParty post(ForwardTarget forwardTarget) throws com.ringcentral.RestException, java.io.IOException {
+    public ForwardCallPartyResponse post(ForwardTarget forwardTarget) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), forwardTarget, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallParty.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), ForwardCallPartyResponse.class);
     }
 }

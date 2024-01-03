@@ -1,7 +1,6 @@
 package com.ringcentral.paths.ai;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
 
 public class Index {
     public RestClient rc;

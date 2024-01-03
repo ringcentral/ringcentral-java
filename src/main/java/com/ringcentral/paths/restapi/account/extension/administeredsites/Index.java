@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.administeredsites;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.BusinessSiteCollectionRequest;
+import com.ringcentral.definitions.BusinessSiteCollectionResource;
 
 public class Index {
     public RestClient rc;

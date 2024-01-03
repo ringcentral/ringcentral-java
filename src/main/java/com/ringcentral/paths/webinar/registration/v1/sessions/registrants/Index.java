@@ -1,6 +1,6 @@
 package com.ringcentral.paths.webinar.registration.v1.sessions.registrants;
 
-import com.ringcentral.*;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.*;
 
 public class Index {
@@ -58,9 +58,9 @@ public class Index {
      * Rate Limit Group: Heavy
      * App Permission: EditWebinars
      */
-    public RegistrantModelResponsePost post(RegistrantBaseModel registrantBaseModel) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(false), registrantBaseModel, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), RegistrantModelResponsePost.class);
+    public RegistrantModelResponsePostWithQuestionnaire post(RegistrantBaseModelWithQuestionnaire registrantBaseModelWithQuestionnaire) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(false), registrantBaseModelWithQuestionnaire, null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), RegistrantModelResponsePostWithQuestionnaire.class);
     }
 
     /**
@@ -74,15 +74,15 @@ public class Index {
      * Rate Limit Group: Heavy
      * App Permission: ReadWebinars
      */
-    public RegistrantModel get(RcwRegGetRegistrantParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public RegistrantModelWithQuestionnaire get(RcwRegGetRegistrantParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (registrantId == null) {
             throw new IllegalArgumentException("Parameter registrantId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), RegistrantModel.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), RegistrantModelWithQuestionnaire.class);
     }
 
-    public RegistrantModel get() throws com.ringcentral.RestException, java.io.IOException {
+    public RegistrantModelWithQuestionnaire get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
 

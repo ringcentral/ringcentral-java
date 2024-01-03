@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class TMCreateTaskRequest {
     /**
-     * Task name/subject. Max allowed length is 250 characters.
+     * Task name/subject. Max allowed length is 250 characters
      * Required
      */
     public String subject;

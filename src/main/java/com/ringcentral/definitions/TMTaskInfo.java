@@ -3,16 +3,16 @@ package com.ringcentral.definitions;
 
 public class TMTaskInfo {
     /**
-     * Task Id
+     * Internal identifier of a task
      */
     public String id;
     /**
-     * Task creation date/time in UTC time zone.
+     * Task creation date/time in UTC time zone
      * Format: date-time
      */
     public String creationTime;
     /**
-     * Task the last modified time in UTC time zone.
+     * Task the last modified time in UTC time zone
      * Format: date-time
      */
     public String lastModifiedTime;
@@ -26,24 +26,24 @@ public class TMTaskInfo {
      */
     public TMTaskInfoCreator creator;
     /**
-     * Chat IDs where the task is posted or shared.
+     * Internal identifiers of the chats where the task is posted or shared
      */
     public String[] chatIds;
     /**
-     * Task execution status.
+     * Task execution status
      * Enum: Pending, InProgress, Completed
      */
     public String status;
     /**
-     * Task name/subject.
+     * Task name/subject
      */
     public String subject;
     /**
-     * Task name/subject.
+     * Task name/subject
      */
     public TMTaskInfoAssignees[] assignees;
     /**
-     * How the task completeness should be determined.
+     * How the task completeness should be determined
      * Enum: Simple, AllAssignees, Percentage
      */
     public String completenessCondition;
@@ -54,26 +54,26 @@ public class TMTaskInfo {
      */
     public Long completenessPercentage;
     /**
-     * Task start date.
+     * Task start date
      * Format: date-time
      */
     public String startDate;
     /**
-     * Task due date/time.
+     * Task due date/time
      * Format: date-time
      */
     public String dueDate;
     /**
-     * Font color of a post with the current task.
+     * Font color of a post with the current task
      * Enum: Black, Red, Orange, Yellow, Green, Blue, Purple, Magenta
      */
     public String color;
     /**
-     * Task section to group / search by.
+     * Task section to group / search by
      */
     public String section;
     /**
-     * Task details.
+     * Task details
      */
     public String description;
     /**

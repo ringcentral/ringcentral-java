@@ -43,9 +43,9 @@ public class AsrInput {
     public Long speakerCount;
     /**
      * Optional set of speakers to be identified from the call.
-     * Example: enrollmentId1,enrollmentId2
+     * Example: speakerId1,speakerId2
      */
-    public String[] enrollmentIds;
+    public String[] speakerIds;
     /**
      * Apply voice activity detection.
      */
@@ -98,8 +98,8 @@ public class AsrInput {
         return this;
     }
 
-    public AsrInput enrollmentIds(String[] enrollmentIds) {
-        this.enrollmentIds = enrollmentIds;
+    public AsrInput speakerIds(String[] speakerIds) {
+        this.speakerIds = speakerIds;
         return this;
     }
 

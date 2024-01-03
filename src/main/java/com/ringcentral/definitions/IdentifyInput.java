@@ -34,9 +34,9 @@ public class IdentifyInput {
     /**
      * Set of enrolled speakers to be identified from the media.
      * Required
-     * Example: enrollmentId1,enrollmentId2
+     * Example: speakerId1,speakerId2
      */
-    public String[] enrollmentIds;
+    public String[] speakerIds;
     /**
      * Apply voice activity detection.
      */
@@ -67,8 +67,8 @@ public class IdentifyInput {
         return this;
     }
 
-    public IdentifyInput enrollmentIds(String[] enrollmentIds) {
-        this.enrollmentIds = enrollmentIds;
+    public IdentifyInput speakerIds(String[] speakerIds) {
+        this.speakerIds = speakerIds;
         return this;
     }
 

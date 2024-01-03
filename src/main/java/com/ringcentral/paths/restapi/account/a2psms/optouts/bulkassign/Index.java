@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.a2psms.optouts.bulkassign;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.OptOutBulkAssignRequest;
+import com.ringcentral.definitions.OptOutBulkAssignResponse;
 
 public class Index {
     public RestClient rc;

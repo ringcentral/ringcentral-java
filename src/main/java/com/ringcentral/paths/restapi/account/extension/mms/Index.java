@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.mms;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CreateMMSMessage;
+import com.ringcentral.definitions.GetSMSMessageInfoResponse;
 
 public class Index {
     public RestClient rc;

@@ -11,14 +11,6 @@ public class ExtensionUpdateRequest {
      */
     public ExtensionStatusInfo statusInfo;
     /**
-     * Type of suspension
-     */
-    public String reason;
-    /**
-     * Free Form user comment
-     */
-    public String comment;
-    /**
      * Extension number available
      */
     public String extensionNumber;
@@ -73,7 +65,7 @@ public class ExtensionUpdateRequest {
     /**
      * Extension sub-type, if applicable. For any unsupported sub-types
      * the &#039;Unknown&#039; value will be returned
-     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
+     * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown
      */
     public String subType;
     /**
@@ -88,16 +80,6 @@ public class ExtensionUpdateRequest {
 
     public ExtensionUpdateRequest statusInfo(ExtensionStatusInfo statusInfo) {
         this.statusInfo = statusInfo;
-        return this;
-    }
-
-    public ExtensionUpdateRequest reason(String reason) {
-        this.reason = reason;
-        return this;
-    }
-
-    public ExtensionUpdateRequest comment(String comment) {
-        this.comment = comment;
         return this;
     }
 

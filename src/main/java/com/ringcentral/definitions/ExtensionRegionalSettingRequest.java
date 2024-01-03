@@ -23,6 +23,10 @@ public class ExtensionRegionalSettingRequest {
      */
     public ExtensionFormattingLocaleInfoRequest formattingLocale;
     /**
+     *
+     */
+    public ExtensionCurrencyInfoRequest currency;
+    /**
      * Time format setting
      * Default: 12h
      * Enum: 12h, 24h
@@ -51,6 +55,11 @@ public class ExtensionRegionalSettingRequest {
 
     public ExtensionRegionalSettingRequest formattingLocale(ExtensionFormattingLocaleInfoRequest formattingLocale) {
         this.formattingLocale = formattingLocale;
+        return this;
+    }
+
+    public ExtensionRegionalSettingRequest currency(ExtensionCurrencyInfoRequest currency) {
+        this.currency = currency;
         return this;
     }
 

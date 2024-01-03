@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class TMTaskInfoCreator {
     /**
-     * Creator Id
+     * Internal identifier of a task creator
      */
     public String id;
 

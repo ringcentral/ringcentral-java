@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Deprecated. Information on call owner
+ * Deprecated. Information on a call owner
  */
 public class OwnerInfo {
     /**

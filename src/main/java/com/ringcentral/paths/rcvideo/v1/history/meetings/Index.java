@@ -1,7 +1,9 @@
 package com.ringcentral.paths.rcvideo.v1.history.meetings;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListVideoMeetingsParameters;
+import com.ringcentral.definitions.Meeting;
+import com.ringcentral.definitions.MeetingPage;
 
 public class Index {
     public RestClient rc;

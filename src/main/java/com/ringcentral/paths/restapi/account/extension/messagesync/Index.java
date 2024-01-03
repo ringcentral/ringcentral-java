@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.messagesync;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetMessageSyncResponse;
+import com.ringcentral.definitions.SyncMessagesParameters;
 
 public class Index {
     public RestClient rc;

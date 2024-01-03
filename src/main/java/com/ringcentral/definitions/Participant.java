@@ -25,6 +25,10 @@ public class Participant {
      * caller id
      */
     public String callerId;
+    /**
+     * pass-thru parameter in join url
+     */
+    public String correlationId;
 
     public Participant id(String id) {
         this.id = id;
@@ -48,6 +52,11 @@ public class Participant {
 
     public Participant callerId(String callerId) {
         this.callerId = callerId;
+        return this;
+    }
+
+    public Participant correlationId(String correlationId) {
+        this.correlationId = correlationId;
         return this;
     }
 }

@@ -5,13 +5,13 @@ public class RegistrantListResource {
     /**
      * Required
      */
-    public RegistrantModel[] records;
+    public RegistrantModelWithQuestionnaire[] records;
     /**
      * Required
      */
     public RcwPagingForwardModel paging;
 
-    public RegistrantListResource records(RegistrantModel[] records) {
+    public RegistrantListResource records(RegistrantModelWithQuestionnaire[] records) {
         this.records = records;
         return this;
     }

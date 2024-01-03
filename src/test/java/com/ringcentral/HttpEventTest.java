@@ -1,7 +1,7 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.CreateSMSMessage;
-import com.ringcentral.definitions.MessageStoreCallerInfoRequest;
+import com.ringcentral.definitions.CreateInternalTextMessageRequest;
+import com.ringcentral.definitions.PagerCallerInfoRequest;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -27,12 +27,12 @@ public class HttpEventTest {
             assertNotNull(httpMessage);
         });
 
-        rc.restapi().account().extension().sms().post(
-            new CreateSMSMessage()
+        rc.restapi().account().extension().companyPager().post(
+            new CreateInternalTextMessageRequest()
                 .text("hello world")
-                .from(new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_USERNAME")))
-                .to(new MessageStoreCallerInfoRequest[]{
-                    new MessageStoreCallerInfoRequest().phoneNumber(System.getenv("RINGCENTRAL_RECEIVER"))
+                .from(new PagerCallerInfoRequest().extensionId(rc.token.owner_id))
+                .to(new PagerCallerInfoRequest[]{
+                    new PagerCallerInfoRequest().extensionId(rc.token.owner_id)
                 })
         );
 

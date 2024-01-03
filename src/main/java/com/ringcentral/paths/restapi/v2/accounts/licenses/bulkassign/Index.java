@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.v2.accounts.licenses.bulkassign;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.BulkManageLicensesRequest;
+import com.ringcentral.definitions.BulkManageLicensesResponse;
 
 public class Index {
     public RestClient rc;

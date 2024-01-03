@@ -7,12 +7,12 @@ public class TaskAttachment {
      */
     public String id;
     /**
-     * Possible value: File. Attachment type (currently, only File is possible).
+     * Possible value - File. Attachment type (currently, only File is possible)
      * Enum: File
      */
     public String type;
     /**
-     * Name of the attached file (incl. extension name).
+     * Name of the attached file (incl. extension name)
      */
     public String name;
     /**

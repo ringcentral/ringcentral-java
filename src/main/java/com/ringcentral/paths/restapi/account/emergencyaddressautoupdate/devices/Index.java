@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.devices;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListDevicesAutomaticLocationUpdates;
+import com.ringcentral.definitions.ListDevicesAutomaticLocationUpdatesParameters;
 
 public class Index {
     public RestClient rc;

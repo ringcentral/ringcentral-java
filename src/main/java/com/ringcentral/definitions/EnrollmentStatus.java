@@ -18,7 +18,7 @@ public class EnrollmentStatus {
      * Required
      * Example: JohnDoe
      */
-    public String enrollmentId;
+    public String speakerId;
     /**
      * Total speech duration of the enrollment in seconds.
      * Format: float
@@ -43,8 +43,8 @@ public class EnrollmentStatus {
         return this;
     }
 
-    public EnrollmentStatus enrollmentId(String enrollmentId) {
-        this.enrollmentId = enrollmentId;
+    public EnrollmentStatus speakerId(String speakerId) {
+        this.speakerId = speakerId;
         return this;
     }
 

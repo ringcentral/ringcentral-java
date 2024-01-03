@@ -35,10 +35,10 @@ public class ListAccountPhoneNumbersV2Parameters {
      */
     public String[] usageType;
     /**
-     * Status(es) of phone numbers to be returned
+     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
      * Enum: Normal, Pending, PortedIn, Temporary, Unknown
      */
-    public String[] status;
+    public String status;
     /**
      * Indicates if a number is toll or toll-free
      * Example: Toll
@@ -78,7 +78,7 @@ public class ListAccountPhoneNumbersV2Parameters {
         return this;
     }
 
-    public ListAccountPhoneNumbersV2Parameters status(String[] status) {
+    public ListAccountPhoneNumbersV2Parameters status(String status) {
         this.status = status;
         return this;
     }

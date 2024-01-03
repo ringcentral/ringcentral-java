@@ -1,7 +1,10 @@
 package com.ringcentral.paths.teammessaging.v1.notes;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.PatchNoteNewParameters;
+import com.ringcentral.definitions.TMCreateNoteRequest;
+import com.ringcentral.definitions.TMNoteInfo;
+import com.ringcentral.definitions.TMNoteWithBodyInfo;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ApiVersionInfo;
+import com.ringcentral.definitions.ApiVersionsList;
 
 public class Index {
     public RestClient rc;

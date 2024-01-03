@@ -21,7 +21,7 @@ public class CreateSMSMessage {
     /**
      *
      */
-    public MessageCountryInfo country;
+    public SmsRequestCountryInfo country;
 
     public CreateSMSMessage from(MessageStoreCallerInfoRequest from) {
         this.from = from;
@@ -38,7 +38,7 @@ public class CreateSMSMessage {
         return this;
     }
 
-    public CreateSMSMessage country(MessageCountryInfo country) {
+    public CreateSMSMessage country(SmsRequestCountryInfo country) {
         this.country = country;
         return this;
     }

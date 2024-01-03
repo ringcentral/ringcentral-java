@@ -34,7 +34,7 @@ public class ServiceInfo {
     /**
      *
      */
-    public UBrandInfo uBrand;
+    public UBrandInfo ubrand;
 
     public ServiceInfo uri(String uri) {
         this.uri = uri;
@@ -66,8 +66,8 @@ public class ServiceInfo {
         return this;
     }
 
-    public ServiceInfo uBrand(UBrandInfo uBrand) {
-        this.uBrand = uBrand;
+    public ServiceInfo ubrand(UBrandInfo ubrand) {
+        this.ubrand = ubrand;
         return this;
     }
 }

@@ -27,6 +27,10 @@ public class AccountInfo {
      */
     public String status;
     /**
+     *
+     */
+    public StatusInfo statusInfo;
+    /**
      * Company name
      * Example: Acme Inc.
      */
@@ -66,6 +70,11 @@ public class AccountInfo {
 
     public AccountInfo status(String status) {
         this.status = status;
+        return this;
+    }
+
+    public AccountInfo statusInfo(StatusInfo statusInfo) {
+        this.statusInfo = statusInfo;
         return this;
     }
 

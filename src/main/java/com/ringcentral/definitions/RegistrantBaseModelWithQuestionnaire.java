@@ -1,24 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class RegistrantModelResponsePost {
-    /**
-     * Internal object ID
-     * Example: 78654321
-     */
-    public String id;
-    /**
-     * Object creation time
-     * Required
-     * Format: date-time
-     */
-    public String creationTime;
-    /**
-     * Object last modification time
-     * Required
-     * Format: date-time
-     */
-    public String lastModifiedTime;
+public class RegistrantBaseModelWithQuestionnaire {
     /**
      * First (given) name
      * Required
@@ -80,89 +63,64 @@ public class RegistrantModelResponsePost {
      * Answers on custom registration questions
      */
     public RegAnswerModel[] questionnaire;
-    /**
-     * Sequence number for iCalendar email attachments
-     * Format: int32
-     */
-    public Long icalendarSequence;
 
-    public RegistrantModelResponsePost id(String id) {
-        this.id = id;
-        return this;
-    }
-
-    public RegistrantModelResponsePost creationTime(String creationTime) {
-        this.creationTime = creationTime;
-        return this;
-    }
-
-    public RegistrantModelResponsePost lastModifiedTime(String lastModifiedTime) {
-        this.lastModifiedTime = lastModifiedTime;
-        return this;
-    }
-
-    public RegistrantModelResponsePost firstName(String firstName) {
+    public RegistrantBaseModelWithQuestionnaire firstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public RegistrantModelResponsePost lastName(String lastName) {
+    public RegistrantBaseModelWithQuestionnaire lastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
-    public RegistrantModelResponsePost email(String email) {
+    public RegistrantBaseModelWithQuestionnaire email(String email) {
         this.email = email;
         return this;
     }
 
-    public RegistrantModelResponsePost joinUri(String joinUri) {
+    public RegistrantBaseModelWithQuestionnaire joinUri(String joinUri) {
         this.joinUri = joinUri;
         return this;
     }
 
-    public RegistrantModelResponsePost cancellationUri(String cancellationUri) {
+    public RegistrantBaseModelWithQuestionnaire cancellationUri(String cancellationUri) {
         this.cancellationUri = cancellationUri;
         return this;
     }
 
-    public RegistrantModelResponsePost visitorId(String visitorId) {
+    public RegistrantBaseModelWithQuestionnaire visitorId(String visitorId) {
         this.visitorId = visitorId;
         return this;
     }
 
-    public RegistrantModelResponsePost externalId(String externalId) {
+    public RegistrantBaseModelWithQuestionnaire externalId(String externalId) {
         this.externalId = externalId;
         return this;
     }
 
-    public RegistrantModelResponsePost registrationTime(String registrationTime) {
+    public RegistrantBaseModelWithQuestionnaire registrationTime(String registrationTime) {
         this.registrationTime = registrationTime;
         return this;
     }
 
-    public RegistrantModelResponsePost ipAddress(String ipAddress) {
+    public RegistrantBaseModelWithQuestionnaire ipAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
     }
 
-    public RegistrantModelResponsePost source(String source) {
+    public RegistrantBaseModelWithQuestionnaire source(String source) {
         this.source = source;
         return this;
     }
 
-    public RegistrantModelResponsePost participantId(String participantId) {
+    public RegistrantBaseModelWithQuestionnaire participantId(String participantId) {
         this.participantId = participantId;
         return this;
     }
 
-    public RegistrantModelResponsePost questionnaire(RegAnswerModel[] questionnaire) {
+    public RegistrantBaseModelWithQuestionnaire questionnaire(RegAnswerModel[] questionnaire) {
         this.questionnaire = questionnaire;
-        return this;
-    }
-
-    public RegistrantModelResponsePost icalendarSequence(Long icalendarSequence) {
-        this.icalendarSequence = icalendarSequence;
         return this;
     }
 }

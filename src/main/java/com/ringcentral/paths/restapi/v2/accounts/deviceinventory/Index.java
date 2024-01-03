@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.v2.accounts.deviceinventory;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AddDeviceToInventoryRequest;
+import com.ringcentral.definitions.AddDeviceToInventoryResponse;
+import com.ringcentral.definitions.DeleteDeviceFromInventoryRequest;
+import com.ringcentral.definitions.DeleteDeviceFromInventoryResponse;
 
 public class Index {
     public RestClient rc;

@@ -6,22 +6,21 @@ package com.ringcentral.definitions;
  */
 public class RecipientInfo {
     /**
-     * Link to a recipient extension resource
+     * Link to a voicemail recipient extension resource
      * Format: uri
      */
     public String uri;
     /**
-     * Internal identifier of a recipient extension
-     * Format: int64
+     * Internal identifier of a voicemail recipient
      */
-    public Long id;
+    public String id;
 
     public RecipientInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    public RecipientInfo id(Long id) {
+    public RecipientInfo id(String id) {
         this.id = id;
         return this;
     }

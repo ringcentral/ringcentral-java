@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class TMTaskInfoAssignees {
     /**
-     * Assignee Id
+     * Internal identifier of an assignee
      */
     public String id;
     /**

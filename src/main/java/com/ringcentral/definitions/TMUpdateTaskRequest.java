@@ -15,12 +15,12 @@ public class TMUpdateTaskRequest {
      */
     public String completenessCondition;
     /**
-     * Task start date in UTC time zone.
+     * Task start date in UTC time zone
      * Format: date-time
      */
     public String startDate;
     /**
-     * Task due date/time in UTC time zone.
+     * Task due date/time in UTC time zone
      * Format: date-time
      */
     public String dueDate;
@@ -33,7 +33,7 @@ public class TMUpdateTaskRequest {
      */
     public String section;
     /**
-     * Task details. Max allowed length is 102400 characters (100kB).
+     * Task details. Max allowed length is 102400 characters (100kB)
      */
     public String description;
     /**

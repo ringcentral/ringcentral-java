@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.greeting.content;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ReadAccountGreetingContentParameters;
 
 public class Index {
     public RestClient rc;

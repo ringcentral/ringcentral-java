@@ -25,6 +25,7 @@ public class ConversationalInsightsUnitValues {
      */
     public Double end;
     /**
+     * Paragraph index of the long summary.
      * Example: 0
      */
     public String groupId;

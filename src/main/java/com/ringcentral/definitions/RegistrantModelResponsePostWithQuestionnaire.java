@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class RegistrantModel {
+public class RegistrantModelResponsePostWithQuestionnaire {
     /**
      * Internal object ID
      * Example: 78654321
@@ -80,79 +80,89 @@ public class RegistrantModel {
      * Answers on custom registration questions
      */
     public RegAnswerModel[] questionnaire;
+    /**
+     * Sequence number for iCalendar email attachments
+     * Format: int32
+     */
+    public Long icalendarSequence;
 
-    public RegistrantModel id(String id) {
+    public RegistrantModelResponsePostWithQuestionnaire id(String id) {
         this.id = id;
         return this;
     }
 
-    public RegistrantModel creationTime(String creationTime) {
+    public RegistrantModelResponsePostWithQuestionnaire creationTime(String creationTime) {
         this.creationTime = creationTime;
         return this;
     }
 
-    public RegistrantModel lastModifiedTime(String lastModifiedTime) {
+    public RegistrantModelResponsePostWithQuestionnaire lastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }
 
-    public RegistrantModel firstName(String firstName) {
+    public RegistrantModelResponsePostWithQuestionnaire firstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public RegistrantModel lastName(String lastName) {
+    public RegistrantModelResponsePostWithQuestionnaire lastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
-    public RegistrantModel email(String email) {
+    public RegistrantModelResponsePostWithQuestionnaire email(String email) {
         this.email = email;
         return this;
     }
 
-    public RegistrantModel joinUri(String joinUri) {
+    public RegistrantModelResponsePostWithQuestionnaire joinUri(String joinUri) {
         this.joinUri = joinUri;
         return this;
     }
 
-    public RegistrantModel cancellationUri(String cancellationUri) {
+    public RegistrantModelResponsePostWithQuestionnaire cancellationUri(String cancellationUri) {
         this.cancellationUri = cancellationUri;
         return this;
     }
 
-    public RegistrantModel visitorId(String visitorId) {
+    public RegistrantModelResponsePostWithQuestionnaire visitorId(String visitorId) {
         this.visitorId = visitorId;
         return this;
     }
 
-    public RegistrantModel externalId(String externalId) {
+    public RegistrantModelResponsePostWithQuestionnaire externalId(String externalId) {
         this.externalId = externalId;
         return this;
     }
 
-    public RegistrantModel registrationTime(String registrationTime) {
+    public RegistrantModelResponsePostWithQuestionnaire registrationTime(String registrationTime) {
         this.registrationTime = registrationTime;
         return this;
     }
 
-    public RegistrantModel ipAddress(String ipAddress) {
+    public RegistrantModelResponsePostWithQuestionnaire ipAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
     }
 
-    public RegistrantModel source(String source) {
+    public RegistrantModelResponsePostWithQuestionnaire source(String source) {
         this.source = source;
         return this;
     }
 
-    public RegistrantModel participantId(String participantId) {
+    public RegistrantModelResponsePostWithQuestionnaire participantId(String participantId) {
         this.participantId = participantId;
         return this;
     }
 
-    public RegistrantModel questionnaire(RegAnswerModel[] questionnaire) {
+    public RegistrantModelResponsePostWithQuestionnaire questionnaire(RegAnswerModel[] questionnaire) {
         this.questionnaire = questionnaire;
+        return this;
+    }
+
+    public RegistrantModelResponsePostWithQuestionnaire icalendarSequence(Long icalendarSequence) {
+        this.icalendarSequence = icalendarSequence;
         return this;
     }
 }

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.transfer;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallParty;
+import com.ringcentral.definitions.TransferTarget;
 
 public class Index {
     public RestClient rc;

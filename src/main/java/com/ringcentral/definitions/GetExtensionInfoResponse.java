@@ -33,7 +33,7 @@ public class GetExtensionInfoResponse {
      */
     public DepartmentInfo[] departments;
     /**
-     * Number of extension
+     * Extension short number
      */
     public String extensionNumber;
     /**
@@ -103,7 +103,7 @@ public class GetExtensionInfoResponse {
      * Extension type. Please note that legacy &#039;Department&#039; extension type
      * corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product
      * terminology
-     * Enum: User, FaxUser, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, Limited, Site, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup
+     * Enum: User, FaxUser, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, RoomConnector, Limited, Site, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup
      */
     public String type;
     /**

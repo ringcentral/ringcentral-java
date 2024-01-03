@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.userrole;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.DeleteCustomRoleParameters;
+import com.ringcentral.definitions.ListUserRolesParameters;
+import com.ringcentral.definitions.RoleResource;
+import com.ringcentral.definitions.RolesCollectionResource;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,9 @@
 package com.ringcentral.paths.webinar.history.v1.webinars.sessions.invitees;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.InviteeListResource;
+import com.ringcentral.definitions.InviteeModel;
+import com.ringcentral.definitions.RcwHistoryListInviteesParameters;
 
 public class Index {
     public RestClient rc;

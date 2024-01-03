@@ -1,7 +1,6 @@
 package com.ringcentral.paths.rcvideo.v2.account;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
 
 public class Index {
     public RestClient rc;

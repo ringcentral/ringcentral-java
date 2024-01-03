@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.oauth.authorize;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AuthorizeRequest;
 
 public class Index {
     public RestClient rc;

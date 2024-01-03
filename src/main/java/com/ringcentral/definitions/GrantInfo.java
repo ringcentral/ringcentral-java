@@ -53,6 +53,11 @@ public class GrantInfo {
      * in the queue referenced in extension object
      */
     public Boolean callQueueMessages;
+    /**
+     * Specifies whether the user referenced in extension object is sharing voicemails
+     * with the current extension
+     */
+    public Boolean sharedVoicemails;
 
     public GrantInfo uri(String uri) {
         this.uri = uri;
@@ -101,6 +106,11 @@ public class GrantInfo {
 
     public GrantInfo callQueueMessages(Boolean callQueueMessages) {
         this.callQueueMessages = callQueueMessages;
+        return this;
+    }
+
+    public GrantInfo sharedVoicemails(Boolean sharedVoicemails) {
+        this.sharedVoicemails = sharedVoicemails;
         return this;
     }
 }

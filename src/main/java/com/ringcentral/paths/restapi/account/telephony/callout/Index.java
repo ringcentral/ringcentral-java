@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.telephony.callout;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallSession;
+import com.ringcentral.definitions.MakeCallOutRequest;
 
 public class Index {
     public RestClient rc;

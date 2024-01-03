@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.callqueues.presence;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallQueuePresence;
+import com.ringcentral.definitions.CallQueueUpdatePresence;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.ringout;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetRingOutStatusResponse;
+import com.ringcentral.definitions.MakeRingOutRequest;
 
 public class Index {
     public RestClient rc;

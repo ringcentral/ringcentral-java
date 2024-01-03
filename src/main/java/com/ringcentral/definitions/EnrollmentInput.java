@@ -25,7 +25,7 @@ public class EnrollmentInput {
      * Required
      * Example: JohnDoe
      */
-    public String enrollmentId;
+    public String speakerId;
 
     public EnrollmentInput encoding(String encoding) {
         this.encoding = encoding;
@@ -42,8 +42,8 @@ public class EnrollmentInput {
         return this;
     }
 
-    public EnrollmentInput enrollmentId(String enrollmentId) {
-        this.enrollmentId = enrollmentId;
+    public EnrollmentInput speakerId(String speakerId) {
+        this.speakerId = speakerId;
         return this;
     }
 }

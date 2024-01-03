@@ -1,7 +1,8 @@
 package com.ringcentral.paths.teammessaging.v1.recent.chats;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListRecentChatsNewParameters;
+import com.ringcentral.definitions.TMChatListWithoutNavigation;
 
 public class Index {
     public RestClient rc;

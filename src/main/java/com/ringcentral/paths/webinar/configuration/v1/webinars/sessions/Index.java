@@ -1,7 +1,8 @@
 package com.ringcentral.paths.webinar.configuration.v1.webinars.sessions;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.WcsSessionResource;
+import com.ringcentral.definitions.WcsSessionWithLocaleCodeModel;
 
 public class Index {
     public RestClient rc;

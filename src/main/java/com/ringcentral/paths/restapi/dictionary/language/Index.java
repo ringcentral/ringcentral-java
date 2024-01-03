@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.dictionary.language;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.LanguageInfo;
+import com.ringcentral.definitions.LanguageList;
 
 public class Index {
     public RestClient rc;

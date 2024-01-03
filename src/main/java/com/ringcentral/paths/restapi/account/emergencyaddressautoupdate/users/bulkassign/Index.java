@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.users.bulkassign;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.EmergencyAddressAutoUpdateUsersBulkAssignResource;
 
 public class Index {
     public RestClient rc;

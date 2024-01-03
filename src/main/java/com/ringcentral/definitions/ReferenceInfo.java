@@ -11,6 +11,10 @@ public class ReferenceInfo {
      * Enum: PartnerId, CustomerDirectoryId
      */
     public String type;
+    /**
+     * Primary federation admin account identifier
+     */
+    public String refAccId;
 
     public ReferenceInfo ref(String ref) {
         this.ref = ref;
@@ -19,6 +23,11 @@ public class ReferenceInfo {
 
     public ReferenceInfo type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public ReferenceInfo refAccId(String refAccId) {
+        this.refAccId = refAccId;
         return this;
     }
 }

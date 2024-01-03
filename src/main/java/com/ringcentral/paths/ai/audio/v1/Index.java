@@ -1,7 +1,6 @@
 package com.ringcentral.paths.ai.audio.v1;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
 
 public class Index {
     public RestClient rc;
@@ -30,8 +29,8 @@ public class Index {
         return this.enrollments(null);
     }
 
-    public com.ringcentral.paths.ai.audio.v1.enrollments.Index enrollments(String enrollmentId) {
-        return new com.ringcentral.paths.ai.audio.v1.enrollments.Index(this, enrollmentId);
+    public com.ringcentral.paths.ai.audio.v1.enrollments.Index enrollments(String speakerId) {
+        return new com.ringcentral.paths.ai.audio.v1.enrollments.Index(this, speakerId);
     }
 
 }

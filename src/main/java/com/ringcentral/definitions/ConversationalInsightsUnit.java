@@ -5,7 +5,7 @@ public class ConversationalInsightsUnit {
     /**
      * Required
      * Example: KeyPhrases
-     * Enum: ExtractiveSummary, AbstractiveSummaryLong, AbstractiveSummaryShort, KeyPhrases, Tasks, Titles, QuestionsAsked, OverallSentiment, Topics
+     * Enum: ExtractiveSummary, AbstractiveSummaryLong, AbstractiveSummaryShort, KeyPhrases, QuestionsAsked, OverallSentiment, Topics
      */
     public String name;
     /**

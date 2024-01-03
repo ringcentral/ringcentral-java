@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetAccountInfoResponse;
 
 public class Index {
     public RestClient rc;
@@ -30,8 +30,7 @@ public class Index {
     }
 
     /**
-     * Returns basic information about a particular RingCentral
-     * customer account.
+     * Returns basic information about a particular RingCentral customer account.
      * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}
@@ -221,6 +220,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.callrecording.Index callRecording() {
         return new com.ringcentral.paths.restapi.account.callrecording.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.callrecordings.Index callRecordings() {
+        return new com.ringcentral.paths.restapi.account.callrecordings.Index(this);
     }
 
 

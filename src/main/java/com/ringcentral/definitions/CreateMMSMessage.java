@@ -20,7 +20,7 @@ public class CreateMMSMessage {
     /**
      *
      */
-    public MessageCountryInfo country;
+    public SmsRequestCountryInfo country;
     /**
      * Media file(s) to upload
      * Required
@@ -42,7 +42,7 @@ public class CreateMMSMessage {
         return this;
     }
 
-    public CreateMMSMessage country(MessageCountryInfo country) {
+    public CreateMMSMessage country(SmsRequestCountryInfo country) {
         this.country = country;
         return this;
     }

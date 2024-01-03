@@ -5,10 +5,19 @@ public class TMTaskList {
     /**
      *
      */
-    public TMTaskListRecords[] records;
+    public TMTaskInfo[] records;
+    /**
+     *
+     */
+    public TMNavigationInfo navigation;
 
-    public TMTaskList records(TMTaskListRecords[] records) {
+    public TMTaskList records(TMTaskInfo[] records) {
         this.records = records;
+        return this;
+    }
+
+    public TMTaskList navigation(TMNavigationInfo navigation) {
+        this.navigation = navigation;
         return this;
     }
 }

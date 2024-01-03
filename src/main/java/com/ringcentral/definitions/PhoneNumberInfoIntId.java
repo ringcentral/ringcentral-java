@@ -29,7 +29,7 @@ public class PhoneNumberInfoIntId {
     /**
      * Payment type. &#039;External&#039; is returned for forwarded numbers
      * which are not terminated in the RingCentral phone system
-     * Enum: External, TollFree, Local
+     * Enum: External, Local
      */
     public String paymentType;
     /**

@@ -1,7 +1,6 @@
 package com.ringcentral.paths.ai.text.v1.async;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.subscription;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CreateSubscriptionRequest;
+import com.ringcentral.definitions.SubscriptionInfo;
+import com.ringcentral.definitions.SubscriptionListResource;
+import com.ringcentral.definitions.UpdateSubscriptionRequest;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,9 @@
 package com.ringcentral.paths.analytics.calls.v1.accounts.aggregation.fetch;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AggregationRequest;
+import com.ringcentral.definitions.AggregationResponse;
+import com.ringcentral.definitions.AnalyticsCallsAggregationFetchParameters;
 
 public class Index {
     public RestClient rc;

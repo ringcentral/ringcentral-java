@@ -17,7 +17,7 @@ public class UserPhoneNumberExtensionInfo {
      */
     public String uri;
     /**
-     * Number of extension
+     * Extension short number
      */
     public String extensionNumber;
     /**

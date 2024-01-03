@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.v2.accounts.devices.bulkadd;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.BulkAddDevicesRequest;
+import com.ringcentral.definitions.BulkAddDevicesResponse;
 
 public class Index {
     public RestClient rc;

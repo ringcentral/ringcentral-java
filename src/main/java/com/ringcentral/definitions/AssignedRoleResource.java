@@ -3,6 +3,11 @@ package com.ringcentral.definitions;
 
 public class AssignedRoleResource {
     /**
+     * Link to an assigned role resource
+     * Format: uri
+     */
+    public String uri;
+    /**
      * Internal identifier of a role
      */
     public String id;
@@ -22,6 +27,11 @@ public class AssignedRoleResource {
      * Site restricted flag
      */
     public Boolean siteRestricted;
+
+    public AssignedRoleResource uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public AssignedRoleResource id(String id) {
         this.id = id;

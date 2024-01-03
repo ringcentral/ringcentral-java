@@ -1,7 +1,9 @@
 package com.ringcentral.paths.restapi.dictionary.state;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetStateInfoResponse;
+import com.ringcentral.definitions.GetStateListResponse;
+import com.ringcentral.definitions.ListStatesParameters;
 
 public class Index {
     public RestClient rc;

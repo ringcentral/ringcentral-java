@@ -43,15 +43,15 @@ public class InteractionInput {
     public Long speakerCount;
     /**
      * Optional set of speakers to be identified from the call.
-     * Example: enrollmentId1,enrollmentId2
+     * Example: speakerId1,speakerId2
      */
-    public String[] enrollmentIds;
+    public String[] speakerIds;
     /**
      * Apply voice activity detection.
      */
     public Boolean enableVoiceActivityDetection;
     /**
-     * Enum: All, KeyPhrases, Emotion, AbstractiveSummaryLong, AbstractiveSummaryShort, ExtractiveSummary, TalkToListenRatio, Energy, Pace, QuestionsAsked
+     * Enum: All, KeyPhrases, Emotion, AbstractiveSummaryLong, AbstractiveSummaryShort, ExtractiveSummary, Topics, TalkToListenRatio, Energy, Pace, QuestionsAsked
      */
     public String[] insights;
     /**
@@ -94,8 +94,8 @@ public class InteractionInput {
         return this;
     }
 
-    public InteractionInput enrollmentIds(String[] enrollmentIds) {
-        this.enrollmentIds = enrollmentIds;
+    public InteractionInput speakerIds(String[] speakerIds) {
+        this.speakerIds = speakerIds;
         return this;
     }
 

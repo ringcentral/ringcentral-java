@@ -24,6 +24,12 @@ public class WcsSessionWithLocaleCodeModel {
      */
     public String timeZone;
     /**
+     * Localized time zone description.
+     * Required
+     * Example: Eastern Time (America/New_York)
+     */
+    public String localizedTimeZoneDescription;
+    /**
      * The time offset (positive, in seconds) indicating how much in advance
      * (comparing to &quot;scheduledStartTime&quot;) panel members should join for the pre-webinar team sync
      * Format: int32
@@ -70,6 +76,11 @@ public class WcsSessionWithLocaleCodeModel {
 
     public WcsSessionWithLocaleCodeModel timeZone(String timeZone) {
         this.timeZone = timeZone;
+        return this;
+    }
+
+    public WcsSessionWithLocaleCodeModel localizedTimeZoneDescription(String localizedTimeZoneDescription) {
+        this.localizedTimeZoneDescription = localizedTimeZoneDescription;
         return this;
     }
 

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.v2.accounts.batchprovisioning.users;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.BatchProvisionUsersRequest;
+import com.ringcentral.definitions.BatchProvisionUsersResponse;
 
 public class Index {
     public RestClient rc;

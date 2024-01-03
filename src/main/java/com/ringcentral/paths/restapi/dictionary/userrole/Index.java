@@ -1,7 +1,9 @@
 package com.ringcentral.paths.restapi.dictionary.userrole;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListStandardUserRoleParameters;
+import com.ringcentral.definitions.RoleResource;
+import com.ringcentral.definitions.RolesCollectionResource;
 
 public class Index {
     public RestClient rc;

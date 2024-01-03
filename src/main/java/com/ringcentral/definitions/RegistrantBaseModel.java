@@ -59,10 +59,6 @@ public class RegistrantBaseModel {
      * ID of session participant (from Runtime Service - if this registrant attended the webinar)
      */
     public String participantId;
-    /**
-     * Answers on custom registration questions
-     */
-    public RegAnswerModel[] questionnaire;
 
     public RegistrantBaseModel firstName(String firstName) {
         this.firstName = firstName;
@@ -116,11 +112,6 @@ public class RegistrantBaseModel {
 
     public RegistrantBaseModel participantId(String participantId) {
         this.participantId = participantId;
-        return this;
-    }
-
-    public RegistrantBaseModel questionnaire(RegAnswerModel[] questionnaire) {
-        this.questionnaire = questionnaire;
         return this;
     }
 }

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.features;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.FeatureList;
+import com.ringcentral.definitions.ReadExtensionFeaturesParameters;
 
 public class Index {
     public RestClient rc;

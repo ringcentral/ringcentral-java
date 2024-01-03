@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.activecalls;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallLogResponse;
+import com.ringcentral.definitions.ListExtensionActiveCallsParameters;
 
 public class Index {
     public RestClient rc;

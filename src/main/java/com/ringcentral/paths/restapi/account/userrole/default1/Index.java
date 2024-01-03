@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.userrole.default1;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.DefaultUserRole;
+import com.ringcentral.definitions.DefaultUserRoleRequest;
 
 public class Index {
     public RestClient rc;
@@ -28,9 +29,9 @@ public class Index {
      * App Permission: RoleManagement
      * User Permission: Roles
      */
-    public String get() throws com.ringcentral.RestException, java.io.IOException {
+    public DefaultUserRole get() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return rb.string();
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), DefaultUserRole.class);
     }
 
     /**
@@ -41,8 +42,8 @@ public class Index {
      * App Permission: RoleManagement
      * User Permission: Roles
      */
-    public String put(DefaultUserRoleRequest defaultUserRoleRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public DefaultUserRole put(DefaultUserRoleRequest defaultUserRoleRequest) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.put(this.path(), defaultUserRoleRequest, null);
-        return rb.string();
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), DefaultUserRole.class);
     }
 }

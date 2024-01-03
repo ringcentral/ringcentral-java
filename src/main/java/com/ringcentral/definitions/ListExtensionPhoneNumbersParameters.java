@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListExtensionPhoneNumbersParameters {
     /**
-     * Status of a phone number. Multiple values are supported
+     * Status of a phone number
      * Enum: Normal, Pending, PortedIn, Temporary
      */
     public String status;

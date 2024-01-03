@@ -1,7 +1,9 @@
 package com.ringcentral.paths.teammessaging.v1.files;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CreateGlipFileNewParameters;
+import com.ringcentral.definitions.CreateGlipFileNewRequest;
+import com.ringcentral.definitions.TMAddFileRequest;
 
 public class Index {
     public RestClient rc;

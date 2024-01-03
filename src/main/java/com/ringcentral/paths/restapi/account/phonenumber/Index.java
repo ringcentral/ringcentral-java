@@ -1,7 +1,9 @@
 package com.ringcentral.paths.restapi.account.phonenumber;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AccountPhoneNumbers;
+import com.ringcentral.definitions.CompanyPhoneNumberInfo;
+import com.ringcentral.definitions.ListAccountPhoneNumbersParameters;
 
 public class Index {
     public RestClient rc;

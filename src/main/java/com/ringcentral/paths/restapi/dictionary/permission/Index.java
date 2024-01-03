@@ -1,7 +1,9 @@
 package com.ringcentral.paths.restapi.dictionary.permission;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListPermissionsParameters;
+import com.ringcentral.definitions.PermissionCollectionResource;
+import com.ringcentral.definitions.PermissionResource;
 
 public class Index {
     public RestClient rc;

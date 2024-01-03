@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.authzprofile.check;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AuthProfileCheckResource;
+import com.ringcentral.definitions.CheckUserPermissionParameters;
 
 public class Index {
     public RestClient rc;

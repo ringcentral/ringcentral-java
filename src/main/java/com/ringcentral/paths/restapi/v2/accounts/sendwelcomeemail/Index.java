@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.sendwelcomeemail;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.SendWelcomeEmailV2Request;
 
 public class Index {
     public RestClient rc;

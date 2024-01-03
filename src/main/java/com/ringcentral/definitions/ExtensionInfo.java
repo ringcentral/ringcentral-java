@@ -8,8 +8,9 @@ package com.ringcentral.definitions;
 public class ExtensionInfo {
     /**
      * Internal identifier of an extension
+     * Format: int64
      */
-    public String id;
+    public Long id;
     /**
      * Canonical URI of an extension
      * Format: uri
@@ -20,7 +21,7 @@ public class ExtensionInfo {
      */
     public String name;
     /**
-     * Number of extension
+     * Extension short number
      */
     public String extensionNumber;
     /**
@@ -35,7 +36,7 @@ public class ExtensionInfo {
      */
     public String partnerId;
 
-    public ExtensionInfo id(String id) {
+    public ExtensionInfo id(Long id) {
         this.id = id;
         return this;
     }

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.teammessaging.v1.chats.adaptivecards;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AdaptiveCardRequest;
+import com.ringcentral.definitions.AdaptiveCardShortInfo;
 
 public class Index {
     public RestClient rc;

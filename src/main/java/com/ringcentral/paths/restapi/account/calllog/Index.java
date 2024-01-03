@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.calllog;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallLogRecord;
+import com.ringcentral.definitions.CallLogResponse;
+import com.ringcentral.definitions.ReadCompanyCallLogParameters;
+import com.ringcentral.definitions.ReadCompanyCallRecordParameters;
 
 public class Index {
     public RestClient rc;

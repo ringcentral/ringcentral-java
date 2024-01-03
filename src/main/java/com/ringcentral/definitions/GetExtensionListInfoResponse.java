@@ -17,7 +17,7 @@ public class GetExtensionListInfoResponse {
      */
     public ContactInfo contact;
     /**
-     * Number of an extension
+     * Extension short number
      */
     public String extensionNumber;
     /**

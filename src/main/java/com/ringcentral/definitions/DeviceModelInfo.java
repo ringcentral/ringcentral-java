@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class DeviceModelInfo {
     /**
-     * Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier
+     * Addon identifier. For HardPhones of certain types, which are compatible with this add-on identifier
      */
     public String id;
     /**
@@ -14,7 +14,7 @@ public class DeviceModelInfo {
      */
     public String name;
     /**
-     * Addons description
+     * Add-ons description
      * Required
      */
     public DeviceAddonInfo[] addons;

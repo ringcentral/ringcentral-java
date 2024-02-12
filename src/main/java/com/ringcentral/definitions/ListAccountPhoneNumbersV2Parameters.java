@@ -35,7 +35,7 @@ public class ListAccountPhoneNumbersV2Parameters {
      */
     public String[] usageType;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise, it is an external number not yet ported to RingCentral
      * Enum: Normal, Pending, PortedIn, Temporary, Unknown
      */
     public String status;
@@ -52,9 +52,9 @@ public class ListAccountPhoneNumbersV2Parameters {
     public String extensionStatus;
     /**
      * Phone number in e.164 format to be searched for.
-     * Parameter value can include wildcards (e.g. &#039;&#039;+165012345**&#039;&#039;)
-     * or be an exact number &#039;&#039;+16501234500&#039;&#039; - single number is searched in that case.
-     * Make sure you escape the &#039;&#039;+&#039;&#039; in the URL as &#039;&#039;%2B&#039;&#039;&#039;
+     * Parameter value can include wildcards (e.g. &quot;+165012345**&quot;)
+     * or be an exact number &quot;+16501234500&quot; - single number is searched in that case.
+     * Make sure you escape the &quot;+&quot; in the URL as &quot;%2B&quot;
      */
     public String phoneNumber;
 

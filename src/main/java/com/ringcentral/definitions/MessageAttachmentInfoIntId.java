@@ -13,7 +13,7 @@ public class MessageAttachmentInfoIntId {
      */
     public String uri;
     /**
-     * Type of a message attachment
+     * Type of message attachment
      * Enum: AudioRecording, AudioTranscription, Text, SourceDocument, RenderedDocument, MmsAttachment
      */
     public String type;

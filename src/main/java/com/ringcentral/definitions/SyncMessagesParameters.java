@@ -12,14 +12,14 @@ public class SyncMessagesParameters {
      */
     public Long conversationId;
     /**
-     * The start datetime for resulting messages in ISO 8601 format
+     * The start date/time for resulting messages in ISO 8601 format
      * including timezone, for example 2016-03-10T18:07:52.534Z. The default value
      * is dateTo minus 24 hours
      * Format: date-time
      */
     public String dateFrom;
     /**
-     * The end datetime for resulting messages in ISO 8601 format including
+     * The end date/time for resulting messages in ISO 8601 format including
      * timezone, for example 2016-03-10T18:07:52.534Z. The default value is current
      * time
      * Format: date-time
@@ -32,7 +32,7 @@ public class SyncMessagesParameters {
      */
     public String[] direction;
     /**
-     * If &#039;True&#039;, then the latest messages per every conversation ID
+     * If `true`, then the latest messages per every conversation ID
      * are returned
      */
     public Boolean distinctConversations;

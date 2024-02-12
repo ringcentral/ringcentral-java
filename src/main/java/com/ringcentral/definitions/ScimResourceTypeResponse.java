@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class ScimResourceTypeResponse {
     /**
-     * Unique resource type id, same value as the &quot;name&quot; attribute
+     * Unique resource type ID, same value as the &quot;name&quot; attribute
      */
     public String id;
     /**

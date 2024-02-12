@@ -22,7 +22,7 @@ public class PartySuperviseRequest {
      */
     public String agentExtensionId;
     /**
-     * Specifies if auto-answer SIP header should be sent. If auto-answer is set to &#039;True&#039;, the call is automatically answered by the supervising party, if set to &#039;False&#039; - then the supervising party has to accept or decline the monitored call
+     * Specifies if auto-answer SIP header should be sent. If auto-answer is set to `true`, the call is automatically answered by the supervising party, if set to `false` - then the supervising party has to accept or decline the monitored call
      * Default: true
      */
     public Boolean autoAnswer;

@@ -19,12 +19,12 @@ public class ListAccountPhoneNumbersParameters {
      */
     public Long perPage;
     /**
-     * Usage type of a phone number
+     * Usage type of phone number
      * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
     public String[] usageType;
     /**
-     * Status of a phone number. Multiple values are supported
+     * Status of a phone number
      * Enum: Normal, Pending, PortedIn, Temporary
      */
     public String status;

@@ -3,7 +3,9 @@ package com.ringcentral.definitions;
 
 public class SearchDirectoryEntriesRequest {
     /**
-     * String value to filter the contacts. The value specified is searched through the following fields: `firstName`, `lastName`, `extensionNumber`, `phoneNumber`, `email`, `jobTitle`, `department`, `customFieldValue`
+     * String value to filter the contacts. The value specified is
+     * searched through the following fields: `firstName`, `lastName`, `extensionNumber`, `phoneNumber`, `email`,
+     * `jobTitle`, `department`, `customFieldValue`
      */
     public String searchString;
     /**
@@ -12,7 +14,7 @@ public class SearchDirectoryEntriesRequest {
      */
     public String[] searchFields;
     /**
-     * If &#039;True&#039; then contacts of all accounts in federation are returned, if it is in federation, account section will be returned. If &#039;False&#039; then only contacts of the current account are returned, and account section is eliminated in this case
+     * If `true` then contacts of all accounts in federation are returned, if it is in federation, account section will be returned. If `false` then only contacts of the current account are returned, and account section is eliminated in this case
      */
     public Boolean showFederated;
     /**

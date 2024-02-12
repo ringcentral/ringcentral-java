@@ -14,7 +14,7 @@ public class DeviceDefinition {
      */
     public DeviceDefinitionEmergency emergency;
     /**
-     * To be used to assign a number by id
+     * To be used to assign a number by ID
      * Required
      */
     public DeviceDefinitionPhoneInfo phoneInfo;

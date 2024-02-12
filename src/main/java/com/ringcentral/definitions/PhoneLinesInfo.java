@@ -7,7 +7,7 @@ public class PhoneLinesInfo {
      */
     public String id;
     /**
-     * The type of a phone line
+     * The type of phone line
      * Enum: Unknown, Standalone, StandaloneFree, BlaPrimary, BlaSecondary
      */
     public String lineType;

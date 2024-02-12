@@ -5,13 +5,13 @@ public class EmergencyLocationsResource {
     /**
      *
      */
-    public EmergencyLocationResource[] records;
+    public CommonEmergencyLocationResource[] records;
     /**
      *
      */
     public EmergencyLocationsPaging paging;
 
-    public EmergencyLocationsResource records(EmergencyLocationResource[] records) {
+    public EmergencyLocationsResource records(CommonEmergencyLocationResource[] records) {
         this.records = records;
         return this;
     }

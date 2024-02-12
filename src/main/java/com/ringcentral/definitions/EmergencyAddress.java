@@ -3,11 +3,11 @@ package com.ringcentral.definitions;
 
 public class EmergencyAddress {
     /**
-     * If set to &#039;True&#039; then specifying emergency address is required
+     * If set to `true` then specifying emergency address is required
      */
     public Boolean required;
     /**
-     * If set to &#039;True&#039; then only local emergency address can be specified
+     * If set to `true` then only local emergency address can be specified
      */
     public Boolean localOnly;
     /**

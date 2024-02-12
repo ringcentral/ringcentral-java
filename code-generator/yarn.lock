@@ -182,10 +182,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@^20.10.6":
-  version "20.10.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.6.tgz#a3ec84c22965802bf763da55b2394424f22bfbb5"
-  integrity sha512-Vac8H+NlRNNlAmDfGUP7b5h/KA+AtWIzuXy0E6OyP8f1tCLYAtPvKRRDJjAPqhpCb0t6U2j7/xqAuLEebW2kiw==
+"@types/node@^20.11.17":
+  version "20.11.17"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.17.tgz#cdd642d0e62ef3a861f88ddbc2b61e32578a9292"
+  integrity sha512-QmgQZGWu1Yw9TDyAP9ZzpFJKynYNeOvwMJmaxABfieQoVoiVOS6MN1WSpqpRcbeA5+RW82kraAVxCCJg+780Qw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -194,12 +194,12 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
 
-"@types/ramda@^0.29.9":
-  version "0.29.9"
-  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.29.9.tgz#a4c1a9d056249268ffe16c2f6d198e42c2fc994a"
-  integrity sha512-X3yEG6tQCWBcUAql+RPC/O1Hm9BSU+MXu2wJnCETuAgUlrEDwTA1kIOdEEE4YXDtf0zfQLHa9CCE7WYp9kqPIQ==
+"@types/ramda@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.29.10.tgz#2584b268f9e0dd71ed4e5432b095186eb24a1f8f"
+  integrity sha512-0BzWVKtSEtignlk+XBuK88Il5wzQwbRVfEkzE8iKm02NYHMGQ/9ffB05M+zXhTCqo50DOIAT9pNSJsjFMMG4rQ==
   dependencies:
-    types-ramda "^0.29.6"
+    types-ramda "^0.29.7"
 
 "@types/semver@^7.3.12":
   version "7.5.2"
@@ -1751,10 +1751,10 @@ rimraf@3.0.2, rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-ringcentral-open-api-parser@^0.13.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/ringcentral-open-api-parser/-/ringcentral-open-api-parser-0.13.2.tgz#ceffbd537999e623d1944ddff9173e08517a9893"
-  integrity sha512-FOxTluuuAW3v/a/jZesTqnTKHiylmpAU4JzfOJleJX0gOivfgNxJ3G/RIdttgBqaCPoPuIzusLsvIF6hjPZk7Q==
+ringcentral-open-api-parser@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/ringcentral-open-api-parser/-/ringcentral-open-api-parser-0.14.0.tgz#d70043b6e405e8d0fa14b1307dca4b343be047db"
+  integrity sha512-ZudUK/xfDA1BZh63wwPNOb+i3fvVx7QE6Rtn2aeVXcITegZIcHaCE8oce7YW7BXyzgHJXBoFysTjI7A36xGcQA==
   dependencies:
     js-yaml "^4.1.0"
     lodash "^4.17.21"
@@ -2057,10 +2057,10 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-types-ramda@^0.29.6:
-  version "0.29.6"
-  resolved "https://registry.yarnpkg.com/types-ramda/-/types-ramda-0.29.6.tgz#a1d2a3c15a48e27d35832d7194d93369975f1427"
-  integrity sha512-VJoOk1uYNh9ZguGd3eZvqkdhD4hTGtnjRBUx5Zc0U9ftmnCgiWcSj/lsahzKunbiwRje1MxxNkEy1UdcXRCpYw==
+types-ramda@^0.29.7:
+  version "0.29.7"
+  resolved "https://registry.yarnpkg.com/types-ramda/-/types-ramda-0.29.7.tgz#dbd0dfc3c032502da2824b6f060f9b68bddffddc"
+  integrity sha512-8KBxZGJwUF3MpRkkJauSpvfHXk8Ssq15QXGuCBTDGeKd9PfheokkC3wAKRV3djej9O31Qa5M7Owsg8hF0GjtAw==
   dependencies:
     ts-toolbelt "^9.6.0"
 

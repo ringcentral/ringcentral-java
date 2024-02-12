@@ -16,14 +16,14 @@ public class ListMessagesParameters {
      */
     public String conversationId;
     /**
-     * Start datetime for resulting messages in ISO 8601 format
+     * Start date/time for resulting messages in ISO 8601 format
      * including timezone, for example 2016-03-10T18:07:52.534Z. The default value
      * is dateTo minus 24 hours
      * Format: date-time
      */
     public String dateFrom;
     /**
-     * End datetime for resulting messages in ISO 8601 format including
+     * End date/time for resulting messages in ISO 8601 format including
      * timezone, for example 2016-03-10T18:07:52.534Z. The default value is current
      * time
      * Format: date-time
@@ -36,7 +36,7 @@ public class ListMessagesParameters {
      */
     public String[] direction;
     /**
-     * If &#039;True&#039;, then the latest messages per every conversation ID
+     * If `true`, then the latest messages per every conversation ID
      * are returned
      */
     public Boolean distinctConversations;

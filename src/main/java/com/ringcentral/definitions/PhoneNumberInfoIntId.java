@@ -19,7 +19,7 @@ public class PhoneNumberInfoIntId {
      */
     public DeviceProvisioningExtensionInfo extension;
     /**
-     * Custom user name of a phone number, if any
+     * Custom user-defined name of a phone number, if any
      */
     public String label;
     /**
@@ -38,7 +38,7 @@ public class PhoneNumberInfoIntId {
     public String phoneNumber;
     /**
      * Status of a phone number. If the value is &#039;Normal&#039;, the phone
-     * number is ready to be used. Otherwise it is an external number not yet
+     * number is ready to be used. Otherwise, it is an external number not yet
      * ported to RingCentral
      */
     public String status;

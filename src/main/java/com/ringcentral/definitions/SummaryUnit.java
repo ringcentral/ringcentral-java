@@ -3,6 +3,7 @@ package com.ringcentral.definitions;
 
 public class SummaryUnit {
     /**
+     * Required
      * Example: JohnDoe
      */
     public String speakerId;
@@ -12,11 +13,13 @@ public class SummaryUnit {
      */
     public String text;
     /**
+     * Required
      * Format: float
      * Example: 0.3
      */
     public Double start;
     /**
+     * Required
      * Format: float
      * Example: 5.1
      */

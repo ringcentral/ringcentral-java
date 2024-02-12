@@ -15,7 +15,7 @@ public class AccountPhoneNumberInfo {
      */
     public String phoneNumber;
     /**
-     * Type of a phone number
+     * Type of phone number
      * Enum: VoiceFax, VoiceOnly, FaxOnly
      */
     public String type;
@@ -27,13 +27,13 @@ public class AccountPhoneNumberInfo {
      */
     public String tollType;
     /**
-     * Usage type of a phone number
+     * Usage type of phone number
      * Required
      * Enum: MainCompanyNumber, DirectNumber, Inventory, InventoryPartnerBusinessMobileNumber, PartnerBusinessMobileNumber, AdditionalCompanyNumber, CompanyNumber, PhoneLine, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, BusinessMobileNumber, ELIN
      */
     public String usageType;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise, it is an external number not yet ported to RingCentral
      * Required
      * Enum: Normal, Pending, PortedIn, Temporary, Unknown
      */

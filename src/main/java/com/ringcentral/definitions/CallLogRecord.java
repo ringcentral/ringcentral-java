@@ -30,7 +30,7 @@ public class CallLogRecord {
      */
     public String partyId;
     /**
-     * The type of a call transport. &#039;PSTN&#039; indicates that a call leg was initiated
+     * The type of call transport. &#039;PSTN&#039; indicates that a call leg was initiated
      * from the PSTN network provider; &#039;VoIP&#039; - from an RC phone.
      * Required
      * Enum: PSTN, VoIP
@@ -45,7 +45,7 @@ public class CallLogRecord {
      */
     public CallLogToParty to;
     /**
-     * The type of a call
+     * The type of call
      * Required
      * Enum: Voice, Fax
      */
@@ -64,6 +64,11 @@ public class CallLogRecord {
      *
      */
     public CallLogDelegateInfo delegate;
+    /**
+     * Call delegation type
+     * Enum: Coworker, Unknown
+     */
+    public String delegationType;
     /**
      * The internal action corresponding to the call operation
      * Required
@@ -251,6 +256,11 @@ public class CallLogRecord {
 
     public CallLogRecord delegate(CallLogDelegateInfo delegate) {
         this.delegate = delegate;
+        return this;
+    }
+
+    public CallLogRecord delegationType(String delegationType) {
+        this.delegationType = delegationType;
         return this;
     }
 

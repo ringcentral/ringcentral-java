@@ -28,6 +28,10 @@ public class PrivateIpRangeInfoRequest {
      * be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
+    /**
+     *
+     */
+    public ERLLocationInfo emergencyLocation;
 
     public PrivateIpRangeInfoRequest id(String id) {
         this.id = id;
@@ -56,6 +60,11 @@ public class PrivateIpRangeInfoRequest {
 
     public PrivateIpRangeInfoRequest emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
+        return this;
+    }
+
+    public PrivateIpRangeInfoRequest emergencyLocation(ERLLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 }

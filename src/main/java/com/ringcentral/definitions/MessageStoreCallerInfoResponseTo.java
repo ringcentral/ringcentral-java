@@ -21,7 +21,7 @@ public class MessageStoreCallerInfoResponseTo {
      */
     public String location;
     /**
-     * The &#039;True&#039; value specifies that message is sent exactly to this recipient.
+     * The `true` value specifies that message is sent exactly to this recipient.
      * Returned in the `to` field for group MMS. Useful if one extension has several
      * phone numbers&#039;
      */

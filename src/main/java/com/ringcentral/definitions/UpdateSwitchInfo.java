@@ -27,7 +27,7 @@ public class UpdateSwitchInfo {
     /**
      *
      */
-    public EmergencyAddressInfoDefault emergencyAddress;
+    public EmergencyAddressInfo emergencyAddress;
 
     public UpdateSwitchInfo id(String id) {
         this.id = id;
@@ -54,7 +54,7 @@ public class UpdateSwitchInfo {
         return this;
     }
 
-    public UpdateSwitchInfo emergencyAddress(EmergencyAddressInfoDefault emergencyAddress) {
+    public UpdateSwitchInfo emergencyAddress(EmergencyAddressInfo emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

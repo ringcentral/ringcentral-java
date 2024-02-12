@@ -11,7 +11,7 @@ public class TMPostInfo {
      */
     public String groupId;
     /**
-     * Type of a post
+     * Type of post
      * Enum: TextMessage, PersonJoined, PersonsAdded
      */
     public String type;

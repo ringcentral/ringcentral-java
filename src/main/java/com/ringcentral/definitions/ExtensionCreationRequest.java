@@ -11,21 +11,19 @@ public class ExtensionCreationRequest {
      */
     public String extensionNumber;
     /**
-     * Cost center information. Applicable if Cost Center feature is enabled. The default is root cost center value
+     *
      */
-    public ExtensionCreationRequestCostCenter costCenter;
+    public CostCenterInfo costCenter;
     /**
      *
      */
     public CustomFieldInfo[] customFields;
     /**
-     * Password for extension. If not specified, the password
-     * is auto-generated
+     * Password for extension. If not specified, the password is auto-generated
      */
     public String password;
     /**
-     * List of non-RC internal identifiers assigned to an
-     * extension
+     * List of non-RC internal identifiers assigned to an extension
      */
     public ReferenceInfo[] references;
     /**
@@ -71,8 +69,8 @@ public class ExtensionCreationRequest {
     /**
      * Hides extension from showing in company directory. Supported
      * for extensions of &#039;User&#039; type only. For unassigned extensions the value
-     * is set to &#039;True&#039; by default. For assigned extensions the value is set
-     * to &#039;False&#039; by default
+     * is set to `true` by default. For assigned extensions the value is set
+     * to `false` by default
      */
     public Boolean hidden;
 
@@ -86,7 +84,7 @@ public class ExtensionCreationRequest {
         return this;
     }
 
-    public ExtensionCreationRequest costCenter(ExtensionCreationRequestCostCenter costCenter) {
+    public ExtensionCreationRequest costCenter(CostCenterInfo costCenter) {
         this.costCenter = costCenter;
         return this;
     }

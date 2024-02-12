@@ -23,13 +23,13 @@ public class AddressBookBulkUploadResponse {
      */
     public String status;
     /**
-     * Datetime of a task creation
+     * Date/time of a task creation
      * Required
      * Format: date-time
      */
     public String creationTime;
     /**
-     * Datetime of a task latest update
+     * Date/time of a task latest update
      * Required
      * Format: date-time
      */

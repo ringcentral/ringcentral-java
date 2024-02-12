@@ -12,7 +12,7 @@ public class CustomUserGreetingInfo {
      */
     public String id;
     /**
-     * Type of a custom user greeting
+     * Type of custom user greeting
      * Enum: Introductory, Announcement, InterruptPrompt, ConnectingAudio, ConnectingMessage, Voicemail, Unavailable, HoldMusic, PronouncedName, TemplateGreeting
      */
     public String type;

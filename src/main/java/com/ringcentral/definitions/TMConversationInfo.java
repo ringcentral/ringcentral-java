@@ -7,7 +7,7 @@ public class TMConversationInfo {
      */
     public String id;
     /**
-     * Type of a conversation
+     * Type of conversation
      * Enum: Direct, Personal, Group
      */
     public String type;

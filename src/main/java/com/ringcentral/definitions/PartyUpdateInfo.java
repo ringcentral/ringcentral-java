@@ -10,7 +10,7 @@ public class PartyUpdateInfo {
      */
     public Boolean muted;
     /**
-     * If &#039;True&#039; then the party is not connected to a session voice conference, &#039;False&#039; means the party is connected to other parties in a session
+     * If `true` then the party is not connected to a session voice conference, `false` means the party is connected to other parties in a session
      */
     public Boolean standAlone;
 

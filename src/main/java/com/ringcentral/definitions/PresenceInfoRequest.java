@@ -27,7 +27,7 @@ public class PresenceInfoRequest {
      */
     public Boolean pickUpCallsOnHold;
     /**
-     * Configures the user presence visibility. When the `allowSeeMyPresence` parameter is set to &#039;True&#039;,
+     * Configures the user presence visibility. When the `allowSeeMyPresence` parameter is set to `true`,
      * the following visibility options are supported via this parameter - All, None, PermittedUsers
      * Enum: All, None, PermittedUsers
      */

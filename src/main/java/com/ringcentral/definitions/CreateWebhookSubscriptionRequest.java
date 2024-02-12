@@ -18,6 +18,7 @@ public class CreateWebhookSubscriptionRequest {
      * | `WebSocket`         | n/a (the parameter is ignored) |
      * Minimum: 1
      * Format: int32
+     * Example: 1200
      */
     public Long expiresIn;
     /**

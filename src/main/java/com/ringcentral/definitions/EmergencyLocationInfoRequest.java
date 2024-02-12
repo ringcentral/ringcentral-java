@@ -9,7 +9,7 @@ public class EmergencyLocationInfoRequest {
     /**
      *
      */
-    public EmergencyLocationInfoRequestAddress address;
+    public CommonEmergencyLocationAddressInfo address;
     /**
      * Emergency response location name
      */
@@ -29,7 +29,7 @@ public class EmergencyLocationInfoRequest {
      */
     public String usageStatus;
     /**
-     * Address format id
+     * Address format ID
      */
     public String addressFormatId;
     /**
@@ -46,7 +46,7 @@ public class EmergencyLocationInfoRequest {
         return this;
     }
 
-    public EmergencyLocationInfoRequest address(EmergencyLocationInfoRequestAddress address) {
+    public EmergencyLocationInfoRequest address(CommonEmergencyLocationAddressInfo address) {
         this.address = address;
         return this;
     }

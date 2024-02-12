@@ -62,6 +62,10 @@ public class ExtensionBulkUpdateInfo {
     /**
      *
      */
+    public CostCenterInfo costCenter;
+    /**
+     *
+     */
     public CustomFieldInfo[] customFields;
     /**
      * Hides extension from showing in company directory. Supported for extensions of User type only
@@ -150,6 +154,11 @@ public class ExtensionBulkUpdateInfo {
 
     public ExtensionBulkUpdateInfo transition(UserTransitionInfo transition) {
         this.transition = transition;
+        return this;
+    }
+
+    public ExtensionBulkUpdateInfo costCenter(CostCenterInfo costCenter) {
+        this.costCenter = costCenter;
         return this;
     }
 

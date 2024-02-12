@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class VoicemailInfo {
     /**
-     * If &#039;True&#039; then voicemails are allowed to be received
+     * If `true` then voicemails are allowed to be received
      */
     public Boolean enabled;
     /**

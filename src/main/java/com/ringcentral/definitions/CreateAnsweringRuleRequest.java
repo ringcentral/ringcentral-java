@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 public class CreateAnsweringRuleRequest {
     /**
      * Specifies if the rule is active or inactive. The default value
-     * is &#039;True&#039;
+     * is `true`
      */
     public Boolean enabled;
     /**

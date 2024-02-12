@@ -49,9 +49,9 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: EmergencyFramework
      */
-    public EmergencyLocationResource post(CreateUserEmergencyLocationRequest createUserEmergencyLocationRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public CommonEmergencyLocationResource post(CreateUserEmergencyLocationRequest createUserEmergencyLocationRequest) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(false), createUserEmergencyLocationRequest, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), EmergencyLocationResource.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CommonEmergencyLocationResource.class);
     }
 
     /**
@@ -61,12 +61,12 @@ public class Index {
      * Rate Limit Group: Light
      * App Permission: ReadAccounts
      */
-    public EmergencyLocationResource get() throws com.ringcentral.RestException, java.io.IOException {
+    public CommonEmergencyLocationResource get() throws com.ringcentral.RestException, java.io.IOException {
         if (locationId == null) {
             throw new IllegalArgumentException("Parameter locationId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), EmergencyLocationResource.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CommonEmergencyLocationResource.class);
     }
 
     /**
@@ -78,12 +78,12 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: EmergencyFramework
      */
-    public EmergencyLocationResource put(EmergencyLocationResource emergencyLocationResource) throws com.ringcentral.RestException, java.io.IOException {
+    public CommonEmergencyLocationResource put(EmergencyLocationInfoRequest emergencyLocationInfoRequest) throws com.ringcentral.RestException, java.io.IOException {
         if (locationId == null) {
             throw new IllegalArgumentException("Parameter locationId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), emergencyLocationResource, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), EmergencyLocationResource.class);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), emergencyLocationInfoRequest, null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CommonEmergencyLocationResource.class);
     }
 
     /**

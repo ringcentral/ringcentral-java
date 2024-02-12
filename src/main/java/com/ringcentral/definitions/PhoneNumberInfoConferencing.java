@@ -9,14 +9,14 @@ public class PhoneNumberInfoConferencing {
      */
     public CountryInfoShortModel country;
     /**
-     * The value should be &#039;True&#039; if the number is default for the conference. Default
+     * The value should be `true` if the number is default for the conference. Default
      * conference number is a domestic number that can be set by user (otherwise
      * it is set by the system). Only one default number per country is allowed
      */
     @SerializedName("default")
     public Boolean _default;
     /**
-     * The value should be &#039;True&#039; if any greeting message is played on this number
+     * The value should be `true` if any greeting message is played on this number
      */
     public Boolean hasGreeting;
     /**

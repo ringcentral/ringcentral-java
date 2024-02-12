@@ -19,7 +19,7 @@ public class CreateWirelessPoint {
     /**
      *
      */
-    public EmergencyAddressInfoDefault emergencyAddress;
+    public EmergencyAddressInfo emergencyAddress;
     /**
      *
      */
@@ -40,7 +40,7 @@ public class CreateWirelessPoint {
         return this;
     }
 
-    public CreateWirelessPoint emergencyAddress(EmergencyAddressInfoDefault emergencyAddress) {
+    public CreateWirelessPoint emergencyAddress(EmergencyAddressInfo emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

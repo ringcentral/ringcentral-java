@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListStatesParameters {
     /**
-     * If set to &#039;True&#039; then states of all countries are returned and
+     * If set to `true` then states of all countries are returned and
      * `countryId` is ignored, even if specified. If the value is empty
      * then the parameter is ignored
      */
@@ -30,7 +30,7 @@ public class ListStatesParameters {
      */
     public Long perPage;
     /**
-     * If &#039;True&#039; the list of states with phone numbers available for
+     * If `true` the list of states with phone numbers available for
      * buying is returned
      */
     public Boolean withPhoneNumbers;

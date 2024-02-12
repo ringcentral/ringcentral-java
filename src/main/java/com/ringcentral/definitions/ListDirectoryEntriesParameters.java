@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListDirectoryEntriesParameters {
     /**
-     * If &#039;True&#039; then contacts of all accounts in federation are returned. If &#039;False&#039; then only contacts of the current account are returned, and account section is eliminated in this case
+     * If `true` then contacts of all accounts in federation are returned. If `false` then only contacts of the current account are returned, and account section is eliminated in this case
      * Default: true
      */
     public Boolean showFederated;

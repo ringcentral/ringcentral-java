@@ -22,7 +22,7 @@ public class CreateSwitchInfo {
     /**
      *
      */
-    public EmergencyAddressInfoDefault emergencyAddress;
+    public EmergencyAddressInfo emergencyAddress;
     /**
      *
      */
@@ -48,7 +48,7 @@ public class CreateSwitchInfo {
         return this;
     }
 
-    public CreateSwitchInfo emergencyAddress(EmergencyAddressInfoDefault emergencyAddress) {
+    public CreateSwitchInfo emergencyAddress(EmergencyAddressInfo emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

@@ -7,7 +7,7 @@ public class EveryoneTeamInfo {
      */
     public String id;
     /**
-     * Type of a chat
+     * Type of chat
      * Enum: Everyone
      */
     public String type;

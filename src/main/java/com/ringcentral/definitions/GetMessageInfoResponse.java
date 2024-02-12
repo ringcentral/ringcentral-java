@@ -40,7 +40,7 @@ public class GetMessageInfoResponse {
      */
     public ConversationInfo conversation;
     /**
-     * Message creation datetime in ISO 8601 format including timezone,
+     * Message creation date/time in ISO 8601 format including timezone,
      * for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
@@ -73,7 +73,7 @@ public class GetMessageInfoResponse {
      */
     public MessageStoreCallerInfoResponseFrom from;
     /**
-     * The datetime when the message was modified on server in ISO
+     * The date/time when the message was modified on server in ISO
      * 8601 format including timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
@@ -89,7 +89,7 @@ public class GetMessageInfoResponse {
      */
     public String messageStatus;
     /**
-     * Pager only. &#039;True&#039; if at least one of the message recipients is
+     * Pager only. `true` if at least one of the message recipients is
      * &#039;Department&#039; extension
      */
     public Boolean pgToDepartment;
@@ -104,7 +104,7 @@ public class GetMessageInfoResponse {
      */
     public String readStatus;
     /**
-     * SMS only. Datetime when outbound SMS was delivered to recipient&#039;s
+     * SMS only. Date/time when outbound SMS was delivered to recipient&#039;s
      * handset in ISO 8601 format including timezone, for example
      * 2016-03-10T18:07:52.534Z. It is filled only if a carrier sends a delivery
      * receipt to RingCentral

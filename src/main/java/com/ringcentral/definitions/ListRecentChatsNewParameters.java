@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListRecentChatsNewParameters {
     /**
-     * Type of chats to be fetched. By default all chat types are returned
+     * Type of chats to be fetched. By default, all chat types are returned
      * Enum: Everyone, Group, Personal, Direct, Team
      */
     public String[] type;

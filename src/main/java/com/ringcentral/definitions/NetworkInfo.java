@@ -27,10 +27,6 @@ public class NetworkInfo {
      *
      */
     public PrivateIpRangeInfo[] privateIpRanges;
-    /**
-     *
-     */
-    public ERLLocationInfo emergencyLocation;
 
     public NetworkInfo id(String id) {
         this.id = id;
@@ -59,11 +55,6 @@ public class NetworkInfo {
 
     public NetworkInfo privateIpRanges(PrivateIpRangeInfo[] privateIpRanges) {
         this.privateIpRanges = privateIpRanges;
-        return this;
-    }
-
-    public NetworkInfo emergencyLocation(ERLLocationInfo emergencyLocation) {
-        this.emergencyLocation = emergencyLocation;
         return this;
     }
 }

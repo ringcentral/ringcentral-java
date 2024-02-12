@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 /**
  * Reason for the feature unavailability. Returned only if `available`
- * is set to 'False'
+ * is set to `false`
  */
 public class ReasonInfo {
     /**

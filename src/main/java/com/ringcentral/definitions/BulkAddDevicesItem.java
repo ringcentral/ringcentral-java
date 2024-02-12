@@ -23,7 +23,7 @@ public class BulkAddDevicesItem {
      */
     public BulkAddDevicesItemEmergency emergency;
     /**
-     * To be used to assign a number by id
+     * To be used to assign a number by ID
      * Required
      */
     public BulkAddDevicesItemPhoneInfo phoneInfo;

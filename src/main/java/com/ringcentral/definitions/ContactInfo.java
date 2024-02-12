@@ -47,7 +47,7 @@ public class ContactInfo {
      */
     public ContactBusinessAddressInfo businessAddress;
     /**
-     * If &#039;True&#039; then contact email is enabled as login name for this
+     * If `true` then contact email is enabled as login name for this
      * user. Please note that email should be unique in this case.
      */
     public Boolean emailAsLoginName;

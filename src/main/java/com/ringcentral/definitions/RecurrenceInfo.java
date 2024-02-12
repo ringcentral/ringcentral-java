@@ -8,7 +8,8 @@ public class RecurrenceInfo {
      */
     public String frequency;
     /**
-     * Recurrence interval. The supported ranges are: 1-90 for `Daily`; 1-12 for `Weekly`; 1-3 for `Monthly`
+     * Recurrence interval. The supported ranges are: 1-90 for `Daily`;
+     * 1-12 for `Weekly`; 1-3 for `Monthly`
      * Format: int32
      */
     public Long interval;

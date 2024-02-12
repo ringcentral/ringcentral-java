@@ -9,7 +9,7 @@ public class TMTeamInfo {
      */
     public String id;
     /**
-     * Type of a chat
+     * Type of chat
      * Enum: Team
      */
     public String type;

@@ -12,10 +12,10 @@ public class DeviceResource {
      */
     public String uri;
     /**
-     * Device identification number (stock keeping unit) in the format
-     * TP-ID [-AT-AC], where TP is a device type (HP for RC HardPhone, DV for all
-     * other devices including SoftPhone); ID - device model ID; AT -addon type
-     * ID; AC - addon count (if any). For example &#039;HP-56-2-2&#039;
+     * Device identification number (SKU, Stock Keeping Unit) in the format
+     * TP-ID [-AT-AC], where TP is device type (HP for RC desk phones, DV for all
+     * other devices including soft phones); ID - device model ID; AT - add-on type
+     * ID; AC - add-on count (if any). For example &#039;HP-56-2-2&#039;
      */
     public String sku;
     /**
@@ -26,13 +26,13 @@ public class DeviceResource {
     public String type;
     /**
      * Device name. Mandatory if ordering SoftPhone or OtherPhone.
-     * Optional for  HardPhone. If not specified for HardPhone, then
+     * Optional for HardPhone. If not specified for HardPhone, then
      * a device model is used as a device name
      */
     public String name;
     /**
      * Serial number for HardPhone (is returned only when the phone
-     * is shipped and provisioned); endpoint_id for SoftPhone and
+     * is shipped and provisioned); endpoint ID for SoftPhone and
      * mobile applications
      */
     public String serial;
@@ -42,7 +42,7 @@ public class DeviceResource {
      */
     public String status;
     /**
-     * PC name for softphone
+     * Computer name (for devices of `SoftPhone` type only)
      */
     public String computerName;
     /**
@@ -72,7 +72,7 @@ public class DeviceResource {
     /**
      * Box billing identifier of a device. Applicable only for HardPhones.
      * It is an alternative way to identify the device to be ordered. Either
-     * model  structure, or  boxBillingId  must be specified for HardPhone
+     * model structure, or boxBillingId  must be specified for HardPhone
      * Format: int64
      */
     public Long boxBillingId;
@@ -82,8 +82,12 @@ public class DeviceResource {
      */
     public Boolean useAsCommonPhone;
     /**
-     * Network location status. &#039;True&#039; if the device is located in
-     * the configured corporate network (On-Net); &#039;False&#039; for Off-Net location.
+     * This flag indicates whether this device is used for hot desking or not
+     */
+    public Boolean hotDeskDevice;
+    /**
+     * Network location status. `true` if the device is located in
+     * the configured corporate network (On-Net); `false` for Off-Net location.
      * Parameter is not returned if `EmergencyAddressAutoUpdate` feature is not
      * enabled for the account/user, or if device network location is not determined
      */
@@ -93,14 +97,14 @@ public class DeviceResource {
      */
     public DeviceSiteInfo site;
     /**
-     * Datetime of receiving last location report in
+     * Date/time of receiving last location report in
      * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
      * format including timezone, for example *2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String lastLocationReportTime;
     /**
-     * Pooling type of a device:
+     * Pooling type of device:
      * - Host - a device with standalone paid phone line which can be linked to a soft client instance
      * - Guest - a device with a linked phone line
      * - None - a device without a phone line or with specific line (free, BLA, etc.)
@@ -189,6 +193,11 @@ public class DeviceResource {
 
     public DeviceResource useAsCommonPhone(Boolean useAsCommonPhone) {
         this.useAsCommonPhone = useAsCommonPhone;
+        return this;
+    }
+
+    public DeviceResource hotDeskDevice(Boolean hotDeskDevice) {
+        this.hotDeskDevice = hotDeskDevice;
         return this;
     }
 

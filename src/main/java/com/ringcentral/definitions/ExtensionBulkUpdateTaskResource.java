@@ -23,13 +23,13 @@ public class ExtensionBulkUpdateTaskResource {
      */
     public String status;
     /**
-     * Task creation datetime
+     * Task creation date/time
      * Required
      * Format: date-time
      */
     public String creationTime;
     /**
-     * Task latest update datetime
+     * Task latest update date/time
      * Required
      * Format: date-time
      */

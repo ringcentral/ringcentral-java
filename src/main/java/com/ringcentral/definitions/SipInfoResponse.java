@@ -12,6 +12,11 @@ public class SipInfoResponse {
      */
     public String password;
     /**
+     * Supported authorization types and their priority for clients
+     * Enum: SipDigest, BearerToken
+     */
+    public String[] authorizationTypes;
+    /**
      * Identifier for SIP authorization
      */
     public String authorizationId;
@@ -64,6 +69,11 @@ public class SipInfoResponse {
 
     public SipInfoResponse password(String password) {
         this.password = password;
+        return this;
+    }
+
+    public SipInfoResponse authorizationTypes(String[] authorizationTypes) {
+        this.authorizationTypes = authorizationTypes;
         return this;
     }
 

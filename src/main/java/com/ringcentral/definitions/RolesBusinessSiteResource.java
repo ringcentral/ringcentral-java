@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class RolesBusinessSiteResource {
     /**
+     * Link to a business site resource
+     */
+    public String uri;
+    /**
      * Required
      */
     public String id;
@@ -38,6 +42,11 @@ public class RolesBusinessSiteResource {
      *
      */
     public ContactAddressInfoResource businessAddress;
+
+    public RolesBusinessSiteResource uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public RolesBusinessSiteResource id(String id) {
         this.id = id;

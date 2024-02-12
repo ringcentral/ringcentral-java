@@ -1,12 +1,7 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Emergency address information (or information assigned to the switch or
- * wireless point - in case of using them). Only one of a pair `emergencyAddress`
- * or `emergencyLocationId` should be specified, otherwise an error is returned
- */
-public class LocationUpdatesEmergencyAddressInfoAu {
+public class CommonEmergencyLocationAddressInfo {
     /**
      * Country name
      */
@@ -23,10 +18,6 @@ public class LocationUpdatesEmergencyAddressInfoAu {
      * Full name of a country
      */
     public String countryName;
-    /**
-     * Customer name
-     */
-    public String customerName;
     /**
      * State/Province name. Mandatory for the USA, the UK and Canada
      */
@@ -48,17 +39,26 @@ public class LocationUpdatesEmergencyAddressInfoAu {
      */
     public String city;
     /**
-     * First line address
+     * The name of the street (The field is utilized as &#039;streetName&#039; field for FR addresses)
      */
     public String street;
     /**
-     * Second line address (apartment, suite, unit, building, floor, etc.)
+     * Second line address (apartment, suite, unit, building, floor,
+     * etc.)
      */
     public String street2;
     /**
      * Postal (Zip) code
      */
     public String zip;
+    /**
+     * Customer name
+     */
+    public String customerName;
+    /**
+     * Company name
+     */
+    public String companyName;
     /**
      * (Optional) Building name
      */
@@ -72,82 +72,87 @@ public class LocationUpdatesEmergencyAddressInfoAu {
      */
     public String buildingNumber;
 
-    public LocationUpdatesEmergencyAddressInfoAu country(String country) {
+    public CommonEmergencyLocationAddressInfo country(String country) {
         this.country = country;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu countryId(String countryId) {
+    public CommonEmergencyLocationAddressInfo countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu countryIsoCode(String countryIsoCode) {
+    public CommonEmergencyLocationAddressInfo countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu countryName(String countryName) {
+    public CommonEmergencyLocationAddressInfo countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu customerName(String customerName) {
-        this.customerName = customerName;
-        return this;
-    }
-
-    public LocationUpdatesEmergencyAddressInfoAu state(String state) {
+    public CommonEmergencyLocationAddressInfo state(String state) {
         this.state = state;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu stateId(String stateId) {
+    public CommonEmergencyLocationAddressInfo stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu stateIsoCode(String stateIsoCode) {
+    public CommonEmergencyLocationAddressInfo stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu stateName(String stateName) {
+    public CommonEmergencyLocationAddressInfo stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu city(String city) {
+    public CommonEmergencyLocationAddressInfo city(String city) {
         this.city = city;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu street(String street) {
+    public CommonEmergencyLocationAddressInfo street(String street) {
         this.street = street;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu street2(String street2) {
+    public CommonEmergencyLocationAddressInfo street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu zip(String zip) {
+    public CommonEmergencyLocationAddressInfo zip(String zip) {
         this.zip = zip;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu buildingName(String buildingName) {
+    public CommonEmergencyLocationAddressInfo customerName(String customerName) {
+        this.customerName = customerName;
+        return this;
+    }
+
+    public CommonEmergencyLocationAddressInfo companyName(String companyName) {
+        this.companyName = companyName;
+        return this;
+    }
+
+    public CommonEmergencyLocationAddressInfo buildingName(String buildingName) {
         this.buildingName = buildingName;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu streetType(String streetType) {
+    public CommonEmergencyLocationAddressInfo streetType(String streetType) {
         this.streetType = streetType;
         return this;
     }
 
-    public LocationUpdatesEmergencyAddressInfoAu buildingNumber(String buildingNumber) {
+    public CommonEmergencyLocationAddressInfo buildingNumber(String buildingNumber) {
         this.buildingNumber = buildingNumber;
         return this;
     }

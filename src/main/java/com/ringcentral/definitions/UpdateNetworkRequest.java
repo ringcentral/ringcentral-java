@@ -23,10 +23,6 @@ public class UpdateNetworkRequest {
      * Required
      */
     public PrivateIpRangeInfoRequest[] privateIpRanges;
-    /**
-     *
-     */
-    public ERLLocationInfo emergencyLocation;
 
     public UpdateNetworkRequest id(String id) {
         this.id = id;
@@ -50,11 +46,6 @@ public class UpdateNetworkRequest {
 
     public UpdateNetworkRequest privateIpRanges(PrivateIpRangeInfoRequest[] privateIpRanges) {
         this.privateIpRanges = privateIpRanges;
-        return this;
-    }
-
-    public UpdateNetworkRequest emergencyLocation(ERLLocationInfo emergencyLocation) {
-        this.emergencyLocation = emergencyLocation;
         return this;
     }
 }

@@ -18,18 +18,18 @@ public class VoicemailMessageEventBody {
      */
     public SenderInfo from;
     /**
-     * Type of a message
+     * Type of message
      * Enum: Voicemail
      */
     public String type;
     /**
-     * Message creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+     * Message creation date/time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
      * format including timezone, for example *2019-03-10T18:07:52.534Z*
      * Format: date-time
      */
     public String creationTime;
     /**
-     * Datetime when a message was modified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+     * Date/time when a message was modified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
      * format including timezone, for example *2019-03-10T18:07:52.534Z*
      * Format: date-time
      */

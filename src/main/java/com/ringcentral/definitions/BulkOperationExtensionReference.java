@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class BulkOperationExtensionReference {
     /**
-     * Internal identifier of a RingCentral  extension
+     * Internal identifier of a RingCentral extension
      * Required
      * Example: 12345
      */

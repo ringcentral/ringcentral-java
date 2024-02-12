@@ -12,7 +12,7 @@ public class PromptInfo {
      */
     public String id;
     /**
-     * Type of a prompt media content
+     * Type of prompt media content
      */
     public String contentType;
     /**

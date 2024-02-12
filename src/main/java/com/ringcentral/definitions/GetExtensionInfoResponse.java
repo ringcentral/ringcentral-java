@@ -23,6 +23,10 @@ public class GetExtensionInfoResponse {
     /**
      *
      */
+    public CostCenterInfo costCenter;
+    /**
+     *
+     */
     public CustomFieldInfo[] customFields;
     /**
      * Information on department extension(s), to which the requested
@@ -50,7 +54,7 @@ public class GetExtensionInfoResponse {
      * created by partner. The RingCentral supports mapping of accounts and
      * stores the corresponding account ID/extension ID for each partner ID of
      * a client application. In request URIs partner IDs are accepted instead
-     * of regular RingCentral native IDs as path parameters using pid = XXX clause.
+     * of regular RingCentral native IDs as path parameters using `pid=XXX` clause.
      * Though in response URIs contain the corresponding account IDs and extension
      * IDs. In all request and response bodies these values are reflected via
      * partnerId attributes of account and extension
@@ -90,7 +94,7 @@ public class GetExtensionInfoResponse {
     public String setupWizardState;
     /**
      * Extension current state. If &#039;Unassigned&#039; is specified, then
-     * extensions without ‘extensionNumber’ are returned. If not specified,
+     * extensions without `extensionNumber` are returned. If not specified,
      * then all extensions are returned
      * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
@@ -107,8 +111,8 @@ public class GetExtensionInfoResponse {
      */
     public String type;
     /**
-     * Extension sub-type, if applicable. For any unsupported sub-types the
-     * &#039;Unknown&#039; value will be returned&quot;
+     * Extension subtype, if applicable. For any unsupported subtypes the
+     * `Unknown` value will be returned
      * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
      */
     public String subType;
@@ -147,6 +151,11 @@ public class GetExtensionInfoResponse {
 
     public GetExtensionInfoResponse contact(ContactInfo contact) {
         this.contact = contact;
+        return this;
+    }
+
+    public GetExtensionInfoResponse costCenter(CostCenterInfo costCenter) {
+        this.costCenter = costCenter;
         return this;
     }
 

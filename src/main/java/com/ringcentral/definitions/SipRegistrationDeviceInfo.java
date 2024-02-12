@@ -17,10 +17,10 @@ public class SipRegistrationDeviceInfo {
      */
     public String type;
     /**
-     * Device identification number (stock keeping unit) in the format
-     * TP-ID [-AT-AC], where TP is device type (HP for RC HardPhone, DV for all
-     * other devices including softphone); ID - device model ID; AT -addon type
-     * ID; AC - addon count (if any). For example &#039;HP-56-2-2&#039;
+     * Device identification number (SKU, Stock Keeping Unit) in the format
+     * TP-ID [-AT-AC], where TP is device type (HP for RC desk phones, DV for all
+     * other devices including soft phones); ID - device model ID; AT - add-on type
+     * ID; AC - add-on count (if any). For example &#039;HP-56-2-2&#039;
      */
     public String sku;
     /**
@@ -29,7 +29,7 @@ public class SipRegistrationDeviceInfo {
     public String status;
     /**
      * Device name. Mandatory if ordering  SoftPhone or OtherPhone.
-     * Optional for  HardPhone. If not specified for HardPhone, then device  model  name
+     * Optional for HardPhone. If not specified for HardPhone, then device  model  name
      * is used as device  name
      */
     public String name;
@@ -39,7 +39,7 @@ public class SipRegistrationDeviceInfo {
      */
     public String serial;
     /**
-     * Computer name for Softphone devices
+     * Computer name (for devices of `SoftPhone` type only)
      */
     public String computerName;
     /**
@@ -78,16 +78,17 @@ public class SipRegistrationDeviceInfo {
      */
     public Boolean useAsCommonPhone;
     /**
-     * Pooling type of a deviceHost - device with standalone paid
-     * phone line which can be linked to Glip/Softphone instanceGuest - device
-     * with a linked phone lineNone - device without a phone line or with specific
-     * line (free, BLA, etc.) = [&#039;Host&#039;, &#039;Guest&#039;, &#039;None&#039;]
+     * Pooling type of device:
+     * - `Host` - device with standalone paid
+     * phone line which can be linked to soft phone client instance
+     * - `Guest` - device with a linked phone line
+     * - `None` - device without a phone line or with specific line (free, BLA, etc.)
      * Enum: Host, Guest, None
      */
     public String linePooling;
     /**
-     * Network location status. &#039;True&#039; if the device is located in
-     * the configured corporate network (On-Net); &#039;False&#039; for Off-Net location.
+     * Network location status. `true` if the device is located in
+     * the configured corporate network (On-Net); `false` for Off-Net location.
      * Parameter is not returned if `EmergencyAddressAutoUpdate` feature is not
      * enabled for the account/user, or if device network location is not determined
      */

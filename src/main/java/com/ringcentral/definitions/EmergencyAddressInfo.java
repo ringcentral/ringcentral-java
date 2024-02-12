@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class CreateUserEmergencyLocationRequestAddress {
+public class EmergencyAddressInfo {
     /**
      * Country name
      */
@@ -39,7 +39,7 @@ public class CreateUserEmergencyLocationRequestAddress {
      */
     public String city;
     /**
-     * The name of the street (The field is utilised as &#039;streetName&#039; field for FR addresses)
+     * The name of the street (The field is utilized as &#039;streetName&#039; field for FR addresses)
      */
     public String street;
     /**
@@ -71,89 +71,101 @@ public class CreateUserEmergencyLocationRequestAddress {
      * Building/street number
      */
     public String buildingNumber;
+    /**
+     * Resulting status of emergency address synchronization. Returned
+     * for &#039;Get Device Info&#039; request if `syncEmergencyAddress` parameter is set
+     * to `true`
+     * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
+     */
+    public String syncStatus;
 
-    public CreateUserEmergencyLocationRequestAddress country(String country) {
+    public EmergencyAddressInfo country(String country) {
         this.country = country;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress countryId(String countryId) {
+    public EmergencyAddressInfo countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress countryIsoCode(String countryIsoCode) {
+    public EmergencyAddressInfo countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress countryName(String countryName) {
+    public EmergencyAddressInfo countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress state(String state) {
+    public EmergencyAddressInfo state(String state) {
         this.state = state;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress stateId(String stateId) {
+    public EmergencyAddressInfo stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress stateIsoCode(String stateIsoCode) {
+    public EmergencyAddressInfo stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress stateName(String stateName) {
+    public EmergencyAddressInfo stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress city(String city) {
+    public EmergencyAddressInfo city(String city) {
         this.city = city;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress street(String street) {
+    public EmergencyAddressInfo street(String street) {
         this.street = street;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress street2(String street2) {
+    public EmergencyAddressInfo street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress zip(String zip) {
+    public EmergencyAddressInfo zip(String zip) {
         this.zip = zip;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress customerName(String customerName) {
+    public EmergencyAddressInfo customerName(String customerName) {
         this.customerName = customerName;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress companyName(String companyName) {
+    public EmergencyAddressInfo companyName(String companyName) {
         this.companyName = companyName;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress buildingName(String buildingName) {
+    public EmergencyAddressInfo buildingName(String buildingName) {
         this.buildingName = buildingName;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress streetType(String streetType) {
+    public EmergencyAddressInfo streetType(String streetType) {
         this.streetType = streetType;
         return this;
     }
 
-    public CreateUserEmergencyLocationRequestAddress buildingNumber(String buildingNumber) {
+    public EmergencyAddressInfo buildingNumber(String buildingNumber) {
         this.buildingNumber = buildingNumber;
+        return this;
+    }
+
+    public EmergencyAddressInfo syncStatus(String syncStatus) {
+        this.syncStatus = syncStatus;
         return this;
     }
 }

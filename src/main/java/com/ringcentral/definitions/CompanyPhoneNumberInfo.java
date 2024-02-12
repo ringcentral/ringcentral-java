@@ -21,7 +21,7 @@ public class CompanyPhoneNumberInfo {
      */
     public ExtensionInfo extension;
     /**
-     * Custom user name of a phone number, if any
+     * Custom user-defined name of a phone number, if any
      */
     public String label;
     /**
@@ -51,8 +51,8 @@ public class CompanyPhoneNumberInfo {
      */
     public String type;
     /**
-     * Usage type of a phone number. Usage type of a phone number.
-     * Numbers of &#039;NumberPool&#039; type wont&#039;t be returned for phone number list
+     * Usage type of phone number. Usage type of phone number.
+     * Numbers of &#039;NumberPool&#039; type are not returned in phone number list
      * requests
      * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
@@ -66,7 +66,7 @@ public class CompanyPhoneNumberInfo {
      */
     public ContactCenterProvider contactCenterProvider;
     /**
-     * Vanity pattern for this number. Returned only when vanity search option is requested. Vanity pattern corresponds to request parameters nxx plus line or numberPattern
+     * Vanity pattern for this number. Returned only when vanity search option is requested. Vanity pattern corresponds to request parameters `nxx` plus `line` or `numberPattern`
      */
     public String vanityPattern;
     /**

@@ -97,7 +97,9 @@ public class ContactResource {
      */
     public ExternalIntegrationResource integration;
     /**
-     * Example: 3
+     * Extension subtype
+     * Example: Unknown
+     * Enum: Unknown, VideoPro, VideoProPlus, DigitalSignage, Emergency
      */
     public String subType;
 

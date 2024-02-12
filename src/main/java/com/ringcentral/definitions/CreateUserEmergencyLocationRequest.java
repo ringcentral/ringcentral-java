@@ -7,13 +7,13 @@ public class CreateUserEmergencyLocationRequest {
      */
     public String name;
     /**
-     * Address format id
+     * Address format ID
      */
     public String addressFormatId;
     /**
      *
      */
-    public CreateUserEmergencyLocationRequestAddress address;
+    public CommonEmergencyLocationAddressInfo address;
 
     public CreateUserEmergencyLocationRequest name(String name) {
         this.name = name;
@@ -25,7 +25,7 @@ public class CreateUserEmergencyLocationRequest {
         return this;
     }
 
-    public CreateUserEmergencyLocationRequest address(CreateUserEmergencyLocationRequestAddress address) {
+    public CreateUserEmergencyLocationRequest address(CommonEmergencyLocationAddressInfo address) {
         this.address = address;
         return this;
     }

@@ -28,7 +28,7 @@ public class DevicePhoneNumberInfo {
      */
     public String usageType;
     /**
-     * Type of a phone number
+     * Type of phone number
      * Enum: VoiceFax, FaxOnly, VoiceOnly
      */
     public String type;

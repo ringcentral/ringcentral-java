@@ -9,6 +9,10 @@ public class TranscribedObject {
      */
     public Long speakerCount;
     /**
+     * Speaker wise utterances. Field is set only when enableSpeakerDiarization is true.
+     */
+    public UtteranceObject[] utterances;
+    /**
      * Required
      */
     public WordSegment[] words;
@@ -25,6 +29,11 @@ public class TranscribedObject {
 
     public TranscribedObject speakerCount(Long speakerCount) {
         this.speakerCount = speakerCount;
+        return this;
+    }
+
+    public TranscribedObject utterances(UtteranceObject[] utterances) {
+        this.utterances = utterances;
         return this;
     }
 

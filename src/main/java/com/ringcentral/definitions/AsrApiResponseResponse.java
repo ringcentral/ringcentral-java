@@ -9,6 +9,10 @@ public class AsrApiResponseResponse {
      */
     public Long speakerCount;
     /**
+     * Speaker wise utterances. Field is set only when enableSpeakerDiarization is true.
+     */
+    public UtteranceObject[] utterances;
+    /**
      *
      */
     public WordSegment[] words;
@@ -24,6 +28,11 @@ public class AsrApiResponseResponse {
 
     public AsrApiResponseResponse speakerCount(Long speakerCount) {
         this.speakerCount = speakerCount;
+        return this;
+    }
+
+    public AsrApiResponseResponse utterances(UtteranceObject[] utterances) {
+        this.utterances = utterances;
         return this;
     }
 

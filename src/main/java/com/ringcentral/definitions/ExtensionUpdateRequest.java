@@ -63,7 +63,7 @@ public class ExtensionUpdateRequest {
      */
     public String type;
     /**
-     * Extension sub-type, if applicable. For any unsupported sub-types
+     * Extension subtype, if applicable. For any unsupported subtypes
      * the &#039;Unknown&#039; value will be returned
      * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown
      */

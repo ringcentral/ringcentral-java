@@ -24,7 +24,7 @@ public class ListExtensionActiveCallsParameters {
      */
     public String[] type;
     /**
-     * The type of call transport. Multiple values are supported. By default this filter is disabled
+     * The type of call transport. Multiple values are supported. By default, this filter is disabled
      * Enum: PSTN, VoIP
      */
     public String[] transport;

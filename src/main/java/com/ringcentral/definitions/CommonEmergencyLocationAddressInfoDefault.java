@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class EmergencyLocationAddressInfoDefault {
+public class CommonEmergencyLocationAddressInfoDefault {
     /**
      * Country name
      */
@@ -56,67 +56,67 @@ public class EmergencyLocationAddressInfoDefault {
      */
     public String customerName;
 
-    public EmergencyLocationAddressInfoDefault country(String country) {
+    public CommonEmergencyLocationAddressInfoDefault country(String country) {
         this.country = country;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault countryId(String countryId) {
+    public CommonEmergencyLocationAddressInfoDefault countryId(String countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault countryIsoCode(String countryIsoCode) {
+    public CommonEmergencyLocationAddressInfoDefault countryIsoCode(String countryIsoCode) {
         this.countryIsoCode = countryIsoCode;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault countryName(String countryName) {
+    public CommonEmergencyLocationAddressInfoDefault countryName(String countryName) {
         this.countryName = countryName;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault state(String state) {
+    public CommonEmergencyLocationAddressInfoDefault state(String state) {
         this.state = state;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault stateId(String stateId) {
+    public CommonEmergencyLocationAddressInfoDefault stateId(String stateId) {
         this.stateId = stateId;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault stateIsoCode(String stateIsoCode) {
+    public CommonEmergencyLocationAddressInfoDefault stateIsoCode(String stateIsoCode) {
         this.stateIsoCode = stateIsoCode;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault stateName(String stateName) {
+    public CommonEmergencyLocationAddressInfoDefault stateName(String stateName) {
         this.stateName = stateName;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault city(String city) {
+    public CommonEmergencyLocationAddressInfoDefault city(String city) {
         this.city = city;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault street(String street) {
+    public CommonEmergencyLocationAddressInfoDefault street(String street) {
         this.street = street;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault street2(String street2) {
+    public CommonEmergencyLocationAddressInfoDefault street2(String street2) {
         this.street2 = street2;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault zip(String zip) {
+    public CommonEmergencyLocationAddressInfoDefault zip(String zip) {
         this.zip = zip;
         return this;
     }
 
-    public EmergencyLocationAddressInfoDefault customerName(String customerName) {
+    public CommonEmergencyLocationAddressInfoDefault customerName(String customerName) {
         this.customerName = customerName;
         return this;
     }

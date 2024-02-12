@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * Service Plan information (billing package, brand, etc)
+ * Service Plan information (billing package, brand, etc.)
  */
 public class ServiceInfoV2 {
     /**

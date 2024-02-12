@@ -4,7 +4,7 @@ package com.ringcentral.definitions;
 /**
  * Company emergency response location details
  */
-public class EmergencyLocationResource {
+public class CommonEmergencyLocationResource {
     /**
      * Internal identifier of an emergency response location
      */
@@ -12,7 +12,7 @@ public class EmergencyLocationResource {
     /**
      *
      */
-    public EmergencyLocationResourceAddress address;
+    public CommonEmergencyLocationAddressInfo address;
     /**
      * Emergency response location name
      */
@@ -33,7 +33,7 @@ public class EmergencyLocationResource {
     public String usageStatus;
     /**
      * Resulting status of emergency address synchronization. Returned
-     * if `syncEmergencyAddress` parameter is set to &#039;True&#039;
+     * if `syncEmergencyAddress` parameter is set to `true`
      * Enum: Verified, Updated, Deleted, ActivationProcess, NotRequired, Unsupported, Failed
      */
     public String syncStatus;
@@ -54,61 +54,61 @@ public class EmergencyLocationResource {
      */
     public LocationOwnerInfo[] owners;
     /**
-     * Address format id
+     * Address format ID
      */
     public String addressFormatId;
 
-    public EmergencyLocationResource id(String id) {
+    public CommonEmergencyLocationResource id(String id) {
         this.id = id;
         return this;
     }
 
-    public EmergencyLocationResource address(EmergencyLocationResourceAddress address) {
+    public CommonEmergencyLocationResource address(CommonEmergencyLocationAddressInfo address) {
         this.address = address;
         return this;
     }
 
-    public EmergencyLocationResource name(String name) {
+    public CommonEmergencyLocationResource name(String name) {
         this.name = name;
         return this;
     }
 
-    public EmergencyLocationResource site(ShortSiteInfo site) {
+    public CommonEmergencyLocationResource site(ShortSiteInfo site) {
         this.site = site;
         return this;
     }
 
-    public EmergencyLocationResource addressStatus(String addressStatus) {
+    public CommonEmergencyLocationResource addressStatus(String addressStatus) {
         this.addressStatus = addressStatus;
         return this;
     }
 
-    public EmergencyLocationResource usageStatus(String usageStatus) {
+    public CommonEmergencyLocationResource usageStatus(String usageStatus) {
         this.usageStatus = usageStatus;
         return this;
     }
 
-    public EmergencyLocationResource syncStatus(String syncStatus) {
+    public CommonEmergencyLocationResource syncStatus(String syncStatus) {
         this.syncStatus = syncStatus;
         return this;
     }
 
-    public EmergencyLocationResource addressType(String addressType) {
+    public CommonEmergencyLocationResource addressType(String addressType) {
         this.addressType = addressType;
         return this;
     }
 
-    public EmergencyLocationResource visibility(String visibility) {
+    public CommonEmergencyLocationResource visibility(String visibility) {
         this.visibility = visibility;
         return this;
     }
 
-    public EmergencyLocationResource owners(LocationOwnerInfo[] owners) {
+    public CommonEmergencyLocationResource owners(LocationOwnerInfo[] owners) {
         this.owners = owners;
         return this;
     }
 
-    public EmergencyLocationResource addressFormatId(String addressFormatId) {
+    public CommonEmergencyLocationResource addressFormatId(String addressFormatId) {
         this.addressFormatId = addressFormatId;
         return this;
     }

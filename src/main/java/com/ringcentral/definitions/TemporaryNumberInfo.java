@@ -10,7 +10,8 @@ public class TemporaryNumberInfo {
      */
     public String id;
     /**
-     * Temporary phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with &#039;+&#039; sign) format
+     * Temporary phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
+     * (with &#039;+&#039; sign) format
      */
     public String phoneNumber;
 

@@ -11,7 +11,7 @@ public class CallLogRecordMessage {
      */
     public String id;
     /**
-     * Type of a message
+     * Type of message
      * Required
      */
     public String type;

@@ -29,7 +29,7 @@ public class SipRegistrationDeviceEmergencyInfo {
     public String visibility;
     /**
      * Resulting status of emergency address synchronization. Returned
-     * if `syncEmergencyAddress` parameter is set to &#039;True&#039;
+     * if `syncEmergencyAddress` parameter is set to `true`
      * Enum: Verified, Updated, Deleted, NotRequired, Unsupported, Failed
      */
     public String syncStatus;

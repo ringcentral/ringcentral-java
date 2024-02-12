@@ -10,7 +10,7 @@ public class ForwardingInfo {
      */
     public Boolean notifyMySoftPhones;
     /**
-     * Deprecated parameter. Specifies if the administrator&#039;s softphone is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is &#039;False&#039;
+     * Deprecated parameter. Specifies if the administrator&#039;s softphone is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is `false`
      */
     public Boolean notifyAdminSoftPhones;
     /**
@@ -19,7 +19,7 @@ public class ForwardingInfo {
      */
     public Long softPhonesRingCount;
     /**
-     * Specifies that desktop and mobile applications of the user will ring till the end of their forwarding list. If set to &#039;True&#039; then `softPhonesRingCount` is ignored
+     * Specifies that desktop and mobile applications of the user will ring till the end of their forwarding list. If set to `true` then `softPhonesRingCount` is ignored
      * Default: true
      */
     public Boolean softPhonesAlwaysRing;

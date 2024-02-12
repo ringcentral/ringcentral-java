@@ -3,12 +3,12 @@ package com.ringcentral.definitions;
 
 public class AssignPhoneNumberRequest {
     /**
-     * Type of a phone number
+     * Type of phone number
      * Enum: VoiceFax, VoiceOnly, FaxOnly
      */
     public String type;
     /**
-     * Target usage type of a phone number (only listed values are supported)
+     * Target usage type of phone number (only listed values are supported)
      * Required
      * Enum: MainCompanyNumber, CompanyNumber, DirectNumber, PhoneLine
      */

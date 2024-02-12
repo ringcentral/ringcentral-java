@@ -17,11 +17,11 @@ public class ScimUserResponse {
      */
     public ScimEmail[] emails;
     /**
-     * External unique resource id defined by provisioning client
+     * External unique resource ID defined by provisioning client
      */
     public String externalId;
     /**
-     * Unique resource id defined by RingCentral
+     * Unique resource ID defined by RingCentral
      */
     public String id;
     /**

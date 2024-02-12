@@ -18,17 +18,17 @@ public class InstantMessageEventBody {
      */
     public SenderInfo from;
     /**
-     * Type of a message. The default value is &#039;SMS&#039;
+     * Type of message. The default value is &#039;SMS&#039;
      */
     public String type;
     /**
-     * Message creation datetime in ISO 8601 format including timezone,
+     * Message creation date/time in ISO 8601 format including timezone,
      * for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
     public String creationTime;
     /**
-     * Datetime when the message was modified in ISO 8601 format including
+     * Date/time when the message was modified in ISO 8601 format including
      * timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */

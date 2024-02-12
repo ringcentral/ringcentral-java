@@ -23,7 +23,7 @@ public class UpdateWirelessPoint {
     /**
      *
      */
-    public EmergencyAddressInfoDefault emergencyAddress;
+    public EmergencyAddressInfo emergencyAddress;
 
     public UpdateWirelessPoint id(String id) {
         this.id = id;
@@ -45,7 +45,7 @@ public class UpdateWirelessPoint {
         return this;
     }
 
-    public UpdateWirelessPoint emergencyAddress(EmergencyAddressInfoDefault emergencyAddress) {
+    public UpdateWirelessPoint emergencyAddress(EmergencyAddressInfo emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }

@@ -6,11 +6,11 @@ package com.ringcentral.definitions;
  */
 public class ForwardingInfoCreateRuleRequest {
     /**
-     * Specifies if the first ring on desktop/mobile apps is enabled. The default value is &#039;True&#039;
+     * Specifies if the first ring on desktop/mobile apps is enabled. The default value is `true`
      */
     public Boolean notifyMySoftPhones;
     /**
-     * Deprecated parameter. Specifies if the administrator&#039;s softphone (desktop application) is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is &#039;True&#039;.
+     * Deprecated parameter. Specifies if the administrator&#039;s softphone (desktop application) is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is `true`.
      */
     public Boolean notifyAdminSoftPhones;
     /**
@@ -19,7 +19,7 @@ public class ForwardingInfoCreateRuleRequest {
      */
     public Long softPhonesRingCount;
     /**
-     * Specifies that desktop and mobile applications of the user will ring till the end of their forwarding list. If set to &#039;True&#039; then `softPhonesRingCount` is ignored
+     * Specifies that desktop and mobile applications of the user will ring till the end of their forwarding list. If set to `true` then `softPhonesRingCount` is ignored
      * Default: true
      */
     public Boolean softPhonesAlwaysRing;

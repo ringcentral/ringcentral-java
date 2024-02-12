@@ -24,6 +24,7 @@ public class Index {
     /**
      * Deletes user extension(s) and either keeps or destroys the assets - numbers and devices.
      * Multiple extensions can be deleted with a single API call.
+     * <p>
      * **Please note:** This API cannot be tested on Sandbox.
      * <p>
      * HTTP Method: delete

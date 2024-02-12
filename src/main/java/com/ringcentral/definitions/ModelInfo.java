@@ -14,7 +14,7 @@ public class ModelInfo {
      */
     public String name;
     /**
-     * Addons description
+     * Add-ons description
      */
     public AddonInfo[] addons;
     /**

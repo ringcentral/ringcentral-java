@@ -32,7 +32,9 @@ public class TMCreateEventRequest {
      */
     public Boolean allDay;
     /**
-     * Event recurrence settings. For non-periodic events the value is &#039;None&#039;. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year
+     * Event recurrence settings. For non-periodic events the value
+     * is `None`. Must be greater or equal to event duration: 1- Day/Weekday;
+     * 7 - Week; 28 - Month; 365 - Year
      * Enum: None, Day, Weekday, Week, Month, Year
      */
     public String recurrence;
@@ -41,7 +43,8 @@ public class TMCreateEventRequest {
      */
     public String endingCondition;
     /**
-     * Count of iterations. For periodic events only. Value range is 1 - 10. Must be specified if &#039;endingCondition&#039; is &#039;Count&#039;
+     * Count of iterations. For periodic events only. Value range
+     * is 1 - 10. Must be specified if `endingCondition` is `Count`
      * Format: int32
      */
     public Long endingAfter;

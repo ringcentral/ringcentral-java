@@ -46,7 +46,6 @@ public class SessionGlobalListEntry {
     public String timeZone;
     /**
      * Localized time zone description.
-     * Required
      * Example: Eastern Time (America/New_York)
      */
     public String localizedTimeZoneDescription;

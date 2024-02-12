@@ -26,7 +26,7 @@ public class FaxResponse {
      */
     public FaxResponseTo[] to;
     /**
-     * Message creation datetime in ISO 8601 format including timezone,
+     * Message creation date/time in ISO 8601 format including timezone,
      * for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */
@@ -83,7 +83,7 @@ public class FaxResponse {
      */
     public Long faxPageCount;
     /**
-     * Datetime when the message was modified on server in ISO 8601
+     * Date/time when the message was modified on server in ISO 8601
      * format including timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */

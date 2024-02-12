@@ -13,7 +13,7 @@ public class ExtensionServiceFeatureInfo {
     public String featureName;
     /**
      * Reason for limitation of a particular service feature. Returned
-     * only if the enabled parameter value is &#039;False&#039;, see Service Feature
+     * only if the enabled parameter value is `false`, see Service Feature
      * Limitations and Reasons. When retrieving service features for an extension,
      * the reasons for limitations, if any, are returned in response
      */

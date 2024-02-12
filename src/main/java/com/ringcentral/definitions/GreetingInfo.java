@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class GreetingInfo {
     /**
-     * Type of a greeting, specifying the case when the greeting is played.
+     * Type of greeting, specifying the case when the greeting is played.
      * Enum: Introductory, Announcement, AutomaticRecording, BlockedCallersAll, BlockedCallersSpecific, BlockedNoCallerId, BlockedPayPhones, ConnectingMessage, ConnectingAudio, StartRecording, StopRecording, Voicemail, Unavailable, InterruptPrompt, HoldMusic, Company
      */
     public String type;

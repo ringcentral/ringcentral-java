@@ -53,7 +53,7 @@ public class GetTokenRequest {
     public Long refresh_token_ttl;
     /**
      * List of application permissions to be used with access token.
-     * By default the scope includes all permissions configured during
+     * By default, the scope includes all permissions configured during
      * the application registration phase
      */
     public String scope;

@@ -25,7 +25,7 @@ public class UserPhoneNumberInfo {
      */
     public UserPhoneNumberExtensionInfo extension;
     /**
-     * Custom user name of a phone number, if any
+     * Custom user-defined name of a phone number, if any
      */
     public String label;
     /**
@@ -33,7 +33,8 @@ public class UserPhoneNumberInfo {
      */
     public String location;
     /**
-     * Payment type. &#039;External&#039; is returned for forwarded numbers which are not terminated in the RingCentral phone system
+     * Payment type. &#039;External&#039; is returned for forwarded numbers
+     * which are not terminated in the RingCentral phone system
      * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider
      */
     public String paymentType;
@@ -42,11 +43,13 @@ public class UserPhoneNumberInfo {
      */
     public String phoneNumber;
     /**
-     * Specifies if a phone number is primary, i.e. displayed as &#039;main number&#039; and called by default
+     * Indicates if a phone number is primary, i.e. displayed as &#039;main number&#039; and called by default
      */
     public Boolean primary;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is &#039;Normal&#039;, the phone
+     * number is ready to be used. Otherwise, it is an external number not yet
+     * ported to RingCentral
      * Enum: Normal, Pending, PortedIn, Temporary
      */
     public String status;
@@ -56,12 +59,12 @@ public class UserPhoneNumberInfo {
      */
     public String type;
     /**
-     * Extension sub-type, if applicable. For any unsupported sub-types the &#039;Unknown&#039; value will be returned
+     * Extension subtype, if applicable. For any unsupported subtypes the &#039;Unknown&#039; value will be returned
      * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
      */
     public String subType;
     /**
-     * Usage type of a phone number. Numbers of &#039;NumberPool&#039; type will not be returned for phone number list requests
+     * Usage type of phone number. Numbers of &#039;NumberPool&#039; type will not be returned for phone number list requests
      * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, NumberPool, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
     public String usageType;

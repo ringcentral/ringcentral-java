@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListGlipChatsNewParameters {
     /**
-     * Type of chats to be fetched. By default all type of chats will be fetched
+     * Type of chats to be fetched. By default, all type of chats will be fetched
      * Enum: Personal, Direct, Group, Team, Everyone
      */
     public String[] type;

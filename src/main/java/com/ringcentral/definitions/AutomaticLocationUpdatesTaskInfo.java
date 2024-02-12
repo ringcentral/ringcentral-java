@@ -22,7 +22,7 @@ public class AutomaticLocationUpdatesTaskInfo {
      */
     public String lastModifiedTime;
     /**
-     * Type of a task
+     * Type of task
      * Enum: WirelessPointsBulkCreate, WirelessPointsBulkUpdate, SwitchesBulkCreate, SwitchesBulkUpdate
      */
     public String type;

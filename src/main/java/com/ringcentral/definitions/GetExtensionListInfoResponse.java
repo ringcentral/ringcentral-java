@@ -35,7 +35,7 @@ public class GetExtensionListInfoResponse {
     public ProfileImageInfo profileImage;
     /**
      * Extension current state. If &#039;Unassigned&#039; is specified, then
-     * extensions without ‘extensionNumber’ are returned. If not specified,
+     * extensions without `extensionNumber` are returned. If not specified,
      * then all extensions are returned
      * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
@@ -48,8 +48,8 @@ public class GetExtensionListInfoResponse {
      */
     public String type;
     /**
-     * Extension sub-type, if applicable. For any unsupported sub-types the
-     * &#039;Unknown&#039; value will be returned&quot;
+     * Extension subtype, if applicable. For any unsupported subtypes the
+     * `Unknown` value will be returned
      * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
      */
     public String subType;
@@ -70,6 +70,10 @@ public class GetExtensionListInfoResponse {
      *
      */
     public AssignedCountryInfo assignedCountry;
+    /**
+     *
+     */
+    public CostCenterInfo costCenter;
 
     public GetExtensionListInfoResponse id(Long id) {
         this.id = id;
@@ -138,6 +142,11 @@ public class GetExtensionListInfoResponse {
 
     public GetExtensionListInfoResponse assignedCountry(AssignedCountryInfo assignedCountry) {
         this.assignedCountry = assignedCountry;
+        return this;
+    }
+
+    public GetExtensionListInfoResponse costCenter(CostCenterInfo costCenter) {
+        this.costCenter = costCenter;
         return this;
     }
 }

@@ -8,11 +8,11 @@ public class GetPresenceInfo {
      */
     public String uri;
     /**
-     * If set to &#039;True&#039; - enables other extensions to see the extension presence status
+     * If set to `true` - enables other extensions to see the extension presence status
      */
     public Boolean allowSeeMyPresence;
     /**
-     * Configures the user presence visibility. When the `allowSeeMyPresence` parameter is set to &#039;True&#039;,
+     * Configures the user presence visibility. When the `allowSeeMyPresence` parameter is set to `true`,
      * the following visibility options are supported via this parameter - All, None, PermittedUsers
      * Enum: All, None, PermittedUsers
      */
@@ -38,7 +38,7 @@ public class GetPresenceInfo {
      */
     public String message;
     /**
-     * If &#039;True&#039; enables the extension user to pick up a monitored line on hold
+     * If `true` enables the extension user to pick up a monitored line on hold
      */
     public Boolean pickUpCallsOnHold;
     /**
@@ -47,7 +47,7 @@ public class GetPresenceInfo {
      */
     public String presenceStatus;
     /**
-     * If &#039;True&#039; enables to ring extension phone, if any user monitored by this extension is ringing
+     * If `true` enables to ring extension phone, if any user monitored by this extension is ringing
      */
     public Boolean ringOnMonitoredCall;
     /**

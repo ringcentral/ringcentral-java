@@ -9,7 +9,7 @@ public class TMChatInfo {
      */
     public String id;
     /**
-     * Type of a chat
+     * Type of chat
      * Enum: Everyone, Team, Group, Direct, Personal
      */
     public String type;

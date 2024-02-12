@@ -14,7 +14,7 @@ public class ERLLocationInfo {
      */
     public String name;
     /**
-     * Address format id
+     * Address format ID
      */
     public String addressFormatId;
 

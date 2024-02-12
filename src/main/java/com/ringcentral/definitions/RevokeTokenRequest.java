@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class RevokeTokenRequest {
     /**
-     * Access or refresh token to be revoked
+     * Access or refresh token to be revoked (along with the entire OAuth session)
      * Required
      */
     public String token;

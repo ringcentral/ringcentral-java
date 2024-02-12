@@ -15,11 +15,11 @@ public class DeviceInfoRequest {
      */
     public String appExternalId;
     /**
-     * Computer name (for SoftPhone only).
+     * Computer name (for devices of `SoftPhone` type only)
      */
     public String computerName;
     /**
-     * Endpoint/device instance identifier for Softphone and mobile applications.
+     * Endpoint/device instance identifier for Softphone and mobile applications
      */
     public String serial;
 

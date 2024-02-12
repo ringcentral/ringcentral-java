@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class CompanyAnsweringRuleUpdate {
     /**
-     * Specifies if a rule is active or inactive. The default value is &#039;True&#039;
+     * Specifies if a rule is active or inactive. The default value is `true`
      * Default: true
      */
     public Boolean enabled;

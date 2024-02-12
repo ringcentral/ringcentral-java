@@ -28,8 +28,8 @@ public class Index {
     }
 
     /**
-     * Adds phone numbers to the account Inventory as unassigned. Currently we support the following three enum values: &#039;Inventory&#039;,
-     * &#039;InventoryPartnerBusinessMobileNumber&#039; and &#039;PartnerBusinessMobileNumber&#039;. Later we may support some other values like &#039;ForwardedNumber&#039;, etc.
+     * Adds phone numbers to the account Inventory as unassigned. Currently, we support the following values: `Inventory`,
+     * `InventoryPartnerBusinessMobileNumber` and `PartnerBusinessMobileNumber`. Later we may support some other values like `ForwardedNumber`, etc.
      * <p>
      * HTTP Method: post
      * Endpoint: /restapi/v2/accounts/{accountId}/phone-numbers/bulk-add

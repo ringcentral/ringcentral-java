@@ -25,12 +25,12 @@ public class ListStandardGreetingsParameters {
      */
     public Long perPage;
     /**
-     * Type of a greeting, specifying the case when the greeting is played
+     * Type of greeting, specifying the case when the greeting is played
      * Enum: Introductory, Announcement, ConnectingMessage, ConnectingAudio, Voicemail, Unavailable, HoldMusic, Company
      */
     public String type;
     /**
-     * Usage type of a greeting, specifying if the greeting is applied for user extension or department (call queue) extension
+     * Usage type of greeting, specifying if the greeting is applied for user extension or department (call queue) extension
      * Enum: UserExtensionAnsweringRule, ExtensionAnsweringRule, DepartmentExtensionAnsweringRule, CompanyAnsweringRule, CompanyAfterHoursAnsweringRule, VoicemailExtensionAnsweringRule, AnnouncementExtensionAnsweringRule, SharedLinesGroupAnsweringRule
      */
     public String usageType;

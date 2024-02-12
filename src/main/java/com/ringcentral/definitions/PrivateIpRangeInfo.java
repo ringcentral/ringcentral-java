@@ -19,11 +19,9 @@ public class PrivateIpRangeInfo {
      */
     public String name;
     /**
-     * Emergency address information (or information assigned to the switch or
-     * wireless point - in case of using them). Only one of a pair `emergencyAddress`
-     * or `emergencyLocationId` should be specified, otherwise an error is returned
+     *
      */
-    public PrivateIpRangeInfoEmergencyAddress emergencyAddress;
+    public CommonEmergencyLocationAddressInfo emergencyAddress;
     /**
      * Emergency response location (address) internal identifier.
      * Only one of a pair `emergencyAddress` or `emergencyLocationId` should
@@ -34,6 +32,10 @@ public class PrivateIpRangeInfo {
      *
      */
     public Boolean matched;
+    /**
+     *
+     */
+    public EmergencyLocationInfo emergencyLocation;
 
     public PrivateIpRangeInfo id(String id) {
         this.id = id;
@@ -55,7 +57,7 @@ public class PrivateIpRangeInfo {
         return this;
     }
 
-    public PrivateIpRangeInfo emergencyAddress(PrivateIpRangeInfoEmergencyAddress emergencyAddress) {
+    public PrivateIpRangeInfo emergencyAddress(CommonEmergencyLocationAddressInfo emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }
@@ -67,6 +69,11 @@ public class PrivateIpRangeInfo {
 
     public PrivateIpRangeInfo matched(Boolean matched) {
         this.matched = matched;
+        return this;
+    }
+
+    public PrivateIpRangeInfo emergencyLocation(EmergencyLocationInfo emergencyLocation) {
+        this.emergencyLocation = emergencyLocation;
         return this;
     }
 }

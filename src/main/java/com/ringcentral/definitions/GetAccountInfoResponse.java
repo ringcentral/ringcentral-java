@@ -71,7 +71,7 @@ public class GetAccountInfoResponse {
      * Customer facing identifier. Returned for accounts with the
      * turned off PBX features. Equals to main company number in
      * [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
-     * (without &#039;&#039;+&#039;&#039; sign)format
+     * (without &quot;+&quot; sign)format
      */
     public String cfid;
     /**

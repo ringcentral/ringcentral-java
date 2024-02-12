@@ -12,7 +12,7 @@ public class ListCompanyAnsweringRuleInfo {
      */
     public String uri;
     /**
-     * Specifies if the rule is active or inactive. The default value is &#039;True&#039;
+     * Specifies if the rule is active or inactive. The default value is `true`
      * Default: true
      */
     public Boolean enabled;

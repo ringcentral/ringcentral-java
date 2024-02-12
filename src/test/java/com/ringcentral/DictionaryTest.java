@@ -1,21 +1,6 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.CountryInfoDictionaryModel;
-import com.ringcentral.definitions.CountryListDictionaryModel;
-import com.ringcentral.definitions.DictionaryGreetingInfo;
-import com.ringcentral.definitions.DictionaryGreetingList;
-import com.ringcentral.definitions.GetStateInfoResponse;
-import com.ringcentral.definitions.GetStateListResponse;
-import com.ringcentral.definitions.GetTimezoneInfoResponse;
-import com.ringcentral.definitions.GetTimezoneListResponse;
-import com.ringcentral.definitions.LanguageInfo;
-import com.ringcentral.definitions.LanguageList;
-import com.ringcentral.definitions.PermissionCategoryCollectionResource;
-import com.ringcentral.definitions.PermissionCategoryResource;
-import com.ringcentral.definitions.PermissionCollectionResource;
-import com.ringcentral.definitions.PermissionResource;
-import com.ringcentral.definitions.RoleResource;
-import com.ringcentral.definitions.RolesCollectionResource;
+import com.ringcentral.definitions.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

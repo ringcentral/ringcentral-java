@@ -17,7 +17,7 @@ public class SyncInfoMessages {
      */
     public String syncToken;
     /**
-     * Last synchronization datetime in ISO 8601 format including
+     * Last synchronization date/time in ISO 8601 format including
      * timezone, for example 2016-03-10T18:07:52.534Z
      * Format: date-time
      */

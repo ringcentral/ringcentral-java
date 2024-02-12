@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * To be used to assign a number by id
+ * To be used to assign a number by ID
  */
 public class PhoneNumberDefinitionNumberId {
     /**

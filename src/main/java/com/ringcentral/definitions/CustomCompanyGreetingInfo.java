@@ -12,7 +12,7 @@ public class CustomCompanyGreetingInfo {
      */
     public String id;
     /**
-     * Type of a company greeting
+     * Type of company greeting
      * Enum: Company, StartRecording, StopRecording, AutomaticRecording, TemplateGreeting
      */
     public String type;

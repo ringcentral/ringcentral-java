@@ -54,11 +54,6 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.v2.accounts.licenses.Index licenses() {
-        return new com.ringcentral.paths.restapi.v2.accounts.licenses.Index(this);
-    }
-
-
     public com.ringcentral.paths.restapi.v2.accounts.extensions.Index extensions() {
         return new com.ringcentral.paths.restapi.v2.accounts.extensions.Index(this);
     }

@@ -21,7 +21,7 @@ public class EmailRecipientInfo {
     public String status;
     /**
      * List of user email addresses from extension notification settings.
-     * By default main email address from contact information is returned
+     * By default, main email address from contact information is returned
      */
     public String[] emailAddresses;
     /**

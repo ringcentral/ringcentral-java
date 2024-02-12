@@ -16,7 +16,7 @@ public class PermissionIdResource {
      */
     public String siteCompatible;
     /**
-     * Specifies if the permission is editable on UI (if set to &#039;True&#039;) or not (if set to &#039;False&#039;)
+     * Specifies if the permission is editable on UI (if set to `true`) or not (if set to `false`)
      */
     public Boolean readOnly;
     /**

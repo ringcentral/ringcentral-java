@@ -20,7 +20,7 @@ public class CreateAnsweringRuleForwardingNumberInfo {
      */
     public String label;
     /**
-     * Type of a forwarding number
+     * Type of forwarding number
      * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier, ExtensionApps
      */
     public String type;

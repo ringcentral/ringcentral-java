@@ -11,7 +11,7 @@ public class UpdateAnsweringRuleRequest {
      */
     public ForwardingInfoCreateRuleRequest forwarding;
     /**
-     * Specifies if the rule is active or inactive. The default value is &#039;True&#039;
+     * Specifies if the rule is active or inactive. The default value is `true`
      */
     public Boolean enabled;
     /**

@@ -24,7 +24,7 @@ public class AuthorizeRequest {
      */
     public String client_id;
     /**
-     * Client state. Returned back to the client at the end of the flow
+     * Client state. Returned to the client at the end of the flow
      */
     public String state;
     /**
@@ -44,6 +44,7 @@ public class AuthorizeRequest {
     /**
      * Specifies which login form will be displayed. Space-separated
      * set of the following values:
+     * <p>
      * - **login** - RingCentral native login form,
      * - **sso** - Single Sign-On login form,
      * - **consent** - form to show the requested scope and prompt user for consent.

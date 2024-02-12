@@ -17,9 +17,9 @@ public class ExtensionCreationResponse {
      */
     public ContactInfo contact;
     /**
-     * Cost center information
+     *
      */
-    public ExtensionCreationResponseCostCenter costCenter;
+    public CostCenterInfo costCenter;
     /**
      *
      */
@@ -38,7 +38,7 @@ public class ExtensionCreationResponse {
      * created by partner. The RingCentral supports the mapping of accounts and
      * stores the corresponding account ID/extension ID for each partner ID of
      * a client application. In request URIs partner IDs are accepted instead
-     * of regular RingCentral native IDs as path parameters using pid = XXX clause.
+     * of regular RingCentral native IDs as path parameters using `pid=XXX` clause.
      * Though in response URIs contain the corresponding account IDs and extension
      * IDs. In all request and response bodies these values are reflected via
      * partnerId attributes of account and extension
@@ -78,7 +78,7 @@ public class ExtensionCreationResponse {
     public ProvisioningSiteInfo site;
     /**
      * Extension current state. If &#039;Unassigned&#039; is specified, then
-     * extensions without ‘extensionNumber’ are returned. If not specified, then
+     * extensions without `extensionNumber` are returned. If not specified, then
      * all extensions are returned
      * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
@@ -118,7 +118,7 @@ public class ExtensionCreationResponse {
         return this;
     }
 
-    public ExtensionCreationResponse costCenter(ExtensionCreationResponseCostCenter costCenter) {
+    public ExtensionCreationResponse costCenter(CostCenterInfo costCenter) {
         this.costCenter = costCenter;
         return this;
     }

@@ -43,9 +43,9 @@ public class ContactInfoCreationRequest {
      */
     public ContactBusinessAddressInfo businessAddress;
     /**
-     * If &#039;True&#039; then contact email is enabled as login name for
+     * If `true` then contact email is enabled as login name for
      * this user. Please note that email should be unique in this case.
-     * The default value is &#039;False&#039;
+     * The default value is `false`
      */
     public Boolean emailAsLoginName;
     /**

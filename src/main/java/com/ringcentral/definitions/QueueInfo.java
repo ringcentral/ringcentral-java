@@ -16,7 +16,10 @@ public class QueueInfo {
      */
     public TransferInfo[] transfer;
     /**
-     * Specifies the type of action to be taken if: members are available but no one answers, or all members are busy/unavailable. This option is available for Business hours only. For simultaneous transfer mode only &#039;WaitPrimaryMembers&#039; and &#039;WaitPrimaryAndOverflowMembers&#039; are supported
+     * Specifies the type of action to be taken if: members are available
+     * but no one answers, or all members are busy/unavailable. This option is
+     * available for Business hours only. For simultaneous transfer mode only
+     * &#039;WaitPrimaryMembers&#039; and &#039;WaitPrimaryAndOverflowMembers&#039; are supported
      * Enum: WaitPrimaryMembers, WaitPrimaryAndOverflowMembers, Voicemail, TransferToExtension, UnconditionalForwarding
      */
     public String noAnswerAction;
@@ -35,7 +38,10 @@ public class QueueInfo {
      */
     public Long holdAudioInterruptionPeriod;
     /**
-     * Specifies the type of action to be taken after the hold time (waiting for an available call queue member) expires. If &#039;TransferToExtension&#039; option is selected, the extension specified in `transfer` field is used. The default value is `Voicemail`
+     * Specifies the type of action to be taken after the hold time
+     * (waiting for an available call queue member) expires. If &#039;TransferToExtension&#039;
+     * option is selected, the extension specified in `transfer` field is used.
+     * The default value is `Voicemail`
      * Default: Voicemail
      * Enum: TransferToExtension, UnconditionalForwarding, Voicemail
      */
@@ -47,10 +53,10 @@ public class QueueInfo {
     public Long agentTimeout;
     /**
      * Minimum post-call wrap up time in seconds before agent status
-     * is automatically set; the value range is from 180 to 300
+     * is automatically set; the value range is from 0 to 300 sec.
      * Maximum: 300
-     * Minimum: 180
      * Format: int32
+     * Default: 15
      */
     public Long wrapUpTime;
     /**

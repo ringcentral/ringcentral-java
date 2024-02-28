@@ -25,7 +25,7 @@ public class ProvisionExtensionsTest {
         });
 
         ExtensionCreationResponse extensionCreationResponse = rc.restapi().account().extension().post(new ExtensionCreationRequest()
-            .extensionNumber("808").contact(new ContactInfoCreationRequest()
+            .extensionNumber("11808").contact(new ContactInfoCreationRequest()
                 .email("a1b23c4d@example.com").firstName("First").lastName("Last")
             )
             .type("User")

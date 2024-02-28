@@ -18,7 +18,7 @@ public class ProvisionIvrMenuTest {
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
-        IVRMenuInfo iVRMenuInfo = rc.restapi().account().ivrMenus().post(new IVRMenuInfo().extensionNumber("2002").name("My IVR menu"));
+        IVRMenuInfo iVRMenuInfo = rc.restapi().account().ivrMenus().post(new IVRMenuInfo().extensionNumber("11909").name("My IVR menu"));
         assertNotNull(iVRMenuInfo);
 
         // delete endpoint deprecated, we have to use string endpoint instead.

@@ -28,7 +28,7 @@ public class FaxTest {
             new CreateFaxMessageRequest()
                 .to(new FaxReceiver[]{
                     new FaxReceiver()
-                        .phoneNumber(System.getenv("RINGCENTRAL_USERNAME"))
+                        .phoneNumber(System.getenv("RINGCENTRAL_RECEIVER"))
                 })
                 .attachments(
                     new Attachment[]{

@@ -8,11 +8,15 @@
 
 __[RingCentral Developers](https://developer.ringcentral.com/api-products)__ is a cloud communications platform which
 can be accessed via more than 70 APIs. The platform's main capabilities include technologies that enable:
-__[Voice](https://developer.ringcentral.com/api-products/voice)
-, [SMS/MMS](https://developer.ringcentral.com/api-products/sms)
-, [Fax](https://developer.ringcentral.com/api-products/fax)
-, [Glip Team Messaging](https://developer.ringcentral.com/api-products/team-messaging)
-, [Data and Configurations](https://developer.ringcentral.com/api-products/configuration)__.
+* [Voice](https://developer.ringcentral.com/api-products/voice)
+* [SMS/MMS](https://developer.ringcentral.com/api-products/sms)
+* [Fax](https://developer.ringcentral.com/api-products/fax)
+* [Team Messaging](https://developer.ringcentral.com/api-products/team-messaging)
+* [Data and Configurations](https://developer.ringcentral.com/api-products/configuration)
+* [Video](https://developers.ringcentral.com/video-api)
+* [RingSense AI](https://developers.ringcentral.com/ai-api)
+* [Webinar](https://developers.ringcentral.com/webinar-api)
+* [Business Analytics](https://developers.ringcentral.com/analytics-api).
 
 [API Reference](https://developer.ringcentral.com/api-docs/latest/index.html)
 and [APIs Explorer](https://developer.ringcentral.com/api-explorer/latest/index.html).
@@ -64,16 +68,22 @@ java classpath.
 
 ## Usage
 
-### Initialization & Authorization
+### Initialization & Authorization Using jwtToken
 
 ```java
 RestClient rc = new RestClient(clientId, clientSecret, server);
-rc.authorize(username, extension, password);
+rc.authorize(jwtToken);
 
 // do something with `rc`
 
 rc.revoke();
 ```
+
+#### Below are some pointers which help to understand the JWT authorization flow
+
+* [JWT authorization code flow](https://developers.ringcentral.com/guide/authentication/jwt-flow)
+* [Configuring apps to use JWT](https://developers.ringcentral.com/guide/authentication/jwt/config-app)
+* [CreateJWT](https://developers.ringcentral.com/guide/getting-started/create-credential)
 
 For the `server` parameter, there are two static final string variables in `RestClient`:
 
@@ -82,6 +92,9 @@ public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentra
 public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
 ```
 
+### What is a Client ID and Client Secret used for?
+
+Each app you build must first be registered in the RingCentral Developer Console. Upon doing so, you will receive a Client ID and Client Secret that together uniquely identify your application on our platform. You only need to create one app in our console regardless of how many companies that app will be supporting.
 ### Token refresh
 
 Since 1.0 version, the SDK by default does NOT do auto token refresh.

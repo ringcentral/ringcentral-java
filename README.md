@@ -94,7 +94,8 @@ public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com
 
 ### What is a Client ID and Client Secret used for?
 
-Each app you build must first be registered in the RingCentral Developer Console. Upon doing so, you will receive a Client ID and Client Secret that together uniquely identify your application on our platform. You only need to create one app in our console regardless of how many companies that app will be supporting.
+Each app you build must first be registered in the RingCentral Developer Console. Upon doing so, you will receive a Client ID and Client Secret that together uniquely identify your application on our platform. A public app could be used by many companies while a private app can only be used by your current company.
+
 ### Token refresh
 
 Since 1.0 version, the SDK by default does NOT do auto token refresh.

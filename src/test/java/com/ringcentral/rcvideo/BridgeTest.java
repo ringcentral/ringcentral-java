@@ -38,6 +38,8 @@ public class BridgeTest {
         Assert.assertEquals(bridgeResponse.name, "RC Video Test");
         Assert.assertEquals(bridgeResponse.type, "Instant");
         Assert.assertNotNull(bridgeResponse.id);
+       String deletedResponse= rc.rcvideo().v2().bridges(bridgeResponse.id).delete();
+       Assert.assertEquals("",deletedResponse);
     }
 
     @Test
@@ -49,6 +51,8 @@ public class BridgeTest {
             rc.rcvideo().v2().bridges(bridgeResponse.id).get();
         Assert.assertEquals(bridgeResponse.name, bridgeResponseByGet.name);
         Assert.assertEquals(bridgeResponse.type, bridgeResponseByGet.type);
+        String deletedResponse= rc.rcvideo().v2().bridges(bridgeResponse.id).delete();
+        Assert.assertEquals("",deletedResponse);
 
     }
 
@@ -59,6 +63,7 @@ public class BridgeTest {
                 .post(ConstantContent.createBridgeRequest());
         String deleteBridge =
             rc.rcvideo().v2().bridges(bridgeResponse.id).delete();
+        Assert.assertEquals("",deleteBridge);
     }
 
     @Test
@@ -70,6 +75,8 @@ public class BridgeTest {
             rc.rcvideo().v2().bridges(bridgeResponse.id)
                 .patch(ConstantContent.updateBridgeRequest());
         Assert.assertEquals("Update RC Video Test", updatedBridgeResponse.name);
+        String deletedResponse= rc.rcvideo().v2().bridges(bridgeResponse.id).delete();
+        Assert.assertEquals("",deletedResponse);
     }
 
     @Test
@@ -90,6 +97,8 @@ public class BridgeTest {
         BridgeResponse bridgeResponseByhost = rc.rcvideo().v2().bridges().pin()
             .pstn(bridgeResponse.pins.pstn.host).get();
         Assert.assertEquals("RC Video Test", bridgeResponseByhost.name);
+        String deletedResponse= rc.rcvideo().v2().bridges(bridgeResponse.id).delete();
+        Assert.assertEquals("",deletedResponse);
     }
 
     @Test
@@ -101,6 +110,8 @@ public class BridgeTest {
         BridgeResponse bridgeResponseByhost = rc.rcvideo().v2().bridges().pin()
             .pstn(bridgeResponse.pins.pstn.participant).get();
         Assert.assertEquals("RC Video Test", bridgeResponseByhost.name);
+        String deletedResponse= rc.rcvideo().v2().bridges(bridgeResponse.id).delete();
+        Assert.assertEquals("",deletedResponse);
     }
 
     @Test
@@ -110,7 +121,8 @@ public class BridgeTest {
                 .post(ConstantContent.createBridgeRequest());
         BridgeResponse bridgeResponseByhost = rc.rcvideo().v2().bridges().pin().web(bridgeResponse.pins.web).get();
         Assert.assertEquals("RC Video Test", bridgeResponseByhost.name);
-
+        String deletedResponse= rc.rcvideo().v2().bridges(bridgeResponse.id).delete();
+        Assert.assertEquals("",deletedResponse);
     }
 
 }

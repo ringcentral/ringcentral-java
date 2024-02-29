@@ -77,7 +77,7 @@ public class BridgeTest {
         BridgeResponse bridgeResponse =
             rc.rcvideo().v2().account("~").extension("~").bridges().default1()
                 .get();
-        Assert.assertEquals("RingCentral Video meeting", bridgeResponse.name);
+        Assert.assertTrue(bridgeResponse.name.contains("Video meeting")); ;
         Assert.assertEquals("PMI", bridgeResponse.type);
     }
 

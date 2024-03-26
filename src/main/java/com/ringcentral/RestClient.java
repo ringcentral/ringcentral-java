@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class RestClient {
-    public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
     private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
     private static final MediaType textMediaType = MediaType.parse("text/plain; charset=utf-8");
@@ -45,12 +44,12 @@ public class RestClient {
     }
 
 
-    public RestClient(String clientId, String clientSecret, Boolean production, OkHttpClient okHttpClient) {
-        this(clientId, clientSecret, production ? PRODUCTION_SERVER : SANDBOX_SERVER, okHttpClient);
+    public RestClient(String clientId, String clientSecret, OkHttpClient okHttpClient) {
+        this(clientId, clientSecret, PRODUCTION_SERVER , okHttpClient);
     }
 
-    public RestClient(String clientId, String clientSecret, Boolean production) {
-        this(clientId, clientSecret, production, null);
+    public RestClient(String clientId, String clientSecret) {
+        this(clientId, clientSecret, (OkHttpClient) null);
     }
 
     public void autoRefresh(long period) {

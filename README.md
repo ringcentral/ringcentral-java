@@ -88,7 +88,6 @@ rc.revoke();
 For the `server` parameter, there are two static final string variables in `RestClient`:
 
 ```java
-public static final String SANDBOX_SERVER = "https://platform.devtest.ringcentral.com";
 public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
 ```
 

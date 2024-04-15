@@ -38,4 +38,4 @@ jobs:
                 uses: actions/upload-artifact@v2
                 with:
                     name: jacoco-reports
-                    path: build/reports/jacoco/test/html
+                    path: build/reports/jacocoHtml/index.html

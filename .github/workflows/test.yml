@@ -34,7 +34,7 @@ jobs:
                     RINGCENTRAL_JWT_TOKEN: ${{ secrets.RINGCENTRAL_JWT_TOKEN }}
                     RINGCENTRAL_SENDER: ${{ secrets.RINGCENTRAL_SENDER }}
                     RINGCENTRAL_RECEIVER: ${{ secrets.RINGCENTRAL_RECEIVER }}
-            -   name: Archive artifacts
+            -   name: View Report
                 uses: actions/upload-artifact@v4
                 with:
                     name: jacoco-reports

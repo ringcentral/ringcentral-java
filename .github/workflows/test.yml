@@ -39,3 +39,8 @@ jobs:
                 with:
                     name: jacoco-reports
                     path: build/jacocoHtml/index.html
+            -   name: View Reports
+                uses: actions/download-artifact@v4
+                with:
+                    name: jacoco-reports
+                    path: build/jacocoHtml/index.html

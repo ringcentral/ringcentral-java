@@ -35,7 +35,7 @@ jobs:
                     RINGCENTRAL_SENDER: ${{ secrets.RINGCENTRAL_SENDER }}
                     RINGCENTRAL_RECEIVER: ${{ secrets.RINGCENTRAL_RECEIVER }}
             -   name: Archive artifacts
-                uses: actions/upload-artifact@v2
+                uses: actions/upload-artifact@v4
                 with:
                     name: jacoco-reports
-                    path: build/reports/jacocoHtml/index.html
+                    path: build/jacocoHtml/index.html

@@ -50,13 +50,13 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: ConfigureEmergencyMaps
      */
-    public CommonEmergencyLocationResource post(EmergencyLocationInfoRequest emergencyLocationInfoRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(false), emergencyLocationInfoRequest, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CommonEmergencyLocationResource.class);
+    public EmergencyLocationResponseResource post(EmergencyLocationRequestResource emergencyLocationRequestResource) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(false), emergencyLocationRequestResource, null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), EmergencyLocationResponseResource.class);
     }
 
     /**
-     * Returns emergency response location by ID.
+     * Returns emergency response location by ID. Available for Admin users only.
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/emergency-locations/{locationId}
      * Rate Limit Group: Light
@@ -83,12 +83,12 @@ public class Index {
      * App Permission: EditAccounts
      * User Permission: ConfigureEmergencyMaps
      */
-    public CommonEmergencyLocationResource put(EmergencyLocationInfoRequest emergencyLocationInfoRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public EmergencyLocationResponseResource put(EmergencyLocationRequestResource emergencyLocationRequestResource) throws com.ringcentral.RestException, java.io.IOException {
         if (locationId == null) {
             throw new IllegalArgumentException("Parameter locationId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), emergencyLocationInfoRequest, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CommonEmergencyLocationResource.class);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), emergencyLocationRequestResource, null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), EmergencyLocationResponseResource.class);
     }
 
     /**

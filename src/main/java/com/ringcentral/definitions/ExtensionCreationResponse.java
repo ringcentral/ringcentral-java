@@ -67,8 +67,8 @@ public class ExtensionCreationResponse {
      */
     public ExtensionServiceFeatureInfo[] serviceFeatures;
     /**
-     * Specifies extension configuration wizard state (web service
-     * setup). The default value is &#039;NotStarted&#039;
+     * Initial configuration wizard state
+     * Default: NotStarted
      * Enum: NotStarted, Incomplete, Completed
      */
     public String setupWizardState;

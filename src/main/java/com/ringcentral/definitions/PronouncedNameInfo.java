@@ -3,16 +3,15 @@ package com.ringcentral.definitions;
 
 public class PronouncedNameInfo {
     /**
-     * Voice name type. &#039;Default&#039; - default extension name; first
-     * name and last name specified in user profile; &#039;TextToSpeech&#039; - custom
-     * text; user name spelled the way it sounds and specified by user; &#039;Recorded&#039;
-     * - custom audio, user name recorded in user&#039;s own voice (supported only
-     * for extension retrieval)
+     * The method used to pronounce the user&#039;s name:
+     * - `Default` - default extension name; first and last name specified in user&#039;s profile are pronounced using text-to-speech;
+     * - `TextToSpeech` - custom text specified by a user  pronounced using text-to-speech;
+     * - `Recorded` - custom audio uploaded by a user, the name recorded in user&#039;s own voice (supported only for extension retrieval).
      * Enum: Default, TextToSpeech, Recorded
      */
     public String type;
     /**
-     * Custom text
+     * Custom text (for `TextToSpeech` type only)
      */
     public String text;
     /**

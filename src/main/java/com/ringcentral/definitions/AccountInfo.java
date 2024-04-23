@@ -29,7 +29,7 @@ public class AccountInfo {
     /**
      *
      */
-    public StatusInfo statusInfo;
+    public AccountStatusInfo statusInfo;
     /**
      * Company name
      * Example: Acme Inc.
@@ -73,7 +73,7 @@ public class AccountInfo {
         return this;
     }
 
-    public AccountInfo statusInfo(StatusInfo statusInfo) {
+    public AccountInfo statusInfo(AccountStatusInfo statusInfo) {
         this.statusInfo = statusInfo;
         return this;
     }

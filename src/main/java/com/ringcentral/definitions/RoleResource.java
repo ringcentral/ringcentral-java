@@ -3,18 +3,21 @@ package com.ringcentral.definitions;
 
 public class RoleResource {
     /**
+     * Link to a role resource
      * Format: uri
      */
     public String uri;
     /**
-     *
+     * Internal identifier of a role
      */
     public String id;
     /**
+     * Dispayed name of a role
      * Example: Super Admin
      */
     public String displayName;
     /**
+     * Role description
      * Example: Primary company administrator role
      */
     public String description;
@@ -23,11 +26,12 @@ public class RoleResource {
      */
     public Boolean siteCompatible;
     /**
-     *
+     * Specifies if a user role is custom
      */
     public Boolean custom;
     /**
-     *
+     * Specifies resource for permission
+     * Enum: Account, AllExtensions, Federation, NonUserExtensions, RoleBased, Self, UserExtensions
      */
     public String scope;
     /**

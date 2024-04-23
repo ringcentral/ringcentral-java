@@ -2,32 +2,34 @@ package com.ringcentral.definitions;
 
 
 /**
- * Status information (reason, comment, lifetime). Returned for 'Disabled'
- * status only
+ * Optional information to be used when account is moved to "Disabled" status
  */
 public class AccountStatusInfo {
     /**
-     * A free-form user comment, describing the status change reason
-     */
-    public String comment;
-    /**
-     * Type of suspension
-     * Enum: SuspendedVoluntarily, SuspendedInvoluntarily, UserResumed
+     * Type of suspension, voluntarily or not
+     * Example: CancelledVoluntarily
+     * Enum: SuspendedVoluntarily, SuspendedInvoluntarily, CancelledVoluntarily, CancelledInvoluntarily
      */
     public String reason;
     /**
-     * Date until which an account will get deleted. The default
-     * value is 30 days since the current date
+     * A meaningful description of the reason to change the status
+     * Example: By customer request. Case ABC123
+     */
+    public String comment;
+    /**
+     * Date after which the account will get deleted. Parameter can be used to overwrite default retention period
+     * Format: date-time
+     * Example: 2023-03-26T11:30:45.940Z
      */
     public String till;
 
-    public AccountStatusInfo comment(String comment) {
-        this.comment = comment;
+    public AccountStatusInfo reason(String reason) {
+        this.reason = reason;
         return this;
     }
 
-    public AccountStatusInfo reason(String reason) {
-        this.reason = reason;
+    public AccountStatusInfo comment(String comment) {
+        this.comment = comment;
         return this;
     }
 

@@ -22,7 +22,9 @@ public class Index {
     }
 
     /**
-     * Returns the list of meeting recordings belonging to particular user.
+     * Returns all recordings available for specific extension.
+     * This endpoint is used in admin recording service, not regular web
+     * <p>
      * HTTP Method: get
      * Endpoint: /rcvideo/v1/account/{accountId}/extension/{extensionId}/recordings
      * Rate Limit Group: Light

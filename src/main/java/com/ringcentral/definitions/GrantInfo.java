@@ -54,6 +54,10 @@ public class GrantInfo {
      */
     public Boolean callQueueMessages;
     /**
+     * Specifies whether the current extension is granted *Forward All Calls (FAC)* permission
+     */
+    public Boolean callQueueFacSetup;
+    /**
      * Specifies whether the user referenced in extension object is sharing voicemails
      * with the current extension
      */
@@ -106,6 +110,11 @@ public class GrantInfo {
 
     public GrantInfo callQueueMessages(Boolean callQueueMessages) {
         this.callQueueMessages = callQueueMessages;
+        return this;
+    }
+
+    public GrantInfo callQueueFacSetup(Boolean callQueueFacSetup) {
+        this.callQueueFacSetup = callQueueFacSetup;
         return this;
     }
 

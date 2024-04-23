@@ -87,7 +87,7 @@ public class GetExtensionInfoResponse {
      */
     public ExtensionServiceFeatureInfo[] serviceFeatures;
     /**
-     * Specifies extension configuration wizard state (web service setup)
+     * Initial configuration wizard state
      * Default: NotStarted
      * Enum: NotStarted, Incomplete, Completed
      */
@@ -113,7 +113,7 @@ public class GetExtensionInfoResponse {
     /**
      * Extension subtype, if applicable. For any unsupported subtypes the
      * `Unknown` value will be returned
-     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
+     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown, Emergency
      */
     public String subType;
     /**

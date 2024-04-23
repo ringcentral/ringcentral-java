@@ -23,6 +23,8 @@ public class ExtensionUpdateRequest {
      */
     public ExtensionRegionalSettingRequest regionalSettings;
     /**
+     * Initial configuration wizard state
+     * Default: NotStarted
      * Enum: NotStarted, Incomplete, Completed
      */
     public String setupWizardState;
@@ -65,7 +67,7 @@ public class ExtensionUpdateRequest {
     /**
      * Extension subtype, if applicable. For any unsupported subtypes
      * the &#039;Unknown&#039; value will be returned
-     * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown
+     * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown, Emergency
      */
     public String subType;
     /**

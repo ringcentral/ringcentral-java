@@ -17,6 +17,10 @@ public class MessageChanges {
      * Format: int32
      */
     public Long updatedCount;
+    /**
+     * Identifiers of the new messages, applicable for all message types
+     */
+    public Long[] newMessageIds;
 
     public MessageChanges type(String type) {
         this.type = type;
@@ -30,6 +34,11 @@ public class MessageChanges {
 
     public MessageChanges updatedCount(Long updatedCount) {
         this.updatedCount = updatedCount;
+        return this;
+    }
+
+    public MessageChanges newMessageIds(Long[] newMessageIds) {
+        this.newMessageIds = newMessageIds;
         return this;
     }
 }

@@ -50,7 +50,7 @@ public class GetExtensionListInfoResponse {
     /**
      * Extension subtype, if applicable. For any unsupported subtypes the
      * `Unknown` value will be returned
-     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
+     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown, Emergency
      */
     public String subType;
     /**

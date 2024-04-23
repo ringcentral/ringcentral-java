@@ -27,7 +27,7 @@ public class Index {
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/assigned-role
      * Rate Limit Group: Light
      * App Permission: ReadAccounts
-     * User Permission: ReadExtensions
+     * User Permission: ReadAssignedRoles
      */
     public AssignedRolesResource get(ListUserAssignedRolesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);

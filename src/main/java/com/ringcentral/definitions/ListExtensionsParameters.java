@@ -38,7 +38,7 @@ public class ListExtensionsParameters {
      * Extension type. Multiple values are supported. Please note
      * that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039;
      * extensions in modern RingCentral product terminology
-     * Enum: User, FaxUser, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, ProxyAdmin, DelegatedLinesGroup
+     * Enum: User, FaxUser, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, ProxyAdmin, DelegatedLinesGroup, Site
      */
     public String[] type;
 

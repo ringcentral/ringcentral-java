@@ -35,6 +35,8 @@ public class ExtensionBulkUpdateInfo {
      */
     public ExtensionRegionalSettingRequest regionalSettings;
     /**
+     * Initial configuration wizard state
+     * Default: NotStarted
      * Enum: NotStarted, Incomplete, Completed
      */
     public String setupWizardState;

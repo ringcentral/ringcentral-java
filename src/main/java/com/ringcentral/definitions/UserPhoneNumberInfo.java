@@ -35,7 +35,7 @@ public class UserPhoneNumberInfo {
     /**
      * Payment type. &#039;External&#039; is returned for forwarded numbers
      * which are not terminated in the RingCentral phone system
-     * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider
+     * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider, ExternalNumberProviderTollFree
      */
     public String paymentType;
     /**
@@ -60,7 +60,7 @@ public class UserPhoneNumberInfo {
     public String type;
     /**
      * Extension subtype, if applicable. For any unsupported subtypes the &#039;Unknown&#039; value will be returned
-     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown
+     * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown, Emergency
      */
     public String subType;
     /**

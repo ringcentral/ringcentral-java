@@ -9,7 +9,7 @@ public class ConversationalInsightsUnitValues {
     public Double confidence;
     /**
      * Required
-     * Example: RingCentral MVP
+     * Example: RingCentral
      */
     public String value;
     /**

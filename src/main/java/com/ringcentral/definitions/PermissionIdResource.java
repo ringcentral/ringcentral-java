@@ -23,6 +23,10 @@ public class PermissionIdResource {
      * Specifies if the permission can be assigned by the account administrator
      */
     public Boolean assignable;
+    /**
+     *
+     */
+    public PermissionsCapabilities permissionsCapabilities;
 
     public PermissionIdResource uri(String uri) {
         this.uri = uri;
@@ -46,6 +50,11 @@ public class PermissionIdResource {
 
     public PermissionIdResource assignable(Boolean assignable) {
         this.assignable = assignable;
+        return this;
+    }
+
+    public PermissionIdResource permissionsCapabilities(PermissionsCapabilities permissionsCapabilities) {
+        this.permissionsCapabilities = permissionsCapabilities;
         return this;
     }
 }

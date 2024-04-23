@@ -84,8 +84,8 @@ public class Index {
     }
 
     /**
-     * Updates message(s) by their ID(s). Currently only message read status
-     * can be updated through this method.
+     * Updates message(s) by their ID(s). Currently, only the `readStatus`
+     * can be updated using this method.
      * <p>
      * Bulk syntax is supported, max number of IDs passed as query/path
      * parameters is 50. Alternative bulk syntax is also supported - user messages can be updated
@@ -133,7 +133,7 @@ public class Index {
     }
 
     /**
-     * Patches message(s) by ID(s). Currently only message read status update and
+     * Patches message(s) by ID(s). Currently, only updating the `readStatus` and
      * restoring deleted messages are supported through this method.
      * <p>
      * For changing status of a message send `readStatus` set to either &#039;Read&#039; or &#039;Unread&#039; in request.

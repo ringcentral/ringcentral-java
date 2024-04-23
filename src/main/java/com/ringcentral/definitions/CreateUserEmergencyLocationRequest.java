@@ -11,6 +11,10 @@ public class CreateUserEmergencyLocationRequest {
      */
     public String addressFormatId;
     /**
+     * If &#039;true&#039; address validation for non-us addresses is skipped
+     */
+    public Boolean trusted;
+    /**
      *
      */
     public CommonEmergencyLocationAddressInfo address;
@@ -22,6 +26,11 @@ public class CreateUserEmergencyLocationRequest {
 
     public CreateUserEmergencyLocationRequest addressFormatId(String addressFormatId) {
         this.addressFormatId = addressFormatId;
+        return this;
+    }
+
+    public CreateUserEmergencyLocationRequest trusted(Boolean trusted) {
+        this.trusted = trusted;
         return this;
     }
 

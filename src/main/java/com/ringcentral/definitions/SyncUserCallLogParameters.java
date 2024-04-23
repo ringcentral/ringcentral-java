@@ -12,16 +12,21 @@ public class SyncUserCallLogParameters {
      */
     public String syncType;
     /**
-     * Value of syncToken property of last sync request response. Mandatory parameter for &#039;ISync&#039; sync type
+     * A `syncToken` value from the previous sync response (for `ISync` mode only, mandatory)
      */
     public String syncToken;
     /**
-     * The start datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is the current moment
+     * The start datetime for resulting records in ISO 8601 format including
+     * timezone, for example 2016-03-10T18:07:52.534Z. The default value is the
+     * current moment
      * Format: date-time
      */
     public String dateFrom;
     /**
-     * For &#039;FSync&#039; the parameter is mandatory, it limits the number of records to be returned in response. For &#039;ISync&#039; it specifies with how many records to extend sync Frame to the past, the maximum number of records is 250
+     * For `FSync` mode this parameter is mandatory, it limits the number of records to be returned in response.
+     * <p>
+     * For `ISync` mode this parameter specifies the number of records to extend the sync frame with to the past
+     * (the maximum number of records is 250)
      * Format: int32
      */
     public Long recordCount;

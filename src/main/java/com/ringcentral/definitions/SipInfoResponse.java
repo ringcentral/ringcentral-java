@@ -7,7 +7,7 @@ public class SipInfoResponse {
      */
     public String username;
     /**
-     * User password
+     * User password. Not returned if SipDigest is not enabled
      * Format: password
      */
     public String password;

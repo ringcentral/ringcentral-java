@@ -77,7 +77,7 @@ public class TMTaskInfo {
      */
     public String description;
     /**
-     * Task details.
+     * Task details
      */
     public TMTaskInfoRecurrence recurrence;
     /**

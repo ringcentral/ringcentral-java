@@ -6,11 +6,12 @@ package com.ringcentral.definitions;
  */
 public class MeetingPage {
     /**
-     * meetings array
+     * Meetings array
+     * Required
      */
     public Meeting[] meetings;
     /**
-     *
+     * Required
      */
     public Paging paging;
 

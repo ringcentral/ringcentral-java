@@ -6,29 +6,40 @@ package com.ringcentral.definitions;
  */
 public class Participant {
     /**
+     * Participant type
+     * Required
+     */
+    public String type;
+    /**
      * id
+     * Required
      */
     public String id;
     /**
-     * account id
+     * Account id
      */
     public String accountId;
     /**
-     * extension id
+     * Extension id
      */
     public String extensionId;
     /**
-     * displayName
+     * Display name
      */
     public String displayName;
     /**
-     * caller id
+     * Caller id
      */
     public String callerId;
     /**
-     * pass-thru parameter in join url
+     * Pass-thru parameter in join url
      */
     public String correlationId;
+
+    public Participant type(String type) {
+        this.type = type;
+        return this;
+    }
 
     public Participant id(String id) {
         this.id = id;

@@ -6,45 +6,45 @@ package com.ringcentral.definitions;
  */
 public class Meeting {
     /**
-     * call id
+     * Call id
      * Required
      */
     public String id;
     /**
-     * bridge id
+     * Bridge id
      * Required
      */
     public String bridgeId;
     /**
-     * short bridge id
+     * Short bridge id
      * Required
      */
     public String shortId;
     /**
-     * start time ISO 8601
+     * Start time ISO 8601
      * Required
      * Format: date-time
      */
     public String startTime;
     /**
-     * duration second
+     * Duration second
      * Format: int32
      * Example: 36
      */
     public Long duration;
     /**
-     * meetings name
+     * Meetings name
      * Required
      */
     public String displayName;
     /**
-     * meeting type
+     * Meeting type
      * Required
      * Enum: Meeting, Call
      */
     public String type;
     /**
-     * meeting status
+     * Meeting status
      * Required
      * Enum: InProgress, Done
      */
@@ -54,20 +54,35 @@ public class Meeting {
      */
     public Host hostInfo;
     /**
-     * chat id
+     * Describe access rights which has participants to meeting
+     * Required
+     * Enum: delete, download, share
      */
-    public String chatId;
+    public String[] rights;
     /**
-     * participants list
+     * During meeting AI team analyze code and after meeting finished generates text summary about this meeting
+     */
+    public String longSummary;
+    /**
+     * During meeting AI team analyze code and after meeting finished generates text summary about this meeting
+     */
+    public String shortSummary;
+    /**
+     * During meeting AI team analyze code and after meeting finished generates key words used in meeting
+     */
+    public String[] keywords;
+    /**
+     * List of the participants in the meeting
      * Required
      */
     public Participant[] participants;
     /**
-     * recording information
+     * Recording information
+     * Required
      */
     public Recording[] recordings;
     /**
-     * chat location
+     * Chat location
      */
     public String chatUrl;
 
@@ -116,8 +131,23 @@ public class Meeting {
         return this;
     }
 
-    public Meeting chatId(String chatId) {
-        this.chatId = chatId;
+    public Meeting rights(String[] rights) {
+        this.rights = rights;
+        return this;
+    }
+
+    public Meeting longSummary(String longSummary) {
+        this.longSummary = longSummary;
+        return this;
+    }
+
+    public Meeting shortSummary(String shortSummary) {
+        this.shortSummary = shortSummary;
+        return this;
+    }
+
+    public Meeting keywords(String[] keywords) {
+        this.keywords = keywords;
         return this;
     }
 

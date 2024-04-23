@@ -19,6 +19,16 @@ public class CallQueueInfo {
      * Name of a call queue
      */
     public String name;
+    /**
+     * Call queue status
+     * Enum: Enabled, Disabled, NotActivated
+     */
+    public String status;
+    /**
+     * Indicates whether it is an emergency call queue extension or not
+     * Enum: Emergency
+     */
+    public String subType;
 
     public CallQueueInfo uri(String uri) {
         this.uri = uri;
@@ -37,6 +47,16 @@ public class CallQueueInfo {
 
     public CallQueueInfo name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public CallQueueInfo status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public CallQueueInfo subType(String subType) {
+        this.subType = subType;
         return this;
     }
 }

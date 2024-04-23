@@ -6,8 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListCallQueuesParameters {
     /**
-     * Indicates a page number to retrieve. Only positive number values
-     * are accepted
+     * Indicates a page number to retrieve. Only positive number values are accepted
      * Format: int32
      * Default: 1
      */
@@ -19,8 +18,7 @@ public class ListCallQueuesParameters {
      */
     public Long perPage;
     /**
-     * Internal identifier of an extension that is a member of every
-     * group within the result
+     * Internal identifier of an extension that is a member of every group within the result
      */
     public String memberExtensionId;
 

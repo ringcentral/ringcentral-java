@@ -9,7 +9,7 @@ public class TMUpdateTaskRequestRecurrence {
      */
     public String schedule;
     /**
-     * Task ending condition.
+     * Task ending condition
      * Enum: None, Count, Date
      */
     public String endingCondition;
@@ -21,7 +21,7 @@ public class TMUpdateTaskRequestRecurrence {
      */
     public Long endingAfter;
     /**
-     * The end date of periodic task in UTC time zone
+     * End date of a periodic task in UTC time zone
      * Format: date-time
      */
     public String endingOn;

@@ -39,19 +39,19 @@ public class TMCreateEventRequest {
      */
     public String recurrence;
     /**
-     * Condition of ending
+     * Condition of ending an event
+     * Enum: None, Count, Date
      */
     public String endingCondition;
     /**
-     * Count of iterations. For periodic events only. Value range
-     * is 1 - 10. Must be specified if `endingCondition` is `Count`
+     * Count of event iterations. For periodic events only. Value range is 1 - 10.
+     * Must be specified if `endingCondition` is `Count`
      * Format: int32
      */
     public Long endingAfter;
     /**
-     * Iterations end datetime for periodic events.
-     * Default: None
-     * Enum: None, Count, Date
+     * Iterations ending datetime for periodic events in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
+     * Format: date-time
      */
     public String endingOn;
     /**

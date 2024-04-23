@@ -37,10 +37,19 @@ public class CloudRecording {
      */
     public Host hostInfo;
     /**
-     * Link to the recording file
+     * Link to the recording file. Not used anymore by Web team
      * Required
      */
-    public String downloadLink;
+    public String mediaLink;
+    /**
+     * Encrypted link to the recording file
+     * Required
+     */
+    public String url;
+    /**
+     * Date after which recording will be deleted
+     */
+    public String expiresIn;
 
     public CloudRecording id(String id) {
         this.id = id;
@@ -72,8 +81,18 @@ public class CloudRecording {
         return this;
     }
 
-    public CloudRecording downloadLink(String downloadLink) {
-        this.downloadLink = downloadLink;
+    public CloudRecording mediaLink(String mediaLink) {
+        this.mediaLink = mediaLink;
+        return this;
+    }
+
+    public CloudRecording url(String url) {
+        this.url = url;
+        return this;
+    }
+
+    public CloudRecording expiresIn(String expiresIn) {
+        this.expiresIn = expiresIn;
         return this;
     }
 }

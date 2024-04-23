@@ -12,16 +12,16 @@
     "lower-case-first": "^3.0.0",
     "openapi-types": "^12.1.3",
     "ramda": "^0.29.1",
-    "ringcentral-open-api-parser": "^0.14.0"
+    "ringcentral-open-api-parser": "^0.14.3"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^20.11.17",
-    "@types/ramda": "^0.29.10",
+    "@types/node": "^20.12.7",
+    "@types/ramda": "^0.29.12",
     "dotenv-override-true": "^6.2.2",
-    "gts": "^5.2.0",
+    "gts": "^5.3.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.5",
     "yarn-upgrade-all": "^0.7.2"
   },
   "yarn-upgrade-all": {

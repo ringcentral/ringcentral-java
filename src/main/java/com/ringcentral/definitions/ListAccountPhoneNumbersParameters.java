@@ -24,6 +24,12 @@ public class ListAccountPhoneNumbersParameters {
      */
     public String[] usageType;
     /**
+     * Payment type. &#039;External&#039; is returned for forwarded numbers
+     * which are not terminated in the RingCentral phone system
+     * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider, ExternalNumberProviderTollFree
+     */
+    public String paymentType;
+    /**
      * Status of a phone number
      * Enum: Normal, Pending, PortedIn, Temporary
      */
@@ -41,6 +47,11 @@ public class ListAccountPhoneNumbersParameters {
 
     public ListAccountPhoneNumbersParameters usageType(String[] usageType) {
         this.usageType = usageType;
+        return this;
+    }
+
+    public ListAccountPhoneNumbersParameters paymentType(String paymentType) {
+        this.paymentType = paymentType;
         return this;
     }
 

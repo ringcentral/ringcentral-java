@@ -24,6 +24,11 @@ public class RegSessionModelSettings {
      * Indicates that work email address is required for registration.
      */
     public Boolean workEmailRequired;
+    /**
+     * Indicates that recording will be shown after the webinar and in emails.
+     * Default: true
+     */
+    public Boolean viewRecording;
 
     public RegSessionModelSettings autoCloseLimit(Long autoCloseLimit) {
         this.autoCloseLimit = autoCloseLimit;
@@ -47,6 +52,11 @@ public class RegSessionModelSettings {
 
     public RegSessionModelSettings workEmailRequired(Boolean workEmailRequired) {
         this.workEmailRequired = workEmailRequired;
+        return this;
+    }
+
+    public RegSessionModelSettings viewRecording(Boolean viewRecording) {
+        this.viewRecording = viewRecording;
         return this;
     }
 }

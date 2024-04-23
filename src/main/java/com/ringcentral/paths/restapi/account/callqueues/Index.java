@@ -2,7 +2,6 @@ package com.ringcentral.paths.restapi.account.callqueues;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CallQueueDetails;
-import com.ringcentral.definitions.CallQueueUpdateDetails;
 import com.ringcentral.definitions.CallQueues;
 import com.ringcentral.definitions.ListCallQueuesParameters;
 
@@ -30,7 +29,6 @@ public class Index {
 
     /**
      * Returns a call queue list.
-     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/call-queues
      * Rate Limit Group: Medium
@@ -48,7 +46,6 @@ public class Index {
 
     /**
      * Returns basic information on a call queue group extension.
-     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/call-queues/{groupId}
      * Rate Limit Group: Light
@@ -72,11 +69,11 @@ public class Index {
      * App Permission: EditExtensions
      * User Permission: EditUserInfo
      */
-    public CallQueueDetails put(CallQueueUpdateDetails callQueueUpdateDetails) throws com.ringcentral.RestException, java.io.IOException {
+    public CallQueueDetails put(CallQueueDetails callQueueDetails) throws com.ringcentral.RestException, java.io.IOException {
         if (groupId == null) {
             throw new IllegalArgumentException("Parameter groupId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), callQueueUpdateDetails, null);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), callQueueDetails, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CallQueueDetails.class);
     }
 

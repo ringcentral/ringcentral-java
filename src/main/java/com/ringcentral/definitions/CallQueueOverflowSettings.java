@@ -9,14 +9,14 @@ public class CallQueueOverflowSettings {
     /**
      *
      */
-    public CallQueueOverflowAgent[] items;
+    public CallQueueInfo[] items;
 
     public CallQueueOverflowSettings enabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    public CallQueueOverflowSettings items(CallQueueOverflowAgent[] items) {
+    public CallQueueOverflowSettings items(CallQueueInfo[] items) {
         this.items = items;
         return this;
     }

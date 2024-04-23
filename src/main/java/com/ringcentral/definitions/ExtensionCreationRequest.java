@@ -40,8 +40,7 @@ public class ExtensionCreationRequest {
      */
     public String ivrPin;
     /**
-     * Specifies extension configuration wizard state (web service
-     * setup).
+     * Initial configuration wizard state
      * Default: NotStarted
      * Enum: NotStarted, Incomplete, Completed
      */

@@ -31,7 +31,7 @@ public class CompanyPhoneNumberInfo {
     /**
      * Payment type. &#039;External&#039; is returned for forwarded numbers
      * which are not terminated in the RingCentral phone system
-     * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider
+     * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider, ExternalNumberProviderTollFree
      */
     public String paymentType;
     /**

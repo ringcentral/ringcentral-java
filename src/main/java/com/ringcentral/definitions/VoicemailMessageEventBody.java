@@ -7,8 +7,9 @@ package com.ringcentral.definitions;
 public class VoicemailMessageEventBody {
     /**
      * Internal identifier of a message
+     * Format: int64
      */
-    public String id;
+    public Long id;
     /**
      * Message receiver(s) information
      */
@@ -78,15 +79,13 @@ public class VoicemailMessageEventBody {
      */
     public String messageStatus;
     /**
-     * Internal identifier of a conversation this message belongs to
-     */
-    public String conversationId;
-    /**
-     * Specifies if a voicemail message transcription is already completed or not
+     * Status of a voicemail to text transcription. Specifies if a voicemail message transcription is already completed or not
+     * If &#039;VoicemailToText&#039; feature is not activated for account, the &#039;NotAvailable&#039; value is returned
+     * Enum: NotAvailable, InProgress, TimedOut, Completed, CompletedPartially, Failed, Unknown
      */
     public String vmTranscriptionStatus;
 
-    public VoicemailMessageEventBody id(String id) {
+    public VoicemailMessageEventBody id(Long id) {
         this.id = id;
         return this;
     }
@@ -148,11 +147,6 @@ public class VoicemailMessageEventBody {
 
     public VoicemailMessageEventBody messageStatus(String messageStatus) {
         this.messageStatus = messageStatus;
-        return this;
-    }
-
-    public VoicemailMessageEventBody conversationId(String conversationId) {
-        this.conversationId = conversationId;
         return this;
     }
 

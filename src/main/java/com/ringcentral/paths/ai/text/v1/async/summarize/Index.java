@@ -23,7 +23,9 @@ public class Index {
     }
 
     /**
-     * Returns Conversational Summarization to webhook uri for segmented transcript of audios with start,end,speakerId, text(alphanumeric and punctuations).
+     * Returns Conversational Summarization to the webhook URI for segmented transcript of audios
+     * with start, end, speakerId, text(alphanumeric and punctuations).
+     * <p>
      * HTTP Method: post
      * Endpoint: /ai/text/v1/async/summarize
      * Rate Limit Group: Heavy

@@ -40,7 +40,7 @@ public class SubscriptionInfo {
     /**
      * Subscription status
      * Required
-     * Enum: Active, Suspended, Blacklisted
+     * Enum: Active, Blacklisted
      */
     public String status;
     /**

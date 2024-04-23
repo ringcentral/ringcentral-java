@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * Please note that legacy 'Department' extension type corresponds to
+ * Please note that the `Department` extension type corresponds to
  * 'Call Queue' extensions in modern RingCentral product terminology
  */
 public class DepartmentInfo {
@@ -17,7 +17,7 @@ public class DepartmentInfo {
      */
     public String uri;
     /**
-     * Number of a department extension
+     * Short number of a department extension
      */
     public String extensionNumber;
 

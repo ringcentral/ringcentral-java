@@ -98,7 +98,7 @@ public class Index {
 
     /**
      * Updates a Webinar. The payload may contain just changed fields of a Webinar resource (it is a partial update):
-     * - host cannot be changed and host user information cannot be updated;
+     * - host cannot be changed, and host user information cannot be updated;
      * - only the settings which are not mandated at account level or are unlocked can be
      * changed;
      * - in order to reset a webinar password it should be passed as an empty string;

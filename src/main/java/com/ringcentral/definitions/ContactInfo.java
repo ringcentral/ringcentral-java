@@ -2,43 +2,41 @@ package com.ringcentral.definitions;
 
 
 /**
- * Contact detailed information
+ * Detailed contact information
  */
 public class ContactInfo {
     /**
-     * For User extension type only. Extension user first name
+     * User&#039;s first name (for extensions of `User` type only)
      */
     public String firstName;
     /**
-     * For User extension type only. Extension user last name
+     * For User extension type only. User&#039;s last name (for extensions of `User` type only)
      */
     public String lastName;
     /**
-     * Extension user name (first name and last name)
+     * Extension name (for extensions of `User` type - concatenation of first and last name)
      */
     public String name;
     /**
-     * Extension user company name
+     * User&#039;s company name
      */
     public String company;
     /**
-     *
+     * User&#039;s job title
      */
     public String jobTitle;
     /**
-     * Contact email of extension user
+     * User&#039;s contact email
      * Format: email
      */
     public String email;
     /**
-     * Extension user contact phone number in
-     * [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
+     * User&#039;s contact phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
      * (with &#039;+&#039; sign) format
      */
     public String businessPhone;
     /**
-     * Extension user mobile (**non** Toll Free) phone number in
-     * [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
+     * User&#039;s mobile (**non** Toll Free) phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
      * (with &#039;+&#039; sign) format
      */
     public String mobilePhone;
@@ -47,8 +45,8 @@ public class ContactInfo {
      */
     public ContactBusinessAddressInfo businessAddress;
     /**
-     * If `true` then contact email is enabled as login name for this
-     * user. Please note that email should be unique in this case.
+     * Indicates that the contact email is enabled as a login name for this
+     * user. Please note that the email must be unique in this case.
      */
     public Boolean emailAsLoginName;
     /**
@@ -56,7 +54,7 @@ public class ContactInfo {
      */
     public PronouncedNameInfo pronouncedName;
     /**
-     * Extension user department, if any
+     * User&#039;s department name
      */
     public String department;
 

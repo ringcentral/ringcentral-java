@@ -10,7 +10,8 @@ public class ReadCallSessionStatusParameters {
      */
     public String timestamp;
     /**
-     * The time frame of awaiting for a status change before sending the resulting one in response
+     * The time frame of awaiting for a status change before sending
+     * the resulting one in response
      */
     public String timeout;
 

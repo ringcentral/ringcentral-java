@@ -70,9 +70,9 @@ public class DeviceResource {
      */
     public ShippingInfo shipping;
     /**
-     * Box billing identifier of a device. Applicable only for HardPhones.
+     * Box billing identifier of a device. Applicable only for devices of `HardPhone` type.
      * It is an alternative way to identify the device to be ordered. Either
-     * model structure, or boxBillingId  must be specified for HardPhone
+     * `model` structure, or `boxBillingId` must be specified
      * Format: int64
      */
     public Long boxBillingId;
@@ -105,9 +105,9 @@ public class DeviceResource {
     public String lastLocationReportTime;
     /**
      * Pooling type of device:
-     * - Host - a device with standalone paid phone line which can be linked to a soft client instance
-     * - Guest - a device with a linked phone line
-     * - None - a device without a phone line or with specific line (free, BLA, etc.)
+     * - `Host` - device with a standalone paid phone line which can be linked to soft phone client instance;
+     * - `Guest` - device with a linked phone line;
+     * - `None` - device without a phone line or with a specific line (free, BLA, etc.)
      * Enum: Host, Guest, None
      */
     public String linePooling;

@@ -28,6 +28,11 @@ public class ListStandardUserRoleParameters {
      * Default: 100
      */
     public Long perPage;
+    /**
+     * Specifies whether to return advanced permissions capabilities within `permissionsCapabilities` resource.
+     * The default value is false.
+     */
+    public Boolean advancedPermissions;
 
     public ListStandardUserRoleParameters servicePlanId(String servicePlanId) {
         this.servicePlanId = servicePlanId;
@@ -41,6 +46,11 @@ public class ListStandardUserRoleParameters {
 
     public ListStandardUserRoleParameters perPage(Long perPage) {
         this.perPage = perPage;
+        return this;
+    }
+
+    public ListStandardUserRoleParameters advancedPermissions(Boolean advancedPermissions) {
+        this.advancedPermissions = advancedPermissions;
         return this;
     }
 }

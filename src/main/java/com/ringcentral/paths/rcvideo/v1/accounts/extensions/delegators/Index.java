@@ -2,7 +2,6 @@ package com.ringcentral.paths.rcvideo.v1.accounts.extensions.delegators;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.DelegatorsListResult;
-import com.ringcentral.definitions.RcvListDelegatorsParameters;
 
 public class Index {
     public RestClient rc;
@@ -28,12 +27,8 @@ public class Index {
      * Rate Limit Group: Medium
      * App Permission: Video
      */
-    public DelegatorsListResult get(RcvListDelegatorsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), DelegatorsListResult.class);
-    }
-
     public DelegatorsListResult get() throws com.ringcentral.RestException, java.io.IOException {
-        return this.get(null);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), DelegatorsListResult.class);
     }
 }

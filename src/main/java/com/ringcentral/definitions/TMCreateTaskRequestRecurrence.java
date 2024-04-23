@@ -15,14 +15,14 @@ public class TMCreateTaskRequestRecurrence {
      */
     public String endingCondition;
     /**
-     * Count of iterations of periodic tasks.
+     * Count of iterations of periodic tasks
      * Maximum: 10
      * Minimum: 1
      * Format: int32
      */
     public Long endingAfter;
     /**
-     * The end date of periodic task in UTC time zone.
+     * End date of a periodic task in UTC time zone
      * Format: date-time
      */
     public String endingOn;

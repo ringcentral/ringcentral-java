@@ -51,6 +51,10 @@ public class ListAccountPhoneNumbersV2Parameters {
      */
     public String extensionStatus;
     /**
+     * The parameter reflects whether this number is BYOC or not
+     */
+    public Boolean byocNumber;
+    /**
      * Phone number in e.164 format to be searched for.
      * Parameter value can include wildcards (e.g. &quot;+165012345**&quot;)
      * or be an exact number &quot;+16501234500&quot; - single number is searched in that case.
@@ -90,6 +94,11 @@ public class ListAccountPhoneNumbersV2Parameters {
 
     public ListAccountPhoneNumbersV2Parameters extensionStatus(String extensionStatus) {
         this.extensionStatus = extensionStatus;
+        return this;
+    }
+
+    public ListAccountPhoneNumbersV2Parameters byocNumber(Boolean byocNumber) {
+        this.byocNumber = byocNumber;
         return this;
     }
 

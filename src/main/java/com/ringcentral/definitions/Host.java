@@ -6,15 +6,15 @@ package com.ringcentral.definitions;
  */
 public class Host {
     /**
-     * account id
+     * Account id
      */
     public String accountId;
     /**
-     * extension id
+     * Extension id
      */
     public String extensionId;
     /**
-     * displayName
+     * Display name
      */
     public String displayName;
 

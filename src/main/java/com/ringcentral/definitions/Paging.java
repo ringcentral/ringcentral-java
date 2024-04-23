@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class Paging {
     /**
      * Current offset token
+     * Required
      */
     public String currentPageToken;
     /**

@@ -5,15 +5,15 @@ import com.ringcentral.definitions.UpdateBridgeRequest;
 
 public class ConstantContent {
 
-    public static CreateBridgeRequest createBridgeRequest(){
-        CreateBridgeRequest createBridgeRequest=new CreateBridgeRequest();
+    public static CreateBridgeRequest createBridgeRequest() {
+        CreateBridgeRequest createBridgeRequest = new CreateBridgeRequest();
         createBridgeRequest.name("RC Video Test");
         createBridgeRequest.type("Instant");
         return createBridgeRequest;
     }
 
-    public static UpdateBridgeRequest updateBridgeRequest(){
-        UpdateBridgeRequest updateBridgeRequest=new UpdateBridgeRequest().name("Update RC Video Test");
-        return  updateBridgeRequest;
+    public static UpdateBridgeRequest updateBridgeRequest() {
+        UpdateBridgeRequest updateBridgeRequest = new UpdateBridgeRequest().name("Update RC Video Test");
+        return updateBridgeRequest;
     }
 }

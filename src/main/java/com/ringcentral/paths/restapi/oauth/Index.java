@@ -34,4 +34,14 @@ public class Index {
         return new com.ringcentral.paths.restapi.oauth.authorize.Index(this);
     }
 
+
+    public com.ringcentral.paths.restapi.oauth.introspect.Index introspect() {
+        return new com.ringcentral.paths.restapi.oauth.introspect.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.oauth.sessioninfo.Index sessionInfo() {
+        return new com.ringcentral.paths.restapi.oauth.sessioninfo.Index(this);
+    }
+
 }

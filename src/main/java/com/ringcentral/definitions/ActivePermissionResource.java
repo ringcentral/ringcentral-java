@@ -13,7 +13,7 @@ public class ActivePermissionResource {
     /**
      * Enum: Account, AllExtensions, Federation, NonUserExtensions, RoleBased, Self, UserExtensions
      */
-    public String[] scopes;
+    public String[] scope;
 
     public ActivePermissionResource permission(PermissionIdResource permission) {
         this.permission = permission;
@@ -25,8 +25,8 @@ public class ActivePermissionResource {
         return this;
     }
 
-    public ActivePermissionResource scopes(String[] scopes) {
-        this.scopes = scopes;
+    public ActivePermissionResource scope(String[] scope) {
+        this.scope = scope;
         return this;
     }
 }

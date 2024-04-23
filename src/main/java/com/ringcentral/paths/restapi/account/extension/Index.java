@@ -254,6 +254,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.extension.assignableroles.Index assignableRoles() {
+        return new com.ringcentral.paths.restapi.account.extension.assignableroles.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.account.extension.unifiedpresence.Index unifiedPresence() {
         return new com.ringcentral.paths.restapi.account.extension.unifiedpresence.Index(this);
     }

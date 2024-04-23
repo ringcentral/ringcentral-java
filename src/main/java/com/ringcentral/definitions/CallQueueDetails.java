@@ -3,22 +3,32 @@ package com.ringcentral.definitions;
 
 public class CallQueueDetails {
     /**
+     * Link to a call queue
+     * Format: uri
+     */
+    public String uri;
+    /**
      * Internal identifier of a call queue
      */
     public String id;
     /**
-     * Call queue name
-     */
-    public String name;
-    /**
-     * Call queue extension number
+     * Extension number of a call queue
      */
     public String extensionNumber;
+    /**
+     * Name of a call queue
+     */
+    public String name;
     /**
      * Call queue status
      * Enum: Enabled, Disabled, NotActivated
      */
     public String status;
+    /**
+     * Indicates whether it is an emergency call queue extension or not
+     * Enum: Emergency
+     */
+    public String subType;
     /**
      *
      */
@@ -34,13 +44,13 @@ public class CallQueueDetails {
      */
     public Long alertTimer;
 
-    public CallQueueDetails id(String id) {
-        this.id = id;
+    public CallQueueDetails uri(String uri) {
+        this.uri = uri;
         return this;
     }
 
-    public CallQueueDetails name(String name) {
-        this.name = name;
+    public CallQueueDetails id(String id) {
+        this.id = id;
         return this;
     }
 
@@ -49,8 +59,18 @@ public class CallQueueDetails {
         return this;
     }
 
+    public CallQueueDetails name(String name) {
+        this.name = name;
+        return this;
+    }
+
     public CallQueueDetails status(String status) {
         this.status = status;
+        return this;
+    }
+
+    public CallQueueDetails subType(String subType) {
+        this.subType = subType;
         return this;
     }
 

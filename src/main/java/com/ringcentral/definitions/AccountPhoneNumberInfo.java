@@ -33,6 +33,10 @@ public class AccountPhoneNumberInfo {
      */
     public String usageType;
     /**
+     *
+     */
+    public Boolean byocNumber;
+    /**
      * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise, it is an external number not yet ported to RingCentral
      * Required
      * Enum: Normal, Pending, PortedIn, Temporary, Unknown
@@ -65,6 +69,11 @@ public class AccountPhoneNumberInfo {
 
     public AccountPhoneNumberInfo usageType(String usageType) {
         this.usageType = usageType;
+        return this;
+    }
+
+    public AccountPhoneNumberInfo byocNumber(Boolean byocNumber) {
+        this.byocNumber = byocNumber;
         return this;
     }
 

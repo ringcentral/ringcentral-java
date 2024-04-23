@@ -1,2 +1,4 @@
-package com.ringcentral.webinar;public class ConfigurationTest {
+package com.ringcentral.webinar;
+
+public class ConfigurationTest {
 }

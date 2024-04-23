@@ -6,33 +6,46 @@ package com.ringcentral.definitions;
  */
 public class Recording {
     /**
-     * recording id
+     * Recording id
+     * Required
      */
     public String id;
     /**
-     * recording start time
+     * Recording start time
      * Format: int64
      */
     public Long startTime;
     /**
-     * recording url
+     * Secure Link to the recording file
      */
-    public String contentUri;
+    public String url;
     /**
      *
      */
     public JsValue metadata;
     /**
-     * recording status
-     * Enum: Processing, Processed, Error, Corrupted, InProgress
+     * Recording processing status
+     * Enum: Processing, Processed, Error, Corrupted, InProgress, Purged, Failed
      */
     public String status;
     /**
-     * availability status
+     * Availability status
      * Required
      * Enum: Alive, Deleted, Purged, NotAvailable
      */
     public String availabilityStatus;
+    /**
+     * During meeting AI team analyze code and after meeting finished generates text summary about this meeting
+     */
+    public String longSummary;
+    /**
+     * During meeting AI team analyze code and after meeting finished generates text summary about this meeting
+     */
+    public String shortSummary;
+    /**
+     * During meeting AI team analyze code and after meeting finished generates key words used in meeting
+     */
+    public String[] keywords;
 
     public Recording id(String id) {
         this.id = id;
@@ -44,8 +57,8 @@ public class Recording {
         return this;
     }
 
-    public Recording contentUri(String contentUri) {
-        this.contentUri = contentUri;
+    public Recording url(String url) {
+        this.url = url;
         return this;
     }
 
@@ -61,6 +74,21 @@ public class Recording {
 
     public Recording availabilityStatus(String availabilityStatus) {
         this.availabilityStatus = availabilityStatus;
+        return this;
+    }
+
+    public Recording longSummary(String longSummary) {
+        this.longSummary = longSummary;
+        return this;
+    }
+
+    public Recording shortSummary(String shortSummary) {
+        this.shortSummary = shortSummary;
+        return this;
+    }
+
+    public Recording keywords(String[] keywords) {
+        this.keywords = keywords;
         return this;
     }
 }

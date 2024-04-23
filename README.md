@@ -8,6 +8,7 @@
 
 __[RingCentral Developers](https://developer.ringcentral.com/api-products)__ is a cloud communications platform which
 can be accessed via more than 70 APIs. The platform's main capabilities include technologies that enable:
+
 * [Voice](https://developer.ringcentral.com/api-products/voice)
 * [SMS/MMS](https://developer.ringcentral.com/api-products/sms)
 * [Fax](https://developer.ringcentral.com/api-products/fax)
@@ -93,7 +94,9 @@ public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com
 
 ### What is a Client ID and Client Secret used for?
 
-Each app you build must first be registered in the RingCentral Developer Console. Upon doing so, you will receive a Client ID and Client Secret that together uniquely identify your application on our platform. A public app could be used by many companies while a private app can only be used by your current company.
+Each app you build must first be registered in the RingCentral Developer Console. Upon doing so, you will receive a
+Client ID and Client Secret that together uniquely identify your application on our platform. A public app could be used
+by many companies while a private app can only be used by your current company.
 
 ### Token refresh
 

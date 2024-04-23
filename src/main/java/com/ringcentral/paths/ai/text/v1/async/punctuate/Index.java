@@ -23,7 +23,7 @@ public class Index {
     }
 
     /**
-     * Returns Smart Punctuation to the provided webhook uri.
+     * Returns Smart Punctuation to the provided webhook URI.
      * HTTP Method: post
      * Endpoint: /ai/text/v1/async/punctuate
      * Rate Limit Group: Heavy

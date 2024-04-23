@@ -24,7 +24,8 @@ public class CreateFaxMessageRequest {
      */
     public String sendTime;
     /**
-     * ISO Code. e.g UK
+     * Alpha-2 ISO Code of a country
+     * Example: US
      */
     public String isoCode;
     /**

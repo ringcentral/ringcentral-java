@@ -49,9 +49,28 @@ public class TokenInfo {
      */
     public String endpoint_id;
     /**
-     * OIDC ID token (if OpenId Connect flow was activated during authorization)
+     * OIDC ID token (if OpenID Connect flow was activated during authorization)
      */
     public String id_token;
+    /**
+     * OAuth session ID
+     */
+    public String session_id;
+    /**
+     * Absolute value of session expiration time as an ISO timestamp
+     * Format: date-time
+     */
+    public String session_expiration_time;
+    /**
+     * Remaining time (in seconds) until session expiration due to the absolute timeout
+     * Format: int32
+     */
+    public Long session_expires_in;
+    /**
+     * Nominal session idle timeout in seconds
+     * Format: int32
+     */
+    public Long session_idle_timeout;
 
     public TokenInfo access_token(String access_token) {
         this.access_token = access_token;
@@ -95,6 +114,26 @@ public class TokenInfo {
 
     public TokenInfo id_token(String id_token) {
         this.id_token = id_token;
+        return this;
+    }
+
+    public TokenInfo session_id(String session_id) {
+        this.session_id = session_id;
+        return this;
+    }
+
+    public TokenInfo session_expiration_time(String session_expiration_time) {
+        this.session_expiration_time = session_expiration_time;
+        return this;
+    }
+
+    public TokenInfo session_expires_in(Long session_expires_in) {
+        this.session_expires_in = session_expires_in;
+        return this;
+    }
+
+    public TokenInfo session_idle_timeout(Long session_idle_timeout) {
+        this.session_idle_timeout = session_idle_timeout;
         return this;
     }
 }

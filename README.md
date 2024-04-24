@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/ringcentral/ringcentral-java/actions/workflows/test.yml/badge.svg)](https://github.com/ringcentral/ringcentral-java/actions)
 [![Coverage Status](https://coveralls.io/repos/github/ringcentral/ringcentral-java/badge.svg?branch=master)](https://coveralls.io/github/ringcentral/ringcentral-java?branch=master)
-[![Reference](https://img.shields.io/badge/Javadoc-reference-blue?logo=java)](https://ringcentral.github.io/ringcentral-java/)
+[![Reference](https://img.shields.io/badge/Javadoc-reference-blue?logo=java)](https://ringcentral.github.io/ringcentral-java/javadoc)
 [![Chat](https://img.shields.io/badge/chat-on%20glip-orange.svg)](https://ringcentral.github.io/join-ringcentral/)
 [![Twitter](https://img.shields.io/twitter/follow/ringcentraldevs.svg?style=social&label=follow)](https://twitter.com/RingCentralDevs)
 
@@ -19,8 +19,10 @@ can be accessed via more than 70 APIs. The platform's main capabilities include 
 * [Webinar](https://developers.ringcentral.com/webinar-api)
 * [Business Analytics](https://developers.ringcentral.com/analytics-api).
 
-[API Reference](https://developer.ringcentral.com/api-docs/latest/index.html)
-and [APIs Explorer](https://developer.ringcentral.com/api-explorer/latest/index.html).
+## Additional resources
+
+* [RingCentral API Reference](https://developer.ringcentral.com/api-docs/latest/index.html) - an interactive reference for the RingCentral API that allows developers to make API calls with no code.
+* [Document](https://ringcentral.github.io/ringcentral-java/javadoc) - an interactive reference for the SDK code documentation.
 
 ## Getting help and support
 

@@ -39,7 +39,7 @@ public class TMUpdateTaskRequest {
     /**
      *
      */
-    public TMUpdateTaskRequestRecurrence recurrence;
+    public TaskRecurrenceInfo recurrence;
     /**
      *
      */
@@ -85,7 +85,7 @@ public class TMUpdateTaskRequest {
         return this;
     }
 
-    public TMUpdateTaskRequest recurrence(TMUpdateTaskRequestRecurrence recurrence) {
+    public TMUpdateTaskRequest recurrence(TaskRecurrenceInfo recurrence) {
         this.recurrence = recurrence;
         return this;
     }

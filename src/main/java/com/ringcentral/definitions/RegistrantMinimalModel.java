@@ -33,6 +33,10 @@ public class RegistrantMinimalModel {
      * Example: https://abcde12345.webinar.ringcentral.com/register?jlt=iuyef77fsj473wn10ashjfk34&amp;action=cancel
      */
     public String cancellationUri;
+    /**
+     * Indicates if the registrant was registered to on-demand webinar
+     */
+    public Boolean registeredPostWebinar;
 
     public RegistrantMinimalModel firstName(String firstName) {
         this.firstName = firstName;
@@ -56,6 +60,11 @@ public class RegistrantMinimalModel {
 
     public RegistrantMinimalModel cancellationUri(String cancellationUri) {
         this.cancellationUri = cancellationUri;
+        return this;
+    }
+
+    public RegistrantMinimalModel registeredPostWebinar(Boolean registeredPostWebinar) {
+        this.registeredPostWebinar = registeredPostWebinar;
         return this;
     }
 }

@@ -8,7 +8,7 @@ public class DeviceEmergencyInfo {
     /**
      *
      */
-    public EmergencyAddressInfo address;
+    public CommonEmergencyLocationAddressInfoDefault address;
     /**
      *
      */
@@ -42,7 +42,7 @@ public class DeviceEmergencyInfo {
      */
     public String addressEditableStatus;
 
-    public DeviceEmergencyInfo address(EmergencyAddressInfo address) {
+    public DeviceEmergencyInfo address(CommonEmergencyLocationAddressInfoDefault address) {
         this.address = address;
         return this;
     }

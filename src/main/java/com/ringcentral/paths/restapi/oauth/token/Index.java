@@ -24,9 +24,12 @@ public class Index {
     /**
      * Returns access (and potentially refresh) tokens for making API requests.
      * <p>
-     * Depending on client application type
-     * requests to this endpoint may require authentication with HTTP Basic scheme
-     * using registered client ID and client secret as login and password, correspondingly.
+     * For confidential client application types
+     * this endpoint requires client authentication using one of the supported
+     * methods (`client_secret_basic`, `client_secret_jwt` or `private_key_jwt`)
+     * <p>
+     * For non-confidential client application types
+     * the client identifier must be provided via `client_id` request attribute.
      * <p>
      * HTTP Method: post
      * Endpoint: /restapi/oauth/token

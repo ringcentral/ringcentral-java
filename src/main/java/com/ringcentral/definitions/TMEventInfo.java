@@ -29,26 +29,9 @@ public class TMEventInfo {
      */
     public Boolean allDay;
     /**
-     * Event recurrence settings
-     * Enum: None, Day, Weekday, Week, Month, Year
+     *
      */
-    public String recurrence;
-    /**
-     * Condition of ending an event
-     * Enum: None, Count, Date
-     */
-    public String endingCondition;
-    /**
-     * Count of event iterations. For periodic events only. Value range is 1 - 10.
-     * Must be specified if `endingCondition` is `Count`
-     * Format: int32
-     */
-    public Long endingAfter;
-    /**
-     * Iterations ending datetime for periodic events in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
-     * Format: date-time
-     */
-    public String endingOn;
+    public EventRecurrenceInfo recurrence;
     /**
      * Color of Event title (including its presentation in Calendar)
      * Default: Black
@@ -94,23 +77,8 @@ public class TMEventInfo {
         return this;
     }
 
-    public TMEventInfo recurrence(String recurrence) {
+    public TMEventInfo recurrence(EventRecurrenceInfo recurrence) {
         this.recurrence = recurrence;
-        return this;
-    }
-
-    public TMEventInfo endingCondition(String endingCondition) {
-        this.endingCondition = endingCondition;
-        return this;
-    }
-
-    public TMEventInfo endingAfter(Long endingAfter) {
-        this.endingAfter = endingAfter;
-        return this;
-    }
-
-    public TMEventInfo endingOn(String endingOn) {
-        this.endingOn = endingOn;
         return this;
     }
 

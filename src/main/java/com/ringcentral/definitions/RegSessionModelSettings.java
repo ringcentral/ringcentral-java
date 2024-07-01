@@ -26,9 +26,18 @@ public class RegSessionModelSettings {
     public Boolean workEmailRequired;
     /**
      * Indicates that recording will be shown after the webinar and in emails.
-     * Default: true
      */
     public Boolean viewRecording;
+    /**
+     * Duration of on-demand webinar. The default value can only be used if the session is on demand.
+     * Default: SixMonths
+     * Enum: OneMonth, TwoMonths, ThreeMonths, SixMonths, OneYear
+     */
+    public String onDemandDuration;
+    /**
+     * Indicates that recording exists for the session.
+     */
+    public Boolean recordingExist;
 
     public RegSessionModelSettings autoCloseLimit(Long autoCloseLimit) {
         this.autoCloseLimit = autoCloseLimit;
@@ -57,6 +66,16 @@ public class RegSessionModelSettings {
 
     public RegSessionModelSettings viewRecording(Boolean viewRecording) {
         this.viewRecording = viewRecording;
+        return this;
+    }
+
+    public RegSessionModelSettings onDemandDuration(String onDemandDuration) {
+        this.onDemandDuration = onDemandDuration;
+        return this;
+    }
+
+    public RegSessionModelSettings recordingExist(Boolean recordingExist) {
+        this.recordingExist = recordingExist;
         return this;
     }
 }

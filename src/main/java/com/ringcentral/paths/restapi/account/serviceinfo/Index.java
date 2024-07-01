@@ -28,7 +28,7 @@ public class Index {
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/service-info
      * Rate Limit Group: Light
      * App Permission: ReadAccounts
-     * User Permission: ReadServicePlanInfo
+     * User Permission: ReadCompanyInfo
      */
     public AccountServiceInfo get() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);

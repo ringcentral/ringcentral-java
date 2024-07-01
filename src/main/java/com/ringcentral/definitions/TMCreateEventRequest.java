@@ -32,28 +32,9 @@ public class TMCreateEventRequest {
      */
     public Boolean allDay;
     /**
-     * Event recurrence settings. For non-periodic events the value
-     * is `None`. Must be greater or equal to event duration: 1- Day/Weekday;
-     * 7 - Week; 28 - Month; 365 - Year
-     * Enum: None, Day, Weekday, Week, Month, Year
+     *
      */
-    public String recurrence;
-    /**
-     * Condition of ending an event
-     * Enum: None, Count, Date
-     */
-    public String endingCondition;
-    /**
-     * Count of event iterations. For periodic events only. Value range is 1 - 10.
-     * Must be specified if `endingCondition` is `Count`
-     * Format: int32
-     */
-    public Long endingAfter;
-    /**
-     * Iterations ending datetime for periodic events in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
-     * Format: date-time
-     */
-    public String endingOn;
+    public EventRecurrenceInfo recurrence;
     /**
      * Color of Event title (including its presentation in Calendar)
      * Default: Black
@@ -99,23 +80,8 @@ public class TMCreateEventRequest {
         return this;
     }
 
-    public TMCreateEventRequest recurrence(String recurrence) {
+    public TMCreateEventRequest recurrence(EventRecurrenceInfo recurrence) {
         this.recurrence = recurrence;
-        return this;
-    }
-
-    public TMCreateEventRequest endingCondition(String endingCondition) {
-        this.endingCondition = endingCondition;
-        return this;
-    }
-
-    public TMCreateEventRequest endingAfter(Long endingAfter) {
-        this.endingAfter = endingAfter;
-        return this;
-    }
-
-    public TMCreateEventRequest endingOn(String endingOn) {
-        this.endingOn = endingOn;
         return this;
     }
 

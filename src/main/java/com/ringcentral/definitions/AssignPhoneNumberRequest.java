@@ -10,7 +10,7 @@ public class AssignPhoneNumberRequest {
     /**
      * Target usage type of phone number (only listed values are supported)
      * Required
-     * Enum: MainCompanyNumber, CompanyNumber, DirectNumber, PhoneLine
+     * Enum: MainCompanyNumber, CompanyNumber, DirectNumber, PhoneLine, ContactCenterNumber
      */
     public String usageType;
     /**
@@ -21,6 +21,10 @@ public class AssignPhoneNumberRequest {
      *
      */
     public String costCenterId;
+    /**
+     *
+     */
+    public ContactCenterProvider contactCenterProvider;
 
     public AssignPhoneNumberRequest type(String type) {
         this.type = type;
@@ -39,6 +43,11 @@ public class AssignPhoneNumberRequest {
 
     public AssignPhoneNumberRequest costCenterId(String costCenterId) {
         this.costCenterId = costCenterId;
+        return this;
+    }
+
+    public AssignPhoneNumberRequest contactCenterProvider(ContactCenterProvider contactCenterProvider) {
+        this.contactCenterProvider = contactCenterProvider;
         return this;
     }
 }

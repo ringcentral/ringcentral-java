@@ -3,51 +3,47 @@ package com.ringcentral.definitions;
 
 public class AuthorizeRequest {
     /**
-     * Determines authorization flow:
-     * - **code** - Authorization Code,
-     * - **token** - Implicit
+     * Determines authorization flow type. The only supported value is `code` which corresponds to OAuth 2.0 &quot;Authorization Code Flow&quot;
      * Required
-     * Enum: code, token
+     * Enum: code
      */
     public String response_type;
     /**
-     * This is a callback URI which determines where the response
-     * is sent. The value of this parameter must exactly match one of
-     * the URIs you have provided for your app upon registration
-     * Required
+     * This is the URI where the Authorization Server redirects the User Agent to at the end of the authorization flow.
+     * The value of this parameter must exactly match one of the URIs registered for this client application.
+     * This parameter is required if there are more than one redirect URIs registered for the app.
      * Format: uri
      */
     public String redirect_uri;
     /**
-     * Identifier (key) of a client application
+     * The registered identifier of a client application
      * Required
+     * Example: AZwEVwGEcfGet2PCouA7K6
      */
     public String client_id;
     /**
-     * Client state. Returned to the client at the end of the flow
+     * An opaque value used by the client to maintain state between the request and callback.
+     * The authorization server includes this value when redirecting the User Agent back
+     * to the client. The parameter SHOULD be used for preventing cross-site request forgery attacks.
      */
     public String state;
     /**
-     * Brand identifier. If it is not provided in request,
-     * server will try to determine brand from client app profile. The
-     * default value is `1210` - RingCentral US brand ID
-     * Default: 1210
+     * The list of requested OAuth scopes (space separated)
      */
-    public String brand_id;
+    public String scope;
     /**
-     * Style of login form. The default value is &#039;page&#039;. The
-     * &#039;popup&#039; and &#039;touch&#039; values are featured for mobile applications
+     * Specifies how the Authorization Server displays the authentication and consent user interface pages to the End-User.
      * Default: page
      * Enum: page, popup, touch, mobile
      */
     public String display;
     /**
-     * Specifies which login form will be displayed. Space-separated
-     * set of the following values:
+     * Space-delimited, case-sensitive list of ASCII string values that specifies whether the Authorization Server prompts the End-User for
+     * re-authentication and consent. The defined values are:
      * <p>
-     * - **login** - RingCentral native login form,
-     * - **sso** - Single Sign-On login form,
-     * - **consent** - form to show the requested scope and prompt user for consent.
+     * - `login` - RingCentral native login form,
+     * - `sso` - Single Sign-On login form,
+     * - `consent` - form to show the requested scope and prompt user for consent.
      * <p>
      * Either `login` or `sso` (or both) must be specified. The default
      * value is `login sso`
@@ -55,49 +51,47 @@ public class AuthorizeRequest {
      */
     public String prompt;
     /**
-     * Locale code of a language. Overwrites &#039;Accept-Language&#039; header value.
+     * End-User&#039;s preferred languages and scripts for the user interface, represented as a space-separated list of
+     * [RFC-5646](https://datatracker.ietf.org/doc/html/rfc5646) language tag values, ordered by preference.
      * <p>
-     * DEPRECATED: `ui_locales` parameter should be used instead
-     * Example: en-US
-     */
-    public String localeId;
-    /**
-     * Locale code of a language. Overwrites &#039;Accept-Language&#039; header value and &#039;localeId&#039; parameter value
+     * If this parameter is provided, its value overrides &#039;Accept-Language&#039; header value and &#039;localeId&#039; parameter value (if any)
      * Example: en-US
      */
     public String ui_locales;
     /**
-     * User interface options (space-separated)
+     * The code challenge value as defined by the PKCE specification -
+     * [RFC-7636 &quot;Proof Key for Code Exchange by OAuth Public Clients&quot;](https://datatracker.ietf.org/doc/html/rfc7636)
+     */
+    public String code_challenge;
+    /**
+     * The code challenge method as defined by the PKCE specification -
+     * [RFC-7636 &quot;Proof Key for Code Exchange by OAuth Public Clients&quot;](https://datatracker.ietf.org/doc/html/rfc7636)
+     * Default: plain
+     * Enum: plain, S256
+     */
+    public String code_challenge_method;
+    /**
+     * String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token.
+     */
+    public String nonce;
+    /**
+     * Login form user interface options (space-separated). By default, the UI options that are registered for this client application will be used
      */
     public String ui_options;
     /**
-     * OAuth scope
+     * Hint to the Authorization Server about the login identifier the End-User might use to log in.
      */
-    public String scope;
+    public String login_hint;
+    /**
+     * RingCentral Brand identifier. If it is not provided in the request,
+     * server will try to determine brand from the client application profile.
+     * Example: 1210
+     */
+    public String brand_id;
     /**
      *
      */
     public String accept_language;
-    /**
-     *
-     */
-    public String request;
-    /**
-     * Format: uri
-     */
-    public String request_uri;
-    /**
-     *
-     */
-    public String nonce;
-    /**
-     *
-     */
-    public String code_challenge;
-    /**
-     * Enum: plain, S256
-     */
-    public String code_challenge_method;
 
     public AuthorizeRequest response_type(String response_type) {
         this.response_type = response_type;
@@ -119,8 +113,8 @@ public class AuthorizeRequest {
         return this;
     }
 
-    public AuthorizeRequest brand_id(String brand_id) {
-        this.brand_id = brand_id;
+    public AuthorizeRequest scope(String scope) {
+        this.scope = scope;
         return this;
     }
 
@@ -134,43 +128,8 @@ public class AuthorizeRequest {
         return this;
     }
 
-    public AuthorizeRequest localeId(String localeId) {
-        this.localeId = localeId;
-        return this;
-    }
-
     public AuthorizeRequest ui_locales(String ui_locales) {
         this.ui_locales = ui_locales;
-        return this;
-    }
-
-    public AuthorizeRequest ui_options(String ui_options) {
-        this.ui_options = ui_options;
-        return this;
-    }
-
-    public AuthorizeRequest scope(String scope) {
-        this.scope = scope;
-        return this;
-    }
-
-    public AuthorizeRequest accept_language(String accept_language) {
-        this.accept_language = accept_language;
-        return this;
-    }
-
-    public AuthorizeRequest request(String request) {
-        this.request = request;
-        return this;
-    }
-
-    public AuthorizeRequest request_uri(String request_uri) {
-        this.request_uri = request_uri;
-        return this;
-    }
-
-    public AuthorizeRequest nonce(String nonce) {
-        this.nonce = nonce;
         return this;
     }
 
@@ -181,6 +140,31 @@ public class AuthorizeRequest {
 
     public AuthorizeRequest code_challenge_method(String code_challenge_method) {
         this.code_challenge_method = code_challenge_method;
+        return this;
+    }
+
+    public AuthorizeRequest nonce(String nonce) {
+        this.nonce = nonce;
+        return this;
+    }
+
+    public AuthorizeRequest ui_options(String ui_options) {
+        this.ui_options = ui_options;
+        return this;
+    }
+
+    public AuthorizeRequest login_hint(String login_hint) {
+        this.login_hint = login_hint;
+        return this;
+    }
+
+    public AuthorizeRequest brand_id(String brand_id) {
+        this.brand_id = brand_id;
+        return this;
+    }
+
+    public AuthorizeRequest accept_language(String accept_language) {
+        this.accept_language = accept_language;
         return this;
     }
 }

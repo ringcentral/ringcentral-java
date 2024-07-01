@@ -45,7 +45,7 @@ public class RestClient {
 
 
     public RestClient(String clientId, String clientSecret, OkHttpClient okHttpClient) {
-        this(clientId, clientSecret, PRODUCTION_SERVER , okHttpClient);
+        this(clientId, clientSecret, PRODUCTION_SERVER, okHttpClient);
     }
 
     public RestClient(String clientId, String clientSecret) {

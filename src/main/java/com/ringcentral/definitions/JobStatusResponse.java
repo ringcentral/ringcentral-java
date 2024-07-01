@@ -18,6 +18,14 @@ public class JobStatusResponse {
      * Format: date-time
      */
     public String expirationTime;
+    /**
+     * Enum: Success, Fail
+     */
+    public String status;
+    /**
+     *
+     */
+    public JobStatusResponseResponse response;
 
     public JobStatusResponse jobId(String jobId) {
         this.jobId = jobId;
@@ -36,6 +44,16 @@ public class JobStatusResponse {
 
     public JobStatusResponse expirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
+        return this;
+    }
+
+    public JobStatusResponse status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public JobStatusResponse response(JobStatusResponseResponse response) {
+        this.response = response;
         return this;
     }
 }

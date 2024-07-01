@@ -36,7 +36,7 @@ public class CompanyAnsweringRuleRequest {
     /**
      *
      */
-    public CompanyAnsweringRuleCallersInfoRequest extension;
+    public CompanyAnsweringRuleExtensionInfoRequest extension;
     /**
      * Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List
      */
@@ -77,7 +77,7 @@ public class CompanyAnsweringRuleRequest {
         return this;
     }
 
-    public CompanyAnsweringRuleRequest extension(CompanyAnsweringRuleCallersInfoRequest extension) {
+    public CompanyAnsweringRuleRequest extension(CompanyAnsweringRuleExtensionInfoRequest extension) {
         this.extension = extension;
         return this;
     }

@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class FaxResponseTo {
     /**
+     * Internal identifier of a fax recipient
+     */
+    public String recipientId;
+    /**
      * Phone number in E.164 (with &#039;+&#039; sign) format
      * Example: +18661234567
      */
@@ -21,6 +25,18 @@ public class FaxResponseTo {
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
+    /**
+     * Contains party location (city, state) if one can be determined
+     * from phoneNumber. This property is filled only when phoneNumber is not
+     * empty and server can calculate location information from it (for example,
+     * this information is unavailable for US toll-free numbers)
+     */
+    public String location;
+
+    public FaxResponseTo recipientId(String recipientId) {
+        this.recipientId = recipientId;
+        return this;
+    }
 
     public FaxResponseTo phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -34,6 +50,11 @@ public class FaxResponseTo {
 
     public FaxResponseTo messageStatus(String messageStatus) {
         this.messageStatus = messageStatus;
+        return this;
+    }
+
+    public FaxResponseTo location(String location) {
+        this.location = location;
         return this;
     }
 }

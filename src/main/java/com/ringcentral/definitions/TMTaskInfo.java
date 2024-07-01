@@ -77,9 +77,9 @@ public class TMTaskInfo {
      */
     public String description;
     /**
-     * Task details
+     *
      */
-    public TMTaskInfoRecurrence recurrence;
+    public TaskRecurrenceInfo recurrence;
     /**
      *
      */
@@ -165,7 +165,7 @@ public class TMTaskInfo {
         return this;
     }
 
-    public TMTaskInfo recurrence(TMTaskInfoRecurrence recurrence) {
+    public TMTaskInfo recurrence(TaskRecurrenceInfo recurrence) {
         this.recurrence = recurrence;
         return this;
     }

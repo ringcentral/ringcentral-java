@@ -42,7 +42,7 @@ public class TMCreateTaskRequest {
     /**
      *
      */
-    public TMCreateTaskRequestRecurrence recurrence;
+    public TaskRecurrenceInfo recurrence;
     /**
      *
      */
@@ -88,7 +88,7 @@ public class TMCreateTaskRequest {
         return this;
     }
 
-    public TMCreateTaskRequest recurrence(TMCreateTaskRequestRecurrence recurrence) {
+    public TMCreateTaskRequest recurrence(TaskRecurrenceInfo recurrence) {
         this.recurrence = recurrence;
         return this;
     }

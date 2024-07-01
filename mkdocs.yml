@@ -14,28 +14,28 @@ theme:
         - content.action.view
         - content.code.annotate
     palette:
-        - scheme: default
-          primary: custom
-          accent: indigo
-          toggle:
-              icon: material/toggle-switch
-              name: Switch to dark mode
-        - scheme: slate
-          primary: black
-          accent: indigo
-          toggle:
-              icon: material/toggle-switch-off-outline
-              name: Switch to light mode
+        -   scheme: default
+            primary: custom
+            accent: indigo
+            toggle:
+                icon: material/toggle-switch
+                name: Switch to dark mode
+        -   scheme: slate
+            primary: black
+            accent: indigo
+            toggle:
+                icon: material/toggle-switch-off-outline
+                name: Switch to light mode
     font:
         text: Roboto
         code: Roboto Mono
 
     plugins:
-        - search:
-              separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+        -   search:
+                separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
         - badges
         - social
-        - exclude:
-              regex:
-                  - '^\.#.*'
-                  - '.*\.\#.*$'
+        -   exclude:
+                regex:
+                    - '^\.#.*'
+                    - '.*\.\#.*$'

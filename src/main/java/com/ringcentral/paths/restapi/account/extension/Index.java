@@ -311,4 +311,13 @@ public class Index {
         return new com.ringcentral.paths.restapi.account.extension.notificationsettings.Index(this);
     }
 
+
+    public com.ringcentral.paths.restapi.account.extension.messagestoretemplates.Index messageStoreTemplates() {
+        return this.messageStoreTemplates(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.extension.messagestoretemplates.Index messageStoreTemplates(String templateId) {
+        return new com.ringcentral.paths.restapi.account.extension.messagestoretemplates.Index(this, templateId);
+    }
+
 }

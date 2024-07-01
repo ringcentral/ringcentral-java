@@ -31,7 +31,7 @@ public class RoleResource {
     public Boolean custom;
     /**
      * Specifies resource for permission
-     * Enum: Account, AllExtensions, Federation, NonUserExtensions, RoleBased, Self, UserExtensions
+     * Enum: Account, AllExtensions, Federation, Group, NonUserExtensions, RoleBased, Self, UserExtensions
      */
     public String scope;
     /**

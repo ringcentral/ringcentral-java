@@ -12,12 +12,12 @@ public class MessageStatusCounts {
     public Double cost;
     /**
      * Count of messages with this status code
-     * Format: int64
+     * Format: int32
      * Example: 7
      */
     public Long count;
     /**
-     *
+     * Message sending/delivery errors. Returned in `deliveryFailed` and `sendingFailed` resources
      */
     public Object errorCodeCounts;
 

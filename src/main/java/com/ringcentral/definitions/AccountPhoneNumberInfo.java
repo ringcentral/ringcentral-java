@@ -37,6 +37,10 @@ public class AccountPhoneNumberInfo {
      */
     public Boolean byocNumber;
     /**
+     *
+     */
+    public ContactCenterProvider contactCenterProvider;
+    /**
      * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise, it is an external number not yet ported to RingCentral
      * Required
      * Enum: Normal, Pending, PortedIn, Temporary, Unknown
@@ -74,6 +78,11 @@ public class AccountPhoneNumberInfo {
 
     public AccountPhoneNumberInfo byocNumber(Boolean byocNumber) {
         this.byocNumber = byocNumber;
+        return this;
+    }
+
+    public AccountPhoneNumberInfo contactCenterProvider(ContactCenterProvider contactCenterProvider) {
+        this.contactCenterProvider = contactCenterProvider;
         return this;
     }
 

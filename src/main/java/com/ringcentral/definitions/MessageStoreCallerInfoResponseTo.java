@@ -55,6 +55,10 @@ public class MessageStoreCallerInfoResponseTo {
      * sending/receiving SMS
      */
     public String phoneNumber;
+    /**
+     * Internal identifier of a message recipient
+     */
+    public String recipientId;
 
     public MessageStoreCallerInfoResponseTo extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
@@ -93,6 +97,11 @@ public class MessageStoreCallerInfoResponseTo {
 
     public MessageStoreCallerInfoResponseTo phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public MessageStoreCallerInfoResponseTo recipientId(String recipientId) {
+        this.recipientId = recipientId;
         return this;
     }
 }

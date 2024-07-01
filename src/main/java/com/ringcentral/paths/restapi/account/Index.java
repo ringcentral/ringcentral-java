@@ -279,6 +279,15 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.messagestoretemplates.Index messageStoreTemplates() {
+        return this.messageStoreTemplates(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.messagestoretemplates.Index messageStoreTemplates(String templateId) {
+        return new com.ringcentral.paths.restapi.account.messagestoretemplates.Index(this, templateId);
+    }
+
+
     public com.ringcentral.paths.restapi.account.addressbookbulkupload.Index addressBookBulkUpload() {
         return new com.ringcentral.paths.restapi.account.addressbookbulkupload.Index(this);
     }

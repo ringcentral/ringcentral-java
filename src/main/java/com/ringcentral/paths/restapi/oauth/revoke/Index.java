@@ -23,11 +23,13 @@ public class Index {
 
     /**
      * Revokes all active access/refresh tokens and invalidates the OAuth session basing on token provided.
-     * `token` parameter may be passed in query string or body and may represent access or refresh token.
+     * The `token` parameter may be passed in query string or body and may represent access or refresh token.
      * <p>
-     * Depending on client application type
-     * requests to this endpoint may require authentication with HTTP Basic scheme
-     * using registered client ID and client secret as login and password, correspondingly.
+     * This endpoint is defined by [RFC-7009 &quot;OAuth 2.0 Token Revocation&quot;](https://datatracker.ietf.org/doc/html/rfc7009)
+     * <p>
+     * For confidential client application types
+     * this endpoint requires client authentication using one of the supported
+     * methods (`client_secret_basic`, `client_secret_jwt` or `private_key_jwt`)
      * <p>
      * HTTP Method: post
      * Endpoint: /restapi/oauth/revoke

@@ -34,6 +34,10 @@ public class RegistrantBaseModel {
      */
     public String cancellationUri;
     /**
+     * Indicates if the registrant was registered to on-demand webinar
+     */
+    public Boolean registeredPostWebinar;
+    /**
      * Visitor ID passed from registration page
      */
     public String visitorId;
@@ -82,6 +86,11 @@ public class RegistrantBaseModel {
 
     public RegistrantBaseModel cancellationUri(String cancellationUri) {
         this.cancellationUri = cancellationUri;
+        return this;
+    }
+
+    public RegistrantBaseModel registeredPostWebinar(Boolean registeredPostWebinar) {
+        this.registeredPostWebinar = registeredPostWebinar;
         return this;
     }
 

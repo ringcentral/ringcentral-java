@@ -30,6 +30,11 @@ public class GetConferencingInfoResponse {
      */
     public String phoneNumber;
     /**
+     * Link to a branded support page
+     * Example: http://success.ringcentral.com
+     */
+    public String supportUri;
+    /**
      * Short URL leading to the service web page Tap to Join for audio
      * conference bridge
      * Format: uri
@@ -71,6 +76,11 @@ public class GetConferencingInfoResponse {
 
     public GetConferencingInfoResponse phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public GetConferencingInfoResponse supportUri(String supportUri) {
+        this.supportUri = supportUri;
         return this;
     }
 

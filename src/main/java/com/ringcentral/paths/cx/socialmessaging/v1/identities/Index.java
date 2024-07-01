@@ -1,6 +1,7 @@
 package com.ringcentral.paths.cx.socialmessaging.v1.identities;
 
 import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListSocialMessagingIdentitiesParameters;
 
 public class Index {
     public RestClient rc;

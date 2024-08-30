@@ -23,7 +23,7 @@ public class ShippingAddressInfo {
      */
     public String customerPhone;
     /**
-     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK & Australia.
+     * Phone number of an additional contact person. Should be specified for countries except the US, Canada, the UK and Australia.
      */
     public String additionalCustomerPhone;
     /**

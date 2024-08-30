@@ -104,7 +104,7 @@ public class UserCallLogRecord {
      * * `International Restricted` - The country and/or area you attempted to call has been prohibited by your administrator
      * * `Bad Number` - An error occurred when making the call. Please check the number before trying again
      * * `Info 411 Restricted` - Calling to 411 Information Services is restricted
-     * * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at <(888) 555-1212>
+     * * `Customer 611 Restricted` - 611 customer service is not supported. Please contact customer service at (888) 555-1212
      * * `No Digital Line` - This DigitalLine was either not plugged in or did not have an internet connection
      * * `Failed Try Again` - Call failed. Please try again
      * * `Max Call Limit` - The number of simultaneous calls to your account has reached its limit

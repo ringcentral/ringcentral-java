@@ -48,7 +48,7 @@ public class AccountServiceInfoRequest {
      *
      */
     @SerializedName("package")
-    public PackageInfo _package;
+    public BillingPackageInfo _package;
 
     public AccountServiceInfoRequest uri(String uri) {
         this.uri = uri;
@@ -95,7 +95,7 @@ public class AccountServiceInfoRequest {
         return this;
     }
 
-    public AccountServiceInfoRequest _package(PackageInfo _package) {
+    public AccountServiceInfoRequest _package(BillingPackageInfo _package) {
         this._package = _package;
         return this;
     }

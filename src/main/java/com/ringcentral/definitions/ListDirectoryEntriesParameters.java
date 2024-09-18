@@ -6,6 +6,11 @@ package com.ringcentral.definitions;
  */
 public class ListDirectoryEntriesParameters {
     /**
+     * Flag to enable cross-site limitation checking
+     * Example: true
+     */
+    public Boolean accessibleSitesOnly;
+    /**
      * If `true` then contacts of all accounts in federation are returned. If `false` then only contacts of the current account are returned, and account section is eliminated in this case
      * Default: true
      */
@@ -40,6 +45,11 @@ public class ListDirectoryEntriesParameters {
      * Internal identifier of the business site to which extensions belong
      */
     public String siteId;
+
+    public ListDirectoryEntriesParameters accessibleSitesOnly(Boolean accessibleSitesOnly) {
+        this.accessibleSitesOnly = accessibleSitesOnly;
+        return this;
+    }
 
     public ListDirectoryEntriesParameters showFederated(Boolean showFederated) {
         this.showFederated = showFederated;

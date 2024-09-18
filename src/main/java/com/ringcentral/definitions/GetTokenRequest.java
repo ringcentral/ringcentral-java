@@ -2,7 +2,8 @@ package com.ringcentral.definitions;
 
 
 /**
- * Token endpoint request parameters used in the "Guest" authorization flow with the `guest` grant type
+ * Token endpoint request parameters used in the "Guest" authorization flow
+ * with the `guest` grant type
  */
 public class GetTokenRequest {
     /**
@@ -141,10 +142,12 @@ public class GetTokenRequest {
     public String partner_account_id;
     /**
      * Resource type for the guest access.
+     * Required
      */
     public String resource_type;
     /**
      * Resource URL for the guest access.
+     * Required
      */
     public String resource;
 

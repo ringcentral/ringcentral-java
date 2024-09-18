@@ -27,7 +27,7 @@ public class ExtensionRegionalSettingRequest {
      */
     public ExtensionCurrencyInfoRequest currency;
     /**
-     * Time format setting
+     * Time format (12-hours or 24-hours).
      * Default: 12h
      * Enum: 12h, 24h
      */

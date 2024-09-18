@@ -43,7 +43,7 @@ public class Index {
     }
 
     /**
-     * Returns the result of asynchronous operation which adds phone numbers to the account Inventory.
+     * Returns the result of asynchronous operation which adds phone numbers to the account inventory.
      * <p>
      * HTTP Method: get
      * Endpoint: /restapi/v2/accounts/{accountId}/phone-numbers/bulk-add/{taskId}

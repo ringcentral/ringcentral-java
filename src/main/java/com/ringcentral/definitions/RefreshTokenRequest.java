@@ -8,6 +8,7 @@ package com.ringcentral.definitions;
 public class RefreshTokenRequest {
     /**
      * Grant type
+     * Required
      * Enum: refresh_token
      */
     public String grant_type;

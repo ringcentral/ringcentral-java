@@ -43,8 +43,8 @@ public class GetAccountInfoResponse {
      */
     public SignupInfoResource signupInfo;
     /**
-     * Status of the current account
-     * Enum: Initial, Confirmed, Unconfirmed, Disabled
+     * Status of an account
+     * Enum: Initial, Unconfirmed, Confirmed, Disabled
      */
     public String status;
     /**

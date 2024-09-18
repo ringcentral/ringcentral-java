@@ -23,6 +23,10 @@ public class ListCallMonitoringGroupsParameters {
      * group within the result
      */
     public String memberExtensionId;
+    /**
+     * Internal identifier of a site
+     */
+    public String siteId;
 
     public ListCallMonitoringGroupsParameters page(Long page) {
         this.page = page;
@@ -36,6 +40,11 @@ public class ListCallMonitoringGroupsParameters {
 
     public ListCallMonitoringGroupsParameters memberExtensionId(String memberExtensionId) {
         this.memberExtensionId = memberExtensionId;
+        return this;
+    }
+
+    public ListCallMonitoringGroupsParameters siteId(String siteId) {
+        this.siteId = siteId;
         return this;
     }
 }

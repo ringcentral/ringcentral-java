@@ -8,6 +8,7 @@ package com.ringcentral.definitions;
 public class RopcTokenRequest {
     /**
      * Grant type
+     * Required
      * Enum: password
      */
     public String grant_type;

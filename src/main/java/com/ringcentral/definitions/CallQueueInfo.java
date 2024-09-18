@@ -20,7 +20,7 @@ public class CallQueueInfo {
      */
     public String name;
     /**
-     * Call queue status
+     * Group extension status
      * Enum: Enabled, Disabled, NotActivated
      */
     public String status;
@@ -29,6 +29,10 @@ public class CallQueueInfo {
      * Enum: Emergency
      */
     public String subType;
+    /**
+     *
+     */
+    public SiteBasicInfo site;
 
     public CallQueueInfo uri(String uri) {
         this.uri = uri;
@@ -57,6 +61,11 @@ public class CallQueueInfo {
 
     public CallQueueInfo subType(String subType) {
         this.subType = subType;
+        return this;
+    }
+
+    public CallQueueInfo site(SiteBasicInfo site) {
+        this.site = site;
         return this;
     }
 }

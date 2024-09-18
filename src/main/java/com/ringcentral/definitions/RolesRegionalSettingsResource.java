@@ -23,6 +23,8 @@ public class RolesRegionalSettingsResource {
      */
     public RolesLanguageResource formattingLocale;
     /**
+     * Time format (12-hours or 24-hours).
+     * Default: 12h
      * Enum: 12h, 24h
      */
     public String timeFormat;

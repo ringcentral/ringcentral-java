@@ -33,6 +33,15 @@ public class CreateSiteRequest {
      */
     public SiteOperatorReference operator;
     /**
+     * Site access status for cross-site limitation
+     * Enum: Limited, Unlimited
+     */
+    public String siteAccess;
+    /**
+     *
+     */
+    public String[] accessibleSiteIds;
+    /**
      * Site code value
      */
     public String code;
@@ -69,6 +78,16 @@ public class CreateSiteRequest {
 
     public CreateSiteRequest operator(SiteOperatorReference operator) {
         this.operator = operator;
+        return this;
+    }
+
+    public CreateSiteRequest siteAccess(String siteAccess) {
+        this.siteAccess = siteAccess;
+        return this;
+    }
+
+    public CreateSiteRequest accessibleSiteIds(String[] accessibleSiteIds) {
+        this.accessibleSiteIds = accessibleSiteIds;
         return this;
     }
 

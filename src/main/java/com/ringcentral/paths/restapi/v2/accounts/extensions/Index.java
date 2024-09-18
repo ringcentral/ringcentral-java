@@ -46,4 +46,9 @@ public class Index {
         return new com.ringcentral.paths.restapi.v2.accounts.extensions.devices.Index(this, deviceId);
     }
 
+
+    public com.ringcentral.paths.restapi.v2.accounts.extensions.callflipnumbers.Index callFlipNumbers() {
+        return new com.ringcentral.paths.restapi.v2.accounts.extensions.callflipnumbers.Index(this);
+    }
+
 }

@@ -33,6 +33,15 @@ public class SiteUpdateRequest {
      *
      */
     public OperatorInfo operator;
+    /**
+     * Site access status for cross-site limitation
+     * Enum: Limited, Unlimited
+     */
+    public String siteAccess;
+    /**
+     *
+     */
+    public String[] accessibleSiteIds;
 
     public SiteUpdateRequest name(String name) {
         this.name = name;
@@ -66,6 +75,16 @@ public class SiteUpdateRequest {
 
     public SiteUpdateRequest operator(OperatorInfo operator) {
         this.operator = operator;
+        return this;
+    }
+
+    public SiteUpdateRequest siteAccess(String siteAccess) {
+        this.siteAccess = siteAccess;
+        return this;
+    }
+
+    public SiteUpdateRequest accessibleSiteIds(String[] accessibleSiteIds) {
+        this.accessibleSiteIds = accessibleSiteIds;
         return this;
     }
 }

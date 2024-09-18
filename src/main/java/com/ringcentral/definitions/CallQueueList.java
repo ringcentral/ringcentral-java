@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class CallQueues {
+public class CallQueueList {
     /**
      * Link to a call queues resource
      * Required
@@ -22,22 +22,22 @@ public class CallQueues {
      */
     public EnumeratedPagingModel paging;
 
-    public CallQueues uri(String uri) {
+    public CallQueueList uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    public CallQueues records(CallQueueInfo[] records) {
+    public CallQueueList records(CallQueueInfo[] records) {
         this.records = records;
         return this;
     }
 
-    public CallQueues navigation(PageNavigationModel navigation) {
+    public CallQueueList navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    public CallQueues paging(EnumeratedPagingModel paging) {
+    public CallQueueList paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

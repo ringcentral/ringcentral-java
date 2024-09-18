@@ -7,7 +7,8 @@ public class ExtensionBulkUpdateInfo {
      */
     public String id;
     /**
-     * Enum: Disabled, Enabled, NotActivated, Frozen
+     * Extension status
+     * Enum: Enabled, Disabled, Frozen, NotActivated
      */
     public String status;
     /**

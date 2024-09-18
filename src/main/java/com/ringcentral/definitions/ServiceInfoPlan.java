@@ -14,10 +14,6 @@ public class ServiceInfoPlan {
      */
     public String name;
     /**
-     * Edition of a service plan
-     */
-    public String edition;
-    /**
      * Enum: Freyja, Phoenix
      */
     public String freemiumProductType;
@@ -29,11 +25,6 @@ public class ServiceInfoPlan {
 
     public ServiceInfoPlan name(String name) {
         this.name = name;
-        return this;
-    }
-
-    public ServiceInfoPlan edition(String edition) {
-        this.edition = edition;
         return this;
     }
 

@@ -2,7 +2,8 @@ package com.ringcentral.paths.restapi.account.callqueues;
 
 import com.ringcentral.RestClient;
 import com.ringcentral.definitions.CallQueueDetails;
-import com.ringcentral.definitions.CallQueues;
+import com.ringcentral.definitions.CallQueueDetailsForUpdate;
+import com.ringcentral.definitions.CallQueueList;
 import com.ringcentral.definitions.ListCallQueuesParameters;
 
 public class Index {
@@ -35,12 +36,12 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadExtensions
      */
-    public CallQueues list(ListCallQueuesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public CallQueueList list(ListCallQueuesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallQueues.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallQueueList.class);
     }
 
-    public CallQueues list() throws com.ringcentral.RestException, java.io.IOException {
+    public CallQueueList list() throws com.ringcentral.RestException, java.io.IOException {
         return this.list(null);
     }
 
@@ -69,11 +70,11 @@ public class Index {
      * App Permission: EditExtensions
      * User Permission: EditUserInfo
      */
-    public CallQueueDetails put(CallQueueDetails callQueueDetails) throws com.ringcentral.RestException, java.io.IOException {
+    public CallQueueDetails put(CallQueueDetailsForUpdate callQueueDetailsForUpdate) throws com.ringcentral.RestException, java.io.IOException {
         if (groupId == null) {
             throw new IllegalArgumentException("Parameter groupId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), callQueueDetails, null);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), callQueueDetailsForUpdate, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CallQueueDetails.class);
     }
 

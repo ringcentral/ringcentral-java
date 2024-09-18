@@ -4,6 +4,7 @@ import com.ringcentral.RestClient;
 import com.ringcentral.definitions.ContactResource;
 import com.ringcentral.definitions.DirectoryResource;
 import com.ringcentral.definitions.ListDirectoryEntriesParameters;
+import com.ringcentral.definitions.ReadDirectoryEntryParameters;
 
 public class Index {
     public RestClient rc;
@@ -50,12 +51,16 @@ public class Index {
      * Rate Limit Group: Medium
      * App Permission: ReadAccounts
      */
-    public ContactResource get() throws com.ringcentral.RestException, java.io.IOException {
+    public ContactResource get(ReadDirectoryEntryParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (entryId == null) {
             throw new IllegalArgumentException("Parameter entryId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), ContactResource.class);
+    }
+
+    public ContactResource get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
     }
 
     public com.ringcentral.paths.restapi.account.directory.entries.search.Index search() {

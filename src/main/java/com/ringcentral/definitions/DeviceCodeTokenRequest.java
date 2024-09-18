@@ -8,6 +8,7 @@ package com.ringcentral.definitions;
 public class DeviceCodeTokenRequest {
     /**
      * Grant type
+     * Required
      * Enum: urn:ietf:params:oauth:grant-type:device_code
      */
     public String grant_type;

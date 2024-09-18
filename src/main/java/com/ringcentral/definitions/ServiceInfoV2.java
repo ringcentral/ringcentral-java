@@ -15,11 +15,15 @@ public class ServiceInfoV2 {
     /**
      *
      */
+    public ServiceInfoPackage partnerPackage;
+    /**
+     *
+     */
     public ServiceInfoBrand brand;
     /**
      *
      */
-    public ServiceInfoCountryShortModel contractedCountry;
+    public ServiceInfoContractedCountryId contractedCountry;
     /**
      *
      */
@@ -34,12 +38,17 @@ public class ServiceInfoV2 {
         return this;
     }
 
+    public ServiceInfoV2 partnerPackage(ServiceInfoPackage partnerPackage) {
+        this.partnerPackage = partnerPackage;
+        return this;
+    }
+
     public ServiceInfoV2 brand(ServiceInfoBrand brand) {
         this.brand = brand;
         return this;
     }
 
-    public ServiceInfoV2 contractedCountry(ServiceInfoCountryShortModel contractedCountry) {
+    public ServiceInfoV2 contractedCountry(ServiceInfoContractedCountryId contractedCountry) {
         this.contractedCountry = contractedCountry;
         return this;
     }

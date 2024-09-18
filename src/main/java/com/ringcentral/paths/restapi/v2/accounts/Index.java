@@ -59,6 +59,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.v2.accounts.costcenters.Index costCenters() {
+        return new com.ringcentral.paths.restapi.v2.accounts.costcenters.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.v2.accounts.phonenumbers.Index phoneNumbers() {
         return this.phoneNumbers(null);
     }

@@ -17,6 +17,11 @@ public class AddPhoneNumberRequestItem {
      * Enum: Inventory, InventoryPartnerBusinessMobileNumber, PartnerBusinessMobileNumber
      */
     public String usageType;
+    /**
+     * Phone number activation status. Determine whether phone number migration is completed on the partner side.
+     * Enum: Active, Inactive
+     */
+    public String activationStatus;
 
     public AddPhoneNumberRequestItem phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -25,6 +30,11 @@ public class AddPhoneNumberRequestItem {
 
     public AddPhoneNumberRequestItem usageType(String usageType) {
         this.usageType = usageType;
+        return this;
+    }
+
+    public AddPhoneNumberRequestItem activationStatus(String activationStatus) {
+        this.activationStatus = activationStatus;
         return this;
     }
 }

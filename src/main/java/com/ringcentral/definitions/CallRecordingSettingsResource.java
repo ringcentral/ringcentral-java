@@ -13,7 +13,7 @@ public class CallRecordingSettingsResource {
     /**
      * Collection of Greeting Info
      */
-    public GreetingResource[] greetings;
+    public CallRecordingGreetingResource[] greetings;
 
     public CallRecordingSettingsResource onDemand(OnDemandResource onDemand) {
         this.onDemand = onDemand;
@@ -25,7 +25,7 @@ public class CallRecordingSettingsResource {
         return this;
     }
 
-    public CallRecordingSettingsResource greetings(GreetingResource[] greetings) {
+    public CallRecordingSettingsResource greetings(CallRecordingGreetingResource[] greetings) {
         this.greetings = greetings;
         return this;
     }

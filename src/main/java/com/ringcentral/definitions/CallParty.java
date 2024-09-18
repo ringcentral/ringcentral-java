@@ -67,6 +67,10 @@ public class CallParty {
      * Active recordings list
      */
     public RecordingInfo[] recordings;
+    /**
+     * Call metadata.
+     */
+    public MetaData[] metadata;
 
     public CallParty id(String id) {
         this.id = id;
@@ -130,6 +134,11 @@ public class CallParty {
 
     public CallParty recordings(RecordingInfo[] recordings) {
         this.recordings = recordings;
+        return this;
+    }
+
+    public CallParty metadata(MetaData[] metadata) {
+        this.metadata = metadata;
         return this;
     }
 }

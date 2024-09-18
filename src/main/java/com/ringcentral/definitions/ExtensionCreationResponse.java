@@ -77,9 +77,7 @@ public class ExtensionCreationResponse {
      */
     public ProvisioningSiteInfo site;
     /**
-     * Extension current state. If &#039;Unassigned&#039; is specified, then
-     * extensions without `extensionNumber` are returned. If not specified, then
-     * all extensions are returned
+     * Extension status
      * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;

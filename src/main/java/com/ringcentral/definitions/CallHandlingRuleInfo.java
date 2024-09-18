@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class AnsweringRuleInfo {
+public class CallHandlingRuleInfo {
     /**
      * Canonical URI to an answering rule resource
      * Format: uri
@@ -80,92 +80,92 @@ public class AnsweringRuleInfo {
      */
     public MissedCallInfo missedCall;
 
-    public AnsweringRuleInfo uri(String uri) {
+    public CallHandlingRuleInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    public AnsweringRuleInfo id(String id) {
+    public CallHandlingRuleInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    public AnsweringRuleInfo type(String type) {
+    public CallHandlingRuleInfo type(String type) {
         this.type = type;
         return this;
     }
 
-    public AnsweringRuleInfo name(String name) {
+    public CallHandlingRuleInfo name(String name) {
         this.name = name;
         return this;
     }
 
-    public AnsweringRuleInfo enabled(Boolean enabled) {
+    public CallHandlingRuleInfo enabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    public AnsweringRuleInfo schedule(ScheduleInfo schedule) {
+    public CallHandlingRuleInfo schedule(ScheduleInfo schedule) {
         this.schedule = schedule;
         return this;
     }
 
-    public AnsweringRuleInfo calledNumbers(CalledNumberInfo[] calledNumbers) {
+    public CallHandlingRuleInfo calledNumbers(CalledNumberInfo[] calledNumbers) {
         this.calledNumbers = calledNumbers;
         return this;
     }
 
-    public AnsweringRuleInfo callers(CallersInfo[] callers) {
+    public CallHandlingRuleInfo callers(CallersInfo[] callers) {
         this.callers = callers;
         return this;
     }
 
-    public AnsweringRuleInfo callHandlingAction(String callHandlingAction) {
+    public CallHandlingRuleInfo callHandlingAction(String callHandlingAction) {
         this.callHandlingAction = callHandlingAction;
         return this;
     }
 
-    public AnsweringRuleInfo forwarding(ForwardingInfo forwarding) {
+    public CallHandlingRuleInfo forwarding(ForwardingInfo forwarding) {
         this.forwarding = forwarding;
         return this;
     }
 
-    public AnsweringRuleInfo unconditionalForwarding(UnconditionalForwardingInfo unconditionalForwarding) {
+    public CallHandlingRuleInfo unconditionalForwarding(UnconditionalForwardingInfo unconditionalForwarding) {
         this.unconditionalForwarding = unconditionalForwarding;
         return this;
     }
 
-    public AnsweringRuleInfo queue(QueueInfo queue) {
+    public CallHandlingRuleInfo queue(QueueInfo queue) {
         this.queue = queue;
         return this;
     }
 
-    public AnsweringRuleInfo transfer(TransferredExtensionInfo transfer) {
+    public CallHandlingRuleInfo transfer(TransferredExtensionInfo transfer) {
         this.transfer = transfer;
         return this;
     }
 
-    public AnsweringRuleInfo voicemail(VoicemailInfo voicemail) {
+    public CallHandlingRuleInfo voicemail(VoicemailInfo voicemail) {
         this.voicemail = voicemail;
         return this;
     }
 
-    public AnsweringRuleInfo greetings(GreetingInfo[] greetings) {
+    public CallHandlingRuleInfo greetings(GreetingInfo[] greetings) {
         this.greetings = greetings;
         return this;
     }
 
-    public AnsweringRuleInfo screening(String screening) {
+    public CallHandlingRuleInfo screening(String screening) {
         this.screening = screening;
         return this;
     }
 
-    public AnsweringRuleInfo sharedLines(SharedLinesInfo sharedLines) {
+    public CallHandlingRuleInfo sharedLines(SharedLinesInfo sharedLines) {
         this.sharedLines = sharedLines;
         return this;
     }
 
-    public AnsweringRuleInfo missedCall(MissedCallInfo missedCall) {
+    public CallHandlingRuleInfo missedCall(MissedCallInfo missedCall) {
         this.missedCall = missedCall;
         return this;
     }

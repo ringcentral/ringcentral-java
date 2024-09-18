@@ -3,7 +3,8 @@ package com.ringcentral.definitions;
 
 public class ExtensionUpdateRequest {
     /**
-     * Enum: Disabled, Enabled, NotActivated, Frozen
+     * Extension status
+     * Enum: Enabled, Disabled, Frozen, NotActivated
      */
     public String status;
     /**

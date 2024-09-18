@@ -25,6 +25,11 @@ public class AddPhoneNumbersResponseItem {
      * Example: +16501234567
      */
     public String phoneNumber;
+    /**
+     * Phone number activation status. Determine whether phone number migration is completed on the partner side.
+     * Enum: Active, Inactive
+     */
+    public String activationStatus;
 
     public AddPhoneNumbersResponseItem bulkItemSuccessful(Boolean bulkItemSuccessful) {
         this.bulkItemSuccessful = bulkItemSuccessful;
@@ -43,6 +48,11 @@ public class AddPhoneNumbersResponseItem {
 
     public AddPhoneNumbersResponseItem phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public AddPhoneNumbersResponseItem activationStatus(String activationStatus) {
+        this.activationStatus = activationStatus;
         return this;
     }
 }

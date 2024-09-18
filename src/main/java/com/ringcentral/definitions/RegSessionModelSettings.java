@@ -38,6 +38,15 @@ public class RegSessionModelSettings {
      * Indicates that recording exists for the session.
      */
     public Boolean recordingExist;
+    /**
+     * Indicates that post webinar registration will be opened automatically when webinar ends.
+     */
+    public Boolean autoOpenPostWebinarRegistration;
+    /**
+     * The time after which the post webinar will be closed automatically.
+     * Format: date-time
+     */
+    public String postWebinarRegistrationClosingTime;
 
     public RegSessionModelSettings autoCloseLimit(Long autoCloseLimit) {
         this.autoCloseLimit = autoCloseLimit;
@@ -76,6 +85,16 @@ public class RegSessionModelSettings {
 
     public RegSessionModelSettings recordingExist(Boolean recordingExist) {
         this.recordingExist = recordingExist;
+        return this;
+    }
+
+    public RegSessionModelSettings autoOpenPostWebinarRegistration(Boolean autoOpenPostWebinarRegistration) {
+        this.autoOpenPostWebinarRegistration = autoOpenPostWebinarRegistration;
+        return this;
+    }
+
+    public RegSessionModelSettings postWebinarRegistrationClosingTime(String postWebinarRegistrationClosingTime) {
+        this.postWebinarRegistrationClosingTime = postWebinarRegistrationClosingTime;
         return this;
     }
 }

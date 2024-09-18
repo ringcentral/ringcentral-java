@@ -28,10 +28,10 @@ public class ListExtensionsParameters {
      */
     public Long perPage;
     /**
-     * Extension current state. Multiple values are supported. If &#039;Unassigned&#039;
+     * Extension status. Multiple values are supported. If `Unassigned`
      * is specified, then extensions without `extensionNumber` attribute are returned.
      * If not specified, then all extensions are returned
-     * Enum: Enabled, Disabled, NotActivated, Unassigned
+     * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String[] status;
     /**

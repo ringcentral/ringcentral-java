@@ -15,7 +15,7 @@ public class AccountPhoneNumberInfo {
      */
     public String phoneNumber;
     /**
-     * Type of phone number
+     * Type of a phone number
      * Enum: VoiceFax, VoiceOnly, FaxOnly
      */
     public String type;
@@ -41,7 +41,9 @@ public class AccountPhoneNumberInfo {
      */
     public ContactCenterProvider contactCenterProvider;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise, it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is `Normal`, the phone
+     * number is ready to be used. Otherwise, it is an external number not yet
+     * ported to RingCentral
      * Required
      * Enum: Normal, Pending, PortedIn, Temporary, Unknown
      */

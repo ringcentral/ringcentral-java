@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class GreetingResource {
+public class CallRecordingGreetingResource {
     /**
      * Enum: StartRecording, StopRecording, AutomaticRecording
      */
@@ -14,12 +14,12 @@ public class GreetingResource {
      */
     public String mode;
 
-    public GreetingResource type(String type) {
+    public CallRecordingGreetingResource type(String type) {
         this.type = type;
         return this;
     }
 
-    public GreetingResource mode(String mode) {
+    public CallRecordingGreetingResource mode(String mode) {
         this.mode = mode;
         return this;
     }

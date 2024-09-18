@@ -13,7 +13,7 @@ public class MessageTemplateResponse {
     /**
      *
      */
-    public TemplateInfo body;
+    public MessageTemplateInfo body;
     /**
      * Specifies if a template is available on a user (Personal) or a company (Company) level
      * Enum: Company, Personal
@@ -34,7 +34,7 @@ public class MessageTemplateResponse {
         return this;
     }
 
-    public MessageTemplateResponse body(TemplateInfo body) {
+    public MessageTemplateResponse body(MessageTemplateInfo body) {
         this.body = body;
         return this;
     }

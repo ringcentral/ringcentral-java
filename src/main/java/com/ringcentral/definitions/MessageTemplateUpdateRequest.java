@@ -9,7 +9,7 @@ public class MessageTemplateUpdateRequest {
     /**
      * Required
      */
-    public TemplateInfo body;
+    public MessageTemplateInfo body;
     /**
      *
      */
@@ -20,7 +20,7 @@ public class MessageTemplateUpdateRequest {
         return this;
     }
 
-    public MessageTemplateUpdateRequest body(TemplateInfo body) {
+    public MessageTemplateUpdateRequest body(MessageTemplateInfo body) {
         this.body = body;
         return this;
     }

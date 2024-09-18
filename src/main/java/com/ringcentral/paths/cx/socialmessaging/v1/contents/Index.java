@@ -1,8 +1,8 @@
 package com.ringcentral.paths.cx.socialmessaging.v1.contents;
 
 import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateContentRequest;
-import com.ringcentral.definitions.SocMsgListContentsParameters;
+import com.ringcentral.definitions.CreateSocialMessagingContentRequest;
+import com.ringcentral.definitions.ListSocialMessagingContentsParameters;
 
 public class Index {
     public RestClient rc;
@@ -27,22 +27,21 @@ public class Index {
     }
 
     /**
-     * List contents by creation date. The default creation order is descending.
+     * Returns a list of social messaging contents ordered by creation date. The default order is descending.
      * <p>
-     * The account context of this request is determined by the RC Account Id associated with the access token provided
-     * in the Authorization header.
+     * The account context of this request is determined by the RC Account ID associated with
+     * the access token provided in the Authorization header.
      * <p>
-     * The query parameters provided shall be considered an AND operation to filter the list.
+     * The query parameters provided in request will be considered an AND operation to filter the list.
      * <p>
-     * A query parameter not specified or a query parameter provided with no value is treated as not required for
-     * filtering the list.
+     * A query parameter which is not specified or provided with the null value will be ignored.
      * <p>
      * HTTP Method: get
      * Endpoint: /cx/social-messaging/v1/contents
      * Rate Limit Group: Light
      * App Permission: SocialMessaging
      */
-    public String list(SocMsgListContentsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public String list(ListSocialMessagingContentsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(false), queryParams);
         return rb.string();
     }
@@ -52,26 +51,26 @@ public class Index {
     }
 
     /**
-     * Creates new content for use in discussions.
+     * Creates the new social messaging content for use in discussions.
      * <p>
-     * This request is used to reply to already-posted content or to initiate a discussion. If authorized, the
+     * This request is used to reply to an already posted content or to initiate a discussion. If authorized, the
      * authenticated user will be used as the content author.
      * <p>
      * Content will be created and pushed asynchronously to the channel. When the content is successfully pushed to
-     * the channel, the Content.Exported event will be reported.
+     * the channel, the `Content.Exported` event will be reported.
      * <p>
-     * The account context of this request is determined by the RC Account Id associated with the access token provided
+     * The account context of this request is determined by the RC Account ID associated with the access token provided
      * in the Authorization header.
      * <p>
      * Replying to customer content is usually possible unless the channel or conversation is read only. Composing
      * content, on the contrary, depends on the channel itself.
      * <p>
-     * * The channel may not support it (and be purely reactive like Instagram, Messenger, etc.).
+     * - The channel may not support it and be purely reactive like Instagram, Messenger, etc.
      * <p>
-     * * Some channels (usually public accounts like Twitter or Facebook pages) allow for the publishing of content
+     * - Some channels (usually public accounts, like Twitter or Facebook pages) allow content publishing
      * without targeting specific individuals.
      * <p>
-     * * Some channels (usually non-public media) require specific targeting (phone number for SMS, email address
+     * - Some channels (usually non-public media) require specific targeting (phone number for SMS, email address
      * for email, customer_id, etc.) to be able to create content. This is channel-specific and detailed under the
      * generic parameters.
      * <p>
@@ -80,14 +79,13 @@ public class Index {
      * Rate Limit Group: Light
      * App Permission: SocialMessaging
      */
-    public String post(CreateContentRequest createContentRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(false), createContentRequest, null);
+    public String post(CreateSocialMessagingContentRequest createSocialMessagingContentRequest) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(false), createSocialMessagingContentRequest, null);
         return rb.string();
     }
 
     /**
-     * Retrieves the content from the given id.
-     * <p>
+     * Returns the social messaging content by ID specified in path.
      * HTTP Method: get
      * Endpoint: /cx/social-messaging/v1/contents/{contentId}
      * Rate Limit Group: Light

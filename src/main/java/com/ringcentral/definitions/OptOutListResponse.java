@@ -12,14 +12,14 @@ public class OptOutListResponse {
     /**
      *
      */
-    public PagingResource paging;
+    public NonEnumeratedPagingModel paging;
 
     public OptOutListResponse records(OptOutResponse[] records) {
         this.records = records;
         return this;
     }
 
-    public OptOutListResponse paging(PagingResource paging) {
+    public OptOutListResponse paging(NonEnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

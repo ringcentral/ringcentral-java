@@ -15,8 +15,8 @@ public class EmailRecipientInfo {
      */
     public String extensionNumber;
     /**
-     * Current state of an extension
-     * Enum: Enabled, Disable, NotActivated, Unassigned
+     * Extension status
+     * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;
     /**

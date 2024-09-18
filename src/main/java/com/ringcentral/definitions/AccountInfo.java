@@ -20,16 +20,11 @@ public class AccountInfo {
      */
     public String mainNumber;
     /**
-     * Account status
+     * Status of an account
      * Required
-     * Example: Confirmed
      * Enum: Initial, Unconfirmed, Confirmed, Disabled
      */
     public String status;
-    /**
-     *
-     */
-    public AccountStatusInfo statusInfo;
     /**
      * Company name
      * Example: Acme Inc.
@@ -70,11 +65,6 @@ public class AccountInfo {
 
     public AccountInfo status(String status) {
         this.status = status;
-        return this;
-    }
-
-    public AccountInfo statusInfo(AccountStatusInfo statusInfo) {
-        this.statusInfo = statusInfo;
         return this;
     }
 

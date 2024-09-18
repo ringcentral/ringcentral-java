@@ -35,7 +35,9 @@ public class ListAccountPhoneNumbersV2Parameters {
      */
     public String[] usageType;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone number is ready to be used. Otherwise, it is an external number not yet ported to RingCentral
+     * Status of a phone number. If the value is `Normal`, the phone
+     * number is ready to be used. Otherwise, it is an external number not yet
+     * ported to RingCentral
      * Enum: Normal, Pending, PortedIn, Temporary, Unknown
      */
     public String status;

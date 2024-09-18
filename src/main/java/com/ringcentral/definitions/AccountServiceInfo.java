@@ -48,7 +48,7 @@ public class AccountServiceInfo {
      *
      */
     @SerializedName("package")
-    public PackageInfo _package;
+    public BillingPackageInfo _package;
     /**
      *
      */
@@ -99,7 +99,7 @@ public class AccountServiceInfo {
         return this;
     }
 
-    public AccountServiceInfo _package(PackageInfo _package) {
+    public AccountServiceInfo _package(BillingPackageInfo _package) {
         this._package = _package;
         return this;
     }

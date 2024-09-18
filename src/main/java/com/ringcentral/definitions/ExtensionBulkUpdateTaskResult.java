@@ -2,19 +2,19 @@ package com.ringcentral.definitions;
 
 
 /**
- * Result record on multiple extension update task
+ * Resulting record of a task on multiple extensions update
  */
 public class ExtensionBulkUpdateTaskResult {
     /**
      *
      */
-    public ExtensionUpdateShortResult[] affectedItems;
+    public ExtensionBulkUpdateTaskResultAffectedItems affectedItems;
     /**
      *
      */
     public ErrorEntity[] errors;
 
-    public ExtensionBulkUpdateTaskResult affectedItems(ExtensionUpdateShortResult[] affectedItems) {
+    public ExtensionBulkUpdateTaskResult affectedItems(ExtensionBulkUpdateTaskResultAffectedItems affectedItems) {
         this.affectedItems = affectedItems;
         return this;
     }

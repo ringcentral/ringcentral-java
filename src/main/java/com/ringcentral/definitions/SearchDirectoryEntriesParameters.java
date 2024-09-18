@@ -6,6 +6,11 @@ package com.ringcentral.definitions;
  */
 public class SearchDirectoryEntriesParameters {
     /**
+     * Flag to enable cross-site limitation checking
+     * Example: true
+     */
+    public Boolean accessibleSitesOnly;
+    /**
      * A list of Account IDs
      * Example: 400131426008
      */
@@ -31,6 +36,11 @@ public class SearchDirectoryEntriesParameters {
      * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, Site, Room, ProxyAdmin, DelegatedLinesGroup, FlexibleUser, GroupCallPickup, RoomConnector
      */
     public String extensionType;
+
+    public SearchDirectoryEntriesParameters accessibleSitesOnly(Boolean accessibleSitesOnly) {
+        this.accessibleSitesOnly = accessibleSitesOnly;
+        return this;
+    }
 
     public SearchDirectoryEntriesParameters accountId(String accountId) {
         this.accountId = accountId;

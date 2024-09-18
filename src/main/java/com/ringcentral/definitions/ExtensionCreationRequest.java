@@ -50,8 +50,8 @@ public class ExtensionCreationRequest {
      */
     public SiteInfo site;
     /**
-     * Extension current state
-     * Enum: Enabled, Disabled, NotActivated, Unassigned, Frozen
+     * Extension status
+     * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;
     /**

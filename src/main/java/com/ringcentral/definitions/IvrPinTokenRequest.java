@@ -7,6 +7,7 @@ package com.ringcentral.definitions;
 public class IvrPinTokenRequest {
     /**
      * Grant type
+     * Required
      * Enum: ivr_pin
      */
     public String grant_type;

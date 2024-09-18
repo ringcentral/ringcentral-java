@@ -11,7 +11,8 @@ public class CreateUserEmergencyLocationRequest {
      */
     public String addressFormatId;
     /**
-     * If &#039;true&#039; address validation for non-us addresses is skipped
+     * Specifies emergency address validation during the ERL creation/update.
+     * If set to &#039;true&#039;, then address validation for non-US addresses is skipped
      */
     public Boolean trusted;
     /**

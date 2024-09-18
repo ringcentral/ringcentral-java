@@ -13,11 +13,11 @@ public class MeetingsResource {
     /**
      *
      */
-    public MeetingsPagingInfo paging;
+    public EnumeratedPagingModel paging;
     /**
      *
      */
-    public MeetingsNavigationInfo navigation;
+    public PageNavigationModel navigation;
 
     public MeetingsResource uri(String uri) {
         this.uri = uri;
@@ -29,12 +29,12 @@ public class MeetingsResource {
         return this;
     }
 
-    public MeetingsResource paging(MeetingsPagingInfo paging) {
+    public MeetingsResource paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }
 
-    public MeetingsResource navigation(MeetingsNavigationInfo navigation) {
+    public MeetingsResource navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }

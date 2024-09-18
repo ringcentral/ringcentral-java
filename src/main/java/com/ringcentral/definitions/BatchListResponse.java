@@ -12,14 +12,14 @@ public class BatchListResponse {
     /**
      *
      */
-    public PagingResource paging;
+    public NonEnumeratedPagingModel paging;
 
     public BatchListResponse records(MessageBatchResponse[] records) {
         this.records = records;
         return this;
     }
 
-    public BatchListResponse paging(PagingResource paging) {
+    public BatchListResponse paging(NonEnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

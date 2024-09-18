@@ -8,6 +8,7 @@ package com.ringcentral.definitions;
 public class AuthCodeTokenRequest {
     /**
      * Grant type
+     * Required
      * Enum: authorization_code
      */
     public String grant_type;

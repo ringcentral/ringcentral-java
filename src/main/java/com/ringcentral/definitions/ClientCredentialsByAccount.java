@@ -2,11 +2,13 @@ package com.ringcentral.definitions;
 
 
 /**
- * Token endpoint request parameters used in the "Client Credentials" authorization flow with the `client_credentials` grant type
+ * Token endpoint request parameters used in the "Client Credentials" authorization flow
+ * with the `client_credentials` grant type
  */
 public class ClientCredentialsByAccount {
     /**
      * Grant type
+     * Required
      * Enum: client_credentials
      */
     public String grant_type;

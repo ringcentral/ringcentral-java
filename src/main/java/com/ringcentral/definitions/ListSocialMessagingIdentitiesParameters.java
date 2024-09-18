@@ -6,13 +6,18 @@ package com.ringcentral.definitions;
  */
 public class ListSocialMessagingIdentitiesParameters {
     /**
-     * Filter based on the specified `sourceId`
+     * Filter based on the specified channelId.
      */
-    public String sourceId;
+    public String channelId;
     /**
      * Filter based on the specified `identityGroupIds` (separated by commas)
      */
     public String[] identityGroupIds;
+    /**
+     * Either Agent or Customer
+     * Enum: Agent, Customer
+     */
+    public String identityType;
     /**
      * Filter based on the specified `userId`
      */
@@ -22,10 +27,10 @@ public class ListSocialMessagingIdentitiesParameters {
      */
     public String uuid;
     /**
-     * Ordering by creationTime is descending by default.
+     * Ordering by creationTime and lastModifiedTime is descending by default.
      * Example: +creationTime
      * Default: -creationTime
-     * Enum: -creationTime, +creationTime, creationTime
+     * Enum: -creationTime, +creationTime, creationTime, -lastModifiedTime, +lastModifiedTime, lastModifiedTime
      */
     public String orderBy;
     /**
@@ -44,13 +49,18 @@ public class ListSocialMessagingIdentitiesParameters {
      */
     public Long perPage;
 
-    public ListSocialMessagingIdentitiesParameters sourceId(String sourceId) {
-        this.sourceId = sourceId;
+    public ListSocialMessagingIdentitiesParameters channelId(String channelId) {
+        this.channelId = channelId;
         return this;
     }
 
     public ListSocialMessagingIdentitiesParameters identityGroupIds(String[] identityGroupIds) {
         this.identityGroupIds = identityGroupIds;
+        return this;
+    }
+
+    public ListSocialMessagingIdentitiesParameters identityType(String identityType) {
+        this.identityType = identityType;
         return this;
     }
 

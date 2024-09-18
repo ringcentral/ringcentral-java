@@ -10,7 +10,7 @@ public class MessageTemplateRequest {
     /**
      * Required
      */
-    public TemplateInfo body;
+    public MessageTemplateInfo body;
     /**
      *
      */
@@ -21,7 +21,7 @@ public class MessageTemplateRequest {
         return this;
     }
 
-    public MessageTemplateRequest body(TemplateInfo body) {
+    public MessageTemplateRequest body(MessageTemplateInfo body) {
         this.body = body;
         return this;
     }

@@ -63,15 +63,15 @@ public class Index {
      * App Permission: ReadAccounts
      * User Permission: ReadUserAnsweringRules
      */
-    public AnsweringRuleInfo get(ReadAnsweringRuleParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public CallHandlingRuleInfo get(ReadAnsweringRuleParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (ruleId == null) {
             throw new IllegalArgumentException("Parameter ruleId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), AnsweringRuleInfo.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallHandlingRuleInfo.class);
     }
 
-    public AnsweringRuleInfo get() throws com.ringcentral.RestException, java.io.IOException {
+    public CallHandlingRuleInfo get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
 
@@ -83,12 +83,12 @@ public class Index {
      * App Permission: EditExtensions
      * User Permission: EditUserAnsweringRules
      */
-    public AnsweringRuleInfo put(UpdateAnsweringRuleRequest updateAnsweringRuleRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public CallHandlingRuleInfo put(UpdateAnsweringRuleRequest updateAnsweringRuleRequest) throws com.ringcentral.RestException, java.io.IOException {
         if (ruleId == null) {
             throw new IllegalArgumentException("Parameter ruleId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.put(this.path(), updateAnsweringRuleRequest, null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), AnsweringRuleInfo.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallHandlingRuleInfo.class);
     }
 
     /**

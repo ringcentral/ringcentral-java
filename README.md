@@ -21,8 +21,10 @@ can be accessed via more than 70 APIs. The platform's main capabilities include 
 
 ## Additional resources
 
-* [RingCentral API Reference](https://developer.ringcentral.com/api-docs/latest/index.html) - an interactive reference for the RingCentral API that allows developers to make API calls with no code.
-* [Document](https://ringcentral.github.io/ringcentral-java/javadoc) - an interactive reference for the SDK code documentation.
+* [RingCentral API Reference](https://developer.ringcentral.com/api-docs/latest/index.html) - an interactive reference
+  for the RingCentral API that allows developers to make API calls with no code.
+* [Document](https://ringcentral.github.io/ringcentral-java/javadoc) - an interactive reference for the SDK code
+  documentation.
 
 ## Getting help and support
 

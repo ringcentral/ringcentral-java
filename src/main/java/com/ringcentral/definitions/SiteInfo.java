@@ -38,6 +38,11 @@ public class SiteInfo {
      */
     public RegionalSettings regionalSettings;
     /**
+     * Site access status for cross-site limitation
+     * Enum: Limited, Unlimited
+     */
+    public String siteAccess;
+    /**
      *
      */
     public OperatorInfo operator;
@@ -83,6 +88,11 @@ public class SiteInfo {
 
     public SiteInfo regionalSettings(RegionalSettings regionalSettings) {
         this.regionalSettings = regionalSettings;
+        return this;
+    }
+
+    public SiteInfo siteAccess(String siteAccess) {
+        this.siteAccess = siteAccess;
         return this;
     }
 

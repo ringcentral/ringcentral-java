@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 
-public class PackageInfo {
+public class BillingPackageInfo {
     /**
      * Billing package version
      */
@@ -11,12 +11,12 @@ public class PackageInfo {
      */
     public String id;
 
-    public PackageInfo version(String version) {
+    public BillingPackageInfo version(String version) {
         this.version = version;
         return this;
     }
 
-    public PackageInfo id(String id) {
+    public BillingPackageInfo id(String id) {
         this.id = id;
         return this;
     }

@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * The indication of a number to be deleted - either "id" or "phoneNumber" must be specified.
+ * The indication of a number to be deleted - either `id` or `phoneNumber` must be specified.
  */
 public class DeletePhoneNumbersRequestItem {
     /**

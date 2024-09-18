@@ -66,6 +66,11 @@ public class IdentityModel {
      */
     public String identityGroupId;
     /**
+     * Either Agent or Customer
+     * Enum: Agent, Customer
+     */
+    public String identityType;
+    /**
      * LastName.
      * Example: Doe
      */
@@ -83,7 +88,7 @@ public class IdentityModel {
     /**
      * Type of identity
      * Required
-     * Enum: AppleMessagesForBusiness, Email, EngageMessaging, Facebook, GoogleBusinessMessages, GoogleMyBusiness, Instagram, Linkedin, Twitter, Viber, WhatsApp, Youtube
+     * Enum: AppleMessagesForBusiness, Email, EngageMessaging, Facebook, GoogleMyBusiness, Instagram, Linkedin, Twitter, Viber, WhatsApp, Youtube
      */
     public String type;
     /**
@@ -249,6 +254,11 @@ public class IdentityModel {
 
     public IdentityModel identityGroupId(String identityGroupId) {
         this.identityGroupId = identityGroupId;
+        return this;
+    }
+
+    public IdentityModel identityType(String identityType) {
+        this.identityType = identityType;
         return this;
     }
 

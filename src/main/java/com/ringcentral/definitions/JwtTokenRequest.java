@@ -8,6 +8,7 @@ package com.ringcentral.definitions;
 public class JwtTokenRequest {
     /**
      * Grant type
+     * Required
      * Enum: urn:ietf:params:oauth:grant-type:jwt-bearer, partner_jwt
      */
     public String grant_type;

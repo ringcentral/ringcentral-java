@@ -11,7 +11,7 @@ public class UserAnsweringRuleList {
     /**
      * List of answering rules
      */
-    public AnsweringRuleInfo[] records;
+    public CallHandlingRuleInfo[] records;
     /**
      *
      */
@@ -26,7 +26,7 @@ public class UserAnsweringRuleList {
         return this;
     }
 
-    public UserAnsweringRuleList records(AnsweringRuleInfo[] records) {
+    public UserAnsweringRuleList records(CallHandlingRuleInfo[] records) {
         this.records = records;
         return this;
     }

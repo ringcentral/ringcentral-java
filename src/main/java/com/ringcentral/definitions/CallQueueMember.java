@@ -20,7 +20,7 @@ public class CallQueueMember {
     /**
      *
      */
-    public SiteResource site;
+    public SiteBasicInfo site;
 
     public CallQueueMember id(String id) {
         this.id = id;
@@ -37,7 +37,7 @@ public class CallQueueMember {
         return this;
     }
 
-    public CallQueueMember site(SiteResource site) {
+    public CallQueueMember site(SiteBasicInfo site) {
         this.site = site;
         return this;
     }

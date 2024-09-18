@@ -35,6 +35,12 @@ public class RegSessionModel {
      */
     public Long registrantCount;
     /**
+     * The current number of post webinar registrants
+     * Format: int32
+     * Example: 10
+     */
+    public Long postWebinarRegistrantCount;
+    /**
      * Indicates that there are non-test registrants
      * Required
      * Example: true
@@ -72,6 +78,11 @@ public class RegSessionModel {
 
     public RegSessionModel registrantCount(Long registrantCount) {
         this.registrantCount = registrantCount;
+        return this;
+    }
+
+    public RegSessionModel postWebinarRegistrantCount(Long postWebinarRegistrantCount) {
+        this.postWebinarRegistrantCount = postWebinarRegistrantCount;
         return this;
     }
 

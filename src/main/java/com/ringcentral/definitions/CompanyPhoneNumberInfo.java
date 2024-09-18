@@ -39,15 +39,15 @@ public class CompanyPhoneNumberInfo {
      */
     public String phoneNumber;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone
-     * number is ready to be used. If the value is &#039;Pending&#039; it is an
-     * external number not yet ported to RingCentral.
-     * Enum: Normal, Pending, PortedIn, Temporary
+     * Status of a phone number. If the value is `Normal`, the phone
+     * number is ready to be used. Otherwise, it is an external number not yet
+     * ported to RingCentral
+     * Enum: Normal, Pending, PortedIn, Temporary, Unknown
      */
     public String status;
     /**
-     * Phone number type
-     * Enum: VoiceFax, FaxOnly, VoiceOnly
+     * Type of a phone number
+     * Enum: VoiceFax, VoiceOnly, FaxOnly
      */
     public String type;
     /**
@@ -73,6 +73,11 @@ public class CompanyPhoneNumberInfo {
      * Specifies if a phone number is primary, i.e. displayed as &#039;main number&#039; and called by default
      */
     public Boolean primary;
+    /**
+     * Phone number activation status. Determine whether phone number migration is completed on the partner side.
+     * Enum: Active, Inactive
+     */
+    public String activationStatus;
 
     public CompanyPhoneNumberInfo uri(String uri) {
         this.uri = uri;
@@ -146,6 +151,11 @@ public class CompanyPhoneNumberInfo {
 
     public CompanyPhoneNumberInfo primary(Boolean primary) {
         this.primary = primary;
+        return this;
+    }
+
+    public CompanyPhoneNumberInfo activationStatus(String activationStatus) {
+        this.activationStatus = activationStatus;
         return this;
     }
 }

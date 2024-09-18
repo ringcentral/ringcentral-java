@@ -18,6 +18,7 @@ public class ListEmergencyLocationsParameters {
      */
     public String searchString;
     /**
+     * Emergency address status
      * Enum: Valid, Invalid, Provisioning
      */
     public String addressStatus;

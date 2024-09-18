@@ -47,15 +47,15 @@ public class UserPhoneNumberInfo {
      */
     public Boolean primary;
     /**
-     * Status of a phone number. If the value is &#039;Normal&#039;, the phone
+     * Status of a phone number. If the value is `Normal`, the phone
      * number is ready to be used. Otherwise, it is an external number not yet
      * ported to RingCentral
-     * Enum: Normal, Pending, PortedIn, Temporary
+     * Enum: Normal, Pending, PortedIn, Temporary, Unknown
      */
     public String status;
     /**
-     * Phone number type
-     * Enum: VoiceFax, FaxOnly, VoiceOnly
+     * Type of a phone number
+     * Enum: VoiceFax, VoiceOnly, FaxOnly
      */
     public String type;
     /**

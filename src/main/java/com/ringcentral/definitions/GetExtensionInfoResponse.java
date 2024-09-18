@@ -93,9 +93,7 @@ public class GetExtensionInfoResponse {
      */
     public String setupWizardState;
     /**
-     * Extension current state. If &#039;Unassigned&#039; is specified, then
-     * extensions without `extensionNumber` are returned. If not specified,
-     * then all extensions are returned
+     * Extension status
      * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;
@@ -133,6 +131,17 @@ public class GetExtensionInfoResponse {
      *
      */
     public AssignedCountryInfo assignedCountry;
+    /**
+     * Extension creation date/time, in ISO 8601 format
+     * Format: date-time
+     * Example: 2024-06-06T07:01:14.123Z
+     */
+    public String creationTime;
+    /**
+     * Site access status for cross-site limitation
+     * Enum: Limited, Unlimited
+     */
+    public String siteAccess;
 
     public GetExtensionInfoResponse id(Long id) {
         this.id = id;
@@ -261,6 +270,16 @@ public class GetExtensionInfoResponse {
 
     public GetExtensionInfoResponse assignedCountry(AssignedCountryInfo assignedCountry) {
         this.assignedCountry = assignedCountry;
+        return this;
+    }
+
+    public GetExtensionInfoResponse creationTime(String creationTime) {
+        this.creationTime = creationTime;
+        return this;
+    }
+
+    public GetExtensionInfoResponse siteAccess(String siteAccess) {
+        this.siteAccess = siteAccess;
         return this;
     }
 }

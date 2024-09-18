@@ -10,7 +10,8 @@ public class SmsRequestCountryInfo {
      */
     public String id;
     /**
-     * ISO 3166-1 alpha-2 code of a country
+     * Two-letter country code in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format
+     * Example: US
      */
     public String isoCode;
 

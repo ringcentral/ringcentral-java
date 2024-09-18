@@ -12,14 +12,14 @@ public class MessageListResponse {
     /**
      *
      */
-    public PagingResource paging;
+    public NonEnumeratedPagingModel paging;
 
     public MessageListResponse records(MessageListMessageResponse[] records) {
         this.records = records;
         return this;
     }
 
-    public MessageListResponse paging(PagingResource paging) {
+    public MessageListResponse paging(NonEnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

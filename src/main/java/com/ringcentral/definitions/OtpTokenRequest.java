@@ -2,11 +2,13 @@ package com.ringcentral.definitions;
 
 
 /**
- * Token endpoint request parameters used in the "One-time Password" (OTP) authorization flow with the `otp` grant type
+ * Token endpoint request parameters used in the "One-time Password" (OTP) authorization flow
+ * with the `otp` grant type
  */
 public class OtpTokenRequest {
     /**
      * Grant type
+     * Required
      * Enum: otp
      */
     public String grant_type;

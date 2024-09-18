@@ -82,7 +82,8 @@ public class DeviceResource {
      */
     public Boolean useAsCommonPhone;
     /**
-     * This flag indicates whether this device is used for hot desking or not
+     * Indicates whether this device is used for hot desking or not.
+     * Returned if `useAsCommonPhone` is set to false
      */
     public Boolean hotDeskDevice;
     /**

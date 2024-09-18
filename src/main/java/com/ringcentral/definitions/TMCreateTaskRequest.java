@@ -46,7 +46,7 @@ public class TMCreateTaskRequest {
     /**
      *
      */
-    public TMAttachmentInfo[] attachments;
+    public TaskAttachment[] attachments;
 
     public TMCreateTaskRequest subject(String subject) {
         this.subject = subject;
@@ -93,7 +93,7 @@ public class TMCreateTaskRequest {
         return this;
     }
 
-    public TMCreateTaskRequest attachments(TMAttachmentInfo[] attachments) {
+    public TMCreateTaskRequest attachments(TaskAttachment[] attachments) {
         this.attachments = attachments;
         return this;
     }

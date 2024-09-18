@@ -26,7 +26,8 @@ public class AccountRegionalSettings {
      */
     public FormattingLocaleInfo formattingLocale;
     /**
-     * Time format setting. The default value is &#039;12h&#039; = [&#039;12h&#039;, &#039;24h&#039;]
+     * Time format (12-hours or 24-hours).
+     * Default: 12h
      * Enum: 12h, 24h
      */
     public String timeFormat;

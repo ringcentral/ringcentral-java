@@ -5,16 +5,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class ContentModel {
     /**
-     * An array containing the attachments that are attached to the content.
+     * Array of attachments to be added to the content
      * Required
      */
-    public ContentAttachment[] attachments;
+    public SocMsgContentAttachment[] attachments;
     /**
-     * Identity identifier of the author of content.
-     * <p>
-     * Not mandatory on creation, by default it uses the token&#039;s user first identity on channel.
+     * Identity identifier of the content author. Not mandatory on creation,
+     * by default it uses the token&#039;s user first identity on channel
      * Required
-     * Example: 541014e17aa58d8ccf000023
      */
     public String authorIdentityId;
     /**
@@ -26,26 +24,23 @@ public class ContentModel {
      */
     public Boolean autoSubmitted;
     /**
-     * The content&#039;s body.
+     * Content body. On creation this field is mandatory except for WhatsApp content
+     * using templates. The following are the channels supported and their **max length**
+     * restrictions (in brackets):
      * <p>
-     * On creation this field is mandatory except for WhatsApp content using templates.
-     * <p>
-     * The following are the max length restrictions for the different channels supported.
-     * Channel and max length
-     * * Apple Messages For Business (max length 10000)
-     * * Email (max length 262144)
-     * * RingCX Digital Messaging (max length 1024)
-     * * Facebook (max length 8000)
-     * * GoogleBusinessMessages (max length 3000)
-     * * Google My Business (max length 4000)
-     * * Instagram (max length 950)
-     * * Instagram Messaging (max length 1000)
-     * * LinkedIn (max length 3000)
-     * * Messenger (max length 2000)
-     * * Twitter (max length 280)
-     * * Viber (max length 7000)
-     * * WhatsApp (max length 3800)
-     * * Youtube (max length 8000)
+     * - *Apple Messages For Business* (10000)
+     * - *Email* (262144)
+     * - *RingCX Digital Messaging* (1024)
+     * - *Facebook* (8000)
+     * - *Google My Business* (4000)
+     * - *Instagram* (950)
+     * - *Instagram Messaging* (1000)
+     * - *LinkedIn* (3000)
+     * - *Messenger* (2000)
+     * - *Twitter* (280)
+     * - *Viber* (7000)
+     * - *WhatsApp* (3800)
+     * - *Youtube* (8000)
      * Required
      * Example: Body of the content
      */
@@ -55,17 +50,26 @@ public class ContentModel {
      */
     public ContentBodyFormatted bodyFormatted;
     /**
-     * Values can be Text or Html.
+     * Content input format
      * Required
      * Enum: Text, Html
      */
     public String bodyInputFormat;
     /**
-     * List of the category identifiers of the content.
+     * List of the category identifiers of the content
      * Required
      * Example: 541014e17aa58d8ccf000023,541014e17aa58d8ccf002023
      */
     public String[] categoryIds;
+    /**
+     * Direction of the content.
+     * <p>
+     * * Incoming contents are received from a channel.
+     * * Outgoing contents are exported to a channel.
+     * Example: Incoming
+     * Enum: Incoming, Outgoing
+     */
+    public String contentDirection;
     /**
      *
      */
@@ -78,139 +82,131 @@ public class ContentModel {
      */
     public String creationTime;
     /**
-     * Created from of the content.
+     * Source of content
      * Required
      * Enum: Synchronizer, Interface, Api, AutoSurvey, AutoResponseTrigger, AutoRequestEmail
      */
     public String createdFrom;
     /**
-     * RC user id of the creator
+     * RingCentral user identifier of the creator
      * Required
      * Example: 2683222036
      */
     public String creatorId;
     /**
+     * True if the content is the first in the thread.
+     */
+    public Boolean firstInThread;
+    /**
      * External categories of the content.
-     * <p>
-     * Present only if the content has foreignCategories.
+     * Returned only if the content has `foreignCategories`
      * Example: foreign_category_id
      */
     public String[] foreignCategories;
     /**
-     * Identifier of the content.
+     * Content identifier
      * Required
-     * Example: 541014e17aa58d8ccf000023
      */
     public String id;
     /**
-     * The identity identifier of the content to which this content is a reply to.
+     * Identifier of the content identity to which this content is a reply to.
+     * If the channel does not support discussion initiation, this parameter is mandatory
      * Required
-     * Example: 541014e17asdd8ccf000023
      */
     public String inReplyToAuthorIdentityId;
     /**
-     * The content identifier to which this content is a reply to.
-     * <p>
-     * On creation, if omitted, a new discussion will be created. If the channel does not support to initiate discussion this parameter is mandatory.
+     * Content identifier to which this content is a reply to. On creation, if omitted,
+     * a new discussion will be created. If the channel does not support discussion initiation,
+     * this parameter is mandatory
      * Required
-     * Example: 123414e17asdd8ccf000023
      */
     public String inReplyToContentId;
     /**
-     * The intervention identifier of the content.
+     * Intervention identifier of the content
      * Required
-     * Example: 123415437asdd8ccf000023
      */
     public String interventionId;
     /**
-     * Language of the content.
+     * Language of the content
      * Required
      * Example: En
      */
     public String language;
     /**
-     * True if the content is publicly visible on the remote channel (default).
-     * <p>
-     * Private content is NOT supported on every channel.
+     * If set to `true`, then the content is publicly visible on remote channel.
+     * Private content is NOT supported on every channel
      * Required
      * Default: true
      */
     @SerializedName("public")
     public Boolean _public;
     /**
-     * True if the content is published on the remote channel.
+     * If set to `true`, then the content is published on remote channel
      * Required
      * Example: true
      */
     public Boolean published;
     /**
-     * Rating of the content.
-     * <p>
-     * Present only if the content supports rating and rating is filled.
+     * Rating of content. Present only if the content supports rating and rating is filled
      * Required
      * Format: int32
      * Example: 4
      */
     public Long rating;
     /**
-     * True if the content has been deleted on the remote channel.
+     * Set to `true` if content has been deleted on remote channel
      * Required
      */
     public Boolean remotelyDeleted;
     /**
-     * Identifier of the channel.
-     * <p>
-     * On creation if `inReplyToContentId` is specified, the channel will be determined from it. Otherwise, this parameter is mandatory.
+     * Channel identifier.
      * Required
-     * Example: fff415437asdd8ccf000023
+     * Example: 506d9e817aa58d1259000f12
      */
-    public String sourceId;
+    public String channelId;
     /**
-     * Type of the channel.
+     * Type of a channel
      * Required
-     * Enum: AppleMessagesForBusiness, Email, EngageMessaging, Facebook, GoogleBusinessMessages, GoogleMyBusiness, Instagram, InstagramMessaging, Linkedin, Messenger, Twitter, Viber, WhatsApp, Youtube
+     * Enum: AppleMessagesForBusiness, Email, EngageMessaging, Facebook, GoogleMyBusiness, Instagram, InstagramMessaging, Linkedin, Messenger, Twitter, Viber, WhatsApp, Youtube
      */
-    public String sourceType;
+    public String channelType;
     /**
-     * External Uri of the content channel.
+     * External URI of a content channel
      * Required
      * Format: uri
      */
-    public String sourceUri;
+    public String channelUri;
     /**
-     * Content status.
+     * Content status
      * Required
      * Enum: New, Assigned, Replied, UserReply, UserInitiated, Ignored
      */
     public String status;
     /**
-     * Synchronization status.
+     * Synchronization status
      * Required
      * Example: success
      */
     public String synchronizationStatus;
     /**
-     * Synchronization error details.
+     * Synchronization error details
      * Required
      */
     public String synchronizationError;
     /**
-     * Content thread identifier of the content.
+     * Content thread identifier
      * Required
      */
     public String threadId;
     /**
-     * Applicable to Email channels only.
-     * <p>
-     * The subject of the email.
-     * <p>
-     * This field is mandatory when initiating a discussion.
+     * Applicable to Email channels only. The subject of the email.
+     * This field is mandatory when initiating a discussion
      * Required
      * Example: An email title
      */
     public String title;
     /**
-     * Type of the content.
+     * Type of the content
      * Required
      * Example: Email
      * Enum: Album, AuthenticateMessage, AuthenticateResponse, Carousel, CarouselMessage, Comment, ContactMessage, Content, Email, FormMessage, FormResponse, HsmMessage, Link, ListMessage, Media, Message, OutboundMessage, PaymentMessage, Photo, PostbackMessage, PrivateTweet, PromptMessage, Question, Review, ReviewResponse, RichLinkMessage, SelectMessage, Status, TemplateMessage, TimePickerMessage, Tweet, Video, VideoCallRequestMessage
@@ -224,12 +220,12 @@ public class ContentModel {
      */
     public String lastModifiedTime;
     /**
-     * Types of structured messages that can be used to reply to this type of message.
+     * Types of structured messages that can be used to reply to this type of message
      * Required
      */
     public String[] capabilitiesSupported;
 
-    public ContentModel attachments(ContentAttachment[] attachments) {
+    public ContentModel attachments(SocMsgContentAttachment[] attachments) {
         this.attachments = attachments;
         return this;
     }
@@ -264,6 +260,11 @@ public class ContentModel {
         return this;
     }
 
+    public ContentModel contentDirection(String contentDirection) {
+        this.contentDirection = contentDirection;
+        return this;
+    }
+
     public ContentModel contextData(ContentContextData contextData) {
         this.contextData = contextData;
         return this;
@@ -281,6 +282,11 @@ public class ContentModel {
 
     public ContentModel creatorId(String creatorId) {
         this.creatorId = creatorId;
+        return this;
+    }
+
+    public ContentModel firstInThread(Boolean firstInThread) {
+        this.firstInThread = firstInThread;
         return this;
     }
 
@@ -334,18 +340,18 @@ public class ContentModel {
         return this;
     }
 
-    public ContentModel sourceId(String sourceId) {
-        this.sourceId = sourceId;
+    public ContentModel channelId(String channelId) {
+        this.channelId = channelId;
         return this;
     }
 
-    public ContentModel sourceType(String sourceType) {
-        this.sourceType = sourceType;
+    public ContentModel channelType(String channelType) {
+        this.channelType = channelType;
         return this;
     }
 
-    public ContentModel sourceUri(String sourceUri) {
-        this.sourceUri = sourceUri;
+    public ContentModel channelUri(String channelUri) {
+        this.channelUri = channelUri;
         return this;
     }
 

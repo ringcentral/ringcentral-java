@@ -43,8 +43,8 @@ public class PhoneNumberInfoIntId {
      */
     public String status;
     /**
-     * Phone number type
-     * Enum: VoiceFax, FaxOnly, VoiceOnly
+     * Type of a phone number
+     * Enum: VoiceFax, VoiceOnly, FaxOnly
      */
     public String type;
     /**

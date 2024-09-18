@@ -34,14 +34,12 @@ public class GetExtensionListInfoResponse {
      */
     public ProfileImageInfo profileImage;
     /**
-     * Extension current state. If &#039;Unassigned&#039; is specified, then
-     * extensions without `extensionNumber` are returned. If not specified,
-     * then all extensions are returned
+     * Extension status
      * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
      */
     public String status;
     /**
-     * Extension type. Please note that legacy &#039;Department&#039; extension type
+     * Extension type. Please note that legacy `Department` extension type
      * corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product
      * terminology
      * Enum: User, FaxUser, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Bot, Room, Limited, Site, ProxyAdmin, DelegatedLinesGroup, GroupCallPickup
@@ -74,6 +72,12 @@ public class GetExtensionListInfoResponse {
      *
      */
     public CostCenterInfo costCenter;
+    /**
+     * Extension creation date/time, in ISO 8601 format
+     * Format: date-time
+     * Example: 2024-06-06T07:01:14.123Z
+     */
+    public String creationTime;
 
     public GetExtensionListInfoResponse id(Long id) {
         this.id = id;
@@ -147,6 +151,11 @@ public class GetExtensionListInfoResponse {
 
     public GetExtensionListInfoResponse costCenter(CostCenterInfo costCenter) {
         this.costCenter = costCenter;
+        return this;
+    }
+
+    public GetExtensionListInfoResponse creationTime(String creationTime) {
+        this.creationTime = creationTime;
         return this;
     }
 }

@@ -22,7 +22,7 @@ public class Index {
     }
 
     /**
-     * Replaces (swaps) phone numbers from Inventory with the main, company, direct or company fax numbers.
+     * Replaces (swaps) phone numbers from inventory with the main, company, direct or company fax numbers.
      * This method is used to replace temporary numbers when the porting process is complete.
      * <p>
      * HTTP Method: post

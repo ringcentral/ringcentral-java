@@ -36,7 +36,9 @@ public class PartySuperviseResponse {
      */
     public OwnerInfo owner;
     /**
-     * Specifies if a device is stand-alone
+     * If `true` then the party is not connected to a session voice
+     * conference, `false` means the party is connected to other parties in a
+     * session
      */
     public Boolean standAlone;
     /**

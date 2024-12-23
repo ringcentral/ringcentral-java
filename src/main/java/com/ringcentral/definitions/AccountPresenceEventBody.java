@@ -11,7 +11,7 @@ public class AccountPresenceEventBody {
      */
     public String extensionId;
     /**
-     * Telephony presence status. Returned if telephony status is changed.
+     * Telephony presence status. Returned if telephony status is changed
      * Enum: NoCall, CallConnected, Ringing, OnHold, ParkedCall
      */
     public String telephonyStatus;
@@ -35,6 +35,11 @@ public class AccountPresenceEventBody {
      * Enum: TakeAllCalls, DoNotAcceptAnyCalls, DoNotAcceptDepartmentCalls, TakeDepartmentCallsOnly
      */
     public String dndStatus;
+    /**
+     * Meetings presence status. Specifies if a user is on a meeting
+     * Enum: Connected, Disconnected
+     */
+    public String meetingStatus;
     /**
      * If `true` enables other extensions to see the extension presence status
      */
@@ -79,6 +84,11 @@ public class AccountPresenceEventBody {
 
     public AccountPresenceEventBody dndStatus(String dndStatus) {
         this.dndStatus = dndStatus;
+        return this;
+    }
+
+    public AccountPresenceEventBody meetingStatus(String meetingStatus) {
+        this.meetingStatus = meetingStatus;
         return this;
     }
 

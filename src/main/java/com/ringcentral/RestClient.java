@@ -311,7 +311,7 @@ public class RestClient {
                 builder = builder.put(requestBody);
                 break;
             case DELETE:
-                builder = builder.delete();
+                builder = builder.delete(requestBody);
                 break;
             case PATCH:
                 builder = builder.patch(requestBody);

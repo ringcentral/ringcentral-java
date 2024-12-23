@@ -1,31 +1,31 @@
 {
-  "license": "MIT",
-  "scripts": {
-    "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && ts-node -r dotenv-override-true/config ./src/definitions.ts",
-    "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && ts-node -r dotenv-override-true/config ./src/paths.ts",
-    "samples": "ts-node -r dotenv-override-true/config ./src/samples.ts",
-    "generate": "yarn definitions && yarn paths && yarn samples"
-  },
-  "dependencies": {
-    "change-case": "4.1.2",
-    "js-yaml": "^4.1.0",
-    "lower-case-first": "^3.0.0",
-    "openapi-types": "^12.1.3",
-    "ramda": "^0.30.1",
-    "ringcentral-open-api-parser": "^0.15.1"
-  },
-  "devDependencies": {
-    "@types/js-yaml": "^4.0.9",
-    "@types/node": "^22.10.2",
-    "@types/ramda": "^0.30.2",
-    "dotenv-override-true": "^6.2.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
-    "yarn-upgrade-all": "^0.7.4"
-  },
-  "yarn-upgrade-all": {
-    "ignore": [
-      "change-case"
-    ]
-  }
+    "license": "MIT",
+    "scripts": {
+        "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && ts-node -r dotenv-override-true/config ./src/definitions.ts",
+        "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && ts-node -r dotenv-override-true/config ./src/paths.ts",
+        "samples": "ts-node -r dotenv-override-true/config ./src/samples.ts",
+        "generate": "yarn definitions && yarn paths && yarn samples"
+    },
+    "dependencies": {
+        "change-case": "4.1.2",
+        "js-yaml": "^4.1.0",
+        "lower-case-first": "^3.0.0",
+        "openapi-types": "^12.1.3",
+        "ramda": "^0.30.1",
+        "ringcentral-open-api-parser": "^0.15.1"
+    },
+    "devDependencies": {
+        "@types/js-yaml": "^4.0.9",
+        "@types/node": "^22.10.2",
+        "@types/ramda": "^0.30.2",
+        "dotenv-override-true": "^6.2.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.2",
+        "yarn-upgrade-all": "^0.7.4"
+    },
+    "yarn-upgrade-all": {
+        "ignore": [
+            "change-case"
+        ]
+    }
 }

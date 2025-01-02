@@ -1,0 +1,56 @@
+name: Publish to Maven Central
+
+on:
+    push:
+        tags:
+            - '*'
+    workflow_dispatch: # Allow manual triggering of the workflow
+
+jobs:
+    publish:
+        name: Publish to Maven Central
+        runs-on: ubuntu-latest
+
+        steps:
+            # Step 1: Checkout the code
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            # Step 2: Set up Java
+            - name: Set up JDK
+              uses: actions/setup-java@v3
+              with:
+                  distribution: 'temurin'
+                  java-version: '17' # Use your project's Java version
+
+            # Step 3: Cache Gradle dependencies
+            - name: Cache Gradle dependencies
+              uses: actions/cache@v3
+              with:
+                  path: |
+                      ~/.gradle/caches
+                      ~/.gradle/wrapper
+                  key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+                  restore-keys: |
+                      gradle-${{ runner.os }}
+
+            # Step 4: Grant execute permission to Gradle wrapper
+            - name: Make Gradle wrapper executable
+              run: chmod +x ./gradlew
+
+            # Step 6: Publish to Maven Central
+            - name: Publish to Maven Central
+              env:
+                  OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+                  OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+                  SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+                  SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
+              run: |
+                  # Decode and import the signing key
+                  echo "${SIGNING_KEY}" | base64 --decode | gpg --batch --import || {
+                    echo "Failed to import signing key";
+                    exit 1;
+                  }
+
+                  # Run the Gradle publish task
+                  ./gradlew publish

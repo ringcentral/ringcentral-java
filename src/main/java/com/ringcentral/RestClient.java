@@ -275,7 +275,16 @@ public class RestClient {
     // this method returns the raw response instead of just the body
     public Response requestRaw(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
         requestBody) throws IOException, RestException {
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(server).newBuilder(endpoint);
+        HttpUrl.Builder urlBuilder;
+        if(endpoint.startsWith("https://") || endpoint.startsWith("http://")) {
+            // example: https://media.ringcentral.com/restapi/v1.0/account/809646016/ivr-prompts/838195017/content
+            urlBuilder = HttpUrl.parse(endpoint).newBuilder();
+        } else {
+            // special case: server has path segments, like http://xmn-mck01.int.rclabenv.com:65003/pubapi
+            // rEndpoint is relative endpoint
+            String rEndpoint = endpoint.startsWith("/") ? endpoint.substring(1) : endpoint;
+            urlBuilder = HttpUrl.parse(server).newBuilder().addPathSegments(rEndpoint);
+        }
 
         if (queryParameters != null) {
             for (Field field : queryParameters.getClass().getFields()) {

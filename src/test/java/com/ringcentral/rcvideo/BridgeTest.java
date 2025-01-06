@@ -16,7 +16,6 @@ public class BridgeTest {
 
     @Before
     public void setUp() throws RestException, IOException {
-        System.out.println(System.getenv("RINGCENTRAL_SERVER_URL"));
         rc = new RestClient(System.getenv("RINGCENTRAL_CLIENT_ID"),
             System.getenv("RINGCENTRAL_CLIENT_SECRET"),
             System.getenv("RINGCENTRAL_SERVER_URL"));

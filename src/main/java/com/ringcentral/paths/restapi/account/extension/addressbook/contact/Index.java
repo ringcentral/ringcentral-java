@@ -63,7 +63,7 @@ public class Index {
 
     /**
      * Returns the user personal contact(s).
-     * [Batch request syntax](https://developers.ringcentral.com/api-reference/Batch-Requests) is supported.
+     * [Batch request syntax](https://developers.ringcentral.com/guide/basics/batch-requests) is supported.
      * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
@@ -81,7 +81,7 @@ public class Index {
 
     /**
      * Updates the user personal contact(s) (full resource update).
-     * [Batch request syntax](https://developers.ringcentral.com/api-reference/Batch-Requests) is supported.
+     * [Batch request syntax](https://developers.ringcentral.com/guide/basics/batch-requests) is supported.
      * <p>
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
@@ -103,7 +103,7 @@ public class Index {
 
     /**
      * Deletes the user personal contact(s).
-     * [Batch request syntax](https://developers.ringcentral.com/api-reference/Batch-Requests) is supported.
+     * [Batch request syntax](https://developers.ringcentral.com/guide/basics/batch-requests) is supported.
      * <p>
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}

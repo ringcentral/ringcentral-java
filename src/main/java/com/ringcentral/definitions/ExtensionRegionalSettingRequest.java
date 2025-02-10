@@ -1,6 +1,10 @@
 package com.ringcentral.definitions;
 
 
+/**
+ * Regional data (timezone, home country, language) of an extension.
+ * The default is Company (Auto-Receptionist) settings
+ */
 public class ExtensionRegionalSettingRequest {
     /**
      *

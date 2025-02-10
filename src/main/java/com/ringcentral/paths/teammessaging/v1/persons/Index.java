@@ -26,7 +26,9 @@ public class Index {
     }
 
     /**
-     * Returns a user or multiple users by their ID(s). Batch request is supported.
+     * Returns a user or multiple users by their ID(s).
+     * [Batch requests](https://developers.ringcentral.com/guide/basics/batch-requests) are supported.
+     * <p>
      * HTTP Method: get
      * Endpoint: /team-messaging/v1/persons/{personId}
      * Rate Limit Group: Light

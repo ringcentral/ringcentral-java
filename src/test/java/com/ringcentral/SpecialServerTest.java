@@ -3,7 +3,6 @@ package com.ringcentral;
 import okhttp3.HttpUrl;
 import org.junit.Test;
 
-
 import static org.junit.Assert.assertEquals;
 
 public class SpecialServerTest {

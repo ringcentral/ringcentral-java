@@ -29,6 +29,10 @@ public class BatchProvisionUsersRequestItemContact {
      * Default: true
      */
     public Boolean emailAsLoginName;
+    /**
+     *
+     */
+    public TransitionInfo transition;
 
     public BatchProvisionUsersRequestItemContact firstName(String firstName) {
         this.firstName = firstName;
@@ -52,6 +56,11 @@ public class BatchProvisionUsersRequestItemContact {
 
     public BatchProvisionUsersRequestItemContact emailAsLoginName(Boolean emailAsLoginName) {
         this.emailAsLoginName = emailAsLoginName;
+        return this;
+    }
+
+    public BatchProvisionUsersRequestItemContact transition(TransitionInfo transition) {
+        this.transition = transition;
         return this;
     }
 }

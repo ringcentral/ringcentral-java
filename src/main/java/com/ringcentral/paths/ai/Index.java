@@ -37,4 +37,9 @@ public class Index {
         return new com.ringcentral.paths.ai.insights.Index(this);
     }
 
+
+    public com.ringcentral.paths.ai.ringsense.Index ringsense() {
+        return new com.ringcentral.paths.ai.ringsense.Index(this);
+    }
+
 }

@@ -60,7 +60,7 @@ public class Index {
 
     /**
      * Returns blocked or allowed phone number(s) by their ID(s).
-     * [Batch request syntax](https://developers.ringcentral.com/api-reference/Batch-Requests) is supported.
+     * [Batch request syntax](https://developers.ringcentral.com/guide/basics/batch-requests) is supported.
      * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
@@ -78,7 +78,7 @@ public class Index {
 
     /**
      * Updates blocked or allowed phone number(s) by their ID(s).
-     * [Batch request syntax](https://developers.ringcentral.com/api-reference/Batch-Requests) is supported.
+     * [Batch request syntax](https://developers.ringcentral.com/guide/basics/batch-requests) is supported.
      * <p>
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
@@ -95,7 +95,9 @@ public class Index {
     }
 
     /**
-     * Deletes blocked or allowed phone number(s) by their ID(s). Batch request is supported.
+     * Deletes blocked or allowed phone number(s) by their ID(s).
+     * [Batch request](https://developers.ringcentral.com/guide/basics/batch-requests) is supported.
+     * <p>
      * HTTP Method: delete
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
      * Rate Limit Group: Medium

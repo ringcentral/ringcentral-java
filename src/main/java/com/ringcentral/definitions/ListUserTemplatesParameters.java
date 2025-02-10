@@ -7,7 +7,7 @@ package com.ringcentral.definitions;
 public class ListUserTemplatesParameters {
     /**
      * Type of template
-     * Enum: UserSettings, CallHandling
+     * Enum: UserSettings, CallHandling, LimitedExtensions
      */
     public String type;
     /**

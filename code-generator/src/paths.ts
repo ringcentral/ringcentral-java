@@ -249,6 +249,8 @@ for (const item of parsed.paths) {
     .map((p) => {
       if (p === "default") {
         return "default1";
+      } else if (p === "public") {
+        return "public1";
       }
       return p;
     })
@@ -325,7 +327,7 @@ ${code}`;
     patchSrcFile(
       [
         "paths",
-        ...R.init(item.paths).map((item) => camelCase(item).toLowerCase()),
+        ...R.init(itemPaths).map((item) => camelCase(item).toLowerCase()),
         "Index.java",
       ],
       [],

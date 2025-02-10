@@ -60,9 +60,10 @@ public class SyncMessagesParameters {
      */
     public String syncType;
     /**
-     * This query parameter will filter voicemail messages based on its owner.
-     * This parameter should be controlled by the &#039;SharedVoicemail&#039; feature.
-     * If the feature is disabled this filter shouldn&#039;t be applied.
+     * Filters voicemail messages based on the owner extension. Supported if the &#039;SharedVoicemail&#039;
+     * feature is enabled.
+     * Default: Personal
+     * Enum: Any, Personal, Shared
      */
     public String[] voicemailOwner;
 

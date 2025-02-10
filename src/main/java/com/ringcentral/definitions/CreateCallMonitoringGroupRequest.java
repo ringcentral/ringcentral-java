@@ -7,9 +7,18 @@ public class CreateCallMonitoringGroupRequest {
      * Required
      */
     public String name;
+    /**
+     *
+     */
+    public CreateCallMonitoringGroupRequestSite site;
 
     public CreateCallMonitoringGroupRequest name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public CreateCallMonitoringGroupRequest site(CreateCallMonitoringGroupRequestSite site) {
+        this.site = site;
         return this;
     }
 }

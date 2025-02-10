@@ -28,7 +28,9 @@ public class Index {
     }
 
     /**
-     * Starts a new call recording for the party
+     * Starts a new call recording for a call party.
+     * *Please note* this API does not allow conference calls to be recorded.
+     * <p>
      * HTTP Method: post
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings
      * Rate Limit Group: Light

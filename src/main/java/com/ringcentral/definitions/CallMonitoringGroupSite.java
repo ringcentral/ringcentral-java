@@ -1,22 +1,22 @@
 package com.ringcentral.definitions;
 
 
-public class CallQueueResource {
+public class CallMonitoringGroupSite {
     /**
-     * Example: 873014540006
+     * Identifier of a site
      */
     public String id;
     /**
-     * Example: Sales CQ
+     * Name of a site
      */
     public String name;
 
-    public CallQueueResource id(String id) {
+    public CallMonitoringGroupSite id(String id) {
         this.id = id;
         return this;
     }
 
-    public CallQueueResource name(String name) {
+    public CallMonitoringGroupSite name(String name) {
         this.name = name;
         return this;
     }

@@ -30,10 +30,10 @@ public class ListExtensionDevicesParameters {
      */
     public String linePooling;
     /**
-     * Device feature
+     * Device feature or multiple features supported
      * Enum: BLA, CommonPhone, Intercom, Paging, HELD
      */
-    public String feature;
+    public String[] feature;
     /**
      * Device type
      * Default: HardPhone
@@ -61,7 +61,7 @@ public class ListExtensionDevicesParameters {
         return this;
     }
 
-    public ListExtensionDevicesParameters feature(String feature) {
+    public ListExtensionDevicesParameters feature(String[] feature) {
         this.feature = feature;
         return this;
     }

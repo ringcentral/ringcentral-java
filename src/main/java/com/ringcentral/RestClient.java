@@ -276,7 +276,7 @@ public class RestClient {
     public Response requestRaw(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
         requestBody) throws IOException, RestException {
         HttpUrl.Builder urlBuilder;
-        if(endpoint.startsWith("https://") || endpoint.startsWith("http://")) {
+        if (endpoint.startsWith("https://") || endpoint.startsWith("http://")) {
             // example: https://media.ringcentral.com/restapi/v1.0/account/809646016/ivr-prompts/838195017/content
             urlBuilder = HttpUrl.parse(endpoint).newBuilder();
         } else {

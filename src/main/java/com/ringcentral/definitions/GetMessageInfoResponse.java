@@ -148,6 +148,10 @@ public class GetMessageInfoResponse {
      * cover page. Maximum length is limited to 1024 symbols
      */
     public String coverPageText;
+    /**
+     *
+     */
+    public VoicemailOwnerResource owner;
 
     public GetMessageInfoResponse id(Long id) {
         this.id = id;
@@ -271,6 +275,11 @@ public class GetMessageInfoResponse {
 
     public GetMessageInfoResponse coverPageText(String coverPageText) {
         this.coverPageText = coverPageText;
+        return this;
+    }
+
+    public GetMessageInfoResponse owner(VoicemailOwnerResource owner) {
+        this.owner = owner;
         return this;
     }
 }

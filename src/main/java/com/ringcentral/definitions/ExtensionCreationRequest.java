@@ -72,6 +72,11 @@ public class ExtensionCreationRequest {
      * to `false` by default
      */
     public Boolean hidden;
+    /**
+     * Extension name. For user extension types the value is a combination
+     * of the specified first name and last name
+     */
+    public String name;
 
     public ExtensionCreationRequest contact(ContactInfoCreationRequest contact) {
         this.contact = contact;
@@ -145,6 +150,11 @@ public class ExtensionCreationRequest {
 
     public ExtensionCreationRequest hidden(Boolean hidden) {
         this.hidden = hidden;
+        return this;
+    }
+
+    public ExtensionCreationRequest name(String name) {
+        this.name = name;
         return this;
     }
 }

@@ -8,7 +8,7 @@ public class NotificationDeliveryMode {
     /**
      * The transport type for this subscription, or the channel by which an app should be notified of an event
      * Required
-     * Enum: WebHook, RC/APNS, RC/GCM, PubNub, WebSocket
+     * Enum: WebHook, RC/APNS, RC/GCM, PubNub, WebSocket, Internal
      */
     public String transportType;
     /**
@@ -58,6 +58,12 @@ public class NotificationDeliveryMode {
      * Cryptographic key to decrypt PubNub notification messages
      */
     public String encryptionKey;
+    /**
+     * The name of internal channel (defined in the backend service configuration) to deliver notifications through.
+     * Required
+     * Example: my-server-channel
+     */
+    public String configName;
 
     public NotificationDeliveryMode transportType(String transportType) {
         this.transportType = transportType;
@@ -101,6 +107,11 @@ public class NotificationDeliveryMode {
 
     public NotificationDeliveryMode encryptionKey(String encryptionKey) {
         this.encryptionKey = encryptionKey;
+        return this;
+    }
+
+    public NotificationDeliveryMode configName(String configName) {
+        this.configName = configName;
         return this;
     }
 }

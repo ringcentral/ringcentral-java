@@ -15,6 +15,10 @@ public class CallMonitoringGroup {
      * Name of a group
      */
     public String name;
+    /**
+     *
+     */
+    public CallMonitoringGroupSite site;
 
     public CallMonitoringGroup uri(String uri) {
         this.uri = uri;
@@ -28,6 +32,11 @@ public class CallMonitoringGroup {
 
     public CallMonitoringGroup name(String name) {
         this.name = name;
+        return this;
+    }
+
+    public CallMonitoringGroup site(CallMonitoringGroupSite site) {
+        this.site = site;
         return this;
     }
 }

@@ -116,6 +116,10 @@ public class DeviceResource {
      *
      */
     public BillingStatementInfo billingStatement;
+    /**
+     * Ability to access the Voicemail without being prompted to enter a PIN from the hard phone
+     */
+    public Boolean automaticVoicemailLogin;
 
     public DeviceResource id(String id) {
         this.id = id;
@@ -224,6 +228,11 @@ public class DeviceResource {
 
     public DeviceResource billingStatement(BillingStatementInfo billingStatement) {
         this.billingStatement = billingStatement;
+        return this;
+    }
+
+    public DeviceResource automaticVoicemailLogin(Boolean automaticVoicemailLogin) {
+        this.automaticVoicemailLogin = automaticVoicemailLogin;
         return this;
     }
 }

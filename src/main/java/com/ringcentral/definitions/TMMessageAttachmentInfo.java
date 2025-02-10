@@ -13,6 +13,15 @@ public class TMMessageAttachmentInfo {
      */
     public String type;
     /**
+     * Link to a binary content
+     * Format: uri
+     */
+    public String contentUri;
+    /**
+     * Name of a file
+     */
+    public String name;
+    /**
      * A string of default text that will be rendered in the case that the client does not support Interactive Messages
      */
     public String fallback;
@@ -94,6 +103,16 @@ public class TMMessageAttachmentInfo {
 
     public TMMessageAttachmentInfo type(String type) {
         this.type = type;
+        return this;
+    }
+
+    public TMMessageAttachmentInfo contentUri(String contentUri) {
+        this.contentUri = contentUri;
+        return this;
+    }
+
+    public TMMessageAttachmentInfo name(String name) {
+        this.name = name;
         return this;
     }
 

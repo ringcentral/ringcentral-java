@@ -12,7 +12,11 @@ public class TemplateInfo {
      */
     public String id;
     /**
-     * Enum: UserSettings, CallHandling
+     * Description of a template
+     */
+    public String description;
+    /**
+     * Enum: UserSettings, CallHandling, LimitedExtensions
      */
     public String type;
     /**
@@ -37,6 +41,11 @@ public class TemplateInfo {
 
     public TemplateInfo id(String id) {
         this.id = id;
+        return this;
+    }
+
+    public TemplateInfo description(String description) {
+        this.description = description;
         return this;
     }
 

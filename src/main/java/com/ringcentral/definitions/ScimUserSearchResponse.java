@@ -5,7 +5,7 @@ public class ScimUserSearchResponse {
     /**
      * User list
      */
-    public ScimUserResponse[] Resources;
+    public ScimUserShortInfo[] Resources;
     /**
      * Format: int64
      */
@@ -23,7 +23,7 @@ public class ScimUserSearchResponse {
      */
     public Long totalResults;
 
-    public ScimUserSearchResponse Resources(ScimUserResponse[] Resources) {
+    public ScimUserSearchResponse Resources(ScimUserShortInfo[] Resources) {
         this.Resources = Resources;
         return this;
     }

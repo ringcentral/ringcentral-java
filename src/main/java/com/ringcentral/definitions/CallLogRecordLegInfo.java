@@ -134,14 +134,12 @@ public class CallLogRecordLegInfo {
     public String startTime;
     /**
      * Call duration in seconds
-     * Required
-     * Format: int32
+     * Format: int64
      */
     public Long duration;
     /**
      * Call duration in milliseconds
-     * Required
-     * Format: int32
+     * Format: int64
      */
     public Long durationMs;
     /**
@@ -158,13 +156,13 @@ public class CallLogRecordLegInfo {
     public BillingInfo billing;
     /**
      * The internal type of the call
-     * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
+     * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming, Unknown
      */
     public String internalType;
     /**
      * Leg type
      * Required
-     * Enum: SipForwarding, ServiceMinus2, ServiceMinus3, PstnToSip, Accept, FindMe, FollowMe, TestCall, FaxSent, CallBack, CallingCard, RingDirectly, RingOutWebToSubscriber, RingOutWebToCaller, SipToPstnMetered, RingOutClientToSubscriber, RingOutClientToCaller, RingMe, TransferCall, SipToPstnUnmetered, RingOutDeviceToSubscriber, RingOutDeviceToCaller, RingOutOneLegToCaller, ExtensionToExtension, CallPark, PagingServer, Hunting, OutgoingFreeSpDl, ParkLocation, ConferenceCall, MobileApp, MoveToConference, Unknown, MeetingsCall, SilentMonitoring, Monitoring, Pickup, ImsCall, JoinCall, TextRelay
+     * Enum: SipForwarding, ServiceMinus2, ServiceMinus3, PstnToSip, Accept, FindMe, FollowMe, TestCall, FaxSent, CallBack, CallingCard, RingDirectly, RingOutWebToSubscriber, RingOutWebToCaller, SipToPstnMetered, RingOutClientToSubscriber, RingOutClientToCaller, RingMe, TransferCall, SipToPstnUnmetered, RingOutDeviceToSubscriber, RingOutDeviceToCaller, RingOutOneLegToCaller, ExtensionToExtension, CallPark, PagingServer, Hunting, OutgoingFreeSpDl, ParkLocation, CallMeCallOut, ConferenceCall, MobileApp, MoveToConference, Unknown, MeetingsCall, SilentMonitoring, Monitoring, Pickup, ImsCall, JoinCall, TextRelay, IvaCall
      */
     public String legType;
     /**

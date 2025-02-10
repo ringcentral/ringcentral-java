@@ -31,7 +31,7 @@ public class ServiceInfoV2 {
     /**
      *
      */
-    public ServiceInfoPlan servicePlan;
+    public ServiceInfoPlanV2 servicePlan;
 
     public ServiceInfoV2 _package(ServiceInfoPackage _package) {
         this._package = _package;
@@ -58,7 +58,7 @@ public class ServiceInfoV2 {
         return this;
     }
 
-    public ServiceInfoV2 servicePlan(ServiceInfoPlan servicePlan) {
+    public ServiceInfoV2 servicePlan(ServiceInfoPlanV2 servicePlan) {
         this.servicePlan = servicePlan;
         return this;
     }

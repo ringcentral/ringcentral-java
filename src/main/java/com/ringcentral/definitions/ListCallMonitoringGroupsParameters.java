@@ -26,7 +26,7 @@ public class ListCallMonitoringGroupsParameters {
     /**
      * Internal identifier of a site
      */
-    public String siteId;
+    public String[] siteId;
 
     public ListCallMonitoringGroupsParameters page(Long page) {
         this.page = page;
@@ -43,7 +43,7 @@ public class ListCallMonitoringGroupsParameters {
         return this;
     }
 
-    public ListCallMonitoringGroupsParameters siteId(String siteId) {
+    public ListCallMonitoringGroupsParameters siteId(String[] siteId) {
         this.siteId = siteId;
         return this;
     }

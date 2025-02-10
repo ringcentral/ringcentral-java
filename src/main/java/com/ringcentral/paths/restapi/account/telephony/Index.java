@@ -20,6 +20,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.telephony.metadata.Index metadata() {
+        return new com.ringcentral.paths.restapi.account.telephony.metadata.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.account.telephony.sessions.Index sessions() {
         return this.sessions(null);
     }

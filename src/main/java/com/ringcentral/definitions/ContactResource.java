@@ -75,33 +75,11 @@ public class ContactResource {
     /**
      *
      */
-    public DirectoryRoleResource role;
-    /**
-     *
-     */
-    public CallQueueResource[] callQueues;
-    /**
-     *
-     */
     public CustomFieldResource[] customFields;
     /**
      *
      */
-    public GroupResource[] groups;
-    /**
-     *
-     */
-    public CostCenterResource costCenter;
-    /**
-     *
-     */
     public ExternalIntegrationResource integration;
-    /**
-     * Extension subtype
-     * Example: Unknown
-     * Enum: Unknown, VideoPro, VideoProPlus, DigitalSignage, Emergency
-     */
-    public String subType;
 
     public ContactResource id(String id) {
         this.id = id;
@@ -178,38 +156,13 @@ public class ContactResource {
         return this;
     }
 
-    public ContactResource role(DirectoryRoleResource role) {
-        this.role = role;
-        return this;
-    }
-
-    public ContactResource callQueues(CallQueueResource[] callQueues) {
-        this.callQueues = callQueues;
-        return this;
-    }
-
     public ContactResource customFields(CustomFieldResource[] customFields) {
         this.customFields = customFields;
         return this;
     }
 
-    public ContactResource groups(GroupResource[] groups) {
-        this.groups = groups;
-        return this;
-    }
-
-    public ContactResource costCenter(CostCenterResource costCenter) {
-        this.costCenter = costCenter;
-        return this;
-    }
-
     public ContactResource integration(ExternalIntegrationResource integration) {
         this.integration = integration;
-        return this;
-    }
-
-    public ContactResource subType(String subType) {
-        this.subType = subType;
         return this;
     }
 }

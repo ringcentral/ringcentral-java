@@ -36,7 +36,7 @@ public class BaseTokenRequest {
     public Long access_token_ttl;
     /**
      * Refresh token lifetime in seconds
-     * Maximum: 604800
+     * Maximum: 2592000
      * Format: int32
      * Default: 604800
      */

@@ -134,14 +134,12 @@ public class CallLogRecord {
     public String startTime;
     /**
      * Call duration in seconds
-     * Required
-     * Format: int32
+     * Format: int64
      */
     public Long duration;
     /**
      * Call duration in milliseconds
-     * Required
-     * Format: int32
+     * Format: int64
      */
     public Long durationMs;
     /**
@@ -158,7 +156,7 @@ public class CallLogRecord {
     public BillingInfo billing;
     /**
      * The internal type of the call
-     * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming
+     * Enum: Local, LongDistance, International, Sip, RingMe, RingOut, Usual, TollFreeNumber, VerificationNumber, Vma, LocalNumber, ImsOutgoing, ImsIncoming, Unknown
      */
     public String internalType;
     /**

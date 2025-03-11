@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.phonenumber;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.GetExtensionPhoneNumbersResponse;
-import com.ringcentral.definitions.ListExtensionPhoneNumbersParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -42,4 +41,9 @@ public class Index {
     public GetExtensionPhoneNumbersResponse get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
+
+    public com.ringcentral.paths.restapi.account.extension.phonenumber.smsconfiguration.Index smsConfiguration() {
+        return new com.ringcentral.paths.restapi.account.extension.phonenumber.smsconfiguration.Index(this);
+    }
+
 }

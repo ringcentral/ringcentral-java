@@ -11,11 +11,12 @@ public class ListA2PSMSParameters {
      */
     public String batchId;
     /**
-     * Direction of the SMS message
+     * Direction of a message to filter the message list result.
+     * By default, there is no filter applied - both Inbound and Outbound messages are returned
      * Example: Inbound
      * Enum: Inbound, Outbound
      */
-    public String direction;
+    public String[] direction;
     /**
      * The end of the time range to filter the results in ISO 8601 format including timezone. Default is the &#039;dateTo&#039; minus 24 hours
      * Format: date-time
@@ -57,7 +58,7 @@ public class ListA2PSMSParameters {
         return this;
     }
 
-    public ListA2PSMSParameters direction(String direction) {
+    public ListA2PSMSParameters direction(String[] direction) {
         this.direction = direction;
         return this;
     }

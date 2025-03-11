@@ -11,38 +11,34 @@ public class SearchDirectoryEntriesParameters {
      */
     public Boolean accessibleSitesOnly;
     /**
-     * A list of Account IDs
-     * Example: 400131426008
+     * A list of Account IDs. Deprecated, use the appropriate body field &#039;accountIds&#039; instead.
      */
-    public String accountId;
+    public String[] accountId;
     /**
-     * A list of department names
+     * Department name. Deprecated, use the appropriate body field &#039;department&#039; instead.
      * Example: North office
      */
     public String department;
     /**
-     * A list of Site IDs
-     * Example: 872781797006
+     * A list of Site IDs. Deprecated, use the appropriate body field &#039;siteIds&#039; instead.
      */
-    public String siteId;
+    public String[] siteId;
     /**
-     * Extension current state
-     * Example: Enabled
+     * List of extension current statuses. Deprecated, use the appropriate body field &#039;extensionStatuses&#039; instead.
      */
-    public String extensionStatus;
+    public String[] extensionStatus;
     /**
-     * Type of extension to filter the contacts
-     * Example: User
+     * Types of extension to filter the contacts
      * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, Site, Room, ProxyAdmin, DelegatedLinesGroup, FlexibleUser, GroupCallPickup, RoomConnector
      */
-    public String extensionType;
+    public String[] extensionType;
 
     public SearchDirectoryEntriesParameters accessibleSitesOnly(Boolean accessibleSitesOnly) {
         this.accessibleSitesOnly = accessibleSitesOnly;
         return this;
     }
 
-    public SearchDirectoryEntriesParameters accountId(String accountId) {
+    public SearchDirectoryEntriesParameters accountId(String[] accountId) {
         this.accountId = accountId;
         return this;
     }
@@ -52,17 +48,17 @@ public class SearchDirectoryEntriesParameters {
         return this;
     }
 
-    public SearchDirectoryEntriesParameters siteId(String siteId) {
+    public SearchDirectoryEntriesParameters siteId(String[] siteId) {
         this.siteId = siteId;
         return this;
     }
 
-    public SearchDirectoryEntriesParameters extensionStatus(String extensionStatus) {
+    public SearchDirectoryEntriesParameters extensionStatus(String[] extensionStatus) {
         this.extensionStatus = extensionStatus;
         return this;
     }
 
-    public SearchDirectoryEntriesParameters extensionType(String extensionType) {
+    public SearchDirectoryEntriesParameters extensionType(String[] extensionType) {
         this.extensionType = extensionType;
         return this;
     }

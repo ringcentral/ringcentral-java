@@ -7,7 +7,7 @@ package com.ringcentral.definitions;
 public class GetRecordingInsightsParameters {
     /**
      * AI Insight Types
-     * Enum: NextSteps, Transcript, Summary, Highlights, BulletedSummary, AIScore
+     * Enum: NextSteps, Transcript, Summary, Highlights, BulletedSummary, AIScore, CallNotes
      */
     public String[] insightTypes;
 

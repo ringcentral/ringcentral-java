@@ -1,6 +1,7 @@
 package com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -31,6 +32,15 @@ public class Index {
 
     public com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records.Index records(String sourceRecordId) {
         return new com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records.Index(this, sourceRecordId);
+    }
+
+
+    public com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.sessions.Index sessions() {
+        return this.sessions(null);
+    }
+
+    public com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.sessions.Index sessions(String sourceSessionId) {
+        return new com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.sessions.Index(this, sourceSessionId);
     }
 
 }

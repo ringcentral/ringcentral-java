@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.unifiedpresence;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.UnifiedPresence;
-import com.ringcentral.definitions.UpdateUnifiedPresence;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

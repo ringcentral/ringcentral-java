@@ -17,6 +17,10 @@ public class ASGErrorResponse {
      * Example: AccountId 1234 is invalid
      */
     public String message;
+    /**
+     *
+     */
+    public ErrorEntry[] errors;
 
     public ASGErrorResponse errorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -25,6 +29,11 @@ public class ASGErrorResponse {
 
     public ASGErrorResponse message(String message) {
         this.message = message;
+        return this;
+    }
+
+    public ASGErrorResponse errors(ErrorEntry[] errors) {
+        this.errors = errors;
         return this;
     }
 }

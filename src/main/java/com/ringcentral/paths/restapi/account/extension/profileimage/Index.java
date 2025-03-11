@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.profileimage;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateUserProfileImageRequest;
-import com.ringcentral.definitions.ReadScaledProfileImageParameters;
-import com.ringcentral.definitions.UpdateUserProfileImageRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

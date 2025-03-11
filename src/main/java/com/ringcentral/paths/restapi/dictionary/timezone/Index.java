@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.dictionary.timezone;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.GetTimezoneInfoResponse;
-import com.ringcentral.definitions.GetTimezoneListResponse;
-import com.ringcentral.definitions.ListTimezonesParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

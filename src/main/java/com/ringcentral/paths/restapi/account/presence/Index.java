@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.presence;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AccountPresenceInfo;
-import com.ringcentral.definitions.ReadAccountPresenceParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

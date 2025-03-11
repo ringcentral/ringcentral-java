@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.ivrmenus;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.IVRMenuInfo;
-import com.ringcentral.definitions.IVRMenuList;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

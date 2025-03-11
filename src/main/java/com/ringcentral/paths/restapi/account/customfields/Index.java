@@ -1,10 +1,7 @@
 package com.ringcentral.paths.restapi.account.customfields;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CustomFieldCreateRequest;
-import com.ringcentral.definitions.CustomFieldList;
-import com.ringcentral.definitions.CustomFieldModel;
-import com.ringcentral.definitions.CustomFieldUpdateRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

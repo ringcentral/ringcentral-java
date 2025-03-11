@@ -18,15 +18,15 @@ public class ListNetworksParameters {
      */
     public String searchString;
     /**
-     * Comma-separated list of fields to order results prefixed by &#039;+&#039;
-     * sign (ascending order) or &#039;-&#039; sign (descending order). The default
-     * sorting is by `name`
+     * Comma-separated list of fields to order results prefixed by plus sign &#039;+&#039; (ascending order),
+     * or minus sign &#039;-&#039; (descending order).
+     * Supported values: &#039;name&#039;, &#039;modelName&#039;, &#039;siteName&#039;, &#039;featureEnabled&#039;.
+     * The default sorting is by `name`
      */
-    public String orderBy;
+    public String[] orderBy;
     /**
      * Indicates a page size (number of items). The values supported:
-     * `Max` or numeric value. If not specified, 100 records are returned per one
-     * page&#039;
+     * `Max` or a numeric value. If not specified, 100 records are returned per page
      * Format: int32
      */
     public Long perPage;
@@ -48,7 +48,7 @@ public class ListNetworksParameters {
         return this;
     }
 
-    public ListNetworksParameters orderBy(String orderBy) {
+    public ListNetworksParameters orderBy(String[] orderBy) {
         this.orderBy = orderBy;
         return this;
     }

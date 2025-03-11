@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.phonenumbers.bulkadd;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AddPhoneNumbersRequest;
-import com.ringcentral.definitions.AddPhoneNumbersResponse;
-import com.ringcentral.definitions.GetBulkAddTaskResultsV2Response;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

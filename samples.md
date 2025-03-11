@@ -10635,6 +10635,32 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#RingSense-getRecordingInsights) in API Explorer.
 
+## getSessionInsights
+
+Get Session Insights
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/ai/ringsense/v1/public/accounts/{accountId}/domains/{domain}/sessions/{sourceSessionId}/insights`
+Rate Limit Group|`Light`
+App Permission|`RingSense`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+GetSessionInsightsResponse result = rc.ai().ringsense().v1().public().accounts(accountId).domains(domain).sessions(sourceSessionId).insights().get(getSessionInsightsParameters);
+rc.revoke();
+```
+
+- `getSessionInsightsParameters` is of
+  type [GetSessionInsightsParameters](./src/main/java/com/ringcentral/definitions/GetSessionInsightsParameters.java)
+- `result` is of
+  type [GetSessionInsightsResponse](./src/main/java/com/ringcentral/definitions/GetSessionInsightsResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#RingSense-getSessionInsights) in API Explorer.
+
 ## readCallFlipSettings
 
 Get Call Flip Settings
@@ -11704,6 +11730,33 @@ rc.revoke();
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#SMS-Templates-deleteUserMessageTemplate) in API Explorer.
+
+## smsConfigurationInfo
+
+Get SMS Configuration
+
+Name|Value
+-|-
+HTTP Method|`GET`
+Endpoint|`/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/phone-number/{phoneNumberId}/sms-configuration`
+Rate Limit Group|`Light`
+App Permission|`ReadAccounts`
+User Permission|`N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+SmsConfigurationResource result = rc.restapi(apiVersion).account(accountId).extension(extensionId).phoneNumber(phoneNumberId).smsConfiguration().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `result` is of
+  type [SmsConfigurationResource](./src/main/java/com/ringcentral/definitions/SmsConfigurationResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-smsConfigurationInfo) in API Explorer.
 
 ## readMultichannelCallRecordingContent
 

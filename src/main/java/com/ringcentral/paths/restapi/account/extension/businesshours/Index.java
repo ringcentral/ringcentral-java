@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.businesshours;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.GetUserBusinessHoursResponse;
-import com.ringcentral.definitions.UserBusinessHoursUpdateRequest;
-import com.ringcentral.definitions.UserBusinessHoursUpdateResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

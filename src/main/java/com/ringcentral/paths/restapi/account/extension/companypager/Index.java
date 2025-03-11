@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.companypager;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateInternalTextMessageRequest;
-import com.ringcentral.definitions.GetInternalTextMessageInfoResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.fax;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateFaxMessageRequest;
-import com.ringcentral.definitions.FaxResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

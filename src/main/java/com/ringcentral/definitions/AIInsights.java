@@ -26,6 +26,10 @@ public class AIInsights {
      *
      */
     public AIScoreInsightUnit[] AIScore;
+    /**
+     *
+     */
+    public CallNotesInsightUnit[] CallNotes;
 
     public AIInsights Transcript(TranscriptInsightUnit[] Transcript) {
         this.Transcript = Transcript;
@@ -54,6 +58,11 @@ public class AIInsights {
 
     public AIInsights AIScore(AIScoreInsightUnit[] AIScore) {
         this.AIScore = AIScore;
+        return this;
+    }
+
+    public AIInsights CallNotes(CallNotesInsightUnit[] CallNotes) {
+        this.CallNotes = CallNotes;
         return this;
     }
 }

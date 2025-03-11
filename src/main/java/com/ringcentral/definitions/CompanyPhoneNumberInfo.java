@@ -15,10 +15,6 @@ public class CompanyPhoneNumberInfo {
     /**
      *
      */
-    public CountryInfoBasicModel country;
-    /**
-     *
-     */
     public ExtensionInfo extension;
     /**
      * Custom user-defined name of a phone number, if any
@@ -51,10 +47,9 @@ public class CompanyPhoneNumberInfo {
      */
     public String type;
     /**
-     * Usage type of phone number. Usage type of phone number.
-     * Numbers of &#039;NumberPool&#039; type are not returned in phone number list
-     * requests
-     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
+     * Usage type of a phone number. Numbers of &#039;NumberPool&#039; and &#039;NumberStorage&#039; type are not returned in
+     * phone number list requests
+     * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool, NumberStorage, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
     public String usageType;
     /**
@@ -86,11 +81,6 @@ public class CompanyPhoneNumberInfo {
 
     public CompanyPhoneNumberInfo id(Long id) {
         this.id = id;
-        return this;
-    }
-
-    public CompanyPhoneNumberInfo country(CountryInfoBasicModel country) {
-        this.country = country;
         return this;
     }
 

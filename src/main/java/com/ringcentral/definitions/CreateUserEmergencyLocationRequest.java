@@ -19,6 +19,10 @@ public class CreateUserEmergencyLocationRequest {
      *
      */
     public CommonEmergencyLocationAddressInfo address;
+    /**
+     *
+     */
+    public ShortSiteInfo site;
 
     public CreateUserEmergencyLocationRequest name(String name) {
         this.name = name;
@@ -37,6 +41,11 @@ public class CreateUserEmergencyLocationRequest {
 
     public CreateUserEmergencyLocationRequest address(CommonEmergencyLocationAddressInfo address) {
         this.address = address;
+        return this;
+    }
+
+    public CreateUserEmergencyLocationRequest site(ShortSiteInfo site) {
+        this.site = site;
         return this;
     }
 }

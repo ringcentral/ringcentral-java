@@ -1,8 +1,7 @@
 package com.ringcentral.paths.scim.schemas;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ScimSchemaResponse;
-import com.ringcentral.definitions.ScimSchemaSearchResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

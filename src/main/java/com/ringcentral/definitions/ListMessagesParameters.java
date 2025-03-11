@@ -70,6 +70,22 @@ public class ListMessagesParameters {
      * particular phone number only
      */
     public String phoneNumber;
+    /**
+     * Deprecated. Filters voicemail messages based on the owner extension. Supported if the &#039;SharedVoicemail&#039;
+     * feature is enabled.
+     */
+    public String[] voicemailOwner;
+    /**
+     * Filters shared messages based on the owner extension. Supported if the &#039;SharedVoicemail&#039; or &#039;CallQueueSmsRecipient&#039;
+     * feature is enabled.
+     */
+    public String[] owner;
+    /**
+     * Filters shared messages based on the owner extension type. Supported if &quot;SharedVoicemail&quot; or &quot;CallQueueSmsRecipient&quot;
+     * feature is enabled.
+     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension, ProxyAdmin, RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser
+     */
+    public String[] ownerExtensionType;
 
     public ListMessagesParameters availability(String[] availability) {
         this.availability = availability;
@@ -123,6 +139,21 @@ public class ListMessagesParameters {
 
     public ListMessagesParameters phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public ListMessagesParameters voicemailOwner(String[] voicemailOwner) {
+        this.voicemailOwner = voicemailOwner;
+        return this;
+    }
+
+    public ListMessagesParameters owner(String[] owner) {
+        this.owner = owner;
+        return this;
+    }
+
+    public ListMessagesParameters ownerExtensionType(String[] ownerExtensionType) {
+        this.ownerExtensionType = ownerExtensionType;
         return this;
     }
 }

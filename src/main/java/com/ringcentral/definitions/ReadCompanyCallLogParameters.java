@@ -69,6 +69,11 @@ public class ReadCompanyCallLogParameters {
      */
     public String telephonySessionId;
     /**
+     * Category of metadata to be returned. If omitted, all call records are returned.
+     * Multiple values are supported
+     */
+    public String[] metadataCategory;
+    /**
      * Indicates the page number to retrieve. Only positive number values are accepted
      * Minimum: 1
      * Format: int32
@@ -135,6 +140,11 @@ public class ReadCompanyCallLogParameters {
 
     public ReadCompanyCallLogParameters telephonySessionId(String telephonySessionId) {
         this.telephonySessionId = telephonySessionId;
+        return this;
+    }
+
+    public ReadCompanyCallLogParameters metadataCategory(String[] metadataCategory) {
+        this.metadataCategory = metadataCategory;
         return this;
     }
 

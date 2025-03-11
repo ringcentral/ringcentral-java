@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.a2psms.optouts;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.OptOutListResponse;
-import com.ringcentral.definitions.ReadA2PSMSOptOutsParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

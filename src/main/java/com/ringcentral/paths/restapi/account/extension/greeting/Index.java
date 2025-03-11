@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.greeting;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateCustomUserGreetingParameters;
-import com.ringcentral.definitions.CreateCustomUserGreetingRequest;
-import com.ringcentral.definitions.CustomUserGreetingInfo;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

@@ -1,6 +1,6 @@
 package com.ringcentral.paths.ai.audio.v1.enrollments;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index {

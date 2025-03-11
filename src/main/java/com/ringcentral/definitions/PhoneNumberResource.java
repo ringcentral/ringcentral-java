@@ -22,7 +22,7 @@ public class PhoneNumberResource {
     /**
      * Usage type of phone number
      * Example: DirectNumber
-     * Enum: MobileNumber, ContactNumber, DirectNumber, ForwardedNumber
+     * Enum: MobileNumber, ContactNumber, DirectNumber, ForwardedNumber, PartnerBusinessMobileNumber
      */
     public String usageType;
     /**

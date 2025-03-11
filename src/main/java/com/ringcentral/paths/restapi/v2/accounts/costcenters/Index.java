@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.costcenters;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CostCenterList;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

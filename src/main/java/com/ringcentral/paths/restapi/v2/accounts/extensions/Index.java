@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.extensions;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.BulkDeleteUsersRequest;
-import com.ringcentral.definitions.BulkDeleteUsersResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -24,8 +23,6 @@ public class Index {
     /**
      * Deletes user extension(s) and either keeps or destroys the assets - numbers and devices.
      * Multiple extensions can be deleted with a single API call.
-     * <p>
-     * **Please note:** This API cannot be tested on Sandbox.
      * <p>
      * HTTP Method: delete
      * Endpoint: /restapi/v2/accounts/{accountId}/extensions

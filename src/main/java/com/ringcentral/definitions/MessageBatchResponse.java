@@ -38,7 +38,7 @@ public class MessageBatchResponse {
     /**
      * Current status of a message batch
      * Example: Processing
-     * Enum: Processing, Completed
+     * Enum: Processing, Completed, Sent
      */
     public String status;
     /**

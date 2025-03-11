@@ -1,10 +1,7 @@
 package com.ringcentral.paths.teammessaging.v1.conversations;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateConversationRequest;
-import com.ringcentral.definitions.ListGlipConversationsNewParameters;
-import com.ringcentral.definitions.TMConversationInfo;
-import com.ringcentral.definitions.TMConversationList;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

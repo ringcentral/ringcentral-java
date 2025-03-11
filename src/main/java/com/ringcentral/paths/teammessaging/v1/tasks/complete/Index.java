@@ -1,7 +1,7 @@
 package com.ringcentral.paths.teammessaging.v1.tasks.complete;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.TMCompleteTaskRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

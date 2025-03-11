@@ -1,6 +1,6 @@
 package com.ringcentral.paths.restapi.v2.accounts.phonenumbers;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index {

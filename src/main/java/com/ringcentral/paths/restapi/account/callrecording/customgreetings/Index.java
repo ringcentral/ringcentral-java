@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.callrecording.customgreetings;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallRecordingCustomGreetings;
-import com.ringcentral.definitions.ListCallRecordingCustomGreetingsParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

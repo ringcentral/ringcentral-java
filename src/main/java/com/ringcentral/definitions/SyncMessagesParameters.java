@@ -60,12 +60,25 @@ public class SyncMessagesParameters {
      */
     public String syncType;
     /**
-     * Filters voicemail messages based on the owner extension. Supported if the &#039;SharedVoicemail&#039;
+     * Deprecated. Filters voicemail messages based on the owner extension. Supported if the &#039;SharedVoicemail&#039;
      * feature is enabled.
      * Default: Personal
      * Enum: Any, Personal, Shared
      */
     public String[] voicemailOwner;
+    /**
+     * Filters shared messages based on the owner extension. Supported if the &#039;SharedVoicemail&#039; or &#039;CallQueueSmsRecipient&#039;
+     * feature is enabled.
+     * Default: Personal
+     * Enum: Any, Personal, Shared
+     */
+    public String[] owner;
+    /**
+     * Filters shared messages based on the owner extension type. Supported if &quot;SharedVoicemail&quot; or &quot;CallQueueSmsRecipient&quot;
+     * feature is enabled.
+     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension, ProxyAdmin, RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser
+     */
+    public String[] ownerExtensionType;
 
     public SyncMessagesParameters conversationId(Long conversationId) {
         this.conversationId = conversationId;
@@ -114,6 +127,16 @@ public class SyncMessagesParameters {
 
     public SyncMessagesParameters voicemailOwner(String[] voicemailOwner) {
         this.voicemailOwner = voicemailOwner;
+        return this;
+    }
+
+    public SyncMessagesParameters owner(String[] owner) {
+        this.owner = owner;
+        return this;
+    }
+
+    public SyncMessagesParameters ownerExtensionType(String[] ownerExtensionType) {
+        this.ownerExtensionType = ownerExtensionType;
         return this;
     }
 }

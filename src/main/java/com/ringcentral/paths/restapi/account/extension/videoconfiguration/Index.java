@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.videoconfiguration;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.UserVideoConfiguration;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

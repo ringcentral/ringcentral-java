@@ -41,7 +41,6 @@ public class AccountHistorySearchPublicRequest {
     /**
      * List of action IDs (exact keys) to search for (alternatively &quot;excludeActionIds&quot; option can be used).
      * Example: CHANGE_SECRET_INFO,CHANGE_USER_INFO
-     * Enum: CHANGE_SECRET_INFO, CHANGE_USER_INFO
      */
     public String[] actionIds;
     /**
@@ -59,7 +58,6 @@ public class AccountHistorySearchPublicRequest {
     /**
      * List of action IDs (exact keys) to exclude from your search (alternatively &quot;actionIds&quot; option can be used).
      * Example: CHANGE_SECRET_INFO,CHANGE_USER_INFO
-     * Enum: CHANGE_SECRET_INFO, CHANGE_USER_INFO
      */
     public String[] excludeActionIds;
 

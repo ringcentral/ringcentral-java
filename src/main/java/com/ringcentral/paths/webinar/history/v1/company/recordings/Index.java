@@ -1,9 +1,7 @@
 package com.ringcentral.paths.webinar.history.v1.company.recordings;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.RcwHistoryAdminListRecordingsParameters;
-import com.ringcentral.definitions.RecordingAdminExtendedItemModel;
-import com.ringcentral.definitions.RecordingAdminListResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

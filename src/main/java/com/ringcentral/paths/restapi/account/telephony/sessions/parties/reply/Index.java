@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.reply;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallPartyReply;
-import com.ringcentral.definitions.ReplyParty;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

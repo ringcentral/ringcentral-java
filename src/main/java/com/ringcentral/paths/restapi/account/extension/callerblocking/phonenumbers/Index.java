@@ -1,10 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.callerblocking.phonenumbers;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AddBlockedAllowedPhoneNumber;
-import com.ringcentral.definitions.BlockedAllowedPhoneNumberInfo;
-import com.ringcentral.definitions.BlockedAllowedPhoneNumbersList;
-import com.ringcentral.definitions.ListBlockedAllowedNumbersParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

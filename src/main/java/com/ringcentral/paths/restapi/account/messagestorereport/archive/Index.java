@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.messagestorereport.archive;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.MessageStoreReportArchive;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

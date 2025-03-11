@@ -30,6 +30,10 @@ public class CallLogRecord {
      */
     public String partyId;
     /**
+     * List of metadata categories applied to the call
+     */
+    public String[] metadataCategories;
+    /**
      * The type of call transport. &#039;PSTN&#039; indicates that a call leg was initiated
      * from the PSTN network provider; &#039;VoIP&#039; - from an RC phone.
      * Enum: PSTN, VoIP
@@ -218,6 +222,11 @@ public class CallLogRecord {
 
     public CallLogRecord partyId(String partyId) {
         this.partyId = partyId;
+        return this;
+    }
+
+    public CallLogRecord metadataCategories(String[] metadataCategories) {
+        this.metadataCategories = metadataCategories;
         return this;
     }
 

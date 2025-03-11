@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.userrole.default1;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.DefaultUserRole;
-import com.ringcentral.definitions.DefaultUserRoleRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

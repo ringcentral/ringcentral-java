@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.overflowsettings;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallQueueOverflowSettings;
-import com.ringcentral.definitions.CallQueueOverflowSettingsRequestResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

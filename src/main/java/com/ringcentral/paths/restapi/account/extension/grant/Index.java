@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.grant;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.GetExtensionGrantListResponse;
-import com.ringcentral.definitions.ListExtensionGrantsParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -22,9 +21,8 @@ public class Index {
     }
 
     /**
-     * Returns the list of extensions with information on grants
-     * given to the current extension regarding them. Currently the list of grants
-     * include: picking up a call, monitoring, calling or receiving a call on behalf
+     * Returns a list of extensions including information on grants given to the current extension towards them.
+     * Currently the list of grants includes: picking up a call, call monitoring, calling or receiving a call on behalf
      * of somebody, call delegation and calling paging groups.
      * <p>
      * HTTP Method: get

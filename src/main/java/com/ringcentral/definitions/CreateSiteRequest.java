@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class CreateSiteRequest {
     /**
+     * Internal identifier of a site extension
+     */
+    public String id;
+    /**
      * Extension user first name
      */
     public String name;
@@ -45,6 +49,11 @@ public class CreateSiteRequest {
      * Site code value
      */
     public String code;
+
+    public CreateSiteRequest id(String id) {
+        this.id = id;
+        return this;
+    }
 
     public CreateSiteRequest name(String name) {
         this.name = name;

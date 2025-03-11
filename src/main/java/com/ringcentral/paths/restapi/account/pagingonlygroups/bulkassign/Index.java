@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.pagingonlygroups.bulkassign;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.EditPagingGroupRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

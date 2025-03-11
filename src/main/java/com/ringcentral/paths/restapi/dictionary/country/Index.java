@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.dictionary.country;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CountryInfoDictionaryModel;
-import com.ringcentral.definitions.CountryListDictionaryModel;
-import com.ringcentral.definitions.ListCountriesParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

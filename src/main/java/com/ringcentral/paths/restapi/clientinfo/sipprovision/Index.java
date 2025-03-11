@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.clientinfo.sipprovision;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CreateSipRegistrationRequest;
-import com.ringcentral.definitions.CreateSipRegistrationResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

@@ -59,6 +59,11 @@ public class SyncUserCallLogParameters {
      * Enum: Automatic, OnDemand, All
      */
     public String recordingType;
+    /**
+     * Category of metadata to be returned. If omitted, all call records are returned.
+     * Multiple values are supported
+     */
+    public String[] metadataCategory;
 
     public SyncUserCallLogParameters syncType(String syncType) {
         this.syncType = syncType;
@@ -102,6 +107,11 @@ public class SyncUserCallLogParameters {
 
     public SyncUserCallLogParameters recordingType(String recordingType) {
         this.recordingType = recordingType;
+        return this;
+    }
+
+    public SyncUserCallLogParameters metadataCategory(String[] metadataCategory) {
+        this.metadataCategory = metadataCategory;
         return this;
     }
 }

@@ -12,7 +12,7 @@ public class CallQueueDetailsForUpdate {
     public String name;
     /**
      * Group extension status
-     * Enum: Enabled, Disabled, NotActivated
+     * Enum: Enabled, Disabled, NotActivated, Unassigned
      */
     public String status;
     /**

@@ -1,9 +1,7 @@
 package com.ringcentral.paths.analytics.calls.v1.accounts.timeline.fetch;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.AnalyticsCallsTimelineFetchParameters;
-import com.ringcentral.definitions.TimelineRequest;
-import com.ringcentral.definitions.TimelineResponse;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.CallRecording;
-import com.ringcentral.definitions.CallRecordingUpdate;
-import com.ringcentral.definitions.PauseResumeCallRecordingParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

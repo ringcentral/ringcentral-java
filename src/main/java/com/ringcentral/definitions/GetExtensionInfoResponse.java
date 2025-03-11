@@ -142,6 +142,12 @@ public class GetExtensionInfoResponse {
      * Enum: Limited, Unlimited
      */
     public String siteAccess;
+    /**
+     * Alert timer or pickup setting. Delay time in seconds before call queue group members are notified when calls are queued
+     * Format: int32
+     * Enum: 5, 10, 15, 20, 30, 45, 60, 120, 180, 240, 300, 360, 420, 480, 540, 600
+     */
+    public Long alertTimer;
 
     public GetExtensionInfoResponse id(Long id) {
         this.id = id;
@@ -280,6 +286,11 @@ public class GetExtensionInfoResponse {
 
     public GetExtensionInfoResponse siteAccess(String siteAccess) {
         this.siteAccess = siteAccess;
+        return this;
+    }
+
+    public GetExtensionInfoResponse alertTimer(Long alertTimer) {
+        this.alertTimer = alertTimer;
         return this;
     }
 }

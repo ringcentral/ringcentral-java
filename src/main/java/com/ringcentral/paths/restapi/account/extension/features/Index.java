@@ -1,8 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.features;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.FeatureList;
-import com.ringcentral.definitions.ReadExtensionFeaturesParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;
@@ -37,6 +36,7 @@ public class Index {
      * - `ExtensionLimitation` - a feature is not available for extension, e.g., additional license required;
      * - `InsufficientPermissions` - required permission is not granted to the current user (not the one, who is specified in the URL, but the one who is calling this API);
      * - `ConfigurationLimitation` - a feature is turned off for extension, e.g., by account administrator.
+     * - `PermissionLimitation` - a feature is unavailable due to a specific permission this extension has.
      * <p>
      * Also, some features may have additional parameters, e.g. limits, which are returned in `params` attribute as a name-value collection:
      * <p>

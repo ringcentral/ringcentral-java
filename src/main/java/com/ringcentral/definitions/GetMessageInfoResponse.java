@@ -151,7 +151,7 @@ public class GetMessageInfoResponse {
     /**
      *
      */
-    public VoicemailOwnerResource owner;
+    public OwnerResource owner;
 
     public GetMessageInfoResponse id(Long id) {
         this.id = id;
@@ -278,7 +278,7 @@ public class GetMessageInfoResponse {
         return this;
     }
 
-    public GetMessageInfoResponse owner(VoicemailOwnerResource owner) {
+    public GetMessageInfoResponse owner(OwnerResource owner) {
         this.owner = owner;
         return this;
     }

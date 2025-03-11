@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.messagestore.content;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ReadMessageContentParameters;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

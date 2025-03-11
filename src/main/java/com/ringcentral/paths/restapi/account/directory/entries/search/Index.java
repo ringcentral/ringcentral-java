@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.account.directory.entries.search;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.DirectoryResource;
-import com.ringcentral.definitions.SearchDirectoryEntriesParameters;
-import com.ringcentral.definitions.SearchDirectoryEntriesRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

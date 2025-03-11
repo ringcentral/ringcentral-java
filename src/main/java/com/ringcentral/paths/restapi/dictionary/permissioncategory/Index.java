@@ -1,9 +1,7 @@
 package com.ringcentral.paths.restapi.dictionary.permissioncategory;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.ListPermissionCategoriesParameters;
-import com.ringcentral.definitions.PermissionCategoryCollectionResource;
-import com.ringcentral.definitions.PermissionCategoryResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

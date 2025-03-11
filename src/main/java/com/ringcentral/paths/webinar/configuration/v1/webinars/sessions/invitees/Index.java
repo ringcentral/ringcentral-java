@@ -1,6 +1,6 @@
 package com.ringcentral.paths.webinar.configuration.v1.webinars.sessions.invitees;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index {

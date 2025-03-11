@@ -26,7 +26,7 @@ public class EmailRecipientInfo {
     public String[] emailAddresses;
     /**
      * Call queue manager permission
-     * Enum: FullAccess, Messages, MemberManagement
+     * Enum: FullAccess, Messages, MemberManagement, None
      */
     public String permission;
 

@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.device.sipinfo;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.SipInfoResource;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

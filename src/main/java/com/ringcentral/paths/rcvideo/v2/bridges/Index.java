@@ -1,9 +1,7 @@
 package com.ringcentral.paths.rcvideo.v2.bridges;
 
-import com.ringcentral.RestClient;
-import com.ringcentral.definitions.BridgeResponse;
-import com.ringcentral.definitions.GetBridgeParameters;
-import com.ringcentral.definitions.UpdateBridgeRequest;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

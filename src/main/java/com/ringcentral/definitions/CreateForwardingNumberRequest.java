@@ -3,20 +3,25 @@ package com.ringcentral.definitions;
 
 public class CreateForwardingNumberRequest {
     /**
+     * Internal identifier of a forwarding/call flip phone number
+     */
+    public String id;
+    /**
      * Number assigned to the call flip phone number, corresponds to the shortcut dial number
      * Format: int32
      */
     public Long flipNumber;
     /**
-     * Forwarding/Call flip phone number
+     * Forwarding/call flip phone number
      */
     public String phoneNumber;
     /**
-     * Forwarding/Call flip number title
+     * Forwarding/call flip number title
      */
     public String label;
     /**
-     * Forwarding/Call flip phone type. If specified, &#039;label&#039; attribute value is ignored. The default value is &#039;Other&#039;
+     * Forwarding/call flip phone type. If specified, &#039;label&#039; attribute value is ignored
+     * Default: Other
      * Enum: PhoneLine, Home, Mobile, Work, Other
      */
     public String type;
@@ -24,6 +29,11 @@ public class CreateForwardingNumberRequest {
      *
      */
     public CreateForwardingNumberDeviceInfo device;
+
+    public CreateForwardingNumberRequest id(String id) {
+        this.id = id;
+        return this;
+    }
 
     public CreateForwardingNumberRequest flipNumber(Long flipNumber) {
         this.flipNumber = flipNumber;

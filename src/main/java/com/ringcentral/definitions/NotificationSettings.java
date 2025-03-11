@@ -23,6 +23,15 @@ public class NotificationSettings {
      */
     public Boolean includeManagers;
     /**
+     * Specifies if sms recipients&#039; emails are included in the list of emails to which
+     * notifications are sent
+     */
+    public Boolean includeSmsRecipients;
+    /**
+     * List of sms recipients specified for call queue. Returned only for call queue extension
+     */
+    public EmailRecipientInfo[] smsRecipients;
+    /**
      * List of notification recipient email addresses
      */
     public String[] smsEmailAddresses;
@@ -72,6 +81,16 @@ public class NotificationSettings {
 
     public NotificationSettings includeManagers(Boolean includeManagers) {
         this.includeManagers = includeManagers;
+        return this;
+    }
+
+    public NotificationSettings includeSmsRecipients(Boolean includeSmsRecipients) {
+        this.includeSmsRecipients = includeSmsRecipients;
+        return this;
+    }
+
+    public NotificationSettings smsRecipients(EmailRecipientInfo[] smsRecipients) {
+        this.smsRecipients = smsRecipients;
         return this;
     }
 

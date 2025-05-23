@@ -37,6 +37,7 @@ public class UpdateAnsweringRuleRequest {
     public String callHandlingAction;
     /**
      * Type of an answering rule
+     * Default: Custom
      * Enum: BusinessHours, AfterHours, Custom
      */
     public String type;

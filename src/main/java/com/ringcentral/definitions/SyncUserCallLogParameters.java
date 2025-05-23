@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class SyncUserCallLogParameters {
     /**
-     * Type of call log synchronization request: full or incremental sync
+     * Type of call log synchronization request - full or incremental sync
      * Default: FSync
      * Enum: FSync, ISync
      */

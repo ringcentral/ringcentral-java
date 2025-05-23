@@ -41,6 +41,12 @@ public class CallsByTypeBreakdown {
      * Format: double
      */
     public Double overflow;
+    /**
+     * Value for QueueCallPickup type
+     * Required
+     * Format: double
+     */
+    public Double queueCallPickup;
 
     public CallsByTypeBreakdown direct(Double direct) {
         this.direct = direct;
@@ -69,6 +75,11 @@ public class CallsByTypeBreakdown {
 
     public CallsByTypeBreakdown overflow(Double overflow) {
         this.overflow = overflow;
+        return this;
+    }
+
+    public CallsByTypeBreakdown queueCallPickup(Double queueCallPickup) {
+        this.queueCallPickup = queueCallPickup;
         return this;
     }
 }

@@ -2,44 +2,38 @@ package com.ringcentral.definitions;
 
 
 /**
- * Participant information
+ * Basic participant information
  */
 public class Participant {
+    /**
+     * Required
+     */
+    public String id;
+    /**
+     *
+     */
+    public String accountId;
+    /**
+     *
+     */
+    public String extensionId;
+    /**
+     *
+     */
+    public String displayName;
+    /**
+     * Non empty if user joined by phone
+     */
+    public String callerId;
     /**
      * Participant type
      * Required
      */
     public String type;
     /**
-     * id
-     * Required
-     */
-    public String id;
-    /**
-     * Account id
-     */
-    public String accountId;
-    /**
-     * Extension id
-     */
-    public String extensionId;
-    /**
-     * Display name
-     */
-    public String displayName;
-    /**
-     * Caller id
-     */
-    public String callerId;
-    /**
      * Pass-thru parameter in join url
      */
     public String correlationId;
-
-    public Participant type(String type) {
-        this.type = type;
-        return this;
-    }
 
     public Participant id(String id) {
         this.id = id;
@@ -63,6 +57,11 @@ public class Participant {
 
     public Participant callerId(String callerId) {
         this.callerId = callerId;
+        return this;
+    }
+
+    public Participant type(String type) {
+        this.type = type;
         return this;
     }
 

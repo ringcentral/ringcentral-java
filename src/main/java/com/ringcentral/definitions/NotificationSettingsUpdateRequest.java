@@ -3,6 +3,11 @@ package com.ringcentral.definitions;
 
 public class NotificationSettingsUpdateRequest {
     /**
+     * Canonical URI of notifications settings resource
+     * Format: uri
+     */
+    public String uri;
+    /**
      * List of notification recipient email addresses. Should not be empty
      * if &#039;includeManagers&#039; parameter is set to false
      */
@@ -45,6 +50,11 @@ public class NotificationSettingsUpdateRequest {
      * Default: true
      */
     public Boolean includeManagers;
+
+    public NotificationSettingsUpdateRequest uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public NotificationSettingsUpdateRequest emailAddresses(String[] emailAddresses) {
         this.emailAddresses = emailAddresses;

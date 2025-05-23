@@ -13,14 +13,14 @@ public class MeetingPage {
     /**
      * Required
      */
-    public Paging paging;
+    public BasicPaging paging;
 
     public MeetingPage meetings(Meeting[] meetings) {
         this.meetings = meetings;
         return this;
     }
 
-    public MeetingPage paging(Paging paging) {
+    public MeetingPage paging(BasicPaging paging) {
         this.paging = paging;
         return this;
     }

@@ -32,6 +32,10 @@ public class CallsCounters {
     /**
      *
      */
+    public CallsByEndingParty callsByEndingParty;
+    /**
+     *
+     */
     public CallsByActions callsActions;
     /**
      *
@@ -77,6 +81,11 @@ public class CallsCounters {
 
     public CallsCounters callsByResult(CallsByResult callsByResult) {
         this.callsByResult = callsByResult;
+        return this;
+    }
+
+    public CallsCounters callsByEndingParty(CallsByEndingParty callsByEndingParty) {
+        this.callsByEndingParty = callsByEndingParty;
         return this;
     }
 

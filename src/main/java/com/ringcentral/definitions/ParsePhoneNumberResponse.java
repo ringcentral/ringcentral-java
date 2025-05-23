@@ -8,7 +8,7 @@ public class ParsePhoneNumberResponse {
      */
     public String uri;
     /**
-     * Required
+     *
      */
     public GetCountryInfoNumberParser homeCountry;
     /**

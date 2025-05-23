@@ -59,7 +59,7 @@ public class ContactResource {
     /**
      *
      */
-    public PhoneNumberResource[] phoneNumbers;
+    public AdgPhoneNumberResource[] phoneNumbers;
     /**
      *
      */
@@ -136,7 +136,7 @@ public class ContactResource {
         return this;
     }
 
-    public ContactResource phoneNumbers(PhoneNumberResource[] phoneNumbers) {
+    public ContactResource phoneNumbers(AdgPhoneNumberResource[] phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
         return this;
     }

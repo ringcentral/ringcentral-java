@@ -26,7 +26,7 @@ public class CallQueueDetails {
     public String status;
     /**
      * Indicates whether it is an emergency call queue extension or not
-     * Enum: Emergency
+     * Enum: Emergency, Unknown
      */
     public String subType;
     /**

@@ -14,7 +14,7 @@ public class ServiceInfoPackage {
     /**
      * Billing package version
      * Required
-     * Enum: 1
+     * Example: 1
      */
     public String version;
 

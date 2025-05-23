@@ -96,7 +96,9 @@ public class SessionGlobalResource {
     public String status;
     /**
      * Session runtime status (for &#039;Active&#039; Sessions only).
-     * It is omitted (or null) if the status is not Active
+     * Please note that &#039;Idle&#039; status shouldn&#039;t be returned in the API
+     * (but can be delivered in an event)
+     * Example: Live
      * Enum: Idle, Practice, GoingLive, Live, Break, Debrief
      */
     public String runtimeStatus;

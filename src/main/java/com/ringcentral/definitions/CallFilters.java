@@ -34,7 +34,7 @@ public class CallFilters {
     public String[] callResponses;
     /**
      * Filtering of calls by the nature of call result (joined via OR)
-     * Enum: Completed, Abandoned, Voicemail, Unknown, Missed, Accepted
+     * Enum: Completed, Abandoned, Voicemail, Unknown, Missed, Accepted, Transferred, PickedUp, Forwarded, AnsweredElsewhere
      */
     public String[] callResults;
     /**
@@ -66,9 +66,14 @@ public class CallFilters {
     public String[] queueSla;
     /**
      * Filtering of calls based on how the call started from the callee perspective (joined via OR). If the call is outbound relative to the grouping scope, CallType is Outbound
-     * Enum: Direct, FromQueue, ParkRetrieval, Transferred, Outbound, Overflow
+     * Enum: Direct, FromQueue, ParkRetrieval, Transferred, Outbound, Overflow, QueueCallPickup
      */
     public String[] callTypes;
+    /**
+     * Filtering of calls based on the party that ended that call (joined via OR)
+     * Enum: Caller, Callee, System
+     */
+    public String[] endingParties;
 
     public CallFilters extensionFilters(ExtensionFilters extensionFilters) {
         this.extensionFilters = extensionFilters;
@@ -137,6 +142,11 @@ public class CallFilters {
 
     public CallFilters callTypes(String[] callTypes) {
         this.callTypes = callTypes;
+        return this;
+    }
+
+    public CallFilters endingParties(String[] endingParties) {
+        this.endingParties = endingParties;
         return this;
     }
 }

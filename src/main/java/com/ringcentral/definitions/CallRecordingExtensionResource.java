@@ -19,10 +19,15 @@ public class CallRecordingExtensionResource {
      */
     public String type;
     /**
-     * Direction of call
+     * Direction of a call
      * Enum: Outbound, Inbound, All
      */
     public String callDirection;
+    /**
+     * Alternate call recording setting. Status of the smart ACR for outbound call recordings.
+     * Supported for &quot;Outbound&quot; and &quot;All&quot; call directions.
+     */
+    public Boolean alternateOutboundCallRecordingMode;
 
     public CallRecordingExtensionResource id(String id) {
         this.id = id;
@@ -46,6 +51,11 @@ public class CallRecordingExtensionResource {
 
     public CallRecordingExtensionResource callDirection(String callDirection) {
         this.callDirection = callDirection;
+        return this;
+    }
+
+    public CallRecordingExtensionResource alternateOutboundCallRecordingMode(Boolean alternateOutboundCallRecordingMode) {
+        this.alternateOutboundCallRecordingMode = alternateOutboundCallRecordingMode;
         return this;
     }
 }

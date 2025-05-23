@@ -29,7 +29,7 @@ public class AggregationResponseOptionsTimers {
      */
     public AggregationResponseOptionsTimersCallsSegmentsDuration callsSegmentsDuration;
     /**
-     * Aggregation of calls duration by result (Completed, Abandoned, Voicemail, Unknown, Missed, Accepted)
+     * Aggregation of calls duration by result (Completed, Abandoned, Voicemail, Unknown, Missed, Accepted, Transferred, PickedUp, AnsweredElsewhere)
      */
     public AggregationResponseOptionsTimersCallsDurationByResult callsDurationByResult;
     /**
@@ -41,9 +41,13 @@ public class AggregationResponseOptionsTimers {
      */
     public AggregationResponseOptionsTimersCallsDurationByQueueSla callsDurationByQueueSla;
     /**
-     * Aggregation of calls duration by type (Direct, FromQueue, ParkRetrieval, Transferred, Outbound)
+     * Aggregation of calls duration by type (Direct, FromQueue, ParkRetrieval, Transferred, Outbound, QueueCallPickup)
      */
     public AggregationResponseOptionsTimersCallsDurationByType callsDurationByType;
+    /**
+     * Aggregation of calls duration by party that ended the call (Callee, Caller, System)
+     */
+    public AggregationResponseOptionsTimersCallsDurationByEndingParty callsDurationByEndingParty;
 
     public AggregationResponseOptionsTimers allCallsDuration(AggregationResponseOptionsTimersAllCallsDuration allCallsDuration) {
         this.allCallsDuration = allCallsDuration;
@@ -87,6 +91,11 @@ public class AggregationResponseOptionsTimers {
 
     public AggregationResponseOptionsTimers callsDurationByType(AggregationResponseOptionsTimersCallsDurationByType callsDurationByType) {
         this.callsDurationByType = callsDurationByType;
+        return this;
+    }
+
+    public AggregationResponseOptionsTimers callsDurationByEndingParty(AggregationResponseOptionsTimersCallsDurationByEndingParty callsDurationByEndingParty) {
+        this.callsDurationByEndingParty = callsDurationByEndingParty;
         return this;
     }
 }

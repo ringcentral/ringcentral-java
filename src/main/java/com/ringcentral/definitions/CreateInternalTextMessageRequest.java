@@ -8,7 +8,7 @@ public class CreateInternalTextMessageRequest {
     public PagerCallerInfoRequest from;
     /**
      * Internal identifier of a message this message replies to
-     * Format: int32
+     * Format: int64
      */
     public Long replyOn;
     /**

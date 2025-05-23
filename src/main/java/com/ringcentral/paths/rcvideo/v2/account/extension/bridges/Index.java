@@ -21,9 +21,9 @@ public class Index {
     }
 
     /**
-     * Creates a new bridge for the user specified by **accountId** and **extensionId** identifiers. The request body
+     * Creates a new bridge for the user specified by `accountId` and `extensionId` identifiers. The request body
      * should contain JSON object which describes properties of the new bridge.
-     * The bridge can be created by a user himself, his delegate or any user who has the **Super Admin** privilege.
+     * The bridge can be created by the owner, a delegate or any user who has the **Super Admin** privilege.
      * <p>
      * HTTP Method: post
      * Endpoint: /rcvideo/v2/account/{accountId}/extension/{extensionId}/bridges

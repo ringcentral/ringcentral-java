@@ -50,9 +50,13 @@ public class Index {
      * App Permission: RoleManagement
      * User Permission: EditUserRoles
      */
-    public String post(RoleResource roleResource) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(false), roleResource, null);
+    public String post(RoleResource roleResource, CreateCustomRoleParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.post(this.path(false), roleResource, queryParams);
         return rb.string();
+    }
+
+    public String post(RoleResource roleResource) throws com.ringcentral.RestException, java.io.IOException {
+        return this.post(roleResource, null);
     }
 
     /**
@@ -83,12 +87,16 @@ public class Index {
      * App Permission: RoleManagement
      * User Permission: EditUserRoles
      */
-    public RoleResource put(RoleResource roleResource) throws com.ringcentral.RestException, java.io.IOException {
+    public RoleResource put(RoleResource roleResource, UpdateUserRoleParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         if (roleId == null) {
             throw new IllegalArgumentException("Parameter roleId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), roleResource, null);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), roleResource, queryParams);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), RoleResource.class);
+    }
+
+    public RoleResource put(RoleResource roleResource) throws com.ringcentral.RestException, java.io.IOException {
+        return this.put(roleResource, null);
     }
 
     /**

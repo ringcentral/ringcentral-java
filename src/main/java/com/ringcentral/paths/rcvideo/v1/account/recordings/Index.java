@@ -21,8 +21,7 @@ public class Index {
     }
 
     /**
-     * Returns all account recordings.
-     * This endpoint is used in Admin recording service, not regular web
+     * Returns the list of meeting recordings owned by all users of the account.
      * <p>
      * HTTP Method: get
      * Endpoint: /rcvideo/v1/account/{accountId}/recordings

@@ -3,6 +3,10 @@ package com.ringcentral.definitions;
 
 public class CompanyAnsweringRuleUpdate {
     /**
+     * Identifier of an answering rule
+     */
+    public String id;
+    /**
      * Specifies if a rule is active or inactive. The default value is `true`
      * Default: true
      */
@@ -46,6 +50,11 @@ public class CompanyAnsweringRuleUpdate {
      * can be applied, see Dictionary Greeting List
      */
     public GreetingInfo[] greetings;
+
+    public CompanyAnsweringRuleUpdate id(String id) {
+        this.id = id;
+        return this;
+    }
 
     public CompanyAnsweringRuleUpdate enabled(Boolean enabled) {
         this.enabled = enabled;

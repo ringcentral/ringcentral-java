@@ -46,6 +46,10 @@ public class GetMessageInfoResponse {
      */
     public String creationTime;
     /**
+     * SMS only. Delivery error code returned by gateway
+     */
+    public String deliveryErrorCode;
+    /**
      * Text message direction. Note that for some message types not all
      * directions are allowed. For example voicemail messages can
      * be only inbound
@@ -190,6 +194,11 @@ public class GetMessageInfoResponse {
 
     public GetMessageInfoResponse creationTime(String creationTime) {
         this.creationTime = creationTime;
+        return this;
+    }
+
+    public GetMessageInfoResponse deliveryErrorCode(String deliveryErrorCode) {
+        this.deliveryErrorCode = deliveryErrorCode;
         return this;
     }
 

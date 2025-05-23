@@ -13,14 +13,14 @@ public class CloudRecordings {
     /**
      * Required
      */
-    public Paging paging;
+    public BasicPaging paging;
 
     public CloudRecordings recordings(CloudRecording[] recordings) {
         this.recordings = recordings;
         return this;
     }
 
-    public CloudRecordings paging(Paging paging) {
+    public CloudRecordings paging(BasicPaging paging) {
         this.paging = paging;
         return this;
     }

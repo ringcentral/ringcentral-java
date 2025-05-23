@@ -32,12 +32,12 @@ public class Index {
      * Rate Limit Group: Heavy
      * App Permission: ReadWebinars
      */
-    public WebinarResource get() throws com.ringcentral.RestException, java.io.IOException {
+    public HistoryWebinarResource get() throws com.ringcentral.RestException, java.io.IOException {
         if (webinarId == null) {
             throw new IllegalArgumentException("Parameter webinarId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), WebinarResource.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), HistoryWebinarResource.class);
     }
 
     public com.ringcentral.paths.webinar.history.v1.webinars.sessions.Index sessions() {

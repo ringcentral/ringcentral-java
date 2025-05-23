@@ -21,8 +21,8 @@ public class Index {
     }
 
     /**
-     * Returns a default bridge (PMI) for the user specified by **accountId**
-     * and **extensionId** identifiers.
+     * Returns a default bridge (PMI) for the user specified by `accountId`
+     * and `extensionId` identifiers.
      * <p>
      * HTTP Method: get
      * Endpoint: /rcvideo/v2/account/{accountId}/extension/{extensionId}/bridges/default

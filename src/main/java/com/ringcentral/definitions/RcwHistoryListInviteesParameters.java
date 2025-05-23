@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class RcwHistoryListInviteesParameters {
     /**
-     * The role of the invitee/participant.
+     * The role of the participant.
      * Enum: Panelist, CoHost, Host, Attendee
      */
     public String[] role;

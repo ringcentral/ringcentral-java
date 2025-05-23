@@ -18,7 +18,7 @@ public class AccountResource {
     /**
      *
      */
-    public PhoneNumberResource mainNumber;
+    public AdgPhoneNumberResource mainNumber;
 
     public AccountResource companyName(String companyName) {
         this.companyName = companyName;
@@ -35,7 +35,7 @@ public class AccountResource {
         return this;
     }
 
-    public AccountResource mainNumber(PhoneNumberResource mainNumber) {
+    public AccountResource mainNumber(AdgPhoneNumberResource mainNumber) {
         this.mainNumber = mainNumber;
         return this;
     }

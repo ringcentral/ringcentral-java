@@ -21,6 +21,15 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.rcvideo.v1.history.account.Index account() {
+        return this.account(null);
+    }
+
+    public com.ringcentral.paths.rcvideo.v1.history.account.Index account(String accountId) {
+        return new com.ringcentral.paths.rcvideo.v1.history.account.Index(this, accountId);
+    }
+
+
     public com.ringcentral.paths.rcvideo.v1.history.meetings.Index meetings() {
         return this.meetings(null);
     }

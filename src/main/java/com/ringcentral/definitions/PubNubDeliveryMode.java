@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class PubNubDeliveryMode {
     /**
-     * The transport type for this subscription, or the channel by which an app should be notified of an event
+     * The transport type for this subscription
      * Required
      * Enum: PubNub
      */
@@ -22,23 +22,25 @@ public class PubNubDeliveryMode {
      */
     public String address;
     /**
+     * (Only for a `PubNub` transport)
      * PubNub credential required to subscribe to the channel
      * Required
      */
     public String subscriberKey;
     /**
+     * (Only for a `PubNub` transport)
      * PubNub credential required to subscribe to the channel
      * Required
      */
     public String secretKey;
     /**
-     * (Only for a &quot;PubNub&quot; transport, returned only if `encryption` is `true`)
+     * (Only for a `PubNub` transport, returned only if `encryption` is `true`)
      * Encryption algorithm used
      * Enum: AES
      */
     public String encryptionAlgorithm;
     /**
-     * (Only for a &quot;PubNub&quot; transport, returned only if `encryption` is `true`)
+     * (Only for a `PubNub` transport, returned only if `encryption` is `true`)
      * Cryptographic key to decrypt PubNub notification messages
      */
     public String encryptionKey;

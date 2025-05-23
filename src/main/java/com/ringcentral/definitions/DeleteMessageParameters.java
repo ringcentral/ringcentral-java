@@ -10,9 +10,20 @@ public class DeleteMessageParameters {
      * with all the attachments
      */
     public Boolean purge;
+    /**
+     * Type of messages to be deleted
+     * Default: All
+     * Enum: Fax, SMS, VoiceMail, Pager, Text, All
+     */
+    public String type;
 
     public DeleteMessageParameters purge(Boolean purge) {
         this.purge = purge;
+        return this;
+    }
+
+    public DeleteMessageParameters type(String type) {
+        this.type = type;
         return this;
     }
 }

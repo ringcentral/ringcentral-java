@@ -83,7 +83,7 @@ public class ListMessagesParameters {
     /**
      * Filters shared messages based on the owner extension type. Supported if &quot;SharedVoicemail&quot; or &quot;CallQueueSmsRecipient&quot;
      * feature is enabled.
-     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension, ProxyAdmin, RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser
+     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension, ProxyAdmin, RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser, Unknown
      */
     public String[] ownerExtensionType;
 

@@ -32,7 +32,7 @@ const buildPath = (s: string): string => {
 
 for (const path of paths.filter((item) => item.operations.length > 0)) {
   for (const operation of path.operations) {
-    const parameters = [];
+    const parameters: string[] = [];
     if (operation.bodyParameters) {
       parameters.push(operation.bodyParameters);
     }
@@ -114,6 +114,8 @@ rc.authorize(jwtToken);`,
       markdown.push("- `result` is of type `byte[]`");
       markdown.push(`\n### ❗❗❗ Code sample above may not work
 \nPlease refer to [Binary content downloading](/README.md#Binary-content-downloading).`);
+    } else if (operation.responseSchema.type === "string") {
+      markdown.push("- `result` is a string");
     } else {
       console.log(operation);
     }

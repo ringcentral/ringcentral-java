@@ -21,18 +21,18 @@ public class Index {
     }
 
     /**
-     * Posts a file.
+     * Posts a file or multiple files.
      * HTTP Method: post
      * Endpoint: /team-messaging/v1/files
      * Rate Limit Group: Heavy
      * App Permission: TeamMessaging
      */
-    public TMAddFileRequest post(CreateGlipFileNewRequest createGlipFileNewRequest, CreateGlipFileNewParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public TMAddFile[] post(CreateGlipFileNewRequest createGlipFileNewRequest, CreateGlipFileNewParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(), createGlipFileNewRequest, queryParams, com.ringcentral.ContentType.MULTIPART);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), TMAddFileRequest.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), TMAddFile[].class);
     }
 
-    public TMAddFileRequest post(CreateGlipFileNewRequest createGlipFileNewRequest) throws com.ringcentral.RestException, java.io.IOException {
+    public TMAddFile[] post(CreateGlipFileNewRequest createGlipFileNewRequest) throws com.ringcentral.RestException, java.io.IOException {
         return this.post(createGlipFileNewRequest, null);
     }
 }

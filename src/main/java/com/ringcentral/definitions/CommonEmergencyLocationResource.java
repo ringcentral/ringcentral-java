@@ -20,7 +20,7 @@ public class CommonEmergencyLocationResource {
     /**
      *
      */
-    public ShortSiteInfo site;
+    public SiteBasicInfo site;
     /**
      * Emergency address status
      * Enum: Valid, Invalid, Provisioning
@@ -73,7 +73,7 @@ public class CommonEmergencyLocationResource {
         return this;
     }
 
-    public CommonEmergencyLocationResource site(ShortSiteInfo site) {
+    public CommonEmergencyLocationResource site(SiteBasicInfo site) {
         this.site = site;
         return this;
     }

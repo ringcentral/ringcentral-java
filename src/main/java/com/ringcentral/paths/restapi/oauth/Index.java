@@ -21,6 +21,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.oauth.jwks.Index jwks() {
+        return new com.ringcentral.paths.restapi.oauth.jwks.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.oauth.token.Index token() {
         return new com.ringcentral.paths.restapi.oauth.token.Index(this);
     }
@@ -28,6 +33,16 @@ public class Index {
 
     public com.ringcentral.paths.restapi.oauth.revoke.Index revoke() {
         return new com.ringcentral.paths.restapi.oauth.revoke.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.oauth.wstoken.Index wstoken() {
+        return new com.ringcentral.paths.restapi.oauth.wstoken.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.oauth.userinfo.Index userinfo() {
+        return new com.ringcentral.paths.restapi.oauth.userinfo.Index(this);
     }
 
 

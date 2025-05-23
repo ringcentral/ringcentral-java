@@ -6,7 +6,9 @@ package com.ringcentral.definitions;
  */
 public class RevokeTokenParameters {
     /**
-     * Access or refresh token to be revoked (along with the entire OAuth session)
+     * Access or refresh token to be revoked (along with the entire OAuth session).
+     * <p>
+     * Note: it is recommended to pass token via request body attribute
      */
     public String token;
 

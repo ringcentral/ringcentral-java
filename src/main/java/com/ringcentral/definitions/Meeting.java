@@ -6,20 +6,20 @@ package com.ringcentral.definitions;
  */
 public class Meeting {
     /**
-     * Call id
+     * Meeting id
      * Required
      */
     public String id;
-    /**
-     * Bridge id
-     * Required
-     */
-    public String bridgeId;
     /**
      * Short bridge id
      * Required
      */
     public String shortId;
+    /**
+     * Bridge id
+     * Required
+     */
+    public String bridgeId;
     /**
      * Start time ISO 8601
      * Required
@@ -27,16 +27,20 @@ public class Meeting {
      */
     public String startTime;
     /**
-     * Duration second
+     * Meeting name
+     * Required
+     */
+    public String displayName;
+    /**
+     * Required
+     */
+    public Host hostInfo;
+    /**
+     * Meeting duration in seconds
      * Format: int32
      * Example: 36
      */
     public Long duration;
-    /**
-     * Meetings name
-     * Required
-     */
-    public String displayName;
     /**
      * Meeting type
      * Required
@@ -49,10 +53,6 @@ public class Meeting {
      * Enum: InProgress, Done
      */
     public String status;
-    /**
-     * Required
-     */
-    public Host hostInfo;
     /**
      * Describe access rights which has participants to meeting
      * Required
@@ -91,13 +91,13 @@ public class Meeting {
         return this;
     }
 
-    public Meeting bridgeId(String bridgeId) {
-        this.bridgeId = bridgeId;
+    public Meeting shortId(String shortId) {
+        this.shortId = shortId;
         return this;
     }
 
-    public Meeting shortId(String shortId) {
-        this.shortId = shortId;
+    public Meeting bridgeId(String bridgeId) {
+        this.bridgeId = bridgeId;
         return this;
     }
 
@@ -106,13 +106,18 @@ public class Meeting {
         return this;
     }
 
-    public Meeting duration(Long duration) {
-        this.duration = duration;
+    public Meeting displayName(String displayName) {
+        this.displayName = displayName;
         return this;
     }
 
-    public Meeting displayName(String displayName) {
-        this.displayName = displayName;
+    public Meeting hostInfo(Host hostInfo) {
+        this.hostInfo = hostInfo;
+        return this;
+    }
+
+    public Meeting duration(Long duration) {
+        this.duration = duration;
         return this;
     }
 
@@ -123,11 +128,6 @@ public class Meeting {
 
     public Meeting status(String status) {
         this.status = status;
-        return this;
-    }
-
-    public Meeting hostInfo(Host hostInfo) {
-        this.hostInfo = hostInfo;
         return this;
     }
 

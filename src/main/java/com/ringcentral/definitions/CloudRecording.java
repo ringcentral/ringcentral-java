@@ -2,11 +2,11 @@ package com.ringcentral.definitions;
 
 
 /**
- * Recording information
+ * Meeting information
  */
 public class CloudRecording {
     /**
-     * Call id
+     * Meeting id
      * Required
      */
     public String id;
@@ -16,17 +16,15 @@ public class CloudRecording {
      */
     public String shortId;
     /**
+     * Bridge id
+     */
+    public String bridgeId;
+    /**
      * Start time ISO 8601
      * Required
      * Format: date-time
      */
     public String startTime;
-    /**
-     * Meeting duration in seconds
-     * Format: int32
-     * Example: 36
-     */
-    public Long duration;
     /**
      * Meeting name
      * Required
@@ -36,6 +34,12 @@ public class CloudRecording {
      * Required
      */
     public Host hostInfo;
+    /**
+     * Meeting duration in seconds
+     * Format: int32
+     * Example: 36
+     */
+    public Long duration;
     /**
      * Link to the recording file. Not used anymore by Web team
      * Required
@@ -61,13 +65,13 @@ public class CloudRecording {
         return this;
     }
 
-    public CloudRecording startTime(String startTime) {
-        this.startTime = startTime;
+    public CloudRecording bridgeId(String bridgeId) {
+        this.bridgeId = bridgeId;
         return this;
     }
 
-    public CloudRecording duration(Long duration) {
-        this.duration = duration;
+    public CloudRecording startTime(String startTime) {
+        this.startTime = startTime;
         return this;
     }
 
@@ -78,6 +82,11 @@ public class CloudRecording {
 
     public CloudRecording hostInfo(Host hostInfo) {
         this.hostInfo = hostInfo;
+        return this;
+    }
+
+    public CloudRecording duration(Long duration) {
+        this.duration = duration;
         return this;
     }
 

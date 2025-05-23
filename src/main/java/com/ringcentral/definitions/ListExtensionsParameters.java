@@ -11,9 +11,9 @@ public class ListExtensionsParameters {
     public String extensionNumber;
     /**
      * Extension email address. Multiple values are accepted
-     * Example: alice.smith@example.com&amp;email=bob.johnson@example.com
+     * Example: alice.smith@example.com,bob.johnson@example.com
      */
-    public String email;
+    public String[] email;
     /**
      * Indicates a page number to retrieve. Only positive number values
      * are allowed
@@ -35,10 +35,10 @@ public class ListExtensionsParameters {
      */
     public String[] status;
     /**
-     * Extension type. Multiple values are supported. Please note
+     * Extension type. Please note
      * that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039;
      * extensions in modern RingCentral product terminology
-     * Enum: User, FaxUser, FlexibleUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, Limited, Bot, ProxyAdmin, DelegatedLinesGroup, Site
+     * Enum: User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup, DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension, ProxyAdmin, RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser, Unknown
      */
     public String[] type;
 
@@ -47,7 +47,7 @@ public class ListExtensionsParameters {
         return this;
     }
 
-    public ListExtensionsParameters email(String email) {
+    public ListExtensionsParameters email(String[] email) {
         this.email = email;
         return this;
     }

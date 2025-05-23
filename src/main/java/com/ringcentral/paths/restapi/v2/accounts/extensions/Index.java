@@ -21,8 +21,9 @@ public class Index {
     }
 
     /**
-     * Deletes user extension(s) and either keeps or destroys the assets - numbers and devices.
-     * Multiple extensions can be deleted with a single API call.
+     * Deletes extension(s) of User and Limited types, and depending on device type either keeps or destroys
+     * the assets - numbers and devices. If a device is rented or bought in RC, it will be moved to the inventory.
+     * A BYOD (Other Phone) device will be deleted. Multiple extensions can be deleted by a single API call.
      * <p>
      * HTTP Method: delete
      * Endpoint: /restapi/v2/accounts/{accountId}/extensions
@@ -41,6 +42,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.v2.accounts.extensions.devices.Index devices(String deviceId) {
         return new com.ringcentral.paths.restapi.v2.accounts.extensions.devices.Index(this, deviceId);
+    }
+
+
+    public com.ringcentral.paths.restapi.v2.accounts.extensions.commhandling.Index commHandling() {
+        return new com.ringcentral.paths.restapi.v2.accounts.extensions.commhandling.Index(this);
     }
 
 

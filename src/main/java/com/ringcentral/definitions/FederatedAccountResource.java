@@ -25,7 +25,7 @@ public class FederatedAccountResource {
     /**
      *
      */
-    public PhoneNumberResource mainNumber;
+    public AdgPhoneNumberResource mainNumber;
 
     public FederatedAccountResource companyName(String companyName) {
         this.companyName = companyName;
@@ -52,7 +52,7 @@ public class FederatedAccountResource {
         return this;
     }
 
-    public FederatedAccountResource mainNumber(PhoneNumberResource mainNumber) {
+    public FederatedAccountResource mainNumber(AdgPhoneNumberResource mainNumber) {
         this.mainNumber = mainNumber;
         return this;
     }

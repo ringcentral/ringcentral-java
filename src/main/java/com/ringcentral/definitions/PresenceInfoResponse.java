@@ -8,19 +8,34 @@ public class PresenceInfoResponse {
      */
     public String uri;
     /**
+     * User-defined presence status (as previously published by the user)
      * Enum: Offline, Busy, Available
      */
     public String userStatus;
     /**
+     * Do Not Disturb status. Not applicable for User extensions
+     * if the new communication handling service is activated on account
      * Enum: TakeAllCalls, DoNotAcceptDepartmentCalls, TakeDepartmentCallsOnly, DoNotAcceptAnyCalls, Unknown
      */
     public String dndStatus;
     /**
-     *
+     * Do Not Disturb status of a User extension. Applicable for User extensions
+     * if the new communication handling service is activated on account
+     * Enum: TakeAllCalls, DoNotAcceptAnyCalls, Unknown
+     */
+    public String dndStatusPersonal;
+    /**
+     * Specifies if a Call Queue member extension will be able to receive Call Queue calls.
+     * Applicable for User extensions if the new communication handling service is activated on account.
+     * Used for Agent state type
+     */
+    public Boolean acceptCallQueueCalls;
+    /**
+     * Custom status message (as previously published by user)
      */
     public String message;
     /**
-     *
+     * If set to `true` enables other extensions to see the extension presence status
      */
     public Boolean allowSeeMyPresence;
     /**
@@ -30,11 +45,12 @@ public class PresenceInfoResponse {
      */
     public String callerIdVisibility;
     /**
-     *
+     * If `true` enables to ring extension phone, if any user monitored
+     * by this extension is ringing
      */
     public Boolean ringOnMonitoredCall;
     /**
-     *
+     * If `true` enables the extension user to pick up a monitored line on hold
      */
     public Boolean pickUpCallsOnHold;
     /**
@@ -73,6 +89,16 @@ public class PresenceInfoResponse {
 
     public PresenceInfoResponse dndStatus(String dndStatus) {
         this.dndStatus = dndStatus;
+        return this;
+    }
+
+    public PresenceInfoResponse dndStatusPersonal(String dndStatusPersonal) {
+        this.dndStatusPersonal = dndStatusPersonal;
+        return this;
+    }
+
+    public PresenceInfoResponse acceptCallQueueCalls(Boolean acceptCallQueueCalls) {
+        this.acceptCallQueueCalls = acceptCallQueueCalls;
         return this;
     }
 

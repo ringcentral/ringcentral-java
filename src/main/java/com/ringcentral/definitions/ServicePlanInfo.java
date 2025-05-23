@@ -18,7 +18,7 @@ public class ServicePlanInfo {
      */
     public String edition;
     /**
-     * Enum: Freyja, Phoenix
+     * Enum: Freyja, Phoenix, PbxBasic
      */
     public String freemiumProductType;
 

@@ -22,7 +22,7 @@ public class CreateUserEmergencyLocationRequest {
     /**
      *
      */
-    public ShortSiteInfo site;
+    public SiteBasicInfo site;
 
     public CreateUserEmergencyLocationRequest name(String name) {
         this.name = name;
@@ -44,7 +44,7 @@ public class CreateUserEmergencyLocationRequest {
         return this;
     }
 
-    public CreateUserEmergencyLocationRequest site(ShortSiteInfo site) {
+    public CreateUserEmergencyLocationRequest site(SiteBasicInfo site) {
         this.site = site;
         return this;
     }

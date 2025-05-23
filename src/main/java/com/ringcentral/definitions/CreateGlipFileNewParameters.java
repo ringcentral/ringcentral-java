@@ -6,7 +6,8 @@ package com.ringcentral.definitions;
  */
 public class CreateGlipFileNewParameters {
     /**
-     * Internal identifier of a group to which the post with attachment will be added to
+     * Internal identifier of a group to which the post with attachment
+     * will be added to
      * Format: int64
      */
     public Long groupId;

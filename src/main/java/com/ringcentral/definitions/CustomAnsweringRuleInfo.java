@@ -13,6 +13,7 @@ public class CustomAnsweringRuleInfo {
     public String id;
     /**
      * Type of an answering rule
+     * Default: Custom
      * Enum: BusinessHours, AfterHours, Custom
      */
     public String type;

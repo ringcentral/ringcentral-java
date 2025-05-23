@@ -11,24 +11,20 @@ public class SessionLivestreamMinimalModel {
     /**
      * Name of the livestreaming service provider
      * Required
-     * Example: YoutTube
+     * Example: YouTube
      */
     public String serviceProvider;
     /**
-     * Last known state of the livestream as notified by Webinar Livestreaming Controller Service (WLCS).
-     * Value may not be consistent with latest state, especially for livestream associated with OAuth2.0 based service providers.
-     * Thus, state must be obtained directly from WLCS
+     * Livestream status
      * Required
-     * Example: Initialized
-     * Enum: Initialized, Authorized, Configured, PublishSetup, Publishing, Paused, Error, Break, Deleted, Completed
+     * Example: Configured
+     * Enum: Initialized, Authorized, Configured, PublishSetup, Publishing, Error, Paused, Break, Deleted, Completed
      */
     public String livestreamStatus;
     /**
-     * Last known state of the livestream as notified by Webinar Livestreaming Controller Service (WLCS).
-     * Value may not be consistent with latest state, especially for livestream associated with OAuth2.0 based service providers.
-     * Thus, state must be obtained directly from WLCS
-     * Example: Initialized
-     * Enum: Initialized, Authorized, Configured, PublishSetup, Publishing, Paused, Error, Break, Deleted, Completed
+     * Livestream status
+     * Example: Configured
+     * Enum: Initialized, Authorized, Configured, PublishSetup, Publishing, Error, Paused, Break, Deleted, Completed
      */
     public String previousLivestreamStatus;
     /**

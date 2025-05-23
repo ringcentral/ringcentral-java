@@ -2,10 +2,17 @@ package com.ringcentral.definitions;
 
 
 /**
- * Token endpoint request parameters used in the "Guest" authorization flow
- * with the `guest` grant type
+ * Token endpoint request parameters used in the "Refresh Token" flow
+ * with the `refresh_token` grant type
  */
 public class GetTokenRequest {
+    /**
+     * The registered identifier of a client application.
+     * Used to identify a client ONLY if the client authentication is not required and
+     * corresponding credentials are not provided with this request
+     * Example: AZwEVwGEcfGet2PCouA7K6
+     */
+    public String client_id;
     /**
      * Client assertion type for the `client_secret_jwt` or `private_key_jwt` client authentication types,
      * as defined by [RFC-7523](https://datatracker.ietf.org/doc/html/rfc7523#section-2.2).
@@ -20,24 +27,11 @@ public class GetTokenRequest {
      */
     public String client_assertion;
     /**
-     * Grant type
-     * Required
-     * Enum: authorization_code, password, refresh_token, client_credentials, urn:ietf:params:oauth:grant-type:jwt-bearer, urn:ietf:params:oauth:grant-type:device_code, device_certificate, partner_jwt, guest, personal_jwt, otp, ivr_pin
-     */
-    public String grant_type;
-    /**
      * The list of application permissions (OAuth scopes) requested.
      * By default, it includes all permissions configured on
      * the client application registration
      */
     public String scope;
-    /**
-     * The registered identifier of a client application.
-     * Used to identify a client ONLY if the client authentication is not required and
-     * corresponding credentials are not provided with this request
-     * Example: AZwEVwGEcfGet2PCouA7K6
-     */
-    public String client_id;
     /**
      * The unique identifier of a client application instance. If not
      * specified, the derived or auto-generated value will be used
@@ -59,8 +53,13 @@ public class GetTokenRequest {
      */
     public Long refresh_token_ttl;
     /**
-     * For `otp` grant type only.
-     * One-time password code
+     * Grant type
+     * Required
+     * Enum: authorization_code, urn:ietf:params:oauth:grant-type:jwt-bearer, partner_jwt, refresh_token
+     */
+    public String grant_type;
+    /**
+     * For `authorization_code` grant type only. User&#039;s authorization code
      * Required
      */
     public String code;
@@ -78,31 +77,6 @@ public class GetTokenRequest {
      */
     public String code_verifier;
     /**
-     * For `password` grant type only. User login name: email or phone number in E.164 format
-     * Required
-     */
-    public String username;
-    /**
-     * For `password` grant type only. User&#039;s password
-     * Required
-     * Format: password
-     */
-    public String password;
-    /**
-     * For `password` grant type only. Optional. Extension short number. If a company number
-     * is specified as a username, and extension is not specified, the
-     * server will attempt to authenticate client as main company administrator
-     * <p>
-     * DEPRECATED: use extension number embedded into username string like `+16501234567*101`
-     */
-    public String extension;
-    /**
-     * IVR pin for pin-based authentication.
-     * <p>
-     * DEPRECATED: use a dedicated `ivr_pin` grant type instead
-     */
-    public String pin;
-    /**
      * For `urn:ietf:params:oauth:grant-type:jwt-bearer` or `partner_jwt` grant types only.
      * Authorization grant assertion (JWT)
      * as defined by [RFC-7523](https://datatracker.ietf.org/doc/html/rfc7523#section-2.1).
@@ -114,42 +88,11 @@ public class GetTokenRequest {
      * Required
      */
     public String refresh_token;
-    /**
-     * For `ivr_pin` grant type only. User&#039;s IVR pin.
-     * Required
-     */
-    public String ivr_pin;
-    /**
-     * For `urn:ietf:params:oauth:grant-type:device_code` grant type only.
-     * The device verification code as defined by [RFC-8628](https://datatracker.ietf.org/doc/html/rfc8628#section-3.4)
-     * Required
-     */
-    public String device_code;
-    /**
-     * RingCentral Brand identifier.
-     * Required
-     */
-    public String brand_id;
-    /**
-     * RingCentral internal account ID
-     * Required
-     */
-    public String account_id;
-    /**
-     * The ID of the account on RingCentral partner&#039;s side
-     * Required
-     */
-    public String partner_account_id;
-    /**
-     * Resource type for the guest access.
-     * Required
-     */
-    public String resource_type;
-    /**
-     * Resource URL for the guest access.
-     * Required
-     */
-    public String resource;
+
+    public GetTokenRequest client_id(String client_id) {
+        this.client_id = client_id;
+        return this;
+    }
 
     public GetTokenRequest client_assertion_type(String client_assertion_type) {
         this.client_assertion_type = client_assertion_type;
@@ -161,18 +104,8 @@ public class GetTokenRequest {
         return this;
     }
 
-    public GetTokenRequest grant_type(String grant_type) {
-        this.grant_type = grant_type;
-        return this;
-    }
-
     public GetTokenRequest scope(String scope) {
         this.scope = scope;
-        return this;
-    }
-
-    public GetTokenRequest client_id(String client_id) {
-        this.client_id = client_id;
         return this;
     }
 
@@ -191,6 +124,11 @@ public class GetTokenRequest {
         return this;
     }
 
+    public GetTokenRequest grant_type(String grant_type) {
+        this.grant_type = grant_type;
+        return this;
+    }
+
     public GetTokenRequest code(String code) {
         this.code = code;
         return this;
@@ -206,26 +144,6 @@ public class GetTokenRequest {
         return this;
     }
 
-    public GetTokenRequest username(String username) {
-        this.username = username;
-        return this;
-    }
-
-    public GetTokenRequest password(String password) {
-        this.password = password;
-        return this;
-    }
-
-    public GetTokenRequest extension(String extension) {
-        this.extension = extension;
-        return this;
-    }
-
-    public GetTokenRequest pin(String pin) {
-        this.pin = pin;
-        return this;
-    }
-
     public GetTokenRequest assertion(String assertion) {
         this.assertion = assertion;
         return this;
@@ -233,41 +151,6 @@ public class GetTokenRequest {
 
     public GetTokenRequest refresh_token(String refresh_token) {
         this.refresh_token = refresh_token;
-        return this;
-    }
-
-    public GetTokenRequest ivr_pin(String ivr_pin) {
-        this.ivr_pin = ivr_pin;
-        return this;
-    }
-
-    public GetTokenRequest device_code(String device_code) {
-        this.device_code = device_code;
-        return this;
-    }
-
-    public GetTokenRequest brand_id(String brand_id) {
-        this.brand_id = brand_id;
-        return this;
-    }
-
-    public GetTokenRequest account_id(String account_id) {
-        this.account_id = account_id;
-        return this;
-    }
-
-    public GetTokenRequest partner_account_id(String partner_account_id) {
-        this.partner_account_id = partner_account_id;
-        return this;
-    }
-
-    public GetTokenRequest resource_type(String resource_type) {
-        this.resource_type = resource_type;
-        return this;
-    }
-
-    public GetTokenRequest resource(String resource) {
-        this.resource = resource;
         return this;
     }
 }

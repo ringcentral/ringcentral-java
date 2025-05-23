@@ -9,14 +9,14 @@ public class SiteIVRSettingsUpdate {
     /**
      *
      */
-    public SiteIvrActionsUpdate[] actions;
+    public SiteIvrActions[] actions;
 
     public SiteIVRSettingsUpdate topMenu(SiteIVRTopMenuUpdate topMenu) {
         this.topMenu = topMenu;
         return this;
     }
 
-    public SiteIVRSettingsUpdate actions(SiteIvrActionsUpdate[] actions) {
+    public SiteIVRSettingsUpdate actions(SiteIvrActions[] actions) {
         this.actions = actions;
         return this;
     }

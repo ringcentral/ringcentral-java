@@ -20,13 +20,13 @@ public class AggregateA2PSMSStatusesParameters {
     /**
      * The end of the time range to filter the results in ISO 8601 format including timezone. Default is the &#039;dateTo&#039; minus 24 hours
      * Format: date-time
-     * Example: 2020-11-09T16:07:52.597Z
+     * Example: Mon Nov 09 2020 08:07:52 GMT-0800 (Pacific Standard Time)
      */
     public String dateFrom;
     /**
      * The end of the time range to filter the results in ISO 8601 format including timezone. Default is the current time
      * Format: date-time
-     * Example: 2020-11-25T16:07:52.597Z
+     * Example: Wed Nov 25 2020 08:07:52 GMT-0800 (Pacific Standard Time)
      */
     public String dateTo;
     /**

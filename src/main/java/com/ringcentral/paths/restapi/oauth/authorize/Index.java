@@ -41,22 +41,4 @@ public class Index {
     public String get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
-
-    /**
-     * Performs Authentication of the End-User by sending the User Agent to the Authorization Server&#039;s
-     * Authorization Endpoint for Authentication and Authorization,
-     * using request parameters defined by OAuth 2.0 [RFC-6749](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1)
-     * and additional parameters and parameter values defined by
-     * [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint).
-     * <p>
-     * This is the version that uses HTTP `POST` method.
-     * <p>
-     * HTTP Method: post
-     * Endpoint: /restapi/oauth/authorize
-     * Rate Limit Group: Auth
-     */
-    public String post(AuthorizeRequest authorizeRequest) throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(), authorizeRequest, null, com.ringcentral.ContentType.FORM);
-        return rb.string();
-    }
 }

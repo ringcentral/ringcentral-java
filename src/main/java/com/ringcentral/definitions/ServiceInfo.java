@@ -26,7 +26,7 @@ public class ServiceInfo {
     /**
      *
      */
-    public TargetServicePlanInfo targetServicePlan;
+    public ServicePlanInfo targetServicePlan;
     /**
      *
      */
@@ -56,7 +56,7 @@ public class ServiceInfo {
         return this;
     }
 
-    public ServiceInfo targetServicePlan(TargetServicePlanInfo targetServicePlan) {
+    public ServiceInfo targetServicePlan(ServicePlanInfo targetServicePlan) {
         this.targetServicePlan = targetServicePlan;
         return this;
     }

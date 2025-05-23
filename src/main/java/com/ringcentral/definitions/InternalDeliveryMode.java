@@ -3,12 +3,13 @@ package com.ringcentral.definitions;
 
 public class InternalDeliveryMode {
     /**
-     * The transport type for this subscription, or the channel by which an app should be notified of an event
+     * The transport type for this subscription
      * Required
      * Enum: Internal
      */
     public String transportType;
     /**
+     * (Only for an `Internal` transport)
      * The name of internal channel (defined in the backend service configuration) to deliver notifications through.
      * Required
      * Example: my-server-channel

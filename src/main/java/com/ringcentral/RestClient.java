@@ -96,21 +96,6 @@ public class RestClient {
         token = null;
     }
 
-    /**
-     * Authorize or authenticate using the ROPC or password grant flow.
-     *
-     * @deprecated Password auth is deprecated. Use {@link #authorize(String)} or {@link #authorize(String, String)} instead.
-     */
-    @Deprecated
-    public TokenInfo authorize(String username, String extension, String password) throws IOException, RestException {
-        GetTokenRequest getTokenRequest = new GetTokenRequest()
-            .grant_type("password")
-            .username(username)
-            .extension(extension)
-            .password(password);
-        return authorize(getTokenRequest);
-    }
-
     public TokenInfo authorize(String authCode, String redirectUri) throws IOException, RestException {
         GetTokenRequest getTokenRequest = new GetTokenRequest()
             .grant_type("authorization_code")
@@ -425,5 +410,51 @@ public class RestClient {
 
     public com.ringcentral.paths.webinar.Index webinar() {
         return new com.ringcentral.paths.webinar.Index(this);
+    }
+
+    // todo: this is temporary, it will be removed when AuthorizeRequest is back to spec
+    class AuthorizeRequest {
+        public String response_type;
+        public String client_id;
+        public String redirect_uri;
+        public String state;
+        public String ui_options;
+        public String code_challenge;
+        public String code_challenge_method;
+
+        public AuthorizeRequest response_type(String response_type) {
+            this.response_type = response_type;
+            return this;
+        }
+
+        public AuthorizeRequest client_id(String client_id) {
+            this.client_id = client_id;
+            return this;
+        }
+
+        public AuthorizeRequest redirect_uri(String redirect_uri) {
+            this.redirect_uri = redirect_uri;
+            return this;
+        }
+
+        public AuthorizeRequest state(String state) {
+            this.state = state;
+            return this;
+        }
+
+        public AuthorizeRequest ui_options(String ui_options) {
+            this.ui_options = ui_options;
+            return this;
+        }
+
+        public AuthorizeRequest code_challenge(String code_challenge) {
+            this.code_challenge = code_challenge;
+            return this;
+        }
+
+        public AuthorizeRequest code_challenge_method(String code_challenge_method) {
+            this.code_challenge_method = code_challenge_method;
+            return this;
+        }
     }
 }

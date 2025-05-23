@@ -30,7 +30,7 @@ public class ListStandardUserRoleParameters {
     public Long perPage;
     /**
      * Specifies whether to return advanced permissions capabilities within `permissionsCapabilities` resource.
-     * The default value is false.
+     * The default value is false
      */
     public Boolean advancedPermissions;
 

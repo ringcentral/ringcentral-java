@@ -17,7 +17,7 @@ public class EmergencyLocationRequestResource {
     /**
      *
      */
-    public ShortSiteInfo site;
+    public SiteBasicInfo site;
     /**
      * Emergency address status
      * Enum: Valid, Invalid
@@ -61,7 +61,7 @@ public class EmergencyLocationRequestResource {
         return this;
     }
 
-    public EmergencyLocationRequestResource site(ShortSiteInfo site) {
+    public EmergencyLocationRequestResource site(SiteBasicInfo site) {
         this.site = site;
         return this;
     }

@@ -32,6 +32,10 @@ public class CallsTimers {
     /**
      *
      */
+    public CallsByEndingParty callsByEndingParty;
+    /**
+     *
+     */
     public CallsByCompanyHours callsByCompanyHours;
     /**
      *
@@ -69,6 +73,11 @@ public class CallsTimers {
 
     public CallsTimers callsByResult(CallsByResult callsByResult) {
         this.callsByResult = callsByResult;
+        return this;
+    }
+
+    public CallsTimers callsByEndingParty(CallsByEndingParty callsByEndingParty) {
+        this.callsByEndingParty = callsByEndingParty;
         return this;
     }
 

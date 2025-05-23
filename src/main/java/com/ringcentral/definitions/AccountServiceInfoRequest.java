@@ -31,7 +31,7 @@ public class AccountServiceInfoRequest {
     /**
      *
      */
-    public TargetServicePlanInfo targetServicePlan;
+    public ServicePlanInfo targetServicePlan;
     /**
      *
      */
@@ -75,7 +75,7 @@ public class AccountServiceInfoRequest {
         return this;
     }
 
-    public AccountServiceInfoRequest targetServicePlan(TargetServicePlanInfo targetServicePlan) {
+    public AccountServiceInfoRequest targetServicePlan(ServicePlanInfo targetServicePlan) {
         this.targetServicePlan = targetServicePlan;
         return this;
     }

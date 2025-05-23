@@ -42,28 +42,21 @@ public class AuthorizeParameters {
      * Space-delimited, case-sensitive list of ASCII string values that specifies whether the Authorization Server prompts the End-User for
      * re-authentication and consent. The defined values are:
      * <p>
-     * - `login` - RingCentral native login form,
-     * - `sso` - Single Sign-On login form,
-     * - `consent` - form to show the requested scope and prompt user for consent.
-     * <p>
-     * Either `login` or `sso` (or both) must be specified. The default
-     * value is `login sso`
+     * - `login` - RingCentral native login form;
+     * - `sso` - Single Sign-On login form;
+     * - `consent` - form to show the requested scope and prompt user for consent;
+     * - `none` - indicates that non-interactive authorization is requested
+     * (the flow will succeed only if the user has been already authenticated within the same browser session).
+     * Cannot be combined with any other prompt option.
      * Default: login sso
      */
     public String prompt;
     /**
      * End-User&#039;s preferred languages and scripts for the user interface, represented as a space-separated list of
      * [RFC-5646](https://datatracker.ietf.org/doc/html/rfc5646) language tag values, ordered by preference.
-     * <p>
-     * If this parameter is provided, its value overrides &#039;Accept-Language&#039; header value and &#039;localeId&#039; parameter value (if any)
      * Example: en-US
      */
     public String ui_locales;
-    /**
-     * DEPRECATED: `ui_locales` parameter should be used instead
-     * Example: en-US
-     */
-    public String localeId;
     /**
      * The code challenge value as defined by the PKCE specification -
      * [RFC-7636 &quot;Proof Key for Code Exchange by OAuth Public Clients&quot;](https://datatracker.ietf.org/doc/html/rfc7636)
@@ -77,13 +70,11 @@ public class AuthorizeParameters {
      */
     public String code_challenge_method;
     /**
-     * String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token.
+     * String value used to associate a Client session with an ID Token, and to mitigate replay attacks.
+     * The value is passed through unmodified from the Authentication Request to the ID Token.
+     * (This parameter is defined in OpenID Connect 1.0 specification)
      */
     public String nonce;
-    /**
-     * Login form user interface options (space-separated). By default, the UI options that are registered for this client application will be used
-     */
-    public String ui_options;
     /**
      * Hint to the Authorization Server about the login identifier the End-User might use to log in.
      */
@@ -135,11 +126,6 @@ public class AuthorizeParameters {
         return this;
     }
 
-    public AuthorizeParameters localeId(String localeId) {
-        this.localeId = localeId;
-        return this;
-    }
-
     public AuthorizeParameters code_challenge(String code_challenge) {
         this.code_challenge = code_challenge;
         return this;
@@ -152,11 +138,6 @@ public class AuthorizeParameters {
 
     public AuthorizeParameters nonce(String nonce) {
         this.nonce = nonce;
-        return this;
-    }
-
-    public AuthorizeParameters ui_options(String ui_options) {
-        this.ui_options = ui_options;
         return this;
     }
 

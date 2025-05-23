@@ -40,8 +40,9 @@ public class DetailedExtensionPresenceEventBody {
      */
     public String meetingStatus;
     /**
-     * Extended DnD (Do not Disturb) status
-     * Enum: TakeAllCalls, DoNotAcceptAnyCalls, DoNotAcceptDepartmentCalls, TakeDepartmentCallsOnly
+     * Do Not Disturb status. Not applicable for User extensions
+     * if the new communication handling service is activated on account
+     * Enum: TakeAllCalls, DoNotAcceptDepartmentCalls, TakeDepartmentCallsOnly, DoNotAcceptAnyCalls, Unknown
      */
     public String dndStatus;
     /**
@@ -49,7 +50,8 @@ public class DetailedExtensionPresenceEventBody {
      */
     public Boolean allowSeeMyPresence;
     /**
-     * If `true` enables to ring extension phone, if any user monitored by this extension is ringing
+     * If `true` enables to ring extension phone, if any user monitored
+     * by this extension is ringing
      */
     public Boolean ringOnMonitoredCall;
     /**

@@ -27,12 +27,12 @@ public class Index {
      * Rate Limit Group: Light
      * App Permission: RingSense
      */
-    public GetSessionInsightsResponse get(GetSessionInsightsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
+    public SessionsInsightsResource get(GetSessionInsightsParameters queryParams) throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetSessionInsightsResponse.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), SessionsInsightsResource.class);
     }
 
-    public GetSessionInsightsResponse get() throws com.ringcentral.RestException, java.io.IOException {
+    public SessionsInsightsResource get() throws com.ringcentral.RestException, java.io.IOException {
         return this.get(null);
     }
 }

@@ -9,11 +9,11 @@ public class RegionalSettings {
     /**
      *
      */
-    public CountryInfoShortModel homeCountry;
+    public CountryInfoShortModelV2 homeCountry;
     /**
      *
      */
-    public TimezoneInfo timezone;
+    public TimezoneInfoBase timezone;
     /**
      *
      */
@@ -33,12 +33,12 @@ public class RegionalSettings {
      */
     public String timeFormat;
 
-    public RegionalSettings homeCountry(CountryInfoShortModel homeCountry) {
+    public RegionalSettings homeCountry(CountryInfoShortModelV2 homeCountry) {
         this.homeCountry = homeCountry;
         return this;
     }
 
-    public RegionalSettings timezone(TimezoneInfo timezone) {
+    public RegionalSettings timezone(TimezoneInfoBase timezone) {
         this.timezone = timezone;
         return this;
     }

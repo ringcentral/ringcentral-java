@@ -26,7 +26,7 @@ public class Index {
     }
 
     /**
-     * Returns a bridge by **bridgeId** identifier.
+     * Returns a bridge by `bridgeId` identifier.
      * HTTP Method: get
      * Endpoint: /rcvideo/v2/bridges/{bridgeId}
      * Rate Limit Group: Medium
@@ -45,8 +45,8 @@ public class Index {
     }
 
     /**
-     * Deletes a bridge by **bridgeId** identifier.
-     * Deletion can only be done by bridge owner, his delegate or any user who has the **Super Admin** privilege.
+     * Deletes a bridge by `bridgeId` identifier.
+     * Deletion can only be done by the bridge owner, an owner&#039;s delegate or any user who has the **Super Admin** privilege.
      * <p>
      * HTTP Method: delete
      * Endpoint: /rcvideo/v2/bridges/{bridgeId}
@@ -62,8 +62,8 @@ public class Index {
     }
 
     /**
-     * Updates a bridge by **bridgeId** identifier. The request body should contain JSON object with updating properties.
-     * Update can only be done by bridge owner, his delegate or any user who has the **Super Admin** privilege.
+     * Updates a bridge by `bridgeId` identifier. The request body should contain JSON object with updating properties.
+     * Update can only be done by the bridge owner, an owner&#039;s delegate or any user who has the **Super Admin** privilege.
      * <p>
      * HTTP Method: patch
      * Endpoint: /rcvideo/v2/bridges/{bridgeId}

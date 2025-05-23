@@ -10,7 +10,7 @@ public class CallRecordingExtensions {
     /**
      *
      */
-    public CallRecordingExtensionInfo[] records;
+    public CallRecordingExtensionResource[] records;
     /**
      *
      */
@@ -25,7 +25,7 @@ public class CallRecordingExtensions {
         return this;
     }
 
-    public CallRecordingExtensions records(CallRecordingExtensionInfo[] records) {
+    public CallRecordingExtensions records(CallRecordingExtensionResource[] records) {
         this.records = records;
         return this;
     }

@@ -3,6 +3,11 @@ package com.ringcentral.definitions;
 
 public class AccountPhoneNumberInfo {
     /**
+     * Phone number activation status. Determine whether phone number migration is completed on the partner side.
+     * Enum: Active, Inactive
+     */
+    public String activationStatus;
+    /**
      * Internal unique identifier of a phone number
      * Required
      * Example: 1162820004
@@ -52,6 +57,11 @@ public class AccountPhoneNumberInfo {
      * Reference to the extension this number is assigned to. Omitted for company numbers
      */
     public AccountPhoneNumberInfoExtension extension;
+
+    public AccountPhoneNumberInfo activationStatus(String activationStatus) {
+        this.activationStatus = activationStatus;
+        return this;
+    }
 
     public AccountPhoneNumberInfo id(String id) {
         this.id = id;

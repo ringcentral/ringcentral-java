@@ -19,16 +19,20 @@ public class ListAccountPhoneNumbersParameters {
      */
     public Long perPage;
     /**
+     * Extension status
+     * Enum: Enabled, Disabled, Frozen, NotActivated, Unassigned
+     */
+    public String extensionStatus;
+    /**
      * Usage type of a phone number
      * Enum: MainCompanyNumber, AdditionalCompanyNumber, CompanyNumber, DirectNumber, CompanyFaxNumber, ForwardedNumber, ForwardedCompanyNumber, ContactCenterNumber, ConferencingNumber, MeetingsNumber, NumberPool, NumberStorage, BusinessMobileNumber, PartnerBusinessMobileNumber, IntegrationNumber
      */
     public String[] usageType;
     /**
-     * Payment type. &#039;External&#039; is returned for forwarded numbers
-     * which are not terminated in the RingCentral phone system
+     * Payment type of a phone number. Multiple values are supported
      * Enum: External, TollFree, Local, BusinessMobileNumberProvider, ExternalNumberProvider, ExternalNumberProviderTollFree
      */
-    public String paymentType;
+    public String[] paymentType;
     /**
      * Status of a phone number. If the value is `Normal`, the phone
      * number is ready to be used. Otherwise, it is an external number not yet
@@ -47,12 +51,17 @@ public class ListAccountPhoneNumbersParameters {
         return this;
     }
 
+    public ListAccountPhoneNumbersParameters extensionStatus(String extensionStatus) {
+        this.extensionStatus = extensionStatus;
+        return this;
+    }
+
     public ListAccountPhoneNumbersParameters usageType(String[] usageType) {
         this.usageType = usageType;
         return this;
     }
 
-    public ListAccountPhoneNumbersParameters paymentType(String paymentType) {
+    public ListAccountPhoneNumbersParameters paymentType(String[] paymentType) {
         this.paymentType = paymentType;
         return this;
     }

@@ -30,6 +30,10 @@ public class TimelineResponseOptionsCounters {
      */
     public Boolean callsByResult;
     /**
+     * Include breakdown of calls count by party that ended the call (Caller, Callee, System)
+     */
+    public Boolean callsByEndingParty;
+    /**
      * Include breakdown of calls count by company hours (BusinessHours, AfterHours)
      */
     public Boolean callsByCompanyHours;
@@ -77,6 +81,11 @@ public class TimelineResponseOptionsCounters {
 
     public TimelineResponseOptionsCounters callsByResult(Boolean callsByResult) {
         this.callsByResult = callsByResult;
+        return this;
+    }
+
+    public TimelineResponseOptionsCounters callsByEndingParty(Boolean callsByEndingParty) {
+        this.callsByEndingParty = callsByEndingParty;
         return this;
     }
 

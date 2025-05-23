@@ -59,6 +59,12 @@ public class CallsBySegmentsBreakdown {
      * Format: double
      */
     public Double setup;
+    /**
+     * Value for Forwarding segment
+     * Required
+     * Format: double
+     */
+    public Double forwarding;
 
     public CallsBySegmentsBreakdown ringing(Double ringing) {
         this.ringing = ringing;
@@ -102,6 +108,11 @@ public class CallsBySegmentsBreakdown {
 
     public CallsBySegmentsBreakdown setup(Double setup) {
         this.setup = setup;
+        return this;
+    }
+
+    public CallsBySegmentsBreakdown forwarding(Double forwarding) {
+        this.forwarding = forwarding;
         return this;
     }
 }

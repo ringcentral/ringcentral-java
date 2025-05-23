@@ -30,6 +30,10 @@ public class TimelineResponseOptionsTimers {
      */
     public Boolean callsDurationByResult;
     /**
+     * Include breakdown of calls duration by party that ended the call (Caller, Callee, System)
+     */
+    public Boolean callsDurationByEndingParty;
+    /**
      * Include breakdown of calls duration by company hours (BusinessHours, AfterHours)
      */
     public Boolean callsDurationByCompanyHours;
@@ -69,6 +73,11 @@ public class TimelineResponseOptionsTimers {
 
     public TimelineResponseOptionsTimers callsDurationByResult(Boolean callsDurationByResult) {
         this.callsDurationByResult = callsDurationByResult;
+        return this;
+    }
+
+    public TimelineResponseOptionsTimers callsDurationByEndingParty(Boolean callsDurationByEndingParty) {
+        this.callsDurationByEndingParty = callsDurationByEndingParty;
         return this;
     }
 

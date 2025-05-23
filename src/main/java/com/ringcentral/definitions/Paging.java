@@ -14,6 +14,12 @@ public class Paging {
      * Next page offset token
      */
     public String nextPageToken;
+    /**
+     * Number of records returned
+     * Required
+     * Format: int32
+     */
+    public Long perPage;
 
     public Paging currentPageToken(String currentPageToken) {
         this.currentPageToken = currentPageToken;
@@ -22,6 +28,11 @@ public class Paging {
 
     public Paging nextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
+        return this;
+    }
+
+    public Paging perPage(Long perPage) {
+        this.perPage = perPage;
         return this;
     }
 }

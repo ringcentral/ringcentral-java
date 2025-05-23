@@ -6,10 +6,10 @@ package com.ringcentral.definitions;
  */
 public class ListAnsweringRulesParameters {
     /**
-     * Filters custom call handling rules of the extension
-     * Enum: Custom
+     * Type of an answering rule. Multiple values are supported
+     * Enum: BusinessHours, AfterHours, Custom
      */
-    public String type;
+    public String[] type;
     /**
      * Default: Simple
      * Enum: Detailed, Simple
@@ -39,7 +39,7 @@ public class ListAnsweringRulesParameters {
      */
     public Long perPage;
 
-    public ListAnsweringRulesParameters type(String type) {
+    public ListAnsweringRulesParameters type(String[] type) {
         this.type = type;
         return this;
     }

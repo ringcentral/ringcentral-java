@@ -2,17 +2,18 @@ package com.ringcentral.definitions;
 
 
 /**
- * Account level region data (web service Auto-Receptionist settings)
+ * Regional data (timezone, home country, language) of an extension/account.
+ * The default is Company (Auto-Receptionist) settings
  */
 public class AccountRegionalSettings {
     /**
      *
      */
-    public CountryInfoShortModel homeCountry;
+    public CountryInfoShortModelV2 homeCountry;
     /**
      *
      */
-    public TimezoneInfo timezone;
+    public TimezoneInfoBase timezone;
     /**
      *
      */
@@ -36,12 +37,12 @@ public class AccountRegionalSettings {
      */
     public CurrencyInfo currency;
 
-    public AccountRegionalSettings homeCountry(CountryInfoShortModel homeCountry) {
+    public AccountRegionalSettings homeCountry(CountryInfoShortModelV2 homeCountry) {
         this.homeCountry = homeCountry;
         return this;
     }
 
-    public AccountRegionalSettings timezone(TimezoneInfo timezone) {
+    public AccountRegionalSettings timezone(TimezoneInfoBase timezone) {
         this.timezone = timezone;
         return this;
     }

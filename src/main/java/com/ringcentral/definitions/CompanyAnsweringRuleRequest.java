@@ -12,7 +12,8 @@ public class CompanyAnsweringRuleRequest {
      */
     public Boolean enabled;
     /**
-     * Type of an answering rule, the default value is &#039;Custom&#039; = [&#039;BusinessHours&#039;, &#039;AfterHours&#039;, &#039;Custom&#039;]
+     * Type of an answering rule
+     * Default: Custom
      * Enum: BusinessHours, AfterHours, Custom
      */
     public String type;

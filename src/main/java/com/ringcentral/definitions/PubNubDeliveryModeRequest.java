@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class PubNubDeliveryModeRequest {
     /**
-     * The transport type for this subscription, or the channel by which an app should be notified of an event
+     * The transport type for this subscription
      * Required
      * Enum: PubNub
      */

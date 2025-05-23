@@ -45,6 +45,11 @@ public class Index {
         return com.ringcentral.Utils.gson.fromJson(rb.string(), AccountInfo.class);
     }
 
+    public com.ringcentral.paths.restapi.v2.accounts.sms.Index sms() {
+        return new com.ringcentral.paths.restapi.v2.accounts.sms.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.v2.accounts.devices.Index devices() {
         return this.devices(null);
     }
@@ -75,6 +80,11 @@ public class Index {
 
     public com.ringcentral.paths.restapi.v2.accounts.deviceinventory.Index deviceInventory() {
         return new com.ringcentral.paths.restapi.v2.accounts.deviceinventory.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.v2.accounts.regionalsettings.Index regionalSettings() {
+        return new com.ringcentral.paths.restapi.v2.accounts.regionalsettings.Index(this);
     }
 
 

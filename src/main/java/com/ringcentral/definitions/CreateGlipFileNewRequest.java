@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class CreateGlipFileNewRequest {
     /**
-     * The file (binary or multipart/form-data) to upload
+     * File(s) - binary or multipart/form-data - to upload
      * Required
      */
     public Attachment body;

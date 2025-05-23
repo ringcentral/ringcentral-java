@@ -270,6 +270,11 @@ public class Index {
     }
 
 
+    public com.ringcentral.paths.restapi.account.calllogextractsync.Index callLogExtractSync() {
+        return new com.ringcentral.paths.restapi.account.calllogextractsync.Index(this);
+    }
+
+
     public com.ringcentral.paths.restapi.account.callmonitoringgroups.Index callMonitoringGroups() {
         return this.callMonitoringGroups(null);
     }

@@ -4,6 +4,7 @@ package com.ringcentral.definitions;
 public class FeatureInfo {
     /**
      * Internal identifier of a feature
+     * Required
      */
     public String id;
     /**
@@ -12,6 +13,7 @@ public class FeatureInfo {
      * permissions of the extension. If the authorized user gets features of
      * the other extension, only features that can be delegated are returned
      * (such as configuration by administrators).
+     * Required
      */
     public Boolean available;
     /**

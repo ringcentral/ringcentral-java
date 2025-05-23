@@ -59,7 +59,8 @@ public class UserPhoneNumberInfo {
      */
     public String type;
     /**
-     * Extension subtype, if applicable. For any unsupported subtypes the &#039;Unknown&#039; value will be returned
+     * Extension subtype, if applicable.
+     * For unrecognized subtypes the `Unknown` value is returned
      * Enum: VideoPro, VideoProPlus, DigitalSignage, Unknown, Emergency
      */
     public String subType;

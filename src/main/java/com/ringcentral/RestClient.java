@@ -334,11 +334,11 @@ public class RestClient {
         requestBody) throws IOException, RestException {
         try {
             Response response = requestRaw(httpMethod, endpoint, queryParameters, requestBody);
-            logger.fine(String.format("[HTTP %s %s] %s %s", httpMethod.toString(), response.code(), this.server, endpoint));
+            logger.fine(String.format("[HTTP %s %s] %s, rc-request-id: %s", httpMethod.toString(), response.code(), endpoint, response.header("rcrequestid")));
             return response.peekBody(Long.MAX_VALUE);
         } catch (RestException re) {
             Response response = re.response;
-            logger.fine(String.format("[HTTP %s %s] %s %s", httpMethod.toString(), response.code(), this.server, endpoint));
+            logger.warning(String.format("[HTTP %s %s] %s, rc-request-id: %s", httpMethod.toString(), response.code(), endpoint, response.header("rcrequestid")));
             throw re;
         }
     }

@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'java-library'
     id 'signing'
+    id 'jacoco'
 }
 
 group 'com.ringcentral'
@@ -12,6 +13,17 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+jacoco {
+    toolVersion = "0.8.11"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+        html.destination file("${buildDir}/jacocoHtml")
+    }
 }
 
 dependencies {
@@ -88,4 +100,5 @@ test {
     testLogging {
         exceptionFormat = 'full'
     }
+    finalizedBy jacocoTestReport
 }

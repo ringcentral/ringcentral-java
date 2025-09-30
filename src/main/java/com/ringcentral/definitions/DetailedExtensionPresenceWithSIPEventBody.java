@@ -46,9 +46,22 @@ public class DetailedExtensionPresenceWithSIPEventBody {
      */
     public String dndStatus;
     /**
+     * Do Not Disturb status of a User extension. Connected to the DND State type.
+     * Applicable for User extensions if the new communication handling service is
+     * activated on account.
+     * Enum: TakeAllCalls, DoNotAcceptAnyCalls, Unknown
+     */
+    public String dndStatusPersonal;
+    /**
      * If `true` enables other extensions to see the extension presence status
      */
     public Boolean allowSeeMyPresence;
+    /**
+     * Specifies if a Call Queue member extension will be able to receive Call Queue calls.
+     * Used for the Agent state type. Applicable for User extensions if the new communication
+     * handling service is activated on account
+     */
+    public Boolean acceptCallQueueCalls;
     /**
      * If `true` enables to ring extension phone, if any user monitored
      * by this extension is ringing
@@ -108,8 +121,18 @@ public class DetailedExtensionPresenceWithSIPEventBody {
         return this;
     }
 
+    public DetailedExtensionPresenceWithSIPEventBody dndStatusPersonal(String dndStatusPersonal) {
+        this.dndStatusPersonal = dndStatusPersonal;
+        return this;
+    }
+
     public DetailedExtensionPresenceWithSIPEventBody allowSeeMyPresence(Boolean allowSeeMyPresence) {
         this.allowSeeMyPresence = allowSeeMyPresence;
+        return this;
+    }
+
+    public DetailedExtensionPresenceWithSIPEventBody acceptCallQueueCalls(Boolean acceptCallQueueCalls) {
+        this.acceptCallQueueCalls = acceptCallQueueCalls;
         return this;
     }
 

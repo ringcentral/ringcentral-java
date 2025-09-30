@@ -4,8 +4,8 @@ package com.ringcentral.definitions;
 public class CommTerminatingActionRequestTargets {
     /**
      * Terminating target type
-     * Example: ImsVoiceMailTerminatingTarget
-     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget, ImsVoiceMailTerminatingTarget
+     * Example: ExtensionTerminatingTarget
+     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String type;
     /**

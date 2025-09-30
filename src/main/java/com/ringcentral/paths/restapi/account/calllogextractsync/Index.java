@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.calllogextractsync;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallLogExtractSyncResponse;
+import com.ringcentral.definitions.ExtractSyncAccountCallLogParameters;
 
 public class Index {
     public RestClient rc;

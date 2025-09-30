@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.device.emergency;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AccountDeviceUpdate;
+import com.ringcentral.definitions.DeviceResource;
 
 public class Index {
     public RestClient rc;

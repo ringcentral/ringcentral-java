@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.v2.accounts.extensions.commhandling.voice.forwardingtargets;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CommForwardingTargetsResource;
+import com.ringcentral.definitions.CommRemoveForwardingTargetsRequest;
+import com.ringcentral.definitions.CommRemoveForwardingTargetsResponse;
+import com.ringcentral.definitions.ReadForwardingTargetsParameters;
 
 public class Index {
     public RestClient rc;

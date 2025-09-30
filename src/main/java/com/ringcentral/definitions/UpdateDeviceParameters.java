@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class UpdateDeviceParameters {
     /**
-     *
+     * Specifies if pre-statement should be generated.
      */
     public Boolean prestatement;
 

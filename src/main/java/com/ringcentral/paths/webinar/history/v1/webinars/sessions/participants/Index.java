@@ -1,7 +1,8 @@
 package com.ringcentral.paths.webinar.history.v1.webinars.sessions.participants;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ParticipantListResource;
+import com.ringcentral.definitions.RcwHistoryListParticipantsParameters;
 
 public class Index {
     public RestClient rc;

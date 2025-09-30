@@ -74,6 +74,11 @@ public class CallFilters {
      * Enum: Caller, Callee, System
      */
     public String[] endingParties;
+    /**
+     * Filtering of calls by queue&#039;s business hours or after hours (joined via OR). Only applicable to Queues grouping
+     * Enum: BusinessHours, AfterHours
+     */
+    public String[] queueHours;
 
     public CallFilters extensionFilters(ExtensionFilters extensionFilters) {
         this.extensionFilters = extensionFilters;
@@ -147,6 +152,11 @@ public class CallFilters {
 
     public CallFilters endingParties(String[] endingParties) {
         this.endingParties = endingParties;
+        return this;
+    }
+
+    public CallFilters queueHours(String[] queueHours) {
+        this.queueHours = queueHours;
         return this;
     }
 }

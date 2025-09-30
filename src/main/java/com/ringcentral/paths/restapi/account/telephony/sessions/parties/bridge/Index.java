@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.bridge;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.BridgeTargetRequest;
+import com.ringcentral.definitions.CallParty;
 
 public class Index {
     public RestClient rc;

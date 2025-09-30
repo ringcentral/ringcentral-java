@@ -2,7 +2,7 @@ package com.ringcentral.definitions;
 
 
 /**
- * The list of records with opt statuses
+ * A list of SMS consent records
  */
 public class OptRecordList {
     /**

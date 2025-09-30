@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.authzprofile;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AuthProfileResource;
+import com.ringcentral.definitions.ReadAuthorizationProfileParameters;
 
 public class Index {
     public RestClient rc;

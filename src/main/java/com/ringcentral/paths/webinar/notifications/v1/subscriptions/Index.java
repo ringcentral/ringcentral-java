@@ -1,7 +1,10 @@
 package com.ringcentral.paths.webinar.notifications.v1.subscriptions;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CreateWebhookSubscriptionRequest;
+import com.ringcentral.definitions.SubscriptionInfo;
+import com.ringcentral.definitions.SubscriptionListResource;
+import com.ringcentral.definitions.UpdateSubscriptionRequest;
 
 public class Index {
     public RestClient rc;

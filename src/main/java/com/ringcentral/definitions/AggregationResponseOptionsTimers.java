@@ -48,6 +48,10 @@ public class AggregationResponseOptionsTimers {
      * Aggregation of calls duration by party that ended the call (Callee, Caller, System)
      */
     public AggregationResponseOptionsTimersCallsDurationByEndingParty callsDurationByEndingParty;
+    /**
+     * Aggregation of calls duration by queue hours (BusinessHours, AfterHours)
+     */
+    public AggregationResponseOptionsTimersCallsDurationByQueueHours callsDurationByQueueHours;
 
     public AggregationResponseOptionsTimers allCallsDuration(AggregationResponseOptionsTimersAllCallsDuration allCallsDuration) {
         this.allCallsDuration = allCallsDuration;
@@ -96,6 +100,11 @@ public class AggregationResponseOptionsTimers {
 
     public AggregationResponseOptionsTimers callsDurationByEndingParty(AggregationResponseOptionsTimersCallsDurationByEndingParty callsDurationByEndingParty) {
         this.callsDurationByEndingParty = callsDurationByEndingParty;
+        return this;
+    }
+
+    public AggregationResponseOptionsTimers callsDurationByQueueHours(AggregationResponseOptionsTimersCallsDurationByQueueHours callsDurationByQueueHours) {
+        this.callsDurationByQueueHours = callsDurationByQueueHours;
         return this;
     }
 }

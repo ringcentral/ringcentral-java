@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class DeleteMessageByFilterParameters {
     /**
-     *
+     * ID(s) of a conversation to delete
      */
     public String[] conversationId;
     /**

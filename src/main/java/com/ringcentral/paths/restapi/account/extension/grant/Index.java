@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.grant;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetExtensionGrantListResponse;
+import com.ringcentral.definitions.ListExtensionGrantsParameters;
 
 public class Index {
     public RestClient rc;

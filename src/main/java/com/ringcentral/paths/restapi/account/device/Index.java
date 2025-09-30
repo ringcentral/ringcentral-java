@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.device;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AccountDeviceUpdate;
+import com.ringcentral.definitions.DeviceResource;
+import com.ringcentral.definitions.ReadDeviceParameters;
+import com.ringcentral.definitions.UpdateDeviceParameters;
 
 public class Index {
     public RestClient rc;

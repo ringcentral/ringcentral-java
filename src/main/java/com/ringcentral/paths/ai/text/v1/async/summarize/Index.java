@@ -1,7 +1,9 @@
 package com.ringcentral.paths.ai.text.v1.async.summarize;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CaiAsyncApiResponse;
+import com.ringcentral.definitions.CaiSummarizeParameters;
+import com.ringcentral.definitions.SummaryInput;
 
 public class Index {
     public RestClient rc;

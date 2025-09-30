@@ -8,8 +8,8 @@ public class CommStateDispatchingResourceActionsTargets {
     public String name;
     /**
      * Terminating target type
-     * Example: ImsVoiceMailTerminatingTarget
-     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget, ImsVoiceMailTerminatingTarget
+     * Example: ExtensionTerminatingTarget
+     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String type;
     /**

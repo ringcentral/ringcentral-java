@@ -49,6 +49,10 @@ public class CreateSiteRequest {
      * Site code value
      */
     public String code;
+    /**
+     *
+     */
+    public CostCenterInfo costCenter;
 
     public CreateSiteRequest id(String id) {
         this.id = id;
@@ -102,6 +106,11 @@ public class CreateSiteRequest {
 
     public CreateSiteRequest code(String code) {
         this.code = code;
+        return this;
+    }
+
+    public CreateSiteRequest costCenter(CostCenterInfo costCenter) {
+        this.costCenter = costCenter;
         return this;
     }
 }

@@ -2,8 +2,8 @@ package com.ringcentral.definitions;
 
 
 /**
- * Token endpoint request parameters used in the "Refresh Token" flow
- * with the `refresh_token` grant type
+ * Token endpoint request parameters used in the "Guest" authorization flow
+ * with the `guest` grant type
  */
 public class GetTokenRequest {
     /**
@@ -55,11 +55,12 @@ public class GetTokenRequest {
     /**
      * Grant type
      * Required
-     * Enum: authorization_code, urn:ietf:params:oauth:grant-type:jwt-bearer, partner_jwt, refresh_token
+     * Enum: authorization_code, urn:ietf:params:oauth:grant-type:jwt-bearer, partner_jwt, refresh_token, password, ivr_pin, urn:ietf:params:oauth:grant-type:device_code, client_credentials, otp, guest
      */
     public String grant_type;
     /**
-     * For `authorization_code` grant type only. User&#039;s authorization code
+     * For `otp` grant type only.
+     * One-time password code
      * Required
      */
     public String code;
@@ -88,6 +89,67 @@ public class GetTokenRequest {
      * Required
      */
     public String refresh_token;
+    /**
+     * For `password` grant type only. User login name: email or phone number in E.164 format
+     * Required
+     */
+    public String username;
+    /**
+     * For `password` grant type only. User&#039;s password
+     * Required
+     * Format: password
+     */
+    public String password;
+    /**
+     * For `password` grant type only. Optional. Extension short number. If a company number
+     * is specified as a username, and extension is not specified, the
+     * server will attempt to authenticate client as main company administrator
+     * <p>
+     * DEPRECATED: use extension number embedded into username string like `+16501234567*101`
+     */
+    public String extension;
+    /**
+     * IVR pin for pin-based authentication.
+     * <p>
+     * DEPRECATED: use a dedicated `ivr_pin` grant type instead
+     */
+    public String pin;
+    /**
+     * For `ivr_pin` grant type only. User&#039;s IVR pin.
+     * Required
+     */
+    public String ivr_pin;
+    /**
+     * For `urn:ietf:params:oauth:grant-type:device_code` grant type only.
+     * The device verification code as defined by [RFC-8628](https://datatracker.ietf.org/doc/html/rfc8628#section-3.4)
+     * Required
+     */
+    public String device_code;
+    /**
+     * RingCentral Brand identifier.
+     * Required
+     */
+    public String brand_id;
+    /**
+     * RingCentral internal account ID
+     * Required
+     */
+    public String account_id;
+    /**
+     * The ID of the account on RingCentral partner&#039;s side
+     * Required
+     */
+    public String partner_account_id;
+    /**
+     * Resource type for the guest access.
+     * Required
+     */
+    public String resource_type;
+    /**
+     * Resource URL for the guest access.
+     * Required
+     */
+    public String resource;
 
     public GetTokenRequest client_id(String client_id) {
         this.client_id = client_id;
@@ -151,6 +213,61 @@ public class GetTokenRequest {
 
     public GetTokenRequest refresh_token(String refresh_token) {
         this.refresh_token = refresh_token;
+        return this;
+    }
+
+    public GetTokenRequest username(String username) {
+        this.username = username;
+        return this;
+    }
+
+    public GetTokenRequest password(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public GetTokenRequest extension(String extension) {
+        this.extension = extension;
+        return this;
+    }
+
+    public GetTokenRequest pin(String pin) {
+        this.pin = pin;
+        return this;
+    }
+
+    public GetTokenRequest ivr_pin(String ivr_pin) {
+        this.ivr_pin = ivr_pin;
+        return this;
+    }
+
+    public GetTokenRequest device_code(String device_code) {
+        this.device_code = device_code;
+        return this;
+    }
+
+    public GetTokenRequest brand_id(String brand_id) {
+        this.brand_id = brand_id;
+        return this;
+    }
+
+    public GetTokenRequest account_id(String account_id) {
+        this.account_id = account_id;
+        return this;
+    }
+
+    public GetTokenRequest partner_account_id(String partner_account_id) {
+        this.partner_account_id = partner_account_id;
+        return this;
+    }
+
+    public GetTokenRequest resource_type(String resource_type) {
+        this.resource_type = resource_type;
+        return this;
+    }
+
+    public GetTokenRequest resource(String resource) {
+        this.resource = resource;
         return this;
     }
 }

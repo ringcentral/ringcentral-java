@@ -6,11 +6,11 @@ package com.ringcentral.definitions;
  */
 public class CheckUserPermissionParameters {
     /**
-     *
+     * The ID of the permission to be checked
      */
     public String permissionId;
     /**
-     *
+     * The target extension ID (that can be an &quot;object&quot; of certain permissions)
      */
     public String targetExtensionId;
 

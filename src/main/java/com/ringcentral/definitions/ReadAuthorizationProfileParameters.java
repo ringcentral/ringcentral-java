@@ -6,7 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ReadAuthorizationProfileParameters {
     /**
-     *
+     * The target extension ID (that can be an &quot;object&quot; of certain permissions)
      */
     public String targetExtensionId;
 

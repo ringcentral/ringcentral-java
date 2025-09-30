@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.businessaddress;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AccountBusinessAddressResource;
+import com.ringcentral.definitions.ModifyAccountBusinessAddressRequest;
 
 public class Index {
     public RestClient rc;

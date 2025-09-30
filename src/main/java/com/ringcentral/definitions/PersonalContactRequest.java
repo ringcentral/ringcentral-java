@@ -142,6 +142,10 @@ public class PersonalContactRequest {
      * Contact ringtone. Max number of symbols is 64
      */
     public String ringtoneIndex;
+    /**
+     * Source of the contact. Up to 64 symbols
+     */
+    public String appInfo;
 
     public PersonalContactRequest firstName(String firstName) {
         this.firstName = firstName;
@@ -280,6 +284,11 @@ public class PersonalContactRequest {
 
     public PersonalContactRequest ringtoneIndex(String ringtoneIndex) {
         this.ringtoneIndex = ringtoneIndex;
+        return this;
+    }
+
+    public PersonalContactRequest appInfo(String appInfo) {
+        this.appInfo = appInfo;
         return this;
     }
 }

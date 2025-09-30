@@ -10,6 +10,18 @@ public class CallParty {
      */
     public String id;
     /**
+     * Internal identifier of an account
+     */
+    public String accountId;
+    /**
+     * Internal identifier of an extension
+     */
+    public String extensionId;
+    /**
+     *
+     */
+    public Attributes attributes;
+    /**
      *
      */
     public CallStatusInfo status;
@@ -74,6 +86,21 @@ public class CallParty {
 
     public CallParty id(String id) {
         this.id = id;
+        return this;
+    }
+
+    public CallParty accountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    public CallParty extensionId(String extensionId) {
+        this.extensionId = extensionId;
+        return this;
+    }
+
+    public CallParty attributes(Attributes attributes) {
+        this.attributes = attributes;
         return this;
     }
 

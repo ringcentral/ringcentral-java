@@ -11,6 +11,7 @@ public class ListAnsweringRulesParameters {
      */
     public String[] type;
     /**
+     * The level of details to be returned about each answering rule
      * Default: Simple
      * Enum: Detailed, Simple
      */

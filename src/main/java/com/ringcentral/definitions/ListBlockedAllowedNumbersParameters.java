@@ -25,7 +25,7 @@ public class ListBlockedAllowedNumbersParameters {
      */
     public Long perPage;
     /**
-     * Status of a phone number
+     * Status of a phone number blocking
      * Default: Blocked
      * Enum: Blocked, Allowed
      */

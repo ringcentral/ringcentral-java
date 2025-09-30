@@ -2,7 +2,8 @@ package com.ringcentral.definitions;
 
 
 /**
- * The list of batches retrieved for an account and other filter criteria such as fromPhoneNumber, date specified in the request.
+ * The list of batches retrieved for an account and other filter criteria such as
+ * fromPhoneNumber, date specified in the request.
  */
 public class BatchListResponse {
     /**

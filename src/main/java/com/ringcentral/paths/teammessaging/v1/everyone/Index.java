@@ -1,7 +1,8 @@
 package com.ringcentral.paths.teammessaging.v1.everyone;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.EveryoneTeamInfo;
+import com.ringcentral.definitions.UpdateEveryoneTeamRequest;
 
 public class Index {
     public RestClient rc;

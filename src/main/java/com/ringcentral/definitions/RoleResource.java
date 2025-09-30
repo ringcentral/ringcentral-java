@@ -12,7 +12,7 @@ public class RoleResource {
      */
     public String id;
     /**
-     * Dispayed name of a role
+     * Display name of a role
      * Example: Super Admin
      */
     public String displayName;

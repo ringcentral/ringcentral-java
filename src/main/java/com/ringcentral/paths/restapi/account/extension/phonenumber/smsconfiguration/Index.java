@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.extension.phonenumber.smsconfiguration;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.SmsConfigurationResource;
 
 public class Index {
     public RestClient rc;

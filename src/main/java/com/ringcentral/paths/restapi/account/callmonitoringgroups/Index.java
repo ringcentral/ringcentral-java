@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.callmonitoringgroups;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallMonitoringGroup;
+import com.ringcentral.definitions.CallMonitoringGroups;
+import com.ringcentral.definitions.CreateCallMonitoringGroupRequest;
+import com.ringcentral.definitions.ListCallMonitoringGroupsParameters;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.dictionary.faxcoverpage;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListFaxCoverPagesParameters;
+import com.ringcentral.definitions.ListFaxCoverPagesResponse;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetAccountInfoResponse;
 
 public class Index {
     public RestClient rc;
@@ -78,13 +78,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.presence.Index presence() {
-        return new com.ringcentral.paths.restapi.account.presence.Index(this);
+    public com.ringcentral.paths.restapi.account.greeting.Index greeting() {
+        return new com.ringcentral.paths.restapi.account.greeting.Index(this);
     }
 
 
-    public com.ringcentral.paths.restapi.account.greeting.Index greeting() {
-        return new com.ringcentral.paths.restapi.account.greeting.Index(this);
+    public com.ringcentral.paths.restapi.account.presence.Index presence() {
+        return new com.ringcentral.paths.restapi.account.presence.Index(this);
     }
 
 
@@ -98,21 +98,21 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.recording.Index recording() {
-        return this.recording(null);
-    }
-
-    public com.ringcentral.paths.restapi.account.recording.Index recording(String recordingId) {
-        return new com.ringcentral.paths.restapi.account.recording.Index(this, recordingId);
-    }
-
-
     public com.ringcentral.paths.restapi.account.extension.Index extension() {
         return this.extension("~");
     }
 
     public com.ringcentral.paths.restapi.account.extension.Index extension(String extensionId) {
         return new com.ringcentral.paths.restapi.account.extension.Index(this, extensionId);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.recording.Index recording() {
+        return this.recording(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.recording.Index recording(String recordingId) {
+        return new com.ringcentral.paths.restapi.account.recording.Index(this, recordingId);
     }
 
 
@@ -194,13 +194,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.calllogsync.Index callLogSync() {
-        return new com.ringcentral.paths.restapi.account.calllogsync.Index(this);
+    public com.ringcentral.paths.restapi.account.assignedrole.Index assignedRole() {
+        return new com.ringcentral.paths.restapi.account.assignedrole.Index(this);
     }
 
 
-    public com.ringcentral.paths.restapi.account.assignedrole.Index assignedRole() {
-        return new com.ringcentral.paths.restapi.account.assignedrole.Index(this);
+    public com.ringcentral.paths.restapi.account.calllogsync.Index callLogSync() {
+        return new com.ringcentral.paths.restapi.account.calllogsync.Index(this);
     }
 
 

@@ -78,6 +78,12 @@ public class TokenInfo {
      * Format: int32
      */
     public Long session_idle_timeout;
+    /**
+     * The websocket access token to be used when connecting to the Websocket Gateway.
+     * Returned only if the client application is granted with the &quot;WebSocket&quot; scope
+     * Example: QU1TMDJQMDFQQVMwMHxBQURBVTZWZHZfWmRvVWxLREQtSzh
+     */
+    public String ws_access_token;
 
     public TokenInfo access_token(String access_token) {
         this.access_token = access_token;
@@ -141,6 +147,11 @@ public class TokenInfo {
 
     public TokenInfo session_idle_timeout(Long session_idle_timeout) {
         this.session_idle_timeout = session_idle_timeout;
+        return this;
+    }
+
+    public TokenInfo ws_access_token(String ws_access_token) {
+        this.ws_access_token = ws_access_token;
         return this;
     }
 }

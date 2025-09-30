@@ -18,7 +18,7 @@ public class CommDeviceForwardingTargetResource {
      */
     public CommDeviceResource device;
     /**
-     * Required
+     *
      */
     public CommReferencedExtensionResource extension;
 

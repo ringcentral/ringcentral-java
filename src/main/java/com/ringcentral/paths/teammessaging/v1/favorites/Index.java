@@ -1,7 +1,8 @@
 package com.ringcentral.paths.teammessaging.v1.favorites;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListFavoriteChatsNewParameters;
+import com.ringcentral.definitions.TMChatListWithoutNavigation;
 
 public class Index {
     public RestClient rc;

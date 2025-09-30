@@ -11,6 +11,10 @@ public class InboundFaxesInfo {
      */
     public Boolean notifyBySms;
     /**
+     * The parameter contains the list of phone Numbers which should be used for SMS notifications sending (if advanced mode enabled)
+     */
+    public String[] advancedSmsPhoneNumbers;
+    /**
      * List of recipient email addresses for inbound fax notifications.
      * Returned if specified, in both modes (advanced/basic). Applied in advanced
      * mode only
@@ -38,6 +42,11 @@ public class InboundFaxesInfo {
 
     public InboundFaxesInfo notifyBySms(Boolean notifyBySms) {
         this.notifyBySms = notifyBySms;
+        return this;
+    }
+
+    public InboundFaxesInfo advancedSmsPhoneNumbers(String[] advancedSmsPhoneNumbers) {
+        this.advancedSmsPhoneNumbers = advancedSmsPhoneNumbers;
         return this;
     }
 

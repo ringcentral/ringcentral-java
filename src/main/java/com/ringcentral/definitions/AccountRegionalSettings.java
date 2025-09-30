@@ -9,7 +9,7 @@ public class AccountRegionalSettings {
     /**
      *
      */
-    public CountryInfoShortModelV2 homeCountry;
+    public CountryInfoShortModel homeCountry;
     /**
      *
      */
@@ -37,7 +37,7 @@ public class AccountRegionalSettings {
      */
     public CurrencyInfo currency;
 
-    public AccountRegionalSettings homeCountry(CountryInfoShortModelV2 homeCountry) {
+    public AccountRegionalSettings homeCountry(CountryInfoShortModel homeCountry) {
         this.homeCountry = homeCountry;
         return this;
     }

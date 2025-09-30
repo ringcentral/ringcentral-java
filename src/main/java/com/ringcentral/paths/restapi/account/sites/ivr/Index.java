@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.sites.ivr;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.SiteIVRSettings;
+import com.ringcentral.definitions.SiteIVRSettingsUpdate;
 
 public class Index {
     public RestClient rc;

@@ -7,7 +7,7 @@ public class CommDeviceTargetResource {
      */
     public CommDeviceResource device;
     /**
-     * Required
+     *
      */
     public CommReferencedExtensionResource extension;
     /**

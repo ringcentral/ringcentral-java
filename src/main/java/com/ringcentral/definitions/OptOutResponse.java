@@ -21,6 +21,7 @@ public class OptOutResponse {
      */
     public String status;
     /**
+     * The source of the opt-out record
      * Enum: Recipient, Account, Upstream, Carrier
      */
     public String source;

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.callerblocking;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallerBlockingSettings;
+import com.ringcentral.definitions.CallerBlockingSettingsUpdate;
 
 public class Index {
     public RestClient rc;

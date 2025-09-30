@@ -32,12 +32,12 @@ public class MessageListMessageResponse {
      */
     public String creationTime;
     /**
-     * The time at which the messages was last updated
+     * The time at which the message was last updated
      * Format: date-time
      */
     public String lastModifiedTime;
     /**
-     * Current status of a message
+     * Status of the message
      * Example: Queued
      * Enum: Queued, Delivered, Sent, SendingFailed, DeliveryFailed
      */
@@ -49,7 +49,7 @@ public class MessageListMessageResponse {
      */
     public Long segmentCount;
     /**
-     * Text of a message. Returned if the `view` parameter is set to &#039;Detailed&#039;
+     * Text of a message. Returned if the `view` parameter is set to `Detailed`
      */
     public String text;
     /**
@@ -59,7 +59,7 @@ public class MessageListMessageResponse {
      */
     public Double cost;
     /**
-     * Direction of the SMS message
+     * Message direction (inbound or outbound)
      * Enum: Inbound, Outbound
      */
     public String direction;

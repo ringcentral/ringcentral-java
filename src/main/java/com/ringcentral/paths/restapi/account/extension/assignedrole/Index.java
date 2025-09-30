@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.assignedrole;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AssignedRolesResource;
+import com.ringcentral.definitions.ListUserAssignedRolesParameters;
 
 public class Index {
     public RestClient rc;

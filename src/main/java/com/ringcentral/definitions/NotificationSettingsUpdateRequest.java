@@ -8,14 +8,10 @@ public class NotificationSettingsUpdateRequest {
      */
     public String uri;
     /**
-     * List of notification recipient email addresses. Should not be empty
-     * if &#039;includeManagers&#039; parameter is set to false
+     * The parameter contains the list of phone Numbers which should be used for SMS notifications sending
+     * (if advanced mode disabled)
      */
-    public String[] emailAddresses;
-    /**
-     * List of notification recipient email addresses
-     */
-    public String[] smsEmailAddresses;
+    public String[] smsPhoneNumbers;
     /**
      * Specifies notifications settings mode. If `true` then advanced
      * mode is on, it allows using different emails and/or phone numbers for
@@ -45,6 +41,15 @@ public class NotificationSettingsUpdateRequest {
      */
     public MissedCallsInfo missedCalls;
     /**
+     * List of notification recipient email addresses. Should not be empty
+     * if &#039;includeManagers&#039; parameter is set to false
+     */
+    public String[] emailAddresses;
+    /**
+     * List of notification recipient email addresses
+     */
+    public String[] smsEmailAddresses;
+    /**
      * Specifies if managers&#039; emails are included in the list of emails to
      * which notifications are sent. If not specified, then the value is `true`
      * Default: true
@@ -56,13 +61,8 @@ public class NotificationSettingsUpdateRequest {
         return this;
     }
 
-    public NotificationSettingsUpdateRequest emailAddresses(String[] emailAddresses) {
-        this.emailAddresses = emailAddresses;
-        return this;
-    }
-
-    public NotificationSettingsUpdateRequest smsEmailAddresses(String[] smsEmailAddresses) {
-        this.smsEmailAddresses = smsEmailAddresses;
+    public NotificationSettingsUpdateRequest smsPhoneNumbers(String[] smsPhoneNumbers) {
+        this.smsPhoneNumbers = smsPhoneNumbers;
         return this;
     }
 
@@ -93,6 +93,16 @@ public class NotificationSettingsUpdateRequest {
 
     public NotificationSettingsUpdateRequest missedCalls(MissedCallsInfo missedCalls) {
         this.missedCalls = missedCalls;
+        return this;
+    }
+
+    public NotificationSettingsUpdateRequest emailAddresses(String[] emailAddresses) {
+        this.emailAddresses = emailAddresses;
+        return this;
+    }
+
+    public NotificationSettingsUpdateRequest smsEmailAddresses(String[] smsEmailAddresses) {
+        this.smsEmailAddresses = smsEmailAddresses;
         return this;
     }
 

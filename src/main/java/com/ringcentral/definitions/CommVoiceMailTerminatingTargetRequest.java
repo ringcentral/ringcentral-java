@@ -6,7 +6,7 @@ public class CommVoiceMailTerminatingTargetRequest {
      * Terminating target type
      * Required
      * Example: VoiceMailTerminatingTarget
-     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget, ImsVoiceMailTerminatingTarget
+     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String type;
     /**

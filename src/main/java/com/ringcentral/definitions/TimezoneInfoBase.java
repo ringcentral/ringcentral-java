@@ -6,6 +6,11 @@ package com.ringcentral.definitions;
  */
 public class TimezoneInfoBase {
     /**
+     * Canonical URI of a timezone
+     * Format: uri
+     */
+    public String uri;
+    /**
      * Internal identifier of a timezone
      */
     public String id;
@@ -18,9 +23,15 @@ public class TimezoneInfoBase {
      */
     public String description;
     /**
-     * Time difference (offset) in minutes from Coordinated Universal Time (UTC) that a specific locale follows
+     * Time difference (offset) in minutes from Coordinated Universal Time (UTC)
+     * that a specific locale follows
      */
     public String bias;
+
+    public TimezoneInfoBase uri(String uri) {
+        this.uri = uri;
+        return this;
+    }
 
     public TimezoneInfoBase id(String id) {
         this.id = id;

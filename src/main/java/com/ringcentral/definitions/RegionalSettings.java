@@ -9,7 +9,7 @@ public class RegionalSettings {
     /**
      *
      */
-    public CountryInfoShortModelV2 homeCountry;
+    public CountryInfoShortModel homeCountry;
     /**
      *
      */
@@ -33,7 +33,7 @@ public class RegionalSettings {
      */
     public String timeFormat;
 
-    public RegionalSettings homeCountry(CountryInfoShortModelV2 homeCountry) {
+    public RegionalSettings homeCountry(CountryInfoShortModel homeCountry) {
         this.homeCountry = homeCountry;
         return this;
     }

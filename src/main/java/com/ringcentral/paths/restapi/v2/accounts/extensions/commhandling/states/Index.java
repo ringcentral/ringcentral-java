@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.v2.accounts.extensions.commhandling.states;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CommStateResource;
+import com.ringcentral.definitions.CommStateUpdateRequest;
+import com.ringcentral.definitions.CommStatesResource;
+import com.ringcentral.definitions.ListCicStatesParameters;
 
 public class Index {
     public RestClient rc;

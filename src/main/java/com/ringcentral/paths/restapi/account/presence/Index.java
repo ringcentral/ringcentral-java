@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.presence;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AccountPresenceInfo;
+import com.ringcentral.definitions.ReadAccountPresenceParameters;
 
 public class Index {
     public RestClient rc;
@@ -21,7 +22,12 @@ public class Index {
     }
 
     /**
-     * Returns presence status of all extensions of an account. Please note: The presenceStatus is returned as Offline (the parameters telephonyStatus, message, userStatus and dndStatus are not returned at all) for the following extension types: Department, Announcement Only, Voicemail (Take Messages Only), Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.
+     * Returns presence status of all extensions of an account. Please
+     * note: The presenceStatus is returned as Offline (the parameters telephonyStatus,
+     * message, userStatus and dndStatus are not returned at all) for the following
+     * extension types: Department, Announcement Only, Voicemail (Take Messages Only),
+     * Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.
+     * <p>
      * HTTP Method: get
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/presence
      * Rate Limit Group: Heavy

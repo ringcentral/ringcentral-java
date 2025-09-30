@@ -6,10 +6,11 @@ package com.ringcentral.definitions;
  */
 public class DeleteExtensionParameters {
     /**
-     *
+     * If `true`, the digital lines from the deleted extension are saved in inventory.
      */
     public Boolean savePhoneLines;
     /**
+     * If `true`, the phone numbers from the deleted extension are saved in inventory.
      * Default: true
      */
     public Boolean savePhoneNumbers;

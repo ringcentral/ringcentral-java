@@ -6,7 +6,8 @@ package com.ringcentral.definitions;
  */
 public class ReadEmergencyLocationParameters {
     /**
-     *
+     * If true, the emergency addresses will be synchronized with the
+     * external provider data
      */
     public Boolean syncEmergencyAddress;
 

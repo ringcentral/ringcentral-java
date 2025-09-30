@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.callqueues;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallQueueDetails;
+import com.ringcentral.definitions.CallQueueDetailsForUpdate;
+import com.ringcentral.definitions.CallQueueList;
+import com.ringcentral.definitions.ListCallQueuesParameters;
 
 public class Index {
     public RestClient rc;

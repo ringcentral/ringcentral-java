@@ -1,7 +1,8 @@
 package com.ringcentral.paths.webinar.history.v1.company.sessions;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.RcwHistoryListAllCompanySessionsParameters;
+import com.ringcentral.definitions.SessionGlobalListResource;
 
 public class Index {
     public RestClient rc;

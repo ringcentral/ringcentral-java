@@ -1,7 +1,7 @@
 package com.ringcentral.paths.teammessaging.v1.teams.add;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.TMAddTeamMembersRequest;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.directory.entries;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ContactResource;
+import com.ringcentral.definitions.DirectoryResource;
+import com.ringcentral.definitions.ListDirectoryEntriesParameters;
+import com.ringcentral.definitions.ReadDirectoryEntryParameters;
 
 public class Index {
     public RestClient rc;

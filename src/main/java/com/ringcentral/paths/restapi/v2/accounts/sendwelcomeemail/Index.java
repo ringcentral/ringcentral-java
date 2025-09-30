@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.sendwelcomeemail;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.SendWelcomeEmailV2Request;
 
 public class Index {
     public RestClient rc;
@@ -21,7 +21,7 @@ public class Index {
     }
 
     /**
-     * Sends/resends welcome email to the system user of confirmed account
+     * Sends or re-sends welcome email to the system user of confirmed account
      * HTTP Method: post
      * Endpoint: /restapi/v2/accounts/{accountId}/send-welcome-email
      * Rate Limit Group: Medium

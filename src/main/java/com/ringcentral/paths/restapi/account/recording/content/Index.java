@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.recording.content;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ReadCallRecordingContentParameters;
 
 public class Index {
     public RestClient rc;

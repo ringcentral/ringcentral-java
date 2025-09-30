@@ -1,7 +1,8 @@
 package com.ringcentral.paths.rcvideo.v1.account.extension.recordings;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CloudRecordings;
+import com.ringcentral.definitions.GetExtensionRecordingsParameters;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,9 @@
 package com.ringcentral.paths.restapi.account.extension.conferencing;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetConferencingInfoResponse;
+import com.ringcentral.definitions.ReadConferencingSettingsParameters;
+import com.ringcentral.definitions.UpdateConferencingInfoRequest;
 
 public class Index {
     public RestClient rc;

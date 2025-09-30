@@ -18,7 +18,7 @@ public class GetExtensionEmergencyLocationsParameters {
      */
     public String searchString;
     /**
-     *
+     * Domestic country ID to filter results by
      */
     public String domesticCountryId;
     /**
@@ -44,7 +44,9 @@ public class GetExtensionEmergencyLocationsParameters {
      */
     public Long page;
     /**
-     *
+     * Visibility of emergency location to filter results by
+     * Default: Public
+     * Enum: Public
      */
     public String visibility;
 

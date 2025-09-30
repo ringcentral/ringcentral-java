@@ -6,9 +6,13 @@ package com.ringcentral.definitions;
  */
 public class CommAllMobileTargetResource {
     /**
-     * Required
+     *
      */
     public CommReferencedExtensionResource extension;
+    /**
+     * Required
+     */
+    public String name;
     /**
      * Example: AllMobileRingTarget
      * Enum: AllMobileRingTarget
@@ -17,6 +21,11 @@ public class CommAllMobileTargetResource {
 
     public CommAllMobileTargetResource extension(CommReferencedExtensionResource extension) {
         this.extension = extension;
+        return this;
+    }
+
+    public CommAllMobileTargetResource name(String name) {
+        this.name = name;
         return this;
     }
 

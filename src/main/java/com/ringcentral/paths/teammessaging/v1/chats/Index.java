@@ -1,7 +1,9 @@
 package com.ringcentral.paths.teammessaging.v1.chats;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListGlipChatsNewParameters;
+import com.ringcentral.definitions.TMChatInfo;
+import com.ringcentral.definitions.TMChatList;
 
 public class Index {
     public RestClient rc;
@@ -81,13 +83,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.teammessaging.v1.chats.tasks.Index tasks() {
-        return new com.ringcentral.paths.teammessaging.v1.chats.tasks.Index(this);
+    public com.ringcentral.paths.teammessaging.v1.chats.notes.Index notes() {
+        return new com.ringcentral.paths.teammessaging.v1.chats.notes.Index(this);
     }
 
 
-    public com.ringcentral.paths.teammessaging.v1.chats.notes.Index notes() {
-        return new com.ringcentral.paths.teammessaging.v1.chats.notes.Index(this);
+    public com.ringcentral.paths.teammessaging.v1.chats.tasks.Index tasks() {
+        return new com.ringcentral.paths.teammessaging.v1.chats.tasks.Index(this);
     }
 
 

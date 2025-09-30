@@ -14,7 +14,7 @@ public class AddBlockedAllowedPhoneNumber {
      */
     public String label;
     /**
-     * Status of a phone number
+     * Status of a phone number blocking
      * Default: Blocked
      * Enum: Blocked, Allowed
      */

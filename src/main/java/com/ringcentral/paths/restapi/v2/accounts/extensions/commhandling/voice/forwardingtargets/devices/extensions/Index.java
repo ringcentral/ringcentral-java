@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.v2.accounts.extensions.commhandling.voice.forwardingtargets.devices.extensions;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CommExtensionListResource;
 
 public class Index {
     public RestClient rc;

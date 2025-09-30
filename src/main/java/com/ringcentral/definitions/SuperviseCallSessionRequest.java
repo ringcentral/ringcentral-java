@@ -16,11 +16,6 @@ public class SuperviseCallSessionRequest {
      */
     public String supervisorDeviceId;
     /**
-     * Extension identifier of the user that will be monitored
-     * Example: 400378008008
-     */
-    public String agentExtensionId;
-    /**
      * Specifies if auto-answer SIP header should be sent. If auto-answer is set to `true`, the call is automatically answered by the supervising party, if set to `false` - then the supervising party has to accept or decline the monitored call
      * Default: true
      */
@@ -30,6 +25,18 @@ public class SuperviseCallSessionRequest {
      * Enum: sendOnly, sendRecv
      */
     public String mediaSDP;
+    /**
+     * Extension number of the user that will be monitored
+     * Required
+     * Example: 105
+     */
+    public String agentExtensionNumber;
+    /**
+     * Extension identifier of the user that will be monitored
+     * Required
+     * Example: 400378008008
+     */
+    public String agentExtensionId;
 
     public SuperviseCallSessionRequest mode(String mode) {
         this.mode = mode;
@@ -41,11 +48,6 @@ public class SuperviseCallSessionRequest {
         return this;
     }
 
-    public SuperviseCallSessionRequest agentExtensionId(String agentExtensionId) {
-        this.agentExtensionId = agentExtensionId;
-        return this;
-    }
-
     public SuperviseCallSessionRequest autoAnswer(Boolean autoAnswer) {
         this.autoAnswer = autoAnswer;
         return this;
@@ -53,6 +55,16 @@ public class SuperviseCallSessionRequest {
 
     public SuperviseCallSessionRequest mediaSDP(String mediaSDP) {
         this.mediaSDP = mediaSDP;
+        return this;
+    }
+
+    public SuperviseCallSessionRequest agentExtensionNumber(String agentExtensionNumber) {
+        this.agentExtensionNumber = agentExtensionNumber;
+        return this;
+    }
+
+    public SuperviseCallSessionRequest agentExtensionId(String agentExtensionId) {
+        this.agentExtensionId = agentExtensionId;
         return this;
     }
 }

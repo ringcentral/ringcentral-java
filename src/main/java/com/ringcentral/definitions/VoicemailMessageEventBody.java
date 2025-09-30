@@ -50,15 +50,13 @@ public class VoicemailMessageEventBody {
      */
     public MessageAttachmentInfo[] attachments;
     /**
-     * Text message direction. Note that for some message types not all
-     * directions are allowed. For example voicemail messages can
-     * be only inbound
+     * Message direction (inbound or outbound)
      * Enum: Inbound, Outbound
      */
     public String direction;
     /**
-     * Message availability status. Message in &#039;Deleted&#039; state is still
-     * preserved with all its attachments and can be restored. &#039;Purged&#039; means
+     * Message availability status. Message in `Deleted` state is still
+     * preserved with all its attachments and can be restored. `Purged` means
      * that all attachments are already deleted and the message itself is about
      * to be physically deleted shortly
      * Enum: Alive, Deleted, Purged
@@ -71,10 +69,11 @@ public class VoicemailMessageEventBody {
     /**
      * Message status. Different message types may have different
      * allowed status values. For outbound faxes the aggregated message status
-     * is returned. If, for outbound message, a status for at least one recipient is &#039;Queued&#039;, then
-     * the &#039;Queued&#039; value is returned. If a status for at least one recipient is
-     * &#039;SendingFailed&#039;, then the &#039;SendingFailed&#039; value is returned. In other cases
-     * the &#039;Sent&#039; status is returned
+     * is returned. If, for multi-recipient outbound message, a status for
+     * at least one recipient is `Queued`, then the `Queued` value is returned.
+     * If a status for at least one recipient is `SendingFailed`,
+     * then the &#039;SendingFailed&#039; value is returned. In other cases,
+     * the `Sent` status is returned
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;

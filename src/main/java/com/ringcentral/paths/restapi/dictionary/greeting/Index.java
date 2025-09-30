@@ -1,7 +1,9 @@
 package com.ringcentral.paths.restapi.dictionary.greeting;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.DictionaryGreetingInfo;
+import com.ringcentral.definitions.DictionaryGreetingList;
+import com.ringcentral.definitions.ListStandardGreetingsParameters;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.extension.calllogsync;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallLogSyncResponse;
+import com.ringcentral.definitions.SyncUserCallLogParameters;
 
 public class Index {
     public RestClient rc;

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records.insights;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetRecordingInsightsParameters;
+import com.ringcentral.definitions.RecordingInsights;
 
 public class Index {
     public RestClient rc;

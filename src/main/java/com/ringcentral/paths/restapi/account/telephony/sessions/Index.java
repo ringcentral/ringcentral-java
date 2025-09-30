@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallSessionObject;
+import com.ringcentral.definitions.ReadCallSessionStatusParameters;
 
 public class Index {
     public RestClient rc;

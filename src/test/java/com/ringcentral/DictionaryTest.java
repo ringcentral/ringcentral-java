@@ -66,9 +66,9 @@ public class DictionaryTest {
 
     @Test
     public void testGetTimeZone() throws RestException, IOException {
-        GetTimezoneInfoResponse getTimezoneInfoResponse =
+        TimezoneInfoBase timezoneInfoBase =
             rc.restapi().dictionary().timezone("2").get();
-        Assert.assertEquals("Europe/Lisbon", getTimezoneInfoResponse.name);
+        Assert.assertEquals("Europe/Lisbon", timezoneInfoBase.name);
     }
 
     @Test

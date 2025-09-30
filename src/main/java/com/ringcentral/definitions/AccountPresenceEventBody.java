@@ -37,6 +37,13 @@ public class AccountPresenceEventBody {
      */
     public String dndStatus;
     /**
+     * Do Not Disturb status of a User extension. Connected to the DND State type.
+     * Applicable for User extensions if the new communication handling service is
+     * activated on account.
+     * Enum: TakeAllCalls, DoNotAcceptAnyCalls, Unknown
+     */
+    public String dndStatusPersonal;
+    /**
      * Meetings presence status. Specifies if a user is on a meeting
      * Enum: Connected, Disconnected
      */
@@ -45,6 +52,12 @@ public class AccountPresenceEventBody {
      * If set to `true` enables other extensions to see the extension presence status
      */
     public Boolean allowSeeMyPresence;
+    /**
+     * Specifies if a Call Queue member extension will be able to receive Call Queue calls.
+     * Used for the Agent state type. Applicable for User extensions if the new communication
+     * handling service is activated on account
+     */
+    public Boolean acceptCallQueueCalls;
     /**
      * If `true` enables to ring extension phone, if any user monitored
      * by this extension is ringing
@@ -89,6 +102,11 @@ public class AccountPresenceEventBody {
         return this;
     }
 
+    public AccountPresenceEventBody dndStatusPersonal(String dndStatusPersonal) {
+        this.dndStatusPersonal = dndStatusPersonal;
+        return this;
+    }
+
     public AccountPresenceEventBody meetingStatus(String meetingStatus) {
         this.meetingStatus = meetingStatus;
         return this;
@@ -96,6 +114,11 @@ public class AccountPresenceEventBody {
 
     public AccountPresenceEventBody allowSeeMyPresence(Boolean allowSeeMyPresence) {
         this.allowSeeMyPresence = allowSeeMyPresence;
+        return this;
+    }
+
+    public AccountPresenceEventBody acceptCallQueueCalls(Boolean acceptCallQueueCalls) {
+        this.acceptCallQueueCalls = acceptCallQueueCalls;
         return this;
     }
 

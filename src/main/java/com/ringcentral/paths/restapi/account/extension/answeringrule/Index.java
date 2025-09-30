@@ -1,6 +1,6 @@
 package com.ringcentral.paths.restapi.account.extension.answeringrule;
 
-import com.ringcentral.*;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.*;
 
 public class Index {

@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.v2.accounts.regionalsettings;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AccountRegionalSettingRequest;
+import com.ringcentral.definitions.RegionalSettings;
 
 public class Index {
     public RestClient rc;

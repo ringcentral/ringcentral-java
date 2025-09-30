@@ -18,10 +18,11 @@ public class FaxResponseTo {
     /**
      * Message status. Different message types may have different
      * allowed status values. For outbound faxes the aggregated message status
-     * is returned. If, for outbound message, a status for at least one recipient is &#039;Queued&#039;, then
-     * the &#039;Queued&#039; value is returned. If a status for at least one recipient is
-     * &#039;SendingFailed&#039;, then the &#039;SendingFailed&#039; value is returned. In other cases
-     * the &#039;Sent&#039; status is returned
+     * is returned. If, for multi-recipient outbound message, a status for
+     * at least one recipient is `Queued`, then the `Queued` value is returned.
+     * If a status for at least one recipient is `SendingFailed`,
+     * then the &#039;SendingFailed&#039; value is returned. In other cases,
+     * the `Sent` status is returned
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;

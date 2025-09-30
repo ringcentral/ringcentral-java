@@ -11,6 +11,10 @@ public class MissedCallsInfo {
      */
     public Boolean notifyBySms;
     /**
+     * The parameter contains the list of phone Numbers which should be used for SMS notifications sending (if advanced mode enabled)
+     */
+    public String[] advancedSmsPhoneNumbers;
+    /**
      * List of recipient email addresses for missed call notifications.
      * Returned if specified, in both modes (advanced/basic). Applied in advanced
      * mode only
@@ -30,6 +34,11 @@ public class MissedCallsInfo {
 
     public MissedCallsInfo notifyBySms(Boolean notifyBySms) {
         this.notifyBySms = notifyBySms;
+        return this;
+    }
+
+    public MissedCallsInfo advancedSmsPhoneNumbers(String[] advancedSmsPhoneNumbers) {
+        this.advancedSmsPhoneNumbers = advancedSmsPhoneNumbers;
         return this;
     }
 

@@ -1,7 +1,7 @@
 package com.ringcentral.paths.scim.serviceproviderconfig;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ScimProviderConfig;
 
 public class Index {
     public RestClient rc;

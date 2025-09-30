@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.oauth.revoke;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.RevokeTokenParameters;
+import com.ringcentral.definitions.RevokeTokenRequest;
 
 public class Index {
     public RestClient rc;

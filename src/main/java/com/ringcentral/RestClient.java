@@ -1,6 +1,9 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.*;
+import com.ringcentral.definitions.Attachment;
+import com.ringcentral.definitions.GetTokenRequest;
+import com.ringcentral.definitions.RevokeTokenRequest;
+import com.ringcentral.definitions.TokenInfo;
 import okhttp3.*;
 import okio.BufferedSink;
 

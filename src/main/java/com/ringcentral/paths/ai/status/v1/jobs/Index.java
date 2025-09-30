@@ -1,7 +1,7 @@
 package com.ringcentral.paths.ai.status.v1.jobs;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.JobStatusResponse;
 
 public class Index {
     public RestClient rc;

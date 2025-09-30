@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.dictionary.location;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetLocationListResponse;
+import com.ringcentral.definitions.ListLocationsParameters;
 
 public class Index {
     public RestClient rc;

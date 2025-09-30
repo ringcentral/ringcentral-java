@@ -43,7 +43,7 @@ public class AccountServiceInfo {
     /**
      *
      */
-    public AccountLimits limits;
+    public AccountLimitsInfo limits;
     /**
      *
      */
@@ -94,7 +94,7 @@ public class AccountServiceInfo {
         return this;
     }
 
-    public AccountServiceInfo limits(AccountLimits limits) {
+    public AccountServiceInfo limits(AccountLimitsInfo limits) {
         this.limits = limits;
         return this;
     }

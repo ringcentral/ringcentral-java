@@ -6,7 +6,7 @@ public class CommPlayAnnouncementTerminatingTargetRequest {
      * Terminating target type
      * Required
      * Example: PlayAnnouncementTerminatingTarget
-     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget, ImsVoiceMailTerminatingTarget
+     * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String type;
     /**

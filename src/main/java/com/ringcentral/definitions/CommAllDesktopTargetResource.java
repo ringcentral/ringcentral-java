@@ -6,9 +6,13 @@ package com.ringcentral.definitions;
  */
 public class CommAllDesktopTargetResource {
     /**
-     * Required
+     *
      */
     public CommReferencedExtensionResource extension;
+    /**
+     * Required
+     */
+    public String name;
     /**
      * Example: AllDesktopRingTarget
      * Enum: AllDesktopRingTarget
@@ -17,6 +21,11 @@ public class CommAllDesktopTargetResource {
 
     public CommAllDesktopTargetResource extension(CommReferencedExtensionResource extension) {
         this.extension = extension;
+        return this;
+    }
+
+    public CommAllDesktopTargetResource name(String name) {
+        this.name = name;
         return this;
     }
 

@@ -1,6 +1,6 @@
 package com.ringcentral.paths.restapi.v2.accounts.extensions.commhandling.voice.interactionrules;
 
-import com.ringcentral.*;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.*;
 
 public class Index {

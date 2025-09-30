@@ -53,6 +53,10 @@ public class TimelineResponseOptionsCounters {
      * Include breakdown of calls count by the total number of times a Queue call was presented to the user. It is limited to `groupBy` Users and `groupByMembers` (Department, Queue, Site, UserGroup) grouping. Only the listed below options for call filters are applicable to `queueOpportunities` and provide meaningful results: `queues` (selected queue extension ids), `callResults` (Missed, Abandoned), `callResponses` (Answered, NotAnswered), `origins` (Internal, External)
      */
     public Boolean queueOpportunities;
+    /**
+     * Include breakdown of calls count by queue hours (BusinessHours, AfterHours)
+     */
+    public Boolean callsByQueueHours;
 
     public TimelineResponseOptionsCounters allCalls(Boolean allCalls) {
         this.allCalls = allCalls;
@@ -111,6 +115,11 @@ public class TimelineResponseOptionsCounters {
 
     public TimelineResponseOptionsCounters queueOpportunities(Boolean queueOpportunities) {
         this.queueOpportunities = queueOpportunities;
+        return this;
+    }
+
+    public TimelineResponseOptionsCounters callsByQueueHours(Boolean callsByQueueHours) {
+        this.callsByQueueHours = callsByQueueHours;
         return this;
     }
 }

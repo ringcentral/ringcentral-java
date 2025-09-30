@@ -18,7 +18,7 @@ public class CommAllMobileRingAlwaysRingTargetResource {
      */
     public String type;
     /**
-     * Required
+     *
      */
     public CommReferencedExtensionResource extension;
 

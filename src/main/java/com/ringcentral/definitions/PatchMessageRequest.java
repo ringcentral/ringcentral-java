@@ -11,8 +11,8 @@ public class PatchMessageRequest {
      */
     public String readStatus;
     /**
-     * Message availability status. Message in &#039;Deleted&#039; state is still
-     * preserved with all its attachments and can be restored. &#039;Purged&#039; means
+     * Message availability status. Message in `Deleted` state is still
+     * preserved with all its attachments and can be restored. `Purged` means
      * that all attachments are already deleted and the message itself is about
      * to be physically deleted shortly
      * Enum: Alive, Deleted, Purged

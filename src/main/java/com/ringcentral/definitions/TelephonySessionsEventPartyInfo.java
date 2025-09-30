@@ -22,11 +22,11 @@ public class TelephonySessionsEventPartyInfo {
     /**
      *
      */
-    public CallPartyInfo to;
+    public CallPartyShortInfo to;
     /**
      *
      */
-    public CallPartyInfo from;
+    public CallPartyShortInfo from;
     /**
      *
      */
@@ -95,12 +95,12 @@ public class TelephonySessionsEventPartyInfo {
         return this;
     }
 
-    public TelephonySessionsEventPartyInfo to(CallPartyInfo to) {
+    public TelephonySessionsEventPartyInfo to(CallPartyShortInfo to) {
         this.to = to;
         return this;
     }
 
-    public TelephonySessionsEventPartyInfo from(CallPartyInfo from) {
+    public TelephonySessionsEventPartyInfo from(CallPartyShortInfo from) {
         this.from = from;
         return this;
     }

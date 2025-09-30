@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.pagingonlygroups.users;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListPagingGroupUsersParameters;
+import com.ringcentral.definitions.PagingOnlyGroupUsers;
 
 public class Index {
     public RestClient rc;

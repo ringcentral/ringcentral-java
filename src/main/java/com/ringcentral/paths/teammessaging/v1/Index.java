@@ -1,7 +1,6 @@
 package com.ringcentral.paths.teammessaging.v1;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
 
 public class Index {
     public RestClient rc;
@@ -18,15 +17,6 @@ public class Index {
 
     public String path(Boolean withParameter) {
         return path();
-    }
-
-
-    public com.ringcentral.paths.teammessaging.v1.tasks.Index tasks() {
-        return this.tasks(null);
-    }
-
-    public com.ringcentral.paths.teammessaging.v1.tasks.Index tasks(String taskId) {
-        return new com.ringcentral.paths.teammessaging.v1.tasks.Index(this, taskId);
     }
 
 
@@ -54,6 +44,15 @@ public class Index {
 
     public com.ringcentral.paths.teammessaging.v1.notes.Index notes(String noteId) {
         return new com.ringcentral.paths.teammessaging.v1.notes.Index(this, noteId);
+    }
+
+
+    public com.ringcentral.paths.teammessaging.v1.tasks.Index tasks() {
+        return this.tasks(null);
+    }
+
+    public com.ringcentral.paths.teammessaging.v1.tasks.Index tasks(String taskId) {
+        return new com.ringcentral.paths.teammessaging.v1.tasks.Index(this, taskId);
     }
 
 

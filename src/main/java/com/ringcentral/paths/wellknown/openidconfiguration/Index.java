@@ -1,7 +1,7 @@
 package com.ringcentral.paths.wellknown.openidconfiguration;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.OpenIdDiscovery;
 
 public class Index {
     public RestClient rc;

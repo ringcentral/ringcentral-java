@@ -1,7 +1,9 @@
 package com.ringcentral.paths.restapi.account.templates;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ListUserTemplatesParameters;
+import com.ringcentral.definitions.TemplateInfo;
+import com.ringcentral.definitions.UserTemplates;
 
 public class Index {
     public RestClient rc;

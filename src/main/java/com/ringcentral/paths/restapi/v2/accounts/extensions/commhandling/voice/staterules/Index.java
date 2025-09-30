@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.v2.accounts.extensions.commhandling.voice.staterules;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CommStateBasedRuleResource;
+import com.ringcentral.definitions.CommStateBasedRuleUpdateRequest;
+import com.ringcentral.definitions.CommStateBasedRulesResource;
+import com.ringcentral.definitions.ListVoiceStateBasedRulesParameters;
 
 public class Index {
     public RestClient rc;

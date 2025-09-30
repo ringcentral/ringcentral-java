@@ -19,15 +19,16 @@ public class PresenceInfoResponse {
      */
     public String dndStatus;
     /**
-     * Do Not Disturb status of a User extension. Applicable for User extensions
-     * if the new communication handling service is activated on account
+     * Do Not Disturb status of a User extension. Connected to the DND State type.
+     * Applicable for User extensions if the new communication handling service is
+     * activated on account.
      * Enum: TakeAllCalls, DoNotAcceptAnyCalls, Unknown
      */
     public String dndStatusPersonal;
     /**
      * Specifies if a Call Queue member extension will be able to receive Call Queue calls.
-     * Applicable for User extensions if the new communication handling service is activated on account.
-     * Used for Agent state type
+     * Used for the Agent state type. Applicable for User extensions if the new communication
+     * handling service is activated on account
      */
     public Boolean acceptCallQueueCalls;
     /**

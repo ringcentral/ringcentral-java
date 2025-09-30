@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties.forward;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ForwardCallPartyResponse;
+import com.ringcentral.definitions.ForwardTarget;
 
 public class Index {
     public RestClient rc;

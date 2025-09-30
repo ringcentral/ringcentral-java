@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.forwardallcalls;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ForwardAllCompanyCallsInfo;
+import com.ringcentral.definitions.ForwardAllCompanyCallsRequest;
 
 public class Index {
     public RestClient rc;

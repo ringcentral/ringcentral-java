@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.a2psms.batches;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.BatchListResponse;
+import com.ringcentral.definitions.ListA2PBatchesParameters;
+import com.ringcentral.definitions.MessageBatchCreateRequest;
+import com.ringcentral.definitions.MessageBatchResponse;
 
 public class Index {
     public RestClient rc;

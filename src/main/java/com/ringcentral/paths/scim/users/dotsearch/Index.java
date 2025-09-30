@@ -1,7 +1,8 @@
 package com.ringcentral.paths.scim.users.dotsearch;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ScimSearchRequest;
+import com.ringcentral.definitions.ScimUserSearchResponse;
 
 public class Index {
     public RestClient rc;

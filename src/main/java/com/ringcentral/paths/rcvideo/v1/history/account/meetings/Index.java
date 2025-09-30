@@ -1,7 +1,8 @@
 package com.ringcentral.paths.rcvideo.v1.history.account.meetings;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AdminAccessMeetings;
+import com.ringcentral.definitions.ListAccountMeetingsParameters;
 
 public class Index {
     public RestClient rc;

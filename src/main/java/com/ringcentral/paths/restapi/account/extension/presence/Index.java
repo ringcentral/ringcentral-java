@@ -1,7 +1,10 @@
 package com.ringcentral.paths.restapi.account.extension.presence;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.GetPresenceInfo;
+import com.ringcentral.definitions.PresenceInfoRequest;
+import com.ringcentral.definitions.PresenceInfoResponse;
+import com.ringcentral.definitions.ReadUserPresenceStatusParameters;
 
 public class Index {
     public RestClient rc;
@@ -45,7 +48,12 @@ public class Index {
     }
 
     /**
-     * Updates user-defined extension presence status, status message and DnD status by extension ID. Supported for regular User extensions only. The extension types listed do not support presence status: Department, Announcement Only, Take Messages Only (Voicemail), Fax User, Paging Only Group, Shared Lines Group, IVR Menu, Application Extension.
+     * Updates user-defined extension presence status, status message
+     * and DnD status by extension ID. Supported for regular User extensions only.
+     * The extension types listed do not support presence status: Department, Announcement
+     * Only, Take Messages Only (Voicemail), Fax User, Paging Only Group, Shared
+     * Lines Group, IVR Menu, Application Extension.
+     * <p>
      * HTTP Method: put
      * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/presence
      * Rate Limit Group: Medium

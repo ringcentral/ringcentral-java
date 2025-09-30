@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.v2.accounts.phonenumbers.replace;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AccountPhoneNumberInfo;
+import com.ringcentral.definitions.ReplacePhoneNumberRequest;
 
 public class Index {
     public RestClient rc;

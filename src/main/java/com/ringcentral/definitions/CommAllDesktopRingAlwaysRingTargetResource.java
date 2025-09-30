@@ -18,7 +18,7 @@ public class CommAllDesktopRingAlwaysRingTargetResource {
      */
     public String type;
     /**
-     * Required
+     *
      */
     public CommReferencedExtensionResource extension;
 

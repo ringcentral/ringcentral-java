@@ -45,6 +45,10 @@ public class CallsTimers {
      *
      */
     public CallsByType callsByType;
+    /**
+     *
+     */
+    public CallsByQueueHours callsByQueueHours;
 
     public CallsTimers allCalls(AllCalls allCalls) {
         this.allCalls = allCalls;
@@ -93,6 +97,11 @@ public class CallsTimers {
 
     public CallsTimers callsByType(CallsByType callsByType) {
         this.callsByType = callsByType;
+        return this;
+    }
+
+    public CallsTimers callsByQueueHours(CallsByQueueHours callsByQueueHours) {
+        this.callsByQueueHours = callsByQueueHours;
         return this;
     }
 }

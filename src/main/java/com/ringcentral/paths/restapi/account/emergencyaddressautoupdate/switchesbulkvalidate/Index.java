@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.emergencyaddressautoupdate.switchesbulkvalidate;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ValidateMultipleSwitchesRequest;
+import com.ringcentral.definitions.ValidateMultipleSwitchesResponse;
 
 public class Index {
     public RestClient rc;

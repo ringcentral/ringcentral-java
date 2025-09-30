@@ -1,7 +1,6 @@
 package com.ringcentral.paths.analytics.calls.v1.accounts;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
 
 public class Index {
     public RestClient rc;

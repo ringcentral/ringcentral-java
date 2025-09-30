@@ -11,7 +11,7 @@ public class GetTimezoneListResponse {
      * List of timezones
      * Required
      */
-    public GetTimezoneInfoResponse[] records;
+    public TimezoneInfoBase[] records;
     /**
      * Required
      */
@@ -26,7 +26,7 @@ public class GetTimezoneListResponse {
         return this;
     }
 
-    public GetTimezoneListResponse records(GetTimezoneInfoResponse[] records) {
+    public GetTimezoneListResponse records(TimezoneInfoBase[] records) {
         this.records = records;
         return this;
     }

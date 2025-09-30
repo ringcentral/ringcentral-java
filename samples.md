@@ -471,7 +471,8 @@ rc.revoke();
 
 - `result` is of type [RegionalSettings](./src/main/java/com/ringcentral/definitions/RegionalSettings.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-getAccountRegionalSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-getAccountRegionalSettings) in API
+Explorer.
 
 ## patchAccountRegionalSettings
 
@@ -496,7 +497,8 @@ rc.revoke();
   type [AccountRegionalSettingRequest](./src/main/java/com/ringcentral/definitions/AccountRegionalSettingRequest.java)
 - `result` is of type [RegionalSettings](./src/main/java/com/ringcentral/definitions/RegionalSettings.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-patchAccountRegionalSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-patchAccountRegionalSettings) in API
+Explorer.
 
 ## readAccountInfo
 
@@ -1267,6 +1269,30 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#OAuth-and-OIDC-authorize) in API Explorer.
 
+## authorize2
+
+OAuth Authorization (POST)
+
+ Name             | Value
+------------------|----------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/oauth/authorize`
+ Rate Limit Group | `Auth`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.restapi().oauth().authorize().post(authorizeRequest);
+rc.revoke();
+```
+
+- `authorizeRequest` is of type [AuthorizeRequest](./src/main/java/com/ringcentral/definitions/AuthorizeRequest.java)
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#OAuth-and-OIDC-authorize2) in API Explorer.
+
 ## readCompanyCallLog
 
 List Company Call Records
@@ -1463,7 +1489,7 @@ rc.revoke();
 
 ## readIVRMenuList
 
-Get IVR Menu list
+List IVR Menus
 
  Name             | Value
 ------------------|-------------------------------------------------------
@@ -2593,62 +2619,6 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-listCompanyActiveCalls) in API Explorer.
 
-## auditTrailSearch
-
-Search Audit Trail Data
-
- Name             | Value
-------------------|----------------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/audit-trail/search`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadAuditTrail`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AccountHistorySearchPublicResponse result = rc.restapi(apiVersion).account(accountId).auditTrail().search().post(accountHistorySearchPublicRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `accountHistorySearchPublicRequest` is of
-  type [AccountHistorySearchPublicRequest](./src/main/java/com/ringcentral/definitions/AccountHistorySearchPublicRequest.java)
-- `result` is of
-  type [AccountHistorySearchPublicResponse](./src/main/java/com/ringcentral/definitions/AccountHistorySearchPublicResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Audit-Trail-auditTrailSearch) in API Explorer.
-
-## extractSyncAccountCallLog
-
-Extract Sync Company Call Log
-
- Name             | Value
-------------------|-------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-log-extract-sync`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadCallLog`
- User Permission  | `ReadCallLog`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CallLogExtractSyncResponse result = rc.restapi(apiVersion).account(accountId).callLogExtractSync().get(extractSyncAccountCallLogParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `extractSyncAccountCallLogParameters` is of
-  type [ExtractSyncAccountCallLogParameters](./src/main/java/com/ringcentral/definitions/ExtractSyncAccountCallLogParameters.java)
-- `result` is of
-  type [CallLogExtractSyncResponse](./src/main/java/com/ringcentral/definitions/CallLogExtractSyncResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-extractSyncAccountCallLog) in API Explorer.
-
 ## listCallQueues
 
 List Call Queues
@@ -2727,85 +2697,6 @@ rc.revoke();
 - `result` is of type [CallQueueDetails](./src/main/java/com/ringcentral/definitions/CallQueueDetails.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-updateCallQueueInfo) in API Explorer.
-
-## listCallQueueMembers
-
-List Call Queue Members
-
- Name             | Value
-------------------|---------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-queues/{groupId}/members`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadExtensions`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CallQueueMembers result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).members().get(listCallQueueMembersParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `listCallQueueMembersParameters` is of
-  type [ListCallQueueMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallQueueMembersParameters.java)
-- `result` is of type [CallQueueMembers](./src/main/java/com/ringcentral/definitions/CallQueueMembers.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueueMembers) in API Explorer.
-
-## readCallQueuePresence
-
-Get Call Queue Presence
-
- Name             | Value
-------------------|----------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-queues/{groupId}/presence`
- Rate Limit Group | `Light`
- App Permission   | `ReadPresence`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CallQueuePresence result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Presence-readCallQueuePresence) in API Explorer.
-
-## updateCallQueuePresence
-
-Update Call Queue Presence
-
- Name             | Value
-------------------|----------------------------------------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-queues/{groupId}/presence`
- Rate Limit Group | `Medium`
- App Permission   | `EditPresence`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CallQueuePresence result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().put(callQueueUpdatePresence);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `callQueueUpdatePresence` is of
-  type [CallQueueUpdatePresence](./src/main/java/com/ringcentral/definitions/CallQueueUpdatePresence.java)
-- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Presence-updateCallQueuePresence) in API Explorer.
 
 ## listCustomFields
 
@@ -2910,6 +2801,2198 @@ rc.revoke();
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Custom-Fields-deleteCustomField) in API Explorer.
+
+## createFaxMessage
+
+Create Fax Message
+
+ Name             | Value
+------------------|-------------------------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/fax`
+ Rate Limit Group | `Heavy`
+ App Permission   | `Faxes`
+ User Permission  | `OutboundFaxes`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+FaxResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).fax().post(createFaxMessageRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `createFaxMessageRequest` is of
+  type [CreateFaxMessageRequest](./src/main/java/com/ringcentral/definitions/CreateFaxMessageRequest.java)
+- `result` is of type [FaxResponse](./src/main/java/com/ringcentral/definitions/FaxResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Fax-createFaxMessage) in API Explorer.
+
+## createMMS
+
+Send MMS
+
+ Name             | Value
+------------------|-------------------------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/mms`
+ Rate Limit Group | `Medium`
+ App Permission   | `SMS`
+ User Permission  | `OutboundSMS`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+GetSMSMessageInfoResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).mms().post(createMMSMessage);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `createMMSMessage` is of type [CreateMMSMessage](./src/main/java/com/ringcentral/definitions/CreateMMSMessage.java)
+- `result` is of
+  type [GetSMSMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetSMSMessageInfoResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-createMMS) in API Explorer.
+
+## createSMSMessage
+
+Send SMS
+
+ Name             | Value
+------------------|-------------------------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/sms`
+ Rate Limit Group | `Medium`
+ App Permission   | `SMS`
+ User Permission  | `OutboundSMS`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+GetSMSMessageInfoResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).sms().post(createSMSMessage);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `createSMSMessage` is of type [CreateSMSMessage](./src/main/java/com/ringcentral/definitions/CreateSMSMessage.java)
+- `result` is of
+  type [GetSMSMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetSMSMessageInfoResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-createSMSMessage) in API Explorer.
+
+## listIvrPrompts
+
+List IVR Prompts
+
+ Name             | Value
+------------------|---------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts`
+ Rate Limit Group | `Medium`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyGreetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+IvrPrompts result = rc.restapi(apiVersion).account(accountId).ivrPrompts().list();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [IvrPrompts](./src/main/java/com/ringcentral/definitions/IvrPrompts.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-listIvrPrompts) in API Explorer.
+
+## createIVRPrompt
+
+Create IVR Prompts
+
+ Name             | Value
+------------------|---------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts`
+ Rate Limit Group | `Heavy`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyGreetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+PromptInfo result = rc.restapi(apiVersion).account(accountId).ivrPrompts().post(createIVRPromptRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `createIVRPromptRequest` is of
+  type [CreateIVRPromptRequest](./src/main/java/com/ringcentral/definitions/CreateIVRPromptRequest.java)
+- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-createIVRPrompt) in API Explorer.
+
+## readIVRPrompt
+
+Get IVR Prompt
+
+ Name             | Value
+------------------|--------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts/{promptId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyGreetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+PromptInfo result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-readIVRPrompt) in API Explorer.
+
+## updateIVRPrompt
+
+Update IVR Prompt
+
+ Name             | Value
+------------------|--------------------------------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts/{promptId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyGreetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+PromptInfo result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put(updateIVRPromptRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `updateIVRPromptRequest` is of
+  type [UpdateIVRPromptRequest](./src/main/java/com/ringcentral/definitions/UpdateIVRPromptRequest.java)
+- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-updateIVRPrompt) in API Explorer.
+
+## deleteIVRPrompt
+
+Delete IVR Prompt
+
+ Name             | Value
+------------------|--------------------------------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts/{promptId}`
+ Rate Limit Group | `Heavy`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyGreetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).delete();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#IVR-deleteIVRPrompt) in API Explorer.
+
+## listAccountPhoneNumbers
+
+List Company Phone Numbers
+
+ Name             | Value
+------------------|----------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/phone-number`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyPhoneNumbers`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+AccountPhoneNumbers result = rc.restapi(apiVersion).account(accountId).phoneNumber().list(listAccountPhoneNumbersParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `listAccountPhoneNumbersParameters` is of
+  type [ListAccountPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersParameters.java)
+- `result` is of type [AccountPhoneNumbers](./src/main/java/com/ringcentral/definitions/AccountPhoneNumbers.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-listAccountPhoneNumbers) in API Explorer.
+
+## readAccountPhoneNumber
+
+Get Phone Number
+
+ Name             | Value
+------------------|--------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/phone-number/{phoneNumberId}`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyPhoneNumbers`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CompanyPhoneNumberInfo result = rc.restapi(apiVersion).account(accountId).phoneNumber(phoneNumberId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [CompanyPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/CompanyPhoneNumberInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-readAccountPhoneNumber) in API Explorer.
+
+## readAccountServiceInfo
+
+Get Account Service Info
+
+ Name             | Value
+------------------|----------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/service-info`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyInfo`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+AccountServiceInfo result = rc.restapi(apiVersion).account(accountId).serviceInfo().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [AccountServiceInfo](./src/main/java/com/ringcentral/definitions/AccountServiceInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountServiceInfo) in API Explorer.
+
+## listSiteMembers
+
+List Site Members
+
+ Name             | Value
+------------------|--------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/sites/{siteId}/members`
+ Rate Limit Group | `Medium`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadExtensions`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+SiteMembersList result = rc.restapi(apiVersion).account(accountId).sites(siteId).members().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [SiteMembersList](./src/main/java/com/ringcentral/definitions/SiteMembersList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Multi-Site-listSiteMembers) in API Explorer.
+
+## listCountries
+
+List Countries
+
+ Name             | Value
+------------------|--------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/country`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CountryListDictionaryModel result = rc.restapi(apiVersion).dictionary().country().list(listCountriesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `listCountriesParameters` is of
+  type [ListCountriesParameters](./src/main/java/com/ringcentral/definitions/ListCountriesParameters.java)
+- `result` is of
+  type [CountryListDictionaryModel](./src/main/java/com/ringcentral/definitions/CountryListDictionaryModel.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listCountries) in API Explorer.
+
+## readCountry
+
+Get Country
+
+ Name             | Value
+------------------|--------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/country/{countryId}`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CountryInfoDictionaryModel result = rc.restapi(apiVersion).dictionary().country(countryId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of
+  type [CountryInfoDictionaryModel](./src/main/java/com/ringcentral/definitions/CountryInfoDictionaryModel.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readCountry) in API Explorer.
+
+## listStandardGreetings
+
+List Standard Greetings
+
+ Name             | Value
+------------------|---------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/greeting`
+ Rate Limit Group | `Medium`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DictionaryGreetingList result = rc.restapi(apiVersion).dictionary().greeting().list(listStandardGreetingsParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `listStandardGreetingsParameters` is of
+  type [ListStandardGreetingsParameters](./src/main/java/com/ringcentral/definitions/ListStandardGreetingsParameters.java)
+- `result` is of type [DictionaryGreetingList](./src/main/java/com/ringcentral/definitions/DictionaryGreetingList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-listStandardGreetings) in API Explorer.
+
+## readStandardGreeting
+
+Get Standard Greeting
+
+ Name             | Value
+------------------|----------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/greeting/{greetingId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DictionaryGreetingInfo result = rc.restapi(apiVersion).dictionary().greeting(greetingId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of type [DictionaryGreetingInfo](./src/main/java/com/ringcentral/definitions/DictionaryGreetingInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-readStandardGreeting) in API Explorer.
+
+## listLanguages
+
+List Languages
+
+ Name             | Value
+------------------|---------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/language`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+LanguageList result = rc.restapi(apiVersion).dictionary().language().list();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of type [LanguageList](./src/main/java/com/ringcentral/definitions/LanguageList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listLanguages) in API Explorer.
+
+## readLanguage
+
+Get Language
+
+ Name             | Value
+------------------|----------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/language/{languageId}`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+LanguageInfo result = rc.restapi(apiVersion).dictionary().language(languageId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of type [LanguageInfo](./src/main/java/com/ringcentral/definitions/LanguageInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readLanguage) in API Explorer.
+
+## listLocations
+
+List Locations
+
+ Name             | Value
+------------------|---------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/location`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+GetLocationListResponse result = rc.restapi(apiVersion).dictionary().location().get(listLocationsParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `listLocationsParameters` is of
+  type [ListLocationsParameters](./src/main/java/com/ringcentral/definitions/ListLocationsParameters.java)
+- `result` is of
+  type [GetLocationListResponse](./src/main/java/com/ringcentral/definitions/GetLocationListResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listLocations) in API Explorer.
+
+## listPermissions
+
+List Permissions
+
+ Name             | Value
+------------------|-----------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/permission`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+PermissionCollectionResource result = rc.restapi(apiVersion).dictionary().permission().list(listPermissionsParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `listPermissionsParameters` is of
+  type [ListPermissionsParameters](./src/main/java/com/ringcentral/definitions/ListPermissionsParameters.java)
+- `result` is of
+  type [PermissionCollectionResource](./src/main/java/com/ringcentral/definitions/PermissionCollectionResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-listPermissions) in API Explorer.
+
+## readPermission
+
+Get Permission
+
+ Name             | Value
+------------------|--------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/permission/{permissionId}`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+PermissionResource result = rc.restapi(apiVersion).dictionary().permission(permissionId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of type [PermissionResource](./src/main/java/com/ringcentral/definitions/PermissionResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-readPermission) in API Explorer.
+
+## listTimezones
+
+List Timezones
+
+ Name             | Value
+------------------|---------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/timezone`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+GetTimezoneListResponse result = rc.restapi(apiVersion).dictionary().timezone().list(listTimezonesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `listTimezonesParameters` is of
+  type [ListTimezonesParameters](./src/main/java/com/ringcentral/definitions/ListTimezonesParameters.java)
+- `result` is of
+  type [GetTimezoneListResponse](./src/main/java/com/ringcentral/definitions/GetTimezoneListResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listTimezones) in API Explorer.
+
+## readTimezone
+
+Get Timezone
+
+ Name             | Value
+------------------|----------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/timezone/{timezoneId}`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TimezoneInfoBase result = rc.restapi(apiVersion).dictionary().timezone(timezoneId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of type [TimezoneInfoBase](./src/main/java/com/ringcentral/definitions/TimezoneInfoBase.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readTimezone) in API Explorer.
+
+## listStandardUserRole
+
+List Standard User Roles
+
+ Name             | Value
+------------------|----------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/user-role`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+RolesCollectionResource result = rc.restapi(apiVersion).dictionary().userRole().list(listStandardUserRoleParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `listStandardUserRoleParameters` is of
+  type [ListStandardUserRoleParameters](./src/main/java/com/ringcentral/definitions/ListStandardUserRoleParameters.java)
+- `result` is of
+  type [RolesCollectionResource](./src/main/java/com/ringcentral/definitions/RolesCollectionResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Role-Management-listStandardUserRole) in API Explorer.
+
+## readStandardUserRole
+
+Get Standard User Role
+
+ Name             | Value
+------------------|-------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/dictionary/user-role/{roleId}`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+RoleResource result = rc.restapi(apiVersion).dictionary().userRole(roleId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of type [RoleResource](./src/main/java/com/ringcentral/definitions/RoleResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Role-Management-readStandardUserRole) in API Explorer.
+
+## parsePhoneNumber
+
+Parse Phone Number(s)
+
+ Name             | Value
+------------------|---------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/number-parser/parse`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+ParsePhoneNumberResponse result = rc.restapi(apiVersion).numberParser().parse().post(parsePhoneNumberRequest, parsePhoneNumberParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `parsePhoneNumberRequest` is of
+  type [ParsePhoneNumberRequest](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberRequest.java)
+- `parsePhoneNumberParameters` is of
+  type [ParsePhoneNumberParameters](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberParameters.java)
+- `result` is of
+  type [ParsePhoneNumberResponse](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-parsePhoneNumber) in API Explorer.
+
+## renewSubscription
+
+Renew Subscription
+
+ Name             | Value
+------------------|-------------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/subscription/{subscriptionId}/renew`
+ Rate Limit Group | `Light`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+SubscriptionInfo result = rc.restapi(apiVersion).subscription(subscriptionId).renew().post();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-renewSubscription) in API Explorer.
+
+## scimGetProviderConfig2
+
+Get Provider Config
+
+ Name             | Value
+------------------|-----------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/scim/{version}/ServiceProviderConfig`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+ScimProviderConfig result = rc.scim(version).serviceProviderConfig().get();
+rc.revoke();
+```
+
+- Parameter `version` is optional with default value `v2`
+- `result` is of type [ScimProviderConfig](./src/main/java/com/ringcentral/definitions/ScimProviderConfig.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#SCIM-scimGetProviderConfig2) in API Explorer.
+
+## readGlipPostsNew
+
+List Posts
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/posts`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMPostsList result = rc.teamMessaging().v1().chats(chatId).posts().list(readGlipPostsNewParameters);
+rc.revoke();
+```
+
+- `readGlipPostsNewParameters` is of
+  type [ReadGlipPostsNewParameters](./src/main/java/com/ringcentral/definitions/ReadGlipPostsNewParameters.java)
+- `result` is of type [TMPostsList](./src/main/java/com/ringcentral/definitions/TMPostsList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPostsNew) in API Explorer.
+
+## createGlipPostNew
+
+Create Post
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/posts`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMPostInfo result = rc.teamMessaging().v1().chats(chatId).posts().post(tMCreatePostRequest);
+rc.revoke();
+```
+
+- `tMCreatePostRequest` is of
+  type [TMCreatePostRequest](./src/main/java/com/ringcentral/definitions/TMCreatePostRequest.java)
+- `result` is of type [TMPostInfo](./src/main/java/com/ringcentral/definitions/TMPostInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-createGlipPostNew) in API Explorer.
+
+## readGlipPostNew
+
+Get Post
+
+ Name             | Value
+------------------|----------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/posts/{postId}`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMPostInfo result = rc.teamMessaging().v1().chats(chatId).posts(postId).get();
+rc.revoke();
+```
+
+- `result` is of type [TMPostInfo](./src/main/java/com/ringcentral/definitions/TMPostInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPostNew) in API Explorer.
+
+## deleteGlipPostNew
+
+Delete Post
+
+ Name             | Value
+------------------|----------------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/posts/{postId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.teamMessaging().v1().chats(chatId).posts(postId).delete();
+rc.revoke();
+```
+
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-deleteGlipPostNew) in API Explorer.
+
+## patchGlipPostNew
+
+Update Post
+
+ Name             | Value
+------------------|----------------------------------------------------
+ HTTP Method      | `PATCH`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/posts/{postId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMPostInfo result = rc.teamMessaging().v1().chats(chatId).posts(postId).patch(tMUpdatePostRequest);
+rc.revoke();
+```
+
+- `tMUpdatePostRequest` is of
+  type [TMUpdatePostRequest](./src/main/java/com/ringcentral/definitions/TMUpdatePostRequest.java)
+- `result` is of type [TMPostInfo](./src/main/java/com/ringcentral/definitions/TMPostInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-patchGlipPostNew) in API Explorer.
+
+## readGlipEveryoneNew
+
+Get Everyone Chat
+
+ Name             | Value
+------------------|-------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/everyone`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+EveryoneTeamInfo result = rc.teamMessaging().v1().everyone().get();
+rc.revoke();
+```
+
+- `result` is of type [EveryoneTeamInfo](./src/main/java/com/ringcentral/definitions/EveryoneTeamInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-readGlipEveryoneNew) in API Explorer.
+
+## patchGlipEveryoneNew
+
+Update Everyone Chat
+
+ Name             | Value
+------------------|-------------------------------
+ HTTP Method      | `PATCH`
+ Endpoint         | `/team-messaging/v1/everyone`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+EveryoneTeamInfo result = rc.teamMessaging().v1().everyone().patch(updateEveryoneTeamRequest);
+rc.revoke();
+```
+
+- `updateEveryoneTeamRequest` is of
+  type [UpdateEveryoneTeamRequest](./src/main/java/com/ringcentral/definitions/UpdateEveryoneTeamRequest.java)
+- `result` is of type [EveryoneTeamInfo](./src/main/java/com/ringcentral/definitions/EveryoneTeamInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-patchGlipEveryoneNew) in API Explorer.
+
+## listFavoriteChatsNew
+
+List Favorite Chats
+
+ Name             | Value
+------------------|--------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/favorites`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMChatListWithoutNavigation result = rc.teamMessaging().v1().favorites().get(listFavoriteChatsNewParameters);
+rc.revoke();
+```
+
+- `listFavoriteChatsNewParameters` is of
+  type [ListFavoriteChatsNewParameters](./src/main/java/com/ringcentral/definitions/ListFavoriteChatsNewParameters.java)
+- `result` is of
+  type [TMChatListWithoutNavigation](./src/main/java/com/ringcentral/definitions/TMChatListWithoutNavigation.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-listFavoriteChatsNew) in API Explorer.
+
+## lockNoteNew
+
+Lock Note
+
+ Name             | Value
+------------------|------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/notes/{noteId}/lock`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.teamMessaging().v1().notes(noteId).lock().post();
+rc.revoke();
+```
+
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Notes-lockNoteNew) in API Explorer.
+
+## addGlipTeamMembersNew
+
+Add Team Members
+
+ Name             | Value
+------------------|-----------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/teams/{chatId}/add`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.teamMessaging().v1().teams(chatId).add().post(tMAddTeamMembersRequest);
+rc.revoke();
+```
+
+- `tMAddTeamMembersRequest` is of
+  type [TMAddTeamMembersRequest](./src/main/java/com/ringcentral/definitions/TMAddTeamMembersRequest.java)
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-addGlipTeamMembersNew) in API Explorer.
+
+## joinGlipTeamNew
+
+Join Team
+
+ Name             | Value
+------------------|------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/teams/{chatId}/join`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.teamMessaging().v1().teams(chatId).join().post();
+rc.revoke();
+```
+
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-joinGlipTeamNew) in API Explorer.
+
+## listGlipWebhooksNew
+
+List Webhooks
+
+ Name             | Value
+------------------|-------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/webhooks`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMWebhookList result = rc.teamMessaging().v1().webhooks().list();
+rc.revoke();
+```
+
+- `result` is of type [TMWebhookList](./src/main/java/com/ringcentral/definitions/TMWebhookList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Incoming-Webhooks-listGlipWebhooksNew) in API Explorer.
+
+## readGlipWebhookNew
+
+Get Webhook
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/webhooks/{webhookId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMWebhookList result = rc.teamMessaging().v1().webhooks(webhookId).get();
+rc.revoke();
+```
+
+- `result` is of type [TMWebhookList](./src/main/java/com/ringcentral/definitions/TMWebhookList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Incoming-Webhooks-readGlipWebhookNew) in API Explorer.
+
+## deleteGlipWebhookNew
+
+Delete Webhook
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/team-messaging/v1/webhooks/{webhookId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.teamMessaging().v1().webhooks(webhookId).delete();
+rc.revoke();
+```
+
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Incoming-Webhooks-deleteGlipWebhookNew) in API Explorer.
+
+## readTMCompanyInfoNew
+
+Get Company Info
+
+ Name             | Value
+------------------|--------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/companies/{companyId}`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMCompanyInfo result = rc.teamMessaging().v1().companies(companyId).get();
+rc.revoke();
+```
+
+- `result` is of type [TMCompanyInfo](./src/main/java/com/ringcentral/definitions/TMCompanyInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Profile-readTMCompanyInfoNew) in API Explorer.
+
+## rcwHistoryListAllSessions
+
+List Historical Webinar Sessions across Multiple Webinars
+
+ Name             | Value
+------------------|--------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/webinar/history/v1/sessions`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadWebinars`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+SessionGlobalListResource result = rc.webinar().history().v1().sessions().get(rcwHistoryListAllSessionsParameters);
+rc.revoke();
+```
+
+- `rcwHistoryListAllSessionsParameters` is of
+  type [RcwHistoryListAllSessionsParameters](./src/main/java/com/ringcentral/definitions/RcwHistoryListAllSessionsParameters.java)
+- `result` is of
+  type [SessionGlobalListResource](./src/main/java/com/ringcentral/definitions/SessionGlobalListResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Historical-Webinars-rcwHistoryListAllSessions) in API
+Explorer.
+
+## rcwHistoryGetWebinar
+
+Get Historical Webinar
+
+ Name             | Value
+------------------|--------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/webinar/history/v1/webinars/{webinarId}`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadWebinars`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+HistoryWebinarResource result = rc.webinar().history().v1().webinars(webinarId).get();
+rc.revoke();
+```
+
+- `result` is of type [HistoryWebinarResource](./src/main/java/com/ringcentral/definitions/HistoryWebinarResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Historical-Webinars-rcwHistoryGetWebinar) in API Explorer.
+
+## readOpenIdConfiguration
+
+OIDC Provider Configuration
+
+ Name             | Value
+------------------|-------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/.well-known/openid-configuration`
+ Rate Limit Group | `NoThrottling`
+ App Permission   | `N/A`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+OpenIdDiscovery result = rc.wellKnown().openidConfiguration().get();
+rc.revoke();
+```
+
+- `result` is of type [OpenIdDiscovery](./src/main/java/com/ringcentral/definitions/OpenIdDiscovery.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#OAuth-and-OIDC-readOpenIdConfiguration) in API Explorer.
+
+## caiSpeechToText
+
+Speech to Text Conversion
+
+ Name             | Value
+------------------|-------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/ai/audio/v1/async/speech-to-text`
+ Rate Limit Group | `Heavy`
+ App Permission   | `AI`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CaiAsyncApiResponse result = rc.ai().audio().v1().async().speechToText().post(asrInput, caiSpeechToTextParameters);
+rc.revoke();
+```
+
+- `asrInput` is of type [AsrInput](./src/main/java/com/ringcentral/definitions/AsrInput.java)
+- `caiSpeechToTextParameters` is of
+  type [CaiSpeechToTextParameters](./src/main/java/com/ringcentral/definitions/CaiSpeechToTextParameters.java)
+- `result` is of type [CaiAsyncApiResponse](./src/main/java/com/ringcentral/definitions/CaiAsyncApiResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Audio-caiSpeechToText) in API Explorer.
+
+## getAccountRecordings
+
+List Account Recordings
+
+ Name             | Value
+------------------|----------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/rcvideo/v1/account/{accountId}/recordings`
+ Rate Limit Group | `Light`
+ App Permission   | `Video`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CloudRecordings result = rc.rcvideo().v1().account(accountId).recordings().get(getAccountRecordingsParameters);
+rc.revoke();
+```
+
+- Parameter `accountId` is optional with default value `~`
+- `getAccountRecordingsParameters` is of
+  type [GetAccountRecordingsParameters](./src/main/java/com/ringcentral/definitions/GetAccountRecordingsParameters.java)
+- `result` is of type [CloudRecordings](./src/main/java/com/ringcentral/definitions/CloudRecordings.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Recordings-getAccountRecordings) in API Explorer.
+
+## listCostCenters
+
+List Cost Centers
+
+ Name             | Value
+------------------|-------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/cost-centers`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `CostCenterManagement`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CostCenterList result = rc.restapi().v2().accounts(accountId).costCenters().get();
+rc.revoke();
+```
+
+- `result` is of type [CostCenterList](./src/main/java/com/ringcentral/definitions/CostCenterList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Cost-Centers-listCostCenters) in API Explorer.
+
+## bulkDeleteUsersV2
+
+Delete Multiple Extensions
+
+ Name             | Value
+------------------|-----------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/extensions`
+ Rate Limit Group | `Heavy`
+ App Permission   | `EditAccounts`
+ User Permission  | `Users`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+BulkDeleteUsersResponse result = rc.restapi().v2().accounts(accountId).extensions().delete(bulkDeleteUsersRequest);
+rc.revoke();
+```
+
+- `bulkDeleteUsersRequest` is of
+  type [BulkDeleteUsersRequest](./src/main/java/com/ringcentral/definitions/BulkDeleteUsersRequest.java)
+- `result` is of
+  type [BulkDeleteUsersResponse](./src/main/java/com/ringcentral/definitions/BulkDeleteUsersResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-bulkDeleteUsersV2) in API Explorer.
+
+## listAccountPhoneNumbersV2
+
+List Account Phone Numbers
+
+ Name             | Value
+------------------|--------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/phone-numbers`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyPhoneNumbers`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+AccountPhoneNumberList result = rc.restapi().v2().accounts(accountId).phoneNumbers().get(listAccountPhoneNumbersV2Parameters);
+rc.revoke();
+```
+
+- `listAccountPhoneNumbersV2Parameters` is of
+  type [ListAccountPhoneNumbersV2Parameters](./src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersV2Parameters.java)
+- `result` is of type [AccountPhoneNumberList](./src/main/java/com/ringcentral/definitions/AccountPhoneNumberList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-listAccountPhoneNumbersV2) in API Explorer.
+
+## deleteNumbersFromInventoryV2
+
+Delete Numbers from Inventory
+
+ Name             | Value
+------------------|--------------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/phone-numbers`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyPhoneNumbers`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DeletePhoneNumbersResponse result = rc.restapi().v2().accounts(accountId).phoneNumbers().delete(deletePhoneNumbersRequest);
+rc.revoke();
+```
+
+- `deletePhoneNumbersRequest` is of
+  type [DeletePhoneNumbersRequest](./src/main/java/com/ringcentral/definitions/DeletePhoneNumbersRequest.java)
+- `result` is of
+  type [DeletePhoneNumbersResponse](./src/main/java/com/ringcentral/definitions/DeletePhoneNumbersResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-deleteNumbersFromInventoryV2) in API
+Explorer.
+
+## assignPhoneNumberV2
+
+Assign Phone Number
+
+ Name             | Value
+------------------|------------------------------------------------------------------
+ HTTP Method      | `PATCH`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/phone-numbers/{phoneNumberId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyPhoneNumbers`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+AccountPhoneNumberInfo result = rc.restapi().v2().accounts(accountId).phoneNumbers(phoneNumberId).patch(assignPhoneNumberRequest);
+rc.revoke();
+```
+
+- `assignPhoneNumberRequest` is of
+  type [AssignPhoneNumberRequest](./src/main/java/com/ringcentral/definitions/AssignPhoneNumberRequest.java)
+- `result` is of type [AccountPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/AccountPhoneNumberInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-assignPhoneNumberV2) in API Explorer.
+
+## listSmsConsentRecords
+
+List SMS Consent Records
+
+ Name             | Value
+------------------|-------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/sms/consents`
+ Rate Limit Group | `Light`
+ App Permission   | `SMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+OptRecordList result = rc.restapi().v2().accounts(accountId).sms().consents().get(listSmsConsentRecordsParameters);
+rc.revoke();
+```
+
+- `listSmsConsentRecordsParameters` is of
+  type [ListSmsConsentRecordsParameters](./src/main/java/com/ringcentral/definitions/ListSmsConsentRecordsParameters.java)
+- `result` is of type [OptRecordList](./src/main/java/com/ringcentral/definitions/OptRecordList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-Consents-listSmsConsentRecords) in API Explorer.
+
+## deleteSmsConsentRecords
+
+Delete SMS Consent Records
+
+ Name             | Value
+------------------|-------------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/sms/consents`
+ Rate Limit Group | `Light`
+ App Permission   | `SMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+OptRecordsModificationSummary result = rc.restapi().v2().accounts(accountId).sms().consents().delete(deleteOptRecordList);
+rc.revoke();
+```
+
+- `deleteOptRecordList` is of
+  type [DeleteOptRecordList](./src/main/java/com/ringcentral/definitions/DeleteOptRecordList.java)
+- `result` is of
+  type [OptRecordsModificationSummary](./src/main/java/com/ringcentral/definitions/OptRecordsModificationSummary.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-Consents-deleteSmsConsentRecords) in API Explorer.
+
+## editSmsConsentRecords
+
+Add/Update SMS Consent Records
+
+ Name             | Value
+------------------|-------------------------------------------------
+ HTTP Method      | `PATCH`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/sms/consents`
+ Rate Limit Group | `Light`
+ App Permission   | `SMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+OptRecordsModificationSummary result = rc.restapi().v2().accounts(accountId).sms().consents().patch(updateOptRecordList);
+rc.revoke();
+```
+
+- `updateOptRecordList` is of
+  type [UpdateOptRecordList](./src/main/java/com/ringcentral/definitions/UpdateOptRecordList.java)
+- `result` is of
+  type [OptRecordsModificationSummary](./src/main/java/com/ringcentral/definitions/OptRecordsModificationSummary.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-Consents-editSmsConsentRecords) in API Explorer.
+
+## listA2PBatches
+
+List A2P SMS Batches
+
+ Name             | Value
+------------------|-------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/batches`
+ Rate Limit Group | `Light`
+ App Permission   | `A2PSMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+BatchListResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().batches().list(listA2PBatchesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `listA2PBatchesParameters` is of
+  type [ListA2PBatchesParameters](./src/main/java/com/ringcentral/definitions/ListA2PBatchesParameters.java)
+- `result` is of type [BatchListResponse](./src/main/java/com/ringcentral/definitions/BatchListResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-listA2PBatches) in API Explorer.
+
+## createA2PSMS
+
+Send A2P SMS
+
+ Name             | Value
+------------------|-------------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/batches`
+ Rate Limit Group | `Light`
+ App Permission   | `A2PSMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+MessageBatchResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().batches().post(messageBatchCreateRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `messageBatchCreateRequest` is of
+  type [MessageBatchCreateRequest](./src/main/java/com/ringcentral/definitions/MessageBatchCreateRequest.java)
+- `result` is of type [MessageBatchResponse](./src/main/java/com/ringcentral/definitions/MessageBatchResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-createA2PSMS) in API Explorer.
+
+## readA2PBatch
+
+Get A2P SMS Batch
+
+ Name             | Value
+------------------|-----------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/batches/{batchId}`
+ Rate Limit Group | `Light`
+ App Permission   | `A2PSMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+MessageBatchResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().batches(batchId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [MessageBatchResponse](./src/main/java/com/ringcentral/definitions/MessageBatchResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-readA2PBatch) in API Explorer.
+
+## listA2PSMS
+
+List A2P SMS Messages
+
+ Name             | Value
+------------------|--------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/messages`
+ Rate Limit Group | `Light`
+ App Permission   | `A2PSMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+MessageListResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().messages().list(listA2PSMSParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `listA2PSMSParameters` is of
+  type [ListA2PSMSParameters](./src/main/java/com/ringcentral/definitions/ListA2PSMSParameters.java)
+- `result` is of type [MessageListResponse](./src/main/java/com/ringcentral/definitions/MessageListResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-listA2PSMS) in API Explorer.
+
+## readA2PSMS
+
+Get A2P SMS
+
+ Name             | Value
+------------------|--------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/messages/{messageId}`
+ Rate Limit Group | `Light`
+ App Permission   | `A2PSMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+MessageDetailsResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().messages(messageId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [MessageDetailsResponse](./src/main/java/com/ringcentral/definitions/MessageDetailsResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-readA2PSMS) in API Explorer.
+
+## aggregateA2PSMSStatuses
+
+List A2P SMS Statuses
+
+ Name             | Value
+------------------|--------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/statuses`
+ Rate Limit Group | `Light`
+ App Permission   | `A2PSMS`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+MessageStatusesResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().statuses().get(aggregateA2PSMSStatusesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `aggregateA2PSMSStatusesParameters` is of
+  type [AggregateA2PSMSStatusesParameters](./src/main/java/com/ringcentral/definitions/AggregateA2PSMSStatusesParameters.java)
+- `result` is of
+  type [MessageStatusesResponse](./src/main/java/com/ringcentral/definitions/MessageStatusesResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-aggregateA2PSMSStatuses) in API Explorer.
+
+## listCompanyAnsweringRules
+
+List Company Call Handling Rules
+
+ Name             | Value
+------------------|------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule`
+ Rate Limit Group | `Medium`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyAnsweringRules`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CompanyAnsweringRuleList result = rc.restapi(apiVersion).account(accountId).answeringRule().list(listCompanyAnsweringRulesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `listCompanyAnsweringRulesParameters` is of
+  type [ListCompanyAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListCompanyAnsweringRulesParameters.java)
+- `result` is of
+  type [CompanyAnsweringRuleList](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-listCompanyAnsweringRules) in API
+Explorer.
+
+## createCompanyAnsweringRule
+
+Create Company Call Handling Rule
+
+ Name             | Value
+------------------|------------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyAnsweringRules`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CompanyAnsweringRuleInfo result = rc.restapi(apiVersion).account(accountId).answeringRule().post(companyAnsweringRuleRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `companyAnsweringRuleRequest` is of
+  type [CompanyAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleRequest.java)
+- `result` is of
+  type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-createCompanyAnsweringRule) in API
+Explorer.
+
+## readCompanyAnsweringRule
+
+Get Company Call Handling Rule
+
+ Name             | Value
+------------------|---------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule/{ruleId}`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyAnsweringRules`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CompanyAnsweringRuleInfo result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of
+  type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-readCompanyAnsweringRule) in API
+Explorer.
+
+## updateCompanyAnsweringRule
+
+Update Company Call Handling Rule
+
+ Name             | Value
+------------------|---------------------------------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule/{ruleId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyAnsweringRules`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CompanyAnsweringRuleInfo result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).put(companyAnsweringRuleUpdate);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `companyAnsweringRuleUpdate` is of
+  type [CompanyAnsweringRuleUpdate](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleUpdate.java)
+- `result` is of
+  type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-updateCompanyAnsweringRule) in API
+Explorer.
+
+## deleteCompanyAnsweringRule
+
+Delete Company Call Handling Rule
+
+ Name             | Value
+------------------|---------------------------------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule/{ruleId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyAnsweringRules`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).delete();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-deleteCompanyAnsweringRule) in API
+Explorer.
+
+## listAssignedRoles
+
+List Company Assigned Roles
+
+ Name             | Value
+------------------|-----------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/assigned-role`
+ Rate Limit Group | `Medium`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadAssignedRoles`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+ExtensionWithRolesCollectionResource result = rc.restapi(apiVersion).account(accountId).assignedRole().get(listAssignedRolesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `listAssignedRolesParameters` is of
+  type [ListAssignedRolesParameters](./src/main/java/com/ringcentral/definitions/ListAssignedRolesParameters.java)
+- `result` is of
+  type [ExtensionWithRolesCollectionResource](./src/main/java/com/ringcentral/definitions/ExtensionWithRolesCollectionResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Role-Management-listAssignedRoles) in API Explorer.
+
+## auditTrailSearch
+
+Search Audit Trail Data
+
+ Name             | Value
+------------------|----------------------------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/audit-trail/search`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadAuditTrail`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+AccountHistorySearchPublicResponse result = rc.restapi(apiVersion).account(accountId).auditTrail().search().post(accountHistorySearchPublicRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `accountHistorySearchPublicRequest` is of
+  type [AccountHistorySearchPublicRequest](./src/main/java/com/ringcentral/definitions/AccountHistorySearchPublicRequest.java)
+- `result` is of
+  type [AccountHistorySearchPublicResponse](./src/main/java/com/ringcentral/definitions/AccountHistorySearchPublicResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Audit-Trail-auditTrailSearch) in API Explorer.
+
+## readAccountBusinessAddress
+
+Get Account Business Address
+
+ Name             | Value
+------------------|--------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-address`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyInfo`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+AccountBusinessAddressResource result = rc.restapi(apiVersion).account(accountId).businessAddress().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of
+  type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountBusinessAddress) in API Explorer.
+
+## updateAccountBusinessAddress
+
+Update Company Business Address
+
+ Name             | Value
+------------------|--------------------------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-address`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyInfo`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+AccountBusinessAddressResource result = rc.restapi(apiVersion).account(accountId).businessAddress().put(modifyAccountBusinessAddressRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `modifyAccountBusinessAddressRequest` is of
+  type [ModifyAccountBusinessAddressRequest](./src/main/java/com/ringcentral/definitions/ModifyAccountBusinessAddressRequest.java)
+- `result` is of
+  type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Company-updateAccountBusinessAddress) in API Explorer.
+
+## readCompanyBusinessHours
+
+Get Company Business Hours
+
+ Name             | Value
+------------------|------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-hours`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyAnsweringRules`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CompanyBusinessHours result = rc.restapi(apiVersion).account(accountId).businessHours().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-readCompanyBusinessHours) in API Explorer.
+
+## updateCompanyBusinessHours
+
+Update Company Business Hours
+
+ Name             | Value
+------------------|------------------------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-hours`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditExtensions`
+ User Permission  | `EditUserAnsweringRules`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CompanyBusinessHours result = rc.restapi(apiVersion).account(accountId).businessHours().put(companyBusinessHoursUpdateRequest);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `companyBusinessHoursUpdateRequest` is of
+  type [CompanyBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/CompanyBusinessHoursUpdateRequest.java)
+- `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-updateCompanyBusinessHours) in API Explorer.
+
+## extractSyncAccountCallLog
+
+Extract Sync Company Call Log
+
+ Name             | Value
+------------------|-------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-log-extract-sync`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadCallLog`
+ User Permission  | `ReadCallLog`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CallLogExtractSyncResponse result = rc.restapi(apiVersion).account(accountId).callLogExtractSync().get(extractSyncAccountCallLogParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `extractSyncAccountCallLogParameters` is of
+  type [ExtractSyncAccountCallLogParameters](./src/main/java/com/ringcentral/definitions/ExtractSyncAccountCallLogParameters.java)
+- `result` is of
+  type [CallLogExtractSyncResponse](./src/main/java/com/ringcentral/definitions/CallLogExtractSyncResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-extractSyncAccountCallLog) in API Explorer.
+
+## syncAccountCallLog
+
+Sync Company Call Log
+
+ Name             | Value
+------------------|-----------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-log-sync`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadCallLog`
+ User Permission  | `ReadCallLog`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CallLogSyncResponse result = rc.restapi(apiVersion).account(accountId).callLogSync().get(syncAccountCallLogParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `syncAccountCallLogParameters` is of
+  type [SyncAccountCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncAccountCallLogParameters.java)
+- `result` is of type [CallLogSyncResponse](./src/main/java/com/ringcentral/definitions/CallLogSyncResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-syncAccountCallLog) in API Explorer.
+
+## listCallQueueMembers
+
+List Call Queue Members
+
+ Name             | Value
+------------------|---------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-queues/{groupId}/members`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadExtensions`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CallQueueMembers result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).members().get(listCallQueueMembersParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `listCallQueueMembersParameters` is of
+  type [ListCallQueueMembersParameters](./src/main/java/com/ringcentral/definitions/ListCallQueueMembersParameters.java)
+- `result` is of type [CallQueueMembers](./src/main/java/com/ringcentral/definitions/CallQueueMembers.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueueMembers) in API Explorer.
+
+## readCallQueuePresence
+
+Get Call Queue Presence
+
+ Name             | Value
+------------------|----------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-queues/{groupId}/presence`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadPresence`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CallQueuePresence result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-readCallQueuePresence) in API Explorer.
+
+## updateCallQueuePresence
+
+Update Call Queue Presence
+
+ Name             | Value
+------------------|----------------------------------------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-queues/{groupId}/presence`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditPresence`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CallQueuePresence result = rc.restapi(apiVersion).account(accountId).callQueues(groupId).presence().put(callQueueUpdatePresence);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `callQueueUpdatePresence` is of
+  type [CallQueueUpdatePresence](./src/main/java/com/ringcentral/definitions/CallQueueUpdatePresence.java)
+- `result` is of type [CallQueuePresence](./src/main/java/com/ringcentral/definitions/CallQueuePresence.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-updateCallQueuePresence) in API Explorer.
+
+## readCallRecordingSettings
+
+Get Call Recording Settings
+
+ Name             | Value
+------------------|------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-recording`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyInfo`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CallRecordingSettingsResource result = rc.restapi(apiVersion).account(accountId).callRecording().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of
+  type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-readCallRecordingSettings) in API
+Explorer.
+
+## updateCallRecordingSettings
+
+Update Call Recording Settings
+
+ Name             | Value
+------------------|------------------------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-recording`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyInfo`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+CallRecordingSettingsResource result = rc.restapi(apiVersion).account(accountId).callRecording().put(callRecordingSettingsResource);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `callRecordingSettingsResource` is of
+  type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
+- `result` is of
+  type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-updateCallRecordingSettings) in API
+Explorer.
+
+## deleteCompanyCallRecordings
+
+Delete Company Call Recordings
+
+ Name             | Value
+------------------|-------------------------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-recordings`
+ Rate Limit Group | `Heavy`
+ App Permission   | `EditCallLog`
+ User Permission  | `EditCompanyCallRecordings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.restapi(apiVersion).account(accountId).callRecordings().delete(callRecordingIds);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `callRecordingIds` is of type [CallRecordingIds](./src/main/java/com/ringcentral/definitions/CallRecordingIds.java)
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recordings-deleteCompanyCallRecordings) in API
+Explorer.
+
+## updateDeviceEmergency
+
+Update Device Emergency Info
+
+ Name             | Value
+------------------|-------------------------------------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/device/{deviceId}/emergency`
+ Rate Limit Group | `Medium`
+ App Permission   | `EditAccounts`
+ User Permission  | `EditCompanyDevices`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DeviceResource result = rc.restapi(apiVersion).account(accountId).device(deviceId).emergency().put(accountDeviceUpdate);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `accountDeviceUpdate` is of
+  type [AccountDeviceUpdate](./src/main/java/com/ringcentral/definitions/AccountDeviceUpdate.java)
+- `result` is of type [DeviceResource](./src/main/java/com/ringcentral/definitions/DeviceResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Devices-updateDeviceEmergency) in API Explorer.
+
+## readDeviceSipInfo
+
+Get Device SIP Info
+
+ Name             | Value
+------------------|------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/device/{deviceId}/sip-info`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadCompanyDevices`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+SipInfoResource result = rc.restapi(apiVersion).account(accountId).device(deviceId).sipInfo().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `result` is of type [SipInfoResource](./src/main/java/com/ringcentral/definitions/SipInfoResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Devices-readDeviceSipInfo) in API Explorer.
+
+## listDirectoryEntries
+
+Get Company Directory Entries
+
+ Name             | Value
+------------------|---------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/directory/entries`
+ Rate Limit Group | `Medium`
+ App Permission   | `ReadAccounts`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DirectoryResource result = rc.restapi(apiVersion).account(accountId).directory().entries().list(listDirectoryEntriesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `listDirectoryEntriesParameters` is of
+  type [ListDirectoryEntriesParameters](./src/main/java/com/ringcentral/definitions/ListDirectoryEntriesParameters.java)
+- `result` is of type [DirectoryResource](./src/main/java/com/ringcentral/definitions/DirectoryResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-listDirectoryEntries) in API Explorer.
+
+## readDirectoryEntry
+
+Get Corporate Directory Entry
+
+ Name             | Value
+------------------|-------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/directory/entries/{entryId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `ReadAccounts`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+ContactResource result = rc.restapi(apiVersion).account(accountId).directory().entries(entryId).get(readDirectoryEntryParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- `readDirectoryEntryParameters` is of
+  type [ReadDirectoryEntryParameters](./src/main/java/com/ringcentral/definitions/ReadDirectoryEntryParameters.java)
+- `result` is of type [ContactResource](./src/main/java/com/ringcentral/definitions/ContactResource.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-readDirectoryEntry) in API Explorer.
 
 ## readDirectoryFederation
 
@@ -3275,6 +5358,35 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateExtensionCallerId) in API Explorer.
 
+## listExtensionDevices
+
+List Extension Devices
+
+ Name             | Value
+------------------|----------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/device`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadUserDevices`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+GetExtensionDevicesResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).device().get(listExtensionDevicesParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `listExtensionDevicesParameters` is of
+  type [ListExtensionDevicesParameters](./src/main/java/com/ringcentral/definitions/ListExtensionDevicesParameters.java)
+- `result` is of
+  type [GetExtensionDevicesResponse](./src/main/java/com/ringcentral/definitions/GetExtensionDevicesResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Devices-listExtensionDevices) in API Explorer.
+
 ## listFavoriteContacts
 
 List Favorite Contacts
@@ -3330,34 +5442,6 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-updateFavoriteContactList) in API
 Explorer.
 
-## createFaxMessage
-
-Create Fax Message
-
- Name             | Value
-------------------|-------------------------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/fax`
- Rate Limit Group | `Heavy`
- App Permission   | `Faxes`
- User Permission  | `OutboundFaxes`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-FaxResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).fax().post(createFaxMessageRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- Parameter `extensionId` is optional with default value `~`
-- `createFaxMessageRequest` is of
-  type [CreateFaxMessageRequest](./src/main/java/com/ringcentral/definitions/CreateFaxMessageRequest.java)
-- `result` is of type [FaxResponse](./src/main/java/com/ringcentral/definitions/FaxResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-createFaxMessage) in API Explorer.
-
 ## readExtensionFeatures
 
 Get User Features
@@ -3384,7 +5468,36 @@ rc.revoke();
   type [ReadExtensionFeaturesParameters](./src/main/java/com/ringcentral/definitions/ReadExtensionFeaturesParameters.java)
 - `result` is of type [FeatureList](./src/main/java/com/ringcentral/definitions/FeatureList.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Features-readExtensionFeatures) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readExtensionFeatures) in API Explorer.
+
+## listExtensionGrants
+
+List Extension Grants
+
+ Name             | Value
+------------------|---------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/grant`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `ReadExtensions`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+GetExtensionGrantListResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).grant().get(listExtensionGrantsParameters);
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `listExtensionGrantsParameters` is of
+  type [ListExtensionGrantsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionGrantsParameters.java)
+- `result` is of
+  type [GetExtensionGrantListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionGrantListResponse.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-listExtensionGrants) in API Explorer.
 
 ## createCustomUserGreeting
 
@@ -3441,34 +5554,6 @@ rc.revoke();
 - `result` is of type [CustomUserGreetingInfo](./src/main/java/com/ringcentral/definitions/CustomUserGreetingInfo.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Greetings-readCustomGreeting) in API Explorer.
-
-## createMMS
-
-Send MMS
-
- Name             | Value
-------------------|-------------------------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/mms`
- Rate Limit Group | `Medium`
- App Permission   | `SMS`
- User Permission  | `OutboundSMS`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-GetSMSMessageInfoResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).mms().post(createMMSMessage);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- Parameter `extensionId` is optional with default value `~`
-- `createMMSMessage` is of type [CreateMMSMessage](./src/main/java/com/ringcentral/definitions/CreateMMSMessage.java)
-- `result` is of
-  type [GetSMSMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetSMSMessageInfoResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-createMMS) in API Explorer.
 
 ## readUserPresenceStatus
 
@@ -3608,34 +5693,6 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#RingOut-deleteRingOutCall) in API Explorer.
 
-## createSMSMessage
-
-Send SMS
-
- Name             | Value
-------------------|-------------------------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/sms`
- Rate Limit Group | `Medium`
- App Permission   | `SMS`
- User Permission  | `OutboundSMS`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-GetSMSMessageInfoResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).sms().post(createSMSMessage);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- Parameter `extensionId` is optional with default value `~`
-- `createSMSMessage` is of type [CreateSMSMessage](./src/main/java/com/ringcentral/definitions/CreateSMSMessage.java)
-- `result` is of
-  type [GetSMSMessageInfoResponse](./src/main/java/com/ringcentral/definitions/GetSMSMessageInfoResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-createSMSMessage) in API Explorer.
-
 ## getForwardAllCompanyCalls
 
 Get Forward All Company Calls
@@ -3692,134 +5749,36 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-updateForwardAllCompanyCalls) in API
 Explorer.
 
-## listIvrPrompts
+## readAccountGreetingContent
 
-List IVR Prompts
+Get Account Greeting Media Content
 
  Name             | Value
-------------------|---------------------------------------------------------
+------------------|---------------------------------------------------------------------------
  HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts`
- Rate Limit Group | `Medium`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyGreetings`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-IvrPrompts result = rc.restapi(apiVersion).account(accountId).ivrPrompts().list();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [IvrPrompts](./src/main/java/com/ringcentral/definitions/IvrPrompts.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#IVR-listIvrPrompts) in API Explorer.
-
-## createIVRPrompt
-
-Create IVR Prompts
-
- Name             | Value
-------------------|---------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/greeting/{greetingId}/content`
  Rate Limit Group | `Heavy`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyGreetings`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-PromptInfo result = rc.restapi(apiVersion).account(accountId).ivrPrompts().post(createIVRPromptRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `createIVRPromptRequest` is of
-  type [CreateIVRPromptRequest](./src/main/java/com/ringcentral/definitions/CreateIVRPromptRequest.java)
-- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#IVR-createIVRPrompt) in API Explorer.
-
-## readIVRPrompt
-
-Get IVR Prompt
-
- Name             | Value
-------------------|--------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts/{promptId}`
- Rate Limit Group | `Medium`
  App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyGreetings`
+ User Permission  | `N/A`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-PromptInfo result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).get();
+byte[] result = rc.restapi(apiVersion).account(accountId).greeting(greetingId).content().get(readAccountGreetingContentParameters);
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
-- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
+- `readAccountGreetingContentParameters` is of
+  type [ReadAccountGreetingContentParameters](./src/main/java/com/ringcentral/definitions/ReadAccountGreetingContentParameters.java)
+- `result` is of type `byte[]`
 
-[Try it out](https://developer.ringcentral.com/api-reference#IVR-readIVRPrompt) in API Explorer.
+### ❗❗❗ Code sample above may not work
 
-## updateIVRPrompt
+Please refer to [Binary content downloading](/README.md#Binary-content-downloading).
 
-Update IVR Prompt
-
- Name             | Value
-------------------|--------------------------------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts/{promptId}`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyGreetings`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-PromptInfo result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).put(updateIVRPromptRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `updateIVRPromptRequest` is of
-  type [UpdateIVRPromptRequest](./src/main/java/com/ringcentral/definitions/UpdateIVRPromptRequest.java)
-- `result` is of type [PromptInfo](./src/main/java/com/ringcentral/definitions/PromptInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#IVR-updateIVRPrompt) in API Explorer.
-
-## deleteIVRPrompt
-
-Delete IVR Prompt
-
- Name             | Value
-------------------|--------------------------------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/ivr-prompts/{promptId}`
- Rate Limit Group | `Heavy`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyGreetings`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.restapi(apiVersion).account(accountId).ivrPrompts(promptId).delete();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#IVR-deleteIVRPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Greetings-readAccountGreetingContent) in API Explorer.
 
 ## readIVRPromptContent
 
@@ -3905,82 +5864,36 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-readMessageStoreReportTask) in API
 Explorer.
 
-## listAccountPhoneNumbers
+## readCallRecordingContent
 
-List Company Phone Numbers
+Get Call Recording Content
 
  Name             | Value
-------------------|----------------------------------------------------------
+------------------|-----------------------------------------------------------------------------
  HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/phone-number`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/recording/{recordingId}/content`
  Rate Limit Group | `Heavy`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyPhoneNumbers`
+ App Permission   | `ReadCallRecording`
+ User Permission  | `N/A`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-AccountPhoneNumbers result = rc.restapi(apiVersion).account(accountId).phoneNumber().list(listAccountPhoneNumbersParameters);
+byte[] result = rc.restapi(apiVersion).account(accountId).recording(recordingId).content().get(readCallRecordingContentParameters);
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
-- `listAccountPhoneNumbersParameters` is of
-  type [ListAccountPhoneNumbersParameters](./src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersParameters.java)
-- `result` is of type [AccountPhoneNumbers](./src/main/java/com/ringcentral/definitions/AccountPhoneNumbers.java)
+- `readCallRecordingContentParameters` is of
+  type [ReadCallRecordingContentParameters](./src/main/java/com/ringcentral/definitions/ReadCallRecordingContentParameters.java)
+- `result` is of type `byte[]`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-listAccountPhoneNumbers) in API Explorer.
+### ❗❗❗ Code sample above may not work
 
-## readAccountPhoneNumber
+Please refer to [Binary content downloading](/README.md#Binary-content-downloading).
 
-Get Phone Number
-
- Name             | Value
-------------------|--------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/phone-number/{phoneNumberId}`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyPhoneNumbers`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CompanyPhoneNumberInfo result = rc.restapi(apiVersion).account(accountId).phoneNumber(phoneNumberId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [CompanyPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/CompanyPhoneNumberInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-readAccountPhoneNumber) in API Explorer.
-
-## readAccountServiceInfo
-
-Get Account Service Info
-
- Name             | Value
-------------------|----------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/service-info`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyInfo`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AccountServiceInfo result = rc.restapi(apiVersion).account(accountId).serviceInfo().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [AccountServiceInfo](./src/main/java/com/ringcentral/definitions/AccountServiceInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountServiceInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Recordings-readCallRecordingContent) in API Explorer.
 
 ## assignMultipleSites
 
@@ -4008,31 +5921,6 @@ rc.revoke();
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Multi-Site-assignMultipleSites) in API Explorer.
-
-## listSiteMembers
-
-List Site Members
-
- Name             | Value
-------------------|--------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/sites/{siteId}/members`
- Rate Limit Group | `Medium`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadExtensions`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-SiteMembersList result = rc.restapi(apiVersion).account(accountId).sites(siteId).members().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [SiteMembersList](./src/main/java/com/ringcentral/definitions/SiteMembersList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Multi-Site-listSiteMembers) in API Explorer.
 
 ## createCallOutCallSession
 
@@ -4245,58 +6133,6 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Device-SIP-Registration-createSIPRegistration) in API
 Explorer.
 
-## listCountries
-
-List Countries
-
- Name             | Value
-------------------|--------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/country`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CountryListDictionaryModel result = rc.restapi(apiVersion).dictionary().country().list(listCountriesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `listCountriesParameters` is of
-  type [ListCountriesParameters](./src/main/java/com/ringcentral/definitions/ListCountriesParameters.java)
-- `result` is of
-  type [CountryListDictionaryModel](./src/main/java/com/ringcentral/definitions/CountryListDictionaryModel.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listCountries) in API Explorer.
-
-## readCountry
-
-Get Country
-
- Name             | Value
-------------------|--------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/country/{countryId}`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CountryInfoDictionaryModel result = rc.restapi(apiVersion).dictionary().country(countryId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of
-  type [CountryInfoDictionaryModel](./src/main/java/com/ringcentral/definitions/CountryInfoDictionaryModel.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readCountry) in API Explorer.
-
 ## listFaxCoverPages
 
 List Fax Cover Pages
@@ -4324,259 +6160,199 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages) in API Explorer.
 
-## listStandardGreetings
+## getGlipAdaptiveCardNew
 
-List Standard Greetings
+Get Adaptive Card
 
  Name             | Value
-------------------|---------------------------------------------
+------------------|----------------------------------------------
  HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/greeting`
+ Endpoint         | `/team-messaging/v1/adaptive-cards/{cardId}`
  Rate Limit Group | `Medium`
- App Permission   | `N/A`
+ App Permission   | `TeamMessaging`
  User Permission  | `N/A`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-DictionaryGreetingList result = rc.restapi(apiVersion).dictionary().greeting().list(listStandardGreetingsParameters);
+AdaptiveCardInfo result = rc.teamMessaging().v1().adaptiveCards(cardId).get();
 rc.revoke();
 ```
 
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `listStandardGreetingsParameters` is of
-  type [ListStandardGreetingsParameters](./src/main/java/com/ringcentral/definitions/ListStandardGreetingsParameters.java)
-- `result` is of type [DictionaryGreetingList](./src/main/java/com/ringcentral/definitions/DictionaryGreetingList.java)
+- `result` is of type [AdaptiveCardInfo](./src/main/java/com/ringcentral/definitions/AdaptiveCardInfo.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Greetings-listStandardGreetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Adaptive-Cards-getGlipAdaptiveCardNew) in API Explorer.
 
-## readStandardGreeting
+## updateGlipAdaptiveCardNew
 
-Get Standard Greeting
+Update Adaptive Card
 
  Name             | Value
-------------------|----------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/greeting/{greetingId}`
+------------------|----------------------------------------------
+ HTTP Method      | `PUT`
+ Endpoint         | `/team-messaging/v1/adaptive-cards/{cardId}`
  Rate Limit Group | `Medium`
- App Permission   | `N/A`
+ App Permission   | `TeamMessaging`
  User Permission  | `N/A`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-DictionaryGreetingInfo result = rc.restapi(apiVersion).dictionary().greeting(greetingId).get();
+AdaptiveCardShortInfo result = rc.teamMessaging().v1().adaptiveCards(cardId).put(adaptiveCardRequest);
 rc.revoke();
 ```
 
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of type [DictionaryGreetingInfo](./src/main/java/com/ringcentral/definitions/DictionaryGreetingInfo.java)
+- `adaptiveCardRequest` is of
+  type [AdaptiveCardRequest](./src/main/java/com/ringcentral/definitions/AdaptiveCardRequest.java)
+- `result` is of type [AdaptiveCardShortInfo](./src/main/java/com/ringcentral/definitions/AdaptiveCardShortInfo.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Greetings-readStandardGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Adaptive-Cards-updateGlipAdaptiveCardNew) in API Explorer.
 
-## listLanguages
+## deleteGlipAdaptiveCardNew
 
-List Languages
+Delete Adaptive Card
 
  Name             | Value
-------------------|---------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/language`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
+------------------|----------------------------------------------
+ HTTP Method      | `DELETE`
+ Endpoint         | `/team-messaging/v1/adaptive-cards/{cardId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
  User Permission  | `N/A`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-LanguageList result = rc.restapi(apiVersion).dictionary().language().list();
+String result = rc.teamMessaging().v1().adaptiveCards(cardId).delete();
 rc.revoke();
 ```
 
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of type [LanguageList](./src/main/java/com/ringcentral/definitions/LanguageList.java)
+- `result` is an empty string
 
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listLanguages) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Adaptive-Cards-deleteGlipAdaptiveCardNew) in API Explorer.
 
-## readLanguage
+## favoriteGlipChatNew
 
-Get Language
-
- Name             | Value
-------------------|----------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/language/{languageId}`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-LanguageInfo result = rc.restapi(apiVersion).dictionary().language(languageId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of type [LanguageInfo](./src/main/java/com/ringcentral/definitions/LanguageInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readLanguage) in API Explorer.
-
-## listLocations
-
-List Locations
+Add Chat to Favorites
 
  Name             | Value
-------------------|---------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/location`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-GetLocationListResponse result = rc.restapi(apiVersion).dictionary().location().get(listLocationsParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `listLocationsParameters` is of
-  type [ListLocationsParameters](./src/main/java/com/ringcentral/definitions/ListLocationsParameters.java)
-- `result` is of
-  type [GetLocationListResponse](./src/main/java/com/ringcentral/definitions/GetLocationListResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listLocations) in API Explorer.
-
-## listTimezones
-
-List Timezones
-
- Name             | Value
-------------------|---------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/timezone`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-GetTimezoneListResponse result = rc.restapi(apiVersion).dictionary().timezone().list(listTimezonesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `listTimezonesParameters` is of
-  type [ListTimezonesParameters](./src/main/java/com/ringcentral/definitions/ListTimezonesParameters.java)
-- `result` is of
-  type [GetTimezoneListResponse](./src/main/java/com/ringcentral/definitions/GetTimezoneListResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listTimezones) in API Explorer.
-
-## readTimezone
-
-Get Timezone
-
- Name             | Value
-------------------|----------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/timezone/{timezoneId}`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-GetTimezoneInfoResponse result = rc.restapi(apiVersion).dictionary().timezone(timezoneId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of
-  type [GetTimezoneInfoResponse](./src/main/java/com/ringcentral/definitions/GetTimezoneInfoResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readTimezone) in API Explorer.
-
-## parsePhoneNumber
-
-Parse Phone Number(s)
-
- Name             | Value
-------------------|---------------------------------------------
+------------------|----------------------------------------------
  HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/number-parser/parse`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/favorite`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
  User Permission  | `N/A`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-ParsePhoneNumberResponse result = rc.restapi(apiVersion).numberParser().parse().post(parsePhoneNumberRequest, parsePhoneNumberParameters);
+String result = rc.teamMessaging().v1().chats(chatId).favorite().post();
 rc.revoke();
 ```
 
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `parsePhoneNumberRequest` is of
-  type [ParsePhoneNumberRequest](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberRequest.java)
-- `parsePhoneNumberParameters` is of
-  type [ParsePhoneNumberParameters](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberParameters.java)
-- `result` is of
-  type [ParsePhoneNumberResponse](./src/main/java/com/ringcentral/definitions/ParsePhoneNumberResponse.java)
+- `result` is an empty string
 
-[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-parsePhoneNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-favoriteGlipChatNew) in API Explorer.
 
-## renewSubscription
+## listChatNotesNew
 
-Renew Subscription
+List Notes
 
  Name             | Value
-------------------|-------------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/subscription/{subscriptionId}/renew`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-SubscriptionInfo result = rc.restapi(apiVersion).subscription(subscriptionId).renew().post();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of type [SubscriptionInfo](./src/main/java/com/ringcentral/definitions/SubscriptionInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-renewSubscription) in API Explorer.
-
-## scimGetProviderConfig2
-
-Get Provider Config
-
- Name             | Value
-------------------|-----------------------------------------
+------------------|-------------------------------------------
  HTTP Method      | `GET`
- Endpoint         | `/scim/{version}/ServiceProviderConfig`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/notes`
+ Rate Limit Group | `Heavy`
+ App Permission   | `TeamMessaging`
  User Permission  | `N/A`
 
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-ScimProviderConfig result = rc.scim(version).serviceProviderConfig().get();
+TMNoteList result = rc.teamMessaging().v1().chats(chatId).notes().get(listChatNotesNewParameters);
 rc.revoke();
 ```
 
-- Parameter `version` is optional with default value `v2`
-- `result` is of type [ScimProviderConfig](./src/main/java/com/ringcentral/definitions/ScimProviderConfig.java)
+- `listChatNotesNewParameters` is of
+  type [ListChatNotesNewParameters](./src/main/java/com/ringcentral/definitions/ListChatNotesNewParameters.java)
+- `result` is of type [TMNoteList](./src/main/java/com/ringcentral/definitions/TMNoteList.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#SCIM-scimGetProviderConfig2) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Notes-listChatNotesNew) in API Explorer.
+
+## createChatNoteNew
+
+Create Note
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/notes`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMNoteInfo result = rc.teamMessaging().v1().chats(chatId).notes().post(tMCreateNoteRequest);
+rc.revoke();
+```
+
+- `tMCreateNoteRequest` is of
+  type [TMCreateNoteRequest](./src/main/java/com/ringcentral/definitions/TMCreateNoteRequest.java)
+- `result` is of type [TMNoteInfo](./src/main/java/com/ringcentral/definitions/TMNoteInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Notes-createChatNoteNew) in API Explorer.
+
+## listChatTasksNew
+
+List Chat Tasks
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/tasks`
+ Rate Limit Group | `Heavy`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMTaskList result = rc.teamMessaging().v1().chats(chatId).tasks().get(listChatTasksNewParameters);
+rc.revoke();
+```
+
+- `listChatTasksNewParameters` is of
+  type [ListChatTasksNewParameters](./src/main/java/com/ringcentral/definitions/ListChatTasksNewParameters.java)
+- `result` is of type [TMTaskList](./src/main/java/com/ringcentral/definitions/TMTaskList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-listChatTasksNew) in API Explorer.
+
+## createTaskNew
+
+Create Task
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/chats/{chatId}/tasks`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMTaskInfo result = rc.teamMessaging().v1().chats(chatId).tasks().post(tMCreateTaskRequest);
+rc.revoke();
+```
+
+- `tMCreateTaskRequest` is of
+  type [TMCreateTaskRequest](./src/main/java/com/ringcentral/definitions/TMCreateTaskRequest.java)
+- `result` is of type [TMTaskInfo](./src/main/java/com/ringcentral/definitions/TMTaskInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Tasks-createTaskNew) in API Explorer.
 
 ## unfavoriteGlipChatNew
 
@@ -4601,60 +6377,14 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-unfavoriteGlipChatNew) in API Explorer.
 
-## readTMCompanyInfoNew
+## listGlipConversationsNew
 
-Get Company Info
+List Conversations
 
  Name             | Value
-------------------|--------------------------------------------
+------------------|------------------------------------
  HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/companies/{companyId}`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMCompanyInfo result = rc.teamMessaging().v1().companies(companyId).get();
-rc.revoke();
-```
-
-- `result` is of type [TMCompanyInfo](./src/main/java/com/ringcentral/definitions/TMCompanyInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Profile-readTMCompanyInfoNew) in API Explorer.
-
-## readGlipEveryoneNew
-
-Get Everyone Chat
-
- Name             | Value
-------------------|-------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/everyone`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-EveryoneTeamInfo result = rc.teamMessaging().v1().everyone().get();
-rc.revoke();
-```
-
-- `result` is of type [EveryoneTeamInfo](./src/main/java/com/ringcentral/definitions/EveryoneTeamInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Teams-readGlipEveryoneNew) in API Explorer.
-
-## patchGlipEveryoneNew
-
-Update Everyone Chat
-
- Name             | Value
-------------------|-------------------------------
- HTTP Method      | `PATCH`
- Endpoint         | `/team-messaging/v1/everyone`
+ Endpoint         | `/team-messaging/v1/conversations`
  Rate Limit Group | `Medium`
  App Permission   | `TeamMessaging`
  User Permission  | `N/A`
@@ -4662,15 +6392,185 @@ Update Everyone Chat
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-EveryoneTeamInfo result = rc.teamMessaging().v1().everyone().patch(updateEveryoneTeamRequest);
+TMConversationList result = rc.teamMessaging().v1().conversations().list(listGlipConversationsNewParameters);
 rc.revoke();
 ```
 
-- `updateEveryoneTeamRequest` is of
-  type [UpdateEveryoneTeamRequest](./src/main/java/com/ringcentral/definitions/UpdateEveryoneTeamRequest.java)
-- `result` is of type [EveryoneTeamInfo](./src/main/java/com/ringcentral/definitions/EveryoneTeamInfo.java)
+- `listGlipConversationsNewParameters` is of
+  type [ListGlipConversationsNewParameters](./src/main/java/com/ringcentral/definitions/ListGlipConversationsNewParameters.java)
+- `result` is of type [TMConversationList](./src/main/java/com/ringcentral/definitions/TMConversationList.java)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Teams-patchGlipEveryoneNew) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Conversations-listGlipConversationsNew) in API Explorer.
+
+## createGlipConversationNew
+
+Create/Open Conversation
+
+ Name             | Value
+------------------|------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/conversations`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMConversationInfo result = rc.teamMessaging().v1().conversations().post(createConversationRequest);
+rc.revoke();
+```
+
+- `createConversationRequest` is of
+  type [CreateConversationRequest](./src/main/java/com/ringcentral/definitions/CreateConversationRequest.java)
+- `result` is of type [TMConversationInfo](./src/main/java/com/ringcentral/definitions/TMConversationInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Conversations-createGlipConversationNew) in API Explorer.
+
+## readGlipConversationNew
+
+Get Conversation
+
+ Name             | Value
+------------------|---------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/conversations/{chatId}`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMConversationInfo result = rc.teamMessaging().v1().conversations(chatId).get();
+rc.revoke();
+```
+
+- `result` is of type [TMConversationInfo](./src/main/java/com/ringcentral/definitions/TMConversationInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Conversations-readGlipConversationNew) in API Explorer.
+
+## listDataExportTasksNew
+
+List Data Export Tasks
+
+ Name             | Value
+------------------|----------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/data-export`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `Glip`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DataExportTaskList result = rc.teamMessaging().v1().dataExport().list(listDataExportTasksNewParameters);
+rc.revoke();
+```
+
+- `listDataExportTasksNewParameters` is of
+  type [ListDataExportTasksNewParameters](./src/main/java/com/ringcentral/definitions/ListDataExportTasksNewParameters.java)
+- `result` is of type [DataExportTaskList](./src/main/java/com/ringcentral/definitions/DataExportTaskList.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Compliance-Exports-listDataExportTasksNew) in API Explorer.
+
+## createDataExportTaskNew
+
+Create Data Export Task
+
+ Name             | Value
+------------------|----------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/data-export`
+ Rate Limit Group | `Heavy`
+ App Permission   | `TeamMessaging`
+ User Permission  | `Glip`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DataExportTask result = rc.teamMessaging().v1().dataExport().post(createDataExportTaskRequest);
+rc.revoke();
+```
+
+- `createDataExportTaskRequest` is of
+  type [CreateDataExportTaskRequest](./src/main/java/com/ringcentral/definitions/CreateDataExportTaskRequest.java)
+- `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Compliance-Exports-createDataExportTaskNew) in API
+Explorer.
+
+## readDataExportTaskNew
+
+Get Data Export Task
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/data-export/{taskId}`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `Glip`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+DataExportTask result = rc.teamMessaging().v1().dataExport(taskId).get();
+rc.revoke();
+```
+
+- `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Compliance-Exports-readDataExportTaskNew) in API Explorer.
+
+## listGroupEventsNew
+
+List Group Events
+
+ Name             | Value
+------------------|----------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/groups/{groupId}/events`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMEventInfo result = rc.teamMessaging().v1().groups(groupId).events().get();
+rc.revoke();
+```
+
+- `result` is of type [TMEventInfo](./src/main/java/com/ringcentral/definitions/TMEventInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-listGroupEventsNew) in API Explorer.
+
+## createEventByGroupIdNew
+
+Create Event by Group ID
+
+ Name             | Value
+------------------|----------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/groups/{groupId}/events`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMEventInfo result = rc.teamMessaging().v1().groups(groupId).events().post(tMCreateEventRequest);
+rc.revoke();
+```
+
+- `tMCreateEventRequest` is of
+  type [TMCreateEventRequest](./src/main/java/com/ringcentral/definitions/TMCreateEventRequest.java)
+- `result` is of type [TMEventInfo](./src/main/java/com/ringcentral/definitions/TMEventInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-createEventByGroupIdNew) in API Explorer.
 
 ## listGlipGroupWebhooksNew
 
@@ -4720,6 +6620,101 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Incoming-Webhooks-createGlipGroupWebhookNew) in API
 Explorer.
 
+## publishNoteNew
+
+Publish Note
+
+ Name             | Value
+------------------|---------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/notes/{noteId}/publish`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMNoteInfo result = rc.teamMessaging().v1().notes(noteId).publish().post();
+rc.revoke();
+```
+
+- `result` is of type [TMNoteInfo](./src/main/java/com/ringcentral/definitions/TMNoteInfo.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Notes-publishNoteNew) in API Explorer.
+
+## unlockNoteNew
+
+Unlock Note
+
+ Name             | Value
+------------------|--------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/notes/{noteId}/unlock`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.teamMessaging().v1().notes(noteId).unlock().post();
+rc.revoke();
+```
+
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Notes-unlockNoteNew) in API Explorer.
+
+## listRecentChatsNew
+
+List Recent Chats
+
+ Name             | Value
+------------------|-----------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/team-messaging/v1/recent/chats`
+ Rate Limit Group | `Light`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+TMChatListWithoutNavigation result = rc.teamMessaging().v1().recent().chats().get(listRecentChatsNewParameters);
+rc.revoke();
+```
+
+- `listRecentChatsNewParameters` is of
+  type [ListRecentChatsNewParameters](./src/main/java/com/ringcentral/definitions/ListRecentChatsNewParameters.java)
+- `result` is of
+  type [TMChatListWithoutNavigation](./src/main/java/com/ringcentral/definitions/TMChatListWithoutNavigation.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-listRecentChatsNew) in API Explorer.
+
+## leaveGlipTeamNew
+
+Leave Team
+
+ Name             | Value
+------------------|-------------------------------------------
+ HTTP Method      | `POST`
+ Endpoint         | `/team-messaging/v1/teams/{chatId}/leave`
+ Rate Limit Group | `Medium`
+ App Permission   | `TeamMessaging`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+String result = rc.teamMessaging().v1().teams(chatId).leave().post();
+rc.revoke();
+```
+
+- `result` is an empty string
+
+[Try it out](https://developer.ringcentral.com/api-reference#Teams-leaveGlipTeamNew) in API Explorer.
+
 ## unarchiveGlipTeamNew
 
 Unarchive Team
@@ -4742,395 +6737,6 @@ rc.revoke();
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Teams-unarchiveGlipTeamNew) in API Explorer.
-
-## listGlipWebhooksNew
-
-List Webhooks
-
- Name             | Value
-------------------|-------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/webhooks`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMWebhookList result = rc.teamMessaging().v1().webhooks().list();
-rc.revoke();
-```
-
-- `result` is of type [TMWebhookList](./src/main/java/com/ringcentral/definitions/TMWebhookList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Incoming-Webhooks-listGlipWebhooksNew) in API Explorer.
-
-## readGlipWebhookNew
-
-Get Webhook
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/webhooks/{webhookId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMWebhookList result = rc.teamMessaging().v1().webhooks(webhookId).get();
-rc.revoke();
-```
-
-- `result` is of type [TMWebhookList](./src/main/java/com/ringcentral/definitions/TMWebhookList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Incoming-Webhooks-readGlipWebhookNew) in API Explorer.
-
-## deleteGlipWebhookNew
-
-Delete Webhook
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/team-messaging/v1/webhooks/{webhookId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().webhooks(webhookId).delete();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Incoming-Webhooks-deleteGlipWebhookNew) in API Explorer.
-
-## listPermissions
-
-List Permissions
-
- Name             | Value
-------------------|-----------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/permission`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-PermissionCollectionResource result = rc.restapi(apiVersion).dictionary().permission().list(listPermissionsParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `listPermissionsParameters` is of
-  type [ListPermissionsParameters](./src/main/java/com/ringcentral/definitions/ListPermissionsParameters.java)
-- `result` is of
-  type [PermissionCollectionResource](./src/main/java/com/ringcentral/definitions/PermissionCollectionResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-listPermissions) in API Explorer.
-
-## readPermission
-
-Get Permission
-
- Name             | Value
-------------------|--------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/permission/{permissionId}`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-PermissionResource result = rc.restapi(apiVersion).dictionary().permission(permissionId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of type [PermissionResource](./src/main/java/com/ringcentral/definitions/PermissionResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-readPermission) in API Explorer.
-
-## listStandardUserRole
-
-List Standard User Roles
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/user-role`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-RolesCollectionResource result = rc.restapi(apiVersion).dictionary().userRole().list(listStandardUserRoleParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `listStandardUserRoleParameters` is of
-  type [ListStandardUserRoleParameters](./src/main/java/com/ringcentral/definitions/ListStandardUserRoleParameters.java)
-- `result` is of
-  type [RolesCollectionResource](./src/main/java/com/ringcentral/definitions/RolesCollectionResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Role-Management-listStandardUserRole) in API Explorer.
-
-## readStandardUserRole
-
-Get Standard User Role
-
- Name             | Value
-------------------|-------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/dictionary/user-role/{roleId}`
- Rate Limit Group | `Light`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-RoleResource result = rc.restapi(apiVersion).dictionary().userRole(roleId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- `result` is of type [RoleResource](./src/main/java/com/ringcentral/definitions/RoleResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Role-Management-readStandardUserRole) in API Explorer.
-
-## readGlipPostsNew
-
-List Posts
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/posts`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMPostsList result = rc.teamMessaging().v1().chats(chatId).posts().list(readGlipPostsNewParameters);
-rc.revoke();
-```
-
-- `readGlipPostsNewParameters` is of
-  type [ReadGlipPostsNewParameters](./src/main/java/com/ringcentral/definitions/ReadGlipPostsNewParameters.java)
-- `result` is of type [TMPostsList](./src/main/java/com/ringcentral/definitions/TMPostsList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPostsNew) in API Explorer.
-
-## createGlipPostNew
-
-Create Post
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/posts`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMPostInfo result = rc.teamMessaging().v1().chats(chatId).posts().post(tMCreatePostRequest);
-rc.revoke();
-```
-
-- `tMCreatePostRequest` is of
-  type [TMCreatePostRequest](./src/main/java/com/ringcentral/definitions/TMCreatePostRequest.java)
-- `result` is of type [TMPostInfo](./src/main/java/com/ringcentral/definitions/TMPostInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-createGlipPostNew) in API Explorer.
-
-## readGlipPostNew
-
-Get Post
-
- Name             | Value
-------------------|----------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/posts/{postId}`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMPostInfo result = rc.teamMessaging().v1().chats(chatId).posts(postId).get();
-rc.revoke();
-```
-
-- `result` is of type [TMPostInfo](./src/main/java/com/ringcentral/definitions/TMPostInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPostNew) in API Explorer.
-
-## deleteGlipPostNew
-
-Delete Post
-
- Name             | Value
-------------------|----------------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/posts/{postId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().chats(chatId).posts(postId).delete();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-deleteGlipPostNew) in API Explorer.
-
-## patchGlipPostNew
-
-Update Post
-
- Name             | Value
-------------------|----------------------------------------------------
- HTTP Method      | `PATCH`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/posts/{postId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMPostInfo result = rc.teamMessaging().v1().chats(chatId).posts(postId).patch(tMUpdatePostRequest);
-rc.revoke();
-```
-
-- `tMUpdatePostRequest` is of
-  type [TMUpdatePostRequest](./src/main/java/com/ringcentral/definitions/TMUpdatePostRequest.java)
-- `result` is of type [TMPostInfo](./src/main/java/com/ringcentral/definitions/TMPostInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-patchGlipPostNew) in API Explorer.
-
-## listFavoriteChatsNew
-
-List Favorite Chats
-
- Name             | Value
-------------------|--------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/favorites`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMChatListWithoutNavigation result = rc.teamMessaging().v1().favorites().get(listFavoriteChatsNewParameters);
-rc.revoke();
-```
-
-- `listFavoriteChatsNewParameters` is of
-  type [ListFavoriteChatsNewParameters](./src/main/java/com/ringcentral/definitions/ListFavoriteChatsNewParameters.java)
-- `result` is of
-  type [TMChatListWithoutNavigation](./src/main/java/com/ringcentral/definitions/TMChatListWithoutNavigation.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-listFavoriteChatsNew) in API Explorer.
-
-## lockNoteNew
-
-Lock Note
-
- Name             | Value
-------------------|------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/notes/{noteId}/lock`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().notes(noteId).lock().post();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-lockNoteNew) in API Explorer.
-
-## addGlipTeamMembersNew
-
-Add Team Members
-
- Name             | Value
-------------------|-----------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/teams/{chatId}/add`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().teams(chatId).add().post(tMAddTeamMembersRequest);
-rc.revoke();
-```
-
-- `tMAddTeamMembersRequest` is of
-  type [TMAddTeamMembersRequest](./src/main/java/com/ringcentral/definitions/TMAddTeamMembersRequest.java)
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Teams-addGlipTeamMembersNew) in API Explorer.
-
-## joinGlipTeamNew
-
-Join Team
-
- Name             | Value
-------------------|------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/teams/{chatId}/join`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().teams(chatId).join().post();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Teams-joinGlipTeamNew) in API Explorer.
 
 ## activateGlipWebhookNew
 
@@ -5329,1587 +6935,6 @@ rc.revoke();
 [Try it out](https://developer.ringcentral.com/api-reference#Webinars-and-Sessions-rcwConfigUpdateWebinar) in API
 Explorer.
 
-## rcwHistoryListAllSessions
-
-List Historical Webinar Sessions across Multiple Webinars
-
- Name             | Value
-------------------|--------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/webinar/history/v1/sessions`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadWebinars`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-SessionGlobalListResource result = rc.webinar().history().v1().sessions().get(rcwHistoryListAllSessionsParameters);
-rc.revoke();
-```
-
-- `rcwHistoryListAllSessionsParameters` is of
-  type [RcwHistoryListAllSessionsParameters](./src/main/java/com/ringcentral/definitions/RcwHistoryListAllSessionsParameters.java)
-- `result` is of
-  type [SessionGlobalListResource](./src/main/java/com/ringcentral/definitions/SessionGlobalListResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Historical-Webinars-rcwHistoryListAllSessions) in API
-Explorer.
-
-## rcwHistoryGetWebinar
-
-Get Historical Webinar
-
- Name             | Value
-------------------|--------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/webinar/history/v1/webinars/{webinarId}`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadWebinars`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-HistoryWebinarResource result = rc.webinar().history().v1().webinars(webinarId).get();
-rc.revoke();
-```
-
-- `result` is of type [HistoryWebinarResource](./src/main/java/com/ringcentral/definitions/HistoryWebinarResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Historical-Webinars-rcwHistoryGetWebinar) in API Explorer.
-
-## readOpenIdConfiguration
-
-OIDC Provider Configuration
-
- Name             | Value
-------------------|-------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/.well-known/openid-configuration`
- Rate Limit Group | `NoThrottling`
- App Permission   | `N/A`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-OpenIdDiscovery result = rc.wellKnown().openidConfiguration().get();
-rc.revoke();
-```
-
-- `result` is of type [OpenIdDiscovery](./src/main/java/com/ringcentral/definitions/OpenIdDiscovery.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#OAuth-and-OIDC-readOpenIdConfiguration) in API Explorer.
-
-## caiSpeechToText
-
-Speech to Text Conversion
-
- Name             | Value
-------------------|-------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/ai/audio/v1/async/speech-to-text`
- Rate Limit Group | `Heavy`
- App Permission   | `AI`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CaiAsyncApiResponse result = rc.ai().audio().v1().async().speechToText().post(asrInput, caiSpeechToTextParameters);
-rc.revoke();
-```
-
-- `asrInput` is of type [AsrInput](./src/main/java/com/ringcentral/definitions/AsrInput.java)
-- `caiSpeechToTextParameters` is of
-  type [CaiSpeechToTextParameters](./src/main/java/com/ringcentral/definitions/CaiSpeechToTextParameters.java)
-- `result` is of type [CaiAsyncApiResponse](./src/main/java/com/ringcentral/definitions/CaiAsyncApiResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Audio-caiSpeechToText) in API Explorer.
-
-## getAccountRecordings
-
-List Account Recordings
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/rcvideo/v1/account/{accountId}/recordings`
- Rate Limit Group | `Light`
- App Permission   | `Video`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CloudRecordings result = rc.rcvideo().v1().account(accountId).recordings().get(getAccountRecordingsParameters);
-rc.revoke();
-```
-
-- Parameter `accountId` is optional with default value `~`
-- `getAccountRecordingsParameters` is of
-  type [GetAccountRecordingsParameters](./src/main/java/com/ringcentral/definitions/GetAccountRecordingsParameters.java)
-- `result` is of type [CloudRecordings](./src/main/java/com/ringcentral/definitions/CloudRecordings.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Recordings-getAccountRecordings) in API Explorer.
-
-## listCostCenters
-
-List Cost Centers
-
- Name             | Value
-------------------|-------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/v2/accounts/{accountId}/cost-centers`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `CostCenterManagement`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CostCenterList result = rc.restapi().v2().accounts(accountId).costCenters().get();
-rc.revoke();
-```
-
-- `result` is of type [CostCenterList](./src/main/java/com/ringcentral/definitions/CostCenterList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Cost-Centers-listCostCenters) in API Explorer.
-
-## bulkDeleteUsersV2
-
-Delete Multiple Extensions
-
- Name             | Value
-------------------|-----------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/restapi/v2/accounts/{accountId}/extensions`
- Rate Limit Group | `Heavy`
- App Permission   | `EditAccounts`
- User Permission  | `Users`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-BulkDeleteUsersResponse result = rc.restapi().v2().accounts(accountId).extensions().delete(bulkDeleteUsersRequest);
-rc.revoke();
-```
-
-- `bulkDeleteUsersRequest` is of
-  type [BulkDeleteUsersRequest](./src/main/java/com/ringcentral/definitions/BulkDeleteUsersRequest.java)
-- `result` is of
-  type [BulkDeleteUsersResponse](./src/main/java/com/ringcentral/definitions/BulkDeleteUsersResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-bulkDeleteUsersV2) in API Explorer.
-
-## listAccountPhoneNumbersV2
-
-List Account Phone Numbers
-
- Name             | Value
-------------------|--------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/v2/accounts/{accountId}/phone-numbers`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyPhoneNumbers`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AccountPhoneNumberList result = rc.restapi().v2().accounts(accountId).phoneNumbers().get(listAccountPhoneNumbersV2Parameters);
-rc.revoke();
-```
-
-- `listAccountPhoneNumbersV2Parameters` is of
-  type [ListAccountPhoneNumbersV2Parameters](./src/main/java/com/ringcentral/definitions/ListAccountPhoneNumbersV2Parameters.java)
-- `result` is of type [AccountPhoneNumberList](./src/main/java/com/ringcentral/definitions/AccountPhoneNumberList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-listAccountPhoneNumbersV2) in API Explorer.
-
-## deleteNumbersFromInventoryV2
-
-Delete Numbers from Inventory
-
- Name             | Value
-------------------|--------------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/restapi/v2/accounts/{accountId}/phone-numbers`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyPhoneNumbers`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-DeletePhoneNumbersResponse result = rc.restapi().v2().accounts(accountId).phoneNumbers().delete(deletePhoneNumbersRequest);
-rc.revoke();
-```
-
-- `deletePhoneNumbersRequest` is of
-  type [DeletePhoneNumbersRequest](./src/main/java/com/ringcentral/definitions/DeletePhoneNumbersRequest.java)
-- `result` is of
-  type [DeletePhoneNumbersResponse](./src/main/java/com/ringcentral/definitions/DeletePhoneNumbersResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-deleteNumbersFromInventoryV2) in API
-Explorer.
-
-## assignPhoneNumberV2
-
-Assign Phone Number
-
- Name             | Value
-------------------|------------------------------------------------------------------
- HTTP Method      | `PATCH`
- Endpoint         | `/restapi/v2/accounts/{accountId}/phone-numbers/{phoneNumberId}`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyPhoneNumbers`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AccountPhoneNumberInfo result = rc.restapi().v2().accounts(accountId).phoneNumbers(phoneNumberId).patch(assignPhoneNumberRequest);
-rc.revoke();
-```
-
-- `assignPhoneNumberRequest` is of
-  type [AssignPhoneNumberRequest](./src/main/java/com/ringcentral/definitions/AssignPhoneNumberRequest.java)
-- `result` is of type [AccountPhoneNumberInfo](./src/main/java/com/ringcentral/definitions/AccountPhoneNumberInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-assignPhoneNumberV2) in API Explorer.
-
-## listSmsOptRecords
-
-List SMS Opt Records
-
- Name             | Value
-------------------|-------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/v2/accounts/{accountId}/sms/opt-outs`
- Rate Limit Group | `Light`
- App Permission   | `SMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-OptRecordList result = rc.restapi().v2().accounts(accountId).sms().optOuts().get(listSmsOptRecordsParameters);
-rc.revoke();
-```
-
-- `listSmsOptRecordsParameters` is of
-  type [ListSmsOptRecordsParameters](./src/main/java/com/ringcentral/definitions/ListSmsOptRecordsParameters.java)
-- `result` is of type [OptRecordList](./src/main/java/com/ringcentral/definitions/OptRecordList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-Opt-outs-listSmsOptRecords) in API Explorer.
-
-## deleteSmsOptRecords
-
-Delete SMS Opt Records
-
- Name             | Value
-------------------|-------------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/restapi/v2/accounts/{accountId}/sms/opt-outs`
- Rate Limit Group | `Light`
- App Permission   | `SMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-OptRecordsModificationSummary result = rc.restapi().v2().accounts(accountId).sms().optOuts().delete(deleteOptRecordList);
-rc.revoke();
-```
-
-- `deleteOptRecordList` is of
-  type [DeleteOptRecordList](./src/main/java/com/ringcentral/definitions/DeleteOptRecordList.java)
-- `result` is of
-  type [OptRecordsModificationSummary](./src/main/java/com/ringcentral/definitions/OptRecordsModificationSummary.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-Opt-outs-deleteSmsOptRecords) in API Explorer.
-
-## editSmsOptRecords
-
-Add/Update SMS Opt Records
-
- Name             | Value
-------------------|-------------------------------------------------
- HTTP Method      | `PATCH`
- Endpoint         | `/restapi/v2/accounts/{accountId}/sms/opt-outs`
- Rate Limit Group | `Light`
- App Permission   | `SMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-OptRecordsModificationSummary result = rc.restapi().v2().accounts(accountId).sms().optOuts().patch(updateOptRecordList);
-rc.revoke();
-```
-
-- `updateOptRecordList` is of
-  type [UpdateOptRecordList](./src/main/java/com/ringcentral/definitions/UpdateOptRecordList.java)
-- `result` is of
-  type [OptRecordsModificationSummary](./src/main/java/com/ringcentral/definitions/OptRecordsModificationSummary.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-Opt-outs-editSmsOptRecords) in API Explorer.
-
-## listA2PBatches
-
-List A2P SMS Batches
-
- Name             | Value
-------------------|-------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/batches`
- Rate Limit Group | `Light`
- App Permission   | `A2PSMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-BatchListResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().batches().list(listA2PBatchesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `listA2PBatchesParameters` is of
-  type [ListA2PBatchesParameters](./src/main/java/com/ringcentral/definitions/ListA2PBatchesParameters.java)
-- `result` is of type [BatchListResponse](./src/main/java/com/ringcentral/definitions/BatchListResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-listA2PBatches) in API Explorer.
-
-## createA2PSMS
-
-Send A2P SMS
-
- Name             | Value
-------------------|-------------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/batches`
- Rate Limit Group | `Light`
- App Permission   | `A2PSMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-MessageBatchResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().batches().post(messageBatchCreateRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `messageBatchCreateRequest` is of
-  type [MessageBatchCreateRequest](./src/main/java/com/ringcentral/definitions/MessageBatchCreateRequest.java)
-- `result` is of type [MessageBatchResponse](./src/main/java/com/ringcentral/definitions/MessageBatchResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-createA2PSMS) in API Explorer.
-
-## readA2PBatch
-
-Get A2P SMS Batch
-
- Name             | Value
-------------------|-----------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/batches/{batchId}`
- Rate Limit Group | `Light`
- App Permission   | `A2PSMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-MessageBatchResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().batches(batchId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [MessageBatchResponse](./src/main/java/com/ringcentral/definitions/MessageBatchResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-readA2PBatch) in API Explorer.
-
-## listA2PSMS
-
-List A2P SMS Messages
-
- Name             | Value
-------------------|--------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/messages`
- Rate Limit Group | `Light`
- App Permission   | `A2PSMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-MessageListResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().messages().list(listA2PSMSParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `listA2PSMSParameters` is of
-  type [ListA2PSMSParameters](./src/main/java/com/ringcentral/definitions/ListA2PSMSParameters.java)
-- `result` is of type [MessageListResponse](./src/main/java/com/ringcentral/definitions/MessageListResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-listA2PSMS) in API Explorer.
-
-## readA2PSMS
-
-Get A2P SMS
-
- Name             | Value
-------------------|--------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/messages/{messageId}`
- Rate Limit Group | `Light`
- App Permission   | `A2PSMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-MessageDetailsResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().messages(messageId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [MessageDetailsResponse](./src/main/java/com/ringcentral/definitions/MessageDetailsResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-readA2PSMS) in API Explorer.
-
-## aggregateA2PSMSStatuses
-
-List A2P SMS Statuses
-
- Name             | Value
-------------------|--------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/a2p-sms/statuses`
- Rate Limit Group | `Light`
- App Permission   | `A2PSMS`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-MessageStatusesResponse result = rc.restapi(apiVersion).account(accountId).a2pSms().statuses().get(aggregateA2PSMSStatusesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `aggregateA2PSMSStatusesParameters` is of
-  type [AggregateA2PSMSStatusesParameters](./src/main/java/com/ringcentral/definitions/AggregateA2PSMSStatusesParameters.java)
-- `result` is of
-  type [MessageStatusesResponse](./src/main/java/com/ringcentral/definitions/MessageStatusesResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#High-Volume-SMS-aggregateA2PSMSStatuses) in API Explorer.
-
-## listCompanyAnsweringRules
-
-List Company Call Handling Rules
-
- Name             | Value
-------------------|------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule`
- Rate Limit Group | `Medium`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyAnsweringRules`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CompanyAnsweringRuleList result = rc.restapi(apiVersion).account(accountId).answeringRule().list(listCompanyAnsweringRulesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `listCompanyAnsweringRulesParameters` is of
-  type [ListCompanyAnsweringRulesParameters](./src/main/java/com/ringcentral/definitions/ListCompanyAnsweringRulesParameters.java)
-- `result` is of
-  type [CompanyAnsweringRuleList](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-listCompanyAnsweringRules) in API
-Explorer.
-
-## createCompanyAnsweringRule
-
-Create Company Call Handling Rule
-
- Name             | Value
-------------------|------------------------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyAnsweringRules`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CompanyAnsweringRuleInfo result = rc.restapi(apiVersion).account(accountId).answeringRule().post(companyAnsweringRuleRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `companyAnsweringRuleRequest` is of
-  type [CompanyAnsweringRuleRequest](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleRequest.java)
-- `result` is of
-  type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-createCompanyAnsweringRule) in API
-Explorer.
-
-## readCompanyAnsweringRule
-
-Get Company Call Handling Rule
-
- Name             | Value
-------------------|---------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule/{ruleId}`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyAnsweringRules`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CompanyAnsweringRuleInfo result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of
-  type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-readCompanyAnsweringRule) in API
-Explorer.
-
-## updateCompanyAnsweringRule
-
-Update Company Call Handling Rule
-
- Name             | Value
-------------------|---------------------------------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule/{ruleId}`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyAnsweringRules`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CompanyAnsweringRuleInfo result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).put(companyAnsweringRuleUpdate);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `companyAnsweringRuleUpdate` is of
-  type [CompanyAnsweringRuleUpdate](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleUpdate.java)
-- `result` is of
-  type [CompanyAnsweringRuleInfo](./src/main/java/com/ringcentral/definitions/CompanyAnsweringRuleInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-updateCompanyAnsweringRule) in API
-Explorer.
-
-## deleteCompanyAnsweringRule
-
-Delete Company Call Handling Rule
-
- Name             | Value
-------------------|---------------------------------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/answering-rule/{ruleId}`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyAnsweringRules`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.restapi(apiVersion).account(accountId).answeringRule(ruleId).delete();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Rules-deleteCompanyAnsweringRule) in API
-Explorer.
-
-## listAssignedRoles
-
-List Company Assigned Roles
-
- Name             | Value
-------------------|-----------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/assigned-role`
- Rate Limit Group | `Medium`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadAssignedRoles`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-ExtensionWithRolesCollectionResource result = rc.restapi(apiVersion).account(accountId).assignedRole().get(listAssignedRolesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `listAssignedRolesParameters` is of
-  type [ListAssignedRolesParameters](./src/main/java/com/ringcentral/definitions/ListAssignedRolesParameters.java)
-- `result` is of
-  type [ExtensionWithRolesCollectionResource](./src/main/java/com/ringcentral/definitions/ExtensionWithRolesCollectionResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Role-Management-listAssignedRoles) in API Explorer.
-
-## readAccountBusinessAddress
-
-Get Account Business Address
-
- Name             | Value
-------------------|--------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-address`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyInfo`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AccountBusinessAddressResource result = rc.restapi(apiVersion).account(accountId).businessAddress().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of
-  type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountBusinessAddress) in API Explorer.
-
-## updateAccountBusinessAddress
-
-Update Company Business Address
-
- Name             | Value
-------------------|--------------------------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-address`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyInfo`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AccountBusinessAddressResource result = rc.restapi(apiVersion).account(accountId).businessAddress().put(modifyAccountBusinessAddressRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `modifyAccountBusinessAddressRequest` is of
-  type [ModifyAccountBusinessAddressRequest](./src/main/java/com/ringcentral/definitions/ModifyAccountBusinessAddressRequest.java)
-- `result` is of
-  type [AccountBusinessAddressResource](./src/main/java/com/ringcentral/definitions/AccountBusinessAddressResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Company-updateAccountBusinessAddress) in API Explorer.
-
-## readCompanyBusinessHours
-
-Get Company Business Hours
-
- Name             | Value
-------------------|------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-hours`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyAnsweringRules`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CompanyBusinessHours result = rc.restapi(apiVersion).account(accountId).businessHours().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-readCompanyBusinessHours) in API Explorer.
-
-## updateCompanyBusinessHours
-
-Update Company Business Hours
-
- Name             | Value
-------------------|------------------------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/business-hours`
- Rate Limit Group | `Medium`
- App Permission   | `EditExtensions`
- User Permission  | `EditUserAnsweringRules`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CompanyBusinessHours result = rc.restapi(apiVersion).account(accountId).businessHours().put(companyBusinessHoursUpdateRequest);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `companyBusinessHoursUpdateRequest` is of
-  type [CompanyBusinessHoursUpdateRequest](./src/main/java/com/ringcentral/definitions/CompanyBusinessHoursUpdateRequest.java)
-- `result` is of type [CompanyBusinessHours](./src/main/java/com/ringcentral/definitions/CompanyBusinessHours.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-updateCompanyBusinessHours) in API Explorer.
-
-## syncAccountCallLog
-
-Sync Company Call Log
-
- Name             | Value
-------------------|-----------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-log-sync`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadCallLog`
- User Permission  | `ReadCallLog`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CallLogSyncResponse result = rc.restapi(apiVersion).account(accountId).callLogSync().get(syncAccountCallLogParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `syncAccountCallLogParameters` is of
-  type [SyncAccountCallLogParameters](./src/main/java/com/ringcentral/definitions/SyncAccountCallLogParameters.java)
-- `result` is of type [CallLogSyncResponse](./src/main/java/com/ringcentral/definitions/CallLogSyncResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-syncAccountCallLog) in API Explorer.
-
-## readCallRecordingSettings
-
-Get Call Recording Settings
-
- Name             | Value
-------------------|------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-recording`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyInfo`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CallRecordingSettingsResource result = rc.restapi(apiVersion).account(accountId).callRecording().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of
-  type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-readCallRecordingSettings) in API
-Explorer.
-
-## updateCallRecordingSettings
-
-Update Call Recording Settings
-
- Name             | Value
-------------------|------------------------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-recording`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyInfo`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-CallRecordingSettingsResource result = rc.restapi(apiVersion).account(accountId).callRecording().put(callRecordingSettingsResource);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `callRecordingSettingsResource` is of
-  type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
-- `result` is of
-  type [CallRecordingSettingsResource](./src/main/java/com/ringcentral/definitions/CallRecordingSettingsResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Recording-Settings-updateCallRecordingSettings) in API
-Explorer.
-
-## deleteCompanyCallRecordings
-
-Delete Company Call Recordings
-
- Name             | Value
-------------------|-------------------------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/call-recordings`
- Rate Limit Group | `Heavy`
- App Permission   | `EditCallLog`
- User Permission  | `EditCompanyCallRecordings`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.restapi(apiVersion).account(accountId).callRecordings().delete(callRecordingIds);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `callRecordingIds` is of type [CallRecordingIds](./src/main/java/com/ringcentral/definitions/CallRecordingIds.java)
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Recordings-deleteCompanyCallRecordings) in API
-Explorer.
-
-## updateDeviceEmergency
-
-Update Device Emergency Info
-
- Name             | Value
-------------------|-------------------------------------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/device/{deviceId}/emergency`
- Rate Limit Group | `Medium`
- App Permission   | `EditAccounts`
- User Permission  | `EditCompanyDevices`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-DeviceResource result = rc.restapi(apiVersion).account(accountId).device(deviceId).emergency().put(accountDeviceUpdate);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `accountDeviceUpdate` is of
-  type [AccountDeviceUpdate](./src/main/java/com/ringcentral/definitions/AccountDeviceUpdate.java)
-- `result` is of type [DeviceResource](./src/main/java/com/ringcentral/definitions/DeviceResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Devices-updateDeviceEmergency) in API Explorer.
-
-## readDeviceSipInfo
-
-Get Device SIP Info
-
- Name             | Value
-------------------|------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/device/{deviceId}/sip-info`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadCompanyDevices`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-SipInfoResource result = rc.restapi(apiVersion).account(accountId).device(deviceId).sipInfo().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `result` is of type [SipInfoResource](./src/main/java/com/ringcentral/definitions/SipInfoResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Devices-readDeviceSipInfo) in API Explorer.
-
-## listDirectoryEntries
-
-Get Company Directory Entries
-
- Name             | Value
-------------------|---------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/directory/entries`
- Rate Limit Group | `Medium`
- App Permission   | `ReadAccounts`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-DirectoryResource result = rc.restapi(apiVersion).account(accountId).directory().entries().list(listDirectoryEntriesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `listDirectoryEntriesParameters` is of
-  type [ListDirectoryEntriesParameters](./src/main/java/com/ringcentral/definitions/ListDirectoryEntriesParameters.java)
-- `result` is of type [DirectoryResource](./src/main/java/com/ringcentral/definitions/DirectoryResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-listDirectoryEntries) in API Explorer.
-
-## readDirectoryEntry
-
-Get Corporate Directory Entry
-
- Name             | Value
-------------------|-------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/directory/entries/{entryId}`
- Rate Limit Group | `Medium`
- App Permission   | `ReadAccounts`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-ContactResource result = rc.restapi(apiVersion).account(accountId).directory().entries(entryId).get(readDirectoryEntryParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `readDirectoryEntryParameters` is of
-  type [ReadDirectoryEntryParameters](./src/main/java/com/ringcentral/definitions/ReadDirectoryEntryParameters.java)
-- `result` is of type [ContactResource](./src/main/java/com/ringcentral/definitions/ContactResource.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-readDirectoryEntry) in API Explorer.
-
-## listExtensionDevices
-
-List Extension Devices
-
- Name             | Value
-------------------|----------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/device`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadUserDevices`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-GetExtensionDevicesResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).device().get(listExtensionDevicesParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- Parameter `extensionId` is optional with default value `~`
-- `listExtensionDevicesParameters` is of
-  type [ListExtensionDevicesParameters](./src/main/java/com/ringcentral/definitions/ListExtensionDevicesParameters.java)
-- `result` is of
-  type [GetExtensionDevicesResponse](./src/main/java/com/ringcentral/definitions/GetExtensionDevicesResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Devices-listExtensionDevices) in API Explorer.
-
-## listExtensionGrants
-
-List Extension Grants
-
- Name             | Value
-------------------|---------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/grant`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `ReadExtensions`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-GetExtensionGrantListResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).grant().get(listExtensionGrantsParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- Parameter `extensionId` is optional with default value `~`
-- `listExtensionGrantsParameters` is of
-  type [ListExtensionGrantsParameters](./src/main/java/com/ringcentral/definitions/ListExtensionGrantsParameters.java)
-- `result` is of
-  type [GetExtensionGrantListResponse](./src/main/java/com/ringcentral/definitions/GetExtensionGrantListResponse.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-listExtensionGrants) in API Explorer.
-
-## readAccountGreetingContent
-
-Get Account Greeting Media Content
-
- Name             | Value
-------------------|---------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/greeting/{greetingId}/content`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadAccounts`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-byte[] result = rc.restapi(apiVersion).account(accountId).greeting(greetingId).content().get(readAccountGreetingContentParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `readAccountGreetingContentParameters` is of
-  type [ReadAccountGreetingContentParameters](./src/main/java/com/ringcentral/definitions/ReadAccountGreetingContentParameters.java)
-- `result` is of type `byte[]`
-
-### ❗❗❗ Code sample above may not work
-
-Please refer to [Binary content downloading](/README.md#Binary-content-downloading).
-
-[Try it out](https://developer.ringcentral.com/api-reference#Greetings-readAccountGreetingContent) in API Explorer.
-
-## readCallRecordingContent
-
-Get Call Recording Content
-
- Name             | Value
-------------------|-----------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/recording/{recordingId}/content`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadCallRecording`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-byte[] result = rc.restapi(apiVersion).account(accountId).recording(recordingId).content().get(readCallRecordingContentParameters);
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- `readCallRecordingContentParameters` is of
-  type [ReadCallRecordingContentParameters](./src/main/java/com/ringcentral/definitions/ReadCallRecordingContentParameters.java)
-- `result` is of type `byte[]`
-
-### ❗❗❗ Code sample above may not work
-
-Please refer to [Binary content downloading](/README.md#Binary-content-downloading).
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Recordings-readCallRecordingContent) in API Explorer.
-
-## getGlipAdaptiveCardNew
-
-Get Adaptive Card
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/adaptive-cards/{cardId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AdaptiveCardInfo result = rc.teamMessaging().v1().adaptiveCards(cardId).get();
-rc.revoke();
-```
-
-- `result` is of type [AdaptiveCardInfo](./src/main/java/com/ringcentral/definitions/AdaptiveCardInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Adaptive-Cards-getGlipAdaptiveCardNew) in API Explorer.
-
-## updateGlipAdaptiveCardNew
-
-Update Adaptive Card
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `PUT`
- Endpoint         | `/team-messaging/v1/adaptive-cards/{cardId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-AdaptiveCardShortInfo result = rc.teamMessaging().v1().adaptiveCards(cardId).put(adaptiveCardRequest);
-rc.revoke();
-```
-
-- `adaptiveCardRequest` is of
-  type [AdaptiveCardRequest](./src/main/java/com/ringcentral/definitions/AdaptiveCardRequest.java)
-- `result` is of type [AdaptiveCardShortInfo](./src/main/java/com/ringcentral/definitions/AdaptiveCardShortInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Adaptive-Cards-updateGlipAdaptiveCardNew) in API Explorer.
-
-## deleteGlipAdaptiveCardNew
-
-Delete Adaptive Card
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `DELETE`
- Endpoint         | `/team-messaging/v1/adaptive-cards/{cardId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().adaptiveCards(cardId).delete();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Adaptive-Cards-deleteGlipAdaptiveCardNew) in API Explorer.
-
-## favoriteGlipChatNew
-
-Add Chat to Favorites
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/favorite`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().chats(chatId).favorite().post();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-favoriteGlipChatNew) in API Explorer.
-
-## listChatNotesNew
-
-List Notes
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/notes`
- Rate Limit Group | `Heavy`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMNoteList result = rc.teamMessaging().v1().chats(chatId).notes().get(listChatNotesNewParameters);
-rc.revoke();
-```
-
-- `listChatNotesNewParameters` is of
-  type [ListChatNotesNewParameters](./src/main/java/com/ringcentral/definitions/ListChatNotesNewParameters.java)
-- `result` is of type [TMNoteList](./src/main/java/com/ringcentral/definitions/TMNoteList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-listChatNotesNew) in API Explorer.
-
-## createChatNoteNew
-
-Create Note
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/notes`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMNoteInfo result = rc.teamMessaging().v1().chats(chatId).notes().post(tMCreateNoteRequest);
-rc.revoke();
-```
-
-- `tMCreateNoteRequest` is of
-  type [TMCreateNoteRequest](./src/main/java/com/ringcentral/definitions/TMCreateNoteRequest.java)
-- `result` is of type [TMNoteInfo](./src/main/java/com/ringcentral/definitions/TMNoteInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-createChatNoteNew) in API Explorer.
-
-## listChatTasksNew
-
-List Chat Tasks
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/tasks`
- Rate Limit Group | `Heavy`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMTaskList result = rc.teamMessaging().v1().chats(chatId).tasks().get(listChatTasksNewParameters);
-rc.revoke();
-```
-
-- `listChatTasksNewParameters` is of
-  type [ListChatTasksNewParameters](./src/main/java/com/ringcentral/definitions/ListChatTasksNewParameters.java)
-- `result` is of type [TMTaskList](./src/main/java/com/ringcentral/definitions/TMTaskList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Tasks-listChatTasksNew) in API Explorer.
-
-## createTaskNew
-
-Create Task
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/chats/{chatId}/tasks`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMTaskInfo result = rc.teamMessaging().v1().chats(chatId).tasks().post(tMCreateTaskRequest);
-rc.revoke();
-```
-
-- `tMCreateTaskRequest` is of
-  type [TMCreateTaskRequest](./src/main/java/com/ringcentral/definitions/TMCreateTaskRequest.java)
-- `result` is of type [TMTaskInfo](./src/main/java/com/ringcentral/definitions/TMTaskInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Tasks-createTaskNew) in API Explorer.
-
-## listGlipConversationsNew
-
-List Conversations
-
- Name             | Value
-------------------|------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/conversations`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMConversationList result = rc.teamMessaging().v1().conversations().list(listGlipConversationsNewParameters);
-rc.revoke();
-```
-
-- `listGlipConversationsNewParameters` is of
-  type [ListGlipConversationsNewParameters](./src/main/java/com/ringcentral/definitions/ListGlipConversationsNewParameters.java)
-- `result` is of type [TMConversationList](./src/main/java/com/ringcentral/definitions/TMConversationList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Conversations-listGlipConversationsNew) in API Explorer.
-
-## createGlipConversationNew
-
-Create/Open Conversation
-
- Name             | Value
-------------------|------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/conversations`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMConversationInfo result = rc.teamMessaging().v1().conversations().post(createConversationRequest);
-rc.revoke();
-```
-
-- `createConversationRequest` is of
-  type [CreateConversationRequest](./src/main/java/com/ringcentral/definitions/CreateConversationRequest.java)
-- `result` is of type [TMConversationInfo](./src/main/java/com/ringcentral/definitions/TMConversationInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Conversations-createGlipConversationNew) in API Explorer.
-
-## readGlipConversationNew
-
-Get Conversation
-
- Name             | Value
-------------------|---------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/conversations/{chatId}`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMConversationInfo result = rc.teamMessaging().v1().conversations(chatId).get();
-rc.revoke();
-```
-
-- `result` is of type [TMConversationInfo](./src/main/java/com/ringcentral/definitions/TMConversationInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Conversations-readGlipConversationNew) in API Explorer.
-
-## listDataExportTasksNew
-
-List Data Export Tasks
-
- Name             | Value
-------------------|----------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/data-export`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `Glip`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-DataExportTaskList result = rc.teamMessaging().v1().dataExport().list(listDataExportTasksNewParameters);
-rc.revoke();
-```
-
-- `listDataExportTasksNewParameters` is of
-  type [ListDataExportTasksNewParameters](./src/main/java/com/ringcentral/definitions/ListDataExportTasksNewParameters.java)
-- `result` is of type [DataExportTaskList](./src/main/java/com/ringcentral/definitions/DataExportTaskList.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Compliance-Exports-listDataExportTasksNew) in API Explorer.
-
-## createDataExportTaskNew
-
-Create Data Export Task
-
- Name             | Value
-------------------|----------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/data-export`
- Rate Limit Group | `Heavy`
- App Permission   | `TeamMessaging`
- User Permission  | `Glip`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-DataExportTask result = rc.teamMessaging().v1().dataExport().post(createDataExportTaskRequest);
-rc.revoke();
-```
-
-- `createDataExportTaskRequest` is of
-  type [CreateDataExportTaskRequest](./src/main/java/com/ringcentral/definitions/CreateDataExportTaskRequest.java)
-- `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Compliance-Exports-createDataExportTaskNew) in API
-Explorer.
-
-## readDataExportTaskNew
-
-Get Data Export Task
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/data-export/{taskId}`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `Glip`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-DataExportTask result = rc.teamMessaging().v1().dataExport(taskId).get();
-rc.revoke();
-```
-
-- `result` is of type [DataExportTask](./src/main/java/com/ringcentral/definitions/DataExportTask.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Compliance-Exports-readDataExportTaskNew) in API Explorer.
-
-## listGroupEventsNew
-
-List Group Events
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/groups/{groupId}/events`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMEventInfo result = rc.teamMessaging().v1().groups(groupId).events().get();
-rc.revoke();
-```
-
-- `result` is of type [TMEventInfo](./src/main/java/com/ringcentral/definitions/TMEventInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-listGroupEventsNew) in API Explorer.
-
-## createEventByGroupIdNew
-
-Create Event by Group ID
-
- Name             | Value
-------------------|----------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/groups/{groupId}/events`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMEventInfo result = rc.teamMessaging().v1().groups(groupId).events().post(tMCreateEventRequest);
-rc.revoke();
-```
-
-- `tMCreateEventRequest` is of
-  type [TMCreateEventRequest](./src/main/java/com/ringcentral/definitions/TMCreateEventRequest.java)
-- `result` is of type [TMEventInfo](./src/main/java/com/ringcentral/definitions/TMEventInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Calendar-Events-createEventByGroupIdNew) in API Explorer.
-
-## publishNoteNew
-
-Publish Note
-
- Name             | Value
-------------------|---------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/notes/{noteId}/publish`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMNoteInfo result = rc.teamMessaging().v1().notes(noteId).publish().post();
-rc.revoke();
-```
-
-- `result` is of type [TMNoteInfo](./src/main/java/com/ringcentral/definitions/TMNoteInfo.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-publishNoteNew) in API Explorer.
-
-## unlockNoteNew
-
-Unlock Note
-
- Name             | Value
-------------------|--------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/notes/{noteId}/unlock`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().notes(noteId).unlock().post();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-unlockNoteNew) in API Explorer.
-
-## listRecentChatsNew
-
-List Recent Chats
-
- Name             | Value
-------------------|-----------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/team-messaging/v1/recent/chats`
- Rate Limit Group | `Light`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-TMChatListWithoutNavigation result = rc.teamMessaging().v1().recent().chats().get(listRecentChatsNewParameters);
-rc.revoke();
-```
-
-- `listRecentChatsNewParameters` is of
-  type [ListRecentChatsNewParameters](./src/main/java/com/ringcentral/definitions/ListRecentChatsNewParameters.java)
-- `result` is of
-  type [TMChatListWithoutNavigation](./src/main/java/com/ringcentral/definitions/TMChatListWithoutNavigation.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-listRecentChatsNew) in API Explorer.
-
-## leaveGlipTeamNew
-
-Leave Team
-
- Name             | Value
-------------------|-------------------------------------------
- HTTP Method      | `POST`
- Endpoint         | `/team-messaging/v1/teams/{chatId}/leave`
- Rate Limit Group | `Medium`
- App Permission   | `TeamMessaging`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-String result = rc.teamMessaging().v1().teams(chatId).leave().post();
-rc.revoke();
-```
-
-- `result` is an empty string
-
-[Try it out](https://developer.ringcentral.com/api-reference#Teams-leaveGlipTeamNew) in API Explorer.
-
 ## rcwHistoryListRecordings
 
 List Webinar Recordings
@@ -7033,54 +7058,6 @@ rc.revoke();
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Tasks-completeTaskNew) in API Explorer.
-
-## rcwRegGetSession
-
-Get Registration Session Info
-
- Name             | Value
-------------------|-------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/webinar/registration/v1/sessions/{sessionId}`
- Rate Limit Group | `Heavy`
- App Permission   | `ReadWebinars`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-RegSessionModel result = rc.webinar().registration().v1().sessions(sessionId).get();
-rc.revoke();
-```
-
-- `result` is of type [RegSessionModel](./src/main/java/com/ringcentral/definitions/RegSessionModel.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Registration-Management-rcwRegGetSession) in API Explorer.
-
-## rcwRegUpdateSession
-
-Update Registration Session
-
- Name             | Value
-------------------|-------------------------------------------------
- HTTP Method      | `PATCH`
- Endpoint         | `/webinar/registration/v1/sessions/{sessionId}`
- Rate Limit Group | `Heavy`
- App Permission   | `EditWebinars`
- User Permission  | `N/A`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-RegSessionModel result = rc.webinar().registration().v1().sessions(sessionId).patch(regSessionModel);
-rc.revoke();
-```
-
-- `regSessionModel` is of type [RegSessionModel](./src/main/java/com/ringcentral/definitions/RegSessionModel.java)
-- `result` is of type [RegSessionModel](./src/main/java/com/ringcentral/definitions/RegSessionModel.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Registration-Management-rcwRegUpdateSession) in API
-Explorer.
 
 ## rcwHistoryAdminListRecordings
 
@@ -7310,7 +7287,7 @@ rc.revoke();
 
 ## sendWelcomeEmailV2
 
-Send/Resend Welcome Email
+Send Welcome Email
 
  Name             | Value
 ------------------|-------------------------------------------------------
@@ -7333,14 +7310,14 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-sendWelcomeEmailV2) in API Explorer.
 
-## exportSmsOptRecords
+## exportSmsConsentRecords
 
-Export SMS Opt Records in CSV
+Export SMS Consent Records
 
  Name             | Value
 ------------------|--------------------------------------------------------
  HTTP Method      | `GET`
- Endpoint         | `/restapi/v2/accounts/{accountId}/sms/opt-outs/export`
+ Endpoint         | `/restapi/v2/accounts/{accountId}/sms/consents/export`
  Rate Limit Group | `Light`
  App Permission   | `SMS`
  User Permission  | `N/A`
@@ -7348,13 +7325,13 @@ Export SMS Opt Records in CSV
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-String result = rc.restapi().v2().accounts(accountId).sms().optOuts().export().get();
+String result = rc.restapi().v2().accounts(accountId).sms().consents().export().get();
 rc.revoke();
 ```
 
 - `result` is a string
 
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-Opt-outs-exportSmsOptRecords) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-Consents-exportSmsConsentRecords) in API Explorer.
 
 ## addressBookBulkUpload
 
@@ -10311,6 +10288,33 @@ rc.revoke();
 
 [Try it out](https://developer.ringcentral.com/api-reference#Presence-updateUnifiedPresence) in API Explorer.
 
+## readUserVideoConfiguration
+
+Get User Video Configuration
+
+ Name             | Value
+------------------|-----------------------------------------------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/video-configuration`
+ Rate Limit Group | `Light`
+ App Permission   | `ReadAccounts`
+ User Permission  | `Meetings`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+UserVideoConfiguration result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().get();
+rc.revoke();
+```
+
+- Parameter `apiVersion` is optional with default value `v1.0`
+- Parameter `accountId` is optional with default value `~`
+- Parameter `extensionId` is optional with default value `~`
+- `result` is of type [UserVideoConfiguration](./src/main/java/com/ringcentral/definitions/UserVideoConfiguration.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Video-Configuration-readUserVideoConfiguration) in API
+Explorer.
+
 ## readMessageStoreConfiguration
 
 Get Message Store Configuration
@@ -10728,33 +10732,6 @@ rc.revoke();
 - `result` is of type [WcsSessionResource](./src/main/java/com/ringcentral/definitions/WcsSessionResource.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Webinars-and-Sessions-rcwConfigUpdateSession) in API
-Explorer.
-
-## readUserVideoConfiguration
-
-Get User Video Configuration
-
- Name             | Value
-------------------|-----------------------------------------------------------------------------------------
- HTTP Method      | `GET`
- Endpoint         | `/restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/video-configuration`
- Rate Limit Group | `Light`
- App Permission   | `ReadAccounts`
- User Permission  | `Meetings`
-
-```java
-RestClient rc = new RestClient(clientID, clientSecret, serverURL);
-rc.authorize(jwtToken);
-UserVideoConfiguration result = rc.restapi(apiVersion).account(accountId).extension(extensionId).videoConfiguration().get();
-rc.revoke();
-```
-
-- Parameter `apiVersion` is optional with default value `v1.0`
-- Parameter `accountId` is optional with default value `~`
-- Parameter `extensionId` is optional with default value `~`
-- `result` is of type [UserVideoConfiguration](./src/main/java/com/ringcentral/definitions/UserVideoConfiguration.java)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Video-Configuration-readUserVideoConfiguration) in API
 Explorer.
 
 ## rcwHistoryListInvitees
@@ -12849,4 +12826,52 @@ rc.revoke();
   type [ParticipantReducedModel](./src/main/java/com/ringcentral/definitions/ParticipantReducedModel.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Historical-Webinars-rcwHistoryGetParticipantInfo) in API
+Explorer.
+
+## rcwRegGetSession
+
+Get Registration Session Info
+
+ Name             | Value
+------------------|-------------------------------------------------
+ HTTP Method      | `GET`
+ Endpoint         | `/webinar/registration/v1/sessions/{sessionId}`
+ Rate Limit Group | `Heavy`
+ App Permission   | `ReadWebinars`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+RegSessionModel result = rc.webinar().registration().v1().sessions(sessionId).get();
+rc.revoke();
+```
+
+- `result` is of type [RegSessionModel](./src/main/java/com/ringcentral/definitions/RegSessionModel.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Registration-Management-rcwRegGetSession) in API Explorer.
+
+## rcwRegUpdateSession
+
+Update Registration Session
+
+ Name             | Value
+------------------|-------------------------------------------------
+ HTTP Method      | `PATCH`
+ Endpoint         | `/webinar/registration/v1/sessions/{sessionId}`
+ Rate Limit Group | `Heavy`
+ App Permission   | `EditWebinars`
+ User Permission  | `N/A`
+
+```java
+RestClient rc = new RestClient(clientID, clientSecret, serverURL);
+rc.authorize(jwtToken);
+RegSessionModel result = rc.webinar().registration().v1().sessions(sessionId).patch(regSessionModel);
+rc.revoke();
+```
+
+- `regSessionModel` is of type [RegSessionModel](./src/main/java/com/ringcentral/definitions/RegSessionModel.java)
+- `result` is of type [RegSessionModel](./src/main/java/com/ringcentral/definitions/RegSessionModel.java)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Registration-Management-rcwRegUpdateSession) in API
 Explorer.

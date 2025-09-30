@@ -45,6 +45,10 @@ public class TimelineResponseOptionsTimers {
      * Include breakdown of calls duration by type (Direct, FromQueue, ParkRetrieval, Transferred, Outbound)
      */
     public Boolean callsDurationByType;
+    /**
+     * Include breakdown of calls duration by queue hours (BusinessHours, AfterHours)
+     */
+    public Boolean callsDurationByQueueHours;
 
     public TimelineResponseOptionsTimers allCallsDuration(Boolean allCallsDuration) {
         this.allCallsDuration = allCallsDuration;
@@ -93,6 +97,11 @@ public class TimelineResponseOptionsTimers {
 
     public TimelineResponseOptionsTimers callsDurationByType(Boolean callsDurationByType) {
         this.callsDurationByType = callsDurationByType;
+        return this;
+    }
+
+    public TimelineResponseOptionsTimers callsDurationByQueueHours(Boolean callsDurationByQueueHours) {
+        this.callsDurationByQueueHours = callsDurationByQueueHours;
         return this;
     }
 }

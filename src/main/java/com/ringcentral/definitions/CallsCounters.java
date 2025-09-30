@@ -53,6 +53,10 @@ public class CallsCounters {
      *
      */
     public QueueOpportunities queueOpportunities;
+    /**
+     *
+     */
+    public CallsByQueueHours callsByQueueHours;
 
     public CallsCounters allCalls(AllCalls allCalls) {
         this.allCalls = allCalls;
@@ -111,6 +115,11 @@ public class CallsCounters {
 
     public CallsCounters queueOpportunities(QueueOpportunities queueOpportunities) {
         this.queueOpportunities = queueOpportunities;
+        return this;
+    }
+
+    public CallsCounters callsByQueueHours(CallsByQueueHours callsByQueueHours) {
+        this.callsByQueueHours = callsByQueueHours;
         return this;
     }
 }

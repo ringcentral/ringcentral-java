@@ -6,6 +6,7 @@ package com.ringcentral.definitions;
  */
 public class ListCallRecordingCustomGreetingsParameters {
     /**
+     * Type of custom greetings to filter results
      * Enum: StartRecording, StopRecording, AutomaticRecording
      */
     public String type;

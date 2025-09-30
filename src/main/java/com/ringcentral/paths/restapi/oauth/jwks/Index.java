@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.oauth.jwks;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.JWKeySet;
 
 public class Index {
     public RestClient rc;

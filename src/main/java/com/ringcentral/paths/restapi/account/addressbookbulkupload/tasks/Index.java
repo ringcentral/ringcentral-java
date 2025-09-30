@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.account.addressbookbulkupload.tasks;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.AddressBookBulkUploadResponse;
 
 public class Index {
     public RestClient rc;

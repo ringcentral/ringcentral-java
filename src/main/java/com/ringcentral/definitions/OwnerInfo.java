@@ -13,6 +13,10 @@ public class OwnerInfo {
      * Internal identifier of an extension that monitors a call
      */
     public String extensionId;
+    /**
+     * Internal identifier of an account brandId that monitors a call
+     */
+    public String brandId;
 
     public OwnerInfo accountId(String accountId) {
         this.accountId = accountId;
@@ -21,6 +25,11 @@ public class OwnerInfo {
 
     public OwnerInfo extensionId(String extensionId) {
         this.extensionId = extensionId;
+        return this;
+    }
+
+    public OwnerInfo brandId(String brandId) {
+        this.brandId = brandId;
         return this;
     }
 }

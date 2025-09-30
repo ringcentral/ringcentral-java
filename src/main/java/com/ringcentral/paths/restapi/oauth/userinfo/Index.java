@@ -1,7 +1,7 @@
 package com.ringcentral.paths.restapi.oauth.userinfo;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.UserInfoResource;
 
 public class Index {
     public RestClient rc;

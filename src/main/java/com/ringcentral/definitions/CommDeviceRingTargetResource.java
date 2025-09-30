@@ -18,7 +18,7 @@ public class CommDeviceRingTargetResource {
      */
     public CommDeviceResource device;
     /**
-     * Required
+     *
      */
     public CommReferencedExtensionResource extension;
 

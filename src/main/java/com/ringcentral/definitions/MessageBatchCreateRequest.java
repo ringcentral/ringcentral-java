@@ -10,7 +10,8 @@ package com.ringcentral.definitions;
  */
 public class MessageBatchCreateRequest {
     /**
-     * Sender&#039;s phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format.
+     * Sender&#039;s phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)
+     * format.
      * Required
      * Example: +15551234567
      */

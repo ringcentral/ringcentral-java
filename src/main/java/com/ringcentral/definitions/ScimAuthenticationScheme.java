@@ -7,7 +7,7 @@ public class ScimAuthenticationScheme {
      */
     public String description;
     /**
-     *
+     * Format: uri
      */
     public String documentationUri;
     /**
@@ -15,7 +15,7 @@ public class ScimAuthenticationScheme {
      */
     public String name;
     /**
-     *
+     * Format: uri
      */
     public String specUri;
     /**

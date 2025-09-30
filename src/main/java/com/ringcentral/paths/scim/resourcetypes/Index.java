@@ -1,7 +1,8 @@
 package com.ringcentral.paths.scim.resourcetypes;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.ScimResourceTypeResponse;
+import com.ringcentral.definitions.ScimResourceTypeSearchResponse;
 
 public class Index {
     public RestClient rc;

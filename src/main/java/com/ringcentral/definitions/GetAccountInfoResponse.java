@@ -76,7 +76,7 @@ public class GetAccountInfoResponse {
     /**
      *
      */
-    public AccountLimits limits;
+    public AccountLimitsInfo limits;
 
     public GetAccountInfoResponse id(Long id) {
         this.id = id;
@@ -153,7 +153,7 @@ public class GetAccountInfoResponse {
         return this;
     }
 
-    public GetAccountInfoResponse limits(AccountLimits limits) {
+    public GetAccountInfoResponse limits(AccountLimitsInfo limits) {
         this.limits = limits;
         return this;
     }

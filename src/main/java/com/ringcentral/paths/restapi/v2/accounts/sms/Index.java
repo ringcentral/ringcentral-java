@@ -1,7 +1,6 @@
 package com.ringcentral.paths.restapi.v2.accounts.sms;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
 
 public class Index {
     public RestClient rc;
@@ -21,8 +20,8 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.v2.accounts.sms.optouts.Index optOuts() {
-        return new com.ringcentral.paths.restapi.v2.accounts.sms.optouts.Index(this);
+    public com.ringcentral.paths.restapi.v2.accounts.sms.consents.Index consents() {
+        return new com.ringcentral.paths.restapi.v2.accounts.sms.consents.Index(this);
     }
 
 }

@@ -3,7 +3,7 @@ package com.ringcentral.definitions;
 
 public class MinimalSmsOptRecord {
     /**
-     * The wildcard meaning that all account numbers should be opted out/in
+     * The wildcard (&#039;*&#039;) indicating that all account numbers should be opted out or opted in
      * Required
      * Example: +16501234567
      * Enum: *

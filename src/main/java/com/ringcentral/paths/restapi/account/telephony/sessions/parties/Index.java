@@ -1,7 +1,8 @@
 package com.ringcentral.paths.restapi.account.telephony.sessions.parties;
 
-import com.ringcentral.*;
-import com.ringcentral.definitions.*;
+import com.ringcentral.RestClient;
+import com.ringcentral.definitions.CallParty;
+import com.ringcentral.definitions.PartyUpdateRequest;
 
 public class Index {
     public RestClient rc;
@@ -70,8 +71,8 @@ public class Index {
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CallParty.class);
     }
 
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.park.Index park() {
-        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.park.Index(this);
+    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index hold() {
+        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index(this);
     }
 
 
@@ -80,8 +81,8 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index hold() {
-        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.hold.Index(this);
+    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.park.Index park() {
+        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.park.Index(this);
     }
 
 
@@ -95,8 +96,8 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.bridge.Index bridge() {
-        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.bridge.Index(this);
+    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.reject.Index reject() {
+        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.reject.Index(this);
     }
 
 
@@ -105,8 +106,8 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.reject.Index reject() {
-        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.reject.Index(this);
+    public com.ringcentral.paths.restapi.account.telephony.sessions.parties.bridge.Index bridge() {
+        return new com.ringcentral.paths.restapi.account.telephony.sessions.parties.bridge.Index(this);
     }
 
 

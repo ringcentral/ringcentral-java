@@ -23,11 +23,12 @@ public class ListEmergencyLocationsParameters {
      */
     public String addressStatus;
     /**
+     * Status of emergency location to filter results by
      * Enum: Active, Inactive
      */
     public String usageStatus;
     /**
-     *
+     * Domestic country ID to filter results by
      */
     public String domesticCountryId;
     /**

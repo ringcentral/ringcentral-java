@@ -1,6 +1,6 @@
 package com.ringcentral.paths.restapi.account.extension;
 
-import com.ringcentral.*;
+import com.ringcentral.RestClient;
 import com.ringcentral.definitions.*;
 
 public class Index {
@@ -152,13 +152,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.presence.Index presence() {
-        return new com.ringcentral.paths.restapi.account.extension.presence.Index(this);
+    public com.ringcentral.paths.restapi.account.extension.features.Index features() {
+        return new com.ringcentral.paths.restapi.account.extension.features.Index(this);
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.features.Index features() {
-        return new com.ringcentral.paths.restapi.account.extension.features.Index(this);
+    public com.ringcentral.paths.restapi.account.extension.presence.Index presence() {
+        return new com.ringcentral.paths.restapi.account.extension.presence.Index(this);
     }
 
 
@@ -177,13 +177,13 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.conferencing.Index conferencing() {
-        return new com.ringcentral.paths.restapi.account.extension.conferencing.Index(this);
+    public com.ringcentral.paths.restapi.account.extension.phonenumber.Index phoneNumber() {
+        return new com.ringcentral.paths.restapi.account.extension.phonenumber.Index(this);
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.messagesync.Index messageSync() {
-        return new com.ringcentral.paths.restapi.account.extension.messagesync.Index(this);
+    public com.ringcentral.paths.restapi.account.extension.conferencing.Index conferencing() {
+        return new com.ringcentral.paths.restapi.account.extension.conferencing.Index(this);
     }
 
 
@@ -192,8 +192,8 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.phonenumber.Index phoneNumber() {
-        return new com.ringcentral.paths.restapi.account.extension.phonenumber.Index(this);
+    public com.ringcentral.paths.restapi.account.extension.messagesync.Index messageSync() {
+        return new com.ringcentral.paths.restapi.account.extension.messagesync.Index(this);
     }
 
 
@@ -215,16 +215,6 @@ public class Index {
     }
 
 
-    public com.ringcentral.paths.restapi.account.extension.calllogsync.Index callLogSync() {
-        return new com.ringcentral.paths.restapi.account.extension.calllogsync.Index(this);
-    }
-
-
-    public com.ringcentral.paths.restapi.account.extension.companypager.Index companyPager() {
-        return new com.ringcentral.paths.restapi.account.extension.companypager.Index(this);
-    }
-
-
     public com.ringcentral.paths.restapi.account.extension.authzprofile.Index authzProfile() {
         return new com.ringcentral.paths.restapi.account.extension.authzprofile.Index(this);
     }
@@ -232,6 +222,16 @@ public class Index {
 
     public com.ringcentral.paths.restapi.account.extension.assignedrole.Index assignedRole() {
         return new com.ringcentral.paths.restapi.account.extension.assignedrole.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.extension.calllogsync.Index callLogSync() {
+        return new com.ringcentral.paths.restapi.account.extension.calllogsync.Index(this);
+    }
+
+
+    public com.ringcentral.paths.restapi.account.extension.companypager.Index companyPager() {
+        return new com.ringcentral.paths.restapi.account.extension.companypager.Index(this);
     }
 
 

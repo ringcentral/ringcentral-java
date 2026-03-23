@@ -64,12 +64,16 @@ publishing {
         }
     }
     repositories {
+        // maven {
+        //     url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+        //     credentials {
+        //         username = ossrhUsername
+        //         password = ossrhPassword
+        //     }
+        // }
         maven {
-            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-            credentials {
-                username = ossrhUsername
-                password = ossrhPassword
-            }
+            name = 'LocalStaging'
+            url = uri("$buildDir/staging-deploy") 
         }
     }
 }

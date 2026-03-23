@@ -8,8 +8,6 @@ plugins {
 group 'com.ringcentral'
 version '3.3.2'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
@@ -21,6 +19,8 @@ dependencies {
 }
 
 java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
     withJavadocJar()
     withSourcesJar()
 }

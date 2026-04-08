@@ -1,10 +1,13 @@
 import fs from "fs";
 import path from "path";
-import R from "ramda";
+import { fileURLToPath } from "url";
+import * as R from "ramda";
 import { camelCase } from "change-case";
 
-import { capitalizeFirstLetter } from "./utils";
-import { parsed } from "./parser";
+import { capitalizeFirstLetter } from "./utils.js";
+import { parsed } from "./parser.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const markdown = ["# RingCentral Java SDK Code Samples"];
 

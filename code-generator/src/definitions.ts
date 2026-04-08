@@ -1,9 +1,12 @@
 import fs from "fs";
 import path from "path";
-import { Field } from "ringcentral-open-api-parser/lib/types";
+import { fileURLToPath } from "url";
+import type { Field } from "ringcentral-open-api-parser/lib/types.js";
 
-import { escapeJavaDoc } from "./utils";
-import { parsed } from "./parser";
+import { escapeJavaDoc } from "./utils.js";
+import { parsed } from "./parser.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const outputDir = path.join(
   __dirname,

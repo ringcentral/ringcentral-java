@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
 import { camelCase, capitalCase, pascalCase } from "change-case";
-import R from "ramda";
-import { Operation } from "ringcentral-open-api-parser/lib/types";
+import * as R from "ramda";
+import type { Operation } from "ringcentral-open-api-parser/lib/types.js";
 
-import { capitalizeFirstLetter, escapeJavaDoc, patchSrcFile } from "./utils";
-import { parsed } from "./parser";
+import { capitalizeFirstLetter, escapeJavaDoc, patchSrcFile } from "./utils.js";
+import { parsed } from "./parser.js";
 
 const outputDir = "../src/main/java/com/ringcentral/paths";
 

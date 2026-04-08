@@ -1,33 +1,34 @@
 {
-    "type": "module",
-    "license": "MIT",
-    "scripts": {
-        "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && yarn tsx -r dotenv-override-true/config ./src/definitions.ts",
-        "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && yarn tsx -r dotenv-override-true/config ./src/paths.ts",
-        "samples": "yarn tsx -r dotenv-override-true/config ./src/samples.ts",
-        "generate": "yarn definitions && yarn paths && yarn samples"
-    },
-    "dependencies": {
-        "change-case": "4.1.2",
-        "js-yaml": "^4.1.1",
-        "lower-case-first": "^3.0.0",
-        "openapi-types": "^12.1.3",
-        "ramda": "^0.32.0",
-        "ringcentral-open-api-parser": "^0.17.1"
-    },
-    "devDependencies": {
-        "@types/js-yaml": "^4.0.9",
-        "@types/node": "^25.5.2",
-        "@types/ramda": "^0.31.1",
-        "dotenv-override-true": "^6.2.2",
-        "tsx": "^4.21.0",
-        "typescript": "^6.0.2",
-        "yarn-upgrade-all": "^0.7.5"
-    },
-    "yarn-upgrade-all": {
-        "ignore": [
-            "change-case"
-        ]
-    },
-    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && yarn tsx -r dotenv-override-true/config ./src/definitions.ts",
+    "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && yarn tsx -r dotenv-override-true/config ./src/paths.ts",
+    "samples": "yarn tsx -r dotenv-override-true/config ./src/samples.ts",
+    "generate": "yarn definitions && yarn paths && yarn samples"
+  },
+  "dependencies": {
+    "change-case": "4.1.2",
+    "js-yaml": "^4.1.1",
+    "lower-case-first": "^3.0.0",
+    "openapi-types": "^12.1.3",
+    "ramda": "^0.32.0",
+    "ringcentral-open-api-parser": "^0.17.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.10",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.5.2",
+    "@types/ramda": "^0.31.1",
+    "dotenv-override-true": "^6.2.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "yarn-upgrade-all": "^0.7.5"
+  },
+  "yarn-upgrade-all": {
+    "ignore": [
+      "change-case"
+    ]
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

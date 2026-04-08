@@ -1,20 +1,19 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import * as R from "ramda";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { camelCase } from "change-case";
-
-import { capitalizeFirstLetter } from "./utils.js";
 import { parsed } from "./parser.js";
+import { capitalizeFirstLetter } from "./utils.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const markdown = ["# RingCentral Java SDK Code Samples"];
 
-const paths = R.sortBy(
-  R.path(["operations", 0, "endpoint"]) as any,
-  parsed.paths,
-);
+const paths = [...parsed.paths].sort((a, b) => {
+  const endpointA = a.operations[0]?.endpoint ?? "";
+  const endpointB = b.operations[0]?.endpoint ?? "";
+  return endpointA.localeCompare(endpointB);
+});
 
 const buildPath = (s: string): string => {
   const tokens = s.split("/").filter((t) => t.length > 0);
@@ -65,9 +64,9 @@ rc.authorize(jwtToken);`,
       responseType = "byte[]";
     }
     markdown.push(
-      `${responseType} result = rc${
-        buildPath(operation.endpoint)
-      }.${operation.method2}(${parameters.join(", ")});`,
+      `${responseType} result = rc${buildPath(
+        operation.endpoint,
+      )}.${operation.method2}(${parameters.join(", ")});`,
     );
     markdown.push("rc.revoke();");
     markdown.push("```\n");
@@ -95,15 +94,11 @@ rc.authorize(jwtToken);`,
 
     for (const parameter of parameters) {
       markdown.push(
-        `- \`${parameter}\` is of type [${
-          capitalizeFirstLetter(
-            parameter,
-          )
-        }](./src/main/java/com/ringcentral/definitions/${
-          capitalizeFirstLetter(
-            parameter,
-          )
-        }.java)`,
+        `- \`${parameter}\` is of type [${capitalizeFirstLetter(
+          parameter,
+        )}](./src/main/java/com/ringcentral/definitions/${capitalizeFirstLetter(
+          parameter,
+        )}.java)`,
       );
     }
 
@@ -124,12 +119,10 @@ rc.authorize(jwtToken);`,
     }
 
     markdown.push(
-      `\n[Try it out](https://developer.ringcentral.com/api-reference#${
-        operation.tags![0].replace(
-          / /g,
-          "-",
-        )
-      }-${operation.operationId}) in API Explorer.`,
+      `\n[Try it out](https://developer.ringcentral.com/api-reference#${operation.tags?.[0].replace(
+        / /g,
+        "-",
+      )}-${operation.operationId}) in API Explorer.`,
     );
   }
 }

@@ -1,11 +1,10 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { camelCase, capitalCase, pascalCase } from "change-case";
 import * as R from "ramda";
-import type { Operation } from "ringcentral-open-api-parser/lib/types.js";
-
-import { capitalizeFirstLetter, escapeJavaDoc, patchSrcFile } from "./utils.js";
+import type { Operation } from "ringcentral-open-api-parser";
 import { parsed } from "./parser.js";
+import { capitalizeFirstLetter, escapeJavaDoc, patchSrcFile } from "./utils.js";
 
 const outputDir = "../src/main/java/com/ringcentral/paths";
 
@@ -162,13 +161,17 @@ const generateOperationMethod = (
     if (operation.bodyType) {
       methodParams.push(
         `${
-          capitalizeFirstLetter(operation.bodyType)
+          capitalizeFirstLetter(
+            operation.bodyType,
+          )
         } ${operation.bodyParameters}`,
       );
     } else {
       methodParams.push(
         `${
-          capitalizeFirstLetter(operation.bodyParameters)
+          capitalizeFirstLetter(
+            operation.bodyParameters,
+          )
         } ${operation.bodyParameters}`,
       );
     }
@@ -210,7 +213,9 @@ const generateOperationMethod = (
     }\n`;
   }
   result += `    okhttp3.ResponseBody rb = this.rc.${operation.method}(${
-    requestParams.join(", ")
+    requestParams.join(
+      ", ",
+    )
   });`;
   if (responseType === "String") {
     result += "\n    return rb.string();";
@@ -255,6 +260,11 @@ for (const item of parsed.paths) {
       return p;
     })
     .map((p) => pascalCase(p));
+  const lastPath = R.last(item.paths);
+  const lastItemPath = R.last(itemPaths);
+  if (!lastPath || !lastItemPath) {
+    continue;
+  }
   const code = `
 package com.ringcentral.paths.${
     itemPaths
@@ -278,7 +288,7 @@ public class Index
     ${
     generatePathMethod(
       item.parameter,
-      R.last(item.paths)!,
+      lastPath,
       itemPaths.length > 1,
       item.noParentParameter,
     )
@@ -300,7 +310,7 @@ ${
       itemPaths
         .join(".")
         .toLowerCase()
-    }.Index ${camelCase(R.last(itemPaths)!)}(${
+    }.Index ${camelCase(lastItemPath)}(${
       item.parameter ? `String ${item.parameter}` : ""
     })
   {
@@ -316,9 +326,9 @@ ${
         itemPaths
           .join(".")
           .toLowerCase()
-      }.Index ${camelCase(R.last(itemPaths)!)}()
+      }.Index ${camelCase(lastItemPath)}()
     {
-      return this.${camelCase(R.last(itemPaths)!)}(${
+      return this.${camelCase(lastItemPath)}(${
         item.defaultParameter ? `"${item.defaultParameter}"` : "null"
       });
     }

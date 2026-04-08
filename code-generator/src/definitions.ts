@@ -1,10 +1,9 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import type { Field } from "ringcentral-open-api-parser/lib/types.js";
-
-import { escapeJavaDoc } from "./utils.js";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import type { Field } from "ringcentral-open-api-parser";
 import { parsed } from "./parser.js";
+import { escapeJavaDoc } from "./utils.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -21,9 +20,11 @@ const normalizeField = (f: Field): Field => {
   } else if (f.type === "integer") {
     f.type = "Long";
   } else if (f.type === "array") {
-    f.type = `${normalizeField(f.items!).type}[]`;
+    const itemType = f.items ? normalizeField(f.items).type : "Object";
+    f.type = `${itemType}[]`;
   } else if (f.type === "dict") {
-    f.type = `java.util.Map<String, ${normalizeField(f.items!).type}>`;
+    const itemType = f.items ? normalizeField(f.items).type : "Object";
+    f.type = `java.util.Map<String, ${itemType}>`;
   } else if (f.type === "boolean") {
     f.type = "Boolean";
   } else if (f.type === "string") {
@@ -45,7 +46,7 @@ const generateField = (f: Field, modelName: string) => {
     p += `    @SerializedName("${f.name}")\n`;
     f.name = f.name.replace(
       /-([a-z])/g,
-      (match, p1: string) => p1.toUpperCase(),
+      (_match, p1: string) => p1.toUpperCase(),
     );
   }
   if (f.name.includes(":")) {
@@ -60,8 +61,8 @@ const generateField = (f: Field, modelName: string) => {
     }`;
 
   p = ` */\n${p}`;
-  if (f.enum || (f.items || {}).enum) {
-    p = ` * Enum: ${(f.enum || (f.items || {}).enum)!.join(", ")}\n    ${p}`;
+  if (f.enum || f.items?.enum) {
+    p = ` * Enum: ${(f.enum || f.items?.enum)?.join(", ")}\n    ${p}`;
   }
   if (f.default) {
     p = ` * Default: ${f.default}\n    ${p}`;
@@ -83,8 +84,8 @@ const generateField = (f: Field, modelName: string) => {
   }
   if (f.description) {
     p = ` * ${
-      escapeJavaDoc(f.description)!
-        .trim()
+      escapeJavaDoc(f.description)
+        ?.trim()
         .split("\n")
         .join("\n    * ")
     }\n    ${p}`;
@@ -99,7 +100,7 @@ parsed.models.forEach((model) => {
       ? "\n    /**\n" +
         model.description
           .split("\n")
-          .map((line) => "* " + line)
+          .map((line) => `* ${line}`)
           .join("\n") +
         "\n*/"
       : ""
@@ -109,8 +110,8 @@ public class ${model.name}
     ${model.fields.map((f) => generateField(f, model.name)).join("\n\n    ")}
 }`;
   if (code.includes("@SerializedName(")) {
-    code = "import com.google.gson.annotations.SerializedName;\n\n" + code;
+    code = `import com.google.gson.annotations.SerializedName;\n\n${code}`;
   }
-  code = "package com.ringcentral.definitions;\n\n" + code;
+  code = `package com.ringcentral.definitions;\n\n${code}`;
   fs.writeFileSync(path.join(outputDir, `${model.name}.java`), code);
 });

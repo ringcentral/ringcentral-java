@@ -44,9 +44,8 @@ const generateField = (f: Field, modelName: string) => {
   }
   if (f.name.includes("-")) {
     p += `    @SerializedName("${f.name}")\n`;
-    f.name = f.name.replace(
-      /-([a-z])/g,
-      (_match, p1: string) => p1.toUpperCase(),
+    f.name = f.name.replace(/-([a-z])/g, (_match, p1: string) =>
+      p1.toUpperCase(),
     );
   }
   if (f.name.includes(":")) {
@@ -83,12 +82,10 @@ const generateField = (f: Field, modelName: string) => {
     p = ` * Required\n    ${p}`;
   }
   if (f.description) {
-    p = ` * ${
-      escapeJavaDoc(f.description)
-        ?.trim()
-        .split("\n")
-        .join("\n    * ")
-    }\n    ${p}`;
+    p = ` * ${escapeJavaDoc(f.description)
+      ?.trim()
+      .split("\n")
+      .join("\n    * ")}\n    ${p}`;
   }
   p = `/**\n    ${p}`;
   return p;

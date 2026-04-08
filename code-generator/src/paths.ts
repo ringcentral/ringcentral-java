@@ -20,8 +20,8 @@ const generatePathMethod = (
             if (withParameter && ${parameter} != null)
             {
                 return ${
-      hasParent ? "parent.path()" : '""'
-    } + "/${token}/" + ${parameter};
+                  hasParent ? "parent.path()" : '""'
+                } + "/${token}/" + ${parameter};
             }
             return ${hasParent ? "parent.path()" : '""'} + "/${token}";
         }
@@ -58,11 +58,9 @@ const generateConstructor = (
   const result = ["public RestClient rc;"];
   if (parentPaths.length > 0) {
     result.push(
-      `public com.ringcentral.paths.${
-        parentPaths
-          .join(".")
-          .toLowerCase()
-      }.Index parent;`,
+      `public com.ringcentral.paths.${parentPaths
+        .join(".")
+        .toLowerCase()}.Index parent;`,
     );
   }
   if (parameter) {
@@ -70,21 +68,17 @@ const generateConstructor = (
   }
   if (parentPaths.length > 0) {
     if (defaultValue) {
-      result.push(`public Index(com.ringcentral.paths.${
-        parentPaths
-          .join(".")
-          .toLowerCase()
-      }.Index parent)
+      result.push(`public Index(com.ringcentral.paths.${parentPaths
+        .join(".")
+        .toLowerCase()}.Index parent)
       {
         this(parent, "${defaultValue}");
       }`);
     }
     result.push(
-      `public Index(com.ringcentral.paths.${
-        parentPaths
-          .join(".")
-          .toLowerCase()
-      }.Index parent${parameter ? `, String ${parameter}` : ""})
+      `public Index(com.ringcentral.paths.${parentPaths
+        .join(".")
+        .toLowerCase()}.Index parent${parameter ? `, String ${parameter}` : ""})
       {`,
     );
     result.push("this.parent = parent;");
@@ -117,16 +111,14 @@ const generateOperationMethod = (
   // comments
   const comments = ["/**"];
   comments.push(
-    `${
-      (
-        operation.description ||
-        operation.summary ||
-        capitalCase(operation.operationId)
-      )
-        .split("\n")
-        .map((l) => ` * ${escapeJavaDoc(l)}`)
-        .join("\n")
-    }`,
+    `${(
+      operation.description ||
+      operation.summary ||
+      capitalCase(operation.operationId)
+    )
+      .split("\n")
+      .map((l) => ` * ${escapeJavaDoc(l)}`)
+      .join("\n")}`,
   );
   comments.push(` * HTTP Method: ${operation.method}`);
   comments.push(` * Endpoint: ${operation.endpoint}`);
@@ -160,19 +152,15 @@ const generateOperationMethod = (
   if (operation.bodyParameters) {
     if (operation.bodyType) {
       methodParams.push(
-        `${
-          capitalizeFirstLetter(
-            operation.bodyType,
-          )
-        } ${operation.bodyParameters}`,
+        `${capitalizeFirstLetter(
+          operation.bodyType,
+        )} ${operation.bodyParameters}`,
       );
     } else {
       methodParams.push(
-        `${
-          capitalizeFirstLetter(
-            operation.bodyParameters,
-          )
-        } ${operation.bodyParameters}`,
+        `${capitalizeFirstLetter(
+          operation.bodyParameters,
+        )} ${operation.bodyParameters}`,
       );
     }
   }
@@ -200,11 +188,9 @@ const generateOperationMethod = (
 
   // result
   result += `
-  public ${responseType} ${operation.method2}(${
-    methodParams.join(
-      ", ",
-    )
-  }) throws com.ringcentral.RestException, java.io.IOException
+  public ${responseType} ${operation.method2}(${methodParams.join(
+    ", ",
+  )}) throws com.ringcentral.RestException, java.io.IOException
   {\n`;
   if (operation.withParameter) {
     result += `    if (${parameter} == null)
@@ -212,18 +198,15 @@ const generateOperationMethod = (
         throw new IllegalArgumentException("Parameter ${parameter} cannot be null");
     }\n`;
   }
-  result += `    okhttp3.ResponseBody rb = this.rc.${operation.method}(${
-    requestParams.join(
-      ", ",
-    )
-  });`;
+  result += `    okhttp3.ResponseBody rb = this.rc.${operation.method}(${requestParams.join(
+    ", ",
+  )});`;
   if (responseType === "String") {
     result += "\n    return rb.string();";
   } else if (responseType === "byte[]") {
     result += "\n    return rb.bytes();";
   } else {
-    result +=
-      `\n    return com.ringcentral.Utils.gson.fromJson(rb.string(), ${responseType}.class);`;
+    result += `\n    return com.ringcentral.Utils.gson.fromJson(rb.string(), ${responseType}.class);`;
   }
   result += "\n    }";
 
@@ -231,18 +214,14 @@ const generateOperationMethod = (
   if (operation.queryParameters) {
     methodParams.pop();
     result += `
-    public ${responseType} ${operation.method2}(${
-      methodParams.join(
-        ", ",
-      )
-    }) throws com.ringcentral.RestException, java.io.IOException
+    public ${responseType} ${operation.method2}(${methodParams.join(
+      ", ",
+    )}) throws com.ringcentral.RestException, java.io.IOException
     {
-      return this.${operation.method2}(${
-      [
+      return this.${operation.method2}(${[
         ...methodParams.map((mp) => R.last(mp.split(" "))),
         "null",
-      ].join(", ")
-    });
+      ].join(", ")});
     }`;
   }
 
@@ -266,38 +245,30 @@ for (const item of parsed.paths) {
     continue;
   }
   const code = `
-package com.ringcentral.paths.${
-    itemPaths
-      .join(".")
-      .replace(/-/g, "")
-      .toLowerCase()
-  };
+package com.ringcentral.paths.${itemPaths
+    .join(".")
+    .replace(/-/g, "")
+    .toLowerCase()};
 
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
 public class Index
 {
-    ${
-    generateConstructor(
+    ${generateConstructor(
       item.parameter,
       item.defaultParameter,
       R.init(itemPaths),
-    )
-  }
-    ${
-    generatePathMethod(
+    )}
+    ${generatePathMethod(
       item.parameter,
       lastPath,
       itemPaths.length > 1,
       item.noParentParameter,
-    )
-  }
-${
-    item.operations
-      .map((operation) => generateOperationMethod(operation, item.parameter))
-      .join("\n\n")
-  }
+    )}
+${item.operations
+  .map((operation) => generateOperationMethod(operation, item.parameter))
+  .join("\n\n")}
 }
 `;
   const folder = path.join(outputDir, ...itemPaths).toLowerCase();
@@ -306,27 +277,21 @@ ${
 
   // bridge methods
   if (item.paths.length > 1) {
-    let code = `  public com.ringcentral.paths.${
-      itemPaths
-        .join(".")
-        .toLowerCase()
-    }.Index ${camelCase(lastItemPath)}(${
+    let code = `  public com.ringcentral.paths.${itemPaths
+      .join(".")
+      .toLowerCase()}.Index ${camelCase(lastItemPath)}(${
       item.parameter ? `String ${item.parameter}` : ""
     })
   {
-    return new com.ringcentral.paths.${
-      itemPaths
-        .join(".")
-        .toLowerCase()
-    }.Index(this${item.parameter ? `, ${item.parameter}` : ""});
+    return new com.ringcentral.paths.${itemPaths
+      .join(".")
+      .toLowerCase()}.Index(this${item.parameter ? `, ${item.parameter}` : ""});
   }
 `;
     if (item.parameter) {
-      code = `public com.ringcentral.paths.${
-        itemPaths
-          .join(".")
-          .toLowerCase()
-      }.Index ${camelCase(lastItemPath)}()
+      code = `public com.ringcentral.paths.${itemPaths
+        .join(".")
+        .toLowerCase()}.Index ${camelCase(lastItemPath)}()
     {
       return this.${camelCase(lastItemPath)}(${
         item.defaultParameter ? `"${item.defaultParameter}"` : "null"

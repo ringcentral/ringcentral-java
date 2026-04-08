@@ -3,6 +3,8 @@ plugins {
     id 'maven-publish'
     id 'java-library'
     id 'signing'
+    id 'checkstyle'
+    id 'com.diffplug.spotless' version '6.25.0'
 }
 
 group 'com.ringcentral'
@@ -91,5 +93,28 @@ javadoc {
 test {
     testLogging {
         exceptionFormat = 'full'
+    }
+}
+
+spotless {
+    java {
+        target 'src/*/java/**/*.java'
+        googleJavaFormat('1.17.0').aosp()
+        formatAnnotations()
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
+checkstyle {
+    toolVersion = '10.17.0'
+    configFile = file('config/checkstyle/checkstyle.xml')
+}
+
+tasks.withType(Checkstyle).configureEach {
+    reports {
+        xml.required = true
+        html.required = true
     }
 }

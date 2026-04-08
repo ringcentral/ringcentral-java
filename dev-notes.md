@@ -43,3 +43,10 @@ zip -r bundle.zip com/
 Upload bundle.zip to https://central.sonatype.com/publishing
 
 After validation, don't forget to click the "Publish" button.
+
+
+## Code format/lint
+
+```
+./gradlew spotlessApply check
+```

@@ -1,115 +1,93 @@
 package com.ringcentral.definitions;
 
-
-public class SiteInfo
-{
-    /**
-     * Internal identifier of a site extension
-     */
+public class SiteInfo {
+    /** Internal identifier of a site extension */
     public String id;
-    public SiteInfo id(String id)
-    {
+
+    public SiteInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Link to a site resource
-     * Format: uri
-     */
+    /** Link to a site resource Format: uri */
     public String uri;
-    public SiteInfo uri(String uri)
-    {
+
+    public SiteInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Extension user first name
-     */
+    /** Extension user first name */
     public String name;
-    public SiteInfo name(String name)
-    {
+
+    public SiteInfo name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     * Extension number
-     */
+    /** Extension number */
     public String extensionNumber;
-    public SiteInfo extensionNumber(String extensionNumber)
-    {
+
+    public SiteInfo extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
         return this;
     }
 
     /**
-     * Custom name of a caller. Max number of characters is 15 (only
-    * alphabetical symbols, numbers and commas are supported)
+     * Custom name of a caller. Max number of characters is 15 (only alphabetical symbols, numbers
+     * and commas are supported)
      */
     public String callerIdName;
-    public SiteInfo callerIdName(String callerIdName)
-    {
+
+    public SiteInfo callerIdName(String callerIdName) {
         this.callerIdName = callerIdName;
         return this;
     }
 
-    /**
-     * Site extension contact email
-     * Format: email
-     */
+    /** Site extension contact email Format: email */
     public String email;
-    public SiteInfo email(String email)
-    {
+
+    public SiteInfo email(String email) {
         this.email = email;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ContactBusinessAddressInfo businessAddress;
-    public SiteInfo businessAddress(ContactBusinessAddressInfo businessAddress)
-    {
+
+    public SiteInfo businessAddress(ContactBusinessAddressInfo businessAddress) {
         this.businessAddress = businessAddress;
         return this;
     }
 
-    /**
-     */
+    /** */
     public RegionalSettings regionalSettings;
-    public SiteInfo regionalSettings(RegionalSettings regionalSettings)
-    {
+
+    public SiteInfo regionalSettings(RegionalSettings regionalSettings) {
         this.regionalSettings = regionalSettings;
         return this;
     }
 
-    /**
-     * Site access status for cross-site limitation
-     * Enum: Limited, Unlimited
-     */
+    /** Site access status for cross-site limitation Enum: Limited, Unlimited */
     public String siteAccess;
-    public SiteInfo siteAccess(String siteAccess)
-    {
+
+    public SiteInfo siteAccess(String siteAccess) {
         this.siteAccess = siteAccess;
         return this;
     }
 
-    /**
-     */
+    /** */
     public OperatorInfo operator;
-    public SiteInfo operator(OperatorInfo operator)
-    {
+
+    public SiteInfo operator(OperatorInfo operator) {
         this.operator = operator;
         return this;
     }
 
-    /**
-     * Site code value. Returned only if specified
-     */
+    /** Site code value. Returned only if specified */
     public String code;
-    public SiteInfo code(String code)
-    {
+
+    public SiteInfo code(String code) {
         this.code = code;
         return this;
     }

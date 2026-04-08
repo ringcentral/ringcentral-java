@@ -1,35 +1,27 @@
 package com.ringcentral.definitions;
 
-
-public class DevicePhoneLinesEmergencyAddressInfo
-{
-    /**
-     * Indicates that emergency address is required
-     */
+public class DevicePhoneLinesEmergencyAddressInfo {
+    /** Indicates that emergency address is required */
     public Boolean required;
-    public DevicePhoneLinesEmergencyAddressInfo required(Boolean required)
-    {
+
+    public DevicePhoneLinesEmergencyAddressInfo required(Boolean required) {
         this.required = required;
         return this;
     }
 
-    /**
-     * Indicates that only local emergency address can be specified
-     */
+    /** Indicates that only local emergency address can be specified */
     public Boolean localOnly;
-    public DevicePhoneLinesEmergencyAddressInfo localOnly(Boolean localOnly)
-    {
+
+    public DevicePhoneLinesEmergencyAddressInfo localOnly(Boolean localOnly) {
         this.localOnly = localOnly;
         return this;
     }
 
-    /**
-     * Digital line provisioning status
-     * Enum: Invalid, Provisioning, Valid
-     */
+    /** Digital line provisioning status Enum: Invalid, Provisioning, Valid */
     public String lineProvisioningStatus;
-    public DevicePhoneLinesEmergencyAddressInfo lineProvisioningStatus(String lineProvisioningStatus)
-    {
+
+    public DevicePhoneLinesEmergencyAddressInfo lineProvisioningStatus(
+            String lineProvisioningStatus) {
         this.lineProvisioningStatus = lineProvisioningStatus;
         return this;
     }

@@ -1,23 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class SummaryApiOutput
-{
-    /**
-     * Enum: Success, Fail
-     */
+public class SummaryApiOutput {
+    /** Enum: Success, Fail */
     public String status;
-    public SummaryApiOutput status(String status)
-    {
+
+    public SummaryApiOutput status(String status) {
         this.status = status;
         return this;
     }
 
-    /**
-     */
+    /** */
     public SummaryApiResponse response;
-    public SummaryApiOutput response(SummaryApiResponse response)
-    {
+
+    public SummaryApiOutput response(SummaryApiResponse response) {
         this.response = response;
         return this;
     }

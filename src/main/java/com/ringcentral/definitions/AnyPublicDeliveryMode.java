@@ -1,44 +1,31 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Notification delivery transport information
-*/
-public class AnyPublicDeliveryMode
-{
-    /**
-     * The transport type for this subscription
-     * Required
-     * Enum: WebHook, WebSocket
-     */
+/** Notification delivery transport information */
+public class AnyPublicDeliveryMode {
+    /** The transport type for this subscription Required Enum: WebHook, WebSocket */
     public String transportType;
-    public AnyPublicDeliveryMode transportType(String transportType)
-    {
+
+    public AnyPublicDeliveryMode transportType(String transportType) {
         this.transportType = transportType;
         return this;
     }
 
     /**
-     * The URL to which notifications should be delivered. This is only applicable for the `WebHook` transport type, for which it is a required field.
-     * Required
-     * Format: uri
-     * Example: https://acme.com/myservice/webhook
+     * The URL to which notifications should be delivered. This is only applicable for the `WebHook`
+     * transport type, for which it is a required field. Required Format: uri Example:
+     * https://acme.com/myservice/webhook
      */
     public String address;
-    public AnyPublicDeliveryMode address(String address)
-    {
+
+    public AnyPublicDeliveryMode address(String address) {
         this.address = address;
         return this;
     }
 
-    /**
-     * Specifies if notification messages will be encrypted or not.
-     * Required
-     * Enum: false
-     */
+    /** Specifies if notification messages will be encrypted or not. Required Enum: false */
     public Boolean encryption;
-    public AnyPublicDeliveryMode encryption(Boolean encryption)
-    {
+
+    public AnyPublicDeliveryMode encryption(Boolean encryption) {
         this.encryption = encryption;
         return this;
     }

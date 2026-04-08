@@ -1,4 +1,3 @@
 package com.ringcentral.webinar;
 
-public class ConfigurationTest {
-}
+public class ConfigurationTest {}

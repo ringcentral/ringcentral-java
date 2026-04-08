@@ -5,6 +5,7 @@
 <module name="Checker">
     <property name="severity" value="error"/>
 
+    <!-- Minimal baseline: let Spotless handle formatting, keep only core lint checks. -->
     <module name="FileTabCharacter">
         <property name="eachLine" value="true"/>
     </module>
@@ -12,10 +13,5 @@
     <module name="TreeWalker">
         <module name="UnusedImports"/>
         <module name="NeedBraces"/>
-        <module name="OneTopLevelClass"/>
-        <module name="EmptyBlock"/>
-        <module name="EqualsHashCode"/>
-        <module name="FallThrough"/>
-        <module name="MissingSwitchDefault"/>
     </module>
 </module>

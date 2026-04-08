@@ -1,15 +1,14 @@
 package com.ringcentral.definitions;
 
-
-public class AggregationResponseOptionsCountersCallsByQueueHours
-{
+public class AggregationResponseOptionsCountersCallsByQueueHours {
     /**
-     * Counter aggregation type. Can be `Sum`, `Average`, `Min`, `Max` or `Percent`
-     * Enum: Sum, Average, Max, Min, Percent
+     * Counter aggregation type. Can be `Sum`, `Average`, `Min`, `Max` or `Percent` Enum: Sum,
+     * Average, Max, Min, Percent
      */
     public String aggregationType;
-    public AggregationResponseOptionsCountersCallsByQueueHours aggregationType(String aggregationType)
-    {
+
+    public AggregationResponseOptionsCountersCallsByQueueHours aggregationType(
+            String aggregationType) {
         this.aggregationType = aggregationType;
         return this;
     }
@@ -19,8 +18,9 @@ public class AggregationResponseOptionsCountersCallsByQueueHours
      * Enum: Hour, Day, Week, Month
      */
     public String aggregationInterval;
-    public AggregationResponseOptionsCountersCallsByQueueHours aggregationInterval(String aggregationInterval)
-    {
+
+    public AggregationResponseOptionsCountersCallsByQueueHours aggregationInterval(
+            String aggregationInterval) {
         this.aggregationInterval = aggregationInterval;
         return this;
     }

@@ -13,7 +13,8 @@ public class ConstantContent {
     }
 
     public static UpdateBridgeRequest updateBridgeRequest() {
-        UpdateBridgeRequest updateBridgeRequest = new UpdateBridgeRequest().name("Update RC Video Test");
+        UpdateBridgeRequest updateBridgeRequest =
+                new UpdateBridgeRequest().name("Update RC Video Test");
         return updateBridgeRequest;
     }
 }

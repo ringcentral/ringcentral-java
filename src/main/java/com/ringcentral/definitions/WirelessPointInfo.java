@@ -1,25 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class WirelessPointInfo
-{
-    /**
-     * Link to the wireless point resource
-     * Format: uri
-     */
+public class WirelessPointInfo {
+    /** Link to the wireless point resource Format: uri */
     public String uri;
-    public WirelessPointInfo uri(String uri)
-    {
+
+    public WirelessPointInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Internal identifier of a wireless point
-     */
+    /** Internal identifier of a wireless point */
     public String id;
-    public WirelessPointInfo id(String id)
-    {
+
+    public WirelessPointInfo id(String id) {
         this.id = id;
         return this;
     }
@@ -29,59 +22,51 @@ public class WirelessPointInfo
      * Required
      */
     public String bssid;
-    public WirelessPointInfo bssid(String bssid)
-    {
+
+    public WirelessPointInfo bssid(String bssid) {
         this.bssid = bssid;
         return this;
     }
 
-    /**
-     * Wireless access point name
-     * Required
-     */
+    /** Wireless access point name Required */
     public String name;
-    public WirelessPointInfo name(String name)
-    {
+
+    public WirelessPointInfo name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     */
+    /** */
     public EmergencyAddressAutoUpdateSiteInfo site;
-    public WirelessPointInfo site(EmergencyAddressAutoUpdateSiteInfo site)
-    {
+
+    public WirelessPointInfo site(EmergencyAddressAutoUpdateSiteInfo site) {
         this.site = site;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public EmergencyAddressInfo emergencyAddress;
-    public WirelessPointInfo emergencyAddress(EmergencyAddressInfo emergencyAddress)
-    {
+
+    public WirelessPointInfo emergencyAddress(EmergencyAddressInfo emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }
 
-    /**
-     */
+    /** */
     public EmergencyLocationInfo emergencyLocation;
-    public WirelessPointInfo emergencyLocation(EmergencyLocationInfo emergencyLocation)
-    {
+
+    public WirelessPointInfo emergencyLocation(EmergencyLocationInfo emergencyLocation) {
         this.emergencyLocation = emergencyLocation;
         return this;
     }
 
     /**
-     * Emergency response location (address) internal identifier. 
-    * Only one of a pair `emergencyAddress` or `emergencyLocationId`
-    * can be specified, otherwise the error is returned
+     * Emergency response location (address) internal identifier. Only one of a pair
+     * `emergencyAddress` or `emergencyLocationId` can be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
-    public WirelessPointInfo emergencyLocationId(String emergencyLocationId)
-    {
+
+    public WirelessPointInfo emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
         return this;
     }

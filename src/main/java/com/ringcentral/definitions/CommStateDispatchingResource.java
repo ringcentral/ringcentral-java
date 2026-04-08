@@ -1,27 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class CommStateDispatchingResource
-{
-    /**
-     * Action information
-     * Required
-     */
+public class CommStateDispatchingResource {
+    /** Action information Required */
     public CommStateDispatchingResourceActions[] actions;
-    public CommStateDispatchingResource actions(CommStateDispatchingResourceActions[] actions)
-    {
+
+    public CommStateDispatchingResource actions(CommStateDispatchingResourceActions[] actions) {
         this.actions = actions;
         return this;
     }
 
-    /**
-     * Call dispatching type
-     * Required
-     * Enum: RingAtOnce, RingInOrder, Custom, Terminate
-     */
+    /** Call dispatching type Required Enum: RingAtOnce, RingInOrder, Custom, Terminate */
     public String type;
-    public CommStateDispatchingResource type(String type)
-    {
+
+    public CommStateDispatchingResource type(String type) {
         this.type = type;
         return this;
     }

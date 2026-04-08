@@ -1,75 +1,62 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Regional data (timezone, home country, language) of an extension/account.
-* The default is Company (Auto-Receptionist) settings
-* 
-*/
-public class AccountRegionalSettings
-{
-    /**
-     */
+/**
+ * Regional data (timezone, home country, language) of an extension/account. The default is Company
+ * (Auto-Receptionist) settings
+ */
+public class AccountRegionalSettings {
+    /** */
     public CountryInfoShortModel homeCountry;
-    public AccountRegionalSettings homeCountry(CountryInfoShortModel homeCountry)
-    {
+
+    public AccountRegionalSettings homeCountry(CountryInfoShortModel homeCountry) {
         this.homeCountry = homeCountry;
         return this;
     }
 
-    /**
-     */
+    /** */
     public TimezoneInfoBase timezone;
-    public AccountRegionalSettings timezone(TimezoneInfoBase timezone)
-    {
+
+    public AccountRegionalSettings timezone(TimezoneInfoBase timezone) {
         this.timezone = timezone;
         return this;
     }
 
-    /**
-     */
+    /** */
     public RegionalLanguageInfo language;
-    public AccountRegionalSettings language(RegionalLanguageInfo language)
-    {
+
+    public AccountRegionalSettings language(RegionalLanguageInfo language) {
         this.language = language;
         return this;
     }
 
-    /**
-     */
+    /** */
     public GreetingLanguageInfo greetingLanguage;
-    public AccountRegionalSettings greetingLanguage(GreetingLanguageInfo greetingLanguage)
-    {
+
+    public AccountRegionalSettings greetingLanguage(GreetingLanguageInfo greetingLanguage) {
         this.greetingLanguage = greetingLanguage;
         return this;
     }
 
-    /**
-     */
+    /** */
     public FormattingLocaleInfo formattingLocale;
-    public AccountRegionalSettings formattingLocale(FormattingLocaleInfo formattingLocale)
-    {
+
+    public AccountRegionalSettings formattingLocale(FormattingLocaleInfo formattingLocale) {
         this.formattingLocale = formattingLocale;
         return this;
     }
 
-    /**
-     * Time format (12-hours or 24-hours).
-     * Default: 12h
-     * Enum: 12h, 24h
-     */
+    /** Time format (12-hours or 24-hours). Default: 12h Enum: 12h, 24h */
     public String timeFormat;
-    public AccountRegionalSettings timeFormat(String timeFormat)
-    {
+
+    public AccountRegionalSettings timeFormat(String timeFormat) {
         this.timeFormat = timeFormat;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CurrencyInfo currency;
-    public AccountRegionalSettings currency(CurrencyInfo currency)
-    {
+
+    public AccountRegionalSettings currency(CurrencyInfo currency) {
         this.currency = currency;
         return this;
     }

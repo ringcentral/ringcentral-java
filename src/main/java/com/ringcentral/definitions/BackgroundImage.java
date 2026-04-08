@@ -1,41 +1,33 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Specifies a background image oa a card. Acceptable formats are PNG, JPEG, and GIF
-*/
-public class BackgroundImage
-{
-    /**
-     * Must be `BackgroundImage`
-     * Enum: BackgroundImage
-     */
+/** Specifies a background image oa a card. Acceptable formats are PNG, JPEG, and GIF */
+public class BackgroundImage {
+    /** Must be `BackgroundImage` Enum: BackgroundImage */
     public String type;
-    public BackgroundImage type(String type)
-    {
+
+    public BackgroundImage type(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * The URL/data URL of an image to be used as a background of a card. Acceptable formats are PNG, JPEG, and GIF
-     * Required
-     * Format: uri
+     * The URL/data URL of an image to be used as a background of a card. Acceptable formats are
+     * PNG, JPEG, and GIF Required Format: uri
      */
     public String url;
-    public BackgroundImage url(String url)
-    {
+
+    public BackgroundImage url(String url) {
         this.url = url;
         return this;
     }
 
     /**
-     * Describes how the image should fill the area
-     * Enum: cover, repeatHorizontally, repeatVertically, repeat
+     * Describes how the image should fill the area Enum: cover, repeatHorizontally,
+     * repeatVertically, repeat
      */
     public String fillMode;
-    public BackgroundImage fillMode(String fillMode)
-    {
+
+    public BackgroundImage fillMode(String fillMode) {
         this.fillMode = fillMode;
         return this;
     }
@@ -45,8 +37,8 @@ public class BackgroundImage
      * Enum: left, center, right
      */
     public String horizontalAlignment;
-    public BackgroundImage horizontalAlignment(String horizontalAlignment)
-    {
+
+    public BackgroundImage horizontalAlignment(String horizontalAlignment) {
         this.horizontalAlignment = horizontalAlignment;
         return this;
     }
@@ -56,8 +48,8 @@ public class BackgroundImage
      * Enum: top, center, bottom
      */
     public String verticalAlignment;
-    public BackgroundImage verticalAlignment(String verticalAlignment)
-    {
+
+    public BackgroundImage verticalAlignment(String verticalAlignment) {
         this.verticalAlignment = verticalAlignment;
         return this;
     }

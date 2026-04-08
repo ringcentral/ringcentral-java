@@ -1,43 +1,34 @@
 package com.ringcentral.definitions;
 
-
-public class CreateNetworkRequest
-{
-    /**
-     * Required
-     */
+public class CreateNetworkRequest {
+    /** Required */
     public String name;
-    public CreateNetworkRequest name(String name)
-    {
+
+    public CreateNetworkRequest name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     */
+    /** */
     public AutomaticLocationUpdatesSiteInfo site;
-    public CreateNetworkRequest site(AutomaticLocationUpdatesSiteInfo site)
-    {
+
+    public CreateNetworkRequest site(AutomaticLocationUpdatesSiteInfo site) {
         this.site = site;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public PublicIpRangeInfo[] publicIpRanges;
-    public CreateNetworkRequest publicIpRanges(PublicIpRangeInfo[] publicIpRanges)
-    {
+
+    public CreateNetworkRequest publicIpRanges(PublicIpRangeInfo[] publicIpRanges) {
         this.publicIpRanges = publicIpRanges;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public PrivateIpRangeInfoRequest[] privateIpRanges;
-    public CreateNetworkRequest privateIpRanges(PrivateIpRangeInfoRequest[] privateIpRanges)
-    {
+
+    public CreateNetworkRequest privateIpRanges(PrivateIpRangeInfoRequest[] privateIpRanges) {
         this.privateIpRanges = privateIpRanges;
         return this;
     }

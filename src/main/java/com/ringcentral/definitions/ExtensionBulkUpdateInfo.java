@@ -1,161 +1,134 @@
 package com.ringcentral.definitions;
 
-
-public class ExtensionBulkUpdateInfo
-{
-    /**
-     * Internal identifier of an extension
-     */
+public class ExtensionBulkUpdateInfo {
+    /** Internal identifier of an extension */
     public String id;
-    public ExtensionBulkUpdateInfo id(String id)
-    {
+
+    public ExtensionBulkUpdateInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Extension status
-     * Enum: Enabled, Disabled, Frozen, NotActivated
-     */
+    /** Extension status Enum: Enabled, Disabled, Frozen, NotActivated */
     public String status;
-    public ExtensionBulkUpdateInfo status(String status)
-    {
+
+    public ExtensionBulkUpdateInfo status(String status) {
         this.status = status;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ExtensionStatusInfo statusInfo;
-    public ExtensionBulkUpdateInfo statusInfo(ExtensionStatusInfo statusInfo)
-    {
+
+    public ExtensionBulkUpdateInfo statusInfo(ExtensionStatusInfo statusInfo) {
         this.statusInfo = statusInfo;
         return this;
     }
 
-    /**
-     * Type of suspension
-     */
+    /** Type of suspension */
     public String reason;
-    public ExtensionBulkUpdateInfo reason(String reason)
-    {
+
+    public ExtensionBulkUpdateInfo reason(String reason) {
         this.reason = reason;
         return this;
     }
 
-    /**
-     * Free form user comment
-     */
+    /** Free form user comment */
     public String comment;
-    public ExtensionBulkUpdateInfo comment(String comment)
-    {
+
+    public ExtensionBulkUpdateInfo comment(String comment) {
         this.comment = comment;
         return this;
     }
 
-    /**
-     * Extension number available
-     */
+    /** Extension number available */
     public String extensionNumber;
-    public ExtensionBulkUpdateInfo extensionNumber(String extensionNumber)
-    {
+
+    public ExtensionBulkUpdateInfo extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ContactInfoUpdateRequest contact;
-    public ExtensionBulkUpdateInfo contact(ContactInfoUpdateRequest contact)
-    {
+
+    public ExtensionBulkUpdateInfo contact(ContactInfoUpdateRequest contact) {
         this.contact = contact;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ExtensionRegionalSettingRequest regionalSettings;
-    public ExtensionBulkUpdateInfo regionalSettings(ExtensionRegionalSettingRequest regionalSettings)
-    {
+
+    public ExtensionBulkUpdateInfo regionalSettings(
+            ExtensionRegionalSettingRequest regionalSettings) {
         this.regionalSettings = regionalSettings;
         return this;
     }
 
     /**
-     * Initial configuration wizard state
-     * Default: NotStarted
-     * Enum: NotStarted, Incomplete, Completed
+     * Initial configuration wizard state Default: NotStarted Enum: NotStarted, Incomplete,
+     * Completed
      */
     public String setupWizardState;
-    public ExtensionBulkUpdateInfo setupWizardState(String setupWizardState)
-    {
+
+    public ExtensionBulkUpdateInfo setupWizardState(String setupWizardState) {
         this.setupWizardState = setupWizardState;
         return this;
     }
 
-    /**
-     * Additional extension identifier created by partner application
-    * and applied on client side
-     */
+    /** Additional extension identifier created by partner application and applied on client side */
     public String partnerId;
-    public ExtensionBulkUpdateInfo partnerId(String partnerId)
-    {
+
+    public ExtensionBulkUpdateInfo partnerId(String partnerId) {
         this.partnerId = partnerId;
         return this;
     }
 
-    /**
-     * IVR PIN
-     */
+    /** IVR PIN */
     public String ivrPin;
-    public ExtensionBulkUpdateInfo ivrPin(String ivrPin)
-    {
+
+    public ExtensionBulkUpdateInfo ivrPin(String ivrPin) {
         this.ivrPin = ivrPin;
         return this;
     }
 
-    /**
-     * Password for extension
-     */
+    /** Password for extension */
     public String password;
-    public ExtensionBulkUpdateInfo password(String password)
-    {
+
+    public ExtensionBulkUpdateInfo password(String password) {
         this.password = password;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CallQueueInfoRequest callQueueInfo;
-    public ExtensionBulkUpdateInfo callQueueInfo(CallQueueInfoRequest callQueueInfo)
-    {
+
+    public ExtensionBulkUpdateInfo callQueueInfo(CallQueueInfoRequest callQueueInfo) {
         this.callQueueInfo = callQueueInfo;
         return this;
     }
 
-    /**
-     */
+    /** */
     public UserTransitionInfo transition;
-    public ExtensionBulkUpdateInfo transition(UserTransitionInfo transition)
-    {
+
+    public ExtensionBulkUpdateInfo transition(UserTransitionInfo transition) {
         this.transition = transition;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CostCenterInfo costCenter;
-    public ExtensionBulkUpdateInfo costCenter(CostCenterInfo costCenter)
-    {
+
+    public ExtensionBulkUpdateInfo costCenter(CostCenterInfo costCenter) {
         this.costCenter = costCenter;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CustomFieldInfo[] customFields;
-    public ExtensionBulkUpdateInfo customFields(CustomFieldInfo[] customFields)
-    {
+
+    public ExtensionBulkUpdateInfo customFields(CustomFieldInfo[] customFields) {
         this.customFields = customFields;
         return this;
     }
@@ -164,40 +137,37 @@ public class ExtensionBulkUpdateInfo
      * Hides extension from showing in company directory. Supported for extensions of User type only
      */
     public Boolean hidden;
-    public ExtensionBulkUpdateInfo hidden(Boolean hidden)
-    {
+
+    public ExtensionBulkUpdateInfo hidden(Boolean hidden) {
         this.hidden = hidden;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ProvisioningSiteInfo site;
-    public ExtensionBulkUpdateInfo site(ProvisioningSiteInfo site)
-    {
+
+    public ExtensionBulkUpdateInfo site(ProvisioningSiteInfo site) {
         this.site = site;
         return this;
     }
 
     /**
-     * Extension type. Please note that legacy &#039;Department&#039; extension
-    * type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral
-    * product terminology
-     * Enum: User, FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, DelegatedLinesGroup
+     * Extension type. Please note that legacy &#039;Department&#039; extension type corresponds to
+     * &#039;Call Queue&#039; extensions in modern RingCentral product terminology Enum: User,
+     * FaxUser, VirtualUser, DigitalUser, Department, Announcement, Voicemail, SharedLinesGroup,
+     * PagingOnly, IvrMenu, ApplicationExtension, ParkLocation, DelegatedLinesGroup
      */
     public String type;
-    public ExtensionBulkUpdateInfo type(String type)
-    {
+
+    public ExtensionBulkUpdateInfo type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * List of non-RC internal identifiers assigned to an extension
-     */
+    /** List of non-RC internal identifiers assigned to an extension */
     public ReferenceInfo[] references;
-    public ExtensionBulkUpdateInfo references(ReferenceInfo[] references)
-    {
+
+    public ExtensionBulkUpdateInfo references(ReferenceInfo[] references) {
         this.references = references;
         return this;
     }

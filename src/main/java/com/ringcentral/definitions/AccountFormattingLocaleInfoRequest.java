@@ -1,26 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class AccountFormattingLocaleInfoRequest
-{
-    /**
-     * Internal identifier of a formatting language
-     * Required
-     */
+public class AccountFormattingLocaleInfoRequest {
+    /** Internal identifier of a formatting language Required */
     public String id;
-    public AccountFormattingLocaleInfoRequest id(String id)
-    {
+
+    public AccountFormattingLocaleInfoRequest id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Localization code of a formatting language
-     * Required
-     */
+    /** Localization code of a formatting language Required */
     public String localeCode;
-    public AccountFormattingLocaleInfoRequest localeCode(String localeCode)
-    {
+
+    public AccountFormattingLocaleInfoRequest localeCode(String localeCode) {
         this.localeCode = localeCode;
         return this;
     }

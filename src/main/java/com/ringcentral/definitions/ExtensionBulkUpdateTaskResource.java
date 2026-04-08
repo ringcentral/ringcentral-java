@@ -1,76 +1,51 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Information on a task for updating multiple extensions
-* 
-*/
-public class ExtensionBulkUpdateTaskResource
-{
-    /**
-     * Link to a task resource
-     * Required
-     * Format: uri
-     */
+/** Information on a task for updating multiple extensions */
+public class ExtensionBulkUpdateTaskResource {
+    /** Link to a task resource Required Format: uri */
     public String uri;
-    public ExtensionBulkUpdateTaskResource uri(String uri)
-    {
+
+    public ExtensionBulkUpdateTaskResource uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Internal identifier of a task
-     * Required
-     */
+    /** Internal identifier of a task Required */
     public String id;
-    public ExtensionBulkUpdateTaskResource id(String id)
-    {
+
+    public ExtensionBulkUpdateTaskResource id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Task status
-     * Required
-     * Enum: Accepted, InProgress, Completed, Failed
-     */
+    /** Task status Required Enum: Accepted, InProgress, Completed, Failed */
     public String status;
-    public ExtensionBulkUpdateTaskResource status(String status)
-    {
+
+    public ExtensionBulkUpdateTaskResource status(String status) {
         this.status = status;
         return this;
     }
 
-    /**
-     * Task creation date/time
-     * Required
-     * Format: date-time
-     */
+    /** Task creation date/time Required Format: date-time */
     public String creationTime;
-    public ExtensionBulkUpdateTaskResource creationTime(String creationTime)
-    {
+
+    public ExtensionBulkUpdateTaskResource creationTime(String creationTime) {
         this.creationTime = creationTime;
         return this;
     }
 
-    /**
-     * Task latest update date/time
-     * Required
-     * Format: date-time
-     */
+    /** Task latest update date/time Required Format: date-time */
     public String lastModifiedTime;
-    public ExtensionBulkUpdateTaskResource lastModifiedTime(String lastModifiedTime)
-    {
+
+    public ExtensionBulkUpdateTaskResource lastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ExtensionBulkUpdateTaskResult result;
-    public ExtensionBulkUpdateTaskResource result(ExtensionBulkUpdateTaskResult result)
-    {
+
+    public ExtensionBulkUpdateTaskResource result(ExtensionBulkUpdateTaskResult result) {
         this.result = result;
         return this;
     }

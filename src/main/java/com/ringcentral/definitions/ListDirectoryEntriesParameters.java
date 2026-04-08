@@ -1,88 +1,75 @@
 package com.ringcentral.definitions;
 
-
+/** Query parameters for operation listDirectoryEntries */
+public class ListDirectoryEntriesParameters {
     /**
-* Query parameters for operation listDirectoryEntries
-*/
-public class ListDirectoryEntriesParameters
-{
-    /**
-     * Allows to make lookups across a whole directory skipping a filtering logic of Cross-Site access management feature.
-     * Default: true
+     * Allows to make lookups across a whole directory skipping a filtering logic of Cross-Site
+     * access management feature. Default: true
      */
     public Boolean accessibleSitesOnly;
-    public ListDirectoryEntriesParameters accessibleSitesOnly(Boolean accessibleSitesOnly)
-    {
+
+    public ListDirectoryEntriesParameters accessibleSitesOnly(Boolean accessibleSitesOnly) {
         this.accessibleSitesOnly = accessibleSitesOnly;
         return this;
     }
 
     /**
-     * If `true` then contacts of all accounts in federation are returned. If `false` then only contacts of the current account are returned, and account section is eliminated in this case
+     * If `true` then contacts of all accounts in federation are returned. If `false` then only
+     * contacts of the current account are returned, and account section is eliminated in this case
      * Default: true
      */
     public Boolean showFederated;
-    public ListDirectoryEntriesParameters showFederated(Boolean showFederated)
-    {
+
+    public ListDirectoryEntriesParameters showFederated(Boolean showFederated) {
         this.showFederated = showFederated;
         return this;
     }
 
     /**
-     * Type of an extension. Please note that legacy &#039;Department&#039; extension type corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
-     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu, ParkLocation, Limited, External, DelegatedLinesGroup, TieLine
+     * Type of an extension. Please note that legacy &#039;Department&#039; extension type
+     * corresponds to &#039;Call Queue&#039; extensions in modern RingCentral product terminology
+     * Enum: User, Department, Announcement, Voicemail, SharedLinesGroup, PagingOnly, IvrMenu,
+     * ParkLocation, Limited, External, DelegatedLinesGroup, TieLine
      */
     public String type;
-    public ListDirectoryEntriesParameters type(String type)
-    {
+
+    public ListDirectoryEntriesParameters type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * Type of extension group
-     * Enum: User, NonUser
-     */
+    /** Type of extension group Enum: User, NonUser */
     public String typeGroup;
-    public ListDirectoryEntriesParameters typeGroup(String typeGroup)
-    {
+
+    public ListDirectoryEntriesParameters typeGroup(String typeGroup) {
         this.typeGroup = typeGroup;
         return this;
     }
 
-    /**
-     * Page number
-     * Format: int32
-     * Default: 1
-     */
+    /** Page number Format: int32 Default: 1 */
     public Long page;
-    public ListDirectoryEntriesParameters page(Long page)
-    {
+
+    public ListDirectoryEntriesParameters page(Long page) {
         this.page = page;
         return this;
     }
 
     /**
-     * Records count to be returned per one page. It can be either integer or string with the specific keyword values:
-    * - `all` - all records are returned in one page
-    * - `max` - maximum count of records that can be returned in one page
-     * Maximum: 2000
-     * Format: int32
-     * Default: 1000
+     * Records count to be returned per one page. It can be either integer or string with the
+     * specific keyword values: - `all` - all records are returned in one page - `max` - maximum
+     * count of records that can be returned in one page Maximum: 2000 Format: int32 Default: 1000
      */
     public Long perPage;
-    public ListDirectoryEntriesParameters perPage(Long perPage)
-    {
+
+    public ListDirectoryEntriesParameters perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }
 
-    /**
-     * Internal identifier of the business site to which extensions belong
-     */
+    /** Internal identifier of the business site to which extensions belong */
     public String siteId;
-    public ListDirectoryEntriesParameters siteId(String siteId)
-    {
+
+    public ListDirectoryEntriesParameters siteId(String siteId) {
         this.siteId = siteId;
         return this;
     }

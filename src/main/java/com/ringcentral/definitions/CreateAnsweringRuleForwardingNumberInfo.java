@@ -1,56 +1,45 @@
 package com.ringcentral.definitions;
 
-
-public class CreateAnsweringRuleForwardingNumberInfo
-{
-    /**
-     * Internal identifier of a forwarding number
-     */
+public class CreateAnsweringRuleForwardingNumberInfo {
+    /** Internal identifier of a forwarding number */
     public String id;
-    public CreateAnsweringRuleForwardingNumberInfo id(String id)
-    {
+
+    public CreateAnsweringRuleForwardingNumberInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Canonical URI of a forwarding/call flip phone number
-     * Format: uri
-     */
+    /** Canonical URI of a forwarding/call flip phone number Format: uri */
     public String uri;
-    public CreateAnsweringRuleForwardingNumberInfo uri(String uri)
-    {
+
+    public CreateAnsweringRuleForwardingNumberInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Forwarding/Call flip phone number
-     */
+    /** Forwarding/Call flip phone number */
     public String phoneNumber;
-    public CreateAnsweringRuleForwardingNumberInfo phoneNumber(String phoneNumber)
-    {
+
+    public CreateAnsweringRuleForwardingNumberInfo phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
 
-    /**
-     * Forwarding/Call flip number title
-     */
+    /** Forwarding/Call flip number title */
     public String label;
-    public CreateAnsweringRuleForwardingNumberInfo label(String label)
-    {
+
+    public CreateAnsweringRuleForwardingNumberInfo label(String label) {
         this.label = label;
         return this;
     }
 
     /**
-     * Type of forwarding number
-     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier, ExtensionApps
+     * Type of forwarding number Enum: Home, Mobile, Work, PhoneLine, Outage, Other,
+     * BusinessMobilePhone, ExternalCarrier, ExtensionApps
      */
     public String type;
-    public CreateAnsweringRuleForwardingNumberInfo type(String type)
-    {
+
+    public CreateAnsweringRuleForwardingNumberInfo type(String type) {
         this.type = type;
         return this;
     }

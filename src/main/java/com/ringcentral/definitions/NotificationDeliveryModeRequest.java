@@ -1,42 +1,37 @@
 package com.ringcentral.definitions;
 
-
+/** Notification delivery transport information */
+public class NotificationDeliveryModeRequest {
     /**
-* Notification delivery transport information
-*/
-public class NotificationDeliveryModeRequest
-{
-    /**
-     * The transport type for this subscription, or the channel by which an app should be notified of an event
-     * Required
-     * Enum: WebHook
+     * The transport type for this subscription, or the channel by which an app should be notified
+     * of an event Required Enum: WebHook
      */
     public String transportType;
-    public NotificationDeliveryModeRequest transportType(String transportType)
-    {
+
+    public NotificationDeliveryModeRequest transportType(String transportType) {
         this.transportType = transportType;
         return this;
     }
 
     /**
-     * The URL to which notifications should be delivered. This is only applicable for the `WebHook` transport type, for which it is a required field.
-     * Required
-     * Format: uri
-     * Example: https://acme.com/myservice/webhook
+     * The URL to which notifications should be delivered. This is only applicable for the `WebHook`
+     * transport type, for which it is a required field. Required Format: uri Example:
+     * https://acme.com/myservice/webhook
      */
     public String address;
-    public NotificationDeliveryModeRequest address(String address)
-    {
+
+    public NotificationDeliveryModeRequest address(String address) {
         this.address = address;
         return this;
     }
 
     /**
-     * An optional validation token used to verify the authenticity of the incoming webhook. Applicable only for the `WebHook` transport type.
+     * An optional validation token used to verify the authenticity of the incoming webhook.
+     * Applicable only for the `WebHook` transport type.
      */
     public String verificationToken;
-    public NotificationDeliveryModeRequest verificationToken(String verificationToken)
-    {
+
+    public NotificationDeliveryModeRequest verificationToken(String verificationToken) {
         this.verificationToken = verificationToken;
         return this;
     }

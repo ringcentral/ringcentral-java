@@ -1,41 +1,27 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Linked message (Fax/Voicemail)
-*/
-public class CallLogRecordMessage
-{
-    /**
-     * Internal identifier of a message
-     * Required
-     */
+/** Linked message (Fax/Voicemail) */
+public class CallLogRecordMessage {
+    /** Internal identifier of a message Required */
     public String id;
-    public CallLogRecordMessage id(String id)
-    {
+
+    public CallLogRecordMessage id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Type of message
-     * Required
-     */
+    /** Type of message Required */
     public String type;
-    public CallLogRecordMessage type(String type)
-    {
+
+    public CallLogRecordMessage type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * Link to a message resource
-     * Required
-     * Format: uri
-     */
+    /** Link to a message resource Required Format: uri */
     public String uri;
-    public CallLogRecordMessage uri(String uri)
-    {
+
+    public CallLogRecordMessage uri(String uri) {
         this.uri = uri;
         return this;
     }

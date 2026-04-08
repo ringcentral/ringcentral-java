@@ -1,65 +1,56 @@
 package com.ringcentral.definitions;
 
-
-public class CreateWirelessPoint
-{
+public class CreateWirelessPoint {
     /**
-     * Unique 48-bit identifier of wireless access point that follows MAC address conventions.  Mask: XX:XX:XX:XX:XX:XX, where X can be a symbol in the range of 0-9 or A-F
-     * Required
+     * Unique 48-bit identifier of wireless access point that follows MAC address conventions. Mask:
+     * XX:XX:XX:XX:XX:XX, where X can be a symbol in the range of 0-9 or A-F Required
      */
     public String bssid;
-    public CreateWirelessPoint bssid(String bssid)
-    {
+
+    public CreateWirelessPoint bssid(String bssid) {
         this.bssid = bssid;
         return this;
     }
 
-    /**
-     * Wireless access point name
-     * Required
-     */
+    /** Wireless access point name Required */
     public String name;
-    public CreateWirelessPoint name(String name)
-    {
+
+    public CreateWirelessPoint name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     */
+    /** */
     public EmergencyAddressAutoUpdateSiteInfo site;
-    public CreateWirelessPoint site(EmergencyAddressAutoUpdateSiteInfo site)
-    {
+
+    public CreateWirelessPoint site(EmergencyAddressAutoUpdateSiteInfo site) {
         this.site = site;
         return this;
     }
 
-    /**
-     */
+    /** */
     public EmergencyAddressInfo emergencyAddress;
-    public CreateWirelessPoint emergencyAddress(EmergencyAddressInfo emergencyAddress)
-    {
+
+    public CreateWirelessPoint emergencyAddress(EmergencyAddressInfo emergencyAddress) {
         this.emergencyAddress = emergencyAddress;
         return this;
     }
 
-    /**
-     */
+    /** */
     public EmergencyLocationInfo emergencyLocation;
-    public CreateWirelessPoint emergencyLocation(EmergencyLocationInfo emergencyLocation)
-    {
+
+    public CreateWirelessPoint emergencyLocation(EmergencyLocationInfo emergencyLocation) {
         this.emergencyLocation = emergencyLocation;
         return this;
     }
 
     /**
-     * Emergency response location (address) internal identifier. 
-    * Only one of a pair `emergencyAddress` or `emergencyLocationId`
-    * can be specified, otherwise the error is returned
+     * Emergency response location (address) internal identifier. Only one of a pair
+     * `emergencyAddress` or `emergencyLocationId` can be specified, otherwise the error is returned
      */
     public String emergencyLocationId;
-    public CreateWirelessPoint emergencyLocationId(String emergencyLocationId)
-    {
+
+    public CreateWirelessPoint emergencyLocationId(String emergencyLocationId) {
         this.emergencyLocationId = emergencyLocationId;
         return this;
     }

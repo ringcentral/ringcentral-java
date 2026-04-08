@@ -1,69 +1,50 @@
 package com.ringcentral.definitions;
 
-
-public class DeviceDefinitionPhoneInfo
-{
-    /**
-     * Indicates if a number is toll or toll-free
-     * Example: Toll
-     * Enum: Toll, TollFree
-     */
+public class DeviceDefinitionPhoneInfo {
+    /** Indicates if a number is toll or toll-free Example: Toll Enum: Toll, TollFree */
     public String tollType;
-    public DeviceDefinitionPhoneInfo tollType(String tollType)
-    {
+
+    public DeviceDefinitionPhoneInfo tollType(String tollType) {
         this.tollType = tollType;
         return this;
     }
 
-    /**
-     * Type of a phone number
-     * Enum: VoiceFax, VoiceOnly, FaxOnly
-     */
+    /** Type of a phone number Enum: VoiceFax, VoiceOnly, FaxOnly */
     public String type;
-    public DeviceDefinitionPhoneInfo type(String type)
-    {
+
+    public DeviceDefinitionPhoneInfo type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * Preferred area code to use if the numbers are available
-     * Example: 650
-     */
+    /** Preferred area code to use if the numbers are available Example: 650 */
     public String preferredAreaCode;
-    public DeviceDefinitionPhoneInfo preferredAreaCode(String preferredAreaCode)
-    {
+
+    public DeviceDefinitionPhoneInfo preferredAreaCode(String preferredAreaCode) {
         this.preferredAreaCode = preferredAreaCode;
         return this;
     }
 
-    /**
-     * Phone number in e.164 format (with &#039;+&#039; prefix)
-     * Example: +16501234567
-     */
+    /** Phone number in e.164 format (with &#039;+&#039; prefix) Example: +16501234567 */
     public String phoneNumber;
-    public DeviceDefinitionPhoneInfo phoneNumber(String phoneNumber)
-    {
+
+    public DeviceDefinitionPhoneInfo phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
 
-    /**
-     * Phone number reservation ID. If provided, phoneNumber is also required
-     */
+    /** Phone number reservation ID. If provided, phoneNumber is also required */
     public String reservationId;
-    public DeviceDefinitionPhoneInfo reservationId(String reservationId)
-    {
+
+    public DeviceDefinitionPhoneInfo reservationId(String reservationId) {
         this.reservationId = reservationId;
         return this;
     }
 
-    /**
-     * Phone number identifier
-     */
+    /** Phone number identifier */
     public String phoneNumberId;
-    public DeviceDefinitionPhoneInfo phoneNumberId(String phoneNumberId)
-    {
+
+    public DeviceDefinitionPhoneInfo phoneNumberId(String phoneNumberId) {
         this.phoneNumberId = phoneNumberId;
         return this;
     }

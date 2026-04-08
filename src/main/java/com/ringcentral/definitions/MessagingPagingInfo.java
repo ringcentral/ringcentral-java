@@ -1,81 +1,70 @@
 package com.ringcentral.definitions;
 
-
+/** Information on paging */
+public class MessagingPagingInfo {
     /**
-* Information on paging
-*/
-public class MessagingPagingInfo
-{
-    /**
-     * Current page number. 1-indexed, so the first page is 1
-    * by default. May be omitted if result is empty (because non-existent page
-    * was specified or perPage=0 was requested)
-     * Format: int32
+     * Current page number. 1-indexed, so the first page is 1 by default. May be omitted if result
+     * is empty (because non-existent page was specified or perPage=0 was requested) Format: int32
      */
     public Long page;
-    public MessagingPagingInfo page(Long page)
-    {
+
+    public MessagingPagingInfo page(Long page) {
         this.page = page;
         return this;
     }
 
     /**
-     * Current page size, describes how many items are in each page.
-    * Default value is 100. Maximum value is 1000. If perPage value in the request
-    * is greater than 1000, the maximum value (1000) is applied
-     * Format: int32
+     * Current page size, describes how many items are in each page. Default value is 100. Maximum
+     * value is 1000. If perPage value in the request is greater than 1000, the maximum value (1000)
+     * is applied Format: int32
      */
     public Long perPage;
-    public MessagingPagingInfo perPage(Long perPage)
-    {
+
+    public MessagingPagingInfo perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }
 
     /**
-     * Zero-based number of the first element on the current page.
-    * Omitted if the page is omitted or result is empty
-     * Format: int32
+     * Zero-based number of the first element on the current page. Omitted if the page is omitted or
+     * result is empty Format: int32
      */
     public Long pageStart;
-    public MessagingPagingInfo pageStart(Long pageStart)
-    {
+
+    public MessagingPagingInfo pageStart(Long pageStart) {
         this.pageStart = pageStart;
         return this;
     }
 
     /**
-     * Zero-based index of the last element on the current page.
-    * Omitted if the page is omitted or result is empty
-     * Format: int32
+     * Zero-based index of the last element on the current page. Omitted if the page is omitted or
+     * result is empty Format: int32
      */
     public Long pageEnd;
-    public MessagingPagingInfo pageEnd(Long pageEnd)
-    {
+
+    public MessagingPagingInfo pageEnd(Long pageEnd) {
         this.pageEnd = pageEnd;
         return this;
     }
 
     /**
-     * Total number of pages in a dataset. May be omitted for
-    * some resources due to performance reasons
-     * Format: int32
+     * Total number of pages in a dataset. May be omitted for some resources due to performance
+     * reasons Format: int32
      */
     public Long totalPages;
-    public MessagingPagingInfo totalPages(Long totalPages)
-    {
+
+    public MessagingPagingInfo totalPages(Long totalPages) {
         this.totalPages = totalPages;
         return this;
     }
 
     /**
-     * Total number of elements in a dataset. May be omitted for
-    * some resource due to performance reasons
-     * Format: int32
+     * Total number of elements in a dataset. May be omitted for some resource due to performance
+     * reasons Format: int32
      */
     public Long totalElements;
-    public MessagingPagingInfo totalElements(Long totalElements)
-    {
+
+    public MessagingPagingInfo totalElements(Long totalElements) {
         this.totalElements = totalElements;
         return this;
     }

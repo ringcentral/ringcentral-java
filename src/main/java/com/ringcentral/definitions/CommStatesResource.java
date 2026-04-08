@@ -1,24 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class CommStatesResource
-{
-    /**
-     * Required
-     */
+public class CommStatesResource {
+    /** Required */
     public CommStateResource[] records;
-    public CommStatesResource records(CommStateResource[] records)
-    {
+
+    public CommStatesResource records(CommStateResource[] records) {
         this.records = records;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public EnumeratedPagingModel paging;
-    public CommStatesResource paging(EnumeratedPagingModel paging)
-    {
+
+    public CommStatesResource paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

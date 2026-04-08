@@ -1,50 +1,35 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Site Fax/SMS recipient (operator) reference. Multi-level IVR should
-* be enabled
-* 
-*/
-public class OperatorInfo
-{
-    /**
-     * Internal identifier of an operator
-     */
+/** Site Fax/SMS recipient (operator) reference. Multi-level IVR should be enabled */
+public class OperatorInfo {
+    /** Internal identifier of an operator */
     public String id;
-    public OperatorInfo id(String id)
-    {
+
+    public OperatorInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Link to an operator resource
-     * Format: uri
-     */
+    /** Link to an operator resource Format: uri */
     public String uri;
-    public OperatorInfo uri(String uri)
-    {
+
+    public OperatorInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Extension number (pin)
-     */
+    /** Extension number (pin) */
     public String extensionNumber;
-    public OperatorInfo extensionNumber(String extensionNumber)
-    {
+
+    public OperatorInfo extensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
         return this;
     }
 
-    /**
-     * Operator extension user full name
-     */
+    /** Operator extension user full name */
     public String name;
-    public OperatorInfo name(String name)
-    {
+
+    public OperatorInfo name(String name) {
         this.name = name;
         return this;
     }

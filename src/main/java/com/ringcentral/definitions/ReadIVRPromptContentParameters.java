@@ -1,28 +1,23 @@
 package com.ringcentral.definitions;
 
-
+/** Query parameters for operation readIVRPromptContent */
+public class ReadIVRPromptContentParameters {
     /**
-* Query parameters for operation readIVRPromptContent
-*/
-public class ReadIVRPromptContentParameters
-{
-    /**
-     * Whether the content is expected to be displayed in the browser, or downloaded and saved locally
-     * Enum: Inline, Attachment
+     * Whether the content is expected to be displayed in the browser, or downloaded and saved
+     * locally Enum: Inline, Attachment
      */
     public String contentDisposition;
-    public ReadIVRPromptContentParameters contentDisposition(String contentDisposition)
-    {
+
+    public ReadIVRPromptContentParameters contentDisposition(String contentDisposition) {
         this.contentDisposition = contentDisposition;
         return this;
     }
 
-    /**
-     * The default filename of the file to be downloaded
-     */
+    /** The default filename of the file to be downloaded */
     public String contentDispositionFilename;
-    public ReadIVRPromptContentParameters contentDispositionFilename(String contentDispositionFilename)
-    {
+
+    public ReadIVRPromptContentParameters contentDispositionFilename(
+            String contentDispositionFilename) {
         this.contentDispositionFilename = contentDispositionFilename;
         return this;
     }

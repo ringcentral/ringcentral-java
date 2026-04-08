@@ -3,34 +3,33 @@ package com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
-public class Index
-{
+public class Index {
     public RestClient rc;
-public com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.Index parent;
-public String sourceRecordId;
-public Index(com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.Index parent, String sourceRecordId)
-      {
-this.parent = parent;
-this.rc = parent.rc;
-this.sourceRecordId = sourceRecordId;
+    public com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.Index parent;
+    public String sourceRecordId;
+
+    public Index(
+            com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.Index parent,
+            String sourceRecordId) {
+        this.parent = parent;
+        this.rc = parent.rc;
+        this.sourceRecordId = sourceRecordId;
     }
-    public String path(Boolean withParameter)
-        {
-            if (withParameter && sourceRecordId != null)
-            {
-                return parent.path() + "/records/" + sourceRecordId;
-            }
-            return parent.path() + "/records";
+
+    public String path(Boolean withParameter) {
+        if (withParameter && sourceRecordId != null) {
+            return parent.path() + "/records/" + sourceRecordId;
         }
-        public String path()
-        {
-          return path(true);
-        }
+        return parent.path() + "/records";
+    }
 
+    public String path() {
+        return path(true);
+    }
 
-    public com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records.insights.Index insights()
-  {
-    return new com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records.insights.Index(this);
-  }
-
+    public com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records.insights.Index
+            insights() {
+        return new com.ringcentral.paths.ai.ringsense.v1.public1.accounts.domains.records.insights
+                .Index(this);
+    }
 }

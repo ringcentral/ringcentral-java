@@ -1,120 +1,93 @@
 package com.ringcentral.definitions;
 
-
-public class SubscriptionInfo
-{
-    /**
-     * Canonical URI of a subscription resource
-     * Required
-     * Format: uri
-     */
+public class SubscriptionInfo {
+    /** Canonical URI of a subscription resource Required Format: uri */
     public String uri;
-    public SubscriptionInfo uri(String uri)
-    {
+
+    public SubscriptionInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
     /**
-     * Internal identifier of a subscription
-     * Required
-     * Example: 95fecfc9-9cdc-4e94-a78a-89fd65889d37
+     * Internal identifier of a subscription Required Example: 95fecfc9-9cdc-4e94-a78a-89fd65889d37
      */
     public String id;
-    public SubscriptionInfo id(String id)
-    {
+
+    public SubscriptionInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * The list of event filter names corresponding to events the user is subscribed to
-     * Required
-     */
+    /** The list of event filter names corresponding to events the user is subscribed to Required */
     public String[] eventFilters;
-    public SubscriptionInfo eventFilters(String[] eventFilters)
-    {
+
+    public SubscriptionInfo eventFilters(String[] eventFilters) {
         this.eventFilters = eventFilters;
         return this;
     }
 
     /**
      * The list of event filter names corresponding to events the user is not subscribed to due to
-    * certain limitations
+     * certain limitations
      */
     public DisabledFilterInfo[] disabledFilters;
-    public SubscriptionInfo disabledFilters(DisabledFilterInfo[] disabledFilters)
-    {
+
+    public SubscriptionInfo disabledFilters(DisabledFilterInfo[] disabledFilters) {
         this.disabledFilters = disabledFilters;
         return this;
     }
 
     /**
-     * Subscription expiration time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-    * format including timezone, for example *2016-03-10T18:07:52.534Z*
-     * Required
-     * Format: date-time
+     * Subscription expiration time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
+     * including timezone, for example *2016-03-10T18:07:52.534Z* Required Format: date-time
      */
     public String expirationTime;
-    public SubscriptionInfo expirationTime(String expirationTime)
-    {
+
+    public SubscriptionInfo expirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
         return this;
     }
 
-    /**
-     * Subscription lifetime in seconds
-     * Minimum: 1
-     * Format: int32
-     */
+    /** Subscription lifetime in seconds Minimum: 1 Format: int32 */
     public Long expiresIn;
-    public SubscriptionInfo expiresIn(Long expiresIn)
-    {
+
+    public SubscriptionInfo expiresIn(Long expiresIn) {
         this.expiresIn = expiresIn;
         return this;
     }
 
-    /**
-     * Subscription status
-     * Required
-     * Enum: Active, Blacklisted
-     */
+    /** Subscription status Required Enum: Active, Blacklisted */
     public String status;
-    public SubscriptionInfo status(String status)
-    {
+
+    public SubscriptionInfo status(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * Subscription creation time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-    * format including timezone, for example *2016-03-10T18:07:52.534*
-     * Required
-     * Format: date-time
+     * Subscription creation time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
+     * including timezone, for example *2016-03-10T18:07:52.534* Required Format: date-time
      */
     public String creationTime;
-    public SubscriptionInfo creationTime(String creationTime)
-    {
+
+    public SubscriptionInfo creationTime(String creationTime) {
         this.creationTime = creationTime;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public NotificationDeliveryMode deliveryMode;
-    public SubscriptionInfo deliveryMode(NotificationDeliveryMode deliveryMode)
-    {
+
+    public SubscriptionInfo deliveryMode(NotificationDeliveryMode deliveryMode) {
         this.deliveryMode = deliveryMode;
         return this;
     }
 
-    /**
-     * Returned if a WebHook subscription is blacklisted
-     */
+    /** Returned if a WebHook subscription is blacklisted */
     public SubscriptionInfoBlacklistedData blacklistedData;
-    public SubscriptionInfo blacklistedData(SubscriptionInfoBlacklistedData blacklistedData)
-    {
+
+    public SubscriptionInfo blacklistedData(SubscriptionInfoBlacklistedData blacklistedData) {
         this.blacklistedData = blacklistedData;
         return this;
     }

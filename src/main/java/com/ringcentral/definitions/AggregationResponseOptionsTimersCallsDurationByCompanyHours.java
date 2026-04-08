@@ -1,15 +1,14 @@
 package com.ringcentral.definitions;
 
-
-public class AggregationResponseOptionsTimersCallsDurationByCompanyHours
-{
+public class AggregationResponseOptionsTimersCallsDurationByCompanyHours {
     /**
-     * Counter aggregation type. Can be `Sum`, `Average`, `Min`, `Max` or `Percent`
-     * Enum: Sum, Average, Max, Min, Percent
+     * Counter aggregation type. Can be `Sum`, `Average`, `Min`, `Max` or `Percent` Enum: Sum,
+     * Average, Max, Min, Percent
      */
     public String aggregationType;
-    public AggregationResponseOptionsTimersCallsDurationByCompanyHours aggregationType(String aggregationType)
-    {
+
+    public AggregationResponseOptionsTimersCallsDurationByCompanyHours aggregationType(
+            String aggregationType) {
         this.aggregationType = aggregationType;
         return this;
     }
@@ -19,8 +18,9 @@ public class AggregationResponseOptionsTimersCallsDurationByCompanyHours
      * Enum: Hour, Day, Week, Month
      */
     public String aggregationInterval;
-    public AggregationResponseOptionsTimersCallsDurationByCompanyHours aggregationInterval(String aggregationInterval)
-    {
+
+    public AggregationResponseOptionsTimersCallsDurationByCompanyHours aggregationInterval(
+            String aggregationInterval) {
         this.aggregationInterval = aggregationInterval;
         return this;
     }

@@ -3,39 +3,32 @@ package com.ringcentral.paths.restapi.v2;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
-public class Index
-{
+public class Index {
     public RestClient rc;
-public com.ringcentral.paths.restapi.Index parent;
-public Index(com.ringcentral.paths.restapi.Index parent)
-      {
-this.parent = parent;
-this.rc = parent.rc;
+    public com.ringcentral.paths.restapi.Index parent;
+
+    public Index(com.ringcentral.paths.restapi.Index parent) {
+        this.parent = parent;
+        this.rc = parent.rc;
     }
-    public String path()
-        {
-            return parent.path(false) + "/v2";
-        }
-        public String path(Boolean withParameter)
-        {
-            return path();
-        }
-        
 
-
-  public com.ringcentral.paths.restapi.v2.accounts.Index accounts()
-    {
-      return this.accounts("~");
+    public String path() {
+        return parent.path(false) + "/v2";
     }
-  public com.ringcentral.paths.restapi.v2.accounts.Index accounts(String accountId)
-  {
-    return new com.ringcentral.paths.restapi.v2.accounts.Index(this, accountId);
-  }
 
+    public String path(Boolean withParameter) {
+        return path();
+    }
 
-    public com.ringcentral.paths.restapi.v2.numberparser.Index numberParser()
-  {
-    return new com.ringcentral.paths.restapi.v2.numberparser.Index(this);
-  }
+    public com.ringcentral.paths.restapi.v2.accounts.Index accounts() {
+        return this.accounts("~");
+    }
 
+    public com.ringcentral.paths.restapi.v2.accounts.Index accounts(String accountId) {
+        return new com.ringcentral.paths.restapi.v2.accounts.Index(this, accountId);
+    }
+
+    public com.ringcentral.paths.restapi.v2.numberparser.Index numberParser() {
+        return new com.ringcentral.paths.restapi.v2.numberparser.Index(this);
+    }
 }

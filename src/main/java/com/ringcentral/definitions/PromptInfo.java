@@ -1,56 +1,42 @@
 package com.ringcentral.definitions;
 
-
-public class PromptInfo
-{
-    /**
-     * Internal identifier of a prompt
-     * Format: uri
-     */
+public class PromptInfo {
+    /** Internal identifier of a prompt Format: uri */
     public String uri;
-    public PromptInfo uri(String uri)
-    {
+
+    public PromptInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Link to a prompt metadata
-     */
+    /** Link to a prompt metadata */
     public String id;
-    public PromptInfo id(String id)
-    {
+
+    public PromptInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Type of prompt media content
-     */
+    /** Type of prompt media content */
     public String contentType;
-    public PromptInfo contentType(String contentType)
-    {
+
+    public PromptInfo contentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
 
-    /**
-     * Link to a prompt media content
-     * Format: uri
-     */
+    /** Link to a prompt media content Format: uri */
     public String contentUri;
-    public PromptInfo contentUri(String contentUri)
-    {
+
+    public PromptInfo contentUri(String contentUri) {
         this.contentUri = contentUri;
         return this;
     }
 
-    /**
-     * Name of a prompt
-     */
+    /** Name of a prompt */
     public String filename;
-    public PromptInfo filename(String filename)
-    {
+
+    public PromptInfo filename(String filename) {
         this.filename = filename;
         return this;
     }

@@ -1,31 +1,22 @@
 package com.ringcentral.definitions;
 
-
+/** Generalized API error structure suitable for any error type */
+public class ApiError {
     /**
-* Generalized API error structure suitable for any error type
-*/
-public class ApiError
-{
-    /**
-     * Logical error code (typically, 3 letters followed with number, dash separated)
-     * Required
+     * Logical error code (typically, 3 letters followed with number, dash separated) Required
      * Example: XXX-123
      */
     public String errorCode;
-    public ApiError errorCode(String errorCode)
-    {
+
+    public ApiError errorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    /**
-     * User-friendly error message
-     * Required
-     * Example: Something went wrong
-     */
+    /** User-friendly error message Required Example: Something went wrong */
     public String message;
-    public ApiError message(String message)
-    {
+
+    public ApiError message(String message) {
         this.message = message;
         return this;
     }

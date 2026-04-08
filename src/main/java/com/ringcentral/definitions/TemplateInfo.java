@@ -1,77 +1,61 @@
 package com.ringcentral.definitions;
 
-
-public class TemplateInfo
-{
-    /**
-     * Link to a template
-     * Format: uri
-     */
+public class TemplateInfo {
+    /** Link to a template Format: uri */
     public String uri;
-    public TemplateInfo uri(String uri)
-    {
+
+    public TemplateInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Internal identifier of a template
-     */
+    /** Internal identifier of a template */
     public String id;
-    public TemplateInfo id(String id)
-    {
+
+    public TemplateInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Description of a template
-     */
+    /** Description of a template */
     public String description;
-    public TemplateInfo description(String description)
-    {
+
+    public TemplateInfo description(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * Enum: CallHandling, CallQueueCallHandling, CallQueueSettings, KeyTemplates, LimitedExtensions, SiteCallHandling, UserSettings
+     * Enum: CallHandling, CallQueueCallHandling, CallQueueSettings, KeyTemplates,
+     * LimitedExtensions, SiteCallHandling, UserSettings
      */
     public String type;
-    public TemplateInfo type(String type)
-    {
+
+    public TemplateInfo type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * Name of a template
-     */
+    /** Name of a template */
     public String name;
-    public TemplateInfo name(String name)
-    {
+
+    public TemplateInfo name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     * Time of a template creation
-     * Format: date-time
-     */
+    /** Time of a template creation Format: date-time */
     public String creationTime;
-    public TemplateInfo creationTime(String creationTime)
-    {
+
+    public TemplateInfo creationTime(String creationTime) {
         this.creationTime = creationTime;
         return this;
     }
 
-    /**
-     * Time of the last template modification
-     * Format: date-time
-     */
+    /** Time of the last template modification Format: date-time */
     public String lastModifiedTime;
-    public TemplateInfo lastModifiedTime(String lastModifiedTime)
-    {
+
+    public TemplateInfo lastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }

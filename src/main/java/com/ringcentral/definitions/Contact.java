@@ -1,45 +1,34 @@
 package com.ringcentral.definitions;
 
-
-public class Contact
-{
-    /**
-     * First name
-     */
+public class Contact {
+    /** First name */
     public String firstName;
-    public Contact firstName(String firstName)
-    {
+
+    public Contact firstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    /**
-     * Last name
-     */
+    /** Last name */
     public String lastName;
-    public Contact lastName(String lastName)
-    {
+
+    public Contact lastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
-    /**
-     * Email address
-     * Format: email
-     */
+    /** Email address Format: email */
     public String email;
-    public Contact email(String email)
-    {
+
+    public Contact email(String email) {
         this.email = email;
         return this;
     }
 
-    /**
-     * Phone number
-     */
+    /** Phone number */
     public String phoneNumber;
-    public Contact phoneNumber(String phoneNumber)
-    {
+
+    public Contact phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }

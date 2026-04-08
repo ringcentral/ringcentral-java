@@ -1,45 +1,37 @@
 package com.ringcentral.definitions;
 
-
-public class ForwardingNumberInfoRulesCreateRuleRequest
-{
-    /**
-     * Internal identifier of a forwarding number
-     */
+public class ForwardingNumberInfoRulesCreateRuleRequest {
+    /** Internal identifier of a forwarding number */
     public String id;
-    public ForwardingNumberInfoRulesCreateRuleRequest id(String id)
-    {
+
+    public ForwardingNumberInfoRulesCreateRuleRequest id(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * Forwarding phone number type
-     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier, ExtensionApps
+     * Forwarding phone number type Enum: Home, Mobile, Work, PhoneLine, Outage, Other,
+     * BusinessMobilePhone, ExternalCarrier, ExtensionApps
      */
     public String type;
-    public ForwardingNumberInfoRulesCreateRuleRequest type(String type)
-    {
+
+    public ForwardingNumberInfoRulesCreateRuleRequest type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * Forwarding/Call flip phone number
-     */
+    /** Forwarding/Call flip phone number */
     public String phoneNumber;
-    public ForwardingNumberInfoRulesCreateRuleRequest phoneNumber(String phoneNumber)
-    {
+
+    public ForwardingNumberInfoRulesCreateRuleRequest phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
 
-    /**
-     * Forwarding/Call flip number title
-     */
+    /** Forwarding/Call flip number title */
     public String label;
-    public ForwardingNumberInfoRulesCreateRuleRequest label(String label)
-    {
+
+    public ForwardingNumberInfoRulesCreateRuleRequest label(String label) {
         this.label = label;
         return this;
     }

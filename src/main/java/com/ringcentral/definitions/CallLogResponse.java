@@ -1,46 +1,34 @@
 package com.ringcentral.definitions;
 
-
-public class CallLogResponse
-{
-    /**
-     * Link to the list of company/user call log records
-     * Format: uri
-     */
+public class CallLogResponse {
+    /** Link to the list of company/user call log records Format: uri */
     public String uri;
-    public CallLogResponse uri(String uri)
-    {
+
+    public CallLogResponse uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * List of call log records
-     * Required
-     */
+    /** List of call log records Required */
     public CallLogRecord[] records;
-    public CallLogResponse records(CallLogRecord[] records)
-    {
+
+    public CallLogResponse records(CallLogRecord[] records) {
         this.records = records;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public PageNavigationModel navigation;
-    public CallLogResponse navigation(PageNavigationModel navigation)
-    {
+
+    public CallLogResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public EnumeratedPagingModel paging;
-    public CallLogResponse paging(EnumeratedPagingModel paging)
-    {
+
+    public CallLogResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

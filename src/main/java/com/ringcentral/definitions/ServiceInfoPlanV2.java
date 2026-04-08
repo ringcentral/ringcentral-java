@@ -1,27 +1,19 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Information on account service plan
-*/
-public class ServiceInfoPlanV2
-{
-    /**
-     * Internal identifier of a service plan
-     */
+/** Information on account service plan */
+public class ServiceInfoPlanV2 {
+    /** Internal identifier of a service plan */
     public String id;
-    public ServiceInfoPlanV2 id(String id)
-    {
+
+    public ServiceInfoPlanV2 id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Name of a service plan
-     */
+    /** Name of a service plan */
     public String name;
-    public ServiceInfoPlanV2 name(String name)
-    {
+
+    public ServiceInfoPlanV2 name(String name) {
         this.name = name;
         return this;
     }

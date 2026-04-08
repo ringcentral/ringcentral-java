@@ -1,60 +1,42 @@
 package com.ringcentral.definitions;
 
-
-public class CallFlipNumberResource
-{
-    /**
-     * Internal identifier of a call flip number
-     * Example: 409926525004
-     */
+public class CallFlipNumberResource {
+    /** Internal identifier of a call flip number Example: 409926525004 */
     public String id;
-    public CallFlipNumberResource id(String id)
-    {
+
+    public CallFlipNumberResource id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Flip number in E.164 format with &#039;+&#039;
-     * Example: +16502096935
-     */
+    /** Flip number in E.164 format with &#039;+&#039; Example: +16502096935 */
     public String phoneNumber;
-    public CallFlipNumberResource phoneNumber(String phoneNumber)
-    {
+
+    public CallFlipNumberResource phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
 
-    /**
-     * Flip number type
-     * Example: PhoneLine
-     * Enum: PhoneLine, External
-     */
+    /** Flip number type Example: PhoneLine Enum: PhoneLine, External */
     public String type;
-    public CallFlipNumberResource type(String type)
-    {
+
+    public CallFlipNumberResource type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * Flip number label, device name for Digital Line case
-     * Example: My Mobile Number
-     */
+    /** Flip number label, device name for Digital Line case Example: My Mobile Number */
     public String label;
-    public CallFlipNumberResource label(String label)
-    {
+
+    public CallFlipNumberResource label(String label) {
         this.label = label;
         return this;
     }
 
-    /**
-     * Speed dial/flip number, the range is 1-8
-     * Example: 5
-     */
+    /** Speed dial/flip number, the range is 1-8 Example: 5 */
     public String flipNumber;
-    public CallFlipNumberResource flipNumber(String flipNumber)
-    {
+
+    public CallFlipNumberResource flipNumber(String flipNumber) {
         this.flipNumber = flipNumber;
         return this;
     }

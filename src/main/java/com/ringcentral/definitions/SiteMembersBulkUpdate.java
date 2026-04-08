@@ -1,24 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class SiteMembersBulkUpdate
-{
-    /**
-     * List of removed extensions
-     */
+public class SiteMembersBulkUpdate {
+    /** List of removed extensions */
     public String[] removedExtensionIds;
-    public SiteMembersBulkUpdate removedExtensionIds(String[] removedExtensionIds)
-    {
+
+    public SiteMembersBulkUpdate removedExtensionIds(String[] removedExtensionIds) {
         this.removedExtensionIds = removedExtensionIds;
         return this;
     }
 
-    /**
-     * List of added extensions
-     */
+    /** List of added extensions */
     public String[] addedExtensionIds;
-    public SiteMembersBulkUpdate addedExtensionIds(String[] addedExtensionIds)
-    {
+
+    public SiteMembersBulkUpdate addedExtensionIds(String[] addedExtensionIds) {
         this.addedExtensionIds = addedExtensionIds;
         return this;
     }

@@ -1,25 +1,21 @@
 package com.ringcentral.definitions;
 
-
-public class BulkAddDevicesErrorItem
-{
+public class BulkAddDevicesErrorItem {
     /**
-     * Indicates if the provisioning operation was successful for this item, always `false` in this model
-     * Required
+     * Indicates if the provisioning operation was successful for this item, always `false` in this
+     * model Required
      */
     public Boolean successful;
-    public BulkAddDevicesErrorItem successful(Boolean successful)
-    {
+
+    public BulkAddDevicesErrorItem successful(Boolean successful) {
         this.successful = successful;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public ApiErrorWithParameter[] errors;
-    public BulkAddDevicesErrorItem errors(ApiErrorWithParameter[] errors)
-    {
+
+    public BulkAddDevicesErrorItem errors(ApiErrorWithParameter[] errors) {
         this.errors = errors;
         return this;
     }

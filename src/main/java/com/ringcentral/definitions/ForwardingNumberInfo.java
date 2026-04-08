@@ -1,96 +1,80 @@
 package com.ringcentral.definitions;
 
-
-public class ForwardingNumberInfo
-{
-    /**
-     * Internal identifier of a forwarding/call flip phone number
-     */
+public class ForwardingNumberInfo {
+    /** Internal identifier of a forwarding/call flip phone number */
     public String id;
-    public ForwardingNumberInfo id(String id)
-    {
+
+    public ForwardingNumberInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Canonical URI of a forwarding/call flip phone number
-     * Format: uri
-     */
+    /** Canonical URI of a forwarding/call flip phone number Format: uri */
     public String uri;
-    public ForwardingNumberInfo uri(String uri)
-    {
+
+    public ForwardingNumberInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Forwarding/Call flip phone number
-     */
+    /** Forwarding/Call flip phone number */
     public String phoneNumber;
-    public ForwardingNumberInfo phoneNumber(String phoneNumber)
-    {
+
+    public ForwardingNumberInfo phoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
 
-    /**
-     * Forwarding/Call flip number title
-     */
+    /** Forwarding/Call flip number title */
     public String label;
-    public ForwardingNumberInfo label(String label)
-    {
+
+    public ForwardingNumberInfo label(String label) {
         this.label = label;
         return this;
     }
 
     /**
-     * Type of option this phone number is used for. Multiple values are accepted
-     * Enum: CallFlip, CallForwarding
+     * Type of option this phone number is used for. Multiple values are accepted Enum: CallFlip,
+     * CallForwarding
      */
     public String[] features;
-    public ForwardingNumberInfo features(String[] features)
-    {
+
+    public ForwardingNumberInfo features(String[] features) {
         this.features = features;
         return this;
     }
 
-    /**
-     * Number assigned to the call flip phone number, corresponds to the shortcut dial number
-     */
+    /** Number assigned to the call flip phone number, corresponds to the shortcut dial number */
     public String flipNumber;
-    public ForwardingNumberInfo flipNumber(String flipNumber)
-    {
+
+    public ForwardingNumberInfo flipNumber(String flipNumber) {
         this.flipNumber = flipNumber;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CreateForwardingNumberDeviceInfo device;
-    public ForwardingNumberInfo device(CreateForwardingNumberDeviceInfo device)
-    {
+
+    public ForwardingNumberInfo device(CreateForwardingNumberDeviceInfo device) {
         this.device = device;
         return this;
     }
 
     /**
-     * Forwarding phone number type
-     * Enum: Home, Mobile, Work, PhoneLine, Outage, Other, BusinessMobilePhone, ExternalCarrier, ExtensionApps
+     * Forwarding phone number type Enum: Home, Mobile, Work, PhoneLine, Outage, Other,
+     * BusinessMobilePhone, ExternalCarrier, ExtensionApps
      */
     public String type;
-    public ForwardingNumberInfo type(String type)
-    {
+
+    public ForwardingNumberInfo type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * Extension information. Returned only if extension type is &#039;ExtensionApps&#039;
-     */
+    /** Extension information. Returned only if extension type is &#039;ExtensionApps&#039; */
     public ForwardingNumberInfoExtension extension;
-    public ForwardingNumberInfo extension(ForwardingNumberInfoExtension extension)
-    {
+
+    public ForwardingNumberInfo extension(ForwardingNumberInfoExtension extension) {
         this.extension = extension;
         return this;
     }

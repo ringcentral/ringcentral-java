@@ -1,38 +1,27 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Attachment is a file to be uploaded
-*/
-public class Attachment
-{
-    /**
-     * Filename with extension, such as &quot;image.png&quot;
-     */
+/** Attachment is a file to be uploaded */
+public class Attachment {
+    /** Filename with extension, such as &quot;image.png&quot; */
     public String filename;
-    public Attachment filename(String filename)
-    {
+
+    public Attachment filename(String filename) {
         this.filename = filename;
         return this;
     }
 
-    /**
-     * Binary content of the file
-     * Required
-     */
+    /** Binary content of the file Required */
     public byte[] content;
-    public Attachment content(byte[] content)
-    {
+
+    public Attachment content(byte[] content) {
         this.content = content;
         return this;
     }
 
-    /**
-     * Content type of the file, such as &quot;image/png&quot;
-     */
+    /** Content type of the file, such as &quot;image/png&quot; */
     public String contentType;
-    public Attachment contentType(String contentType)
-    {
+
+    public Attachment contentType(String contentType) {
         this.contentType = contentType;
         return this;
     }

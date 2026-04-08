@@ -4,9 +4,6 @@ import com.ringcentral.definitions.Attachment;
 import com.ringcentral.definitions.GetTokenRequest;
 import com.ringcentral.definitions.RevokeTokenRequest;
 import com.ringcentral.definitions.TokenInfo;
-import okhttp3.*;
-import okio.BufferedSink;
-
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -14,10 +11,13 @@ import java.text.MessageFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+import okhttp3.*;
+import okio.BufferedSink;
 
 public class RestClient {
     public static final String PRODUCTION_SERVER = "https://platform.ringcentral.com";
-    private static final MediaType jsonMediaType = MediaType.parse("application/json; charset=utf-8");
+    private static final MediaType jsonMediaType =
+            MediaType.parse("application/json; charset=utf-8");
     private static final MediaType textMediaType = MediaType.parse("text/plain; charset=utf-8");
     public static Logger logger = Logger.getLogger("com.ringcentral");
     public String clientId;
@@ -27,16 +27,18 @@ public class RestClient {
     public TokenInfo token;
     public List<HttpEventListener> httpEventListeners = new ArrayList<>();
 
-    public RestClient(String clientId, String clientSecret, String server, OkHttpClient okHttpClient) {
+    public RestClient(
+            String clientId, String clientSecret, String server, OkHttpClient okHttpClient) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.server = server;
         if (okHttpClient == null) {
-            this.httpClient = new OkHttpClient.Builder()
-                .connectTimeout(5, TimeUnit.MINUTES)
-                .writeTimeout(5, TimeUnit.MINUTES)
-                .readTimeout(5, TimeUnit.MINUTES)
-                .build();
+            this.httpClient =
+                    new OkHttpClient.Builder()
+                            .connectTimeout(5, TimeUnit.MINUTES)
+                            .writeTimeout(5, TimeUnit.MINUTES)
+                            .readTimeout(5, TimeUnit.MINUTES)
+                            .build();
         } else {
             this.httpClient = okHttpClient;
         }
@@ -45,7 +47,6 @@ public class RestClient {
     public RestClient(String clientId, String clientSecret, String server) {
         this(clientId, clientSecret, server, null);
     }
-
 
     public RestClient(String clientId, String clientSecret, OkHttpClient okHttpClient) {
         this(clientId, clientSecret, PRODUCTION_SERVER, okHttpClient);
@@ -56,16 +57,20 @@ public class RestClient {
     }
 
     public void autoRefresh(long period) {
-        new Timer().scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                try {
-                    refresh();
-                } catch (IOException | RestException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, 0, period);
+        new Timer()
+                .scheduleAtFixedRate(
+                        new TimerTask() {
+                            @Override
+                            public void run() {
+                                try {
+                                    refresh();
+                                } catch (IOException | RestException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        0,
+                        period);
     }
 
     public void autoRefresh() {
@@ -73,14 +78,19 @@ public class RestClient {
     }
 
     public TokenInfo refresh() throws IOException, RestException {
-        GetTokenRequest getTokenRequest = new GetTokenRequest()
-            .grant_type("refresh_token")
-            .refresh_token(token.refresh_token);
+        GetTokenRequest getTokenRequest =
+                new GetTokenRequest()
+                        .grant_type("refresh_token")
+                        .refresh_token(token.refresh_token);
         return authorize(getTokenRequest);
     }
 
     private String basicKey() {
-        return new String(Base64.getEncoder().encode(MessageFormat.format("{0}:{1}", clientId, clientSecret).getBytes()));
+        return new String(
+                Base64.getEncoder()
+                        .encode(
+                                MessageFormat.format("{0}:{1}", clientId, clientSecret)
+                                        .getBytes()));
     }
 
     private String authorizationHeader(String endpoint) {
@@ -99,18 +109,21 @@ public class RestClient {
         token = null;
     }
 
-    public TokenInfo authorize(String authCode, String redirectUri) throws IOException, RestException {
-        GetTokenRequest getTokenRequest = new GetTokenRequest()
-            .grant_type("authorization_code")
-            .code(authCode)
-            .redirect_uri(redirectUri);
+    public TokenInfo authorize(String authCode, String redirectUri)
+            throws IOException, RestException {
+        GetTokenRequest getTokenRequest =
+                new GetTokenRequest()
+                        .grant_type("authorization_code")
+                        .code(authCode)
+                        .redirect_uri(redirectUri);
         return authorize(getTokenRequest);
     }
 
     public TokenInfo authorize(String jwt) throws IOException, RestException {
-        GetTokenRequest getTokenRequest = new GetTokenRequest()
-            .grant_type("urn:ietf:params:oauth:grant-type:jwt-bearer")
-            .assertion(jwt);
+        GetTokenRequest getTokenRequest =
+                new GetTokenRequest()
+                        .grant_type("urn:ietf:params:oauth:grant-type:jwt-bearer")
+                        .assertion(jwt);
         return authorize(getTokenRequest);
     }
 
@@ -123,7 +136,8 @@ public class RestClient {
         return request(HttpMethod.GET, endpoint, null, null);
     }
 
-    public ResponseBody get(String endpoint, Object queryParameters) throws IOException, RestException {
+    public ResponseBody get(String endpoint, Object queryParameters)
+            throws IOException, RestException {
         return request(HttpMethod.GET, endpoint, queryParameters, null);
     }
 
@@ -131,11 +145,13 @@ public class RestClient {
         return request(HttpMethod.DELETE, endpoint, null, null);
     }
 
-    public ResponseBody delete(String endpoint, Object queryParameters) throws IOException, RestException {
+    public ResponseBody delete(String endpoint, Object queryParameters)
+            throws IOException, RestException {
         return request(HttpMethod.DELETE, endpoint, queryParameters, null);
     }
 
-    public ResponseBody delete(String endpoint, Object object, Object queryParameters) throws IOException, RestException {
+    public ResponseBody delete(String endpoint, Object object, Object queryParameters)
+            throws IOException, RestException {
         return request(HttpMethod.DELETE, endpoint, queryParameters, object, ContentType.JSON);
     }
 
@@ -147,11 +163,14 @@ public class RestClient {
         return request(HttpMethod.POST, endpoint, null, object, ContentType.JSON);
     }
 
-    public ResponseBody post(String endpoint, Object object, Object queryParameters) throws IOException, RestException {
+    public ResponseBody post(String endpoint, Object object, Object queryParameters)
+            throws IOException, RestException {
         return request(HttpMethod.POST, endpoint, queryParameters, object, ContentType.JSON);
     }
 
-    public ResponseBody post(String endpoint, Object object, Object queryParameters, ContentType contentType) throws IOException, RestException {
+    public ResponseBody post(
+            String endpoint, Object object, Object queryParameters, ContentType contentType)
+            throws IOException, RestException {
         return request(HttpMethod.POST, endpoint, queryParameters, object, contentType);
     }
 
@@ -163,11 +182,14 @@ public class RestClient {
         return request(HttpMethod.PUT, endpoint, null, object);
     }
 
-    public ResponseBody put(String endpoint, Object object, Object queryParameters) throws IOException, RestException {
+    public ResponseBody put(String endpoint, Object object, Object queryParameters)
+            throws IOException, RestException {
         return request(HttpMethod.PUT, endpoint, queryParameters, object);
     }
 
-    public ResponseBody put(String endpoint, Object object, Object queryParameters, ContentType contentType) throws IOException, RestException {
+    public ResponseBody put(
+            String endpoint, Object object, Object queryParameters, ContentType contentType)
+            throws IOException, RestException {
         return request(HttpMethod.PUT, endpoint, queryParameters, object, contentType);
     }
 
@@ -175,22 +197,33 @@ public class RestClient {
         return request(HttpMethod.PATCH, endpoint, null, object);
     }
 
-    public ResponseBody patch(String endpoint, Object object, Object queryParameters) throws IOException, RestException {
+    public ResponseBody patch(String endpoint, Object object, Object queryParameters)
+            throws IOException, RestException {
         return request(HttpMethod.PATCH, endpoint, queryParameters, object);
     }
 
-    public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, Object body) throws IOException, RestException {
+    public ResponseBody request(
+            HttpMethod httpMethod, String endpoint, Object queryParameters, Object body)
+            throws IOException, RestException {
         return request(httpMethod, endpoint, queryParameters, body, ContentType.JSON);
     }
 
-    public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, Object body, ContentType contentType) throws IOException, RestException {
+    public ResponseBody request(
+            HttpMethod httpMethod,
+            String endpoint,
+            Object queryParameters,
+            Object body,
+            ContentType contentType)
+            throws IOException, RestException {
         RequestBody requestBody = null;
         switch (contentType) {
             case JSON:
                 if (body != null && body.getClass().equals(String.class)) { // PUT text
                     requestBody = RequestBody.create((String) body, textMediaType);
                 } else {
-                    requestBody = RequestBody.create(body == null ? "" : Utils.gson.toJson(body), jsonMediaType);
+                    requestBody =
+                            RequestBody.create(
+                                    body == null ? "" : Utils.gson.toJson(body), jsonMediaType);
                 }
                 break;
             case FORM:
@@ -234,23 +267,27 @@ public class RestClient {
                     }
                 }
                 if (fields.size() > 0) {
-                    multipartBodyBuilder.addPart(RequestBody.create(Utils.gson.toJson(fields), jsonMediaType));
+                    multipartBodyBuilder.addPart(
+                            RequestBody.create(Utils.gson.toJson(fields), jsonMediaType));
                 }
                 for (Attachment attachment : attachments) {
-                    multipartBodyBuilder.addFormDataPart(attachmentName, attachment.filename, new RequestBody() {
-                        @Override
-                        public MediaType contentType() {
-                            if (attachment.contentType == null) {
-                                return null;
-                            }
-                            return MediaType.parse(attachment.contentType);
-                        }
+                    multipartBodyBuilder.addFormDataPart(
+                            attachmentName,
+                            attachment.filename,
+                            new RequestBody() {
+                                @Override
+                                public MediaType contentType() {
+                                    if (attachment.contentType == null) {
+                                        return null;
+                                    }
+                                    return MediaType.parse(attachment.contentType);
+                                }
 
-                        @Override
-                        public void writeTo(BufferedSink sink) throws IOException {
-                            sink.write(attachment.content);
-                        }
-                    });
+                                @Override
+                                public void writeTo(BufferedSink sink) throws IOException {
+                                    sink.write(attachment.content);
+                                }
+                            });
                 }
                 requestBody = multipartBodyBuilder.setType(MultipartBody.FORM).build();
                 break;
@@ -261,14 +298,17 @@ public class RestClient {
     }
 
     // this method returns the raw response instead of just the body
-    public Response requestRaw(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
-        requestBody) throws IOException, RestException {
+    public Response requestRaw(
+            HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody requestBody)
+            throws IOException, RestException {
         HttpUrl.Builder urlBuilder;
         if (endpoint.startsWith("https://") || endpoint.startsWith("http://")) {
-            // example: https://media.ringcentral.com/restapi/v1.0/account/809646016/ivr-prompts/838195017/content
+            // example:
+            // https://media.ringcentral.com/restapi/v1.0/account/809646016/ivr-prompts/838195017/content
             urlBuilder = HttpUrl.parse(endpoint).newBuilder();
         } else {
-            // special case: server has path segments, like http://xmn-mck01.int.rclabenv.com:65003/pubapi
+            // special case: server has path segments, like
+            // http://xmn-mck01.int.rclabenv.com:65003/pubapi
             // rEndpoint is relative endpoint
             String rEndpoint = endpoint.startsWith("/") ? endpoint.substring(1) : endpoint;
             urlBuilder = HttpUrl.parse(server).newBuilder().addPathSegments(rEndpoint);
@@ -285,10 +325,13 @@ public class RestClient {
                 if (value != null) {
                     if (value.getClass().isArray()) { // ?a=hello&a=world
                         for (int i = 0; i < Array.getLength(value); i++) {
-                            urlBuilder = urlBuilder.addQueryParameter(field.getName(), Array.get(value, i).toString());
+                            urlBuilder =
+                                    urlBuilder.addQueryParameter(
+                                            field.getName(), Array.get(value, i).toString());
                         }
                     } else {
-                        urlBuilder = urlBuilder.addQueryParameter(field.getName(), value.toString());
+                        urlBuilder =
+                                urlBuilder.addQueryParameter(field.getName(), value.toString());
                     }
                 }
             }
@@ -317,10 +360,14 @@ public class RestClient {
                 break;
         }
 
-        String userAgentHeader = String.format("RC-JAVA-SDK Java %s %s", System.getProperty("java.version"), System.getProperty("os.name"));
-        Request request = builder.addHeader("Authorization", authorizationHeader(endpoint))
-            .addHeader("X-User-Agent", userAgentHeader)
-            .build();
+        String userAgentHeader =
+                String.format(
+                        "RC-JAVA-SDK Java %s %s",
+                        System.getProperty("java.version"), System.getProperty("os.name"));
+        Request request =
+                builder.addHeader("Authorization", authorizationHeader(endpoint))
+                        .addHeader("X-User-Agent", userAgentHeader)
+                        .build();
 
         Response response = httpClient.newCall(request).execute();
         int statusCode = response.code();
@@ -333,15 +380,28 @@ public class RestClient {
         return response;
     }
 
-    public ResponseBody request(HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody
-        requestBody) throws IOException, RestException {
+    public ResponseBody request(
+            HttpMethod httpMethod, String endpoint, Object queryParameters, RequestBody requestBody)
+            throws IOException, RestException {
         try {
             Response response = requestRaw(httpMethod, endpoint, queryParameters, requestBody);
-            logger.fine(String.format("[HTTP %s %s] %s, rc-request-id: %s", httpMethod.toString(), response.code(), endpoint, response.header("rcrequestid")));
+            logger.fine(
+                    String.format(
+                            "[HTTP %s %s] %s, rc-request-id: %s",
+                            httpMethod.toString(),
+                            response.code(),
+                            endpoint,
+                            response.header("rcrequestid")));
             return response.peekBody(Long.MAX_VALUE);
         } catch (RestException re) {
             Response response = re.response;
-            logger.warning(String.format("[HTTP %s %s] %s, rc-request-id: %s", httpMethod.toString(), response.code(), endpoint, response.header("rcrequestid")));
+            logger.warning(
+                    String.format(
+                            "[HTTP %s %s] %s, rc-request-id: %s",
+                            httpMethod.toString(),
+                            response.code(),
+                            endpoint,
+                            response.header("rcrequestid")));
             throw re;
         }
     }
@@ -354,7 +414,8 @@ public class RestClient {
         if (request.client_id == null) {
             request.client_id = clientId;
         }
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(this.server).newBuilder().addPathSegments("restapi/oauth/authorize");
+        HttpUrl.Builder urlBuilder =
+                HttpUrl.parse(this.server).newBuilder().addPathSegments("restapi/oauth/authorize");
         for (Field field : request.getClass().getFields()) {
             Object value = null;
             try {
@@ -370,7 +431,8 @@ public class RestClient {
     }
 
     public String authorizeUri(String redirectUri, String state) {
-        AuthorizeRequest authorizeRequest = new AuthorizeRequest().redirect_uri(redirectUri).state(state);
+        AuthorizeRequest authorizeRequest =
+                new AuthorizeRequest().redirect_uri(redirectUri).state(state);
         return authorizeUri(authorizeRequest);
     }
 

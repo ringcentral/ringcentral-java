@@ -1,68 +1,53 @@
 package com.ringcentral.definitions;
 
-
-public class MessageAttachmentInfoIntId
-{
-    /**
-     * Internal identifier of a message attachment
-     * Format: int64
-     */
+public class MessageAttachmentInfoIntId {
+    /** Internal identifier of a message attachment Format: int64 */
     public Long id;
-    public MessageAttachmentInfoIntId id(Long id)
-    {
+
+    public MessageAttachmentInfoIntId id(Long id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Canonical URI of a message attachment
-     * Format: uri
-     */
+    /** Canonical URI of a message attachment Format: uri */
     public String uri;
-    public MessageAttachmentInfoIntId uri(String uri)
-    {
+
+    public MessageAttachmentInfoIntId uri(String uri) {
         this.uri = uri;
         return this;
     }
 
     /**
-     * Type of message attachment
-     * Enum: AudioRecording, AudioTranscription, Text, SourceDocument, RenderedDocument, MmsAttachment
+     * Type of message attachment Enum: AudioRecording, AudioTranscription, Text, SourceDocument,
+     * RenderedDocument, MmsAttachment
      */
     public String type;
-    public MessageAttachmentInfoIntId type(String type)
-    {
+
+    public MessageAttachmentInfoIntId type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     * MIME type for a given attachment, for instance &#039;audio/wav&#039;
-     */
+    /** MIME type for a given attachment, for instance &#039;audio/wav&#039; */
     public String contentType;
-    public MessageAttachmentInfoIntId contentType(String contentType)
-    {
+
+    public MessageAttachmentInfoIntId contentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
 
-    /**
-     * Name of a file attached
-     */
+    /** Name of a file attached */
     public String filename;
-    public MessageAttachmentInfoIntId filename(String filename)
-    {
+
+    public MessageAttachmentInfoIntId filename(String filename) {
         this.filename = filename;
         return this;
     }
 
-    /**
-     * Size of an attachment in bytes
-     * Format: int32
-     */
+    /** Size of an attachment in bytes Format: int32 */
     public Long size;
-    public MessageAttachmentInfoIntId size(Long size)
-    {
+
+    public MessageAttachmentInfoIntId size(Long size) {
         this.size = size;
         return this;
     }

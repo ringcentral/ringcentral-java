@@ -2,45 +2,52 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.Attachment;
 import com.ringcentral.definitions.CreateUserProfileImageRequest;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class BinaryTest {
     @Test
     public void uploadProfileImage() throws IOException, RestException {
-        RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL"));
+        RestClient rc =
+                new RestClient(
+                        System.getenv("RINGCENTRAL_CLIENT_ID"),
+                        System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                        System.getenv("RINGCENTRAL_SERVER_URL"));
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
-        rc.restapi().account().extension().profileImage().post(new
-            CreateUserProfileImageRequest()
-            .image(new Attachment()
-                .filename("test.png")
-                .contentType("image/png")
-                .content(Files.readAllBytes(Paths.get("./src/test/resources/test.png")))
-            ));
+        rc.restapi()
+                .account()
+                .extension()
+                .profileImage()
+                .post(
+                        new CreateUserProfileImageRequest()
+                                .image(
+                                        new Attachment()
+                                                .filename("test.png")
+                                                .contentType("image/png")
+                                                .content(
+                                                        Files.readAllBytes(
+                                                                Paths.get(
+                                                                        "./src/test/resources/test.png")))));
 
         rc.revoke();
     }
 
     @Test
     public void downloadProfileImage() throws IOException, RestException {
-        RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL"));
+        RestClient rc =
+                new RestClient(
+                        System.getenv("RINGCENTRAL_CLIENT_ID"),
+                        System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                        System.getenv("RINGCENTRAL_SERVER_URL"));
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
-        byte[] bytes =
-            rc.restapi().account().extension().profileImage("90x90").get();
+        byte[] bytes = rc.restapi().account().extension().profileImage("90x90").get();
         Assert.assertNotNull(bytes);
         Assert.assertTrue(bytes.length > 0);
 

@@ -1,34 +1,26 @@
 package com.ringcentral.definitions;
 
-
-public class MessageTemplateRequest
-{
-    /**
-     * Name of a template
-     * Required
-     */
+public class MessageTemplateRequest {
+    /** Name of a template Required */
     public String displayName;
-    public MessageTemplateRequest displayName(String displayName)
-    {
+
+    public MessageTemplateRequest displayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public MessageTemplateInfo body;
-    public MessageTemplateRequest body(MessageTemplateInfo body)
-    {
+
+    public MessageTemplateRequest body(MessageTemplateInfo body) {
         this.body = body;
         return this;
     }
 
-    /**
-     */
+    /** */
     public Site site;
-    public MessageTemplateRequest site(Site site)
-    {
+
+    public MessageTemplateRequest site(Site site) {
         this.site = site;
         return this;
     }

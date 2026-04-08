@@ -1,44 +1,34 @@
 package com.ringcentral.definitions;
 
-
-public class CallMonitoringGroup
-{
-    /**
-     * Link to a call monitoring group resource
-     * Format: uri
-     */
+public class CallMonitoringGroup {
+    /** Link to a call monitoring group resource Format: uri */
     public String uri;
-    public CallMonitoringGroup uri(String uri)
-    {
+
+    public CallMonitoringGroup uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Internal identifier of a group
-     */
+    /** Internal identifier of a group */
     public String id;
-    public CallMonitoringGroup id(String id)
-    {
+
+    public CallMonitoringGroup id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Name of a group
-     */
+    /** Name of a group */
     public String name;
-    public CallMonitoringGroup name(String name)
-    {
+
+    public CallMonitoringGroup name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CallMonitoringGroupSite site;
-    public CallMonitoringGroup site(CallMonitoringGroupSite site)
-    {
+
+    public CallMonitoringGroup site(CallMonitoringGroupSite site) {
         this.site = site;
         return this;
     }

@@ -1,74 +1,59 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Account service information, including brand, sub-brand, service plan and
-* billing plan
-* 
-*/
-public class ServiceInfo
-{
-    /**
-     * Canonical URI of a service info resource
-     * Format: uri
-     */
+/** Account service information, including brand, sub-brand, service plan and billing plan */
+public class ServiceInfo {
+    /** Canonical URI of a service info resource Format: uri */
     public String uri;
-    public ServiceInfo uri(String uri)
-    {
+
+    public ServiceInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     */
+    /** */
     public BillingPlanInfo billingPlan;
-    public ServiceInfo billingPlan(BillingPlanInfo billingPlan)
-    {
+
+    public ServiceInfo billingPlan(BillingPlanInfo billingPlan) {
         this.billingPlan = billingPlan;
         return this;
     }
 
-    /**
-     */
+    /** */
     public BrandInfo brand;
-    public ServiceInfo brand(BrandInfo brand)
-    {
+
+    public ServiceInfo brand(BrandInfo brand) {
         this.brand = brand;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ServicePlanInfo servicePlan;
-    public ServiceInfo servicePlan(ServicePlanInfo servicePlan)
-    {
+
+    public ServiceInfo servicePlan(ServicePlanInfo servicePlan) {
         this.servicePlan = servicePlan;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ServicePlanInfo targetServicePlan;
-    public ServiceInfo targetServicePlan(ServicePlanInfo targetServicePlan)
-    {
+
+    public ServiceInfo targetServicePlan(ServicePlanInfo targetServicePlan) {
         this.targetServicePlan = targetServicePlan;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CountryInfoShortModel contractedCountry;
-    public ServiceInfo contractedCountry(CountryInfoShortModel contractedCountry)
-    {
+
+    public ServiceInfo contractedCountry(CountryInfoShortModel contractedCountry) {
         this.contractedCountry = contractedCountry;
         return this;
     }
 
-    /**
-     */
+    /** */
     public UBrandInfo uBrand;
-    public ServiceInfo uBrand(UBrandInfo uBrand)
-    {
+
+    public ServiceInfo uBrand(UBrandInfo uBrand) {
         this.uBrand = uBrand;
         return this;
     }

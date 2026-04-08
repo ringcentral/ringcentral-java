@@ -1,35 +1,26 @@
 package com.ringcentral.definitions;
 
-
-public class CommDeviceTargetResource
-{
-    /**
-     * Required
-     */
+public class CommDeviceTargetResource {
+    /** Required */
     public CommDeviceResource device;
-    public CommDeviceTargetResource device(CommDeviceResource device)
-    {
+
+    public CommDeviceTargetResource device(CommDeviceResource device) {
         this.device = device;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CommReferencedExtensionResource extension;
-    public CommDeviceTargetResource extension(CommReferencedExtensionResource extension)
-    {
+
+    public CommDeviceTargetResource extension(CommReferencedExtensionResource extension) {
         this.extension = extension;
         return this;
     }
 
-    /**
-     * Ring target type
-     * Example: DeviceRingTarget
-     * Enum: DeviceRingTarget
-     */
+    /** Ring target type Example: DeviceRingTarget Enum: DeviceRingTarget */
     public String type;
-    public CommDeviceTargetResource type(String type)
-    {
+
+    public CommDeviceTargetResource type(String type) {
         this.type = type;
         return this;
     }

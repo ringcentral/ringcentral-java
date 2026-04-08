@@ -3,27 +3,22 @@ package com.ringcentral.paths.analytics;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
-public class Index
-{
+public class Index {
     public RestClient rc;
-public Index(RestClient rc)
-      {
-this.rc = rc;
+
+    public Index(RestClient rc) {
+        this.rc = rc;
     }
-    public String path()
-        {
-            return "" + "/analytics";
-        }
-        public String path(Boolean withParameter)
-        {
-            return path();
-        }
-        
 
+    public String path() {
+        return "" + "/analytics";
+    }
 
-    public com.ringcentral.paths.analytics.calls.Index calls()
-  {
-    return new com.ringcentral.paths.analytics.calls.Index(this);
-  }
+    public String path(Boolean withParameter) {
+        return path();
+    }
 
+    public com.ringcentral.paths.analytics.calls.Index calls() {
+        return new com.ringcentral.paths.analytics.calls.Index(this);
+    }
 }

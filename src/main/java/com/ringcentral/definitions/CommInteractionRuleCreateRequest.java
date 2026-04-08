@@ -1,49 +1,38 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Interaction rule create request
-*/
-public class CommInteractionRuleCreateRequest
-{
-    /**
-     * Required
-     */
+/** Interaction rule create request */
+public class CommInteractionRuleCreateRequest {
+    /** Required */
     public Object[] conditions;
-    public CommInteractionRuleCreateRequest conditions(Object[] conditions)
-    {
+
+    public CommInteractionRuleCreateRequest conditions(Object[] conditions) {
         this.conditions = conditions;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public CommDispatchingRequest dispatching;
-    public CommInteractionRuleCreateRequest dispatching(CommDispatchingRequest dispatching)
-    {
+
+    public CommInteractionRuleCreateRequest dispatching(CommDispatchingRequest dispatching) {
         this.dispatching = dispatching;
         return this;
     }
 
     /**
-     * Specifies if a rule is enabled or not. *Work Hours* and *After Hours* rules cannot be disabled
-     * Required
+     * Specifies if a rule is enabled or not. *Work Hours* and *After Hours* rules cannot be
+     * disabled Required
      */
     public Boolean enabled;
-    public CommInteractionRuleCreateRequest enabled(Boolean enabled)
-    {
+
+    public CommInteractionRuleCreateRequest enabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    /**
-     * Custom name of a rule
-     * Required
-     */
+    /** Custom name of a rule Required */
     public String displayName;
-    public CommInteractionRuleCreateRequest displayName(String displayName)
-    {
+
+    public CommInteractionRuleCreateRequest displayName(String displayName) {
         this.displayName = displayName;
         return this;
     }

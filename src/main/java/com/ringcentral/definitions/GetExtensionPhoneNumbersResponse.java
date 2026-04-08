@@ -1,46 +1,34 @@
 package com.ringcentral.definitions;
 
-
-public class GetExtensionPhoneNumbersResponse
-{
-    /**
-     * Link to the user phone number list resource
-     * Format: uri
-     */
+public class GetExtensionPhoneNumbersResponse {
+    /** Link to the user phone number list resource Format: uri */
     public String uri;
-    public GetExtensionPhoneNumbersResponse uri(String uri)
-    {
+
+    public GetExtensionPhoneNumbersResponse uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * List of phone numbers
-     * Required
-     */
+    /** List of phone numbers Required */
     public UserPhoneNumberInfo[] records;
-    public GetExtensionPhoneNumbersResponse records(UserPhoneNumberInfo[] records)
-    {
+
+    public GetExtensionPhoneNumbersResponse records(UserPhoneNumberInfo[] records) {
         this.records = records;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public PageNavigationModel navigation;
-    public GetExtensionPhoneNumbersResponse navigation(PageNavigationModel navigation)
-    {
+
+    public GetExtensionPhoneNumbersResponse navigation(PageNavigationModel navigation) {
         this.navigation = navigation;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public EnumeratedPagingModel paging;
-    public GetExtensionPhoneNumbersResponse paging(EnumeratedPagingModel paging)
-    {
+
+    public GetExtensionPhoneNumbersResponse paging(EnumeratedPagingModel paging) {
         this.paging = paging;
         return this;
     }

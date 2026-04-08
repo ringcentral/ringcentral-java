@@ -1,38 +1,26 @@
 package com.ringcentral.definitions;
 
-
-public class CostCenterBase
-{
-    /**
-     * Internal identifier of a cost center
-     * Format: int64
-     * Example: 981086004
-     */
+public class CostCenterBase {
+    /** Internal identifier of a cost center Format: int64 Example: 981086004 */
     public Long id;
-    public CostCenterBase id(Long id)
-    {
+
+    public CostCenterBase id(Long id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Cost Center name
-     * Example: My Cost Center
-     */
+    /** Cost Center name Example: My Cost Center */
     public String name;
-    public CostCenterBase name(String name)
-    {
+
+    public CostCenterBase name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     * Billing code associated with a cost center
-     * Example: BC 101
-     */
+    /** Billing code associated with a cost center Example: BC 101 */
     public String billingCode;
-    public CostCenterBase billingCode(String billingCode)
-    {
+
+    public CostCenterBase billingCode(String billingCode) {
         this.billingCode = billingCode;
         return this;
     }

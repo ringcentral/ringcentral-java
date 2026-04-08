@@ -1,58 +1,51 @@
 package com.ringcentral.definitions;
 
-
-public class InboundTextsInfo
-{
-    /**
-     * Email notification flag
-     */
+public class InboundTextsInfo {
+    /** Email notification flag */
     public Boolean notifyByEmail;
-    public InboundTextsInfo notifyByEmail(Boolean notifyByEmail)
-    {
+
+    public InboundTextsInfo notifyByEmail(Boolean notifyByEmail) {
         this.notifyByEmail = notifyByEmail;
         return this;
     }
 
-    /**
-     * SMS notification flag
-     */
+    /** SMS notification flag */
     public Boolean notifyBySms;
-    public InboundTextsInfo notifyBySms(Boolean notifyBySms)
-    {
+
+    public InboundTextsInfo notifyBySms(Boolean notifyBySms) {
         this.notifyBySms = notifyBySms;
         return this;
     }
 
     /**
-     * The parameter contains the list of phone Numbers which should be used for SMS notifications sending (if advanced mode enabled)
+     * The parameter contains the list of phone Numbers which should be used for SMS notifications
+     * sending (if advanced mode enabled)
      */
     public String[] advancedSmsPhoneNumbers;
-    public InboundTextsInfo advancedSmsPhoneNumbers(String[] advancedSmsPhoneNumbers)
-    {
+
+    public InboundTextsInfo advancedSmsPhoneNumbers(String[] advancedSmsPhoneNumbers) {
         this.advancedSmsPhoneNumbers = advancedSmsPhoneNumbers;
         return this;
     }
 
     /**
-     * List of recipient email addresses for inbound text message
-    * notifications. Returned if specified, in both modes (advanced/basic).
-    * Applied in advanced mode only
+     * List of recipient email addresses for inbound text message notifications. Returned if
+     * specified, in both modes (advanced/basic). Applied in advanced mode only
      */
     public String[] advancedEmailAddresses;
-    public InboundTextsInfo advancedEmailAddresses(String[] advancedEmailAddresses)
-    {
+
+    public InboundTextsInfo advancedEmailAddresses(String[] advancedEmailAddresses) {
         this.advancedEmailAddresses = advancedEmailAddresses;
         return this;
     }
 
     /**
-     * List of recipient phone numbers for inbound text message notifications.
-    * Returned if specified, in both modes (advanced/basic). Applied in advanced
-    * mode only
+     * List of recipient phone numbers for inbound text message notifications. Returned if
+     * specified, in both modes (advanced/basic). Applied in advanced mode only
      */
     public String[] advancedSmsEmailAddresses;
-    public InboundTextsInfo advancedSmsEmailAddresses(String[] advancedSmsEmailAddresses)
-    {
+
+    public InboundTextsInfo advancedSmsEmailAddresses(String[] advancedSmsEmailAddresses) {
         this.advancedSmsEmailAddresses = advancedSmsEmailAddresses;
         return this;
     }

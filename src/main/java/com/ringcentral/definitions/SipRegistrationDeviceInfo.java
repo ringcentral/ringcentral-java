@@ -1,227 +1,204 @@
 package com.ringcentral.definitions;
 
-
-public class SipRegistrationDeviceInfo
-{
-    /**
-     * Canonical URI of the resource
-     * Format: uri
-     */
+public class SipRegistrationDeviceInfo {
+    /** Canonical URI of the resource Format: uri */
     public String uri;
-    public SipRegistrationDeviceInfo uri(String uri)
-    {
+
+    public SipRegistrationDeviceInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Internal identifier of a device
-     */
+    /** Internal identifier of a device */
     public String id;
-    public SipRegistrationDeviceInfo id(String id)
-    {
+
+    public SipRegistrationDeviceInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Device type
-     * Enum: HardPhone, MobileDevice, OtherPhone, Paging, Room, SoftPhone, WebPhone
-     */
+    /** Device type Enum: HardPhone, MobileDevice, OtherPhone, Paging, Room, SoftPhone, WebPhone */
     public String type;
-    public SipRegistrationDeviceInfo type(String type)
-    {
+
+    public SipRegistrationDeviceInfo type(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * Device identification number (SKU, Stock Keeping Unit) in the format
-    * TP-ID [-AT-AC], where TP is device type (HP for RC desk phones, DV for all
-    * other devices including soft phones); ID - device model ID; AT - add-on type
-    * ID; AC - add-on count (if any). For example &#039;HP-56-2-2&#039;
+     * Device identification number (SKU, Stock Keeping Unit) in the format TP-ID [-AT-AC], where TP
+     * is device type (HP for RC desk phones, DV for all other devices including soft phones); ID -
+     * device model ID; AT - add-on type ID; AC - add-on count (if any). For example
+     * &#039;HP-56-2-2&#039;
      */
     public String sku;
-    public SipRegistrationDeviceInfo sku(String sku)
-    {
+
+    public SipRegistrationDeviceInfo sku(String sku) {
         this.sku = sku;
         return this;
     }
 
-    /**
-     * Enum: Online, Offline
-     */
+    /** Enum: Online, Offline */
     public String status;
-    public SipRegistrationDeviceInfo status(String status)
-    {
+
+    public SipRegistrationDeviceInfo status(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * Device name. Mandatory if ordering  SoftPhone or OtherPhone.
-    * Optional for HardPhone. If not specified for HardPhone, then device  model  name
-    * is used as device  name
+     * Device name. Mandatory if ordering SoftPhone or OtherPhone. Optional for HardPhone. If not
+     * specified for HardPhone, then device model name is used as device name
      */
     public String name;
-    public SipRegistrationDeviceInfo name(String name)
-    {
+
+    public SipRegistrationDeviceInfo name(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * Serial number for HardPhone (is returned only when the phone
-    * is shipped and provisioned); endpoint_id for Softphone and mobile applications
+     * Serial number for HardPhone (is returned only when the phone is shipped and provisioned);
+     * endpoint_id for Softphone and mobile applications
      */
     public String serial;
-    public SipRegistrationDeviceInfo serial(String serial)
-    {
+
+    public SipRegistrationDeviceInfo serial(String serial) {
         this.serial = serial;
         return this;
     }
 
-    /**
-     * Computer name (for devices of `SoftPhone` type only)
-     */
+    /** Computer name (for devices of `SoftPhone` type only) */
     public String computerName;
-    public SipRegistrationDeviceInfo computerName(String computerName)
-    {
+
+    public SipRegistrationDeviceInfo computerName(String computerName) {
         this.computerName = computerName;
         return this;
     }
 
-    /**
-     */
+    /** */
     public DeviceModelInfo model;
-    public SipRegistrationDeviceInfo model(DeviceModelInfo model)
-    {
+
+    public SipRegistrationDeviceInfo model(DeviceModelInfo model) {
         this.model = model;
         return this;
     }
 
-    /**
-     */
+    /** */
     public DeviceExtensionInfo extension;
-    public SipRegistrationDeviceInfo extension(DeviceExtensionInfo extension)
-    {
+
+    public SipRegistrationDeviceInfo extension(DeviceExtensionInfo extension) {
         this.extension = extension;
         return this;
     }
 
-    /**
-     */
+    /** */
     public DeviceEmergencyServiceAddressResource emergencyServiceAddress;
-    public SipRegistrationDeviceInfo emergencyServiceAddress(DeviceEmergencyServiceAddressResource emergencyServiceAddress)
-    {
+
+    public SipRegistrationDeviceInfo emergencyServiceAddress(
+            DeviceEmergencyServiceAddressResource emergencyServiceAddress) {
         this.emergencyServiceAddress = emergencyServiceAddress;
         return this;
     }
 
-    /**
-     */
+    /** */
     public SipRegistrationDeviceEmergencyInfo emergency;
-    public SipRegistrationDeviceInfo emergency(SipRegistrationDeviceEmergencyInfo emergency)
-    {
+
+    public SipRegistrationDeviceInfo emergency(SipRegistrationDeviceEmergencyInfo emergency) {
         this.emergency = emergency;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ShippingInfo shipping;
-    public SipRegistrationDeviceInfo shipping(ShippingInfo shipping)
-    {
+
+    public SipRegistrationDeviceInfo shipping(ShippingInfo shipping) {
         this.shipping = shipping;
         return this;
     }
 
-    /**
-     * Phone lines information
-     */
+    /** Phone lines information */
     public DevicePhoneLinesInfo[] phoneLines;
-    public SipRegistrationDeviceInfo phoneLines(DevicePhoneLinesInfo[] phoneLines)
-    {
+
+    public SipRegistrationDeviceInfo phoneLines(DevicePhoneLinesInfo[] phoneLines) {
         this.phoneLines = phoneLines;
         return this;
     }
 
     /**
-     * Box billing identifier of a device. Applicable only for devices of `HardPhone` type.
-     * Format: int64
+     * Box billing identifier of a device. Applicable only for devices of `HardPhone` type. Format:
+     * int64
      */
     public Long boxBillingId;
-    public SipRegistrationDeviceInfo boxBillingId(Long boxBillingId)
-    {
+
+    public SipRegistrationDeviceInfo boxBillingId(Long boxBillingId) {
         this.boxBillingId = boxBillingId;
         return this;
     }
 
     /**
-     * Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone.
+     * Supported only for devices assigned to Limited extensions. If true, enables users to log in
+     * to this phone as a common phone.
      */
     public Boolean useAsCommonPhone;
-    public SipRegistrationDeviceInfo useAsCommonPhone(Boolean useAsCommonPhone)
-    {
+
+    public SipRegistrationDeviceInfo useAsCommonPhone(Boolean useAsCommonPhone) {
         this.useAsCommonPhone = useAsCommonPhone;
         return this;
     }
 
     /**
-     * Pooling type of device:
-    * - `Host` - device with a standalone paid phone line which can be linked to soft phone client instance;
-    * - `Guest` - device with a linked phone line;
-    * - `None` - device without a phone line or with a specific line (free, BLA, etc.)
-     * Enum: Host, Guest, None
+     * Pooling type of device: - `Host` - device with a standalone paid phone line which can be
+     * linked to soft phone client instance; - `Guest` - device with a linked phone line; - `None` -
+     * device without a phone line or with a specific line (free, BLA, etc.) Enum: Host, Guest, None
      */
     public String linePooling;
-    public SipRegistrationDeviceInfo linePooling(String linePooling)
-    {
+
+    public SipRegistrationDeviceInfo linePooling(String linePooling) {
         this.linePooling = linePooling;
         return this;
     }
 
     /**
-     * Network location status. `true` if the device is located in
-    * the configured corporate network (On-Net); `false` for Off-Net location.
-    * Parameter is not returned if `EmergencyAddressAutoUpdate` feature is not
-    * enabled for the account/user, or if device network location is not determined
+     * Network location status. `true` if the device is located in the configured corporate network
+     * (On-Net); `false` for Off-Net location. Parameter is not returned if
+     * `EmergencyAddressAutoUpdate` feature is not enabled for the account/user, or if device
+     * network location is not determined
      */
     public Boolean inCompanyNet;
-    public SipRegistrationDeviceInfo inCompanyNet(Boolean inCompanyNet)
-    {
+
+    public SipRegistrationDeviceInfo inCompanyNet(Boolean inCompanyNet) {
         this.inCompanyNet = inCompanyNet;
         return this;
     }
 
-    /**
-     */
+    /** */
     public DeviceSiteInfo site;
-    public SipRegistrationDeviceInfo site(DeviceSiteInfo site)
-    {
+
+    public SipRegistrationDeviceInfo site(DeviceSiteInfo site) {
         this.site = site;
         return this;
     }
 
     /**
-     * Timestamp of receiving last location report in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-    * format including timezone, for example *2016-03-10T18:07:52.534Z
-     * Format: date-time
+     * Timestamp of receiving last location report in [ISO
+     * 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example
+     * *2016-03-10T18:07:52.534Z Format: date-time
      */
     public String lastLocationReportTime;
-    public SipRegistrationDeviceInfo lastLocationReportTime(String lastLocationReportTime)
-    {
+
+    public SipRegistrationDeviceInfo lastLocationReportTime(String lastLocationReportTime) {
         this.lastLocationReportTime = lastLocationReportTime;
         return this;
     }
 
     /**
-     * Indicates whether this device is used for hot desking or not.
-    * Returned if `useAsCommonPhone` is set to false
+     * Indicates whether this device is used for hot desking or not. Returned if `useAsCommonPhone`
+     * is set to false
      */
     public Boolean hotDeskDevice;
-    public SipRegistrationDeviceInfo hotDeskDevice(Boolean hotDeskDevice)
-    {
+
+    public SipRegistrationDeviceInfo hotDeskDevice(Boolean hotDeskDevice) {
         this.hotDeskDevice = hotDeskDevice;
         return this;
     }

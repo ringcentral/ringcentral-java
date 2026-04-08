@@ -1,27 +1,21 @@
 package com.ringcentral.definitions;
 
-
-public class SummaryInput
-{
+public class SummaryInput {
     /**
-     * Type of summary to be computed
-     * Required
-     * Example: AbstractiveShort
-     * Enum: Extractive, AbstractiveShort, AbstractiveLong, AbstractiveAll, All
+     * Type of summary to be computed Required Example: AbstractiveShort Enum: Extractive,
+     * AbstractiveShort, AbstractiveLong, AbstractiveAll, All
      */
     public String summaryType;
-    public SummaryInput summaryType(String summaryType)
-    {
+
+    public SummaryInput summaryType(String summaryType) {
         this.summaryType = summaryType;
         return this;
     }
 
-    /**
-     * Required
-     */
+    /** Required */
     public SummaryUnit[] utterances;
-    public SummaryInput utterances(SummaryUnit[] utterances)
-    {
+
+    public SummaryInput utterances(SummaryUnit[] utterances) {
         this.utterances = utterances;
         return this;
     }

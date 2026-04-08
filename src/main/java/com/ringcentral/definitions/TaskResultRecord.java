@@ -1,63 +1,56 @@
 package com.ringcentral.definitions;
 
-
-public class TaskResultRecord
-{
-    /**
-     * Internal identifier of the created/updated element - wireless point or network switch
-     */
+public class TaskResultRecord {
+    /** Internal identifier of the created/updated element - wireless point or network switch */
     public String id;
-    public TaskResultRecord id(String id)
-    {
+
+    public TaskResultRecord id(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * Unique 48-bit identifier of the wireless access point complying with MAC address conventions. Returned only for &#039;Wireless Points Bulk Create&#039; tasks
+     * Unique 48-bit identifier of the wireless access point complying with MAC address conventions.
+     * Returned only for &#039;Wireless Points Bulk Create&#039; tasks
      */
     public String bssid;
-    public TaskResultRecord bssid(String bssid)
-    {
+
+    public TaskResultRecord bssid(String bssid) {
         this.bssid = bssid;
         return this;
     }
 
     /**
-     * Unique identifier of a network switch. Returned only for &#039;Switches Bulk Create&#039; tasks
+     * Unique identifier of a network switch. Returned only for &#039;Switches Bulk Create&#039;
+     * tasks
      */
     public String chassisId;
-    public TaskResultRecord chassisId(String chassisId)
-    {
+
+    public TaskResultRecord chassisId(String chassisId) {
         this.chassisId = chassisId;
         return this;
     }
 
-    /**
-     * Switch entity extension for better diversity. Should be used together with chassisId.
-     */
+    /** Switch entity extension for better diversity. Should be used together with chassisId. */
     public String port;
-    public TaskResultRecord port(String port)
-    {
+
+    public TaskResultRecord port(String port) {
         this.port = port;
         return this;
     }
 
-    /**
-     * Operation status
-     */
+    /** Operation status */
     public String status;
-    public TaskResultRecord status(String status)
-    {
+
+    public TaskResultRecord status(String status) {
         this.status = status;
         return this;
     }
 
-    /**
-     */
+    /** */
     public TaskResultRecordErrorsInfo[] errors;
-    public TaskResultRecord errors(TaskResultRecordErrorsInfo[] errors)
-    {
+
+    public TaskResultRecord errors(TaskResultRecordErrorsInfo[] errors) {
         this.errors = errors;
         return this;
     }

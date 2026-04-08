@@ -1,40 +1,32 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* All Desktop Ring target
-*/
-public class CommAllDesktopRingAlwaysRingTargetResource
-{
-    /**
-     * Required
-     */
+/** All Desktop Ring target */
+public class CommAllDesktopRingAlwaysRingTargetResource {
+    /** Required */
     public String name;
-    public CommAllDesktopRingAlwaysRingTargetResource name(String name)
-    {
+
+    public CommAllDesktopRingAlwaysRingTargetResource name(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * Ring target type. Applicable for all desktop and mobile applications.
-    * Ensures applications ring all the time during a call
-     * Required
-     * Example: AllDesktopRingTarget
-     * Enum: AllDesktopRingTarget, AllMobileRingTarget
+     * Ring target type. Applicable for all desktop and mobile applications. Ensures applications
+     * ring all the time during a call Required Example: AllDesktopRingTarget Enum:
+     * AllDesktopRingTarget, AllMobileRingTarget
      */
     public String type;
-    public CommAllDesktopRingAlwaysRingTargetResource type(String type)
-    {
+
+    public CommAllDesktopRingAlwaysRingTargetResource type(String type) {
         this.type = type;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CommReferencedExtensionResource extension;
-    public CommAllDesktopRingAlwaysRingTargetResource extension(CommReferencedExtensionResource extension)
-    {
+
+    public CommAllDesktopRingAlwaysRingTargetResource extension(
+            CommReferencedExtensionResource extension) {
         this.extension = extension;
         return this;
     }

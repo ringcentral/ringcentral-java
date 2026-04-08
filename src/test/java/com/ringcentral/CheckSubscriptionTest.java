@@ -1,21 +1,20 @@
 package com.ringcentral;
 
+import static org.junit.Assert.assertNotNull;
+
 import com.ringcentral.definitions.SubscriptionInfo;
 import com.ringcentral.definitions.SubscriptionListResource;
-import org.junit.Test;
-
 import java.io.IOException;
-
-import static org.junit.Assert.assertNotNull;
+import org.junit.Test;
 
 public class CheckSubscriptionTest {
     @Test
     public void listSubscriptions() throws IOException, RestException {
-        RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL")
-        );
+        RestClient rc =
+                new RestClient(
+                        System.getenv("RINGCENTRAL_CLIENT_ID"),
+                        System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                        System.getenv("RINGCENTRAL_SERVER_URL"));
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 

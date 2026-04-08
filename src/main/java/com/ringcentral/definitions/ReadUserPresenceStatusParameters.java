@@ -1,27 +1,19 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Query parameters for operation readUserPresenceStatus
-*/
-public class ReadUserPresenceStatusParameters
-{
-    /**
-     * Specifies whether to return a detailed telephony state or not
-     */
+/** Query parameters for operation readUserPresenceStatus */
+public class ReadUserPresenceStatusParameters {
+    /** Specifies whether to return a detailed telephony state or not */
     public Boolean detailedTelephonyState;
-    public ReadUserPresenceStatusParameters detailedTelephonyState(Boolean detailedTelephonyState)
-    {
+
+    public ReadUserPresenceStatusParameters detailedTelephonyState(Boolean detailedTelephonyState) {
         this.detailedTelephonyState = detailedTelephonyState;
         return this;
     }
 
-    /**
-     * Specifies whether to return SIP data or not
-     */
+    /** Specifies whether to return SIP data or not */
     public Boolean sipData;
-    public ReadUserPresenceStatusParameters sipData(Boolean sipData)
-    {
+
+    public ReadUserPresenceStatusParameters sipData(Boolean sipData) {
         this.sipData = sipData;
         return this;
     }

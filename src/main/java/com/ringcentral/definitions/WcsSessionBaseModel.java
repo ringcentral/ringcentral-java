@@ -1,67 +1,52 @@
 package com.ringcentral.definitions;
 
-
-public class WcsSessionBaseModel
-{
-    /**
-     * Session scheduled start time.
-     * Required
-     * Format: date-time
-     */
+public class WcsSessionBaseModel {
+    /** Session scheduled start time. Required Format: date-time */
     public String scheduledStartTime;
-    public WcsSessionBaseModel scheduledStartTime(String scheduledStartTime)
-    {
+
+    public WcsSessionBaseModel scheduledStartTime(String scheduledStartTime) {
         this.scheduledStartTime = scheduledStartTime;
         return this;
     }
 
     /**
-     * The duration of the Session in seconds.
-     * Required
-     * Maximum: 43200
-     * Minimum: 30
-     * Format: int32
+     * The duration of the Session in seconds. Required Maximum: 43200 Minimum: 30 Format: int32
      * Example: 1800
      */
     public Long scheduledDuration;
-    public WcsSessionBaseModel scheduledDuration(Long scheduledDuration)
-    {
+
+    public WcsSessionBaseModel scheduledDuration(Long scheduledDuration) {
         this.scheduledDuration = scheduledDuration;
         return this;
     }
 
     /**
-     * IANA-compatible time zone name (see https://www.iana.org/time-zones).
-     * Required
-     * Example: America/New_York
+     * IANA-compatible time zone name (see https://www.iana.org/time-zones). Required Example:
+     * America/New_York
      */
     public String timeZone;
-    public WcsSessionBaseModel timeZone(String timeZone)
-    {
+
+    public WcsSessionBaseModel timeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
 
-    /**
-     * Localized time zone description.
-     * Example: Eastern Time (America/New_York)
-     */
+    /** Localized time zone description. Example: Eastern Time (America/New_York) */
     public String localizedTimeZoneDescription;
-    public WcsSessionBaseModel localizedTimeZoneDescription(String localizedTimeZoneDescription)
-    {
+
+    public WcsSessionBaseModel localizedTimeZoneDescription(String localizedTimeZoneDescription) {
         this.localizedTimeZoneDescription = localizedTimeZoneDescription;
         return this;
     }
 
     /**
-     * The time offset (positive, in seconds) indicating how much in advance
-    * (comparing to &quot;scheduledStartTime&quot;) panel members should join for the pre-webinar team sync
-     * Format: int32
-     * Example: 900
+     * The time offset (positive, in seconds) indicating how much in advance (comparing to
+     * &quot;scheduledStartTime&quot;) panel members should join for the pre-webinar team sync
+     * Format: int32 Example: 900
      */
     public Long panelJoinTimeOffset;
-    public WcsSessionBaseModel panelJoinTimeOffset(Long panelJoinTimeOffset)
-    {
+
+    public WcsSessionBaseModel panelJoinTimeOffset(Long panelJoinTimeOffset) {
         this.panelJoinTimeOffset = panelJoinTimeOffset;
         return this;
     }
@@ -71,43 +56,41 @@ public class WcsSessionBaseModel
      * Example: Live Broadcasting US
      */
     public String title;
-    public WcsSessionBaseModel title(String title)
-    {
+
+    public WcsSessionBaseModel title(String title) {
         this.title = title;
         return this;
     }
 
     /**
-     * User-friendly description of the Session. Can be left blank - then Webinar title should be used for presentation.
-     * Example: Live session for US-based participants
+     * User-friendly description of the Session. Can be left blank - then Webinar title should be
+     * used for presentation. Example: Live session for US-based participants
      */
     public String description;
-    public WcsSessionBaseModel description(String description)
-    {
+
+    public WcsSessionBaseModel description(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * Session status (for the purposes of Configuration service)
-     * Example: Scheduled
-     * Enum: Scheduled, Active, Finished
+     * Session status (for the purposes of Configuration service) Example: Scheduled Enum:
+     * Scheduled, Active, Finished
      */
     public String status;
-    public WcsSessionBaseModel status(String status)
-    {
+
+    public WcsSessionBaseModel status(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * The URI to join the webinar as a host
-     * Format: uri
-     * Example: https://v.ringcentral.com/w/join/de7yd8ew7yfsdfjh899843rgj
+     * The URI to join the webinar as a host Format: uri Example:
+     * https://v.ringcentral.com/w/join/de7yd8ew7yfsdfjh899843rgj
      */
     public String hostJoinUri;
-    public WcsSessionBaseModel hostJoinUri(String hostJoinUri)
-    {
+
+    public WcsSessionBaseModel hostJoinUri(String hostJoinUri) {
         this.hostJoinUri = hostJoinUri;
         return this;
     }

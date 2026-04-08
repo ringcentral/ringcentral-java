@@ -1,24 +1,27 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.IvrMenuInfo;
-import org.junit.Test;
-
-import java.io.IOException;
-
 import static org.junit.Assert.assertNotNull;
+
+import com.ringcentral.definitions.IvrMenuInfo;
+import java.io.IOException;
+import org.junit.Test;
 
 public class ProvisionIvrMenuTest {
     @Test
     public void CreateAndDeleteIVRMenu() throws IOException, RestException {
-        RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL")
-        );
+        RestClient rc =
+                new RestClient(
+                        System.getenv("RINGCENTRAL_CLIENT_ID"),
+                        System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                        System.getenv("RINGCENTRAL_SERVER_URL"));
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
-        IvrMenuInfo ivrMenuInfo = rc.restapi().account().ivrMenus().post(new IvrMenuInfo().extensionNumber("11909").name("My IVR menu"));
+        IvrMenuInfo ivrMenuInfo =
+                rc.restapi()
+                        .account()
+                        .ivrMenus()
+                        .post(new IvrMenuInfo().extensionNumber("11909").name("My IVR menu"));
         assertNotNull(ivrMenuInfo);
 
         // delete endpoint deprecated, we have to use string endpoint instead.

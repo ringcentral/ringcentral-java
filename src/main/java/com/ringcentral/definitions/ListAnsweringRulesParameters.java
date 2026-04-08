@@ -1,81 +1,63 @@
 package com.ringcentral.definitions;
 
-
+/** Query parameters for operation listAnsweringRules */
+public class ListAnsweringRulesParameters {
     /**
-* Query parameters for operation listAnsweringRules
-*/
-public class ListAnsweringRulesParameters
-{
-    /**
-     * Type of an answering rule. Multiple values are supported
-     * Enum: BusinessHours, AfterHours, Custom
+     * Type of an answering rule. Multiple values are supported Enum: BusinessHours, AfterHours,
+     * Custom
      */
     public String[] type;
-    public ListAnsweringRulesParameters type(String[] type)
-    {
+
+    public ListAnsweringRulesParameters type(String[] type) {
         this.type = type;
         return this;
     }
 
     /**
-     * The level of details to be returned about each answering rule
-     * Default: Simple
-     * Enum: Detailed, Simple
+     * The level of details to be returned about each answering rule Default: Simple Enum: Detailed,
+     * Simple
      */
     public String view;
-    public ListAnsweringRulesParameters view(String view)
-    {
+
+    public ListAnsweringRulesParameters view(String view) {
         this.view = view;
         return this;
     }
 
-    /**
-     * If true, then only active call handling rules are returned
-     */
+    /** If true, then only active call handling rules are returned */
     public Boolean enabledOnly;
-    public ListAnsweringRulesParameters enabledOnly(Boolean enabledOnly)
-    {
+
+    public ListAnsweringRulesParameters enabledOnly(Boolean enabledOnly) {
         this.enabledOnly = enabledOnly;
         return this;
     }
 
-    /**
-     * If true, internal identifiers are returned in the response
-     */
+    /** If true, internal identifiers are returned in the response */
     public Boolean internalIds;
-    public ListAnsweringRulesParameters internalIds(Boolean internalIds)
-    {
+
+    public ListAnsweringRulesParameters internalIds(Boolean internalIds) {
         this.internalIds = internalIds;
         return this;
     }
 
     /**
-     * The result set page number (1-indexed) to return
-     * Maximum: 1000
-     * Minimum: 1
-     * Format: int32
-     * Example: 1
-     * Default: 1
+     * The result set page number (1-indexed) to return Maximum: 1000 Minimum: 1 Format: int32
+     * Example: 1 Default: 1
      */
     public Long page;
-    public ListAnsweringRulesParameters page(Long page)
-    {
+
+    public ListAnsweringRulesParameters page(Long page) {
         this.page = page;
         return this;
     }
 
     /**
-     * The number of items per page. If the provided value in the request
-    * is greater than a maximum, the maximum value is applied
-     * Maximum: 1000
-     * Minimum: 1
-     * Format: int32
-     * Example: 100
-     * Default: 100
+     * The number of items per page. If the provided value in the request is greater than a maximum,
+     * the maximum value is applied Maximum: 1000 Minimum: 1 Format: int32 Example: 100 Default: 100
      */
     public Long perPage;
-    public ListAnsweringRulesParameters perPage(Long perPage)
-    {
+
+    public ListAnsweringRulesParameters perPage(Long perPage) {
         this.perPage = perPage;
         return this;
     }

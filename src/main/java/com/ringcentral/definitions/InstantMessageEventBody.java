@@ -1,185 +1,148 @@
 package com.ringcentral.definitions;
 
-
-    /**
-* Notification payload body
-*/
-public class InstantMessageEventBody
-{
-    /**
-     * Internal identifier of a message
-     */
+/** Notification payload body */
+public class InstantMessageEventBody {
+    /** Internal identifier of a message */
     public String id;
-    public InstantMessageEventBody id(String id)
-    {
+
+    public InstantMessageEventBody id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Message receiver(s) information
-     */
+    /** Message receiver(s) information */
     public NotificationRecipientInfo[] to;
-    public InstantMessageEventBody to(NotificationRecipientInfo[] to)
-    {
+
+    public InstantMessageEventBody to(NotificationRecipientInfo[] to) {
         this.to = to;
         return this;
     }
 
-    /**
-     */
+    /** */
     public SenderInfo from;
-    public InstantMessageEventBody from(SenderInfo from)
-    {
+
+    public InstantMessageEventBody from(SenderInfo from) {
         this.from = from;
         return this;
     }
 
-    /**
-     * Type of message. The default value is &#039;SMS&#039;
-     */
+    /** Type of message. The default value is &#039;SMS&#039; */
     public String type;
-    public InstantMessageEventBody type(String type)
-    {
+
+    public InstantMessageEventBody type(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * Message creation date/time in ISO 8601 format including timezone,
-    * for example 2016-03-10T18:07:52.534Z
-     * Format: date-time
+     * Message creation date/time in ISO 8601 format including timezone, for example
+     * 2016-03-10T18:07:52.534Z Format: date-time
      */
     public String creationTime;
-    public InstantMessageEventBody creationTime(String creationTime)
-    {
+
+    public InstantMessageEventBody creationTime(String creationTime) {
         this.creationTime = creationTime;
         return this;
     }
 
     /**
-     * Date/time when the message was modified in ISO 8601 format including
-    * timezone, for example 2016-03-10T18:07:52.534Z
-     * Format: date-time
+     * Date/time when the message was modified in ISO 8601 format including timezone, for example
+     * 2016-03-10T18:07:52.534Z Format: date-time
      */
     public String lastModifiedTime;
-    public InstantMessageEventBody lastModifiedTime(String lastModifiedTime)
-    {
+
+    public InstantMessageEventBody lastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }
 
-    /**
-     * Message read status
-     * Enum: Read, Unread
-     */
+    /** Message read status Enum: Read, Unread */
     public String readStatus;
-    public InstantMessageEventBody readStatus(String readStatus)
-    {
+
+    public InstantMessageEventBody readStatus(String readStatus) {
         this.readStatus = readStatus;
         return this;
     }
 
-    /**
-     * Message priority
-     * Enum: Normal, High
-     */
+    /** Message priority Enum: Normal, High */
     public String priority;
-    public InstantMessageEventBody priority(String priority)
-    {
+
+    public InstantMessageEventBody priority(String priority) {
         this.priority = priority;
         return this;
     }
 
-    /**
-     * Message attachment data
-     */
+    /** Message attachment data */
     public MessageAttachmentInfo[] attachments;
-    public InstantMessageEventBody attachments(MessageAttachmentInfo[] attachments)
-    {
+
+    public InstantMessageEventBody attachments(MessageAttachmentInfo[] attachments) {
         this.attachments = attachments;
         return this;
     }
 
-    /**
-     * Message direction (inbound or outbound)
-     * Enum: Inbound, Outbound
-     */
+    /** Message direction (inbound or outbound) Enum: Inbound, Outbound */
     public String direction;
-    public InstantMessageEventBody direction(String direction)
-    {
+
+    public InstantMessageEventBody direction(String direction) {
         this.direction = direction;
         return this;
     }
 
     /**
-     * Message availability status. Message in `Deleted` state is still
-    * preserved with all its attachments and can be restored. `Purged` means
-    * that all attachments are already deleted and the message itself is about
-    * to be physically deleted shortly
-     * Enum: Alive, Deleted, Purged
+     * Message availability status. Message in `Deleted` state is still preserved with all its
+     * attachments and can be restored. `Purged` means that all attachments are already deleted and
+     * the message itself is about to be physically deleted shortly Enum: Alive, Deleted, Purged
      */
     public String availability;
-    public InstantMessageEventBody availability(String availability)
-    {
+
+    public InstantMessageEventBody availability(String availability) {
         this.availability = availability;
         return this;
     }
 
-    /**
-     * Message subject. It replicates message text which is also returned
-    * as an attachment
-     */
+    /** Message subject. It replicates message text which is also returned as an attachment */
     public String subject;
-    public InstantMessageEventBody subject(String subject)
-    {
+
+    public InstantMessageEventBody subject(String subject) {
         this.subject = subject;
         return this;
     }
 
     /**
-     * Message status. Different message types may have different
-    * allowed status values. For outbound faxes the aggregated message status
-    * is returned. If, for multi-recipient outbound message, a status for
-    * at least one recipient is `Queued`, then the `Queued` value is returned.
-    * If a status for at least one recipient is `SendingFailed`,
-    * then the &#039;SendingFailed&#039; value is returned. In other cases,
-    * the `Sent` status is returned
+     * Message status. Different message types may have different allowed status values. For
+     * outbound faxes the aggregated message status is returned. If, for multi-recipient outbound
+     * message, a status for at least one recipient is `Queued`, then the `Queued` value is
+     * returned. If a status for at least one recipient is `SendingFailed`, then the
+     * &#039;SendingFailed&#039; value is returned. In other cases, the `Sent` status is returned
      * Enum: Queued, Sent, Delivered, DeliveryFailed, SendingFailed, Received
      */
     public String messageStatus;
-    public InstantMessageEventBody messageStatus(String messageStatus)
-    {
+
+    public InstantMessageEventBody messageStatus(String messageStatus) {
         this.messageStatus = messageStatus;
         return this;
     }
 
-    /**
-     * Deprecated. Identifier of a conversation the message belongs
-    * to
-     */
+    /** Deprecated. Identifier of a conversation the message belongs to */
     public String conversationId;
-    public InstantMessageEventBody conversationId(String conversationId)
-    {
+
+    public InstantMessageEventBody conversationId(String conversationId) {
         this.conversationId = conversationId;
         return this;
     }
 
-    /**
-     */
+    /** */
     public ConversationInfo conversation;
-    public InstantMessageEventBody conversation(ConversationInfo conversation)
-    {
+
+    public InstantMessageEventBody conversation(ConversationInfo conversation) {
         this.conversation = conversation;
         return this;
     }
 
-    /**
-     * Internal identifier of a subscription owner extension
-     */
+    /** Internal identifier of a subscription owner extension */
     public String ownerId;
-    public InstantMessageEventBody ownerId(String ownerId)
-    {
+
+    public InstantMessageEventBody ownerId(String ownerId) {
         this.ownerId = ownerId;
         return this;
     }

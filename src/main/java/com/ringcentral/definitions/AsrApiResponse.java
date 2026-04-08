@@ -1,23 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class AsrApiResponse
-{
-    /**
-     * Enum: Success, Fail
-     */
+public class AsrApiResponse {
+    /** Enum: Success, Fail */
     public String status;
-    public AsrApiResponse status(String status)
-    {
+
+    public AsrApiResponse status(String status) {
         this.status = status;
         return this;
     }
 
-    /**
-     */
+    /** */
     public AsrApiResponseResponse response;
-    public AsrApiResponse response(AsrApiResponseResponse response)
-    {
+
+    public AsrApiResponse response(AsrApiResponseResponse response) {
         this.response = response;
         return this;
     }

@@ -1,37 +1,32 @@
 package com.ringcentral.definitions;
 
-
-public class AdaptiveCardRequestBackgroundImage
-{
-    /**
-     * Must be `BackgroundImage`
-     * Enum: BackgroundImage
-     */
+public class AdaptiveCardRequestBackgroundImage {
+    /** Must be `BackgroundImage` Enum: BackgroundImage */
     public String type;
-    public AdaptiveCardRequestBackgroundImage type(String type)
-    {
+
+    public AdaptiveCardRequestBackgroundImage type(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * The URL/data URL of an image to be used as a background of a card. Acceptable formats are PNG, JPEG, and GIF
-     * Format: uri
+     * The URL/data URL of an image to be used as a background of a card. Acceptable formats are
+     * PNG, JPEG, and GIF Format: uri
      */
     public String url;
-    public AdaptiveCardRequestBackgroundImage url(String url)
-    {
+
+    public AdaptiveCardRequestBackgroundImage url(String url) {
         this.url = url;
         return this;
     }
 
     /**
-     * Describes how the image should fill the area
-     * Enum: cover, repeatHorizontally, repeatVertically, repeat
+     * Describes how the image should fill the area Enum: cover, repeatHorizontally,
+     * repeatVertically, repeat
      */
     public String fillMode;
-    public AdaptiveCardRequestBackgroundImage fillMode(String fillMode)
-    {
+
+    public AdaptiveCardRequestBackgroundImage fillMode(String fillMode) {
         this.fillMode = fillMode;
         return this;
     }
@@ -41,8 +36,8 @@ public class AdaptiveCardRequestBackgroundImage
      * Enum: left, center, right
      */
     public String horizontalAlignment;
-    public AdaptiveCardRequestBackgroundImage horizontalAlignment(String horizontalAlignment)
-    {
+
+    public AdaptiveCardRequestBackgroundImage horizontalAlignment(String horizontalAlignment) {
         this.horizontalAlignment = horizontalAlignment;
         return this;
     }
@@ -52,8 +47,8 @@ public class AdaptiveCardRequestBackgroundImage
      * Enum: top, center, bottom
      */
     public String verticalAlignment;
-    public AdaptiveCardRequestBackgroundImage verticalAlignment(String verticalAlignment)
-    {
+
+    public AdaptiveCardRequestBackgroundImage verticalAlignment(String verticalAlignment) {
         this.verticalAlignment = verticalAlignment;
         return this;
     }

@@ -3,39 +3,35 @@ package com.ringcentral.paths.restapi.account.extension.messagesync;
 import com.ringcentral.*;
 import com.ringcentral.definitions.*;
 
-public class Index
-{
+public class Index {
     public RestClient rc;
-public com.ringcentral.paths.restapi.account.extension.Index parent;
-public Index(com.ringcentral.paths.restapi.account.extension.Index parent)
-      {
-this.parent = parent;
-this.rc = parent.rc;
+    public com.ringcentral.paths.restapi.account.extension.Index parent;
+
+    public Index(com.ringcentral.paths.restapi.account.extension.Index parent) {
+        this.parent = parent;
+        this.rc = parent.rc;
     }
-    public String path()
-        {
-            return parent.path() + "/message-sync";
-        }
-        public String path(Boolean withParameter)
-        {
-            return path();
-        }
-        
-        /**
-         * Synchronizes messages.
-         * HTTP Method: get
-         * Endpoint: /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/message-sync
-         * Rate Limit Group: Light
-         * App Permission: ReadMessages
-         * User Permission: ReadMessages
-         */
-  public GetMessageSyncResponse get(SyncMessagesParameters queryParams) throws com.ringcentral.RestException, java.io.IOException
-  {
-    okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-    return com.ringcentral.Utils.gson.fromJson(rb.string(), GetMessageSyncResponse.class);
+
+    public String path() {
+        return parent.path() + "/message-sync";
     }
-    public GetMessageSyncResponse get() throws com.ringcentral.RestException, java.io.IOException
-    {
-      return this.get(null);
+
+    public String path(Boolean withParameter) {
+        return path();
+    }
+
+    /**
+     * Synchronizes messages. HTTP Method: get Endpoint:
+     * /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/message-sync Rate Limit
+     * Group: Light App Permission: ReadMessages User Permission: ReadMessages
+     */
+    public GetMessageSyncResponse get(SyncMessagesParameters queryParams)
+            throws com.ringcentral.RestException, java.io.IOException {
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), GetMessageSyncResponse.class);
+    }
+
+    public GetMessageSyncResponse get() throws com.ringcentral.RestException, java.io.IOException {
+        return this.get(null);
     }
 }

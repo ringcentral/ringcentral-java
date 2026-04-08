@@ -1,22 +1,18 @@
 package com.ringcentral.definitions;
 
-
-public class ActivePermissionResource
-{
-    /**
-     */
+public class ActivePermissionResource {
+    /** */
     public PermissionIdResource permission;
-    public ActivePermissionResource permission(PermissionIdResource permission)
-    {
+
+    public ActivePermissionResource permission(PermissionIdResource permission) {
         this.permission = permission;
         return this;
     }
 
-    /**
-     */
+    /** */
     public EffectiveRoleResource effectiveRole;
-    public ActivePermissionResource effectiveRole(EffectiveRoleResource effectiveRole)
-    {
+
+    public ActivePermissionResource effectiveRole(EffectiveRoleResource effectiveRole) {
         this.effectiveRole = effectiveRole;
         return this;
     }
@@ -25,8 +21,8 @@ public class ActivePermissionResource
      * Enum: Account, AllExtensions, Federation, NonUserExtensions, RoleBased, Self, UserExtensions
      */
     public String[] scopes;
-    public ActivePermissionResource scopes(String[] scopes)
-    {
+
+    public ActivePermissionResource scopes(String[] scopes) {
         this.scopes = scopes;
         return this;
     }

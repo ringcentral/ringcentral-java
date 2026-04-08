@@ -1,77 +1,61 @@
 package com.ringcentral.definitions;
 
-
-public class ListCompanyAnsweringRuleInfo
-{
-    /**
-     * Internal identifier of an answering rule
-     */
+public class ListCompanyAnsweringRuleInfo {
+    /** Internal identifier of an answering rule */
     public String id;
-    public ListCompanyAnsweringRuleInfo id(String id)
-    {
+
+    public ListCompanyAnsweringRuleInfo id(String id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * Canonical URI of an answering rule
-     * Format: uri
-     */
+    /** Canonical URI of an answering rule Format: uri */
     public String uri;
-    public ListCompanyAnsweringRuleInfo uri(String uri)
-    {
+
+    public ListCompanyAnsweringRuleInfo uri(String uri) {
         this.uri = uri;
         return this;
     }
 
-    /**
-     * Specifies if the rule is active or inactive. The default value is `true`
-     * Default: true
-     */
+    /** Specifies if the rule is active or inactive. The default value is `true` Default: true */
     public Boolean enabled;
-    public ListCompanyAnsweringRuleInfo enabled(Boolean enabled)
-    {
+
+    public ListCompanyAnsweringRuleInfo enabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    /**
-     * Type of an answering rule
-     * Default: Custom
-     * Enum: BusinessHours, AfterHours, Custom
-     */
+    /** Type of an answering rule Default: Custom Enum: BusinessHours, AfterHours, Custom */
     public String type;
-    public ListCompanyAnsweringRuleInfo type(String type)
-    {
+
+    public ListCompanyAnsweringRuleInfo type(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * Name of an answering rule specified by user. Max number of symbols is 30. The default value is &#039;My Rule N&#039; where &#039;N&#039; is the first free number
+     * Name of an answering rule specified by user. Max number of symbols is 30. The default value
+     * is &#039;My Rule N&#039; where &#039;N&#039; is the first free number
      */
     public String name;
-    public ListCompanyAnsweringRuleInfo name(String name)
-    {
+
+    public ListCompanyAnsweringRuleInfo name(String name) {
         this.name = name;
         return this;
     }
 
-    /**
-     * Answering rules are applied when calling to selected number(s)
-     */
+    /** Answering rules are applied when calling to selected number(s) */
     public CalledNumberInfo[] calledNumbers;
-    public ListCompanyAnsweringRuleInfo calledNumbers(CalledNumberInfo[] calledNumbers)
-    {
+
+    public ListCompanyAnsweringRuleInfo calledNumbers(CalledNumberInfo[] calledNumbers) {
         this.calledNumbers = calledNumbers;
         return this;
     }
 
-    /**
-     */
+    /** */
     public CompanyAnsweringRuleExtensionInfo extension;
-    public ListCompanyAnsweringRuleInfo extension(CompanyAnsweringRuleExtensionInfo extension)
-    {
+
+    public ListCompanyAnsweringRuleInfo extension(CompanyAnsweringRuleExtensionInfo extension) {
         this.extension = extension;
         return this;
     }

@@ -1,21 +1,20 @@
 package com.ringcentral;
 
 import com.ringcentral.definitions.*;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class IVRContentTest {
     @Test
     public void downloadIVRPromptContent() throws IOException, RestException {
-        RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL")
-        );
+        RestClient rc =
+                new RestClient(
+                        System.getenv("RINGCENTRAL_CLIENT_ID"),
+                        System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                        System.getenv("RINGCENTRAL_SERVER_URL"));
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
@@ -31,32 +30,39 @@ public class IVRContentTest {
 
     @Test
     public void createIVRPromptContent() throws IOException, RestException {
-        RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL")
-        );
+        RestClient rc =
+                new RestClient(
+                        System.getenv("RINGCENTRAL_CLIENT_ID"),
+                        System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                        System.getenv("RINGCENTRAL_SERVER_URL"));
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
-        rc.restapi().account().ivrPrompts().post(new CreateIVRPromptRequest()
-            .name("Uploaded via API")
-            .attachment(new Attachment()
-                .contentType("audio/mpeg")
-                .filename("test.mp3")
-                .content(Files.readAllBytes(Paths.get("./src/test/resources/test.mp3")))
-            ));
+        rc.restapi()
+                .account()
+                .ivrPrompts()
+                .post(
+                        new CreateIVRPromptRequest()
+                                .name("Uploaded via API")
+                                .attachment(
+                                        new Attachment()
+                                                .contentType("audio/mpeg")
+                                                .filename("test.mp3")
+                                                .content(
+                                                        Files.readAllBytes(
+                                                                Paths.get(
+                                                                        "./src/test/resources/test.mp3")))));
 
         rc.revoke();
     }
 
     @Test
     public void updateIVRPromptContent() throws IOException, RestException {
-        RestClient rc = new RestClient(
-            System.getenv("RINGCENTRAL_CLIENT_ID"),
-            System.getenv("RINGCENTRAL_CLIENT_SECRET"),
-            System.getenv("RINGCENTRAL_SERVER_URL")
-        );
+        RestClient rc =
+                new RestClient(
+                        System.getenv("RINGCENTRAL_CLIENT_ID"),
+                        System.getenv("RINGCENTRAL_CLIENT_SECRET"),
+                        System.getenv("RINGCENTRAL_SERVER_URL"));
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
@@ -64,8 +70,10 @@ public class IVRContentTest {
         PromptInfo promptInfo = rc.restapi().account().ivrPrompts(ivrPrompts.records[0].id).get();
         Assert.assertNotNull(promptInfo.id);
 
-        rc.restapi().account().ivrPrompts(promptInfo.id).put(new UpdateIVRPromptRequest()
-            .filename("test.mp3"));
+        rc.restapi()
+                .account()
+                .ivrPrompts(promptInfo.id)
+                .put(new UpdateIVRPromptRequest().filename("test.mp3"));
 
         rc.revoke();
     }

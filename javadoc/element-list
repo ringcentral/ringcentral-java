@@ -5,9 +5,7 @@ com.ringcentral.paths.ai.audio
 com.ringcentral.paths.ai.audio.v1
 com.ringcentral.paths.ai.audio.v1.async
 com.ringcentral.paths.ai.audio.v1.async.speakerdiarize
-com.ringcentral.paths.ai.audio.v1.async.speakeridentify
 com.ringcentral.paths.ai.audio.v1.async.speechtotext
-com.ringcentral.paths.ai.audio.v1.enrollments
 com.ringcentral.paths.ai.insights
 com.ringcentral.paths.ai.insights.v1
 com.ringcentral.paths.ai.insights.v1.async
@@ -144,6 +142,7 @@ com.ringcentral.paths.restapi.account.extension.forwardingnumber
 com.ringcentral.paths.restapi.account.extension.grant
 com.ringcentral.paths.restapi.account.extension.greeting
 com.ringcentral.paths.restapi.account.extension.greeting.content
+com.ringcentral.paths.restapi.account.extension.greeting.holdmusic
 com.ringcentral.paths.restapi.account.extension.messagestore
 com.ringcentral.paths.restapi.account.extension.messagestore.content
 com.ringcentral.paths.restapi.account.extension.messagestoretemplates
@@ -171,6 +170,9 @@ com.ringcentral.paths.restapi.account.messagestoreconfiguration
 com.ringcentral.paths.restapi.account.messagestorereport
 com.ringcentral.paths.restapi.account.messagestorereport.archive
 com.ringcentral.paths.restapi.account.messagestoretemplates
+com.ringcentral.paths.restapi.account.msteams
+com.ringcentral.paths.restapi.account.msteams.directrouting
+com.ringcentral.paths.restapi.account.msteams.directrouting.users
 com.ringcentral.paths.restapi.account.pagingonlygroups
 com.ringcentral.paths.restapi.account.pagingonlygroups.bulkassign
 com.ringcentral.paths.restapi.account.pagingonlygroups.devices
@@ -184,6 +186,9 @@ com.ringcentral.paths.restapi.account.sites
 com.ringcentral.paths.restapi.account.sites.bulkassign
 com.ringcentral.paths.restapi.account.sites.ivr
 com.ringcentral.paths.restapi.account.sites.members
+com.ringcentral.paths.restapi.account.smsregistrationbrands
+com.ringcentral.paths.restapi.account.smsregistrationbrands.campaigns
+com.ringcentral.paths.restapi.account.smsregistrationbrands.campaigns.submitphonenumbers
 com.ringcentral.paths.restapi.account.telephony
 com.ringcentral.paths.restapi.account.telephony.callout
 com.ringcentral.paths.restapi.account.telephony.conference
@@ -224,8 +229,6 @@ com.ringcentral.paths.restapi.dictionary.permissioncategory
 com.ringcentral.paths.restapi.dictionary.state
 com.ringcentral.paths.restapi.dictionary.timezone
 com.ringcentral.paths.restapi.dictionary.userrole
-com.ringcentral.paths.restapi.numberparser
-com.ringcentral.paths.restapi.numberparser.parse
 com.ringcentral.paths.restapi.oauth
 com.ringcentral.paths.restapi.oauth.authorize
 com.ringcentral.paths.restapi.oauth.jwks
@@ -264,6 +267,8 @@ com.ringcentral.paths.restapi.v2.accounts.sendwelcomeemail
 com.ringcentral.paths.restapi.v2.accounts.sms
 com.ringcentral.paths.restapi.v2.accounts.sms.consents
 com.ringcentral.paths.restapi.v2.accounts.sms.consents.export
+com.ringcentral.paths.restapi.v2.numberparser
+com.ringcentral.paths.restapi.v2.numberparser.parse
 com.ringcentral.paths.scim
 com.ringcentral.paths.scim.resourcetypes
 com.ringcentral.paths.scim.schemas

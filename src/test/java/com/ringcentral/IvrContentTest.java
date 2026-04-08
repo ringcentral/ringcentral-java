@@ -1,13 +1,17 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.*;
+import com.ringcentral.definitions.Attachment;
+import com.ringcentral.definitions.CreateIVRPromptRequest;
+import com.ringcentral.definitions.IvrPrompts;
+import com.ringcentral.definitions.PromptInfo;
+import com.ringcentral.definitions.UpdateIVRPromptRequest;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class IVRContentTest {
+public class IvrContentTest {
     @Test
     public void downloadIVRPromptContent() throws IOException, RestException {
         RestClient rc =

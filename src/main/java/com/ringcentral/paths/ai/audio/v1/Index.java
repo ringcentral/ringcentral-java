@@ -1,7 +1,6 @@
 package com.ringcentral.paths.ai.audio.v1;
 
 import com.ringcentral.*;
-import com.ringcentral.definitions.*;
 
 public class Index {
     public RestClient rc;

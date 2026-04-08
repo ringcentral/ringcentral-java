@@ -1,11 +1,3 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "filewatcher.commands": [
-        {
-            "match": "\\.tsx?",
-            "isAsync": true,
-            "cmd": "cd '${workspaceRoot}/code-generator' && yarn gts fix '${file}'",
-            "event": "onFileChange"
-        }
-    ]
 }

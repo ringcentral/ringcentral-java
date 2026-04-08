@@ -4,7 +4,7 @@ plugins {
     id 'java-library'
     id 'signing'
     id 'checkstyle'
-    id 'com.diffplug.spotless' version '6.25.0'
+    id 'com.diffplug.spotless' version '8.4.0'
 }
 
 group = 'com.ringcentral'
@@ -15,8 +15,8 @@ repositories {
 }
 
 dependencies {
-    api 'com.google.code.gson:gson:2.10.1'
-    api 'com.squareup.okhttp3:okhttp:4.11.0'
+    api 'com.google.code.gson:gson:2.13.2'
+    api 'com.squareup.okhttp3:okhttp:5.3.2'
     testImplementation 'junit:junit:4.13.2'
 }
 
@@ -66,13 +66,6 @@ publishing {
         }
     }
     repositories {
-        // maven {
-        //     url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-        //     credentials {
-        //         username = ossrhUsername
-        //         password = ossrhPassword
-        //     }
-        // }
         maven {
             name = 'LocalStaging'
             url = uri("$buildDir/staging-deploy") 
@@ -99,7 +92,7 @@ test {
 spotless {
     java {
         target 'src/*/java/**/*.java'
-        googleJavaFormat('1.17.0').aosp()
+        googleJavaFormat('1.35.0').aosp()
         formatAnnotations()
         removeUnusedImports()
         trimTrailingWhitespace()
@@ -108,7 +101,7 @@ spotless {
 }
 
 checkstyle {
-    toolVersion = '10.17.0'
+    toolVersion = '13.4.0'
     configFile = file('config/checkstyle/checkstyle.xml')
 }
 

@@ -1,34 +1,37 @@
 package com.ringcentral.definitions;
 
 
-public class CommInteractionRuleInteractionConditionRequest {
+public class CommInteractionRuleInteractionConditionRequest
+{
     /**
-     * Ring target type
+     * Interaction condition type resource
      * Required
      * Example: Interaction
      * Enum: Interaction, Schedule, State
      */
     public String type;
-    /**
-     * Required
-     */
-    public CommFromResource[] from;
-    /**
-     * Required
-     */
-    public String[] to;
-
-    public CommInteractionRuleInteractionConditionRequest type(String type) {
+    public CommInteractionRuleInteractionConditionRequest type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommInteractionRuleInteractionConditionRequest from(CommFromResource[] from) {
+    /**
+     * Required
+     */
+    public CommFromResource[] from;
+    public CommInteractionRuleInteractionConditionRequest from(CommFromResource[] from)
+    {
         this.from = from;
         return this;
     }
 
-    public CommInteractionRuleInteractionConditionRequest to(String[] to) {
+    /**
+     * Required
+     */
+    public String[] to;
+    public CommInteractionRuleInteractionConditionRequest to(String[] to)
+    {
         this.to = to;
         return this;
     }

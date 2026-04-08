@@ -38,7 +38,7 @@ const normalizeField = (f: Field): Field => {
 const generateField = (f: Field, modelName: string) => {
   f = normalizeField(f);
   let p = "";
-  if (["public", "default", "package"].includes(f.name)) {
+  if (["public", "default", "package", "private"].includes(f.name)) {
     p += `    @SerializedName("${f.name}")\n`;
     f.name = `_${f.name}`;
   }

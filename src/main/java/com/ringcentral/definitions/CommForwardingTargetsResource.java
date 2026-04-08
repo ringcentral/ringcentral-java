@@ -1,22 +1,24 @@
 package com.ringcentral.definitions;
 
 
-public class CommForwardingTargetsResource {
+public class CommForwardingTargetsResource
+{
     /**
      * Required
      */
     public CommForwardingTargetsResourceRecords[] records;
-    /**
-     * Required
-     */
-    public EnumeratedPagingModel paging;
-
-    public CommForwardingTargetsResource records(CommForwardingTargetsResourceRecords[] records) {
+    public CommForwardingTargetsResource records(CommForwardingTargetsResourceRecords[] records)
+    {
         this.records = records;
         return this;
     }
 
-    public CommForwardingTargetsResource paging(EnumeratedPagingModel paging) {
+    /**
+     * Required
+     */
+    public EnumeratedPagingModel paging;
+    public CommForwardingTargetsResource paging(EnumeratedPagingModel paging)
+    {
         this.paging = paging;
         return this;
     }

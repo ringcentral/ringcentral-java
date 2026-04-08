@@ -1,27 +1,31 @@
 package com.ringcentral.paths.webinar.registration;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-public class Index {
+public class Index
+{
     public RestClient rc;
-    public com.ringcentral.paths.webinar.Index parent;
-
-    public Index(com.ringcentral.paths.webinar.Index parent) {
-        this.parent = parent;
-        this.rc = parent.rc;
+public com.ringcentral.paths.webinar.Index parent;
+public Index(com.ringcentral.paths.webinar.Index parent)
+      {
+this.parent = parent;
+this.rc = parent.rc;
     }
+    public String path()
+        {
+            return parent.path(false) + "/registration";
+        }
+        public String path(Boolean withParameter)
+        {
+            return path();
+        }
+        
 
-    public String path() {
-        return parent.path(false) + "/registration";
-    }
 
-    public String path(Boolean withParameter) {
-        return path();
-    }
-
-
-    public com.ringcentral.paths.webinar.registration.v1.Index v1() {
-        return new com.ringcentral.paths.webinar.registration.v1.Index(this);
-    }
+    public com.ringcentral.paths.webinar.registration.v1.Index v1()
+  {
+    return new com.ringcentral.paths.webinar.registration.v1.Index(this);
+  }
 
 }

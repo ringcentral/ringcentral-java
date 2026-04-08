@@ -1,49 +1,54 @@
 package com.ringcentral.definitions;
 
 
-public class ScimSchemaSearchResponse {
+public class ScimSchemaSearchResponse
+{
     /**
      * Resource type list
      */
     public ScimSchemaResponse[] Resources;
-    /**
-     * Format: int64
-     */
-    public Long itemsPerPage;
-    /**
-     * Enum: urn:ietf:params:scim:api:messages:2.0:ListResponse
-     */
-    public String[] schemas;
-    /**
-     * Format: int64
-     */
-    public Long startIndex;
-    /**
-     * Format: int64
-     */
-    public Long totalResults;
-
-    public ScimSchemaSearchResponse Resources(ScimSchemaResponse[] Resources) {
+    public ScimSchemaSearchResponse Resources(ScimSchemaResponse[] Resources)
+    {
         this.Resources = Resources;
         return this;
     }
 
-    public ScimSchemaSearchResponse itemsPerPage(Long itemsPerPage) {
+    /**
+     * Format: int64
+     */
+    public Long itemsPerPage;
+    public ScimSchemaSearchResponse itemsPerPage(Long itemsPerPage)
+    {
         this.itemsPerPage = itemsPerPage;
         return this;
     }
 
-    public ScimSchemaSearchResponse schemas(String[] schemas) {
+    /**
+     * Enum: urn:ietf:params:scim:api:messages:2.0:ListResponse
+     */
+    public String[] schemas;
+    public ScimSchemaSearchResponse schemas(String[] schemas)
+    {
         this.schemas = schemas;
         return this;
     }
 
-    public ScimSchemaSearchResponse startIndex(Long startIndex) {
+    /**
+     * Format: int64
+     */
+    public Long startIndex;
+    public ScimSchemaSearchResponse startIndex(Long startIndex)
+    {
         this.startIndex = startIndex;
         return this;
     }
 
-    public ScimSchemaSearchResponse totalResults(Long totalResults) {
+    /**
+     * Format: int64
+     */
+    public Long totalResults;
+    public ScimSchemaSearchResponse totalResults(Long totalResults)
+    {
         this.totalResults = totalResults;
         return this;
     }

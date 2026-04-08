@@ -1,7 +1,8 @@
 package com.ringcentral.definitions;
 
 
-public class CommExtensionTerminatingTargetRequest {
+public class CommExtensionTerminatingTargetRequest
+{
     /**
      * Terminating target type
      * Required
@@ -9,27 +10,29 @@ public class CommExtensionTerminatingTargetRequest {
      * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String type;
+    public CommExtensionTerminatingTargetRequest type(String type)
+    {
+        this.type = type;
+        return this;
+    }
+
     /**
      * Required
      */
     public CommReferencedExtensionResource extension;
+    public CommExtensionTerminatingTargetRequest extension(CommReferencedExtensionResource extension)
+    {
+        this.extension = extension;
+        return this;
+    }
+
     /**
      * Required
      * Enum: Ringing, Terminating
      */
     public String dispatchingType;
-
-    public CommExtensionTerminatingTargetRequest type(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public CommExtensionTerminatingTargetRequest extension(CommReferencedExtensionResource extension) {
-        this.extension = extension;
-        return this;
-    }
-
-    public CommExtensionTerminatingTargetRequest dispatchingType(String dispatchingType) {
+    public CommExtensionTerminatingTargetRequest dispatchingType(String dispatchingType)
+    {
         this.dispatchingType = dispatchingType;
         return this;
     }

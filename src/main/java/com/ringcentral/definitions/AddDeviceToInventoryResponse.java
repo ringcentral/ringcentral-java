@@ -1,22 +1,24 @@
 package com.ringcentral.definitions;
 
 
-public class AddDeviceToInventoryResponse {
+public class AddDeviceToInventoryResponse
+{
     /**
      * Required
      */
     public AddDeviceToInventoryResponseDevices[] devices;
-    /**
-     * Required
-     */
-    public SiteBasicInfo site;
-
-    public AddDeviceToInventoryResponse devices(AddDeviceToInventoryResponseDevices[] devices) {
+    public AddDeviceToInventoryResponse devices(AddDeviceToInventoryResponseDevices[] devices)
+    {
         this.devices = devices;
         return this;
     }
 
-    public AddDeviceToInventoryResponse site(SiteBasicInfo site) {
+    /**
+     * Required
+     */
+    public SiteBasicInfo site;
+    public AddDeviceToInventoryResponse site(SiteBasicInfo site)
+    {
         this.site = site;
         return this;
     }

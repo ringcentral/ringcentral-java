@@ -1,10 +1,11 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Action information
- */
-public class CommTerminatingActionResource {
+    /**
+* Action information
+*/
+public class CommTerminatingActionResource
+{
     /**
      * Action type
      * Required
@@ -12,38 +13,41 @@ public class CommTerminatingActionResource {
      * Enum: PlayConnectingMessageAction, PlayConnectingPromptAction, PlayWelcomePromptAction, ScreeningAction, RingGroupAction, RingAlwaysGroupAction, TerminatingAction
      */
     public String type;
+    public CommTerminatingActionResource type(String type)
+    {
+        this.type = type;
+        return this;
+    }
+
     /**
      * Action information
      * Required
      */
     public CommTerminatingActionResourceTargets[] targets;
+    public CommTerminatingActionResource targets(CommTerminatingActionResourceTargets[] targets)
+    {
+        this.targets = targets;
+        return this;
+    }
+
     /**
      * Terminating target type
      * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String ringingTargetType;
+    public CommTerminatingActionResource ringingTargetType(String ringingTargetType)
+    {
+        this.ringingTargetType = ringingTargetType;
+        return this;
+    }
+
     /**
      * Terminating target type
      * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String terminatingTargetType;
-
-    public CommTerminatingActionResource type(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public CommTerminatingActionResource targets(CommTerminatingActionResourceTargets[] targets) {
-        this.targets = targets;
-        return this;
-    }
-
-    public CommTerminatingActionResource ringingTargetType(String ringingTargetType) {
-        this.ringingTargetType = ringingTargetType;
-        return this;
-    }
-
-    public CommTerminatingActionResource terminatingTargetType(String terminatingTargetType) {
+    public CommTerminatingActionResource terminatingTargetType(String terminatingTargetType)
+    {
         this.terminatingTargetType = terminatingTargetType;
         return this;
     }

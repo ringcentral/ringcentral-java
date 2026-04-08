@@ -3,108 +3,112 @@ package com.ringcentral.definitions;
 import com.google.gson.annotations.SerializedName;
 
 
-/**
- * Account service information, including brand, service plan and billing plan
- */
-public class AccountServiceInfo {
+    /**
+* Account service information, including brand, service plan and billing plan
+* 
+*/
+public class AccountServiceInfo
+{
     /**
      * Canonical URI of the account Service Info resource
      * Format: uri
      */
     public String uri;
-    /**
-     * Account Service Plan name
-     */
-    public String servicePlanName;
-    /**
-     *
-     */
-    public BrandInfo brand;
-    /**
-     *
-     */
-    public CountryInfoShortModel contractedCountry;
-    /**
-     *
-     */
-    public ServicePlanInfo servicePlan;
-    /**
-     *
-     */
-    public ServicePlanInfo targetServicePlan;
-    /**
-     *
-     */
-    public BillingPlanInfo billingPlan;
-    /**
-     * Service features information, see Service Feature List
-     */
-    public ServiceFeatureInfo[] serviceFeatures;
-    /**
-     *
-     */
-    public AccountLimitsInfo limits;
-    /**
-     *
-     */
-    @SerializedName("package")
-    public BillingPackageInfo _package;
-    /**
-     *
-     */
-    public UBrandInfo uBrand;
-
-    public AccountServiceInfo uri(String uri) {
+    public AccountServiceInfo uri(String uri)
+    {
         this.uri = uri;
         return this;
     }
 
-    public AccountServiceInfo servicePlanName(String servicePlanName) {
+    /**
+     * Account Service Plan name
+     */
+    public String servicePlanName;
+    public AccountServiceInfo servicePlanName(String servicePlanName)
+    {
         this.servicePlanName = servicePlanName;
         return this;
     }
 
-    public AccountServiceInfo brand(BrandInfo brand) {
+    /**
+     */
+    public BrandInfo brand;
+    public AccountServiceInfo brand(BrandInfo brand)
+    {
         this.brand = brand;
         return this;
     }
 
-    public AccountServiceInfo contractedCountry(CountryInfoShortModel contractedCountry) {
+    /**
+     */
+    public CountryInfoShortModel contractedCountry;
+    public AccountServiceInfo contractedCountry(CountryInfoShortModel contractedCountry)
+    {
         this.contractedCountry = contractedCountry;
         return this;
     }
 
-    public AccountServiceInfo servicePlan(ServicePlanInfo servicePlan) {
+    /**
+     */
+    public ServicePlanInfo servicePlan;
+    public AccountServiceInfo servicePlan(ServicePlanInfo servicePlan)
+    {
         this.servicePlan = servicePlan;
         return this;
     }
 
-    public AccountServiceInfo targetServicePlan(ServicePlanInfo targetServicePlan) {
+    /**
+     */
+    public ServicePlanInfo targetServicePlan;
+    public AccountServiceInfo targetServicePlan(ServicePlanInfo targetServicePlan)
+    {
         this.targetServicePlan = targetServicePlan;
         return this;
     }
 
-    public AccountServiceInfo billingPlan(BillingPlanInfo billingPlan) {
+    /**
+     */
+    public BillingPlanInfo billingPlan;
+    public AccountServiceInfo billingPlan(BillingPlanInfo billingPlan)
+    {
         this.billingPlan = billingPlan;
         return this;
     }
 
-    public AccountServiceInfo serviceFeatures(ServiceFeatureInfo[] serviceFeatures) {
+    /**
+     * Service features information, see Service Feature List
+     */
+    public ServiceFeatureInfo[] serviceFeatures;
+    public AccountServiceInfo serviceFeatures(ServiceFeatureInfo[] serviceFeatures)
+    {
         this.serviceFeatures = serviceFeatures;
         return this;
     }
 
-    public AccountServiceInfo limits(AccountLimitsInfo limits) {
+    /**
+     */
+    public AccountLimitsInfo limits;
+    public AccountServiceInfo limits(AccountLimitsInfo limits)
+    {
         this.limits = limits;
         return this;
     }
 
-    public AccountServiceInfo _package(BillingPackageInfo _package) {
+    /**
+     */
+    @SerializedName("package")
+    public BillingPackageInfo _package;
+    public AccountServiceInfo _package(BillingPackageInfo _package)
+    {
         this._package = _package;
         return this;
     }
 
-    public AccountServiceInfo uBrand(UBrandInfo uBrand) {
+    /**
+     */
+    public UBrandInfo uBrand;
+    public AccountServiceInfo uBrand(UBrandInfo uBrand)
+    {
         this.uBrand = uBrand;
         return this;
     }

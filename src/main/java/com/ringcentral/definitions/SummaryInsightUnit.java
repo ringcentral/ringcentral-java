@@ -1,13 +1,20 @@
 package com.ringcentral.definitions;
 
 
-public class SummaryInsightUnit {
+public class SummaryInsightUnit
+{
     /**
      * Value of the summary
      * Required
      * Example: conversational insights text
      */
     public String value;
+    public SummaryInsightUnit value(String value)
+    {
+        this.value = value;
+        return this;
+    }
+
     /**
      * Start time of the insight (in sec)
      * Required
@@ -15,6 +22,12 @@ public class SummaryInsightUnit {
      * Example: 1.2
      */
     public Double start;
+    public SummaryInsightUnit start(Double start)
+    {
+        this.start = start;
+        return this;
+    }
+
     /**
      * End time of the insight (in sec)
      * Required
@@ -22,18 +35,8 @@ public class SummaryInsightUnit {
      * Example: 4.2
      */
     public Double end;
-
-    public SummaryInsightUnit value(String value) {
-        this.value = value;
-        return this;
-    }
-
-    public SummaryInsightUnit start(Double start) {
-        this.start = start;
-        return this;
-    }
-
-    public SummaryInsightUnit end(Double end) {
+    public SummaryInsightUnit end(Double end)
+    {
         this.end = end;
         return this;
     }

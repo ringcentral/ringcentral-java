@@ -1,11 +1,18 @@
 package com.ringcentral.definitions;
 
 
-public class CommVoiceMailTerminatingTargetResource {
+public class CommVoiceMailTerminatingTargetResource
+{
     /**
      * Required
      */
     public String name;
+    public CommVoiceMailTerminatingTargetResource name(String name)
+    {
+        this.name = name;
+        return this;
+    }
+
     /**
      * Terminating target type
      * Required
@@ -13,31 +20,27 @@ public class CommVoiceMailTerminatingTargetResource {
      * Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
      */
     public String type;
-    /**
-     *
-     */
-    public CommReferencedExtensionResource extension;
-    /**
-     * Required
-     */
-    public CommTerminatingPromptResource prompt;
-
-    public CommVoiceMailTerminatingTargetResource name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public CommVoiceMailTerminatingTargetResource type(String type) {
+    public CommVoiceMailTerminatingTargetResource type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommVoiceMailTerminatingTargetResource extension(CommReferencedExtensionResource extension) {
+    /**
+     */
+    public CommReferencedExtensionResource extension;
+    public CommVoiceMailTerminatingTargetResource extension(CommReferencedExtensionResource extension)
+    {
         this.extension = extension;
         return this;
     }
 
-    public CommVoiceMailTerminatingTargetResource prompt(CommTerminatingPromptResource prompt) {
+    /**
+     * Required
+     */
+    public CommTerminatingPromptResource prompt;
+    public CommVoiceMailTerminatingTargetResource prompt(CommTerminatingPromptResource prompt)
+    {
         this.prompt = prompt;
         return this;
     }

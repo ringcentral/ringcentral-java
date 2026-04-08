@@ -1,31 +1,35 @@
 package com.ringcentral.paths.webinar.notifications.v1;
 
-import com.ringcentral.RestClient;
+import com.ringcentral.*;
+import com.ringcentral.definitions.*;
 
-public class Index {
+public class Index
+{
     public RestClient rc;
-    public com.ringcentral.paths.webinar.notifications.Index parent;
-
-    public Index(com.ringcentral.paths.webinar.notifications.Index parent) {
-        this.parent = parent;
-        this.rc = parent.rc;
+public com.ringcentral.paths.webinar.notifications.Index parent;
+public Index(com.ringcentral.paths.webinar.notifications.Index parent)
+      {
+this.parent = parent;
+this.rc = parent.rc;
     }
+    public String path()
+        {
+            return parent.path(false) + "/v1";
+        }
+        public String path(Boolean withParameter)
+        {
+            return path();
+        }
+        
 
-    public String path() {
-        return parent.path(false) + "/v1";
+
+  public com.ringcentral.paths.webinar.notifications.v1.subscriptions.Index subscriptions()
+    {
+      return this.subscriptions(null);
     }
-
-    public String path(Boolean withParameter) {
-        return path();
-    }
-
-
-    public com.ringcentral.paths.webinar.notifications.v1.subscriptions.Index subscriptions() {
-        return this.subscriptions(null);
-    }
-
-    public com.ringcentral.paths.webinar.notifications.v1.subscriptions.Index subscriptions(String subscriptionId) {
-        return new com.ringcentral.paths.webinar.notifications.v1.subscriptions.Index(this, subscriptionId);
-    }
+  public com.ringcentral.paths.webinar.notifications.v1.subscriptions.Index subscriptions(String subscriptionId)
+  {
+    return new com.ringcentral.paths.webinar.notifications.v1.subscriptions.Index(this, subscriptionId);
+  }
 
 }

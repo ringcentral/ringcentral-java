@@ -1,10 +1,11 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Query parameters for operation listForwardingNumbers
- */
-public class ListForwardingNumbersParameters {
+    /**
+* Query parameters for operation listForwardingNumbers
+*/
+public class ListForwardingNumbersParameters
+{
     /**
      * The result set page number (1-indexed) to return
      * Maximum: 1000
@@ -14,9 +15,15 @@ public class ListForwardingNumbersParameters {
      * Default: 1
      */
     public Long page;
+    public ListForwardingNumbersParameters page(Long page)
+    {
+        this.page = page;
+        return this;
+    }
+
     /**
-     * The number of items per page. If provided value in the request
-     * is greater than a maximum, the maximum value is applied
+     * The number of items per page. If the provided value in the request
+    * is greater than a maximum, the maximum value is applied
      * Maximum: 1000
      * Minimum: 1
      * Format: int32
@@ -24,13 +31,8 @@ public class ListForwardingNumbersParameters {
      * Default: 100
      */
     public Long perPage;
-
-    public ListForwardingNumbersParameters page(Long page) {
-        this.page = page;
-        return this;
-    }
-
-    public ListForwardingNumbersParameters perPage(Long perPage) {
+    public ListForwardingNumbersParameters perPage(Long perPage)
+    {
         this.perPage = perPage;
         return this;
     }

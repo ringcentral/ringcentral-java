@@ -1,44 +1,48 @@
 package com.ringcentral.definitions;
 
 
-public class CommDeviceForwardingTargetResource {
-    /**
-     *
-     */
-    public String name;
+public class CommDeviceForwardingTargetResource
+{
     /**
      * Ring target type
      * Required
      * Example: DeviceRingTarget
-     * Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
+     * Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
      */
     public String type;
-    /**
-     * Required
-     */
-    public CommDeviceResource device;
-    /**
-     *
-     */
-    public CommReferencedExtensionResource extension;
-
-    public CommDeviceForwardingTargetResource name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public CommDeviceForwardingTargetResource type(String type) {
+    public CommDeviceForwardingTargetResource type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommDeviceForwardingTargetResource device(CommDeviceResource device) {
+    /**
+     * Required
+     */
+    public CommDeviceResource device;
+    public CommDeviceForwardingTargetResource device(CommDeviceResource device)
+    {
         this.device = device;
         return this;
     }
 
-    public CommDeviceForwardingTargetResource extension(CommReferencedExtensionResource extension) {
+    /**
+     */
+    public CommReferencedExtensionResource extension;
+    public CommDeviceForwardingTargetResource extension(CommReferencedExtensionResource extension)
+    {
         this.extension = extension;
+        return this;
+    }
+
+    /**
+     * Device name
+     * Example: HP2
+     */
+    public String name;
+    public CommDeviceForwardingTargetResource name(String name)
+    {
+        this.name = name;
         return this;
     }
 }

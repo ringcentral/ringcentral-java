@@ -1,18 +1,31 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Query parameters for operation listVoiceInteractionRules
- */
-public class ListVoiceInteractionRulesParameters {
+    /**
+* Query parameters for operation listVoiceInteractionRules
+*/
+public class ListVoiceInteractionRulesParameters
+{
     /**
      * Display only enabled rules
      */
     public Boolean enabled;
+    public ListVoiceInteractionRulesParameters enabled(Boolean enabled)
+    {
+        this.enabled = enabled;
+        return this;
+    }
+
     /**
      * Display only rules with reference to state
      */
     public Boolean hasReference;
+    public ListVoiceInteractionRulesParameters hasReference(Boolean hasReference)
+    {
+        this.hasReference = hasReference;
+        return this;
+    }
+
     /**
      * The result set page number (1-indexed) to return
      * Maximum: 1000
@@ -22,9 +35,15 @@ public class ListVoiceInteractionRulesParameters {
      * Default: 1
      */
     public Long page;
+    public ListVoiceInteractionRulesParameters page(Long page)
+    {
+        this.page = page;
+        return this;
+    }
+
     /**
-     * The number of items per page. If provided value in the request
-     * is greater than a maximum, the maximum value is applied
+     * The number of items per page. If the provided value in the request
+    * is greater than a maximum, the maximum value is applied
      * Maximum: 1000
      * Minimum: 1
      * Format: int32
@@ -32,23 +51,8 @@ public class ListVoiceInteractionRulesParameters {
      * Default: 100
      */
     public Long perPage;
-
-    public ListVoiceInteractionRulesParameters enabled(Boolean enabled) {
-        this.enabled = enabled;
-        return this;
-    }
-
-    public ListVoiceInteractionRulesParameters hasReference(Boolean hasReference) {
-        this.hasReference = hasReference;
-        return this;
-    }
-
-    public ListVoiceInteractionRulesParameters page(Long page) {
-        this.page = page;
-        return this;
-    }
-
-    public ListVoiceInteractionRulesParameters perPage(Long perPage) {
+    public ListVoiceInteractionRulesParameters perPage(Long perPage)
+    {
         this.perPage = perPage;
         return this;
     }

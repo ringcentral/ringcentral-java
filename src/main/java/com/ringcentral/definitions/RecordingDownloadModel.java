@@ -1,13 +1,20 @@
 package com.ringcentral.definitions;
 
 
-public class RecordingDownloadModel {
+public class RecordingDownloadModel
+{
     /**
      * Download URI (available only for webinar host or admin)
      * Required
      * Format: uri
      */
     public String downloadUri;
+    public RecordingDownloadModel downloadUri(String downloadUri)
+    {
+        this.downloadUri = downloadUri;
+        return this;
+    }
+
     /**
      * MIME type of the file to download.
      * Required
@@ -15,6 +22,12 @@ public class RecordingDownloadModel {
      * Enum: video/mp4, audio/m4a
      */
     public String downloadContentType;
+    public RecordingDownloadModel downloadContentType(String downloadContentType)
+    {
+        this.downloadContentType = downloadContentType;
+        return this;
+    }
+
     /**
      * Download file size in bytes
      * Required
@@ -22,18 +35,8 @@ public class RecordingDownloadModel {
      * Example: 20821092300
      */
     public Long downloadSize;
-
-    public RecordingDownloadModel downloadUri(String downloadUri) {
-        this.downloadUri = downloadUri;
-        return this;
-    }
-
-    public RecordingDownloadModel downloadContentType(String downloadContentType) {
-        this.downloadContentType = downloadContentType;
-        return this;
-    }
-
-    public RecordingDownloadModel downloadSize(Long downloadSize) {
+    public RecordingDownloadModel downloadSize(Long downloadSize)
+    {
         this.downloadSize = downloadSize;
         return this;
     }

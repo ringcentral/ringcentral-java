@@ -1,36 +1,48 @@
 package com.ringcentral.definitions;
 
 
-public class DeviceDefinition {
+public class DeviceDefinition
+{
     /**
      * Device type. Only &quot;OtherPhone&quot; and &quot;WebRTC&quot; device types are supported at the moment
      * Required
      * Enum: OtherPhone, WebRTC
      */
     public String type;
-    /**
-     * Only &quot;address&quot; is supported at the moment
-     * Required
-     */
-    public DeviceDefinitionEmergency emergency;
-    /**
-     * To be used to assign a number by ID
-     * Required
-     */
-    public DeviceDefinitionPhoneInfo phoneInfo;
-
-    public DeviceDefinition type(String type) {
+    public DeviceDefinition type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public DeviceDefinition emergency(DeviceDefinitionEmergency emergency) {
+    /**
+     * Required
+     */
+    public DeviceDefinitionEmergency emergency;
+    public DeviceDefinition emergency(DeviceDefinitionEmergency emergency)
+    {
         this.emergency = emergency;
         return this;
     }
 
-    public DeviceDefinition phoneInfo(DeviceDefinitionPhoneInfo phoneInfo) {
+    /**
+     * Assign a specific phone number
+     * Required
+     */
+    public DeviceDefinitionPhoneInfo phoneInfo;
+    public DeviceDefinition phoneInfo(DeviceDefinitionPhoneInfo phoneInfo)
+    {
         this.phoneInfo = phoneInfo;
+        return this;
+    }
+
+    /**
+     * The option that indicates whether Contact Center Phone Line should be created or not
+     */
+    public Boolean contactCenterPhoneLine;
+    public DeviceDefinition contactCenterPhoneLine(Boolean contactCenterPhoneLine)
+    {
+        this.contactCenterPhoneLine = contactCenterPhoneLine;
         return this;
     }
 }

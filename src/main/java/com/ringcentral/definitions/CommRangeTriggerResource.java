@@ -1,7 +1,8 @@
 package com.ringcentral.definitions;
 
 
-public class CommRangeTriggerResource {
+public class CommRangeTriggerResource
+{
     /**
      * Trigger type
      * Required
@@ -9,17 +10,18 @@ public class CommRangeTriggerResource {
      * Enum: Daily, Weekly, Range
      */
     public String triggerType;
-    /**
-     * Required
-     */
-    public CommRangeResource[] ranges;
-
-    public CommRangeTriggerResource triggerType(String triggerType) {
+    public CommRangeTriggerResource triggerType(String triggerType)
+    {
         this.triggerType = triggerType;
         return this;
     }
 
-    public CommRangeTriggerResource ranges(CommRangeResource[] ranges) {
+    /**
+     * Required
+     */
+    public CommRangeResource[] ranges;
+    public CommRangeTriggerResource ranges(CommRangeResource[] ranges)
+    {
         this.ranges = ranges;
         return this;
     }

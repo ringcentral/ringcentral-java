@@ -1,6 +1,6 @@
 package com.ringcentral;
 
-import com.ringcentral.definitions.IVRMenuInfo;
+import com.ringcentral.definitions.IvrMenuInfo;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,11 +18,11 @@ public class ProvisionIvrMenuTest {
 
         rc.authorize(System.getenv("RINGCENTRAL_JWT_TOKEN"));
 
-        IVRMenuInfo iVRMenuInfo = rc.restapi().account().ivrMenus().post(new IVRMenuInfo().extensionNumber("11909").name("My IVR menu"));
-        assertNotNull(iVRMenuInfo);
+        IvrMenuInfo ivrMenuInfo = rc.restapi().account().ivrMenus().post(new IvrMenuInfo().extensionNumber("11909").name("My IVR menu"));
+        assertNotNull(ivrMenuInfo);
 
         // delete endpoint deprecated, we have to use string endpoint instead.
-        String str = rc.delete("/restapi/v1.0/account/~/extension/" + iVRMenuInfo.id).string();
+        String str = rc.delete("/restapi/v1.0/account/~/extension/" + ivrMenuInfo.id).string();
         assertNotNull(str);
 
         rc.revoke();

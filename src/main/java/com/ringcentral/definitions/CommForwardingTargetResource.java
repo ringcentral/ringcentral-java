@@ -1,24 +1,16 @@
 package com.ringcentral.definitions;
 
 
-public class CommForwardingTargetResource {
-    /**
-     *
-     */
-    public String name;
+public class CommForwardingTargetResource
+{
     /**
      * Ring target type
      * Required
-     * Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
+     * Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
      */
     public String type;
-
-    public CommForwardingTargetResource name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public CommForwardingTargetResource type(String type) {
+    public CommForwardingTargetResource type(String type)
+    {
         this.type = type;
         return this;
     }

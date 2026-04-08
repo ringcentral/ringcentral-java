@@ -1,70 +1,77 @@
 package com.ringcentral.definitions;
 
 
-public class TemplateInfo {
+public class TemplateInfo
+{
     /**
      * Link to a template
      * Format: uri
      */
     public String uri;
+    public TemplateInfo uri(String uri)
+    {
+        this.uri = uri;
+        return this;
+    }
+
     /**
      * Internal identifier of a template
      */
     public String id;
+    public TemplateInfo id(String id)
+    {
+        this.id = id;
+        return this;
+    }
+
     /**
      * Description of a template
      */
     public String description;
+    public TemplateInfo description(String description)
+    {
+        this.description = description;
+        return this;
+    }
+
     /**
-     * Enum: UserSettings, CallHandling, LimitedExtensions
+     * Enum: CallHandling, CallQueueCallHandling, CallQueueSettings, KeyTemplates, LimitedExtensions, SiteCallHandling, UserSettings
      */
     public String type;
+    public TemplateInfo type(String type)
+    {
+        this.type = type;
+        return this;
+    }
+
     /**
      * Name of a template
      */
     public String name;
+    public TemplateInfo name(String name)
+    {
+        this.name = name;
+        return this;
+    }
+
     /**
      * Time of a template creation
      * Format: date-time
      */
     public String creationTime;
+    public TemplateInfo creationTime(String creationTime)
+    {
+        this.creationTime = creationTime;
+        return this;
+    }
+
     /**
      * Time of the last template modification
      * Format: date-time
      */
     public String lastModifiedTime;
-
-    public TemplateInfo uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
-
-    public TemplateInfo id(String id) {
-        this.id = id;
-        return this;
-    }
-
-    public TemplateInfo description(String description) {
-        this.description = description;
-        return this;
-    }
-
-    public TemplateInfo type(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public TemplateInfo name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public TemplateInfo creationTime(String creationTime) {
-        this.creationTime = creationTime;
-        return this;
-    }
-
-    public TemplateInfo lastModifiedTime(String lastModifiedTime) {
+    public TemplateInfo lastModifiedTime(String lastModifiedTime)
+    {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }

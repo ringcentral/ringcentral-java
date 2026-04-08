@@ -1,25 +1,26 @@
 package com.ringcentral.definitions;
 
 
-public class CommInteractionRuleStateConditionResource {
+public class CommInteractionRuleStateConditionResource
+{
     /**
-     * Ring target type
+     * Interaction condition type resource
      * Required
      * Example: State
      * Enum: Interaction, Schedule, State
      */
     public String type;
-    /**
-     *
-     */
-    public CommStateResource state;
-
-    public CommInteractionRuleStateConditionResource type(String type) {
+    public CommInteractionRuleStateConditionResource type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommInteractionRuleStateConditionResource state(CommStateResource state) {
+    /**
+     */
+    public CommStateResource state;
+    public CommInteractionRuleStateConditionResource state(CommStateResource state)
+    {
         this.state = state;
         return this;
     }

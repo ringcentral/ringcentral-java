@@ -1,11 +1,17 @@
 package com.ringcentral.definitions;
 
 
-public class CommDeviceForwardingTargetRequest {
+public class CommDeviceForwardingTargetRequest
+{
     /**
-     *
      */
     public String name;
+    public CommDeviceForwardingTargetRequest name(String name)
+    {
+        this.name = name;
+        return this;
+    }
+
     /**
      * Ring target type
      * Required
@@ -13,31 +19,27 @@ public class CommDeviceForwardingTargetRequest {
      * Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
      */
     public String type;
-    /**
-     * Required
-     */
-    public CommDeviceRequest device;
-    /**
-     *
-     */
-    public CommReferencedExtensionResource extension;
-
-    public CommDeviceForwardingTargetRequest name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public CommDeviceForwardingTargetRequest type(String type) {
+    public CommDeviceForwardingTargetRequest type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommDeviceForwardingTargetRequest device(CommDeviceRequest device) {
+    /**
+     * Required
+     */
+    public CommDeviceRequest device;
+    public CommDeviceForwardingTargetRequest device(CommDeviceRequest device)
+    {
         this.device = device;
         return this;
     }
 
-    public CommDeviceForwardingTargetRequest extension(CommReferencedExtensionResource extension) {
+    /**
+     */
+    public CommReferencedExtensionResource extension;
+    public CommDeviceForwardingTargetRequest extension(CommReferencedExtensionResource extension)
+    {
         this.extension = extension;
         return this;
     }

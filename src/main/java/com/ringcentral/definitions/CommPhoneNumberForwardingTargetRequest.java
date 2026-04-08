@@ -1,11 +1,17 @@
 package com.ringcentral.definitions;
 
 
-public class CommPhoneNumberForwardingTargetRequest {
+public class CommPhoneNumberForwardingTargetRequest
+{
     /**
-     *
      */
     public String name;
+    public CommPhoneNumberForwardingTargetRequest name(String name)
+    {
+        this.name = name;
+        return this;
+    }
+
     /**
      * Ring target type
      * Required
@@ -13,22 +19,18 @@ public class CommPhoneNumberForwardingTargetRequest {
      * Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
      */
     public String type;
-    /**
-     * Required
-     */
-    public CommPhoneNumberResource destination;
-
-    public CommPhoneNumberForwardingTargetRequest name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public CommPhoneNumberForwardingTargetRequest type(String type) {
+    public CommPhoneNumberForwardingTargetRequest type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommPhoneNumberForwardingTargetRequest destination(CommPhoneNumberResource destination) {
+    /**
+     * Required
+     */
+    public CommPhoneNumberResource destination;
+    public CommPhoneNumberForwardingTargetRequest destination(CommPhoneNumberResource destination)
+    {
         this.destination = destination;
         return this;
     }

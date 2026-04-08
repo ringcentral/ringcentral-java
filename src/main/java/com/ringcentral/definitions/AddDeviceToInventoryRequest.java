@@ -1,13 +1,20 @@
 package com.ringcentral.definitions;
 
 
-public class AddDeviceToInventoryRequest {
+public class AddDeviceToInventoryRequest
+{
     /**
      * Device type. Use `OtherPhone` to indicate BYOD (customer provided) device
      * Required
      * Enum: OtherPhone
      */
     public String type;
+    public AddDeviceToInventoryRequest type(String type)
+    {
+        this.type = type;
+        return this;
+    }
+
     /**
      * Quantity of devices (total quantity should not exceed 50)
      * Required
@@ -16,22 +23,17 @@ public class AddDeviceToInventoryRequest {
      * Format: int32
      */
     public Long quantity;
-    /**
-     *
-     */
-    public AddDeviceToInventoryRequestSite site;
-
-    public AddDeviceToInventoryRequest type(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public AddDeviceToInventoryRequest quantity(Long quantity) {
+    public AddDeviceToInventoryRequest quantity(Long quantity)
+    {
         this.quantity = quantity;
         return this;
     }
 
-    public AddDeviceToInventoryRequest site(AddDeviceToInventoryRequestSite site) {
+    /**
+     */
+    public AddDeviceToInventoryRequestSite site;
+    public AddDeviceToInventoryRequest site(AddDeviceToInventoryRequestSite site)
+    {
         this.site = site;
         return this;
     }

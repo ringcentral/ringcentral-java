@@ -1,13 +1,13 @@
 package com.ringcentral.definitions;
 
 
-public class CreateMultipleSwitchesRequest {
+public class CreateMultipleSwitchesRequest
+{
     /**
-     *
      */
-    public CreateSwitchInfo[] records;
-
-    public CreateMultipleSwitchesRequest records(CreateSwitchInfo[] records) {
+    public SwitchInfo[] records;
+    public CreateMultipleSwitchesRequest records(SwitchInfo[] records)
+    {
         this.records = records;
         return this;
     }

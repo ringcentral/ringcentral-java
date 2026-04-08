@@ -2,7 +2,7 @@ package com.ringcentral;
 
 import com.ringcentral.definitions.ContactInfoCreationRequest;
 import com.ringcentral.definitions.ExtensionCreationRequest;
-import com.ringcentral.definitions.ExtensionCreationResponse;
+import com.ringcentral.definitions.GetExtensionInfoResponse;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -24,16 +24,16 @@ public class ProvisionExtensionsTest {
             String message = Utils.formatHttpMessage(response, request);
         });
 
-        ExtensionCreationResponse extensionCreationResponse = rc.restapi().account().extension().post(new ExtensionCreationRequest()
+        GetExtensionInfoResponse getExtensionInfoResponse = rc.restapi().account().extension().post(new ExtensionCreationRequest()
             .extensionNumber("11808").contact(new ContactInfoCreationRequest()
                 .email("a1b23c4d@example.com").firstName("First").lastName("Last")
             )
             .type("User")
         );
-        assertNotNull(extensionCreationResponse);
+        assertNotNull(getExtensionInfoResponse);
 
         // delete endpoint is deprecated, so we have to type string endpoint instead
-        String str = rc.delete("/restapi/v1.0/account/~/extension/" + extensionCreationResponse.id.toString()).string();
+        String str = rc.delete("/restapi/v1.0/account/~/extension/" + getExtensionInfoResponse.id.toString()).string();
         assertNotNull(str);
 
         rc.revoke();

@@ -1,13 +1,14 @@
 package com.ringcentral.definitions;
 
 
-public class PunctuateOutput {
+public class PunctuateOutput
+{
     /**
      * Required
      */
     public String[] texts;
-
-    public PunctuateOutput texts(String[] texts) {
+    public PunctuateOutput texts(String[] texts)
+    {
         this.texts = texts;
         return this;
     }

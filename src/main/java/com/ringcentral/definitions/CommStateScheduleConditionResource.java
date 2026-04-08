@@ -1,24 +1,26 @@
 package com.ringcentral.definitions;
 
 
-public class CommStateScheduleConditionResource {
+public class CommStateScheduleConditionResource
+{
     /**
-     * Ring target type
+     * State condition type
      * Required
      * Enum: Schedule, State
      */
     public String type;
-    /**
-     * Required
-     */
-    public CommStateScheduleResource schedule;
-
-    public CommStateScheduleConditionResource type(String type) {
+    public CommStateScheduleConditionResource type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommStateScheduleConditionResource schedule(CommStateScheduleResource schedule) {
+    /**
+     * Required
+     */
+    public CommStateScheduleResource schedule;
+    public CommStateScheduleConditionResource schedule(CommStateScheduleResource schedule)
+    {
         this.schedule = schedule;
         return this;
     }

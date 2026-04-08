@@ -1,37 +1,39 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Ring target
- */
-public class CommCoworkerRingTargetResource {
+    /**
+* Ring target
+*/
+public class CommCoworkerRingTargetResource
+{
     /**
      * Required
      */
     public CommReferencedExtensionResource extension;
-    /**
-     * Ring target type
-     * Required
-     * Example: CoworkerRingTarget
-     * Enum: AllDesktopRingTarget, AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
-     */
-    public String type;
-    /**
-     *
-     */
-    public String name;
-
-    public CommCoworkerRingTargetResource extension(CommReferencedExtensionResource extension) {
+    public CommCoworkerRingTargetResource extension(CommReferencedExtensionResource extension)
+    {
         this.extension = extension;
         return this;
     }
 
-    public CommCoworkerRingTargetResource type(String type) {
+    /**
+     * Ring target type
+     * Required
+     * Example: CoworkerRingTarget
+     * Enum: AllDesktopRingTarget, AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget, ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
+     */
+    public String type;
+    public CommCoworkerRingTargetResource type(String type)
+    {
         this.type = type;
         return this;
     }
 
-    public CommCoworkerRingTargetResource name(String name) {
+    /**
+     */
+    public String name;
+    public CommCoworkerRingTargetResource name(String name)
+    {
         this.name = name;
         return this;
     }

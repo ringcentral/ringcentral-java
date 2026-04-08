@@ -1,42 +1,46 @@
 package com.ringcentral.definitions;
 
 
-public class GetTimezoneListResponse {
+public class GetTimezoneListResponse
+{
     /**
      * Link to the timezone list resource
      * Format: uri
      */
     public String uri;
+    public GetTimezoneListResponse uri(String uri)
+    {
+        this.uri = uri;
+        return this;
+    }
+
     /**
      * List of timezones
      * Required
      */
     public TimezoneInfoBase[] records;
-    /**
-     * Required
-     */
-    public PageNavigationModel navigation;
-    /**
-     * Required
-     */
-    public EnumeratedPagingModel paging;
-
-    public GetTimezoneListResponse uri(String uri) {
-        this.uri = uri;
-        return this;
-    }
-
-    public GetTimezoneListResponse records(TimezoneInfoBase[] records) {
+    public GetTimezoneListResponse records(TimezoneInfoBase[] records)
+    {
         this.records = records;
         return this;
     }
 
-    public GetTimezoneListResponse navigation(PageNavigationModel navigation) {
+    /**
+     * Required
+     */
+    public PageNavigationModel navigation;
+    public GetTimezoneListResponse navigation(PageNavigationModel navigation)
+    {
         this.navigation = navigation;
         return this;
     }
 
-    public GetTimezoneListResponse paging(EnumeratedPagingModel paging) {
+    /**
+     * Required
+     */
+    public EnumeratedPagingModel paging;
+    public GetTimezoneListResponse paging(EnumeratedPagingModel paging)
+    {
         this.paging = paging;
         return this;
     }

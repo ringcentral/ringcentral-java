@@ -1,13 +1,14 @@
 package com.ringcentral.definitions;
 
 
-public class CallLogRecordTransferTarget {
+public class CallLogRecordTransferTarget
+{
     /**
      * Internal Identifier of Telephony Session, which belongs to transfer target in case of Warm Transfer
      */
     public String telephonySessionId;
-
-    public CallLogRecordTransferTarget telephonySessionId(String telephonySessionId) {
+    public CallLogRecordTransferTarget telephonySessionId(String telephonySessionId)
+    {
         this.telephonySessionId = telephonySessionId;
         return this;
     }

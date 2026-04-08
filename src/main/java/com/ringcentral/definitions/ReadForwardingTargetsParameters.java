@@ -1,16 +1,23 @@
 package com.ringcentral.definitions;
 
 
-/**
- * Query parameters for operation readForwardingTargets
- */
-public class ReadForwardingTargetsParameters {
+    /**
+* Query parameters for operation readForwardingTargets
+*/
+public class ReadForwardingTargetsParameters
+{
     /**
      * Filters the list of forwarding targets. Includes or excludes extension&#039;s own targets from it
      * Example: true
      * Enum: true, false
      */
     public String excludeOwnTargets;
+    public ReadForwardingTargetsParameters excludeOwnTargets(String excludeOwnTargets)
+    {
+        this.excludeOwnTargets = excludeOwnTargets;
+        return this;
+    }
+
     /**
      * The result set page number (1-indexed) to return
      * Maximum: 1000
@@ -20,9 +27,15 @@ public class ReadForwardingTargetsParameters {
      * Default: 1
      */
     public Long page;
+    public ReadForwardingTargetsParameters page(Long page)
+    {
+        this.page = page;
+        return this;
+    }
+
     /**
-     * The number of items per page. If provided value in the request
-     * is greater than a maximum, the maximum value is applied
+     * The number of items per page. If the provided value in the request
+    * is greater than a maximum, the maximum value is applied
      * Maximum: 1000
      * Minimum: 1
      * Format: int32
@@ -30,18 +43,8 @@ public class ReadForwardingTargetsParameters {
      * Default: 100
      */
     public Long perPage;
-
-    public ReadForwardingTargetsParameters excludeOwnTargets(String excludeOwnTargets) {
-        this.excludeOwnTargets = excludeOwnTargets;
-        return this;
-    }
-
-    public ReadForwardingTargetsParameters page(Long page) {
-        this.page = page;
-        return this;
-    }
-
-    public ReadForwardingTargetsParameters perPage(Long perPage) {
+    public ReadForwardingTargetsParameters perPage(Long perPage)
+    {
         this.perPage = perPage;
         return this;
     }

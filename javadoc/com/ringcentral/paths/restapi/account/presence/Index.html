@@ -128,7 +128,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../definitions/AccountPresenceInfo.html" title="class in com.ringcentral.definitions">AccountPresenceInfo</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(com.ringcentral.definitions.ReadAccountPresenceParameters)" class="member-name-link">get</a><wbr>(<a href="../../../../definitions/ReadAccountPresenceParameters.html" title="class in com.ringcentral.definitions">ReadAccountPresenceParameters</a>&nbsp;queryParams)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns presence status of all extensions of an account.</div>
+<div class="block">Returns the presence status of all extensions of an account.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#path()" class="member-name-link">path</a>()</code></div>
@@ -205,11 +205,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../definitions/AccountPresenceInfo.html" title="class in com.ringcentral.definitions">AccountPresenceInfo</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../../../../definitions/ReadAccountPresenceParameters.html" title="class in com.ringcentral.definitions">ReadAccountPresenceParameters</a>&nbsp;queryParams)</span>
                         throws <span class="exceptions"><a href="../../../../RestException.html" title="class in com.ringcentral">RestException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Returns presence status of all extensions of an account. Please note: The presenceStatus is
- returned as Offline (the parameters telephonyStatus, message, userStatus and dndStatus are
- not returned at all) for the following extension types: Department, Announcement Only,
- Voicemail (Take Messages Only), Fax User, Paging Only Group, Shared Lines Group, IVR Menu,
- Application Extension.
+<div class="block">Returns the presence status of all extensions of an account.
+
+ <p>Note: for the extension types listed below, `presenceStatus` is always returned as
+ `Offline`, and the `telephonyStatus`, `message`, `userStatus`, and `dndStatus` attributes are
+ not returned at all:
+
+ <p>- Department - Announcement Only - Voicemail (Take Messages Only) - Fax User - Paging Only
+ Group - Shared Lines Group - IVR Menu - Application Extension
 
  <p>HTTP Method: get Endpoint: /restapi/{apiVersion}/account/{accountId}/presence Rate Limit
  Group: Heavy App Permission: ReadPresence User Permission: ReadPresenceStatus</div>

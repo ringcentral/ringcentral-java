@@ -92,7 +92,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#mode" class="member-name-link">mode</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Here `Default` indicates that all greetings of that type (in all languages) are default.</div>
+<div class="block">Greeting prompt mode for the given `type`.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#type" class="member-name-link">type</a></code></div>
@@ -160,9 +160,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="mode">
 <h3>mode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">mode</span></div>
-<div class="block">Here `Default` indicates that all greetings of that type (in all languages) are default. If
- at least one greeting (in any language) of the specified type is custom, then `Custom` is
- returned. Enum: Default, Custom</div>
+<div class="block">Greeting prompt mode for the given `type`. When at least one custom greeting exists for this
+ type (in any language), the literal value `Custom` is returned. Otherwise the localized
+ display name of the system default prompt is returned (for example `Default` in English or
+ `Par défaut` in French), based on the request locale. Example: Default</div>
 </section>
 </li>
 </ul>

@@ -140,7 +140,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../definitions/CallLogRecord.html" title="class in com.ringcentral.definitions">CallLogRecord</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(com.ringcentral.definitions.ReadUserCallRecordParameters)" class="member-name-link">get</a><wbr>(<a href="../../../../../definitions/ReadUserCallRecordParameters.html" title="class in com.ringcentral.definitions">ReadUserCallRecordParameters</a>&nbsp;queryParams)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns call log records by ID.</div>
+<div class="block">Returns the user&#039;s individual call log record(s) by ID(s).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../definitions/CallLogResponse.html" title="class in com.ringcentral.definitions">CallLogResponse</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#list()" class="member-name-link">list</a>()</code></div>
@@ -290,7 +290,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../definitions/CallLogRecord.html" title="class in com.ringcentral.definitions">CallLogRecord</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../../../../../definitions/ReadUserCallRecordParameters.html" title="class in com.ringcentral.definitions">ReadUserCallRecordParameters</a>&nbsp;queryParams)</span>
                   throws <span class="exceptions"><a href="../../../../../RestException.html" title="class in com.ringcentral">RestException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Returns call log records by ID. HTTP Method: get Endpoint:
+<div class="block">Returns the user&#039;s individual call log record(s) by ID(s). [Bulk
+ syntax](https://developers.ringcentral.com/guide/basics/batch-requests) is supported:
+ multiple IDs can be specified as a comma-separated list in `{callRecordId}` (up to 50 IDs). A
+ single ID returns HTTP 200 with `application/json`. Multiple IDs return HTTP 207 with
+ `multipart/mixed` (one status part, then one part per record).
+
+ <p>HTTP Method: get Endpoint:
  /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}
  Rate Limit Group: Heavy App Permission: ReadCallLog User Permission: ReadCallLog</div>
 <dl class="notes">

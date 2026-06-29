@@ -135,28 +135,43 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Internal identifier of a post</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#lastModifiedTime" class="member-name-link">lastModifiedTime</a></code></div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#isParent" class="member-name-link">isParent</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Boolean flag indicating that current post is a parent post of a thread.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#lastModifiedTime" class="member-name-link">lastModifiedTime</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Post last modification datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
  Format: date-time</div>
 </div>
-<div class="col-first even-row-color"><code><a href="TMMentionsInfo.html" title="class in com.ringcentral.definitions">TMMentionsInfo</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#mentions" class="member-name-link">mentions</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="TMMentionsInfo.html" title="class in com.ringcentral.definitions">TMMentionsInfo</a>[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#mentions" class="member-name-link">mentions</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#parentPostId" class="member-name-link">parentPostId</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Internal identifier of a parent post, in case post is a part of a thread</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#text" class="member-name-link">text</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">For &#039;TextMessage&#039; post type only.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#title" class="member-name-link">title</a></code></div>
+<div class="col-second even-row-color"><code><a href="#threadId" class="member-name-link">threadId</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Title of a message.</div>
+<div class="block">Internal identifier of a thread, in case post is a part of a thread</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#type" class="member-name-link">type</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#title" class="member-name-link">title</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Title of a message.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#type" class="member-name-link">type</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Type of post Enum: TextMessage, PersonJoined, PersonsAdded</div>
 </div>
 </div>
@@ -214,20 +229,29 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id(java.lang.String)" class="member-name-link">id</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lastModifiedTime(java.lang.String)" class="member-name-link">lastModifiedTime</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lastModifiedTime)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isParent(java.lang.Boolean)" class="member-name-link">isParent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;isParent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mentions(com.ringcentral.definitions.TMMentionsInfo%5B%5D)" class="member-name-link">mentions</a><wbr>(<a href="TMMentionsInfo.html" title="class in com.ringcentral.definitions">TMMentionsInfo</a>[]&nbsp;mentions)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lastModifiedTime(java.lang.String)" class="member-name-link">lastModifiedTime</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lastModifiedTime)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mentions(com.ringcentral.definitions.TMMentionsInfo%5B%5D)" class="member-name-link">mentions</a><wbr>(<a href="TMMentionsInfo.html" title="class in com.ringcentral.definitions">TMMentionsInfo</a>[]&nbsp;mentions)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parentPostId(java.lang.String)" class="member-name-link">parentPostId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;parentPostId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text(java.lang.String)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#threadId(java.lang.String)" class="member-name-link">threadId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;threadId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type(java.lang.String)" class="member-name-link">type</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type(java.lang.String)" class="member-name-link">type</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -257,6 +281,28 @@ loadScripts(document, 'script');</script>
 <h3>groupId</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">groupId</span></div>
 <div class="block">Internal identifier of a group a post belongs to</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isParent">
+<h3>isParent</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></span>&nbsp;<span class="element-name">isParent</span></div>
+<div class="block">Boolean flag indicating that current post is a parent post of a thread. Populated only for
+ parent posts</div>
+</section>
+</li>
+<li>
+<section class="detail" id="parentPostId">
+<h3>parentPostId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">parentPostId</span></div>
+<div class="block">Internal identifier of a parent post, in case post is a part of a thread</div>
+</section>
+</li>
+<li>
+<section class="detail" id="threadId">
+<h3>threadId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">threadId</span></div>
+<div class="block">Internal identifier of a thread, in case post is a part of a thread</div>
 </section>
 </li>
 <li>
@@ -376,6 +422,24 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="groupId(java.lang.String)">
 <h3>groupId</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></span>&nbsp;<span class="element-name">groupId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="isParent(java.lang.Boolean)">
+<h3>isParent</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></span>&nbsp;<span class="element-name">isParent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;isParent)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="parentPostId(java.lang.String)">
+<h3>parentPostId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></span>&nbsp;<span class="element-name">parentPostId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;parentPostId)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="threadId(java.lang.String)">
+<h3>threadId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TMPostInfo.html" title="class in com.ringcentral.definitions">TMPostInfo</a></span>&nbsp;<span class="element-name">threadId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;threadId)</span></div>
 </section>
 </li>
 <li>

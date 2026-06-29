@@ -92,9 +92,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="SiteIvrActions.html" title="class in com.ringcentral.definitions">SiteIvrActions</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#actions" class="member-name-link">actions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="SiteIVRTopMenu.html" title="class in com.ringcentral.definitions">SiteIVRTopMenu</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#topMenu" class="member-name-link">topMenu</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#promptRepeatCount" class="member-name-link">promptRepeatCount</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Number of attempts the IVR prompt will be played during a call before the &quot;NoInput&quot;
+ rule will be executed.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="SiteIVRTopMenu.html" title="class in com.ringcentral.definitions">SiteIVRTopMenu</a></code></div>
+<div class="col-second even-row-color"><code><a href="#topMenu" class="member-name-link">topMenu</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -126,8 +132,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#actions(com.ringcentral.definitions.SiteIvrActions%5B%5D)" class="member-name-link">actions</a><wbr>(<a href="SiteIvrActions.html" title="class in com.ringcentral.definitions">SiteIvrActions</a>[]&nbsp;actions)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SiteIVRSettings.html" title="class in com.ringcentral.definitions">SiteIVRSettings</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#topMenu(com.ringcentral.definitions.SiteIVRTopMenu)" class="member-name-link">topMenu</a><wbr>(<a href="SiteIVRTopMenu.html" title="class in com.ringcentral.definitions">SiteIVRTopMenu</a>&nbsp;topMenu)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#promptRepeatCount(java.lang.Long)" class="member-name-link">promptRepeatCount</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;promptRepeatCount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SiteIVRSettings.html" title="class in com.ringcentral.definitions">SiteIVRSettings</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#topMenu(com.ringcentral.definitions.SiteIVRTopMenu)" class="member-name-link">topMenu</a><wbr>(<a href="SiteIVRTopMenu.html" title="class in com.ringcentral.definitions">SiteIVRTopMenu</a>&nbsp;topMenu)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -149,6 +158,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="topMenu">
 <h3>topMenu</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SiteIVRTopMenu.html" title="class in com.ringcentral.definitions">SiteIVRTopMenu</a></span>&nbsp;<span class="element-name">topMenu</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="promptRepeatCount">
+<h3>promptRepeatCount</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a></span>&nbsp;<span class="element-name">promptRepeatCount</span></div>
+<div class="block">Number of attempts the IVR prompt will be played during a call before the &quot;NoInput&quot;
+ rule will be executed. For request payloads, unsupported values return a `CMN-101` error.
+ Required Format: int32 Enum: 1, 2, 3</div>
 </section>
 </li>
 <li>
@@ -183,6 +201,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="topMenu(com.ringcentral.definitions.SiteIVRTopMenu)">
 <h3>topMenu</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SiteIVRSettings.html" title="class in com.ringcentral.definitions">SiteIVRSettings</a></span>&nbsp;<span class="element-name">topMenu</span><wbr><span class="parameters">(<a href="SiteIVRTopMenu.html" title="class in com.ringcentral.definitions">SiteIVRTopMenu</a>&nbsp;topMenu)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="promptRepeatCount(java.lang.Long)">
+<h3>promptRepeatCount</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SiteIVRSettings.html" title="class in com.ringcentral.definitions">SiteIVRSettings</a></span>&nbsp;<span class="element-name">promptRepeatCount</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;promptRepeatCount)</span></div>
 </section>
 </li>
 <li>

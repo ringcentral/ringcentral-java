@@ -143,12 +143,12 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#path(java.lang.Boolean)" class="member-name-link">path</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;withParameter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#post(com.ringcentral.definitions.IvrMenuInfo)" class="member-name-link">post</a><wbr>(<a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a>&nbsp;ivrMenuInfo)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#post(com.ringcentral.definitions.IvrMenuInfoCreate)" class="member-name-link">post</a><wbr>(<a href="../../../../definitions/IvrMenuInfoCreate.html" title="class in com.ringcentral.definitions">IvrMenuInfoCreate</a>&nbsp;ivrMenuInfoCreate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a company IVR menu.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(com.ringcentral.definitions.IvrMenuInfo)" class="member-name-link">put</a><wbr>(<a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a>&nbsp;ivrMenuInfo)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(com.ringcentral.definitions.IvrMenuInfoUpdate)" class="member-name-link">put</a><wbr>(<a href="../../../../definitions/IvrMenuInfoUpdate.html" title="class in com.ringcentral.definitions">IvrMenuInfoUpdate</a>&nbsp;ivrMenuInfoUpdate)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Updates a company IVR menu by ID.</div>
 </div>
@@ -239,9 +239,9 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="post(com.ringcentral.definitions.IvrMenuInfo)">
+<section class="detail" id="post(com.ringcentral.definitions.IvrMenuInfoCreate)">
 <h3>post</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a></span>&nbsp;<span class="element-name">post</span><wbr><span class="parameters">(<a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a>&nbsp;ivrMenuInfo)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a></span>&nbsp;<span class="element-name">post</span><wbr><span class="parameters">(<a href="../../../../definitions/IvrMenuInfoCreate.html" title="class in com.ringcentral.definitions">IvrMenuInfoCreate</a>&nbsp;ivrMenuInfoCreate)</span>
                  throws <span class="exceptions"><a href="../../../../RestException.html" title="class in com.ringcentral">RestException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Creates a company IVR menu. HTTP Method: post Endpoint:
@@ -271,12 +271,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="put(com.ringcentral.definitions.IvrMenuInfo)">
+<section class="detail" id="put(com.ringcentral.definitions.IvrMenuInfoUpdate)">
 <h3>put</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a>&nbsp;ivrMenuInfo)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../definitions/IvrMenuInfo.html" title="class in com.ringcentral.definitions">IvrMenuInfo</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="../../../../definitions/IvrMenuInfoUpdate.html" title="class in com.ringcentral.definitions">IvrMenuInfoUpdate</a>&nbsp;ivrMenuInfoUpdate)</span>
                 throws <span class="exceptions"><a href="../../../../RestException.html" title="class in com.ringcentral">RestException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Updates a company IVR menu by ID. HTTP Method: put Endpoint:
+<div class="block">Updates a company IVR menu by ID. Omitted fields are not changed. HTTP Method: put Endpoint:
  /restapi/{apiVersion}/account/{accountId}/ivr-menus/{ivrMenuId} Rate Limit Group: Medium App
  Permission: ReadAccounts User Permission: AutoReceptionist</div>
 <dl class="notes">

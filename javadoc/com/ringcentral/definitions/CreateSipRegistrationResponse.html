@@ -100,22 +100,27 @@ loadScripts(document, 'script');</script>
 <div class="block">Suggested interval in seconds to periodically call SIP-provision API and update the local
  cache Format: int32</div>
 </div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#sipErrorCodes" class="member-name-link">sipErrorCodes</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="SipFlagsResponse.html" title="class in com.ringcentral.definitions">SipFlagsResponse</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#sipFlags" class="member-name-link">sipFlags</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></code></div>
+<div class="col-second even-row-color"><code><a href="#pstnConfigured" class="member-name-link">pstnConfigured</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Indicates whether the user has an RC App device configured in a PSTN gateway</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#sipErrorCodes" class="member-name-link">sipErrorCodes</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="SipFlagsResponse.html" title="class in com.ringcentral.definitions">SipFlagsResponse</a></code></div>
+<div class="col-second even-row-color"><code><a href="#sipFlags" class="member-name-link">sipFlags</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Required</div>
 </div>
-<div class="col-first even-row-color"><code><a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#sipInfo" class="member-name-link">sipInfo</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#sipInfo" class="member-name-link">sipInfo</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">SIP settings for device Required</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#sipInfoPstn" class="member-name-link">sipInfoPstn</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#sipInfoPstn" class="member-name-link">sipInfoPstn</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">SIP PSTN settings for device</div>
 </div>
 </div>
@@ -152,17 +157,20 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pollingInterval(java.lang.Long)" class="member-name-link">pollingInterval</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;pollingInterval)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CreateSipRegistrationResponse.html" title="class in com.ringcentral.definitions">CreateSipRegistrationResponse</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipErrorCodes(java.lang.String%5B%5D)" class="member-name-link">sipErrorCodes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;sipErrorCodes)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pstnConfigured(java.lang.Boolean)" class="member-name-link">pstnConfigured</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;pstnConfigured)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CreateSipRegistrationResponse.html" title="class in com.ringcentral.definitions">CreateSipRegistrationResponse</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipFlags(com.ringcentral.definitions.SipFlagsResponse)" class="member-name-link">sipFlags</a><wbr>(<a href="SipFlagsResponse.html" title="class in com.ringcentral.definitions">SipFlagsResponse</a>&nbsp;sipFlags)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipErrorCodes(java.lang.String%5B%5D)" class="member-name-link">sipErrorCodes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;sipErrorCodes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CreateSipRegistrationResponse.html" title="class in com.ringcentral.definitions">CreateSipRegistrationResponse</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipInfo(com.ringcentral.definitions.SipInfoResponse%5B%5D)" class="member-name-link">sipInfo</a><wbr>(<a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]&nbsp;sipInfo)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipFlags(com.ringcentral.definitions.SipFlagsResponse)" class="member-name-link">sipFlags</a><wbr>(<a href="SipFlagsResponse.html" title="class in com.ringcentral.definitions">SipFlagsResponse</a>&nbsp;sipFlags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CreateSipRegistrationResponse.html" title="class in com.ringcentral.definitions">CreateSipRegistrationResponse</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipInfoPstn(com.ringcentral.definitions.SipInfoResponse%5B%5D)" class="member-name-link">sipInfoPstn</a><wbr>(<a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]&nbsp;sipInfoPstn)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipInfo(com.ringcentral.definitions.SipInfoResponse%5B%5D)" class="member-name-link">sipInfo</a><wbr>(<a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]&nbsp;sipInfo)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CreateSipRegistrationResponse.html" title="class in com.ringcentral.definitions">CreateSipRegistrationResponse</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipInfoPstn(com.ringcentral.definitions.SipInfoResponse%5B%5D)" class="member-name-link">sipInfoPstn</a><wbr>(<a href="SipInfoResponse.html" title="class in com.ringcentral.definitions">SipInfoResponse</a>[]&nbsp;sipInfoPstn)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -222,6 +230,13 @@ loadScripts(document, 'script');</script>
  cache Format: int32</div>
 </section>
 </li>
+<li>
+<section class="detail" id="pstnConfigured">
+<h3>pstnConfigured</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></span>&nbsp;<span class="element-name">pstnConfigured</span></div>
+<div class="block">Indicates whether the user has an RC App device configured in a PSTN gateway</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -278,6 +293,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="pollingInterval(java.lang.Long)">
 <h3>pollingInterval</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CreateSipRegistrationResponse.html" title="class in com.ringcentral.definitions">CreateSipRegistrationResponse</a></span>&nbsp;<span class="element-name">pollingInterval</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;pollingInterval)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="pstnConfigured(java.lang.Boolean)">
+<h3>pstnConfigured</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CreateSipRegistrationResponse.html" title="class in com.ringcentral.definitions">CreateSipRegistrationResponse</a></span>&nbsp;<span class="element-name">pstnConfigured</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;pstnConfigured)</span></div>
 </section>
 </li>
 </ul>

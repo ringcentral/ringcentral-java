@@ -3,6 +3,7 @@ package com.ringcentral;
 import static org.junit.Assert.assertNotNull;
 
 import com.ringcentral.definitions.IvrMenuInfo;
+import com.ringcentral.definitions.IvrMenuInfoCreate;
 import java.io.IOException;
 import org.junit.Test;
 
@@ -21,7 +22,7 @@ public class ProvisionIvrMenuTest {
                 rc.restapi()
                         .account()
                         .ivrMenus()
-                        .post(new IvrMenuInfo().extensionNumber("11909").name("My IVR menu"));
+                        .post(new IvrMenuInfoCreate().extensionNumber("11909").name("My IVR menu"));
         assertNotNull(ivrMenuInfo);
 
         // delete endpoint deprecated, we have to use string endpoint instead.

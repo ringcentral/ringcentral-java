@@ -18,22 +18,6 @@ public class Index {
         return path();
     }
 
-    public com.ringcentral.paths.ai.text.Index text() {
-        return new com.ringcentral.paths.ai.text.Index(this);
-    }
-
-    public com.ringcentral.paths.ai.audio.Index audio() {
-        return new com.ringcentral.paths.ai.audio.Index(this);
-    }
-
-    public com.ringcentral.paths.ai.status.Index status() {
-        return new com.ringcentral.paths.ai.status.Index(this);
-    }
-
-    public com.ringcentral.paths.ai.insights.Index insights() {
-        return new com.ringcentral.paths.ai.insights.Index(this);
-    }
-
     public com.ringcentral.paths.ai.ringsense.Index ringsense() {
         return new com.ringcentral.paths.ai.ringsense.Index(this);
     }

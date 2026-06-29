@@ -16,18 +16,6 @@ public class ForwardingInfo {
         return this;
     }
 
-    /**
-     * Deprecated parameter. Specifies if the administrator&#039;s softphone is notified before
-     * forwarding the incoming call to desk phones and forwarding numbers. The default value is
-     * `false`
-     */
-    public Boolean notifyAdminSoftPhones;
-
-    public ForwardingInfo notifyAdminSoftPhones(Boolean notifyAdminSoftPhones) {
-        this.notifyAdminSoftPhones = notifyAdminSoftPhones;
-        return this;
-    }
-
     /** Number of rings before forwarding starts Format: int32 */
     public Long softPhonesRingCount;
 
@@ -77,14 +65,6 @@ public class ForwardingInfo {
 
     public ForwardingInfo softPhonesPositionTop(Boolean softPhonesPositionTop) {
         this.softPhonesPositionTop = softPhonesPositionTop;
-        return this;
-    }
-
-    /** Deprecated parameter. Specifies if mobile timeout is activated for the rule */
-    public Boolean mobileTimeout;
-
-    public ForwardingInfo mobileTimeout(Boolean mobileTimeout) {
-        this.mobileTimeout = mobileTimeout;
         return this;
     }
 }

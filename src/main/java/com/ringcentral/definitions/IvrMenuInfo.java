@@ -33,6 +33,18 @@ public class IvrMenuInfo {
         return this;
     }
 
+    /**
+     * Number of attempts the IVR prompt will be played during a call before the &quot;NoInput&quot;
+     * rule will be executed. For request payloads, unsupported values return a `CMN-101` error.
+     * Required Format: int32 Enum: 1, 2, 3
+     */
+    public Long promptRepeatCount;
+
+    public IvrMenuInfo promptRepeatCount(Long promptRepeatCount) {
+        this.promptRepeatCount = promptRepeatCount;
+        return this;
+    }
+
     /** */
     public IvrMenuSiteInfo site;
 

@@ -44,17 +44,6 @@ public class WcsWebinarSettingsModel {
     }
 
     /**
-     * DEPRECATED AND REPLACED BY &#039;pastSessionDeletionEnabled&#039; setting. Indicates if
-     * recording can be deleted (this setting is read-only at webinar level)
-     */
-    public Boolean recordingDeletionEnabled;
-
-    public WcsWebinarSettingsModel recordingDeletionEnabled(Boolean recordingDeletionEnabled) {
-        this.recordingDeletionEnabled = recordingDeletionEnabled;
-        return this;
-    }
-
-    /**
      * Indicates if deletion of past session along with its artifacts is enabled for Host. This
      * setting is read-only at webinar level
      */

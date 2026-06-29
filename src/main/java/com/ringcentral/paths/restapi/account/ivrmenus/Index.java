@@ -40,9 +40,9 @@ public class Index {
      * /restapi/{apiVersion}/account/{accountId}/ivr-menus Rate Limit Group: Heavy App Permission:
      * EditAccounts User Permission: AutoReceptionist
      */
-    public IvrMenuInfo post(IvrMenuInfo ivrMenuInfo)
+    public IvrMenuInfo post(IvrMenuInfoCreate ivrMenuInfoCreate)
             throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.post(this.path(false), ivrMenuInfo, null);
+        okhttp3.ResponseBody rb = this.rc.post(this.path(false), ivrMenuInfoCreate, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), IvrMenuInfo.class);
     }
 
@@ -60,16 +60,16 @@ public class Index {
     }
 
     /**
-     * Updates a company IVR menu by ID. HTTP Method: put Endpoint:
+     * Updates a company IVR menu by ID. Omitted fields are not changed. HTTP Method: put Endpoint:
      * /restapi/{apiVersion}/account/{accountId}/ivr-menus/{ivrMenuId} Rate Limit Group: Medium App
      * Permission: ReadAccounts User Permission: AutoReceptionist
      */
-    public IvrMenuInfo put(IvrMenuInfo ivrMenuInfo)
+    public IvrMenuInfo put(IvrMenuInfoUpdate ivrMenuInfoUpdate)
             throws com.ringcentral.RestException, java.io.IOException {
         if (ivrMenuId == null) {
             throw new IllegalArgumentException("Parameter ivrMenuId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), ivrMenuInfo, null);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), ivrMenuInfoUpdate, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), IvrMenuInfo.class);
     }
 }

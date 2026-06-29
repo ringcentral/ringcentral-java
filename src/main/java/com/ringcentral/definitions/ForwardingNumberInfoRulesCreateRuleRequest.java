@@ -11,7 +11,7 @@ public class ForwardingNumberInfoRulesCreateRuleRequest {
 
     /**
      * Forwarding phone number type Enum: Home, Mobile, Work, PhoneLine, Outage, Other,
-     * BusinessMobilePhone, ExternalCarrier, ExtensionApps
+     * BusinessMobilePhone, ExtensionApps
      */
     public String type;
 

@@ -46,13 +46,13 @@ public class Index {
      * /restapi/{apiVersion}/account/{accountId}/user-role Rate Limit Group: Medium App Permission:
      * RoleManagement User Permission: EditUserRoles
      */
-    public String post(RoleResource roleResource, CreateCustomRoleParameters queryParams)
+    public RoleResource post(RoleResource roleResource, CreateCustomRoleParameters queryParams)
             throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(false), roleResource, queryParams);
-        return rb.string();
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), RoleResource.class);
     }
 
-    public String post(RoleResource roleResource)
+    public RoleResource post(RoleResource roleResource)
             throws com.ringcentral.RestException, java.io.IOException {
         return this.post(roleResource, null);
     }

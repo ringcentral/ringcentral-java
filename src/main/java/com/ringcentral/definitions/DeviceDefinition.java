@@ -12,14 +12,6 @@ public class DeviceDefinition {
         return this;
     }
 
-    /** Required */
-    public DeviceDefinitionEmergency emergency;
-
-    public DeviceDefinition emergency(DeviceDefinitionEmergency emergency) {
-        this.emergency = emergency;
-        return this;
-    }
-
     /** Assign a specific phone number Required */
     public DeviceDefinitionPhoneInfo phoneInfo;
 

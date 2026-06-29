@@ -24,7 +24,7 @@ public class ListSmsConsentRecordsParameters {
         return this;
     }
 
-    /** The sender&#039;s phone number(s) used to filter records */
+    /** The internal party&#039;s phone number(s) used to filter records */
     public String[] from;
 
     public ListSmsConsentRecordsParameters from(String[] from) {
@@ -32,7 +32,7 @@ public class ListSmsConsentRecordsParameters {
         return this;
     }
 
-    /** The recipient&#039;s phone number(s) used to filter records */
+    /** The external party&#039;s phone number(s) used to filter records */
     public String[] to;
 
     public ListSmsConsentRecordsParameters to(String[] to) {

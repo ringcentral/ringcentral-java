@@ -4,7 +4,8 @@ package com.ringcentral.definitions;
 public class ReasonInfo {
     /**
      * Reason code Enum: ServicePlanLimitation, AccountLimitation, ExtensionTypeLimitation,
-     * ExtensionLimitation, InsufficientPermissions, ConfigurationLimitation, PermissionLimitation
+     * ExtensionSubTypeLimitation, ExtensionLimitation, InsufficientPermissions,
+     * ConfigurationLimitation, PermissionLimitation
      */
     public String code;
 

@@ -85,39 +85,6 @@ public class Meeting {
         return this;
     }
 
-    /**
-     * During meeting AI team analyze code and after meeting finished generates text summary about
-     * this meeting
-     */
-    public String longSummary;
-
-    public Meeting longSummary(String longSummary) {
-        this.longSummary = longSummary;
-        return this;
-    }
-
-    /**
-     * During meeting AI team analyze code and after meeting finished generates text summary about
-     * this meeting
-     */
-    public String shortSummary;
-
-    public Meeting shortSummary(String shortSummary) {
-        this.shortSummary = shortSummary;
-        return this;
-    }
-
-    /**
-     * During meeting AI team analyze code and after meeting finished generates key words used in
-     * meeting
-     */
-    public String[] keywords;
-
-    public Meeting keywords(String[] keywords) {
-        this.keywords = keywords;
-        return this;
-    }
-
     /** List of the participants in the meeting Required */
     public Participant[] participants;
 

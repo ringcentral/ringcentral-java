@@ -28,14 +28,6 @@ public class BulkAddDevicesItem {
         return this;
     }
 
-    /** Required */
-    public BulkAddDevicesItemEmergency emergency;
-
-    public BulkAddDevicesItem emergency(BulkAddDevicesItemEmergency emergency) {
-        this.emergency = emergency;
-        return this;
-    }
-
     /** Assign a specific phone number Required */
     public BulkAddDevicesItemPhoneInfo phoneInfo;
 

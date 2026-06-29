@@ -125,6 +125,17 @@ public class GrantInfo {
         return this;
     }
 
+    /**
+     * Specifies whether the current extension is configured as SMS Recipient for the call queue
+     * referenced in extension object
+     */
+    public Boolean callQueueSmsRecipient;
+
+    public GrantInfo callQueueSmsRecipient(Boolean callQueueSmsRecipient) {
+        this.callQueueSmsRecipient = callQueueSmsRecipient;
+        return this;
+    }
+
     /** Specifies whether the current extension is configured as SMS Recipient for an extension */
     public Boolean smsRecipient;
 

@@ -33,22 +33,6 @@ public class ListVideoMeetingsParameters {
     }
 
     /**
-     * Specifies types meeting to be returned. Possible values: - &lt;empty&gt; (not passed) -
-     * return only the meetings where the requesting user is the participant OR host OR deputy OR
-     * watcher; - `All`- return `Alive` meetings where the requesting user is the host OR deputy OR
-     * watcher; - `My`- return `Alive` meetings where the requesting user is the host OR deputy; -
-     * `Shared` - return `Alive` meetings where the requesting user is the watcher AND not host; -
-     * `Deleted` - return `Deleted` meetings where the requesting user is the host OR deputy. Enum:
-     * All, My, Deleted, Shared
-     */
-    public String type;
-
-    public ListVideoMeetingsParameters type(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
      * This parameter filters meetings by available materials. It accepts the following values:
      * Recordings - Returns meetings with a recording. Notes - Returns meetings with notes.
      * (omitted) - Returns all meetings, regardless of material type. This parameter cannot be used

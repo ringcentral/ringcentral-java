@@ -37,8 +37,8 @@ public class CreateForwardingNumberRequest {
     }
 
     /**
-     * Forwarding/call flip phone type. If specified, &#039;label&#039; attribute value is ignored
-     * Default: Other Enum: PhoneLine, Home, Mobile, Work, Other
+     * Forwarding phone number type Default: Other Enum: Home, Mobile, Work, PhoneLine, Outage,
+     * Other, BusinessMobilePhone, ExtensionApps
      */
     public String type;
 

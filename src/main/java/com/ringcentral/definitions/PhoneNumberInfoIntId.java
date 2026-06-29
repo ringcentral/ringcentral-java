@@ -44,7 +44,8 @@ public class PhoneNumberInfoIntId {
 
     /**
      * Payment type. &#039;External&#039; is returned for forwarded numbers which are not terminated
-     * in the RingCentral phone system Enum: External, ExternalNumberProvider, Local
+     * in the RingCentral phone system Enum: External, TollFree, Local,
+     * BusinessMobileNumberProvider, ExternalNumberProvider, ExternalNumberProviderTollFree, Mobile
      */
     public String paymentType;
 

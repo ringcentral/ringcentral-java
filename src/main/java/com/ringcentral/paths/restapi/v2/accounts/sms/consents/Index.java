@@ -21,23 +21,6 @@ public class Index {
     }
 
     /**
-     * Returns a list of account-level SMS consent records for opted-out and/or opted-in phone
-     * numbers.
-     *
-     * <p>HTTP Method: get Endpoint: /restapi/v2/accounts/{accountId}/sms/consents Rate Limit Group:
-     * Light App Permission: SMS
-     */
-    public OptRecordList get(ListSmsConsentRecordsParameters queryParams)
-            throws com.ringcentral.RestException, java.io.IOException {
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), OptRecordList.class);
-    }
-
-    public OptRecordList get() throws com.ringcentral.RestException, java.io.IOException {
-        return this.get(null);
-    }
-
-    /**
      * Adds or updates SMS consent records.
      *
      * <p>HTTP Method: patch Endpoint: /restapi/v2/accounts/{accountId}/sms/consents Rate Limit
@@ -52,5 +35,13 @@ public class Index {
 
     public com.ringcentral.paths.restapi.v2.accounts.sms.consents.export.Index export() {
         return new com.ringcentral.paths.restapi.v2.accounts.sms.consents.export.Index(this);
+    }
+
+    public com.ringcentral.paths.restapi.v2.accounts.sms.consents.search.Index search() {
+        return new com.ringcentral.paths.restapi.v2.accounts.sms.consents.search.Index(this);
+    }
+
+    public com.ringcentral.paths.restapi.v2.accounts.sms.consents.history.Index history() {
+        return new com.ringcentral.paths.restapi.v2.accounts.sms.consents.history.Index(this);
     }
 }

@@ -10,7 +10,7 @@ public class ContactInfoCreationRequest {
         return this;
     }
 
-    /** For User extension type only. Extension user last name Required */
+    /** For User extension type only. Extension user last name */
     public String lastName;
 
     public ContactInfoCreationRequest lastName(String lastName) {

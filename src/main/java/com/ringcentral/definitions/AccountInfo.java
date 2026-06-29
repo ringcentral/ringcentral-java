@@ -36,6 +36,14 @@ public class AccountInfo {
         return this;
     }
 
+    /** Indicates if the billing is active. */
+    public Boolean billingActive;
+
+    public AccountInfo billingActive(Boolean billingActive) {
+        this.billingActive = billingActive;
+        return this;
+    }
+
     /** Company name Example: Acme Inc. */
     public String companyName;
 

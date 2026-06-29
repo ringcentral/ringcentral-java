@@ -89,6 +89,14 @@ public class Index {
         return new com.ringcentral.paths.teammessaging.v1.chats.tasks.Index(this);
     }
 
+    public com.ringcentral.paths.teammessaging.v1.chats.threads.Index threads() {
+        return this.threads(null);
+    }
+
+    public com.ringcentral.paths.teammessaging.v1.chats.threads.Index threads(String threadId) {
+        return new com.ringcentral.paths.teammessaging.v1.chats.threads.Index(this, threadId);
+    }
+
     public com.ringcentral.paths.teammessaging.v1.chats.favorite.Index favorite() {
         return new com.ringcentral.paths.teammessaging.v1.chats.favorite.Index(this);
     }

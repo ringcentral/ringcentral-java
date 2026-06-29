@@ -32,7 +32,7 @@ public class Index {
     }
 
     /**
-     * Updates IVR settings for a site specified in path.
+     * Updates IVR settings for a site specified in path. Omitted fields are not changed.
      *
      * <p>HTTP Method: put Endpoint: /restapi/{apiVersion}/account/{accountId}/sites/{siteId}/ivr
      * Rate Limit Group: Medium App Permission: EditAccounts User Permission: Sites

@@ -226,6 +226,10 @@ public class Index {
         return new com.ringcentral.paths.restapi.account.extension.businesshours.Index(this);
     }
 
+    public com.ringcentral.paths.restapi.account.extension.smsrecipients.Index smsRecipients() {
+        return new com.ringcentral.paths.restapi.account.extension.smsrecipients.Index(this);
+    }
+
     public com.ringcentral.paths.restapi.account.extension.callerblocking.Index callerBlocking() {
         return new com.ringcentral.paths.restapi.account.extension.callerblocking.Index(this);
     }

@@ -43,15 +43,4 @@ public class CreateWirelessPoint {
         this.emergencyLocation = emergencyLocation;
         return this;
     }
-
-    /**
-     * Emergency response location (address) internal identifier. Only one of a pair
-     * `emergencyAddress` or `emergencyLocationId` can be specified, otherwise the error is returned
-     */
-    public String emergencyLocationId;
-
-    public CreateWirelessPoint emergencyLocationId(String emergencyLocationId) {
-        this.emergencyLocationId = emergencyLocationId;
-        return this;
-    }
 }

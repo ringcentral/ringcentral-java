@@ -78,20 +78,6 @@ public class SyncAccountCallLogParameters {
     }
 
     /**
-     * Deprecated, replaced with `recordingType` filter, still supported for compatibility reasons.
-     * Indicates if only recorded calls should be returned.
-     *
-     * <p>If both `withRecording` and `recordingType` parameters are specified, then `withRecording`
-     * is ignored
-     */
-    public Boolean withRecording;
-
-    public SyncAccountCallLogParameters withRecording(Boolean withRecording) {
-        this.withRecording = withRecording;
-        return this;
-    }
-
-    /**
      * Indicates that call records with recordings of particular type should be returned. If
      * omitted, then calls with and without recordings are returned Enum: Automatic, OnDemand, All
      */

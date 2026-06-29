@@ -103,17 +103,6 @@ public class NotificationSettings {
         return this;
     }
 
-    /**
-     * Specifies if sms recipients&#039; emails are included in the list of emails to which
-     * notifications are sent
-     */
-    public Boolean includeSmsRecipients;
-
-    public NotificationSettings includeSmsRecipients(Boolean includeSmsRecipients) {
-        this.includeSmsRecipients = includeSmsRecipients;
-        return this;
-    }
-
     /** List of sms recipients specified for call queue. Returned only for call queue extension */
     public EmailRecipientInfo[] smsRecipients;
 

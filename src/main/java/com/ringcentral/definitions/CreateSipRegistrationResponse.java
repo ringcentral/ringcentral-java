@@ -51,4 +51,12 @@ public class CreateSipRegistrationResponse {
         this.pollingInterval = pollingInterval;
         return this;
     }
+
+    /** Indicates whether the user has an RC App device configured in a PSTN gateway */
+    public Boolean pstnConfigured;
+
+    public CreateSipRegistrationResponse pstnConfigured(Boolean pstnConfigured) {
+        this.pstnConfigured = pstnConfigured;
+        return this;
+    }
 }

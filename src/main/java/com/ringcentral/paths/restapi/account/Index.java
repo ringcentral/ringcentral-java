@@ -200,6 +200,15 @@ public class Index {
         return new com.ringcentral.paths.restapi.account.callrecording.Index(this);
     }
 
+    public com.ringcentral.paths.restapi.account.messagethreads.Index messageThreads() {
+        return this.messageThreads(null);
+    }
+
+    public com.ringcentral.paths.restapi.account.messagethreads.Index messageThreads(
+            String threadId) {
+        return new com.ringcentral.paths.restapi.account.messagethreads.Index(this, threadId);
+    }
+
     public com.ringcentral.paths.restapi.account.callrecordings.Index callRecordings() {
         return new com.ringcentral.paths.restapi.account.callrecordings.Index(this);
     }

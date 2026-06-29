@@ -118,28 +118,10 @@ public class ExtensionBulkUpdateInfo {
     }
 
     /** */
-    public CostCenterInfo costCenter;
-
-    public ExtensionBulkUpdateInfo costCenter(CostCenterInfo costCenter) {
-        this.costCenter = costCenter;
-        return this;
-    }
-
-    /** */
     public CustomFieldInfo[] customFields;
 
     public ExtensionBulkUpdateInfo customFields(CustomFieldInfo[] customFields) {
         this.customFields = customFields;
-        return this;
-    }
-
-    /**
-     * Hides extension from showing in company directory. Supported for extensions of User type only
-     */
-    public Boolean hidden;
-
-    public ExtensionBulkUpdateInfo hidden(Boolean hidden) {
-        this.hidden = hidden;
         return this;
     }
 

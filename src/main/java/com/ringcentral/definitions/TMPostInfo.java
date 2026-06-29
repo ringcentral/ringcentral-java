@@ -17,6 +17,33 @@ public class TMPostInfo {
         return this;
     }
 
+    /**
+     * Boolean flag indicating that current post is a parent post of a thread. Populated only for
+     * parent posts
+     */
+    public Boolean isParent;
+
+    public TMPostInfo isParent(Boolean isParent) {
+        this.isParent = isParent;
+        return this;
+    }
+
+    /** Internal identifier of a parent post, in case post is a part of a thread */
+    public String parentPostId;
+
+    public TMPostInfo parentPostId(String parentPostId) {
+        this.parentPostId = parentPostId;
+        return this;
+    }
+
+    /** Internal identifier of a thread, in case post is a part of a thread */
+    public String threadId;
+
+    public TMPostInfo threadId(String threadId) {
+        this.threadId = threadId;
+        return this;
+    }
+
     /** Type of post Enum: TextMessage, PersonJoined, PersonsAdded */
     public String type;
 

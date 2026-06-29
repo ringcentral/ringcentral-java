@@ -131,7 +131,7 @@ public class BaseCallLogRecord {
      * Emergency, External Application, FindMe, FollowMe, FreeSPDL, Hunting, Incoming Fax,
      * Monitoring, Move, Outgoing Fax, Paging, Park Location, Phone Call, Phone Login, Pickup, RC
      * Meetings, Ring Directly, RingMe, RingOut Mobile, RingOut PC, RingOut Web, Sip Forwarding,
-     * Support, Text Relay, Transfer, Unknown, VoIP Call
+     * Support, Text Relay, Transfer, Unknown, VoIP Call, VoiceChat Call
      */
     public String action;
 

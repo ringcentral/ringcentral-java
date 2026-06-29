@@ -131,4 +131,20 @@ public class QueueInfo {
         this.unconditionalForwarding = unconditionalForwarding;
         return this;
     }
+
+    /** */
+    public QueueInfoPositionInQueue positionInQueue;
+
+    public QueueInfo positionInQueue(QueueInfoPositionInQueue positionInQueue) {
+        this.positionInQueue = positionInQueue;
+        return this;
+    }
+
+    /** */
+    public QueueInfoCallBack callBack;
+
+    public QueueInfo callBack(QueueInfoCallBack callBack) {
+        this.callBack = callBack;
+        return this;
+    }
 }

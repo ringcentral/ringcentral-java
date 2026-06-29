@@ -229,4 +229,28 @@ public class DeviceEmergencyServiceAddressResource {
         this.taxId = taxId;
         return this;
     }
+
+    /** Apartment number (country-specific address field, e.g. Portugal) */
+    public String apartment;
+
+    public DeviceEmergencyServiceAddressResource apartment(String apartment) {
+        this.apartment = apartment;
+        return this;
+    }
+
+    /** Floor number (country-specific address field, e.g. Portugal) */
+    public String floor;
+
+    public DeviceEmergencyServiceAddressResource floor(String floor) {
+        this.floor = floor;
+        return this;
+    }
+
+    /** Designation (country-specific address field, e.g. Portugal) */
+    public String designation;
+
+    public DeviceEmergencyServiceAddressResource designation(String designation) {
+        this.designation = designation;
+        return this;
+    }
 }

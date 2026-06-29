@@ -27,7 +27,7 @@ public class UpdateForwardingNumberRequest {
 
     /**
      * Forwarding phone number type Enum: Home, Mobile, Work, PhoneLine, Outage, Other,
-     * BusinessMobilePhone, ExternalCarrier
+     * BusinessMobilePhone, ExtensionApps
      */
     public String type;
 

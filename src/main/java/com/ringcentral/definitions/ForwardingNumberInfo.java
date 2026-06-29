@@ -62,7 +62,7 @@ public class ForwardingNumberInfo {
 
     /**
      * Forwarding phone number type Enum: Home, Mobile, Work, PhoneLine, Outage, Other,
-     * BusinessMobilePhone, ExternalCarrier, ExtensionApps
+     * BusinessMobilePhone, ExtensionApps
      */
     public String type;
 
@@ -71,10 +71,10 @@ public class ForwardingNumberInfo {
         return this;
     }
 
-    /** Extension information. Returned only if extension type is &#039;ExtensionApps&#039; */
-    public ForwardingNumberInfoExtension extension;
+    /** */
+    public ForwardingNumberExtensionInfo extension;
 
-    public ForwardingNumberInfo extension(ForwardingNumberInfoExtension extension) {
+    public ForwardingNumberInfo extension(ForwardingNumberExtensionInfo extension) {
         this.extension = extension;
         return this;
     }

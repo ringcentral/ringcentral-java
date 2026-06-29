@@ -83,13 +83,12 @@ public class Index {
      * Rate Limit Group: Light App Permission: ReadAccounts User Permission:
      * ReadUserForwardingFlipNumbers
      */
-    public ForwardingNumberResource get()
-            throws com.ringcentral.RestException, java.io.IOException {
+    public ForwardingNumberInfo get() throws com.ringcentral.RestException, java.io.IOException {
         if (forwardingNumberId == null) {
             throw new IllegalArgumentException("Parameter forwardingNumberId cannot be null");
         }
         okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
-        return com.ringcentral.Utils.gson.fromJson(rb.string(), ForwardingNumberResource.class);
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), ForwardingNumberInfo.class);
     }
 
     /**

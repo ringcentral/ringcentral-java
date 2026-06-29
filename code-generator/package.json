@@ -2,10 +2,10 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && yarn tsx -r dotenv-override-true/config ./src/definitions.ts",
-    "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && yarn tsx -r dotenv-override-true/config ./src/paths.ts",
-    "samples": "yarn tsx -r dotenv-override-true/config ./src/samples.ts",
-    "generate": "yarn definitions && yarn paths && yarn samples"
+    "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && tsx -r dotenv-override-true/config ./src/definitions.ts",
+    "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && tsx -r dotenv-override-true/config ./src/paths.ts",
+    "samples": "tsx -r dotenv-override-true/config ./src/samples.ts",
+    "generate": "pnpm run definitions && pnpm run paths && pnpm run samples"
   },
   "dependencies": {
     "change-case": "4.1.2",
@@ -22,13 +22,7 @@
     "@types/ramda": "^0.31.1",
     "dotenv-override-true": "^6.2.2",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
-    "yarn-upgrade-all": "^0.7.5"
+    "typescript": "^6.0.2"
   },
-  "yarn-upgrade-all": {
-    "ignore": [
-      "change-case"
-    ]
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "pnpm@10.34.4"
 }

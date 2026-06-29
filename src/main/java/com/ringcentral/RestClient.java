@@ -1,6 +1,7 @@
 package com.ringcentral;
 
 import com.ringcentral.definitions.Attachment;
+import com.ringcentral.definitions.AuthorizeRequest;
 import com.ringcentral.definitions.GetTokenRequest;
 import com.ringcentral.definitions.RevokeTokenRequest;
 import com.ringcentral.definitions.TokenInfo;
@@ -441,6 +442,22 @@ public class RestClient {
     }
 
     // top level paths
+    public com.ringcentral.paths.wellknown.Index wellKnown() {
+        return new com.ringcentral.paths.wellknown.Index(this);
+    }
+
+    public com.ringcentral.paths.ai.Index ai() {
+        return new com.ringcentral.paths.ai.Index(this);
+    }
+
+    public com.ringcentral.paths.analytics.Index analytics() {
+        return new com.ringcentral.paths.analytics.Index(this);
+    }
+
+    public com.ringcentral.paths.rcvideo.Index rcvideo() {
+        return new com.ringcentral.paths.rcvideo.Index(this);
+    }
+
     public com.ringcentral.paths.restapi.Index restapi(String apiVersion) {
         return new com.ringcentral.paths.restapi.Index(this, apiVersion);
     }
@@ -457,69 +474,11 @@ public class RestClient {
         return new com.ringcentral.paths.scim.Index(this, "v2");
     }
 
-    public com.ringcentral.paths.analytics.Index analytics() {
-        return new com.ringcentral.paths.analytics.Index(this);
-    }
-
     public com.ringcentral.paths.teammessaging.Index teamMessaging() {
         return new com.ringcentral.paths.teammessaging.Index(this);
     }
 
-    public com.ringcentral.paths.ai.Index ai() {
-        return new com.ringcentral.paths.ai.Index(this);
-    }
-
-    public com.ringcentral.paths.rcvideo.Index rcvideo() {
-        return new com.ringcentral.paths.rcvideo.Index(this);
-    }
-
     public com.ringcentral.paths.webinar.Index webinar() {
         return new com.ringcentral.paths.webinar.Index(this);
-    }
-
-    // todo: this is temporary, it will be removed when AuthorizeRequest is back to spec
-    class AuthorizeRequest {
-        public String response_type;
-        public String client_id;
-        public String redirect_uri;
-        public String state;
-        public String ui_options;
-        public String code_challenge;
-        public String code_challenge_method;
-
-        public AuthorizeRequest response_type(String response_type) {
-            this.response_type = response_type;
-            return this;
-        }
-
-        public AuthorizeRequest client_id(String client_id) {
-            this.client_id = client_id;
-            return this;
-        }
-
-        public AuthorizeRequest redirect_uri(String redirect_uri) {
-            this.redirect_uri = redirect_uri;
-            return this;
-        }
-
-        public AuthorizeRequest state(String state) {
-            this.state = state;
-            return this;
-        }
-
-        public AuthorizeRequest ui_options(String ui_options) {
-            this.ui_options = ui_options;
-            return this;
-        }
-
-        public AuthorizeRequest code_challenge(String code_challenge) {
-            this.code_challenge = code_challenge;
-            return this;
-        }
-
-        public AuthorizeRequest code_challenge_method(String code_challenge_method) {
-            this.code_challenge_method = code_challenge_method;
-            return this;
-        }
     }
 }

@@ -1,28 +1,24 @@
 {
-  "type": "module",
-  "license": "MIT",
-  "scripts": {
-    "definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && tsx -r dotenv-override-true/config ./src/definitions.ts",
-    "paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && tsx -r dotenv-override-true/config ./src/paths.ts",
-    "samples": "tsx -r dotenv-override-true/config ./src/samples.ts",
-    "generate": "pnpm run definitions && pnpm run paths && pnpm run samples"
-  },
-  "dependencies": {
-    "change-case": "5.4.4",
-    "js-yaml": "^5.1.0",
-    "lower-case-first": "^3.0.0",
-    "openapi-types": "^12.1.3",
-    "ramda": "^0.32.0",
-    "ringcentral-open-api-parser": "^0.17.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.5.1",
-    "@types/js-yaml": "^4.0.9",
-    "@types/node": "^25.9.4",
-    "@types/ramda": "^0.32.0",
-    "dotenv-override-true": "^6.2.2",
-    "tsx": "^4.22.4",
-    "typescript": "^6.0.3"
-  },
-  "packageManager": "pnpm@10.34.4"
+	"type": "module",
+	"license": "MIT",
+	"scripts": {
+		"definitions": "rm -rf ../src/main/java/com/ringcentral/definitions/* && tsx -r dotenv-override-true/config ./src/definitions.ts",
+		"paths": "rm -rf ../src/main/java/com/ringcentral/paths/* && tsx -r dotenv-override-true/config ./src/paths.ts",
+		"samples": "tsx -r dotenv-override-true/config ./src/samples.ts",
+		"generate": "pnpm run definitions && pnpm run paths && pnpm run samples"
+	},
+	"dependencies": {
+		"change-case": "5.4.4",
+		"ramda": "^0.32.0",
+		"ringcentral-open-api-parser": "^0.17.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.1",
+		"@types/node": "^25.9.4",
+		"@types/ramda": "^0.32.0",
+		"dotenv-override-true": "^6.2.2",
+		"tsx": "^4.22.4",
+		"typescript": "^6.0.3"
+	},
+	"packageManager": "pnpm@10.34.4"
 }

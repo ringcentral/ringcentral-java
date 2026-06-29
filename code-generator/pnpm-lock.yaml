@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  ringcentral-open-api-parser: file:../../../ts/ringcentral-open-api-parser
+
 importers:
 
   .:
@@ -24,8 +27,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       ringcentral-open-api-parser:
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: file:../../../ts/ringcentral-open-api-parser
+        version: file:../../../ts/ringcentral-open-api-parser
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5.1
@@ -293,10 +296,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  js-yaml@4.2.0:
-    resolution: {integrity: sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==}
-    hasBin: true
-
   js-yaml@5.1.0:
     resolution: {integrity: sha512-s8VA5jkR8f22S3NAXmhKPFqGUduqZGlsufabVOgN14iTdw/RXcym7bKkbwjxLK9Yw2lEvvmJjFp119+KPeo8Kg==}
     hasBin: true
@@ -314,8 +313,8 @@ packages:
   ramda@0.32.0:
     resolution: {integrity: sha512-GQWAHhxhxWBWA8oIBr1XahFVjQ9Fic6MK9ikijfd4TZHfE2+urfk+irVlR5VOn48uwMgM+loRRBJd6Yjsbc0zQ==}
 
-  ringcentral-open-api-parser@0.17.4:
-    resolution: {integrity: sha512-ZwOV4n+aJR3GynNzb6INAd/Jtc6htFD6h1shkLzbXtwQn8eS/ynwxEyx+pWqe6krKsoOJfbWQOLdXDq74R7B8A==}
+  ringcentral-open-api-parser@file:../../../ts/ringcentral-open-api-parser:
+    resolution: {directory: ../../../ts/ringcentral-open-api-parser, type: directory}
 
   ts-toolbelt@9.6.0:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
@@ -499,10 +498,6 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  js-yaml@4.2.0:
-    dependencies:
-      argparse: 2.0.1
-
   js-yaml@5.1.0:
     dependencies:
       argparse: 2.0.1
@@ -515,9 +510,9 @@ snapshots:
 
   ramda@0.32.0: {}
 
-  ringcentral-open-api-parser@0.17.4:
+  ringcentral-open-api-parser@file:../../../ts/ringcentral-open-api-parser:
     dependencies:
-      js-yaml: 4.2.0
+      js-yaml: 5.1.0
       lodash: 4.18.1
       openapi-types: 12.1.3
 

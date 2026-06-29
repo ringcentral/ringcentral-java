@@ -1,11 +1,9 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
-  "formatter": {
-    "indentStyle": "space"
-  },
-  "linter": {
-    "rules": {
-      "recommended": true
-    }
-  }
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"formatter": {
+		"indentStyle": "space"
+	},
+	"linter": {
+		"enabled": true
+	}
 }

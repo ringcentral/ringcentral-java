@@ -10,11 +10,11 @@
 	"dependencies": {
 		"change-case": "5.4.4",
 		"ramda": "^0.32.0",
-		"ringcentral-open-api-parser": "^0.17.4"
+		"ringcentral-open-api-parser": "^0.17.6"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.1",
-		"@types/node": "^25.9.4",
+		"@types/node": "^26.0.1",
 		"@types/ramda": "^0.32.0",
 		"dotenv-override-true": "^6.2.2",
 		"tsx": "^4.22.4",

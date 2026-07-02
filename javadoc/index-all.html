@@ -740,7 +740,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/ringcentral/definitions/CallRecordingUpdate.html#active" class="member-name-link">active</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallRecordingUpdate.html" title="class in com.ringcentral.definitions">CallRecordingUpdate</a></dt>
 <dd>
-<div class="block">Recording status</div>
+<div class="block">Recording status Required</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/RecordingInfo.html#active" class="member-name-link">active</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/RecordingInfo.html" title="class in com.ringcentral.definitions">RecordingInfo</a></dt>
 <dd>
@@ -3746,10 +3746,6 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#body" class="member-name-link">body</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html#body" class="member-name-link">body</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a></dt>
-<dd>
-<div class="block">Required</div>
-</dd>
 <dt><a href="com/ringcentral/definitions/TMCreateNoteRequest.html#body" class="member-name-link">body</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/TMCreateNoteRequest.html" title="class in com.ringcentral.definitions">TMCreateNoteRequest</a></dt>
 <dd>
 <div class="block">Contents of a note; HTML markup text.</div>
@@ -3797,8 +3793,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/MessageTemplateRequest.html#body(com.ringcentral.definitions.MessageTemplateInfo)" class="member-name-link">body(MessageTemplateInfo)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#body(com.ringcentral.definitions.MessageTemplateInfo)" class="member-name-link">body(MessageTemplateInfo)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html#body(com.ringcentral.definitions.MessageTemplateInfo)" class="member-name-link">body(MessageTemplateInfo)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/AccountTelephonySessionsEvent.html#body(com.ringcentral.definitions.TelephonySessionsEventBody)" class="member-name-link">body(TelephonySessionsEventBody)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/AccountTelephonySessionsEvent.html" title="class in com.ringcentral.definitions">AccountTelephonySessionsEvent</a></dt>
 <dd>&nbsp;</dd>
@@ -3884,17 +3878,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Internal identifier of an account brandId that monitors a call</div>
 </dd>
-<dt><a href="com/ringcentral/definitions/PauseResumeCallRecordingParameters.html#brandId" class="member-name-link">brandId</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/PauseResumeCallRecordingParameters.html" title="class in com.ringcentral.definitions">PauseResumeCallRecordingParameters</a></dt>
-<dd>
-<div class="block">Identifies a brand of a logged-in user or a brand of a sign-up session Default: ~</div>
-</dd>
 <dt><a href="com/ringcentral/paths/restapi/dictionary/brand/Index.html#brandId" class="member-name-link">brandId</a> - Variable in class com.ringcentral.paths.restapi.dictionary.brand.<a href="com/ringcentral/paths/restapi/dictionary/brand/Index.html" title="class in com.ringcentral.paths.restapi.dictionary.brand">Index</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/NumberParserContext.html#brandId(java.lang.String)" class="member-name-link">brandId(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/NumberParserContext.html" title="class in com.ringcentral.definitions">NumberParserContext</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/OwnerInfo.html#brandId(java.lang.String)" class="member-name-link">brandId(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/OwnerInfo.html" title="class in com.ringcentral.definitions">OwnerInfo</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/PauseResumeCallRecordingParameters.html#brandId(java.lang.String)" class="member-name-link">brandId(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/PauseResumeCallRecordingParameters.html" title="class in com.ringcentral.definitions">PauseResumeCallRecordingParameters</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/BrandInfo.html" class="type-name-link" title="class in com.ringcentral.definitions">BrandInfo</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
 <dd>
@@ -4670,7 +4658,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Status of a call and calling/called party Enum: Invalid, Success, InProgress, Busy, NoAnswer,
  RingOutFromThisNumberIsNotSupported, Rejected, GenericError, Finished, InternationalDisabled,
- DestinationBlocked, NotEnoughFunds, NoSuchUser, Error</div>
+ DestinationBlocked, NotEnoughFunds, NosuchUser, Error, CannotReach, NoAnsweringMachine,
+ NoSessionFound, Unknown</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/RingOutStatusInfo.html#calleeStatus(java.lang.String)" class="member-name-link">calleeStatus(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/RingOutStatusInfo.html" title="class in com.ringcentral.definitions">RingOutStatusInfo</a></dt>
 <dd>&nbsp;</dd>
@@ -4868,7 +4857,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Status of a call and calling/called party Enum: Invalid, Success, InProgress, Busy, NoAnswer,
  RingOutFromThisNumberIsNotSupported, Rejected, GenericError, Finished, InternationalDisabled,
- DestinationBlocked, NotEnoughFunds, NoSuchUser, Error</div>
+ DestinationBlocked, NotEnoughFunds, NosuchUser, Error, CannotReach, NoAnsweringMachine,
+ NoSessionFound, Unknown</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/RingOutStatusInfo.html#callerStatus(java.lang.String)" class="member-name-link">callerStatus(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/RingOutStatusInfo.html" title="class in com.ringcentral.definitions">RingOutStatusInfo</a></dt>
 <dd>&nbsp;</dd>
@@ -4888,7 +4878,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/CallPartyFlip.html#callFlipId" class="member-name-link">callFlipId</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallPartyFlip.html" title="class in com.ringcentral.definitions">CallPartyFlip</a></dt>
 <dd>
-<div class="block">Call flip id</div>
+<div class="block">Call flip id Required</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/CallPartyFlip.html#callFlipId(java.lang.String)" class="member-name-link">callFlipId(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallPartyFlip.html" title="class in com.ringcentral.definitions">CallPartyFlip</a></dt>
 <dd>&nbsp;</dd>
@@ -5967,7 +5957,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Status of a call and calling/called party Enum: Invalid, Success, InProgress, Busy, NoAnswer,
  RingOutFromThisNumberIsNotSupported, Rejected, GenericError, Finished, InternationalDisabled,
- DestinationBlocked, NotEnoughFunds, NoSuchUser, Error</div>
+ DestinationBlocked, NotEnoughFunds, NosuchUser, Error, CannotReach, NoAnsweringMachine,
+ NoSessionFound, Unknown</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/RingOutStatusInfo.html#callStatus(java.lang.String)" class="member-name-link">callStatus(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/RingOutStatusInfo.html" title="class in com.ringcentral.definitions">RingOutStatusInfo</a></dt>
 <dd>&nbsp;</dd>
@@ -6011,7 +6002,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/ringcentral/definitions/SearchSmsConsentRecordsRequest.html#campaignType" class="member-name-link">campaignType</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/SearchSmsConsentRecordsRequest.html" title="class in com.ringcentral.definitions">SearchSmsConsentRecordsRequest</a></dt>
 <dd>
-<div class="block">The campaign type(s) used to filter records (if requested `coverage` is `Campaign`) Enum:
+<div class="block">The campaign type(s) used to filter records (if requested `coverage` is `CampaignType`) Enum:
  Conversational, Informational, Promotional</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/ListSmsConsentRecordsParameters.html#campaignType(java.lang.String%5B%5D)" class="member-name-link">campaignType(String[])</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ListSmsConsentRecordsParameters.html" title="class in com.ringcentral.definitions">ListSmsConsentRecordsParameters</a></dt>
@@ -9750,7 +9741,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/SmsOptHistoryRecord.html#createdAt" class="member-name-link">createdAt</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/SmsOptHistoryRecord.html" title="class in com.ringcentral.definitions">SmsOptHistoryRecord</a></dt>
 <dd>
-<div class="block">The time when the record was last updated Required Format: date-time</div>
+<div class="block">The time when this history record was created Required Format: date-time</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/SmsOptHistoryRecord.html#createdAt(java.lang.String)" class="member-name-link">createdAt(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/SmsOptHistoryRecord.html" title="class in com.ringcentral.definitions">SmsOptHistoryRecord</a></dt>
 <dd>&nbsp;</dd>
@@ -11016,10 +11007,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Drops a call session.</div>
 </dd>
-<dt><a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/Index.html#delete()" class="member-name-link">delete()</a> - Method in class com.ringcentral.paths.restapi.account.telephony.sessions.parties.<a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/Index.html" title="class in com.ringcentral.paths.restapi.account.telephony.sessions.parties">Index</a></dt>
-<dd>
-<div class="block">Deletes a party from a call session by ID.</div>
-</dd>
 <dt><a href="com/ringcentral/paths/restapi/account/userrole/Index.html#delete()" class="member-name-link">delete()</a> - Method in class com.ringcentral.paths.restapi.account.userrole.<a href="com/ringcentral/paths/restapi/account/userrole/Index.html" title="class in com.ringcentral.paths.restapi.account.userrole">Index</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/paths/restapi/subscription/Index.html#delete()" class="member-name-link">delete()</a> - Method in class com.ringcentral.paths.restapi.subscription.<a href="com/ringcentral/paths/restapi/subscription/Index.html" title="class in com.ringcentral.paths.restapi.subscription">Index</a></dt>
@@ -11113,6 +11100,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/paths/restapi/account/extension/emergencylocations/Index.html#delete(com.ringcentral.definitions.DeleteExtensionEmergencyLocationParameters)" class="member-name-link">delete(DeleteExtensionEmergencyLocationParameters)</a> - Method in class com.ringcentral.paths.restapi.account.extension.emergencylocations.<a href="com/ringcentral/paths/restapi/account/extension/emergencylocations/Index.html" title="class in com.ringcentral.paths.restapi.account.extension.emergencylocations">Index</a></dt>
 <dd>
 <div class="block">Deletes a personal emergency response location by ID by the current user or admin.</div>
+</dd>
+<dt><a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/Index.html#delete(com.ringcentral.definitions.DeletePartyRequest)" class="member-name-link">delete(DeletePartyRequest)</a> - Method in class com.ringcentral.paths.restapi.account.telephony.sessions.parties.<a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/Index.html" title="class in com.ringcentral.paths.restapi.account.telephony.sessions.parties">Index</a></dt>
+<dd>
+<div class="block">Deletes a party from a call session by ID.</div>
 </dd>
 <dt><a href="com/ringcentral/paths/restapi/v2/accounts/phonenumbers/Index.html#delete(com.ringcentral.definitions.DeletePhoneNumbersRequest)" class="member-name-link">delete(DeletePhoneNumbersRequest)</a> - Method in class com.ringcentral.paths.restapi.v2.accounts.phonenumbers.<a href="com/ringcentral/paths/restapi/v2/accounts/phonenumbers/Index.html" title="class in com.ringcentral.paths.restapi.v2.accounts.phonenumbers">Index</a></dt>
 <dd>
@@ -11237,6 +11228,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Query parameters for operation deleteMessage</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/DeleteMessageParameters.html#%3Cinit%3E()" class="member-name-link">DeleteMessageParameters()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/DeleteMessageParameters.html" title="class in com.ringcentral.definitions">DeleteMessageParameters</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/ringcentral/definitions/DeletePartyRequest.html" class="type-name-link" title="class in com.ringcentral.definitions">DeletePartyRequest</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/ringcentral/definitions/DeletePartyRequest.html#%3Cinit%3E()" class="member-name-link">DeletePartyRequest()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/DeletePartyRequest.html" title="class in com.ringcentral.definitions">DeletePartyRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/DeletePhoneNumbersRequest.html" class="type-name-link" title="class in com.ringcentral.definitions">DeletePhoneNumbersRequest</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
 <dd>&nbsp;</dd>
@@ -12714,10 +12709,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Name of a template</div>
 </dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html#displayName" class="member-name-link">displayName</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a></dt>
-<dd>
-<div class="block">Name of a template</div>
-</dd>
 <dt><a href="com/ringcentral/definitions/Participant.html#displayName" class="member-name-link">displayName</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/Participant.html" title="class in com.ringcentral.definitions">Participant</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/PermissionCategoryResource.html#displayName" class="member-name-link">displayName</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/PermissionCategoryResource.html" title="class in com.ringcentral.definitions">PermissionCategoryResource</a></dt>
@@ -12773,8 +12764,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/MessageTemplateRequest.html#displayName(java.lang.String)" class="member-name-link">displayName(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#displayName(java.lang.String)" class="member-name-link">displayName(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html#displayName(java.lang.String)" class="member-name-link">displayName(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/Participant.html#displayName(java.lang.String)" class="member-name-link">displayName(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/Participant.html" title="class in com.ringcentral.definitions">Participant</a></dt>
 <dd>&nbsp;</dd>
@@ -18207,7 +18196,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the TCR brand by ID.</div>
 </dd>
 <dt><a href="com/ringcentral/paths/restapi/account/telephony/sessions/Index.html#get()" class="member-name-link">get()</a> - Method in class com.ringcentral.paths.restapi.account.telephony.sessions.<a href="com/ringcentral/paths/restapi/account/telephony/sessions/Index.html" title="class in com.ringcentral.paths.restapi.account.telephony.sessions">Index</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the status of a call session by ID.</div>
+</dd>
 <dt><a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/Index.html#get()" class="member-name-link">get()</a> - Method in class com.ringcentral.paths.restapi.account.telephony.sessions.parties.<a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/Index.html" title="class in com.ringcentral.paths.restapi.account.telephony.sessions.parties">Index</a></dt>
 <dd>
 <div class="block">Returns a call party status by ID.</div>
@@ -18724,10 +18715,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/paths/restapi/account/recording/content/Index.html#get(com.ringcentral.definitions.ReadCallRecordingContentParameters)" class="member-name-link">get(ReadCallRecordingContentParameters)</a> - Method in class com.ringcentral.paths.restapi.account.recording.content.<a href="com/ringcentral/paths/restapi/account/recording/content/Index.html" title="class in com.ringcentral.paths.restapi.account.recording.content">Index</a></dt>
 <dd>
 <div class="block">Returns media content of a call recording (`audio/mpeg` or `audio/wav`)</div>
-</dd>
-<dt><a href="com/ringcentral/paths/restapi/account/telephony/sessions/Index.html#get(com.ringcentral.definitions.ReadCallSessionStatusParameters)" class="member-name-link">get(ReadCallSessionStatusParameters)</a> - Method in class com.ringcentral.paths.restapi.account.telephony.sessions.<a href="com/ringcentral/paths/restapi/account/telephony/sessions/Index.html" title="class in com.ringcentral.paths.restapi.account.telephony.sessions">Index</a></dt>
-<dd>
-<div class="block">Returns the status of a call session by ID.</div>
 </dd>
 <dt><a href="com/ringcentral/paths/restapi/account/calllog/Index.html#get(com.ringcentral.definitions.ReadCompanyCallRecordParameters)" class="member-name-link">get(ReadCompanyCallRecordParameters)</a> - Method in class com.ringcentral.paths.restapi.account.calllog.<a href="com/ringcentral/paths/restapi/account/calllog/Index.html" title="class in com.ringcentral.paths.restapi.account.calllog">Index</a></dt>
 <dd>
@@ -20768,6 +20755,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Internal identifier of a message store report task Example:
  400142200026-400142200026-bd162f24028442489385eb3f44c18354</div>
 </dd>
+<dt><a href="com/ringcentral/definitions/MessageTemplateRequest.html#id" class="member-name-link">id</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateRequest</a></dt>
+<dd>
+<div class="block">Internal identifier of a template.</div>
+</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#id" class="member-name-link">id</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
 <dd>
 <div class="block">Internal identifier of a template</div>
@@ -21841,6 +21832,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/MessageDetailsResponse.html#id(java.lang.String)" class="member-name-link">id(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageDetailsResponse.html" title="class in com.ringcentral.definitions">MessageDetailsResponse</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageStoreReport.html#id(java.lang.String)" class="member-name-link">id(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageStoreReport.html" title="class in com.ringcentral.definitions">MessageStoreReport</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/ringcentral/definitions/MessageTemplateRequest.html#id(java.lang.String)" class="member-name-link">id(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#id(java.lang.String)" class="member-name-link">id(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
 <dd>&nbsp;</dd>
@@ -24557,6 +24550,12 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/BulkDeleteUsersRequest.html#keepAssetsInInventory(java.lang.Boolean)" class="member-name-link">keepAssetsInInventory(Boolean)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/BulkDeleteUsersRequest.html" title="class in com.ringcentral.definitions">BulkDeleteUsersRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/RemoveLineRequest.html#keepAssetsInInventory(java.lang.Boolean)" class="member-name-link">keepAssetsInInventory(Boolean)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/RemoveLineRequest.html" title="class in com.ringcentral.definitions">RemoveLineRequest</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/ringcentral/definitions/DeletePartyRequest.html#keepConferenceAlive" class="member-name-link">keepConferenceAlive</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/DeletePartyRequest.html" title="class in com.ringcentral.definitions">DeletePartyRequest</a></dt>
+<dd>
+<div class="block">Keep conference session alive after deleting the party</div>
+</dd>
+<dt><a href="com/ringcentral/definitions/DeletePartyRequest.html#keepConferenceAlive(java.lang.Boolean)" class="member-name-link">keepConferenceAlive(Boolean)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/DeletePartyRequest.html" title="class in com.ringcentral.definitions">DeletePartyRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/AccountHistoryRecordDetailsParameters.html#key" class="member-name-link">key</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/AccountHistoryRecordDetailsParameters.html" title="class in com.ringcentral.definitions">AccountHistoryRecordDetailsParameters</a></dt>
 <dd>
@@ -27508,10 +27507,6 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplatesListResponse.html#%3Cinit%3E()" class="member-name-link">MessageTemplatesListResponse()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplatesListResponse.html" title="class in com.ringcentral.definitions">MessageTemplatesListResponse</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" class="type-name-link" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html#%3Cinit%3E()" class="member-name-link">MessageTemplateUpdateRequest()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageThread.html" class="type-name-link" title="class in com.ringcentral.definitions">MessageThread</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageThread.html#%3Cinit%3E()" class="member-name-link">MessageThread()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageThread.html" title="class in com.ringcentral.definitions">MessageThread</a></dt>
@@ -27881,6 +27876,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Call blocking options: either specific or all calls and faxes Enum: Specific, All</div>
 </dd>
+<dt><a href="com/ringcentral/definitions/CallRecording.html#mode" class="member-name-link">mode</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallRecording.html" title="class in com.ringcentral.definitions">CallRecording</a></dt>
+<dd>
+<div class="block">Recording mode Enum: Automatic, OnDemand</div>
+</dd>
 <dt><a href="com/ringcentral/definitions/CallRecordingGreetingResource.html#mode" class="member-name-link">mode</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallRecordingGreetingResource.html" title="class in com.ringcentral.definitions">CallRecordingGreetingResource</a></dt>
 <dd>
 <div class="block">Greeting prompt mode for the given `type`.</div>
@@ -27904,6 +27903,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/CallerBlockingSettings.html#mode(java.lang.String)" class="member-name-link">mode(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallerBlockingSettings.html" title="class in com.ringcentral.definitions">CallerBlockingSettings</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/CallerBlockingSettingsUpdate.html#mode(java.lang.String)" class="member-name-link">mode(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallerBlockingSettingsUpdate.html" title="class in com.ringcentral.definitions">CallerBlockingSettingsUpdate</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/ringcentral/definitions/CallRecording.html#mode(java.lang.String)" class="member-name-link">mode(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallRecording.html" title="class in com.ringcentral.definitions">CallRecording</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/CallRecordingGreetingResource.html#mode(java.lang.String)" class="member-name-link">mode(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallRecordingGreetingResource.html" title="class in com.ringcentral.definitions">CallRecordingGreetingResource</a></dt>
 <dd>&nbsp;</dd>
@@ -33464,8 +33465,6 @@ loadScripts(document, 'script');</script>
  and also invited attendees in subsequent phases).</div>
 </dd>
 <dt><a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/recordings/Index.html#patch(com.ringcentral.definitions.CallRecordingUpdate)" class="member-name-link">patch(CallRecordingUpdate)</a> - Method in class com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings.<a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/recordings/Index.html" title="class in com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings">Index</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/recordings/Index.html#patch(com.ringcentral.definitions.CallRecordingUpdate,com.ringcentral.definitions.PauseResumeCallRecordingParameters)" class="member-name-link">patch(CallRecordingUpdate, PauseResumeCallRecordingParameters)</a> - Method in class com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings.<a href="com/ringcentral/paths/restapi/account/telephony/sessions/parties/recordings/Index.html" title="class in com.ringcentral.paths.restapi.account.telephony.sessions.parties.recordings">Index</a></dt>
 <dd>
 <div class="block">Pause/resume recording HTTP Method: patch Endpoint:
  /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings/{recordingId}
@@ -34987,12 +34986,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/NumberDetailsSpecialService.html#pattern(java.lang.String)" class="member-name-link">pattern(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/NumberDetailsSpecialService.html" title="class in com.ringcentral.definitions">NumberDetailsSpecialService</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/ReplyWithPattern.html#pattern(java.lang.String)" class="member-name-link">pattern(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReplyWithPattern.html" title="class in com.ringcentral.definitions">ReplyWithPattern</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/PauseResumeCallRecordingParameters.html" class="type-name-link" title="class in com.ringcentral.definitions">PauseResumeCallRecordingParameters</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
-<dd>
-<div class="block">Query parameters for operation pauseResumeCallRecording</div>
-</dd>
-<dt><a href="com/ringcentral/definitions/PauseResumeCallRecordingParameters.html#%3Cinit%3E()" class="member-name-link">PauseResumeCallRecordingParameters()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/PauseResumeCallRecordingParameters.html" title="class in com.ringcentral.definitions">PauseResumeCallRecordingParameters</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/CompanyPhoneNumberInfo.html#paymentType" class="member-name-link">paymentType</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CompanyPhoneNumberInfo.html" title="class in com.ringcentral.definitions">CompanyPhoneNumberInfo</a></dt>
 <dd>
@@ -38018,11 +38011,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Updates message store settings.</div>
 </dd>
-<dt><a href="com/ringcentral/paths/restapi/account/extension/messagestoretemplates/Index.html#put(com.ringcentral.definitions.MessageTemplateUpdateRequest)" class="member-name-link">put(MessageTemplateUpdateRequest)</a> - Method in class com.ringcentral.paths.restapi.account.extension.messagestoretemplates.<a href="com/ringcentral/paths/restapi/account/extension/messagestoretemplates/Index.html" title="class in com.ringcentral.paths.restapi.account.extension.messagestoretemplates">Index</a></dt>
+<dt><a href="com/ringcentral/paths/restapi/account/extension/messagestoretemplates/Index.html#put(com.ringcentral.definitions.MessageTemplateRequest)" class="member-name-link">put(MessageTemplateRequest)</a> - Method in class com.ringcentral.paths.restapi.account.extension.messagestoretemplates.<a href="com/ringcentral/paths/restapi/account/extension/messagestoretemplates/Index.html" title="class in com.ringcentral.paths.restapi.account.extension.messagestoretemplates">Index</a></dt>
 <dd>
 <div class="block">Updates a user personal text message template.</div>
 </dd>
-<dt><a href="com/ringcentral/paths/restapi/account/messagestoretemplates/Index.html#put(com.ringcentral.definitions.MessageTemplateUpdateRequest)" class="member-name-link">put(MessageTemplateUpdateRequest)</a> - Method in class com.ringcentral.paths.restapi.account.messagestoretemplates.<a href="com/ringcentral/paths/restapi/account/messagestoretemplates/Index.html" title="class in com.ringcentral.paths.restapi.account.messagestoretemplates">Index</a></dt>
+<dt><a href="com/ringcentral/paths/restapi/account/messagestoretemplates/Index.html#put(com.ringcentral.definitions.MessageTemplateRequest)" class="member-name-link">put(MessageTemplateRequest)</a> - Method in class com.ringcentral.paths.restapi.account.messagestoretemplates.<a href="com/ringcentral/paths/restapi/account/messagestoretemplates/Index.html" title="class in com.ringcentral.paths.restapi.account.messagestoretemplates">Index</a></dt>
 <dd>
 <div class="block">Updates a company text message template.</div>
 </dd>
@@ -39303,12 +39296,6 @@ loadScripts(document, 'script');</script>
 <div class="block">Query parameters for operation readCallRecordingContent</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/ReadCallRecordingContentParameters.html#%3Cinit%3E()" class="member-name-link">ReadCallRecordingContentParameters()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReadCallRecordingContentParameters.html" title="class in com.ringcentral.definitions">ReadCallRecordingContentParameters</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html" class="type-name-link" title="class in com.ringcentral.definitions">ReadCallSessionStatusParameters</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
-<dd>
-<div class="block">Query parameters for operation readCallSessionStatus</div>
-</dd>
-<dt><a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html#%3Cinit%3E()" class="member-name-link">ReadCallSessionStatusParameters()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html" title="class in com.ringcentral.definitions">ReadCallSessionStatusParameters</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/ReadCompanyCallLogParameters.html" class="type-name-link" title="class in com.ringcentral.definitions">ReadCompanyCallLogParameters</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
 <dd>
@@ -41373,7 +41360,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/ReplyParty.html#%3Cinit%3E()" class="member-name-link">ReplyParty()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReplyParty.html" title="class in com.ringcentral.definitions">ReplyParty</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/CallPartyReply.html#replyWithPattern" class="member-name-link">replyWithPattern</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallPartyReply.html" title="class in com.ringcentral.definitions">CallPartyReply</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Required</div>
+</dd>
 <dt><a href="com/ringcentral/definitions/CallPartyReply.html#replyWithPattern(com.ringcentral.definitions.ReplyWithPattern)" class="member-name-link">replyWithPattern(ReplyWithPattern)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallPartyReply.html" title="class in com.ringcentral.definitions">CallPartyReply</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/ReplyWithPattern.html" class="type-name-link" title="class in com.ringcentral.definitions">ReplyWithPattern</a> - Class in <a href="com/ringcentral/definitions/package-summary.html">com.ringcentral.definitions</a></dt>
@@ -41382,7 +41371,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/CallPartyReply.html#replyWithText" class="member-name-link">replyWithText</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallPartyReply.html" title="class in com.ringcentral.definitions">CallPartyReply</a></dt>
 <dd>
-<div class="block">Text to reply</div>
+<div class="block">Text to reply Required</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/CallPartyReply.html#replyWithText(java.lang.String)" class="member-name-link">replyWithText(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallPartyReply.html" title="class in com.ringcentral.definitions">CallPartyReply</a></dt>
 <dd>&nbsp;</dd>
@@ -42524,6 +42513,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Specifies if a template is available on a user (Personal) or a company (Company) level Enum:
  Company, Personal</div>
 </dd>
+<dt><a href="com/ringcentral/definitions/MessageTemplateRequest.html#scope" class="member-name-link">scope</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateRequest</a></dt>
+<dd>
+<div class="block">Specifies if a template is available on a user (Personal) or a company (Company) level Enum:
+ Company, Personal</div>
+</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#scope" class="member-name-link">scope</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
 <dd>
 <div class="block">Specifies if a template is available on a user (Personal) or a company (Company) level Enum:
@@ -42556,6 +42550,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/GetTokenRequest.html#scope(java.lang.String)" class="member-name-link">scope(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/GetTokenRequest.html" title="class in com.ringcentral.definitions">GetTokenRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/ListUserMessageTemplatesParameters.html#scope(java.lang.String)" class="member-name-link">scope(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ListUserMessageTemplatesParameters.html" title="class in com.ringcentral.definitions">ListUserMessageTemplatesParameters</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/ringcentral/definitions/MessageTemplateRequest.html#scope(java.lang.String)" class="member-name-link">scope(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#scope(java.lang.String)" class="member-name-link">scope(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
 <dd>&nbsp;</dd>
@@ -44002,8 +43998,6 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#site" class="member-name-link">site</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html#site" class="member-name-link">site</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/NetworkInfo.html#site" class="member-name-link">site</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/NetworkInfo.html" title="class in com.ringcentral.definitions">NetworkInfo</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/SipRegistrationDeviceInfo.html#site" class="member-name-link">site</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/SipRegistrationDeviceInfo.html" title="class in com.ringcentral.definitions">SipRegistrationDeviceInfo</a></dt>
@@ -44061,8 +44055,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/MessageTemplateRequest.html#site(com.ringcentral.definitions.Site)" class="member-name-link">site(Site)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MessageTemplateResponse.html#site(com.ringcentral.definitions.Site)" class="member-name-link">site(Site)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateResponse.html" title="class in com.ringcentral.definitions">MessageTemplateResponse</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html#site(com.ringcentral.definitions.Site)" class="member-name-link">site(Site)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageTemplateUpdateRequest.html" title="class in com.ringcentral.definitions">MessageTemplateUpdateRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/AddDeviceToInventoryResponse.html#site(com.ringcentral.definitions.SiteBasicInfo)" class="member-name-link">site(SiteBasicInfo)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/AddDeviceToInventoryResponse.html" title="class in com.ringcentral.definitions">AddDeviceToInventoryResponse</a></dt>
 <dd>&nbsp;</dd>
@@ -48355,17 +48347,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/TimelineResponseRecord.html#%3Cinit%3E()" class="member-name-link">TimelineResponseRecord()</a> - Constructor for class com.ringcentral.definitions.<a href="com/ringcentral/definitions/TimelineResponseRecord.html" title="class in com.ringcentral.definitions">TimelineResponseRecord</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html#timeout" class="member-name-link">timeout</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html" title="class in com.ringcentral.definitions">ReadCallSessionStatusParameters</a></dt>
-<dd>
-<div class="block">The time frame of awaiting for a status change before sending the resulting one in response</div>
-</dd>
 <dt><a href="com/ringcentral/definitions/SharedLinesInfo.html#timeout" class="member-name-link">timeout</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/SharedLinesInfo.html" title="class in com.ringcentral.definitions">SharedLinesInfo</a></dt>
 <dd>
 <div class="block">Number of seconds to wait before forwarding unanswered calls.</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/SharedLinesInfo.html#timeout(java.lang.Long)" class="member-name-link">timeout(Long)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/SharedLinesInfo.html" title="class in com.ringcentral.definitions">SharedLinesInfo</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html#timeout(java.lang.String)" class="member-name-link">timeout(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html" title="class in com.ringcentral.definitions">ReadCallSessionStatusParameters</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/TimeSettings.html#timeRange" class="member-name-link">timeRange</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/TimeSettings.html" title="class in com.ringcentral.definitions">TimeSettings</a></dt>
 <dd>
@@ -48503,10 +48489,6 @@ loadScripts(document, 'script');</script>
 <div class="block">The timestamp of a call action in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
  including timezone, for example 2016-03-10T18:07:52.534Z Format: date-time</div>
 </dd>
-<dt><a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html#timestamp" class="member-name-link">timestamp</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html" title="class in com.ringcentral.definitions">ReadCallSessionStatusParameters</a></dt>
-<dd>
-<div class="block">The date and time of a call session latest change</div>
-</dd>
 <dt><a href="com/ringcentral/definitions/VoicemailMessageEvent.html#timestamp" class="member-name-link">timestamp</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/VoicemailMessageEvent.html" title="class in com.ringcentral.definitions">VoicemailMessageEvent</a></dt>
 <dd>
 <div class="block">Date/time of sending a notification in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
@@ -48541,8 +48523,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/ringcentral/definitions/MessageEvent.html#timestamp(java.lang.String)" class="member-name-link">timestamp(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MessageEvent.html" title="class in com.ringcentral.definitions">MessageEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/MissedCallEvent.html#timestamp(java.lang.String)" class="member-name-link">timestamp(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/MissedCallEvent.html" title="class in com.ringcentral.definitions">MissedCallEvent</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html#timestamp(java.lang.String)" class="member-name-link">timestamp(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ReadCallSessionStatusParameters.html" title="class in com.ringcentral.definitions">ReadCallSessionStatusParameters</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/VoicemailMessageEvent.html#timestamp(java.lang.String)" class="member-name-link">timestamp(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/VoicemailMessageEvent.html" title="class in com.ringcentral.definitions">VoicemailMessageEvent</a></dt>
 <dd>&nbsp;</dd>
@@ -50184,7 +50164,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/ringcentral/definitions/CallFlipNumberResource.html#type" class="member-name-link">type</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallFlipNumberResource.html" title="class in com.ringcentral.definitions">CallFlipNumberResource</a></dt>
 <dd>
-<div class="block">Flip number type Example: PhoneLine Enum: PhoneLine, External</div>
+<div class="block">Flip number type Example: PhoneLine Enum: PhoneLine, External, BusinessMobile</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/CallHandlingRuleInfo.html#type" class="member-name-link">type</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallHandlingRuleInfo.html" title="class in com.ringcentral.definitions">CallHandlingRuleInfo</a></dt>
 <dd>
@@ -54477,6 +54457,10 @@ the order they are declared.</div>
 </dd>
 <dt><a href="com/ringcentral/definitions/BridgeJoinPreferences.html#videoMuted(java.lang.Boolean)" class="member-name-link">videoMuted(Boolean)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/BridgeJoinPreferences.html" title="class in com.ringcentral.definitions">BridgeJoinPreferences</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/ringcentral/definitions/CallRecording.html#view" class="member-name-link">view</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallRecording.html" title="class in com.ringcentral.definitions">CallRecording</a></dt>
+<dd>
+<div class="block">Recording view Enum: Party, Session</div>
+</dd>
 <dt><a href="com/ringcentral/definitions/ExtractSyncAccountCallLogParameters.html#view" class="member-name-link">view</a> - Variable in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ExtractSyncAccountCallLogParameters.html" title="class in com.ringcentral.definitions">ExtractSyncAccountCallLogParameters</a></dt>
 <dd>
 <div class="block">Defines the level of details for returned call records Default: Simple Enum: Simple, Detailed</div>
@@ -54523,6 +54507,8 @@ the order they are declared.</div>
 <dd>
 <div class="block">Defines the level of details for returned call records Default: Simple Enum: Simple, Detailed</div>
 </dd>
+<dt><a href="com/ringcentral/definitions/CallRecording.html#view(java.lang.String)" class="member-name-link">view(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/CallRecording.html" title="class in com.ringcentral.definitions">CallRecording</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/ExtractSyncAccountCallLogParameters.html#view(java.lang.String)" class="member-name-link">view(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ExtractSyncAccountCallLogParameters.html" title="class in com.ringcentral.definitions">ExtractSyncAccountCallLogParameters</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/ringcentral/definitions/ListA2PSMSParameters.html#view(java.lang.String)" class="member-name-link">view(String)</a> - Method in class com.ringcentral.definitions.<a href="com/ringcentral/definitions/ListA2PSMSParameters.html" title="class in com.ringcentral.definitions">ListA2PSMSParameters</a></dt>

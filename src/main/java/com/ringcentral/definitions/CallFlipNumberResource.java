@@ -17,7 +17,7 @@ public class CallFlipNumberResource {
         return this;
     }
 
-    /** Flip number type Example: PhoneLine Enum: PhoneLine, External */
+    /** Flip number type Example: PhoneLine Enum: PhoneLine, External, BusinessMobile */
     public String type;
 
     public CallFlipNumberResource type(String type) {

@@ -73,12 +73,12 @@ public class Index {
      * /restapi/{apiVersion}/account/{accountId}/extension/{extensionId}/message-store-templates/{templateId}
      * Rate Limit Group: Medium App Permission: EditExtensions
      */
-    public MessageTemplateResponse put(MessageTemplateUpdateRequest messageTemplateUpdateRequest)
+    public MessageTemplateResponse put(MessageTemplateRequest messageTemplateRequest)
             throws com.ringcentral.RestException, java.io.IOException {
         if (templateId == null) {
             throw new IllegalArgumentException("Parameter templateId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.put(this.path(), messageTemplateUpdateRequest, null);
+        okhttp3.ResponseBody rb = this.rc.put(this.path(), messageTemplateRequest, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), MessageTemplateResponse.class);
     }
 

@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 public class CallRecordingUpdate {
-    /** Recording status */
+    /** Recording status Required */
     public Boolean active;
 
     public CallRecordingUpdate active(Boolean active) {

@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 public class CallPartyFlip {
-    /** Call flip id */
+    /** Call flip id Required */
     public String callFlipId;
 
     public CallPartyFlip callFlipId(String callFlipId) {

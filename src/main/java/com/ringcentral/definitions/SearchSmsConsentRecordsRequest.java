@@ -41,7 +41,7 @@ public class SearchSmsConsentRecordsRequest {
     }
 
     /**
-     * The campaign type(s) used to filter records (if requested `coverage` is `Campaign`) Enum:
+     * The campaign type(s) used to filter records (if requested `coverage` is `CampaignType`) Enum:
      * Conversational, Informational, Promotional
      */
     public String[] campaignType;

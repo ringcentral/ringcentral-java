@@ -5,7 +5,8 @@ public class RingOutStatusInfo {
     /**
      * Status of a call and calling/called party Enum: Invalid, Success, InProgress, Busy, NoAnswer,
      * RingOutFromThisNumberIsNotSupported, Rejected, GenericError, Finished, InternationalDisabled,
-     * DestinationBlocked, NotEnoughFunds, NoSuchUser, Error
+     * DestinationBlocked, NotEnoughFunds, NosuchUser, Error, CannotReach, NoAnsweringMachine,
+     * NoSessionFound, Unknown
      */
     public String callStatus;
 
@@ -17,7 +18,8 @@ public class RingOutStatusInfo {
     /**
      * Status of a call and calling/called party Enum: Invalid, Success, InProgress, Busy, NoAnswer,
      * RingOutFromThisNumberIsNotSupported, Rejected, GenericError, Finished, InternationalDisabled,
-     * DestinationBlocked, NotEnoughFunds, NoSuchUser, Error
+     * DestinationBlocked, NotEnoughFunds, NosuchUser, Error, CannotReach, NoAnsweringMachine,
+     * NoSessionFound, Unknown
      */
     public String callerStatus;
 
@@ -29,7 +31,8 @@ public class RingOutStatusInfo {
     /**
      * Status of a call and calling/called party Enum: Invalid, Success, InProgress, Busy, NoAnswer,
      * RingOutFromThisNumberIsNotSupported, Rejected, GenericError, Finished, InternationalDisabled,
-     * DestinationBlocked, NotEnoughFunds, NoSuchUser, Error
+     * DestinationBlocked, NotEnoughFunds, NosuchUser, Error, CannotReach, NoAnsweringMachine,
+     * NoSessionFound, Unknown
      */
     public String calleeStatus;
 

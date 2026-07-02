@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 public class CallPartyReply {
-    /** Text to reply */
+    /** Text to reply Required */
     public String replyWithText;
 
     public CallPartyReply replyWithText(String replyWithText) {
@@ -9,7 +9,7 @@ public class CallPartyReply {
         return this;
     }
 
-    /** */
+    /** Required */
     public ReplyWithPattern replyWithPattern;
 
     public CallPartyReply replyWithPattern(ReplyWithPattern replyWithPattern) {

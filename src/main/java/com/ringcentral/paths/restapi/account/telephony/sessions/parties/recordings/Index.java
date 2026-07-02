@@ -35,9 +35,9 @@ public class Index {
      * /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings
      * Rate Limit Group: Light App Permission: CallControl
      */
-    public String post() throws com.ringcentral.RestException, java.io.IOException {
+    public CallRecording post() throws com.ringcentral.RestException, java.io.IOException {
         okhttp3.ResponseBody rb = this.rc.post(this.path(false), null);
-        return rb.string();
+        return com.ringcentral.Utils.gson.fromJson(rb.string(), CallRecording.class);
     }
 
     /**
@@ -45,18 +45,12 @@ public class Index {
      * /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}/recordings/{recordingId}
      * Rate Limit Group: Light App Permission: CallControl
      */
-    public CallRecording patch(
-            CallRecordingUpdate callRecordingUpdate, PauseResumeCallRecordingParameters queryParams)
+    public CallRecording patch(CallRecordingUpdate callRecordingUpdate)
             throws com.ringcentral.RestException, java.io.IOException {
         if (recordingId == null) {
             throw new IllegalArgumentException("Parameter recordingId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.patch(this.path(), callRecordingUpdate, queryParams);
+        okhttp3.ResponseBody rb = this.rc.patch(this.path(), callRecordingUpdate, null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CallRecording.class);
-    }
-
-    public CallRecording patch(CallRecordingUpdate callRecordingUpdate)
-            throws com.ringcentral.RestException, java.io.IOException {
-        return this.patch(callRecordingUpdate, null);
     }
 }

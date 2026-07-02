@@ -16,4 +16,20 @@ public class CallRecording {
         this.active = active;
         return this;
     }
+
+    /** Recording mode Enum: Automatic, OnDemand */
+    public String mode;
+
+    public CallRecording mode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /** Recording view Enum: Party, Session */
+    public String view;
+
+    public CallRecording view(String view) {
+        this.view = view;
+        return this;
+    }
 }

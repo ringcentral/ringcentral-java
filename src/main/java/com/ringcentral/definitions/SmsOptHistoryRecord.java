@@ -37,7 +37,7 @@ public class SmsOptHistoryRecord {
         return this;
     }
 
-    /** The time when the record was last updated Required Format: date-time */
+    /** The time when this history record was created Required Format: date-time */
     public String createdAt;
 
     public SmsOptHistoryRecord createdAt(String createdAt) {

@@ -46,11 +46,12 @@ public class Index {
      * /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId}/parties/{partyId}
      * Rate Limit Group: Light App Permission: CallControl
      */
-    public String delete() throws com.ringcentral.RestException, java.io.IOException {
+    public String delete(DeletePartyRequest deletePartyRequest)
+            throws com.ringcentral.RestException, java.io.IOException {
         if (partyId == null) {
             throw new IllegalArgumentException("Parameter partyId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.delete(this.path(), null);
+        okhttp3.ResponseBody rb = this.rc.delete(this.path(), deletePartyRequest, null);
         return rb.string();
     }
 

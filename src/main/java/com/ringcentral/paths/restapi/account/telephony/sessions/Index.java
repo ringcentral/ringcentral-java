@@ -32,17 +32,12 @@ public class Index {
      * /restapi/{apiVersion}/account/{accountId}/telephony/sessions/{telephonySessionId} Rate Limit
      * Group: Light App Permission: CallControl
      */
-    public CallSessionObject get(ReadCallSessionStatusParameters queryParams)
-            throws com.ringcentral.RestException, java.io.IOException {
+    public CallSessionObject get() throws com.ringcentral.RestException, java.io.IOException {
         if (telephonySessionId == null) {
             throw new IllegalArgumentException("Parameter telephonySessionId cannot be null");
         }
-        okhttp3.ResponseBody rb = this.rc.get(this.path(), queryParams);
+        okhttp3.ResponseBody rb = this.rc.get(this.path(), null);
         return com.ringcentral.Utils.gson.fromJson(rb.string(), CallSessionObject.class);
-    }
-
-    public CallSessionObject get() throws com.ringcentral.RestException, java.io.IOException {
-        return this.get(null);
     }
 
     /**

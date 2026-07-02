@@ -4932,14 +4932,14 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-MessageTemplateResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStoreTemplates(templateId).put(messageTemplateUpdateRequest);
+MessageTemplateResponse result = rc.restapi(apiVersion).account(accountId).extension(extensionId).messageStoreTemplates(templateId).put(messageTemplateRequest);
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - Parameter `extensionId` is optional with default value `~`
-- `messageTemplateUpdateRequest` is of type [MessageTemplateUpdateRequest](./src/main/java/com/ringcentral/definitions/MessageTemplateUpdateRequest.java)
+- `messageTemplateRequest` is of type [MessageTemplateRequest](./src/main/java/com/ringcentral/definitions/MessageTemplateRequest.java)
 - `result` is of type [MessageTemplateResponse](./src/main/java/com/ringcentral/definitions/MessageTemplateResponse.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SMS-Templates-updateUserMessageTemplate) in API Explorer.
@@ -6179,13 +6179,13 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-MessageTemplateResponse result = rc.restapi(apiVersion).account(accountId).messageStoreTemplates(templateId).put(messageTemplateUpdateRequest);
+MessageTemplateResponse result = rc.restapi(apiVersion).account(accountId).messageStoreTemplates(templateId).put(messageTemplateRequest);
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
-- `messageTemplateUpdateRequest` is of type [MessageTemplateUpdateRequest](./src/main/java/com/ringcentral/definitions/MessageTemplateUpdateRequest.java)
+- `messageTemplateRequest` is of type [MessageTemplateRequest](./src/main/java/com/ringcentral/definitions/MessageTemplateRequest.java)
 - `result` is of type [MessageTemplateResponse](./src/main/java/com/ringcentral/definitions/MessageTemplateResponse.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#SMS-Templates-updateCompanyMessageTemplate) in API Explorer.
@@ -7340,13 +7340,12 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-CallSessionObject result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).get(readCallSessionStatusParameters);
+CallSessionObject result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).get();
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
-- `readCallSessionStatusParameters` is of type [ReadCallSessionStatusParameters](./src/main/java/com/ringcentral/definitions/ReadCallSessionStatusParameters.java)
 - `result` is of type [CallSessionObject](./src/main/java/com/ringcentral/definitions/CallSessionObject.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-readCallSessionStatus) in API Explorer.
@@ -7416,12 +7415,13 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-String result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).delete();
+String result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).delete(deletePartyRequest);
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
+- `deletePartyRequest` is of type [DeletePartyRequest](./src/main/java/com/ringcentral/definitions/DeletePartyRequest.java)
 - `result` is an empty string
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-deleteCallParty) in API Explorer.
@@ -7674,13 +7674,13 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-String result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings().post();
+CallRecording result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings().post();
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
-- `result` is an empty string
+- `result` is of type [CallRecording](./src/main/java/com/ringcentral/definitions/CallRecording.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-startCallRecording) in API Explorer.
 
@@ -7699,14 +7699,13 @@ User Permission|`N/A`
 ```java
 RestClient rc = new RestClient(clientID, clientSecret, serverURL);
 rc.authorize(jwtToken);
-CallRecording result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings(recordingId).patch(callRecordingUpdate, pauseResumeCallRecordingParameters);
+CallRecording result = rc.restapi(apiVersion).account(accountId).telephony().sessions(telephonySessionId).parties(partyId).recordings(recordingId).patch(callRecordingUpdate);
 rc.revoke();
 ```
 
 - Parameter `apiVersion` is optional with default value `v1.0`
 - Parameter `accountId` is optional with default value `~`
 - `callRecordingUpdate` is of type [CallRecordingUpdate](./src/main/java/com/ringcentral/definitions/CallRecordingUpdate.java)
-- `pauseResumeCallRecordingParameters` is of type [PauseResumeCallRecordingParameters](./src/main/java/com/ringcentral/definitions/PauseResumeCallRecordingParameters.java)
 - `result` is of type [CallRecording](./src/main/java/com/ringcentral/definitions/CallRecording.java)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-pauseResumeCallRecording) in API Explorer.

@@ -13,11 +13,11 @@
     "ringcentral-open-api-parser": "^0.17.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.1",
-    "@types/node": "^26.0.1",
+    "@biomejs/biome": "^2.5.2",
+    "@types/node": "^26.1.0",
     "@types/ramda": "^0.32.0",
     "dotenv-override-true": "^6.2.2",
-    "tsx": "^4.22.4",
+    "tsx": "^4.22.5",
     "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@10.34.4"

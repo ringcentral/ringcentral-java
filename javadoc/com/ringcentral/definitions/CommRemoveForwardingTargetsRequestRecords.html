@@ -89,7 +89,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="CommPhoneNumberResource.html" title="class in com.ringcentral.definitions">CommPhoneNumberResource</a></code></div>
+<div class="col-first even-row-color"><code><a href="CommCloudDestination.html" title="class in com.ringcentral.definitions">CommCloudDestination</a></code></div>
 <div class="col-second even-row-color"><code><a href="#destination" class="member-name-link">destination</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="CommDeviceRequest.html" title="class in com.ringcentral.definitions">CommDeviceRequest</a></code></div>
@@ -103,13 +103,16 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#name" class="member-name-link">name</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Example: Cloud Connector Contact</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#type" class="member-name-link">type</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Ring target type Example: PhoneNumberRingTarget Enum: CoworkerAppsRingTarget,
- CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget,
- PhoneNumberRingTarget</div>
+<div class="block">Ring target type Example: CloudConnectorRingTarget Enum: AllDesktopRingTarget,
+ AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget,
+ ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
+ PhoneNumberRingTarget, CloudConnectorRingTarget</div>
 </div>
 </div>
 </section>
@@ -139,7 +142,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CommRemoveForwardingTargetsRequestRecords.html" title="class in com.ringcentral.definitions">CommRemoveForwardingTargetsRequestRecords</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#destination(com.ringcentral.definitions.CommPhoneNumberResource)" class="member-name-link">destination</a><wbr>(<a href="CommPhoneNumberResource.html" title="class in com.ringcentral.definitions">CommPhoneNumberResource</a>&nbsp;destination)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#destination(com.ringcentral.definitions.CommCloudDestination)" class="member-name-link">destination</a><wbr>(<a href="CommCloudDestination.html" title="class in com.ringcentral.definitions">CommCloudDestination</a>&nbsp;destination)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CommRemoveForwardingTargetsRequestRecords.html" title="class in com.ringcentral.definitions">CommRemoveForwardingTargetsRequestRecords</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#device(com.ringcentral.definitions.CommDeviceRequest)" class="member-name-link">device</a><wbr>(<a href="CommDeviceRequest.html" title="class in com.ringcentral.definitions">CommDeviceRequest</a>&nbsp;device)</code></div>
@@ -177,15 +180,17 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="name">
 <h3>name</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
+<div class="block">Example: Cloud Connector Contact</div>
 </section>
 </li>
 <li>
 <section class="detail" id="type">
 <h3>type</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">type</span></div>
-<div class="block">Ring target type Example: PhoneNumberRingTarget Enum: CoworkerAppsRingTarget,
- CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget,
- PhoneNumberRingTarget</div>
+<div class="block">Ring target type Example: CloudConnectorRingTarget Enum: AllDesktopRingTarget,
+ AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget,
+ ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
+ PhoneNumberRingTarget, CloudConnectorRingTarget</div>
 </section>
 </li>
 <li>
@@ -209,7 +214,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="destination">
 <h3>destination</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CommPhoneNumberResource.html" title="class in com.ringcentral.definitions">CommPhoneNumberResource</a></span>&nbsp;<span class="element-name">destination</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CommCloudDestination.html" title="class in com.ringcentral.definitions">CommCloudDestination</a></span>&nbsp;<span class="element-name">destination</span></div>
 </section>
 </li>
 </ul>
@@ -265,9 +270,9 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="destination(com.ringcentral.definitions.CommPhoneNumberResource)">
+<section class="detail" id="destination(com.ringcentral.definitions.CommCloudDestination)">
 <h3>destination</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CommRemoveForwardingTargetsRequestRecords.html" title="class in com.ringcentral.definitions">CommRemoveForwardingTargetsRequestRecords</a></span>&nbsp;<span class="element-name">destination</span><wbr><span class="parameters">(<a href="CommPhoneNumberResource.html" title="class in com.ringcentral.definitions">CommPhoneNumberResource</a>&nbsp;destination)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CommRemoveForwardingTargetsRequestRecords.html" title="class in com.ringcentral.definitions">CommRemoveForwardingTargetsRequestRecords</a></span>&nbsp;<span class="element-name">destination</span><wbr><span class="parameters">(<a href="CommCloudDestination.html" title="class in com.ringcentral.definitions">CommCloudDestination</a>&nbsp;destination)</span></div>
 </section>
 </li>
 </ul>

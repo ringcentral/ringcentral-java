@@ -102,10 +102,11 @@ loadScripts(document, 'script');</script>
  to a soft client instance - Guest - a device with a linked phone line - None - a device
  without a phone line or with specific line (free, BLA, etc.) Enum: Host, Guest, None</div>
 </div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#lineType" class="member-name-link">lineType</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">The type of phone line Enum: Unknown, Standalone, StandaloneFree, BlaPrimary, BlaSecondary</div>
+<div class="block">Phone line type or multiple phone line types Enum: Unknown, Standalone, StandaloneFree,
+ BlaPrimary, BlaSecondary</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#page" class="member-name-link">page</a></code></div>
@@ -118,11 +119,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">The number of items per page.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
 <div class="col-second odd-row-color"><code><a href="#type" class="member-name-link">type</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Device type Default: HardPhone Enum: HardPhone, SoftPhone, OtherPhone, MobileDevice, BLA,
- Paging, WebPhone, WebRTC, Room</div>
+<div class="block">Device type or multiple device types Enum: HardPhone, SoftPhone, OtherPhone, WebRTC, Room</div>
 </div>
 </div>
 </section>
@@ -158,7 +158,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linePooling(java.lang.String)" class="member-name-link">linePooling</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;linePooling)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListExtensionDevicesParameters.html" title="class in com.ringcentral.definitions">ListExtensionDevicesParameters</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lineType(java.lang.String)" class="member-name-link">lineType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lineType)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lineType(java.lang.String%5B%5D)" class="member-name-link">lineType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;lineType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListExtensionDevicesParameters.html" title="class in com.ringcentral.definitions">ListExtensionDevicesParameters</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#page(java.lang.Long)" class="member-name-link">page</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;page)</code></div>
@@ -167,7 +167,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#perPage(java.lang.Long)" class="member-name-link">perPage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;perPage)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListExtensionDevicesParameters.html" title="class in com.ringcentral.definitions">ListExtensionDevicesParameters</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type(java.lang.String)" class="member-name-link">type</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type(java.lang.String%5B%5D)" class="member-name-link">type</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -221,16 +221,16 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="type">
 <h3>type</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">type</span></div>
-<div class="block">Device type Default: HardPhone Enum: HardPhone, SoftPhone, OtherPhone, MobileDevice, BLA,
- Paging, WebPhone, WebRTC, Room</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">type</span></div>
+<div class="block">Device type or multiple device types Enum: HardPhone, SoftPhone, OtherPhone, WebRTC, Room</div>
 </section>
 </li>
 <li>
 <section class="detail" id="lineType">
 <h3>lineType</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">lineType</span></div>
-<div class="block">The type of phone line Enum: Unknown, Standalone, StandaloneFree, BlaPrimary, BlaSecondary</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">lineType</span></div>
+<div class="block">Phone line type or multiple phone line types Enum: Unknown, Standalone, StandaloneFree,
+ BlaPrimary, BlaSecondary</div>
 </section>
 </li>
 </ul>
@@ -280,15 +280,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="type(java.lang.String)">
+<section class="detail" id="type(java.lang.String[])">
 <h3>type</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListExtensionDevicesParameters.html" title="class in com.ringcentral.definitions">ListExtensionDevicesParameters</a></span>&nbsp;<span class="element-name">type</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListExtensionDevicesParameters.html" title="class in com.ringcentral.definitions">ListExtensionDevicesParameters</a></span>&nbsp;<span class="element-name">type</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;type)</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="lineType(java.lang.String)">
+<section class="detail" id="lineType(java.lang.String[])">
 <h3>lineType</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListExtensionDevicesParameters.html" title="class in com.ringcentral.definitions">ListExtensionDevicesParameters</a></span>&nbsp;<span class="element-name">lineType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lineType)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListExtensionDevicesParameters.html" title="class in com.ringcentral.definitions">ListExtensionDevicesParameters</a></span>&nbsp;<span class="element-name">lineType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;lineType)</span></div>
 </section>
 </li>
 </ul>

@@ -143,6 +143,7 @@ com.ringcentral.paths.restapi.account.extension.smsrecipients
 com.ringcentral.paths.restapi.account.extension.smsrecipients.bulkassign
 com.ringcentral.paths.restapi.account.extension.unifiedpresence
 com.ringcentral.paths.restapi.account.extension.videoconfiguration
+com.ringcentral.paths.restapi.account.extension.webappdevices
 com.ringcentral.paths.restapi.account.extensionbulkupdate
 com.ringcentral.paths.restapi.account.extensionbulkupdate.tasks
 com.ringcentral.paths.restapi.account.forwardallcalls

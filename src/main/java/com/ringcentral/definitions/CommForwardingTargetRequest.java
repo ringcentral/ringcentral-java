@@ -11,7 +11,8 @@ public class CommForwardingTargetRequest {
 
     /**
      * Ring target type Required Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget,
-     * ImsPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
+     * ImsPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget,
+     * CloudConnectorRingTarget
      */
     public String type;
 

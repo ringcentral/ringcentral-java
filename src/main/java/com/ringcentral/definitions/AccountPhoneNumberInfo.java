@@ -112,6 +112,25 @@ public class AccountPhoneNumberInfo {
         return this;
     }
 
+    /** Custom user-defined name of a phone number, if any */
+    public String label;
+
+    public AccountPhoneNumberInfo label(String label) {
+        this.label = label;
+        return this;
+    }
+
+    /**
+     * Indicates if a phone number is primary, i.e. displayed as &#039;main number&#039; and called
+     * by default
+     */
+    public Boolean primary;
+
+    public AccountPhoneNumberInfo primary(Boolean primary) {
+        this.primary = primary;
+        return this;
+    }
+
     /** Reference to the extension this number is assigned to. Omitted for company numbers */
     public AccountPhoneNumberInfoExtension extension;
 

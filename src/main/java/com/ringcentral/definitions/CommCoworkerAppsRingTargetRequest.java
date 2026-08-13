@@ -13,7 +13,7 @@ public class CommCoworkerAppsRingTargetRequest {
     /**
      * Ring target type Required Example: CoworkerAppsRingTarget Enum: CoworkerAppsRingTarget,
      * CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 

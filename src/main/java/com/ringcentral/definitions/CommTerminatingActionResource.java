@@ -24,7 +24,8 @@ public class CommTerminatingActionResource {
 
     /**
      * Terminating target type Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget,
-     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
+     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget,
+     * CloudConnectorTerminatingTarget
      */
     public String ringingTargetType;
 
@@ -35,7 +36,8 @@ public class CommTerminatingActionResource {
 
     /**
      * Terminating target type Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget,
-     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
+     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget,
+     * CloudConnectorTerminatingTarget
      */
     public String terminatingTargetType;
 

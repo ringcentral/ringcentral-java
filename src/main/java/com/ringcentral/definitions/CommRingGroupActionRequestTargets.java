@@ -2,10 +2,10 @@ package com.ringcentral.definitions;
 
 public class CommRingGroupActionRequestTargets {
     /**
-     * Ring target type Example: PhoneNumberRingTarget Enum: AllDesktopRingTarget,
+     * Ring target type Example: CloudConnectorRingTarget Enum: AllDesktopRingTarget,
      * AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget,
      * ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 
@@ -31,9 +31,9 @@ public class CommRingGroupActionRequestTargets {
     }
 
     /** */
-    public CommPhoneNumberResource destination;
+    public CommCloudDestination destination;
 
-    public CommRingGroupActionRequestTargets destination(CommPhoneNumberResource destination) {
+    public CommRingGroupActionRequestTargets destination(CommCloudDestination destination) {
         this.destination = destination;
         return this;
     }
@@ -46,7 +46,7 @@ public class CommRingGroupActionRequestTargets {
         return this;
     }
 
-    /** */
+    /** Example: Cloud Connector Contact */
     public String name;
 
     public CommRingGroupActionRequestTargets name(String name) {

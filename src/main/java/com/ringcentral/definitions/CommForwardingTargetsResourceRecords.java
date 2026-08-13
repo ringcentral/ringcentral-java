@@ -2,9 +2,9 @@ package com.ringcentral.definitions;
 
 public class CommForwardingTargetsResourceRecords {
     /**
-     * Ring target type Example: PhoneNumberRingTarget Enum: CoworkerAppsRingTarget,
+     * Ring target type Example: CloudConnectorRingTarget Enum: CoworkerAppsRingTarget,
      * CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget,
-     * IntegrationRingTarget, PhoneNumberRingTarget
+     * IntegrationRingTarget, PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 
@@ -39,9 +39,9 @@ public class CommForwardingTargetsResourceRecords {
     }
 
     /** */
-    public CommPhoneNumberResource destination;
+    public CommCloudDestination destination;
 
-    public CommForwardingTargetsResourceRecords destination(CommPhoneNumberResource destination) {
+    public CommForwardingTargetsResourceRecords destination(CommCloudDestination destination) {
         this.destination = destination;
         return this;
     }

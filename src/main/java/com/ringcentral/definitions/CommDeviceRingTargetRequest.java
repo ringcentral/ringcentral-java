@@ -5,7 +5,7 @@ public class CommDeviceRingTargetRequest {
      * Ring target type Required Example: DeviceRingTarget Enum: AllDesktopRingTarget,
      * AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget,
      * ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 

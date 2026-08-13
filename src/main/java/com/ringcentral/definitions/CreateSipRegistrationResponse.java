@@ -53,10 +53,11 @@ public class CreateSipRegistrationResponse {
     }
 
     /** Indicates whether the user has an RC App device configured in a PSTN gateway */
-    public Boolean pstnConfigured;
+    public Boolean persistGatewayConfigured;
 
-    public CreateSipRegistrationResponse pstnConfigured(Boolean pstnConfigured) {
-        this.pstnConfigured = pstnConfigured;
+    public CreateSipRegistrationResponse persistGatewayConfigured(
+            Boolean persistGatewayConfigured) {
+        this.persistGatewayConfigured = persistGatewayConfigured;
         return this;
     }
 }

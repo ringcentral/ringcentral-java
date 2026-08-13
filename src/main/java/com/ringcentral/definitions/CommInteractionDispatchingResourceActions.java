@@ -75,7 +75,8 @@ public class CommInteractionDispatchingResourceActions {
 
     /**
      * Terminating target type Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget,
-     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
+     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget,
+     * CloudConnectorTerminatingTarget
      */
     public String ringingTargetType;
 
@@ -86,7 +87,8 @@ public class CommInteractionDispatchingResourceActions {
 
     /**
      * Terminating target type Enum: ExtensionTerminatingTarget, PhoneNumberTerminatingTarget,
-     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
+     * PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget,
+     * CloudConnectorTerminatingTarget
      */
     public String terminatingTargetType;
 

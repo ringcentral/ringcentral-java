@@ -1,7 +1,7 @@
 package com.ringcentral.definitions;
 
 public class CommRemoveForwardingTargetsRequestRecords {
-    /** */
+    /** Example: Cloud Connector Contact */
     public String name;
 
     public CommRemoveForwardingTargetsRequestRecords name(String name) {
@@ -10,9 +10,10 @@ public class CommRemoveForwardingTargetsRequestRecords {
     }
 
     /**
-     * Ring target type Example: PhoneNumberRingTarget Enum: CoworkerAppsRingTarget,
-     * CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * Ring target type Example: CloudConnectorRingTarget Enum: AllDesktopRingTarget,
+     * AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget,
+     * ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 
@@ -48,10 +49,9 @@ public class CommRemoveForwardingTargetsRequestRecords {
     }
 
     /** */
-    public CommPhoneNumberResource destination;
+    public CommCloudDestination destination;
 
-    public CommRemoveForwardingTargetsRequestRecords destination(
-            CommPhoneNumberResource destination) {
+    public CommRemoveForwardingTargetsRequestRecords destination(CommCloudDestination destination) {
         this.destination = destination;
         return this;
     }

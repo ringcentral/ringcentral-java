@@ -13,7 +13,7 @@ public class CommPhoneNumberRingTargetResource {
      * Ring target type Required Example: PhoneNumberRingTarget Enum: AllDesktopRingTarget,
      * AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget,
      * ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 

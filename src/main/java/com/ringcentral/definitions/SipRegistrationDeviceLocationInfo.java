@@ -33,4 +33,15 @@ public class SipRegistrationDeviceLocationInfo {
         this.addressFormatStatus = addressFormatStatus;
         return this;
     }
+
+    /**
+     * Specifies emergency address validation during the ERL creation/update. If set to
+     * &#039;true&#039;, then address validation for non-US addresses is skipped
+     */
+    public Boolean trusted;
+
+    public SipRegistrationDeviceLocationInfo trusted(Boolean trusted) {
+        this.trusted = trusted;
+        return this;
+    }
 }

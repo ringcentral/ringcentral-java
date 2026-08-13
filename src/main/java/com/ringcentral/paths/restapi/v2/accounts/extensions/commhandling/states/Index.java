@@ -58,7 +58,7 @@ public class Index {
     /**
      * Updates a communication handling state condition. HTTP Method: patch Endpoint:
      * /restapi/v2/accounts/{accountId}/extensions/{extensionId}/comm-handling/states/{stateId} Rate
-     * Limit Group: Medium App Permission: ReadAccounts
+     * Limit Group: Medium App Permission: EditExtensions
      */
     public CommStateResource patch(CommStateUpdateRequest commStateUpdateRequest)
             throws com.ringcentral.RestException, java.io.IOException {

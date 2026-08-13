@@ -36,4 +36,12 @@ public class ADGError {
         this.message = message;
         return this;
     }
+
+    /** Name of invalid parameter. */
+    public String parameterName;
+
+    public ADGError parameterName(String parameterName) {
+        this.parameterName = parameterName;
+        return this;
+    }
 }

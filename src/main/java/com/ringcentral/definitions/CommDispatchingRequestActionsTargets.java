@@ -2,8 +2,9 @@ package com.ringcentral.definitions;
 
 public class CommDispatchingRequestActionsTargets {
     /**
-     * Terminating target type Example: ExtensionTerminatingTarget Enum: ExtensionTerminatingTarget,
-     * PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
+     * Terminating target type Example: CloudConnectorTerminatingTarget Enum:
+     * ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget,
+     * VoiceMailTerminatingTarget, CloudConnectorTerminatingTarget
      */
     public String type;
 
@@ -30,9 +31,9 @@ public class CommDispatchingRequestActionsTargets {
     }
 
     /** */
-    public CommPhoneNumberResource destination;
+    public CommCloudDestination destination;
 
-    public CommDispatchingRequestActionsTargets destination(CommPhoneNumberResource destination) {
+    public CommDispatchingRequestActionsTargets destination(CommCloudDestination destination) {
         this.destination = destination;
         return this;
     }
@@ -45,7 +46,7 @@ public class CommDispatchingRequestActionsTargets {
         return this;
     }
 
-    /** Phone number name */
+    /** The customised target name Example: Cloud Connector Contact */
     public String name;
 
     public CommDispatchingRequestActionsTargets name(String name) {

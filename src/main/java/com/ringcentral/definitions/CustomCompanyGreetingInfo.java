@@ -59,4 +59,12 @@ public class CustomCompanyGreetingInfo {
         this.language = language;
         return this;
     }
+
+    /** Text to be used for speech transcription Example: Welcome to RingCentral */
+    public String text;
+
+    public CustomCompanyGreetingInfo text(String text) {
+        this.text = text;
+        return this;
+    }
 }

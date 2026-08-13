@@ -12,7 +12,7 @@ public class CommIntegrationForwardingTargetRequest {
     /**
      * Ring target type Required Example: IntegrationRingTarget Enum: CoworkerAppsRingTarget,
      * CoworkerRingTarget, DeviceRingTarget, ImsPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 

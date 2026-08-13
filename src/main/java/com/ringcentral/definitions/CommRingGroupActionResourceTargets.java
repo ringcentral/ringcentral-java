@@ -10,10 +10,10 @@ public class CommRingGroupActionResourceTargets {
     }
 
     /**
-     * Ring target type Example: PhoneNumberRingTarget Enum: AllDesktopRingTarget,
+     * Ring target type Example: CloudConnectorRingTarget Enum: AllDesktopRingTarget,
      * AllMobileRingTarget, CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget,
      * ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 
@@ -39,9 +39,9 @@ public class CommRingGroupActionResourceTargets {
     }
 
     /** */
-    public CommPhoneNumberResource destination;
+    public CommCloudDestination destination;
 
-    public CommRingGroupActionResourceTargets destination(CommPhoneNumberResource destination) {
+    public CommRingGroupActionResourceTargets destination(CommCloudDestination destination) {
         this.destination = destination;
         return this;
     }

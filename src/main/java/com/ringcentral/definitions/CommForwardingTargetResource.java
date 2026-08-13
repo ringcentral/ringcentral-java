@@ -4,7 +4,7 @@ public class CommForwardingTargetResource {
     /**
      * Ring target type Required Enum: CoworkerAppsRingTarget, CoworkerRingTarget, DeviceRingTarget,
      * ImsPhoneNumberRingTarget, FmcPhoneNumberRingTarget, IntegrationRingTarget,
-     * PhoneNumberRingTarget
+     * PhoneNumberRingTarget, CloudConnectorRingTarget
      */
     public String type;
 

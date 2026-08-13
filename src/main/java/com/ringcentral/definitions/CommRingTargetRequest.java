@@ -4,7 +4,8 @@ public class CommRingTargetRequest {
     /**
      * Ring target type Required Enum: AllDesktopRingTarget, AllMobileRingTarget,
      * CoworkerRingTarget, DeviceRingTarget, HotdeskRingTarget, ImsPhoneNumberRingTarget,
-     * FmcPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget
+     * FmcPhoneNumberRingTarget, IntegrationRingTarget, PhoneNumberRingTarget,
+     * CloudConnectorRingTarget
      */
     public String type;
 

@@ -23,9 +23,9 @@ public class ListDevicesAutomaticLocationUpdatesParameters {
     }
 
     /** Internal identifier of a device model for filtering. Multiple values are supported */
-    public String modelId;
+    public String[] modelId;
 
-    public ListDevicesAutomaticLocationUpdatesParameters modelId(String modelId) {
+    public ListDevicesAutomaticLocationUpdatesParameters modelId(String[] modelId) {
         this.modelId = modelId;
         return this;
     }

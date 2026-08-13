@@ -12,7 +12,7 @@ public class CommPlayAnnouncementTerminatingTargetResource {
     /**
      * Terminating target type Required Example: PlayAnnouncementTerminatingTarget Enum:
      * ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget,
-     * VoiceMailTerminatingTarget
+     * VoiceMailTerminatingTarget, CloudConnectorTerminatingTarget
      */
     public String type;
 

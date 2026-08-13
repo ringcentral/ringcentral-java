@@ -52,4 +52,12 @@ public class CustomUserGreetingInfo {
         this.answeringRule = answeringRule;
         return this;
     }
+
+    /** Text to be used for speech transcription Example: Welcome to RingCentral */
+    public String text;
+
+    public CustomUserGreetingInfo text(String text) {
+        this.text = text;
+        return this;
+    }
 }

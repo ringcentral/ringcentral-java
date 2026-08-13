@@ -14,6 +14,14 @@ public class CreateCustomUserGreetingRequest {
         return this;
     }
 
+    /** Text to be used for speech transcription Example: Welcome to RingCentral */
+    public String text;
+
+    public CreateCustomUserGreetingRequest text(String text) {
+        this.text = text;
+        return this;
+    }
+
     /** Media file to upload Required */
     public Attachment binary;
 

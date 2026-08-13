@@ -46,23 +46,21 @@ public class ListExtensionDevicesParameters {
         return this;
     }
 
-    /**
-     * Device type Default: HardPhone Enum: HardPhone, SoftPhone, OtherPhone, MobileDevice, BLA,
-     * Paging, WebPhone, WebRTC, Room
-     */
-    public String type;
+    /** Device type or multiple device types Enum: HardPhone, SoftPhone, OtherPhone, WebRTC, Room */
+    public String[] type;
 
-    public ListExtensionDevicesParameters type(String type) {
+    public ListExtensionDevicesParameters type(String[] type) {
         this.type = type;
         return this;
     }
 
     /**
-     * The type of phone line Enum: Unknown, Standalone, StandaloneFree, BlaPrimary, BlaSecondary
+     * Phone line type or multiple phone line types Enum: Unknown, Standalone, StandaloneFree,
+     * BlaPrimary, BlaSecondary
      */
-    public String lineType;
+    public String[] lineType;
 
-    public ListExtensionDevicesParameters lineType(String lineType) {
+    public ListExtensionDevicesParameters lineType(String[] lineType) {
         this.lineType = lineType;
         return this;
     }

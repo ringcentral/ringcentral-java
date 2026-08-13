@@ -3,7 +3,8 @@ package com.ringcentral.definitions;
 public class CommTerminatingTargetRequest {
     /**
      * Terminating target type Required Enum: ExtensionTerminatingTarget,
-     * PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
+     * PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget,
+     * CloudConnectorTerminatingTarget
      */
     public String type;
 

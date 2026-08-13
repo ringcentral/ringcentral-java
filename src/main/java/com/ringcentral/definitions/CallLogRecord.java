@@ -117,7 +117,7 @@ public class CallLogRecord {
         return this;
     }
 
-    /** Call delegation type Enum: Coworker, Unknown */
+    /** Call delegation type Enum: Coworker, QueueForwarding, Unknown */
     public String delegationType;
 
     public CallLogRecord delegationType(String delegationType) {
@@ -286,6 +286,14 @@ public class CallLogRecord {
 
     public CallLogRecord internalType(String internalType) {
         this.internalType = internalType;
+        return this;
+    }
+
+    /** Indicates whether the call has reached a finished state */
+    public Boolean finished;
+
+    public CallLogRecord finished(Boolean finished) {
+        this.finished = finished;
         return this;
     }
 

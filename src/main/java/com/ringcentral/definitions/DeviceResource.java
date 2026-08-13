@@ -30,10 +30,7 @@ public class DeviceResource {
         return this;
     }
 
-    /**
-     * Device type Default: HardPhone Enum: BLA, SoftPhone, OtherPhone, HardPhone, WebPhone, Paging,
-     * Room, WebRTC
-     */
+    /** Device type Enum: BLA, SoftPhone, OtherPhone, HardPhone, WebPhone, Paging, Room, WebRTC */
     public String type;
 
     public DeviceResource type(String type) {

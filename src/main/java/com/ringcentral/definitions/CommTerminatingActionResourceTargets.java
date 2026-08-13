@@ -10,8 +10,9 @@ public class CommTerminatingActionResourceTargets {
     }
 
     /**
-     * Terminating target type Example: ExtensionTerminatingTarget Enum: ExtensionTerminatingTarget,
-     * PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget, VoiceMailTerminatingTarget
+     * Terminating target type Example: CloudConnectorTerminatingTarget Enum:
+     * ExtensionTerminatingTarget, PhoneNumberTerminatingTarget, PlayAnnouncementTerminatingTarget,
+     * VoiceMailTerminatingTarget, CloudConnectorTerminatingTarget
      */
     public String type;
 
@@ -46,9 +47,9 @@ public class CommTerminatingActionResourceTargets {
     }
 
     /** */
-    public CommPhoneNumberResource destination;
+    public CommCloudDestination destination;
 
-    public CommTerminatingActionResourceTargets destination(CommPhoneNumberResource destination) {
+    public CommTerminatingActionResourceTargets destination(CommCloudDestination destination) {
         this.destination = destination;
         return this;
     }

@@ -10,15 +10,15 @@
   "dependencies": {
     "change-case": "5.4.4",
     "ramda": "^0.32.0",
-    "ringcentral-open-api-parser": "^0.17.8"
+    "ringcentral-open-api-parser": "^0.17.9"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.2",
-    "@types/node": "^26.1.0",
+    "@biomejs/biome": "^2.5.7",
+    "@types/node": "^26.2.0",
     "@types/ramda": "^0.32.0",
     "dotenv-override-true": "^6.2.2",
-    "tsx": "^4.23.0",
-    "typescript": "^6.0.3"
+    "tsx": "^4.23.11",
+    "typescript": "^7.0.2"
   },
   "packageManager": "pnpm@10.34.4"
 }

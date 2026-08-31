@@ -124,7 +124,7 @@ public class SyncMessagesParameters {
      * User, Department, Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly,
      * SharedLinesGroup, DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension,
      * ProxyAdmin, RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser, TieLine,
-     * Unknown
+     * VoiceAppIntegration, WebVoice, Unknown
      */
     public String[] ownerExtensionType;
 

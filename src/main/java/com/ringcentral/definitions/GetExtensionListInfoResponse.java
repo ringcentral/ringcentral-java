@@ -97,7 +97,8 @@ public class GetExtensionListInfoResponse {
      * extensions in modern RingCentral product terminology Example: User Enum: User, Department,
      * Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup,
      * DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension, ProxyAdmin,
-     * RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser, TieLine, Unknown
+     * RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser, TieLine,
+     * VoiceAppIntegration, WebVoice, Unknown
      */
     public String type;
 
@@ -108,7 +109,8 @@ public class GetExtensionListInfoResponse {
 
     /**
      * Extension subtype, if applicable. For unrecognized subtypes the `Unknown` value is returned
-     * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown, Emergency
+     * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown, Emergency, Programmable, Air,
+     * AirPro
      */
     public String subType;
 

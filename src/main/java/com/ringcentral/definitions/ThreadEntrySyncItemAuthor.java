@@ -23,7 +23,8 @@ public class ThreadEntrySyncItemAuthor {
      * extensions in modern RingCentral product terminology Example: User Enum: User, Department,
      * Announcement, Voicemail, DigitalUser, VirtualUser, FaxUser, PagingOnly, SharedLinesGroup,
      * DelegatedLinesGroup, GroupCallPickup, IvrMenu, ApplicationExtension, ProxyAdmin,
-     * RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser, TieLine, Unknown
+     * RoomConnector, ParkLocation, Limited, Bot, Site, Room, FlexibleUser, TieLine,
+     * VoiceAppIntegration, WebVoice, Unknown
      */
     public String extensionType;
 

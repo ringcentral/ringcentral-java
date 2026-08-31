@@ -48,4 +48,12 @@ public class FederatedAccountResource {
         this.mainNumber = mainNumber;
         return this;
     }
+
+    /** Indicates whether Contact Center is enabled for the account. */
+    public Boolean contactCenterEnabled;
+
+    public FederatedAccountResource contactCenterEnabled(Boolean contactCenterEnabled) {
+        this.contactCenterEnabled = contactCenterEnabled;
+        return this;
+    }
 }

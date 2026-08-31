@@ -127,7 +127,8 @@ public class ExtensionUpdateRequest {
 
     /**
      * Extension subtype, if applicable. For unrecognized subtypes the `Unknown` value is returned
-     * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown, Emergency
+     * Enum: VideoPro, VideoProPlus, DigitalSignageOnlyRooms, Unknown, Emergency, Programmable, Air,
+     * AirPro
      */
     public String subType;
 
